@@ -1,12 +1,16 @@
-# shader_unparse.py
+# shader_unparser.py
 from __future__ import annotations
 
 from shader_ast import *
 
 
-# -------------------------
-# Expressions
-# -------------------------
+# -----------------------------
+# Small helpers
+# -----------------------------
+
+def _is_dim_list(x) -> bool:
+    return isinstance(x, list)
+
 
 def unparse_expr(e: Expr) -> str:
     if isinstance(e, Identifier):
@@ -14,8 +18,7 @@ def unparse_expr(e: Expr) -> str:
     if isinstance(e, IntLiteral):
         return str(e.value)
     if isinstance(e, FloatLiteral):
-        # Keep it simple and stable. repr(float) is fine for fuzzing,
-        # but it can emit "1.0" or "0.5" etc; that's OK.
+        # keep stable-ish textual form
         return repr(e.value)
     if isinstance(e, BoolLiteral):
         return "true" if e.value else "false"
@@ -24,7 +27,6 @@ def unparse_expr(e: Expr) -> str:
             return f"{unparse_expr(e.operand)}{e.op}"
         return f"{e.op}{unparse_expr(e.operand)}"
     if isinstance(e, BinaryExpr):
-        # Parenthesize everything to keep precedence unambiguous.
         return f"({unparse_expr(e.left)} {e.op} {unparse_expr(e.right)})"
     if isinstance(e, TernaryExpr):
         return f"({unparse_expr(e.cond)} ? {unparse_expr(e.then_expr)} : {unparse_expr(e.else_expr)})"
@@ -38,107 +40,86 @@ def unparse_expr(e: Expr) -> str:
     raise TypeError(f"Unhandled expr: {type(e)}")
 
 
-# -------------------------
-# Types
-# -------------------------
-
 def unparse_type(t: TypeName) -> str:
     parts = []
-    # qualifiers first (e.g. uniform, const, in/out)
     if getattr(t, "qualifiers", None):
         parts.extend(t.qualifiers)
-    # precision (lowp/mediump/highp)
     if getattr(t, "precision", None):
         parts.append(t.precision)
     parts.append(t.name)
     return " ".join(parts)
 
 
-# -------------------------
-# Helpers for declarators
-# -------------------------
-
-def _unparse_array_suffix(array_size) -> str:
-    if array_size is None:
+def unparse_array_suffix(dims) -> str:
+    """
+    Accepts:
+      - None
+      - Expr (single dimension)
+      - list[Optional[Expr]] (multi-dim; None => unsized [])
+    Returns: "", "[..]", "[..][..]" etc.
+    """
+    if dims is None:
         return ""
-    # unsized arrays can be represented as None or some sentinel;
-    # your parser uses None only when no brackets, and supports "[]"
-    # by matching ']' immediately and leaving array_size None.
-    # But that loses whether brackets existed.
-    # If you want to preserve unsized arrays, store a sentinel in AST.
-    return f"[{unparse_expr(array_size)}]"
 
-def unparse_array_dims(dims):
-    out = ""
-    for d in dims:
-        if d is None:
-            out += "[]"
-        else:
-            out += f"[{unparse_expr(d)}]"
-    return out
+    # single-dim legacy: Expr
+    if isinstance(dims, Expr):
+        return f"[{unparse_expr(dims)}]"
 
-def _unparse_vardecl_fragment(d: VarDecl) -> str:
-    frag = d.name
-    # if getattr(d, "array_size", None) is not None:
-    #     frag += f"[{unparse_expr(d.array_size)}]"
+    # multi-dim: list
+    if _is_dim_list(dims):
+        out = ""
+        for d in dims:
+            if d is None:
+                out += "[]"
+            else:
+                out += f"[{unparse_expr(d)}]"
+        return out
 
-    for dim in d.array_dims:
-        if dim is None:
-            frag += "[]"
-        else:
-            frag += f"[{unparse_expr(dim)}]"
+    # sometimes you accidentally store a tuple; handle it too
+    if isinstance(dims, tuple):
+        out = ""
+        for d in dims:
+            if d is None:
+                out += "[]"
+            else:
+                out += f"[{unparse_expr(d)}]"
+        return out
 
-    if getattr(d, "init", None) is not None:
-        frag += f" = {unparse_expr(d.init)}"
-    return frag
+    raise TypeError(f"Unhandled array dims type: {type(dims)}")
 
 
-def _unparse_declarator_fragment(d) -> str:
-    # Declarator(name, base_type, array_size, init)
-    frag = d.name
-    '''
-    if getattr(d, "array_size", None) is not None:
-        frag += f"[{unparse_expr(d.array_size)}]"
-    '''
-
-    for dim in d.array_dims:
-        if dim is None:
-            frag += "[]"
-        else:
-            frag += f"[{unparse_expr(dim)}]"
-
-    if getattr(d, "init", None) is not None:
-        frag += f" = {unparse_expr(d.init)}"
-    return frag
-
+# -----------------------------
+# Struct specifier + body
+# -----------------------------
 
 def _unparse_struct_body(struct_type: StructType) -> str:
     out = "{\n"
     for m in struct_type.members:
         line = f"  {unparse_type(m.type_name)} {m.name}"
-        if m.array_size is not None:
-            line += f"[{unparse_expr(m.array_size)}]"
+
+        # Your StructField currently declares array_size: Optional[Expr]
+        # but your parser sometimes stores a list in it (multi-dim).
+        dims = getattr(m, "array_dims", None)
+        if dims is None:
+            dims = getattr(m, "array_size", None)
+
+        line += unparse_array_suffix(dims)
+
         out += line + ";\n"
     out += "}"
     return out
 
 
-def unparse_struct_specifier(struct_type) -> str:
-    """
-    Unparse an inline struct specifier:
-      struct foo { float x; }
-    or anonymous:
-      struct { float x; }
-    """
-    name = getattr(struct_type, "name", None)
+def unparse_struct_specifier(struct_type: StructType) -> str:
+    name = struct_type.name if struct_type.name else ""
     if name:
         return f"struct {name} {_unparse_struct_body(struct_type)}"
     return f"struct {_unparse_struct_body(struct_type)}"
 
 
-# -------------------------
+# -----------------------------
 # Statements
-# -------------------------
+# -----------------------------
 
 def unparse_stmt(s: Stmt, indent: int = 0) -> str:
     pad = "  " * indent
@@ -150,11 +131,22 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
         return pad + f"{unparse_expr(s.expr)};\n"
 
     if isinstance(s, DeclStmt):
-        # type a = ... , b;
         if not s.decls:
             return pad + ";\n"
+
+        # all decls share same type_name by construction in your parser
         t = s.decls[0].type_name
-        parts = [_unparse_vardecl_fragment(d) for d in s.decls]
+        parts = []
+        for d in s.decls:
+            frag = d.name
+
+            # multi-dim arrays
+            frag += unparse_array_suffix(d.array_dims)
+
+            if d.init is not None:
+                frag += f" = {unparse_expr(d.init)}"
+            parts.append(frag)
+
         return pad + f"{unparse_type(t)} " + ", ".join(parts) + ";\n"
 
     if isinstance(s, BlockStmt):
@@ -184,18 +176,13 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
         return out
 
     if isinstance(s, ForStmt):
-        def uinit(x):
+        def _uinit(x):
             if x is None:
                 return ""
-            if isinstance(x, DeclStmt):
-                txt = unparse_stmt(x, 0).strip()
-                return txt[:-1] if txt.endswith(";") else txt
-            if isinstance(x, ExprStmt):
-                txt = unparse_stmt(x, 0).strip()
-                return txt[:-1] if txt.endswith(";") else txt
-            return ""
+            txt = unparse_stmt(x, 0).strip()
+            return txt[:-1] if txt.endswith(";") else txt
 
-        init = uinit(s.init)
+        init = _uinit(s.init)
         cond = unparse_expr(s.cond) if s.cond else ""
         loop = unparse_expr(s.loop) if s.loop else ""
         out = pad + f"for ({init}; {cond}; {loop})\n"
@@ -213,6 +200,10 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
     if isinstance(s, ContinueStmt):
         return pad + "continue;\n"
 
+    if isinstance(s, DiscardStmt):
+        return pad + "discard;\n"
+
+    # ---- Switch support (your custom classes) ----
     if isinstance(s, SwitchStmt):
         out = pad + f"switch ({unparse_expr(s.expr)})\n"
         out += unparse_stmt(s.body, indent)
@@ -230,103 +221,97 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
             out += unparse_stmt(st, indent + 1)
         return out
 
-    if isinstance(s, DiscardStmt):
-        return pad + "discard;\n"
-
     raise TypeError(f"Unhandled stmt: {type(s)}")
 
 
-# -------------------------
+# -----------------------------
 # Top-level
-# -------------------------
+# -----------------------------
+
+def _unparse_declarator(d: Declarator) -> str:
+    s = d.name
+    s += unparse_array_suffix(getattr(d, "array_dims", None) or getattr(d, "array_size", None))
+    if getattr(d, "init", None) is not None:
+        s += f" = {unparse_expr(d.init)}"
+    return s
+
+
+def _unparse_var_decl(d: VarDecl) -> str:
+    s = d.name + unparse_array_suffix(d.array_dims)
+    if d.init is not None:
+        s += f" = {unparse_expr(d.init)}"
+    return s
+
 
 def unparse_tu(tu: TranslationUnit) -> str:
     out = ""
 
     for item in tu.items:
-        # 1) struct definition: struct Name { ... };
+        # old explicit struct definition form (if you still use it)
         if isinstance(item, StructDef):
             out += f"struct {item.name} {{\n"
             for f in item.fields:
-                # line = f"  {unparse_type(f.type_name)} {f.name}"
-                # if getattr(f, "array_size", None) is not None:
-                #     line += f"[{unparse_expr(f.array_size)}]"
-
                 line = f"  {unparse_type(f.type_name)} {f.name}"
-                line += unparse_array_dims(f.array_dims)
-
-
+                # StructField may carry list dims in array_size too
+                dims = getattr(f, "array_dims", None)
+                if dims is None:
+                    dims = getattr(f, "array_size", None)
+                line += unparse_array_suffix(dims)
                 out += line + ";\n"
             out += "};\n\n"
             continue
 
-        # 2) function
+        # struct specifier + declarators (your common case)
+        if isinstance(item, StructDecl):
+            out += unparse_struct_specifier(item.struct_type)
+            if item.declarators:
+                out += " " + ", ".join(_unparse_declarator(d) for d in item.declarators)
+            out += ";\n\n"
+            continue
+
+        # generic "Declaration" used by your parser for struct-specifier declarations too
+        if isinstance(item, Declaration):
+            # if it's a struct specifier:
+            if isinstance(item.type, StructType):
+                out += unparse_struct_specifier(item.type)
+                if item.declarators:
+                    out += " " + ", ".join(_unparse_declarator(d) for d in item.declarators)
+                out += ";\n\n"
+            else:
+                # fallback: try like a normal decl statement
+                # (you can extend this later)
+                out += ";\n\n"
+            continue
+
+        if isinstance(item, InterfaceBlock):
+            # storage is like: uniform/in/out/buffer
+            out += f"{item.storage} {item.name} "
+            # members should be list[StructField]-like
+            tmp_struct = StructType(name=None, members=item.members)
+            out += _unparse_struct_body(tmp_struct)
+            if item.instance:
+                out += f" {item.instance}"
+            out += ";\n\n"
+            continue
+
         if isinstance(item, FunctionDef):
             params = []
             for p in item.params:
-                s = f"{unparse_type(p.type_name)} {p.name}"
-                if getattr(p, "array_size", None) is not None:
-                    s += f"[{unparse_expr(p.array_size)}]"
-                params.append(s)
+                ps = f"{unparse_type(p.type_name)} {p.name}"
+                ps += unparse_array_suffix(getattr(p, "array_dims", None) or getattr(p, "array_size", None))
+                params.append(ps)
             out += f"{unparse_type(item.return_type)} {item.name}(" + ", ".join(params) + ")\n"
             out += unparse_stmt(item.body, 0)
             out += "\n"
             continue
 
-        # 3) global decl: mat4 a, b;
         if isinstance(item, GlobalDecl):
+            # group as single declaration statement
             out += unparse_stmt(DeclStmt(item.decls), 0)
             out += "\n"
             continue
 
-        # 4) Interface blocks
-        elif isinstance(item, InterfaceBlock):
-            out += f"{item.storage} {item.name} {{\n"
-            for m in item.members:
-                line = f"  {unparse_type(m.type_name)} {m.name}"
-                line += unparse_array_dims(m.array_dims)
-                out += line + ";\n"
-            out += "}"
-            if item.instance:
-                out += f" {item.instance}"
-            out += ";\n\n"
-
-        # 5) inline struct specifier + declarators: struct foo { ... } a, b;
-        # Your parser returns StructDecl(struct_type, declarators)
-        try:
-            StructDecl  # type: ignore[name-defined]
-            if isinstance(item, StructDecl):
-                st = item.struct_type
-                decls = item.declarators
-
-                out += unparse_struct_specifier(st)
-                if decls:
-                    out += " " + ", ".join(_unparse_declarator_fragment(d) for d in decls)
-                out += ";\n\n"
-                continue
-        except NameError:
-            pass
-
-        # 6) some code paths return Declaration(struct_type, declarators)
-        try:
-            Declaration  # type: ignore[name-defined]
-            if isinstance(item, Declaration):
-                # item.type could be StructType or something else
-                ty = item.type
-                decls = item.declarators
-
-                # If it looks like a struct specifier
-                if hasattr(ty, "members"):
-                    out += unparse_struct_specifier(ty)
-                    if decls:
-                        out += " " + ", ".join(_unparse_declarator_fragment(d) for d in decls)
-                    out += ";\n\n"
-                    continue
-        except NameError:
-            pass
-
-        # Unknown top-level: ignore (but separate with newline so output doesn't glue)
-        # out += "\n"
+        # unknown => ignore safely
+        out += "\n"
 
     return out
-    
