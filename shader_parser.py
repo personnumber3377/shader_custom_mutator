@@ -376,14 +376,16 @@ class Parser:
         return DeclStmt(decls)
 
     def parse_case_stmt(self) -> CaseStmt:
-        self.expect("KW", "case")
+        self.expect("ID", "case")
         expr = self.parse_expr(0)
-        self.expect(":")
+        # We need to get rid of this here...
+        # self.expect(":")
+        self.advance() # Consume the ":"
         stmts = []
 
         while True:
             t = self.peek()
-            if (t.kind == "KW" and t.value in ("case", "default")) or t.kind == "}":
+            if (t.value in ("case", "default")) or t.kind == "}":
                 break
             stmts.append(self.parse_stmt())
 
@@ -391,13 +393,16 @@ class Parser:
 
 
     def parse_default_stmt(self) -> DefaultStmt:
-        self.expect("KW", "default")
-        self.expect(":")
+        self.expect("ID", "default")
+        # We need to get rid of this here...
+        # self.expect(":")
+        self.advance() # Consume the ":"
         stmts = []
 
         while True:
             t = self.peek()
-            if (t.kind == "KW" and t.value in ("case", "default")) or t.kind == "}":
+            # if (t.kind == "KW" and t.value in ("case", "default")) or t.kind == "}":
+            if (t.value in ("case", "default")) or t.kind == "}":
                 break
             stmts.append(self.parse_stmt())
 
