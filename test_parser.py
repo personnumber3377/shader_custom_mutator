@@ -1,13 +1,18 @@
 
 import os
+import sys
 
 TEST_DIR = "./tests/"
 
 import shader_parser # The parser...
 import shader_unparser
 
-def run_parse_tests(): # Run the parse tests..
-	test_files = os.listdir(TEST_DIR)
+def run_parse_tests(only_one=None): # Run the parse tests..
+	if only_one == None:
+		test_files = os.listdir(TEST_DIR)
+	else:
+		test_files = [only_one]
+
 	for fn in test_files:
 		complete_fn = TEST_DIR + fn # Add the directory name too...
 		print("Running "+str(complete_fn)+" ...")
@@ -21,5 +26,8 @@ def run_parse_tests(): # Run the parse tests..
 	return
 
 if __name__=="__main__":
-	run_parse_tests()
+	fn = None
+	if len(sys.argv) >= 2:
+		fn = sys.argv[1]
+	run_parse_tests(only_one=fn)
 	exit(0)

@@ -157,6 +157,27 @@ class Parser:
 
         return left
 
+    def parse_declarator_list(self, base_type):
+        decls = []
+        while True:
+            name = self.expect("ID").value
+
+            array_size = None
+            if self.match("["):
+                if not self.match("]"):
+                    array_size = self.parse_expr(0)
+                    self.expect("]")
+
+            init = None
+            if self.match("="):
+                init = self.parse_expr(0)
+
+            decls.append(Declarator(name, base_type, array_size, init))
+
+            if not self.match(","):
+                break
+        return decls
+
     def parse_prefix(self) -> Expr:
         t = self.peek()
 
@@ -170,11 +191,20 @@ class Parser:
         # literals
         if t.kind == "INT":
             self.advance()
-            # strip suffix u/U
-            s = t.value
-            if s[-1] in "uU":
+            s = t.value.lower()
+            unsigned = False
+            if s.endswith("u"):
+                unsigned = True
                 s = s[:-1]
-            return IntLiteral(int(s, 10))
+
+            if s.startswith("0x"):
+                val = int(s, 16)
+            elif s.startswith("0") and len(s) > 1:
+                val = int(s, 8)
+            else:
+                val = int(s, 10)
+
+            return IntLiteral(val)
 
         if t.kind == "FLOAT":
             self.advance()
@@ -246,6 +276,18 @@ class Parser:
 
         raise ParseError(f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
 
+    def parse_struct_member(self) -> StructField:
+        tname = self.parse_type_name()
+        name = self.expect("ID").value
+
+        arr = None
+        if self.match("["):
+            if not self.match("]"):
+                arr = self.parse_expr(0)
+                self.expect("]")
+        self.expect(";")
+        return StructField(tname, name, arr)
+
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
         ident = self.expect("ID")
         name = ident.value
@@ -263,7 +305,36 @@ class Parser:
 
         return VarDecl(type_name=type_name, name=name, array_size=array_size, init=init)
 
+    def parse_struct_specifier(self):
+        if self.peek().kind == "KW" and self.peek().value == "struct":
+            self.advance()
+        else:
+            self.expect("KW", "struct")
+
+        name = None
+        if self.peek().kind == "ID":
+            name = self.advance().value
+
+        self.expect("{")
+        members = []
+        while not self.match("}"):
+            members.append(self.parse_struct_member())
+        return StructType(name, members)
+
     def parse_decl_stmt(self) -> DeclStmt:
+        # print("self.peek().value: "+str(self.peek().value))
+        print("self.peek().value: "+str(self.peek().value))
+        if self.peek().value == "struct":
+            print("poopoo")
+            struct_type = self.parse_struct_specifier()
+
+            declarators = []
+            if self.peek().kind == "ID":
+                declarators = self.parse_declarator_list(struct_type)
+
+            self.expect(";")
+            return Declaration(struct_type, declarators)
+
         tname = self.parse_type_name()
         decls: List[VarDecl] = [self.parse_var_decl(tname)]
         while self.match(","):
@@ -423,6 +494,18 @@ class Parser:
     # Top-level parsing
     # -----------------------
 
+    def parse_struct_toplevel_decl(self):
+        # token is KW struct
+        struct_type = self.parse_struct_specifier()
+
+        declarators = []
+        # After `}` may come `;` or declarators
+        if self.peek().kind == "ID":
+            declarators = self.parse_declarator_list(struct_type)
+
+        self.expect(";")
+        return StructDecl(struct_type, declarators)
+
     def parse_struct_def(self) -> StructDef:
         self.expect("KW", "struct")
         name = self.expect("ID").value
@@ -477,29 +560,14 @@ class Parser:
         while self.peek().kind != "EOF":
             t = self.peek()
 
-            # ignore preprocessor lines crudely: if we see '#', skip tokens until newline-ish isn't represented;
-            # for now, just consume '#', then consume until we hit ';' or '{' etc would be messy.
-            # For fuzzing, simplest: treat '#' token as raw and move on.
-            if t.kind == "#":
-                # skip a minimal directive: '#', then one identifier/kw, then maybe one literal/id
-                self.advance()
-                while self.peek().kind not in ("EOF", ";", "{", "}"):
-                    # stop early if it looks like real code resumes
-                    if self.peek().kind == "KW" and self.peek().value in ("struct", "uniform"):
-                        break
-                    self.advance()
-                continue
-
             if t.kind == "KW" and t.value == "struct":
-                items.append(self.parse_struct_def())
+                items.append(self.parse_struct_toplevel_decl())
                 continue
 
-            # Function vs global decl: after type+name, if '(' => function
             if self._looks_like_decl():
-                # lookahead: after type qualifiers and type token and identifier token
                 save = self.i
                 _ = self.parse_type_name()
-                name_tok = self.expect("ID")
+                _ = self.expect("ID")
                 if self.peek().kind == "(":
                     self.i = save
                     items.append(self.parse_function_def())
@@ -508,7 +576,6 @@ class Parser:
                     items.append(self.parse_global_decl())
                 continue
 
-            # fallback: skip one token to avoid infinite loops
             self.advance()
 
         return TranslationUnit(items)

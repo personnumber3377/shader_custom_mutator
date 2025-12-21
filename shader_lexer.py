@@ -46,7 +46,11 @@ TOKEN_RE = re.compile(
     (?P<LINECOMMENT>//[^\n]*\n?) |
     (?P<BLOCKCOMMENT>/\*.*?\*/) |
     (?P<FLOAT>(?:\d+\.\d*|\.\d+)(?:[eE][+-]?\d+)?[fF]?) |
-    (?P<INT>\d+[uU]?) |
+    (?P<INT>
+        0[xX][0-9a-fA-F]+[uU]? |   # hex
+        0[0-7]+[uU]? |            # octal
+        \d+[uU]?                  # decimal
+    ) |
     (?P<ID>[A-Za-z_][A-Za-z0-9_]*) |
     (?P<OP>{_OP_RE}) |
     (?P<PUNCT>{_PUNCT_RE})

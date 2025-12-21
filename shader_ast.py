@@ -193,6 +193,10 @@ class StructDef(TopLevel):
     name: str
     fields: List[StructField]
 
+@dataclass
+class StructDecl:
+    struct_type: StructType
+    declarators: List[Declarator]   # may be empty
 
 @dataclass
 class FunctionParam(Node):
