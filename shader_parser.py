@@ -319,7 +319,7 @@ class Parser:
 
         self.expect(";")
         return fields
-
+    '''
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
         ident = self.expect("ID")
         name = ident.value
@@ -336,7 +336,25 @@ class Parser:
             init = self.parse_expr(0)
 
         return VarDecl(type_name=type_name, name=name, array_size=array_size, init=init)
+    '''
 
+    def parse_var_decl(self, type_name: TypeName) -> VarDecl:
+        name = self.expect("ID").value
+
+        array_dims = []
+        while self.match("["):
+            if self.match("]"):
+                array_dims.append(None)
+            else:
+                array_dims.append(self.parse_expr(0))
+                self.expect("]")
+
+        init = None
+        if self.match("OP", "="):
+            init = self.parse_expr(0)
+
+        return VarDecl(type_name, name, array_dims, init)
+    
     def parse_struct_specifier(self):
         if self.peek().kind == "KW" and self.peek().value == "struct":
             self.advance()
@@ -647,6 +665,36 @@ class Parser:
         body = self.parse_block()
         return FunctionDef(ret, fname, params, body)
 
+    def _looks_like_interface_block(self) -> bool:
+        j = self.i
+        # storage qualifier
+        if self.toks[j].value not in ("uniform", "in", "out", "buffer"):
+            return False
+        j += 1
+        # block name
+        if j >= len(self.toks) or self.toks[j].kind != "ID":
+            return False
+        j += 1
+        # must be followed by '{'
+        return j < len(self.toks) and self.toks[j].kind == "{"
+
+    def parse_interface_block(self) -> InterfaceBlock:
+        storage = self.advance().value          # uniform / in / out / buffer
+        name = self.expect("ID").value
+
+        self.expect("{")
+        members = []
+        while self.peek().kind != "}":
+            members.append(self.parse_struct_member())
+        self.expect("}")
+
+        instance = None
+        if self.peek().kind == "ID":
+            instance = self.advance().value
+
+        self.expect(";")
+        return InterfaceBlock(storage, name, members, instance)
+
     def parse_global_decl(self) -> GlobalDecl:
         # parse type then one or more var decls then ;
         tname = self.parse_type_name()
@@ -663,6 +711,10 @@ class Parser:
 
             if t.kind == "KW" and t.value == "struct":
                 items.append(self.parse_struct_toplevel_decl())
+                continue
+
+            if t.value in ("uniform", "in", "out", "buffer") and self._looks_like_interface_block():
+                items.append(self.parse_interface_block())
                 continue
 
             if self._looks_like_decl():

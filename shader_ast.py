@@ -94,7 +94,8 @@ class Declarator:
 class VarDecl:
     type_name: TypeName
     name: str
-    array_size: Optional[Expr] = None
+    # array_size: Optional[Expr] = None
+    array_dims: List[Optional[Expr]]
     init: Optional[Expr] = None
 
 
@@ -208,6 +209,15 @@ class GlobalDecl(TopLevel):
 class Declaration(TopLevel):
     type: object               # can be StructType or other
     declarators: List[Declarator]
+
+# This next class is used for the more complex struct blocks like:   buffer buffer_block { float w; };
+
+class InterfaceBlock(TopLevel):
+    def __init__(self, storage, name, members, instance):
+        self.storage = storage
+        self.name = name
+        self.members = members
+        self.instance = instance
 
 @dataclass
 class TranslationUnit:
