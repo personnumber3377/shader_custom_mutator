@@ -193,6 +193,23 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
     if isinstance(s, ContinueStmt):
         return pad + "continue;\n"
 
+    if isinstance(s, SwitchStmt):
+        out = pad + f"switch ({unparse_expr(s.expr)})\n"
+        out += unparse_stmt(s.body, indent)
+        return out
+
+    if isinstance(s, CaseStmt):
+        out = pad + f"case {unparse_expr(s.expr)}:\n"
+        for st in s.stmts:
+            out += unparse_stmt(st, indent + 1)
+        return out
+
+    if isinstance(s, DefaultStmt):
+        out = pad + "default:\n"
+        for st in s.stmts:
+            out += unparse_stmt(st, indent + 1)
+        return out
+
     if isinstance(s, DiscardStmt):
         return pad + "discard;\n"
 
@@ -275,3 +292,4 @@ def unparse_tu(tu: TranslationUnit) -> str:
         # out += "\n"
 
     return out
+    

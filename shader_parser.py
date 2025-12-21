@@ -375,13 +375,75 @@ class Parser:
         self.expect(";")
         return DeclStmt(decls)
 
+    def parse_case_stmt(self) -> CaseStmt:
+        self.expect("KW", "case")
+        expr = self.parse_expr(0)
+        self.expect(":")
+        stmts = []
+
+        while True:
+            t = self.peek()
+            if (t.kind == "KW" and t.value in ("case", "default")) or t.kind == "}":
+                break
+            stmts.append(self.parse_stmt())
+
+        return CaseStmt(expr, stmts)
+
+
+    def parse_default_stmt(self) -> DefaultStmt:
+        self.expect("KW", "default")
+        self.expect(":")
+        stmts = []
+
+        while True:
+            t = self.peek()
+            if (t.kind == "KW" and t.value in ("case", "default")) or t.kind == "}":
+                break
+            stmts.append(self.parse_stmt())
+
+        return DefaultStmt(stmts)
+
+    # -----------------------
+    # Switch statements
+    # -----------------------
+
+    def parse_switch_block(self) -> BlockStmt:
+        self.expect("{")
+        stmts = []
+
+        while not self.match("}"):
+            t = self.peek()
+
+            if t.value == "case":
+                stmts.append(self.parse_case_stmt())
+                continue
+
+            if t.value == "default":
+                stmts.append(self.parse_default_stmt())
+                continue
+
+            # statements inside a case
+            stmts.append(self.parse_stmt())
+
+        return BlockStmt(stmts)
+
     # -----------------------
     # Statements
     # -----------------------
 
     def parse_stmt(self) -> Stmt:
         t = self.peek()
-        # print(t)
+        print(t)
+
+        # switch statements
+        if t.value == "switch": # This originally was t.kind == "KW"
+            self.advance()
+            self.expect("(")
+            expr = self.parse_expr(0)
+            self.expect(")")
+            body = self.parse_switch_block()
+            return SwitchStmt(expr, body)
+
 
         # block
         if t.kind == "{":

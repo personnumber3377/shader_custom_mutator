@@ -7,7 +7,14 @@ import shader_unparser
 def mutate_tree(tree): # Main mutation...
 	# Just a stub for now...
 	print("Passed this tree here: "+str(tree))
-	mutated_tree = tree
-	return mutated_tree
+	# mutated_tree = tree
+	
+	# Select an element to mutate randomly.
+
+	print(tree)
+
+	
+
+	return tree
 
 

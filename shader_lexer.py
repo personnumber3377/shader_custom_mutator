@@ -40,12 +40,17 @@ PUNCT = {"{", "}", "(", ")", "[", "]", ";", ",", "#"}
 _OP_RE = "|".join(re.escape(op) for op in OPERATORS)
 _PUNCT_RE = "|".join(re.escape(p) for p in sorted(PUNCT, key=len, reverse=True))
 
+
+# Here the float shit originally was  (?P<FLOAT>(?:\d+\.\d*|\.\d+)(?:[eE][+-]?\d+)?[fFlL]?) |
+
+# (?P<FLOAT>(?:\d+\.\d*|\.\d+)(?:[eE][+-]?\d+)?(?:lf|LF|f|F|l|L)?) |
+
 TOKEN_RE = re.compile(
     rf"""
     (?P<WS>\s+) |
     (?P<LINECOMMENT>//[^\n]*\n?) |
     (?P<BLOCKCOMMENT>/\*.*?\*/) |
-    (?P<FLOAT>(?:\d+\.\d*|\.\d+)(?:[eE][+-]?\d+)?[fFlL]?) |
+    (?P<FLOAT>(?:\d+\.\d*|\.\d+)(?:[eE][+-]?\d+)?(?:lf|LF|f|F|l|L)?) |
     (?P<INT>
         0[xX][0-9a-fA-F]+[uU]? |   # hex
         0[0-7]+[uU]? |            # octal

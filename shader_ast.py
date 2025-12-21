@@ -154,6 +154,24 @@ class ContinueStmt(Stmt): ...
 class DiscardStmt(Stmt): ...
 
 
+# --- Switch Statement ---
+
+class SwitchStmt(Stmt):
+    def __init__(self, expr: Expr, body: BlockStmt):
+        self.expr = expr
+        self.body = body
+
+
+class CaseStmt(Stmt):
+    def __init__(self, expr: Expr, stmts: list[Stmt]):
+        self.expr = expr
+        self.stmts = stmts
+
+
+class DefaultStmt(Stmt):
+    def __init__(self, stmts: list[Stmt]):
+        self.stmts = stmts
+
 # --- Top level ---
 
 class TopLevel: ...
