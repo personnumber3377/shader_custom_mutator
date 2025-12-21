@@ -299,26 +299,21 @@ class Parser:
         return StructField(tname, name, arr)
     '''
 
-    def parse_struct_member(self) -> List[StructField]:
+    def parse_struct_member(self) -> StructField:
         tname = self.parse_type_name()
-        fields = []
+        name = self.expect("ID").value
 
-        while True:
-            name = self.expect("ID").value
-
-            arr = None
-            if self.match("["):
-                if not self.match("]"):
-                    arr = self.parse_expr(0)
-                    self.expect("]")
-
-            fields.append(StructField(tname, name, arr))
-
-            if not self.match(","):
-                break
+        array_dims = []
+        while self.match("["):
+            if self.match("]"):
+                array_dims.append(None)
+            else:
+                array_dims.append(self.parse_expr(0))
+                self.expect("]")
 
         self.expect(";")
-        return fields
+        return StructField(tname, name, array_dims)
+
     '''
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
         ident = self.expect("ID")
@@ -354,7 +349,7 @@ class Parser:
             init = self.parse_expr(0)
 
         return VarDecl(type_name, name, array_dims, init)
-    
+
     def parse_struct_specifier(self):
         if self.peek().kind == "KW" and self.peek().value == "struct":
             self.advance()

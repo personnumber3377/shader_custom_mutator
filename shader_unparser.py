@@ -68,11 +68,26 @@ def _unparse_array_suffix(array_size) -> str:
     # If you want to preserve unsized arrays, store a sentinel in AST.
     return f"[{unparse_expr(array_size)}]"
 
+def unparse_array_dims(dims):
+    out = ""
+    for d in dims:
+        if d is None:
+            out += "[]"
+        else:
+            out += f"[{unparse_expr(d)}]"
+    return out
 
 def _unparse_vardecl_fragment(d: VarDecl) -> str:
     frag = d.name
-    if getattr(d, "array_size", None) is not None:
-        frag += f"[{unparse_expr(d.array_size)}]"
+    # if getattr(d, "array_size", None) is not None:
+    #     frag += f"[{unparse_expr(d.array_size)}]"
+
+    for dim in d.array_dims:
+        if dim is None:
+            frag += "[]"
+        else:
+            frag += f"[{unparse_expr(dim)}]"
+
     if getattr(d, "init", None) is not None:
         frag += f" = {unparse_expr(d.init)}"
     return frag
@@ -81,8 +96,17 @@ def _unparse_vardecl_fragment(d: VarDecl) -> str:
 def _unparse_declarator_fragment(d) -> str:
     # Declarator(name, base_type, array_size, init)
     frag = d.name
+    '''
     if getattr(d, "array_size", None) is not None:
         frag += f"[{unparse_expr(d.array_size)}]"
+    '''
+
+    for dim in d.array_dims:
+        if dim is None:
+            frag += "[]"
+        else:
+            frag += f"[{unparse_expr(dim)}]"
+
     if getattr(d, "init", None) is not None:
         frag += f" = {unparse_expr(d.init)}"
     return frag
@@ -228,9 +252,14 @@ def unparse_tu(tu: TranslationUnit) -> str:
         if isinstance(item, StructDef):
             out += f"struct {item.name} {{\n"
             for f in item.fields:
+                # line = f"  {unparse_type(f.type_name)} {f.name}"
+                # if getattr(f, "array_size", None) is not None:
+                #     line += f"[{unparse_expr(f.array_size)}]"
+
                 line = f"  {unparse_type(f.type_name)} {f.name}"
-                if getattr(f, "array_size", None) is not None:
-                    line += f"[{unparse_expr(f.array_size)}]"
+                line += unparse_array_dims(f.array_dims)
+
+
                 out += line + ";\n"
             out += "};\n\n"
             continue
@@ -254,7 +283,19 @@ def unparse_tu(tu: TranslationUnit) -> str:
             out += "\n"
             continue
 
-        # 4) inline struct specifier + declarators: struct foo { ... } a, b;
+        # 4) Interface blocks
+        elif isinstance(item, InterfaceBlock):
+            out += f"{item.storage} {item.name} {{\n"
+            for m in item.members:
+                line = f"  {unparse_type(m.type_name)} {m.name}"
+                line += unparse_array_dims(m.array_size)
+                out += line + ";\n"
+            out += "}"
+            if item.instance:
+                out += f" {item.instance}"
+            out += ";\n\n"
+
+        # 5) inline struct specifier + declarators: struct foo { ... } a, b;
         # Your parser returns StructDecl(struct_type, declarators)
         try:
             StructDecl  # type: ignore[name-defined]
@@ -270,7 +311,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
         except NameError:
             pass
 
-        # 5) some code paths return Declaration(struct_type, declarators)
+        # 6) some code paths return Declaration(struct_type, declarators)
         try:
             Declaration  # type: ignore[name-defined]
             if isinstance(item, Declaration):
