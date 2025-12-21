@@ -95,6 +95,15 @@ class Parser:
 
         while True:
             t = self.peek()
+            print(t)
+            if t.kind == "OP" and t.value in ("++", "--"):
+                print("stuff")
+                # postfix binds very tightly
+                if PRECEDENCE["CALL"] < min_prec:
+                    break
+                op = self.advance().value
+                left = UnaryExpr(op, left, postfix=True)
+                continue
 
             # postfix: call
             if t.kind == "(":
@@ -218,7 +227,8 @@ class Parser:
         # unary
         if t.kind == "OP" and t.value in ("+", "-", "!", "~", "++", "--"):
             op = self.advance().value
-            operand = self.parse_expr(PRECEDENCE["*"])  # unary binds fairly tightly
+            # operand = self.parse_expr(PRECEDENCE["*"])  # unary binds fairly tightly
+            operand = self.parse_expr(PRECEDENCE["CALL"])
             return UnaryExpr(op, operand, postfix=False)
 
         # identifier
@@ -275,7 +285,7 @@ class Parser:
             return TypeName(name=name, precision=precision, qualifiers=qualifiers)
 
         raise ParseError(f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
-
+    '''
     def parse_struct_member(self) -> StructField:
         tname = self.parse_type_name()
         name = self.expect("ID").value
@@ -287,7 +297,29 @@ class Parser:
                 self.expect("]")
         self.expect(";")
         return StructField(tname, name, arr)
+    '''
 
+    def parse_struct_member(self) -> List[StructField]:
+        tname = self.parse_type_name()
+        fields = []
+
+        while True:
+            name = self.expect("ID").value
+
+            arr = None
+            if self.match("["):
+                if not self.match("]"):
+                    arr = self.parse_expr(0)
+                    self.expect("]")
+
+            fields.append(StructField(tname, name, arr))
+
+            if not self.match(","):
+                break
+
+        self.expect(";")
+        return fields
+    
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
         ident = self.expect("ID")
         name = ident.value
@@ -318,12 +350,13 @@ class Parser:
         self.expect("{")
         members = []
         while not self.match("}"):
-            members.append(self.parse_struct_member())
+            fields = self.parse_struct_member()
+            members.extend(fields)
         return StructType(name, members)
 
     def parse_decl_stmt(self) -> DeclStmt:
         # print("self.peek().value: "+str(self.peek().value))
-        print("self.peek().value: "+str(self.peek().value))
+        # print("self.peek().value: "+str(self.peek().value))
         if self.peek().value == "struct":
             print("poopoo")
             struct_type = self.parse_struct_specifier()
@@ -348,6 +381,7 @@ class Parser:
 
     def parse_stmt(self) -> Stmt:
         t = self.peek()
+        # print(t)
 
         # block
         if t.kind == "{":
