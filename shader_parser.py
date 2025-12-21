@@ -217,7 +217,7 @@ class Parser:
 
         if t.kind == "FLOAT":
             self.advance()
-            s = t.value.rstrip("fF")
+            s = t.value.rstrip("fFlL")
             return FloatLiteral(float(s))
 
         if t.kind == "KW" and t.value in ("true", "false"):
@@ -319,7 +319,7 @@ class Parser:
 
         self.expect(";")
         return fields
-    
+
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
         ident = self.expect("ID")
         name = ident.value
@@ -356,7 +356,7 @@ class Parser:
 
     def parse_decl_stmt(self) -> DeclStmt:
         # print("self.peek().value: "+str(self.peek().value))
-        # print("self.peek().value: "+str(self.peek().value))
+        print("self.peek().value: "+str(self.peek().value))
         if self.peek().value == "struct":
             print("poopoo")
             struct_type = self.parse_struct_specifier()

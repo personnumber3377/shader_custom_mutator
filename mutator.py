@@ -29,7 +29,8 @@ import compare
 # These are the actual heavy lifting libraries that we need...
 
 import shader_parser # For actually parsing the thing...
-import shader_mutator
+import shader_mutator # For mutating
+import shader_unparser # For unparsing back to source code...
 
 sys.setrecursionlimit(20000)
 
