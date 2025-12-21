@@ -300,20 +300,29 @@ class Parser:
         return StructField(tname, name, arr)
     '''
 
-    def parse_struct_member(self) -> StructField:
+    def parse_struct_member(self) -> list[StructField]:
         tname = self.parse_type_name()
-        name = self.expect("ID").value
 
-        array_dims = []
-        while self.match("["):
-            if self.match("]"):
-                array_dims.append(None)
-            else:
-                array_dims.append(self.parse_expr(0))
-                self.expect("]")
+        fields = []
+
+        while True:
+            name = self.expect("ID").value
+
+            array_dims = []
+            while self.match("["):
+                if not self.match("]"):
+                    array_dims.append(self.parse_expr(0))
+                    self.expect("]")
+                else:
+                    array_dims.append(None)
+
+            fields.append(StructField(tname, name, array_dims))
+
+            if not self.match(","):
+                break
 
         self.expect(";")
-        return StructField(tname, name, array_dims)
+        return fields
 
     '''
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
@@ -352,10 +361,7 @@ class Parser:
         return VarDecl(type_name, name, array_dims, init)
 
     def parse_struct_specifier(self):
-        if self.peek().kind == "KW" and self.peek().value == "struct":
-            self.advance()
-        else:
-            self.expect("KW", "struct")
+        self.expect("KW", "struct")
 
         name = None
         if self.peek().kind == "ID":
@@ -363,16 +369,10 @@ class Parser:
 
         self.expect("{")
         members = []
+
         while not self.match("}"):
             fields = self.parse_struct_member()
-            members.extend(fields)
-
-            '''
-            if isinstance(fields, Iterable):
-                members.extend(fields)
-            else:
-                members.append(fields)
-            '''
+            members.extend(fields)   # ✅ always safe now
 
         return StructType(name, members)
 

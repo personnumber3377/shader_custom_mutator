@@ -112,15 +112,11 @@ def _unparse_declarator_fragment(d) -> str:
     return frag
 
 
-def _unparse_struct_body(struct_type) -> str:
-    """
-    struct_type is expected to look like StructType(name, members)
-    where members are StructField(TypeName, name, array_size)
-    """
+def _unparse_struct_body(struct_type: StructType) -> str:
     out = "{\n"
     for m in struct_type.members:
         line = f"  {unparse_type(m.type_name)} {m.name}"
-        if getattr(m, "array_size", None) is not None:
+        if m.array_size is not None:
             line += f"[{unparse_expr(m.array_size)}]"
         out += line + ";\n"
     out += "}"
@@ -288,7 +284,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
             out += f"{item.storage} {item.name} {{\n"
             for m in item.members:
                 line = f"  {unparse_type(m.type_name)} {m.name}"
-                line += unparse_array_dims(m.array_size)
+                line += unparse_array_dims(m.array_dims)
                 out += line + ";\n"
             out += "}"
             if item.instance:
