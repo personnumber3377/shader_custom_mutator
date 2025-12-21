@@ -11,6 +11,23 @@ from shader_ast import *
 def _is_dim_list(x) -> bool:
     return isinstance(x, list)
 
+def _flatten_members(members):
+    """
+    Accepts:
+      - List[StructField]
+      - List[List[StructField]]
+      - mixed (because fuzzing 😈)
+
+    Returns:
+      - flat List[StructField]
+    """
+    out = []
+    for m in members:
+        if isinstance(m, list):
+            out.extend(m)
+        else:
+            out.append(m)
+    return out
 
 def unparse_expr(e: Expr) -> str:
     if isinstance(e, Identifier):
@@ -94,18 +111,19 @@ def unparse_array_suffix(dims) -> str:
 
 def _unparse_struct_body(struct_type: StructType) -> str:
     out = "{\n"
-    for m in struct_type.members:
+
+    members = _flatten_members(struct_type.members)
+
+    for m in members:
         line = f"  {unparse_type(m.type_name)} {m.name}"
 
-        # Your StructField currently declares array_size: Optional[Expr]
-        # but your parser sometimes stores a list in it (multi-dim).
         dims = getattr(m, "array_dims", None)
         if dims is None:
             dims = getattr(m, "array_size", None)
 
         line += unparse_array_suffix(dims)
-
         out += line + ";\n"
+
     out += "}"
     return out
 
