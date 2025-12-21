@@ -10,6 +10,7 @@ def run_parse_tests(): # Run the parse tests..
 	test_files = os.listdir(TEST_DIR)
 	for fn in test_files:
 		complete_fn = TEST_DIR + fn # Add the directory name too...
+		print("Running "+str(complete_fn)+" ...")
 		fh = open(complete_fn, "r")
 		shader_src = fh.read()
 		fh.close()
