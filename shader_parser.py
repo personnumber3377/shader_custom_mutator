@@ -5,6 +5,7 @@ from typing import List, Optional, Union
 from shader_lexer import Token, lex
 from shader_ast import *
 
+from collections.abc import Iterable
 
 class ParseError(Exception):
     pass
@@ -365,6 +366,14 @@ class Parser:
         while not self.match("}"):
             fields = self.parse_struct_member()
             members.extend(fields)
+
+            '''
+            if isinstance(fields, Iterable):
+                members.extend(fields)
+            else:
+                members.append(fields)
+            '''
+
         return StructType(name, members)
 
     def parse_decl_stmt(self) -> DeclStmt:

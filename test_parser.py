@@ -9,16 +9,17 @@ import shader_unparser
 
 def run_parse_tests(only_one=None): # Run the parse tests..
 	if only_one == None:
-		test_files = os.listdir(TEST_DIR)
+		test_files = [TEST_DIR + fn for fn in os.listdir(TEST_DIR)]
 	else:
-		if only_one.startswith(TEST_DIR): # Cut off the thing...
-			only_one = only_one[len(TEST_DIR):]
+		# if only_one.startswith(TEST_DIR): # Cut off the thing...
+		# 	only_one = only_one[len(TEST_DIR):]
 		test_files = [only_one]
 
 	for fn in test_files:
-		complete_fn = TEST_DIR + fn # Add the directory name too...
-		print("Running "+str(complete_fn)+" ...")
-		fh = open(complete_fn, "r")
+		# complete_fn = TEST_DIR + fn # Add the directory name too...
+
+		print("Running "+str(fn)+" ...")
+		fh = open(fn, "r")
 		shader_src = fh.read()
 		fh.close()
 		# Now try to parse into tree and then unparse...
