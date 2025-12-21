@@ -1,6 +1,7 @@
 
 import os
 import sys
+import random
 
 TEST_DIR = "tests/"
 
@@ -24,7 +25,8 @@ def run_parse_tests(only_one=None): # Run the parse tests..
 		fh.close()
 		# Now try to parse into tree and then unparse...
 		tree = shader_parser.parse_to_tree(shader_src)
-		tree = shader_mutator.mutate_tree(tree) # Actually mutate the tree
+		rng = random.Random(random.randrange(100000000))
+		tree = shader_mutator.mutate_tree(tree, rng) # Actually mutate the tree
 		unparsed_src = shader_unparser.unparse_tu(tree)
 		print(unparsed_src)
 	return

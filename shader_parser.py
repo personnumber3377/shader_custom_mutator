@@ -96,9 +96,9 @@ class Parser:
 
         while True:
             t = self.peek()
-            print(t)
+            # print(t)
             if t.kind == "OP" and t.value in ("++", "--"):
-                print("stuff")
+                # print("stuff")
                 # postfix binds very tightly
                 if PRECEDENCE["CALL"] < min_prec:
                     break
@@ -378,9 +378,9 @@ class Parser:
 
     def parse_decl_stmt(self) -> DeclStmt:
         # print("self.peek().value: "+str(self.peek().value))
-        print("self.peek().value: "+str(self.peek().value))
+        # print("self.peek().value: "+str(self.peek().value))
         if self.peek().value == "struct":
-            print("poopoo")
+            # print("poopoo")
             struct_type = self.parse_struct_specifier()
 
             declarators = []
@@ -460,7 +460,7 @@ class Parser:
 
     def parse_stmt(self) -> Stmt:
         t = self.peek()
-        print(t)
+        # print(t)
 
         # switch statements
         if t.value == "switch": # This originally was t.kind == "KW"
