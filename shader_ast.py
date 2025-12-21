@@ -1,59 +1,45 @@
-# shader_ast.py
 from __future__ import annotations
-from dataclasses import dataclass, field
-from typing import List, Optional, Union
+from dataclasses import dataclass
+from typing import List, Optional
+
+# --- Types ---
+
+@dataclass
+class TypeName:
+    name: str
+    precision: Optional[str] = None
+    qualifiers: List[str] = None
+
+    def __post_init__(self):
+        if self.qualifiers is None:
+            self.qualifiers = []
 
 
-# -----------------
-# Base nodes
-# -----------------
+# --- Expressions ---
 
-class Node:
-    pass
-
-
-class Expr(Node):
-    pass
-
-
-class Stmt(Node):
-    pass
-
-
-class TopLevel(Node):
-    pass
-
-
-# -----------------
-# Expressions
-# -----------------
+class Expr: ...
 
 @dataclass
 class Identifier(Expr):
     name: str
 
-
 @dataclass
 class IntLiteral(Expr):
     value: int
-
 
 @dataclass
 class FloatLiteral(Expr):
     value: float
 
-
 @dataclass
 class BoolLiteral(Expr):
     value: bool
-
 
 @dataclass
 class UnaryExpr(Expr):
     op: str
     operand: Expr
-    postfix: bool = False  # True for x++/x--
-
+    postfix: bool = False
 
 @dataclass
 class BinaryExpr(Expr):
@@ -61,74 +47,75 @@ class BinaryExpr(Expr):
     left: Expr
     right: Expr
 
-
 @dataclass
 class TernaryExpr(Expr):
     cond: Expr
     then_expr: Expr
     else_expr: Expr
 
-
 @dataclass
 class CallExpr(Expr):
     callee: Expr
     args: List[Expr]
-
 
 @dataclass
 class IndexExpr(Expr):
     base: Expr
     index: Expr
 
-
 @dataclass
 class MemberExpr(Expr):
     base: Expr
-    member: str  # field or swizzle
+    member: str
 
 
-# -----------------
-# Types / Decls (simple)
-# -----------------
+# --- Decls / Struct ---
 
 @dataclass
-class TypeName(Node):
+class StructField:
+    type_name: TypeName
     name: str
-    precision: Optional[str] = None  # lowp/mediump/highp
-    qualifiers: List[str] = field(default_factory=list)  # const, in, out, uniform, etc.
+    array_size: Optional[Expr] = None
+
+@dataclass
+class StructType:
+    name: Optional[str]
+    members: List[StructField]
 
 
 @dataclass
-class VarDecl(Node):
+class Declarator:
+    name: str
+    base_type: object
+    array_size: Optional[Expr] = None
+    init: Optional[Expr] = None
+
+@dataclass
+class VarDecl:
     type_name: TypeName
     name: str
     array_size: Optional[Expr] = None
     init: Optional[Expr] = None
 
 
-# -----------------
-# Statements
-# -----------------
+# --- Statements ---
+
+class Stmt: ...
 
 @dataclass
-class EmptyStmt(Stmt):
-    pass
-
+class EmptyStmt(Stmt): ...
 
 @dataclass
 class ExprStmt(Stmt):
     expr: Expr
 
-
 @dataclass
 class DeclStmt(Stmt):
     decls: List[VarDecl]
 
-
 @dataclass
 class BlockStmt(Stmt):
     stmts: List[Stmt]
-
 
 @dataclass
 class IfStmt(Stmt):
@@ -136,62 +123,40 @@ class IfStmt(Stmt):
     then_branch: Stmt
     else_branch: Optional[Stmt] = None
 
-
 @dataclass
 class WhileStmt(Stmt):
     cond: Expr
     body: Stmt
-
 
 @dataclass
 class DoWhileStmt(Stmt):
     body: Stmt
     cond: Expr
 
-
 @dataclass
 class ForStmt(Stmt):
-    init: Optional[Union[DeclStmt, ExprStmt]]  # GLSL allows decl or expr or empty
+    init: Optional[Stmt]
     cond: Optional[Expr]
     loop: Optional[Expr]
     body: Stmt
 
-
 @dataclass
 class ReturnStmt(Stmt):
-    expr: Optional[Expr] = None
-
-
-@dataclass
-class BreakStmt(Stmt):
-    pass
-
+    expr: Optional[Expr]
 
 @dataclass
-class ContinueStmt(Stmt):
-    pass
-
+class BreakStmt(Stmt): ...
 
 @dataclass
-class DiscardStmt(Stmt):
-    pass
-
-
-# -----------------
-# Top-level constructs
-# -----------------
+class ContinueStmt(Stmt): ...
 
 @dataclass
-class StructField(Node):
-    type_name: TypeName
-    name: str
-    array_size: Optional[Expr] = None
+class DiscardStmt(Stmt): ...
 
 
-@dataclass
-class StructDef(TopLevel):
-    name: str
-    fields: List[StructField]
+# --- Top level ---
+
+class TopLevel: ...
 
 @dataclass
 class StructDecl:
@@ -199,25 +164,33 @@ class StructDecl:
     declarators: List[Declarator]   # may be empty
 
 @dataclass
-class FunctionParam(Node):
+class StructDef(TopLevel):
+    name: str
+    fields: List[StructField]
+
+@dataclass
+class FunctionParam:
     type_name: TypeName
     name: str
     array_size: Optional[Expr] = None
-
 
 @dataclass
 class FunctionDef(TopLevel):
     return_type: TypeName
     name: str
     params: List[FunctionParam]
-    body: BlockStmt  # for prototype, can be empty block or None if you want
-
+    body: BlockStmt
 
 @dataclass
 class GlobalDecl(TopLevel):
     decls: List[VarDecl]
 
+# This is the "struct specifier + declarators" case:
+@dataclass
+class Declaration(TopLevel):
+    type: object               # can be StructType or other
+    declarators: List[Declarator]
 
 @dataclass
-class TranslationUnit(Node):
+class TranslationUnit:
     items: List[TopLevel]

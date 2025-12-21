@@ -2,7 +2,7 @@
 import os
 import sys
 
-TEST_DIR = "./tests/"
+TEST_DIR = "tests/"
 
 import shader_parser # The parser...
 import shader_unparser
@@ -11,6 +11,8 @@ def run_parse_tests(only_one=None): # Run the parse tests..
 	if only_one == None:
 		test_files = os.listdir(TEST_DIR)
 	else:
+		if only_one.startswith(TEST_DIR): # Cut off the thing...
+			only_one = only_one[len(TEST_DIR):]
 		test_files = [only_one]
 
 	for fn in test_files:
