@@ -22,6 +22,15 @@ BUILTIN_NUMERIC_TYPES = {
     "mat2", "mat3", "mat4",
 }
 
+MAX_EXPR_DEPTH = 4
+
+NUMERIC_LITERALS = {
+    "int":   lambda r: IntLiteral(r.randrange(-10, 10)),
+    "uint":  lambda r: IntLiteral(r.randrange(0, 10)),
+    "float": lambda r: FloatLiteral(r.choice([0.0, 0.5, 1.0, -1.0, 2.0])),
+    "bool":  lambda r: BoolLiteral(r.choice([True, False])),
+}
+
 def deepclone(x):
     # dataclasses + simple classes: copy.deepcopy is fine
     return copy.deepcopy(x)
@@ -216,6 +225,128 @@ def all_struct_field_names(env: Env, struct_name: str) -> List[str]:
         return [f.name for f in env.interface_blocks[struct_name]]
     return []
 
+# ----------------------------
+# Mutations: generate expressions
+# ----------------------------
+
+def gen_expr(
+    want: Optional[TypeInfo],
+    scope: Scope,
+    env: Env,
+    rng: random.Random,
+    depth: int = 0,
+) -> Expr:
+
+    if depth >= MAX_EXPR_DEPTH:
+        return gen_leaf(want, scope, env, rng)
+
+    choices = []
+
+    # leaf
+    choices.append(lambda: gen_leaf(want, scope, env, rng))
+
+    # unary
+    if want and want.name in ("int", "float", "bool"):
+        choices.append(lambda: gen_unary(want, scope, env, rng, depth))
+
+    # binary
+    if want and want.name in ("int", "float", "bool"):
+        choices.append(lambda: gen_binary(want, scope, env, rng, depth))
+
+    # ternary (boolean condition)
+    if want:
+        choices.append(lambda: gen_ternary(want, scope, env, rng, depth))
+
+    # function call
+    choices.append(lambda: gen_call(want, scope, env, rng, depth))
+
+    # struct member access
+    choices.append(lambda: gen_member_access(want, scope, env, rng, depth))
+
+    return rng.choice(choices)()
+
+def gen_leaf(want, scope, env, rng):
+    # Prefer existing variables
+    vars = candidates_by_type(scope, env, want)
+    if vars and rng.random() < 0.7:
+        return Identifier(rng.choice(vars))
+
+    # Literal fallback
+    if want and want.name in NUMERIC_LITERALS:
+        return NUMERIC_LITERALS[want.name](rng)
+
+    # Totally random fallback
+    return IntLiteral(rng.randrange(10))
+
+BIN_OPS = {
+    "int":   ["+", "-", "*", "/", "%"],
+    "float": ["+", "-", "*", "/"],
+    "bool":  ["&&", "||"],
+}
+
+def gen_binary(want, scope, env, rng, depth):
+    op = rng.choice(BIN_OPS.get(want.name, ["+"]))
+
+    left = gen_expr(want, scope, env, rng, depth + 1)
+    right = gen_expr(want, scope, env, rng, depth + 1)
+
+    return BinaryExpr(op, left, right)
+
+def gen_ternary(want, scope, env, rng, depth):
+    cond = gen_expr(TypeInfo("bool"), scope, env, rng, depth + 1)
+    t = gen_expr(want, scope, env, rng, depth + 1)
+    f = gen_expr(want, scope, env, rng, depth + 1)
+    return TernaryExpr(cond, t, f)
+
+def gen_call(want, scope, env, rng, depth):
+    candidates = []
+
+    for fname, (ret, params) in env.funcs.items():
+        if want is None or ret.name == want.name:
+            candidates.append((fname, params))
+
+    if not candidates:
+        return gen_leaf(want, scope, env, rng)
+
+    fname, params = rng.choice(candidates)
+    args = [gen_expr(pt, scope, env, rng, depth + 1) for pt in params]
+
+    return CallExpr(Identifier(fname), args)
+
+def gen_member_access(want, scope, env, rng, depth):
+    candidates = []
+
+    for name, ti in scope.all_vars().items():
+        if ti.name in env.struct_defs:
+            fields = env.struct_defs[ti.name]
+            for f in fields:
+                if want is None or typename_to_typeinfo(f.type_name).name == want.name:
+                    candidates.append((name, f.name))
+
+    if not candidates:
+        return gen_leaf(want, scope, env, rng)
+
+    var, field = rng.choice(candidates)
+    return MemberExpr(Identifier(var), field)
+
+def gen_if(scope, env, rng):
+    cond = gen_expr(TypeInfo("bool"), scope, env, rng)
+    thenb = BlockStmt([ExprStmt(gen_expr(None, scope, env, rng))])
+    elseb = BlockStmt([ExprStmt(gen_expr(None, scope, env, rng))])
+    return IfStmt(cond, thenb, elseb)
+
+def gen_switch(scope, env, rng):
+    expr = gen_expr(TypeInfo("int"), scope, env, rng)
+
+    cases = []
+    for i in range(rng.randint(1, 3)):
+        body = [ExprStmt(gen_expr(None, scope, env, rng)), BreakStmt()]
+        cases.append(CaseStmt(IntLiteral(i), body))
+
+    if coin(rng, 0.5):
+        cases.append(DefaultStmt([BreakStmt()]))
+
+    return SwitchStmt(expr, BlockStmt(cases))
 
 # ----------------------------
 # Mutations: expressions
@@ -225,6 +356,12 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     """
     Returns possibly-mutated expression.
     """
+
+    # Randomly also generate new statements...
+
+    if coin(rng, 0.15):
+        return gen_expr(None, scope, env, rng)
+
     # Identifier replacement (type-aware)
     if isinstance(e, Identifier):
         ti = scope.lookup(e.name) or env.globals.get(e.name)
@@ -378,6 +515,10 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
         # create a simple initializer
         # (for fuzzing we don't care if types mismatch sometimes)
         v2.init = rng.choice([IntLiteral(0), IntLiteral(1), FloatLiteral(1.0), BoolLiteral(True)])
+    else:
+        if v2.init is None:
+            ti = vardecl_to_typeinfo(v2)
+            v2.init = gen_expr(ti, scope, env, rng)
 
     # mutate array dims
     if hasattr(v2, "array_dims"):
@@ -400,8 +541,13 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
             out_stmts.append(mutate_stmt(st, rng, child, env))
 
             # Occasionally insert an extra harmless stmt
-            if coin(rng, 0.03):
+            if coin(rng, 0.10):
                 out_stmts.append(ExprStmt(IntLiteral(rng.randrange(10))))
+        # Add a new expression too maybe???
+        if coin(rng, 0.30):
+		    want = TypeInfo("int")
+		    expr = gen_expr(want, child, env, rng)
+		    out_stmts.append(ExprStmt(expr))
 
         # shuffle within block rarely (can break semantics but fine for fuzzing)
         if len(out_stmts) > 2 and coin(rng, 0.05):
@@ -426,6 +572,8 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
         return ExprStmt(mutate_expr(s.expr, rng, scope, env))
 
     if isinstance(s, IfStmt):
+        if coin(rng, 0.10): # Generate new thing...
+            return gen_if(scope, env, rng)
         cond = mutate_expr(s.cond, rng, scope, env)
         thenb = mutate_stmt(s.then_branch, rng, Scope(scope), env)
         elseb = mutate_stmt(s.else_branch, rng, Scope(scope), env) if s.else_branch else None
@@ -461,6 +609,8 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
 
     # Switch / case / default (your AST uses plain classes, not dataclasses)
     if isinstance(s, SwitchStmt):
+        if coin(rng, 0.10): # Generate new thing...
+            return gen_switch(scope, env, rng)
         expr = mutate_expr(s.expr, rng, scope, env)
         body = mutate_stmt(s.body, rng, Scope(scope), env)
         return SwitchStmt(expr, body)
