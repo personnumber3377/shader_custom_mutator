@@ -22,14 +22,21 @@ sys.setrecursionlimit(50000)
 
 DEBUG = False
 
+def save_crashing(buffer): # Saves the crashing file for debugging...
+    fh = open("/home/oof/crashing_input.bin", "wb")
+    fh.write(buffer)
+    fh.close()
+    return
+
 # -----------------------------
 # Config
 # -----------------------------
 
 HEADER_SIZE = 128          # bytes reserved for directives / comments
 MAX_HEADER_MUT = 16        # max bytes to mutate in header
-ENABLE_FALLBACK = True    # generic byte fallback if AST path fails
+# ENABLE_FALLBACK = True    # generic byte fallback if AST path fails
 
+ENABLE_FALLBACK = False
 
 _initialized = False
 
@@ -155,6 +162,7 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
 
     except Exception:
         if not ENABLE_FALLBACK:
+            save_crashing(buf)
             raise
 
         # Fallback: byte-level mutation of entire buffer
