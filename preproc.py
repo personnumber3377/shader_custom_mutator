@@ -126,8 +126,8 @@ def main():
     out_fuzz.mkdir(parents=True, exist_ok=True)
 
     for p in sorted(in_dir.iterdir()):
-        if p.suffix not in {".glsl", ".vert", ".frag", ".comp"}:
-            continue
+        # if p.suffix not in {".glsl", ".vert", ".frag", ".comp"}:
+        #     continue
 
         try:
             process_shader(p, out_clean, out_fuzz)
