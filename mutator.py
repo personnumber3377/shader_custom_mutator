@@ -214,6 +214,9 @@ if __name__ == "__main__":
 
     for _ in range(args.iters):
         buf = fuzz(buf, None, 1_000_000)
-
+        # Save mutated output...
+        fh = open("mutated.bin", "wb")
+        fh.write(buf)
+        fh.close()
     with open(args.output, "wb") as f:
         f.write(buf)

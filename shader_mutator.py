@@ -229,21 +229,28 @@ def all_struct_field_names(env: Env, struct_name: str) -> List[str]:
 # Mutations: generate expressions
 # ----------------------------
 
+# What kind of expression?
+
+class ExprKind:
+    RVALUE = "rvalue"
+    LVALUE = "lvalue"
+
 def gen_expr(
     want: Optional[TypeInfo],
     scope: Scope,
     env: Env,
     rng: random.Random,
     depth: int = 0,
+    kind=ExprKind.RVALUE,
 ) -> Expr:
 
     if depth >= MAX_EXPR_DEPTH:
-        return gen_leaf(want, scope, env, rng)
+        return gen_leaf(want, scope, env, rng, kind)
 
     choices = []
 
     # leaf
-    choices.append(lambda: gen_leaf(want, scope, env, rng))
+    choices.append(lambda: gen_leaf(want, scope, env, rng, kind))
 
     # unary
     if want and want.name in ("int", "float", "bool"):
@@ -265,18 +272,27 @@ def gen_expr(
 
     return rng.choice(choices)()
 
-def gen_leaf(want, scope, env, rng):
-    # Prefer existing variables
+def gen_leaf(want, scope, env, rng, kind):
     vars = candidates_by_type(scope, env, want)
-    if vars and rng.random() < 0.7:
-        return Identifier(rng.choice(vars))
 
-    # Literal fallback
+    if vars:
+        name = rng.choice(vars)
+        return Identifier(name)
+
+    if kind == ExprKind.LVALUE:
+        # cannot generate literal as lvalue
+        return Identifier(rng.choice(list(scope.all_vars().keys())))
+
     if want and want.name in NUMERIC_LITERALS:
         return NUMERIC_LITERALS[want.name](rng)
 
-    # Totally random fallback
-    return IntLiteral(rng.randrange(10))
+    return IntLiteral(0)
+
+def gen_assignment_stmt(scope, env, rng):
+    lhs = gen_expr(None, scope, env, rng, kind=ExprKind.LVALUE)
+    rhs = gen_expr(None, scope, env, rng)
+    op = rng.choice(["=", "+=", "-=", "*=", "/="])
+    return ExprStmt(BinaryExpr(op, lhs, rhs))
 
 BIN_OPS = {
     "int":   ["+", "-", "*", "/", "%"],
@@ -318,7 +334,7 @@ def gen_call(want, scope, env, rng, depth):
             candidates.append((fname, params))
 
     if not candidates:
-        return gen_leaf(want, scope, env, rng)
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
 
     fname, params = rng.choice(candidates)
     args = [gen_expr(pt, scope, env, rng, depth + 1) for pt in params]
@@ -326,20 +342,17 @@ def gen_call(want, scope, env, rng, depth):
     return CallExpr(Identifier(fname), args)
 
 def gen_member_access(want, scope, env, rng, depth):
-    candidates = []
+    vars = [(n, ti) for n, ti in scope.all_vars().items()
+            if ti.name in env.struct_defs]
 
-    for name, ti in scope.all_vars().items():
-        if ti.name in env.struct_defs:
-            fields = env.struct_defs[ti.name]
-            for f in fields:
-                if want is None or typename_to_typeinfo(f.type_name).name == want.name:
-                    candidates.append((name, f.name))
+    if not vars:
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
 
-    if not candidates:
-        return gen_leaf(want, scope, env, rng)
+    name, ti = rng.choice(vars)
+    fields = env.struct_defs[ti.name]
 
-    var, field = rng.choice(candidates)
-    return MemberExpr(Identifier(var), field)
+    f = rng.choice(fields)
+    return MemberExpr(Identifier(name), f.name)
 
 def gen_if(scope, env, rng):
     cond = gen_expr(TypeInfo("bool"), scope, env, rng)
@@ -370,9 +383,12 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     """
 
     # Randomly also generate new statements...
-
     if coin(rng, 0.15):
         return gen_expr(None, scope, env, rng)
+
+    # Ban comma operators... this would lead to silly statements like "srcValue(((srcValue , srcValue) , (srcValue , srcValue)))"...
+    if isinstance(e, BinaryExpr) and e.op == ",":
+        return e.left  # or e.right
 
     # Identifier replacement (type-aware)
     if isinstance(e, Identifier):
@@ -424,7 +440,7 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
                 ["+", "-", "*", "/"],
                 ["<", "<=", ">", ">=", "==", "!="],
                 ["&&", "||"],
-                ["=", "+=", "-=", "*=", "/="],
+                # ["=", "+=", "-=", "*=", "/="], # Allowing these leads to silly source code snippets like "(main()(srcValue.g) *= srcValue.g);"
             ]
             for b in buckets:
                 if op in b:
@@ -471,7 +487,8 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     # Member access: obj.x -> obj.y if obj is known struct/interface type
     if isinstance(e, MemberExpr):
         base = mutate_expr(e.base, rng, scope, env)
-
+        if not isinstance(base, Identifier):
+            return e # Just return the normal thing...
         # best-effort: only when base is Identifier
         if isinstance(base, Identifier):
             bti = scope.lookup(base.name) or env.globals.get(base.name)
@@ -557,9 +574,13 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
                 out_stmts.append(ExprStmt(IntLiteral(rng.randrange(10))))
         # Add a new expression too maybe???
         if coin(rng, 0.30):
+            '''
             want = TypeInfo("int")
             expr = gen_expr(want, child, env, rng)
             out_stmts.append(ExprStmt(expr))
+            '''
+
+            out_stmts.append(gen_assignment_stmt(child, env, rng))
 
         # shuffle within block rarely (can break semantics but fine for fuzzing)
         if len(out_stmts) > 2 and coin(rng, 0.05):
