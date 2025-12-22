@@ -545,9 +545,9 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
                 out_stmts.append(ExprStmt(IntLiteral(rng.randrange(10))))
         # Add a new expression too maybe???
         if coin(rng, 0.30):
-		    want = TypeInfo("int")
-		    expr = gen_expr(want, child, env, rng)
-		    out_stmts.append(ExprStmt(expr))
+            want = TypeInfo("int")
+            expr = gen_expr(want, child, env, rng)
+            out_stmts.append(ExprStmt(expr))
 
         # shuffle within block rarely (can break semantics but fine for fuzzing)
         if len(out_stmts) > 2 and coin(rng, 0.05):
