@@ -17,12 +17,18 @@ import shader_unparser
 sys.setrecursionlimit(50000)
 
 # -----------------------------
+# Debug
+# -----------------------------
+
+DEBUG = True
+
+# -----------------------------
 # Config
 # -----------------------------
 
 HEADER_SIZE = 128          # bytes reserved for directives / comments
 MAX_HEADER_MUT = 16        # max bytes to mutate in header
-ENABLE_FALLBACK = True    # generic byte fallback if AST path fails
+ENABLE_FALLBACK = not DEBUG    # generic byte fallback if AST path fails
 
 
 _initialized = False

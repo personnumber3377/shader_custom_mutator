@@ -30,7 +30,7 @@ def mutate_once(buf: bytes, rng: random.Random) -> bytes | None:
     try:
         src = body.rstrip(b"\x00").decode("utf-8", errors="ignore")
         tree = shader_parser.parse_to_tree(src)
-        mutated = shader_mutator.mutate_tree(tree, rng)
+        mutated = shader_mutator.mutate_translation_unit(tree, rng)
         new_src = shader_unparser.unparse_tu(mutated)
 
         out = header + new_src.encode("utf-8") + b"\x00"

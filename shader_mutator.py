@@ -616,7 +616,7 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 # Public entrypoint
 # ----------------------------
 
-def mutate_tree(tu: TranslationUnit, rng: random.Random) -> TranslationUnit:
+def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> TranslationUnit:
     """
     High-level mutator: collects env then mutates items.
     Returns a NEW TranslationUnit.
