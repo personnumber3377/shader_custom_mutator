@@ -20,7 +20,7 @@ sys.setrecursionlimit(50000)
 # Debug
 # -----------------------------
 
-DEBUG = True
+DEBUG = False
 
 # -----------------------------
 # Config
@@ -28,7 +28,7 @@ DEBUG = True
 
 HEADER_SIZE = 128          # bytes reserved for directives / comments
 MAX_HEADER_MUT = 16        # max bytes to mutate in header
-ENABLE_FALLBACK = not DEBUG    # generic byte fallback if AST path fails
+ENABLE_FALLBACK = True    # generic byte fallback if AST path fails
 
 
 _initialized = False
@@ -127,7 +127,8 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
 
     try:
         if len(buf) <= HEADER_SIZE:
-            raise ValueError("buffer too small")
+            return bytearray(mutate_bytes_generic(bytes(buf), rng)) # buf
+            # raise ValueError("buffer too small")
 
         header = bytes(buf[:HEADER_SIZE])
         body = bytes(buf[HEADER_SIZE:])
