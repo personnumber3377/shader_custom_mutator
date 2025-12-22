@@ -41,6 +41,14 @@ def coin(rng: random.Random, p: float) -> bool:
 def choose(rng: random.Random, xs: List):
     return xs[rng.randrange(len(xs))] if xs else None
 
+def has_side_effect(e: Expr) -> bool:
+    if isinstance(e, (CallExpr,)):
+        return True
+    if isinstance(e, UnaryExpr) and e.op in ("++", "--"):
+        return True
+    if isinstance(e, BinaryExpr) and e.op in ("=", "+=", "-=", "*=", "/="):
+        return True
+    return False
 
 # ----------------------------
 # Type info helpers
@@ -383,8 +391,8 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     """
 
     # Randomly also generate new statements...
-    if coin(rng, 0.15):
-        return gen_expr(None, scope, env, rng)
+    if coin(rng, 0.05):
+        return gen_expr(None, scope, env, rng, depth=1)
 
     # Ban comma operators... this would lead to silly statements like "srcValue(((srcValue , srcValue) , (srcValue , srcValue)))"...
     if isinstance(e, BinaryExpr) and e.op == ",":
@@ -580,7 +588,14 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
             out_stmts.append(ExprStmt(expr))
             '''
 
-            out_stmts.append(gen_assignment_stmt(child, env, rng))
+
+            # Maybe something like this here???
+
+            e = gen_expr(None, child, env, rng)
+            if has_side_effect(e):
+                out_stmts.append(ExprStmt(e))
+            
+            # out_stmts.append(gen_assignment_stmt(child, env, rng))
 
         # shuffle within block rarely (can break semantics but fine for fuzzing)
         if len(out_stmts) > 2 and coin(rng, 0.05):
