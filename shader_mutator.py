@@ -292,6 +292,18 @@ def gen_binary(want, scope, env, rng, depth):
 
     return BinaryExpr(op, left, right)
 
+UNARY_OPS = {
+    "int": ["+", "-", "~"],
+    "float": ["+", "-"],
+    "bool": ["!"],
+}
+
+def gen_unary(want, scope, env, rng, depth):
+    op = rng.choice(UNARY_OPS.get(want.name, ["+"]))
+
+    operand = gen_expr(want, scope, env, rng, depth + 1)
+    return UnaryExpr(op, operand, postfix=False)
+
 def gen_ternary(want, scope, env, rng, depth):
     cond = gen_expr(TypeInfo("bool"), scope, env, rng, depth + 1)
     t = gen_expr(want, scope, env, rng, depth + 1)
