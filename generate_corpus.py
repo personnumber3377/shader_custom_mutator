@@ -12,7 +12,7 @@ import shader_mutator
 import shader_unparser
 
 HEADER_SIZE = 128
-MAX_SHADER_SIZE = 64 * 1024  # keep sane
+MAX_SHADER_SIZE = 1000 * 1000 # 64 * 1024  # keep sane # Maximum 1mb...
 
 
 def mutate_once(buf: bytes, rng: random.Random) -> bytes | None:
