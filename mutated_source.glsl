@@ -143,4 +143,3 @@ struct foo {
   float c[100];
 };
 
- 
