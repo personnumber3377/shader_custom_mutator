@@ -385,7 +385,7 @@ def gen_switch(scope, env, rng):
 # Mutations: structure generation
 # ----------------------------
 
-def gen_random_typename(rng) # Creates a random typename. Used for generating structs...
+def gen_random_typename(rng): # Creates a random typename. Used for generating structs...
     return rng.choice()
 
 def gen_random_typename(rng): # Creates a random structfield. Used for generating structs...
@@ -393,12 +393,12 @@ def gen_random_typename(rng): # Creates a random structfield. Used for generatin
 
 def gen_struct_definition(new_items, rng, env):
     name = f"FuzzStruct{rng.randrange(1000)}"
-    '''
+    
     fields = [
         StructField(TypeName("float"), "x"),
         StructField(TypeName("int"), "y"),
     ]
-    '''
+    
 
     # Add the elements of the struct...
 
