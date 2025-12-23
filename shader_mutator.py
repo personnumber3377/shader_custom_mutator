@@ -382,6 +382,33 @@ def gen_switch(scope, env, rng):
     return SwitchStmt(expr, BlockStmt(cases))
 
 # ----------------------------
+# Mutations: structure generation
+# ----------------------------
+
+def gen_random_typename(rng) # Creates a random typename. Used for generating structs...
+    return rng.choice()
+
+def gen_random_typename(rng): # Creates a random structfield. Used for generating structs...
+    return 
+
+def gen_struct_definition(new_items, rng, env):
+    name = f"FuzzStruct{rng.randrange(1000)}"
+    '''
+    fields = [
+        StructField(TypeName("float"), "x"),
+        StructField(TypeName("int"), "y"),
+    ]
+    '''
+
+    # Add the elements of the struct...
+
+
+
+    new_items.insert(0, StructDef(name, fields))
+    env.struct_defs[name] = fields
+
+
+# ----------------------------
 # Mutations: expressions
 # ----------------------------
 
@@ -714,6 +741,7 @@ def mutate_struct_fields(fields: List[StructField], rng: random.Random, scope: S
 # ----------------------------
 
 def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
+
     # StructDef
     if isinstance(item, StructDef):
         # mutate fields
@@ -826,6 +854,12 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     new_items: List[TopLevel] = []
     for item in tu2.items:
         new_items.append(mutate_toplevel(item, rng, env))
+
+    # Structural additions etc...
+
+    # Add struct?
+    if coin(rng, 0.02):
+        gen_struct_definition(new_items, rng, env)
 
     # occasional top-level reorder (dangerous but good for fuzzing)
     if len(new_items) > 2 and coin(rng, 0.03):
