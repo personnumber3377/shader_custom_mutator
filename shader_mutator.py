@@ -100,7 +100,7 @@ def gen_struct_vardecl(scope: Scope, env: Env, rng: random.Random) -> Optional[D
     if coin(rng, 0.7):
         init = gen_constructor_expr(ti, scope, env, rng)
 
-    vd = VarDecl(TypeName(sname), vname, init=init)
+    vd = VarDecl(TypeName(sname), vname, init=init, array_dims=None)
     return DeclStmt([vd])
 
 # ----------------------------
@@ -313,12 +313,12 @@ def gen_expr(
     # composite type (matrixes etc...)
 
     if want is None and coin(rng, 0.9): # 90% chance of trying to generatae some inferred type...
-    want = rng.choice([
-        TypeInfo("float"),
-        TypeInfo("vec4"),
-        TypeInfo("ivec2"),
-        TypeInfo(rng.choice(list(env.struct_defs.keys()))) if env.struct_defs else TypeInfo("float")
-    ])
+        want = rng.choice([
+            TypeInfo("float"),
+            TypeInfo("vec4"),
+            TypeInfo("ivec2"),
+            TypeInfo(rng.choice(list(env.struct_defs.keys()))) if env.struct_defs else TypeInfo("float")
+        ])
 
     if want and is_composite(want, env) and coin(rng, 0.90): # 30 percent change to to something like this...
         print("Hit the thing...")
