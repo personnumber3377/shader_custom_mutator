@@ -24,6 +24,17 @@ BUILTIN_NUMERIC_TYPES = {
 
 MAX_EXPR_DEPTH = 4
 
+MATRIX_TYPES = ["mat2", "mat3", "mat4"]
+
+VECTOR_TYPES = {
+    "bool":  ["bvec2", "bvec3", "bvec4"],
+    "int":   ["ivec2", "ivec3", "ivec4"],
+    "uint":  ["uvec2", "uvec3", "uvec4"],
+    "float": ["vec2", "vec3", "vec4"],
+}
+
+SCALAR_TYPES = ["bool", "int", "uint", "float"]
+
 NUMERIC_LITERALS = {
     "int":   lambda r: IntLiteral(r.randrange(-10, 10)),
     "uint":  lambda r: IntLiteral(r.randrange(0, 10)),
@@ -385,26 +396,84 @@ def gen_switch(scope, env, rng):
 # Mutations: structure generation
 # ----------------------------
 
-def gen_random_typename(rng): # Creates a random typename. Used for generating structs...
-    return rng.choice()
+def weighted_choice(rng, items):
+    total = sum(w for _, w in items)
+    r = rng.uniform(0, total)
+    acc = 0
+    for val, w in items:
+        acc += w
+        if acc >= r:
+            return val
 
-def gen_random_typename(rng): # Creates a random structfield. Used for generating structs...
-    return 
+def gen_random_typename(rng, env, depth=0):
+    """
+    Returns a TypeName or StructType reference.
+    depth limits recursive struct nesting.
+    """
+
+    choices = []
+
+    # Scalars
+    choices += [("scalar", 4)]
+
+    # Vectors
+    choices += [("vector", 4)]
+
+    # Matrices
+    choices += [("matrix", 2)]
+
+    # Existing structs (allow nesting)
+    if env.struct_defs and depth < 2:
+        choices += [("struct", 3)]
+
+    kind = weighted_choice(rng, choices)
+
+    if kind == "scalar":
+        return TypeName(rng.choice(SCALAR_TYPES))
+
+    if kind == "vector":
+        base = rng.choice(list(VECTOR_TYPES.keys()))
+        return TypeName(rng.choice(VECTOR_TYPES[base]))
+
+    if kind == "matrix":
+        return TypeName(rng.choice(MATRIX_TYPES))
+
+    if kind == "struct":
+        name = rng.choice(list(env.struct_defs.keys()))
+        return TypeName(name)
+
+    # Fallback
+    return TypeName("float")
+
+def gen_random_struct_field(rng, env, depth): # Generate random structfield object
+    t = gen_random_typename(rng, env, depth)
+
+    name = f"f_{rng.randrange(10000)}"
+
+    field = StructField(
+        type_name=t,
+        name=name,
+        array_size=None
+    )
+
+    # Occasionally make it an array
+    if rng.random() < 0.25:
+        field.array_size = IntLiteral(rng.choice([1, 2, 3, 4, 8]))
+
+    return field
 
 def gen_struct_definition(new_items, rng, env):
-    name = f"FuzzStruct{rng.randrange(1000)}"
-    
-    fields = [
-        StructField(TypeName("float"), "x"),
-        StructField(TypeName("int"), "y"),
-    ]
-    
+    name = f"FuzzStruct{rng.randrange(100000)}"
 
-    # Add the elements of the struct...
+    field_count = rng.randint(1, 6)
 
+    fields = []
+    for _ in range(field_count):
+        fields.append(gen_random_struct_field(rng, env, depth=0))
 
+    struct = StructDef(name, fields)
 
-    new_items.insert(0, StructDef(name, fields))
+    new_items.insert(0, struct)
     env.struct_defs[name] = fields
 
 
