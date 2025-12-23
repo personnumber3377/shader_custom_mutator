@@ -86,6 +86,23 @@ def is_composite(ti: TypeInfo, env) -> bool:
     n = ti.name
     return is_vector_name(n) or is_matrix_name(n) or is_struct_like(env, n)
 
+def gen_struct_vardecl(scope: Scope, env: Env, rng: random.Random) -> Optional[DeclStmt]:
+    if not env.struct_defs:
+        return None
+
+    sname = rng.choice(list(env.struct_defs.keys()))
+    vname = f"s_{rng.randrange(10000)}"
+
+    ti = TypeInfo(sname)
+    scope.define(vname, ti)
+
+    init = None
+    if coin(rng, 0.7):
+        init = gen_constructor_expr(ti, scope, env, rng)
+
+    vd = VarDecl(TypeName(sname), vname, init=init)
+    return DeclStmt([vd])
+
 # ----------------------------
 # Type info helpers
 # ----------------------------
@@ -294,7 +311,16 @@ def gen_expr(
     choices = []
 
     # composite type (matrixes etc...)
-    if want and is_composite(want, env) and coin(rng, 0.30): # 30 percent change to to something like this...
+
+    if want is None and coin(rng, 0.9): # 90% chance of trying to generatae some inferred type...
+    want = rng.choice([
+        TypeInfo("float"),
+        TypeInfo("vec4"),
+        TypeInfo("ivec2"),
+        TypeInfo(rng.choice(list(env.struct_defs.keys()))) if env.struct_defs else TypeInfo("float")
+    ])
+
+    if want and is_composite(want, env) and coin(rng, 0.90): # 30 percent change to to something like this...
         print("Hit the thing...")
         ctor = gen_constructor_expr(want, scope, env, rng)
         if ctor:
@@ -730,7 +756,10 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
 
             # Occasionally insert an extra harmless stmt
             if coin(rng, 0.10):
-                out_stmts.append(ExprStmt(IntLiteral(rng.randrange(10))))
+                # out_stmts.append(ExprStmt(IntLiteral(rng.randrange(10))))
+                sd = gen_struct_vardecl(child, env, rng)
+                if sd:
+                    out_stmts.append(sd)
         # Add a new expression too maybe???
         if coin(rng, 0.30):
             '''
