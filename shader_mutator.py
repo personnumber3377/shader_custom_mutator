@@ -61,8 +61,30 @@ def has_side_effect(e: Expr) -> bool:
         return True
     return False
 
-def is_composite(t):
-    return t.name in MATRIX_TYPES
+
+# These next utilities are for creating composite types more smartly...
+
+def is_vector_name(name: str) -> bool:
+    return name in {
+        "vec2","vec3","vec4",
+        "ivec2","ivec3","ivec4",
+        "uvec2","uvec3","uvec4",
+        "bvec2","bvec3","bvec4",
+    }
+
+def is_matrix_name(name: str) -> bool:
+    return name in {"mat2","mat3","mat4"}
+
+def is_struct_like(env, name: str) -> bool:
+    return (name in env.struct_defs) or (name in env.interface_blocks)
+
+def is_composite(ti: TypeInfo, env) -> bool:
+    if ti is None:
+        return False
+    if ti.is_array():
+        return True
+    n = ti.name
+    return is_vector_name(n) or is_matrix_name(n) or is_struct_like(env, n)
 
 # ----------------------------
 # Type info helpers
@@ -272,7 +294,8 @@ def gen_expr(
     choices = []
 
     # composite type (matrixes etc...)
-    if is_composite(want) and coin(0.30): # 30 percent change to to something like this...
+    if want and is_composite(want, env) and coin(rng, 0.30): # 30 percent change to to something like this...
+        print("Hit the thing...")
         ctor = gen_constructor_expr(want, scope, env, rng)
         if ctor:
             return ctor
