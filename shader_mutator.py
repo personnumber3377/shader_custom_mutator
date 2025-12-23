@@ -22,7 +22,7 @@ BUILTIN_NUMERIC_TYPES = {
     "mat2", "mat3", "mat4",
 }
 
-MAX_EXPR_DEPTH = 4
+MAX_EXPR_DEPTH = 10
 
 MATRIX_TYPES = ["mat2", "mat3", "mat4"]
 
@@ -60,6 +60,9 @@ def has_side_effect(e: Expr) -> bool:
     if isinstance(e, BinaryExpr) and e.op in ("=", "+=", "-=", "*=", "/="):
         return True
     return False
+
+def is_composite(t):
+    return t.name in MATRIX_TYPES
 
 # ----------------------------
 # Type info helpers
@@ -267,6 +270,12 @@ def gen_expr(
         return gen_leaf(want, scope, env, rng, kind)
 
     choices = []
+
+    # composite type (matrixes etc...)
+    if is_composite(want) and coin(0.30): # 30 percent change to to something like this...
+        ctor = gen_constructor_expr(want, scope, env, rng)
+        if ctor:
+            return ctor
 
     # leaf
     choices.append(lambda: gen_leaf(want, scope, env, rng, kind))
@@ -476,6 +485,29 @@ def gen_struct_definition(new_items, rng, env):
     new_items.insert(0, struct)
     env.struct_defs[name] = fields
 
+# This is used to generate more interesting built in types such as matrixes etc...
+def gen_constructor_expr(ti: TypeInfo, scope, env, rng):
+    name = ti.name
+
+    if name.startswith("vec"):
+        n = int(name[-1])
+        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
+        return CallExpr(Identifier(name), args)
+
+    if name.startswith("mat"):
+        n = int(name[-1])
+        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
+        return CallExpr(Identifier(name), args)
+
+    if name in env.struct_defs:
+        fields = env.struct_defs[name]
+        args = []
+        for f in fields:
+            fti = structfield_to_typeinfo(f)
+            args.append(gen_expr(fti, scope, env, rng))
+        return CallExpr(Identifier(name), args)
+
+    return None
 
 # ----------------------------
 # Mutations: expressions
