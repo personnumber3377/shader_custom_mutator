@@ -267,9 +267,17 @@ if __name__ == "__main__":
 
     for _ in range(args.iters):
         buf = fuzz(buf, None, 1_000_000)
+
+        ok, out = run_external_checker(buf, header_len=HEADER_SIZE)
+
+        if not ok: # Produced invalid syntax???
+            print("External syntax checker failed with: "+str(out))
+            exit(1)
+
         # Save mutated output...
         fh = open("mutated.bin", "wb")
         fh.write(buf)
         fh.close()
     with open(args.output, "wb") as f:
         f.write(buf)
+
