@@ -4,6 +4,9 @@ from __future__ import annotations
 import sys
 import random
 import traceback
+import subprocess
+import tempfile
+import os
 from typing import Optional
 
 # -----------------------------
@@ -193,6 +196,56 @@ def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> byt
 # -----------------------------
 # CLI testing helper
 # -----------------------------
+
+def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:
+    """
+    Returns (ok, output).
+    ok == True  -> no ERROR found
+    ok == False -> ERROR found or checker failed
+    """
+
+    # 1) Strip header
+    data = buf[header_len:]
+
+    # 2) Strip final null byte if present
+    if data and data[-1] == 0:
+        data = data[:-1]
+
+    # 3) Write to temp file
+    with tempfile.NamedTemporaryFile(
+        mode="wb",
+        suffix=".glsl",
+        delete=False
+    ) as f:
+        fname = f.name
+        f.write(data)
+
+    try:
+        # 4) Run checker
+        proc = subprocess.run(
+            ["./checker", fname],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            timeout=5.0,
+        )
+
+        output = proc.stdout
+
+        # 5) Check for ERROR
+        if "ERROR" in output:
+            return False, output
+
+        return True, output
+
+    except subprocess.TimeoutExpired:
+        return False, "checker timeout"
+
+    except Exception as e:
+        return False, f"checker exception: {e}"
+
+    finally:
+        os.unlink(fname)
 
 if __name__ == "__main__":
     import argparse
