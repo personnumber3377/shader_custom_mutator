@@ -423,6 +423,10 @@ def array_len_from_typeinfo(ti: TypeInfo) -> int | None:
 MAX_EXPLICIT_ARRAY = 150 # Don't try to generate explicit arrays larger than this, because otherwise it takes two years to generate one...
 
 def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
+
+    if not want: # Just an extra check. TODO: Get rid of this bullshit here...
+        return NUMERIC_LITERALS["int"](rng)
+
     name = want.name
 
     n = array_len_from_typeinfo(want)
@@ -579,7 +583,7 @@ def gen_binary(want, scope, env, rng, depth):
     return BinaryExpr(op, left, right)
 
 UNARY_OPS = {
-    "int": ["+", "-", "~"],
+    "int": ["+", "-"], # This originally had "~" too...
     "float": ["+", "-"],
     "bool": ["!"],
 }

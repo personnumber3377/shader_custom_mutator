@@ -266,11 +266,12 @@ if __name__ == "__main__":
     with open(args.input, "rb") as f:
         data = f.read()
 
-    if len(data) < HEADER_SIZE:
-        data = b"\x00" * HEADER_SIZE + data
+    # if len(data) < HEADER_SIZE:
+    # Always prepend the header...
+    data = b"\x00" * HEADER_SIZE + data
 
     # seed = random.randrange(10000000) # 5 # Modify this to appropriate values when debugging...
-    seed = 300346
+    seed = 5660207
     print("SEED: "+str(seed))
     # init(random.randrange(100000)) # Random shit here...
     

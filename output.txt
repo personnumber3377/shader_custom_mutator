@@ -1,0 +1,706 @@
+SEED: 4229498
+[DEBUG] Mutating this expression here: BinaryExpr(op='<=', left=Identifier(name='linear'), right=FloatLiteral(value=0.0031308))
+[DEBUG] Mutating this expression here: Identifier(name='linear')
+[DEBUG] Mutating this expression here: FloatLiteral(value=0.0031308)
+[DEBUG] Here is the binary stuff here: Identifier(name='linear') and FloatLiteral(value=0.0031308)
+[DEBUG] Mutating this expression here: BinaryExpr(op='*', left=Identifier(name='linear'), right=FloatLiteral(value=12.92))
+[DEBUG] Mutating this expression here: Identifier(name='linear')
+[DEBUG] Mutating this expression here: FloatLiteral(value=12.92)
+[DEBUG] Here is the binary stuff here: Identifier(name='linear') and FloatLiteral(value=12.92)
+[DEBUG] Mutating this expression here: BinaryExpr(op='-', left=BinaryExpr(op='*', left=CallExpr(callee=Identifier(name='pow'), args=[BinaryExpr(op=',', left=Identifier(name='linear'), right=BinaryExpr(op='/', left=FloatLiteral(value=1.0), right=FloatLiteral(value=2.4)))]), right=FloatLiteral(value=1.055)), right=FloatLiteral(value=0.055))
+[DEBUG] Mutating this expression here: BinaryExpr(op='*', left=CallExpr(callee=Identifier(name='pow'), args=[BinaryExpr(op=',', left=Identifier(name='linear'), right=BinaryExpr(op='/', left=FloatLiteral(value=1.0), right=FloatLiteral(value=2.4)))]), right=FloatLiteral(value=1.055))
+[DEBUG] Mutating this expression here: CallExpr(callee=Identifier(name='pow'), args=[BinaryExpr(op=',', left=Identifier(name='linear'), right=BinaryExpr(op='/', left=FloatLiteral(value=1.0), right=FloatLiteral(value=2.4)))])
+[DEBUG] Mutating this expression here: Identifier(name='pow')
+[DEBUG] Mutating this expression here: BinaryExpr(op=',', left=Identifier(name='linear'), right=BinaryExpr(op='/', left=FloatLiteral(value=1.0), right=FloatLiteral(value=2.4)))
+[DEBUG] Mutating this expression here: FloatLiteral(value=1.055)
+[DEBUG] Here is the binary stuff here: CallExpr(callee=Identifier(name='pow'), args=[Identifier(name='linear')]) and FloatLiteral(value=2.11)
+[DEBUG] Mutating this expression here: FloatLiteral(value=0.055)
+[DEBUG] Here is the binary stuff here: BinaryExpr(op='-', left=CallExpr(callee=Identifier(name='pow'), args=[Identifier(name='linear')]), right=FloatLiteral(value=2.11)) and FloatLiteral(value=0.055)
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: ['linear']
+[DEBUG] vars with want==TypeInfo(float, dims=0) : ['linear']
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: ['linear']
+[DEBUG] vars with want==TypeInfo(float, dims=0) : ['linear']
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.5)
+[DEBUG] Mutating this expression here: BinaryExpr(op='-', left=Identifier(name='glFragCoords'), right=MemberExpr(base=Identifier(name='params'), member='dstOffset'))
+[DEBUG] Mutating this expression here: Identifier(name='glFragCoords')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='dstOffset')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Here is the binary stuff here: Identifier(name='glFragCoords') and MemberExpr(base=Identifier(name='params'), member='dstOffset')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='flipX')
+[DEBUG] Now we are generating the bullshit here...
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=-1)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=1)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='imageCoordsOut'), member='x'), right=MemberExpr(base=UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False), member='x'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='imageCoordsOut'), member='x')
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] same: ['imageCoordsOut', 'glFragCoords']
+[DEBUG] Mutating this expression here: MemberExpr(base=UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False), member='x')
+[DEBUG] Mutating this expression here: UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False)
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] Here is the binary stuff here: MemberExpr(base=UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False), member='x') and MemberExpr(base=Identifier(name='glFragCoords'), member='x')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='flipY')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='imageCoordsOut'), member='y'), right=MemberExpr(base=UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False), member='y'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='imageCoordsOut'), member='y')
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] Now we are generating the bullshit here...
+[DEBUG] want: TypeInfo(ivec2, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Mutating this expression here: MemberExpr(base=UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False), member='y')
+[DEBUG] Mutating this expression here: UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False)
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='imageCoordsOut'), member='y') and MemberExpr(base=UnaryExpr(op='-', operand=Identifier(name='imageCoordsOut'), postfix=False), member='y')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='rotateXY')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='imageCoordsOut'), member='xy'), right=MemberExpr(base=Identifier(name='imageCoordsOut'), member='yx'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='imageCoordsOut'), member='xy')
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] same: ['imageCoordsOut', 'glFragCoords']
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='imageCoordsOut'), member='yx')
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] same: ['imageCoordsOut', 'glFragCoords']
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='glFragCoords'), member='xy') and MemberExpr(base=Identifier(name='imageCoordsOut'), member='yx')
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=2.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Mutating this expression here: Identifier(name='imageCoordsOut')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='srcIsSRGB')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='srcValue'), member='r'), right=CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='r')]))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='r')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Mutating this expression here: CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='r')])
+[DEBUG] Mutating this expression here: Identifier(name='linearToSRGB')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='r')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] same: ['srcValue']
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='srcValue'), member='r') and CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='r')])
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='srcValue'), member='g'), right=CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='g')]))
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=-1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.5)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=2.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=-1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Mutating this expression here: CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='g')])
+[DEBUG] Mutating this expression here: Identifier(name='linearToSRGB')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='g')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Here is the binary stuff here: CallExpr(callee=Identifier(name='vec4'), args=[TernaryExpr(cond=BoolLiteral(value=True), then_expr=UnaryExpr(op='+', operand=TernaryExpr(cond=BoolLiteral(value=True), then_expr=FloatLiteral(value=-1.0), else_expr=FloatLiteral(value=0.5)), postfix=False), else_expr=UnaryExpr(op='-', operand=BinaryExpr(op='+', left=FloatLiteral(value=2.0), right=FloatLiteral(value=0.0)), postfix=False)), TernaryExpr(cond=TernaryExpr(cond=BinaryExpr(op='&&', left=BoolLiteral(value=False), right=BoolLiteral(value=True)), then_expr=BoolLiteral(value=False), else_expr=UnaryExpr(op='!', operand=BoolLiteral(value=False), postfix=False)), then_expr=CallExpr(callee=Identifier(name='linearToSRGB'), args=[FloatLiteral(value=2.0)]), else_expr=TernaryExpr(cond=TernaryExpr(cond=BoolLiteral(value=False), then_expr=BoolLiteral(value=True), else_expr=BoolLiteral(value=True)), then_expr=TernaryExpr(cond=BoolLiteral(value=True), then_expr=FloatLiteral(value=-1.0), else_expr=FloatLiteral(value=1.0)), else_expr=UnaryExpr(op='-', operand=FloatLiteral(value=1.0), postfix=False))), TernaryExpr(cond=UnaryExpr(op='!', operand=BoolLiteral(value=False), postfix=False), then_expr=FloatLiteral(value=0.0), else_expr=CallExpr(callee=Identifier(name='linearToSRGB'), args=[FloatLiteral(value=2.0)])), UnaryExpr(op='+', operand=FloatLiteral(value=0.0), postfix=False)]) and CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='g')])
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='srcValue'), member='b'), right=CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='b')]))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='b')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Mutating this expression here: CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='b')])
+[DEBUG] Mutating this expression here: Identifier(name='linearToSRGB')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='b')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Here is the binary stuff here: CallExpr(callee=Identifier(name='linearToSRGB'), args=[MemberExpr(base=Identifier(name='srcValue'), member='b')]) and MemberExpr(base=Identifier(name='srcValue'), member='b')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='premultiplyAlpha')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='*=', left=MemberExpr(base=Identifier(name='srcValue'), member='rgb'), right=MemberExpr(base=Identifier(name='srcValue'), member='a'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='rgb')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='a')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] same: ['srcValue']
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='srcValue'), member='rgb') and MemberExpr(base=Identifier(name='srcValue'), member='a')
+[DEBUG] Mutating this expression here: BinaryExpr(op='&&', left=MemberExpr(base=Identifier(name='params'), member='unmultiplyAlpha'), right=BinaryExpr(op='>', left=MemberExpr(base=Identifier(name='srcValue'), member='a'), right=IntLiteral(value=0)))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='unmultiplyAlpha')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='>', left=MemberExpr(base=Identifier(name='srcValue'), member='a'), right=IntLiteral(value=0))
+[DEBUG] Now we are generating the bullshit here...
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='params'), member='unmultiplyAlpha') and BoolLiteral(value=False)
+[DEBUG] Mutating this expression here: BinaryExpr(op='/=', left=MemberExpr(base=Identifier(name='srcValue'), member='rgb'), right=MemberExpr(base=Identifier(name='srcValue'), member='a'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='rgb')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='srcValue'), member='a')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='srcValue'), member='a') and MemberExpr(base=Identifier(name='srcValue'), member='rgb')
+[DEBUG] want: None
+[DEBUG] Mutating this expression here: BinaryExpr(op='*=', left=Identifier(name='srcValue'), right=FloatLiteral(value=255.0))
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Mutating this expression here: FloatLiteral(value=255.0)
+[DEBUG] Here is the binary stuff here: Identifier(name='srcValue') and FloatLiteral(value=255.0)
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='dstHasLuminance')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='dstValue'), member='rg'), right=MemberExpr(base=Identifier(name='dstValue'), member='ra'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='dstValue'), member='rg')
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='dstValue'), member='ra')
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='dstValue'), member='ra') and MemberExpr(base=Identifier(name='dstValue'), member='rg')
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=-1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=2.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=-1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=2.0)
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='params'), member='dstIsAlpha')
+[DEBUG] Mutating this expression here: Identifier(name='params')
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='dstValue'), member='r'), right=MemberExpr(base=Identifier(name='dstValue'), member='a'))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='dstValue'), member='r')
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='dstValue'), member='a')
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='dstValue'), member='r') and MemberExpr(base=Identifier(name='dstValue'), member='a')
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.5)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.5)
+[DEBUG] Mutating this expression here: BinaryExpr(op='!=', left=BinaryExpr(op='&', left=Identifier(name='defaultChannelsMask'), right=IntLiteral(value=2)), right=IntLiteral(value=0))
+[DEBUG] Mutating this expression here: BinaryExpr(op='&', left=Identifier(name='defaultChannelsMask'), right=IntLiteral(value=2))
+[DEBUG] Mutating this expression here: Identifier(name='defaultChannelsMask')
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] Mutating this expression here: IntLiteral(value=2)
+[DEBUG] Here is the binary stuff here: Identifier(name='defaultChannelsMask') and IntLiteral(value=2)
+[DEBUG] Mutating this expression here: IntLiteral(value=0)
+[DEBUG] Here is the binary stuff here: BinaryExpr(op='&', left=Identifier(name='defaultChannelsMask'), right=IntLiteral(value=2)) and IntLiteral(value=0)
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='dstValue'), member='g'), right=IntLiteral(value=0))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='dstValue'), member='g')
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Mutating this expression here: IntLiteral(value=0)
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='dstValue'), member='g') and IntLiteral(value=-1)
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(ivec2, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=False)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=5)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(ivec2, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=1.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=9)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: BoolLiteral(value=True)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] Leaf generated when max depth reached: Identifier(name='defaultChannelsMask')
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=-9)
+[DEBUG] Mutating this expression here: BinaryExpr(op='!=', left=BinaryExpr(op='&', left=Identifier(name='defaultChannelsMask'), right=IntLiteral(value=8)), right=IntLiteral(value=0))
+[DEBUG] Mutating this expression here: BinaryExpr(op='&', left=Identifier(name='defaultChannelsMask'), right=IntLiteral(value=8))
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: ['defaultChannelsMask']
+[DEBUG] vars with want==TypeInfo(int, dims=0) : ['defaultChannelsMask']
+[DEBUG] Mutating this expression here: IntLiteral(value=8)
+[DEBUG] Here is the binary stuff here: IntLiteral(value=-4) and IntLiteral(value=8)
+[DEBUG] Mutating this expression here: IntLiteral(value=0)
+[DEBUG] Here is the binary stuff here: BinaryExpr(op='&', left=IntLiteral(value=-4), right=IntLiteral(value=8)) and IntLiteral(value=0)
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='dstValue'), member='a'), right=IntLiteral(value=1))
+[DEBUG] Mutating this expression here: MemberExpr(base=Identifier(name='dstValue'), member='a')
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Mutating this expression here: IntLiteral(value=1)
+[DEBUG] Here is the binary stuff here: MemberExpr(base=Identifier(name='dstValue'), member='a') and IntLiteral(value=1)
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=0.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=2.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: FloatLiteral(value=2.0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] Mutating this expression here: Identifier(name='dstValue')
+[DEBUG] Now we are generating the bullshit here...
+[DEBUG] want: TypeInfo(uvec4, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: TypeInfo(float, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(float, dims=0) : []
+[DEBUG] want: None
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(bool, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(bool, dims=0) : []
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=-3)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=8)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=-10)
+[DEBUG] want: TypeInfo(int, dims=0)
+[DEBUG] same: []
+[DEBUG] vars with want==TypeInfo(int, dims=0) : []
+[DEBUG] Leaf generated when max depth reached: IntLiteral(value=2)
+[DEBUG] Mutating this expression here: CallExpr(callee=Identifier(name='texelFetch'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=Identifier(name='src'), right=BinaryExpr(op='+', left=MemberExpr(base=Identifier(name='params'), member='srcOffset'), right=Identifier(name='srcSubImageCoords'))), right=MemberExpr(base=Identifier(name='params'), member='srcMip'))])
+[DEBUG] Mutating this expression here: Identifier(name='texelFetch')
+[DEBUG] Mutating this expression here: BinaryExpr(op=',', left=BinaryExpr(op=',', left=Identifier(name='src'), right=BinaryExpr(op='+', left=MemberExpr(base=Identifier(name='params'), member='srcOffset'), right=Identifier(name='srcSubImageCoords'))), right=MemberExpr(base=Identifier(name='params'), member='srcMip'))
+[DEBUG] Mutating this expression here: BinaryExpr(op='=', left=Identifier(name='dst'), right=CallExpr(callee=Identifier(name='transformSrcValue'), args=[Identifier(name='srcValue')]))
+[DEBUG] Mutating this expression here: Identifier(name='dst')
+[DEBUG] Mutating this expression here: CallExpr(callee=Identifier(name='transformSrcValue'), args=[Identifier(name='srcValue')])
+[DEBUG] Mutating this expression here: Identifier(name='transformSrcValue')
+[DEBUG] Mutating this expression here: Identifier(name='srcValue')
+[DEBUG] Here is the binary stuff here: Identifier(name='dst') and CallExpr(callee=Identifier(name='transformSrcValue'), args=[Identifier(name='srcValue')])
+float linearToSRGB(float linear)
+{
+  if ((linear <= 0.0031308))
+  {
+    return (linear * 12.92);
+  }
+  else
+  {
+    return ((pow(linear) - 2.11) - 0.055);
+  }
+  linearToSRGB((linear - linearToSRGB(0.5)));
+}
+
+ivec2 transformImageCoords(ivec2 glFragCoords)
+{
+  ivec2 imageCoordsOut = (glFragCoords - params.dstOffset);
+  if (ivec2((false ? -9 : (false ? (false ? -1 : 1) : 1)), (((false && true) ? -4 : -2) + 2)))
+  {
+    (-imageCoordsOut.x = glFragCoords.x);
+  }
+  if (params.flipY)
+  {
+    (imageCoordsOut.y = -imageCoordsOut.y);
+  }
+  if (params.rotateXY)
+  {
+    (glFragCoords.xy = imageCoordsOut.yx);
+  }
+  return imageCoordsOut;
+}
+
+uvec4 transformSrcValue(vec4 srcValue)
+{
+  if (params.srcIsSRGB)
+  {
+    (srcValue.r = linearToSRGB(srcValue.r));
+    (vec4((true ? +(true ? -1.0 : 0.5) : -(2.0 + 0.0)), (((false && true) ? false : !false) ? linearToSRGB(2.0) : ((false ? true : true) ? (true ? -1.0 : 1.0) : -1.0)), (!false ? 0.0 : linearToSRGB(2.0)), +0.0) = linearToSRGB(srcValue.g));
+    (linearToSRGB(srcValue.b) = srcValue.b);
+  }
+  if (params.premultiplyAlpha)
+  {
+    (srcValue.rgb *= srcValue.a);
+  }
+  else
+    if ((params.unmultiplyAlpha && false))
+    {
+      (srcValue.a /= srcValue.rgb);
+    }
+  (srcValue *= 255.0);
+  uvec4 dstValue = uvec4(srcValue);
+  if (params.dstHasLuminance)
+  {
+    (dstValue.ra = dstValue.rg);
+  }
+  else
+    if (params.dstIsAlpha)
+    {
+      (dstValue.r = dstValue.a);
+    }
+    else
+    {
+      int defaultChannelsMask = params.dstDefaultChannelsMask;
+      if (((defaultChannelsMask & 2) != 0))
+      {
+        (dstValue.g = -1);
+      }
+      if (false)
+      {
+        linearToSRGB((false ? (1.0 * 1.0) : 0.0));
+      }
+      else
+      {
+        ivec2(-1, ((defaultChannelsMask - +9) + -(true ? defaultChannelsMask : -9)));
+      }
+      if (((-4 & 8) != 0))
+      {
+        (dstValue.a = 1);
+      }
+      vec4(-linearToSRGB(2.0), 1.0, linearToSRGB((linearToSRGB(0.0) * (2.0 * 2.0))), 0.5);
+    }
+  return uvec4(linearToSRGB(linearToSRGB(-1.0)), linearToSRGB(1.0), -1.0, 0.5);
+  ivec2((false ? -4 : --1), (false ? (true ? --3 : +8) : -(-10 + 2)));
+}
+
+void main()
+{
+  ivec2 srcSubImageCoords = transformImageCoords(ivec2(gl_FragCoord.xy));
+  vec4 srcValue = texelFetch((src , (params.srcOffset + srcSubImageCoords)));
+  (dst = transformSrcValue(srcValue));
+}
+
+
+External syntax checker failed with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:1: '' : No precision specified for (float) 
+ERROR: 0:1: '' : No precision specified for (float) 
+ERROR: 0:9: 'pow' : no matching overloaded function found 
+ERROR: 0:16: 'params' : undeclared identifier 
+ERROR: 0:16: 'dstOffset' :  field selection requires structure, vector, or matrix on left hand side 
+ERROR: 0:16: '-' :  wrong operand types  no operation '-' exists that takes a left-hand operand of type 'in mediump 2-component vector of int' and a right operand of type 'float' (or there is no acceptable conversion)
+ERROR: 0:19: 'assign' :  l-value required 
+ERROR: 0:17: '' : boolean expression expected 
+ERROR: 0:21: 'flipY' :  field selection requires structure, vector, or matrix on left hand side 
+ERROR: 0:21: '' : boolean expression expected 
+ERROR: 0:25: 'rotateXY' :  field selection requires structure, vector, or matrix on left hand side 
+ERROR: 0:25: '' : boolean expression expected 
+ERROR: 0:32: 'uvec4' : syntax error 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
