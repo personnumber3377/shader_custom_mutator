@@ -141,6 +141,54 @@ def abort(msg: str): # Crash with message
 def is_lvalue_expr(e: Expr) -> bool: # left hand side value???
     return isinstance(e, (Identifier, IndexExpr, MemberExpr))
 
+def infer_expr_type(e: Expr, scope: Scope, env: Env) -> Optional[TypeInfo]: # Try to infer type from expression...
+    if isinstance(e, IntLiteral):
+        return TypeInfo("int")
+
+    if isinstance(e, FloatLiteral):
+        return TypeInfo("float")
+
+    if isinstance(e, BoolLiteral):
+        return TypeInfo("bool")
+
+    if isinstance(e, Identifier):
+        return scope.lookup(e.name) or env.globals.get(e.name)
+
+    if isinstance(e, UnaryExpr):
+        return infer_expr_type(e.operand, scope, env)
+
+    if isinstance(e, BinaryExpr):
+        if e.op in ("&&", "||", "<", ">", "<=", ">=", "==", "!="):
+            return TypeInfo("bool")
+        return infer_expr_type(e.left, scope, env)
+
+    if isinstance(e, TernaryExpr):
+        return infer_expr_type(e.then_expr, scope, env)
+
+    if isinstance(e, CallExpr):
+        if isinstance(e.callee, Identifier):
+            fn = env.funcs.get(e.callee.name)
+            if fn:
+                ret, _ = fn
+                return ret
+        return None
+
+    if isinstance(e, MemberExpr):
+        base_t = infer_expr_type(e.base, scope, env)
+        if base_t and base_t.name in env.struct_defs:
+            for f in env.struct_defs[base_t.name]:
+                if f.name == e.member:
+                    return structfield_to_typeinfo(f)
+        return None
+
+    if isinstance(e, IndexExpr):
+        base_t = infer_expr_type(e.base, scope, env)
+        if base_t:
+            return base_t.elem()
+        return None
+
+    return None
+
 # ----------------------------
 # Type info helpers
 # ----------------------------
@@ -722,10 +770,12 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     """
     Returns possibly-mutated expression.
     """
-
+    dlog("Mutating this expression here: "+str(e))
     # Randomly also generate new statements...
     if coin(rng, 0.05):
-        return gen_expr(None, scope, env, rng, depth=1)
+        dlog("Now we are generating the bullshit here...")
+        t = infer_expr_type(e, scope, env)
+        return gen_expr(t, scope, env, rng, depth=1)
 
     # Ban comma operators... this would lead to silly statements like "srcValue(((srcValue , srcValue) , (srcValue , srcValue)))"...
     if isinstance(e, BinaryExpr) and e.op == ",":
@@ -794,6 +844,7 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
         if coin(rng, 0.10):
             # occasional operand swap
             left, right = right, left
+        dlog("Here is the binary stuff here: "+str(left)+" and "+str(right))
         return BinaryExpr(op, left, right)
 
     # Ternary
