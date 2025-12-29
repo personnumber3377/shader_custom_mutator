@@ -382,13 +382,13 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
             return CallExpr(Identifier(f"{name}[{n}]"), elems)
 
     # Unsized array → generate a reasonable default
-    # if want.array_dims == [[]]:
-    #     base = TypeInfo(name)
-    #     zero = gen_atom(base, scope, env, rng)
-    #     return CallExpr(Identifier(f"{name}[1]"), [zero])
+    if want.array_dims == [[]]:
+        base = TypeInfo(name)
+        zero = gen_atom(base, scope, env, rng)
+        return CallExpr(Identifier(f"{name}[1]"), [zero])
 
-    if n is not None and want.array_dims == [[]]:
-        return gen_atom(TypeInfo(name), scope, env, rng)
+    # if n is not None and want.array_dims == [[]]:
+    #     return gen_atom(TypeInfo(name), scope, env, rng)
 
     # Scalars
     if name in NUMERIC_LITERALS:
@@ -403,20 +403,9 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
         return gen_matrix(name, scope, env, rng, atom=True)
 
     # Structs
-    # if name in env.struct_defs:
-    #     fields = env.struct_defs[name]
-    #     args = [gen_atom(structfield_to_typeinfo(f), scope, env, rng) for f in fields]
-    #     return CallExpr(Identifier(name), args)
-
     if name in env.struct_defs:
         fields = env.struct_defs[name]
-        args = []
-        for f in fields:
-            fti = structfield_to_typeinfo(f)
-            if fti.is_array():
-                # Skip array fields entirely
-                continue
-            args.append(gen_expr(fti, scope, env, rng))
+        args = [gen_atom(structfield_to_typeinfo(f), scope, env, rng) for f in fields]
         return CallExpr(Identifier(name), args)
 
     abort(f"gen_atom: cannot build {want}")
