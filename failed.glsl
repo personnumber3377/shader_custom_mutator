@@ -1,6 +1,6 @@
 struct foo {
-  vec2 b;
   vec3 a;
+  vec2 b;
   float c[100];
 };
 
@@ -12,6 +12,6 @@ struct bar {
 
 void main()
 {
-  bar a = true, b = bar(foo(vec2(-((a.a && a.c) ? a : ((a / a) / (a.c ? -((a ? a : ((a && !a) ? a : a)) / (a.b / -+a)) : (a * a.b)))), a), vec3(a, a, (a.c * (a * a))), -(a ? a : a.c)), foo(vec2(((a.b / a.a) / a), a), vec3(-a, (a.a - a), ((a.c / a) * ((+(!a.a ? a : (a ? a.b : +(a ? a : a))) * +a.c) / (a ? a : ((a || a.a) ? a.c : ((!a.c ? (a ? ((((((!a ? a : a) && a) ? a : a) ? (!a.a && (a ? a : a.c)) : a) ? a : +a) - (a.a + a.a)) : a) : ((a && a) ? a : a)) - a.b)))))), a), foo(vec2(a.c, a), vec3(a, (!!(a.c || (!a && a.a)) ? a : +((+((a ? a : a.b) - +a) / (a.a ? a : a.c)) - -((a && ((a.c ? a : a) ? a : a)) ? (((a.b ? +a : ((a ? a.b : a) ? a.b : a.c)) + a) + a) : a))), a), a.b)), c = b.b;
+  bar a = 0, b = bar(a.b, foo(vec3(((a || !a) ? a : a), a, -a), vec2(a, a.b), a.c), foo(vec3((a ? a.b : ((a ? a : a) ? a : (a * a))), a.b, a), vec2(a, a), a.a)), c = bar(foo(vec3(--a, b.c, a.a), vec2(-(!b ? (b / b) : (a * b)), (((a && a) || a) ? b : -+a)), (b + (b + +b))), foo(vec3(a.b, -a.c, b.c), vec2(b, (a - (+a - a.a))), (a + a)), foo(vec3(a.b, b.b, (((b && a) ? b.c : !a) ? ((b || b) ? a.b : a.c) : (a ? b : -b))), vec2((((b || a) ? a : b.b) ? ((b / a) * (b * b)) : (a ? a : a)), a.a), b));
 }
 

@@ -268,7 +268,12 @@ if __name__ == "__main__":
     if len(data) < HEADER_SIZE:
         data = b"\x00" * HEADER_SIZE + data
 
-    init(random.randrange(100000)) # Random shit here...
+    seed = 4 # Modify this to appropriate values when debugging...
+
+    # init(random.randrange(100000)) # Random shit here...
+    
+    init(seed)
+
     buf = bytearray(data)
 
     try:

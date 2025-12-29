@@ -22,7 +22,7 @@ BUILTIN_NUMERIC_TYPES = {
     "mat2", "mat3", "mat4",
 }
 
-MAX_EXPR_DEPTH = 300
+MAX_EXPR_DEPTH = 3
 
 MATRIX_TYPES = ["mat2", "mat3", "mat4"]
 
@@ -655,6 +655,9 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     if isinstance(e, CallExpr):
         callee = mutate_expr(e.callee, rng, scope, env)
         args = [mutate_expr(a, rng, scope, env) for a in e.args]
+        
+        # TODO: These next things break the calling convention too often and causes compile errors, therefore these are commented out (for now)
+        '''
         if args and coin(rng, 0.15):
             rng.shuffle(args)
         if coin(rng, 0.10) and args:
@@ -663,6 +666,8 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
                 args.pop(rng.randrange(len(args)))
             else:
                 args.insert(rng.randrange(len(args)+1), deepclone(rng.choice(args)))
+        '''
+
         return CallExpr(callee, args)
 
     # Indexing
