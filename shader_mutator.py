@@ -325,34 +325,39 @@ def all_struct_field_names(env: Env, struct_name: str) -> List[str]:
     return []
 
 def array_len_from_typeinfo(ti: TypeInfo) -> int | None:
-    """Return N for T[N], else None. Only supports 1D and constant sizes."""
     dims = getattr(ti, "array_dims", None)
-    dlog("dims: "+str(dims))
     if not dims:
-        return None
+        return None  # not an array
 
-    # If dims is something like [[...]] flatten one level
-    if len(dims) == 1 and isinstance(dims[0], list):
-        dims = dims[0]
-
-    if len(dims) != 1:
+    # True multidimensional array (e.g. int a[2][3])
+    if len(dims) > 1:
         abort("Multidimensional arrays not supported...")
 
     d0 = dims[0]
 
-    # Common cases
+    # Case: unsized array -> float a[];
+    if d0 == []:
+        return None
+
+    # Flatten accidental nesting: [[100]] → [100]
+    if isinstance(d0, list):
+        if len(d0) != 1:
+            abort("Unexpected array dimension structure")
+        d0 = d0[0]
+
+    # Constant integer
     if isinstance(d0, int):
         return d0
 
-    # If your parser stores dimension as a literal node
-    if hasattr(d0, "value") and isinstance(d0.value, int):  # IntLiteral(value=100)
+    # AST literal like IntLiteral(100)
+    if hasattr(d0, "value") and isinstance(d0.value, int):
         return d0.value
 
-    # Sometimes it's a token/string
+    # String token "100"
     if isinstance(d0, str) and d0.isdigit():
         return int(d0)
 
-    # If it’s an expression, you can’t safely expand it here
+    # Non-constant expression → cannot expand
     return None
 
 # ----------------------------
