@@ -1,0 +1,163 @@
+    int16_t i16 = i16Const[index];
+    const uint16_t u16Const[] =
+    {
+        uint16_t(0xFFFF),
+        uint16_t(65535),
+        uint16_t(077777),
+    };
+    uint16_t u16 = u16Const[index];
+}
+void typeCast16()
+{
+    i8vec2 i8v;
+    u8vec2 u8v;
+    i16vec2 i16v;
+    u16vec2 u16v;
+    i32vec2 i32v;
+    u32vec2 u32v;
+    i64vec2 i64v;
+    u64vec2 u64v;
+    f16vec2 f16v;
+    f32vec2 f32v;
+    f64vec2 f64v;
+    bvec2   bv;
+    i32v = i16v;
+    i32v = u16v;
+    u16v = i16v;
+    u32v = i16v;
+    i64v = i16v;
+    u64v = i16v;
+    u32v = u16v;
+    i64v = u16v;
+    u64v = u16v;
+    f16v = i16v;
+    f32v = i16v;
+    f64v = i16v;
+    f16v = u16v;
+    f32v = u16v;
+    f64v = u16v;
+    i32v = i32vec2(i16v);
+    i32v = i32vec2(u16v);
+    u16v = u16vec2(i16v);
+    u32v = u32vec2(i16v);
+    i64v = i64vec2(i16v);
+    u64v = i64vec2(i16v);
+    u32v = u32vec2(u16v);
+    i64v = i64vec2(u16v);
+    u64v = i64vec2(u16v);
+    f16v = f16vec2(i16v);
+    f32v = f32vec2(i16v);
+    f64v = f64vec2(i16v);
+    f16v = f16vec2(u16v);
+    f32v = f32vec2(u16v);
+    f64v = f64vec2(u16v);
+    i8v  = i8vec2(i16v);
+    i8v  = i8vec2(u16v);
+    u8v  = u8vec2(i16v);
+    u8v  = u8vec2(u16v);
+    i16v = u8vec2(u16v);
+    i16v = i16vec2(bv);
+    u16v = u16vec2(bv);
+    bv   = bvec2(i16v);
+    bv   = bvec2(u16v);
+}
+void operators()
+{
+    u16vec3 u16v;
+    int16_t i16;
+    uvec3   uv;
+    int32_t i;
+    int64_t i64;
+    bool    b;
+    float   f;
+    float   arr[4] = {1.0, 2.0, 3.0, 4.0};
+    u16v++;
+    i16--;
+    ++i16;
+    --u16v;
+    u16v = ~u16v;
+    i16 = +i16;
+    u16v = -u16v;
+    i16  += i16;
+    u16v -= u16v;
+    i  *= i16;
+    uv /= u16v;
+    uv %= i16;
+    uv = u16v + uv;
+    i64  = i16 - i64;
+    uv = u16v * uv;
+    i64  = i16 * i64;
+    i  = i16 % i;
+    u16v <<= i16;
+    i16  >>= u16v.y;
+    i16  = i16 << u16v.z;
+    uv = u16v << i;
+    b = (u16v.x != i16);
+    b = (i16 == u16v.x);
+    b = (u16v.x > uv.y);
+    b = (i16 < i);
+    b = (u16v.y >= uv.x);
+    b = (i16 <= i);
+    uv |= i16;
+    i  = i16 | i;
+    i64  &= i16;
+    uv = u16v & uv;
+    uv ^= i16;
+    u16v = u16v ^ i16;
+    f = arr[i16];
+}
+void builtinFuncs()
+{
+    i16vec2  i16v;
+    i16vec4  i16v4;
+    u16vec3  u16v;
+    u16vec2  u16v2;
+    u16vec4  u16v4;
+    bvec3   bv;
+    int16_t i16;
+    uint16_t u16;
+    int32_t i32;
+    uint32_t u32;
+    int64_t i64;
+    uint64_t u64;
+    i16v = abs(i16v);
+    i16  = sign(i16);
+    i16v = min(i16v, i16);
+    i16v = min(i16v, i16vec2(-1));
+    u16v = min(u16v, u16);
+    u16v = min(u16v, u16vec3(0));
+    i16v = max(i16v, i16);
+    i16v = max(i16v, i16vec2(-1));
+    u16v = max(u16v, u16);
+    u16v = max(u16v, u16vec3(0));
+    i16v = clamp(i16v, -i16, i16);
+    i16v = clamp(i16v, -i16v, i16v);
+    u16v = clamp(u16v, -u16, u16);
+    u16v = clamp(u16v, -u16v, u16v);
+    i16  = mix(i16v.x, i16v.y, true);
+    i16v = mix(i16vec2(i16), i16vec2(-i16), bvec2(false));
+    u16  = mix(u16v.x, u16v.y, true);
+    u16v = mix(u16vec3(u16), u16vec3(-u16), bvec3(false));
+    i32 = pack32(i16v);
+    i64 = pack64(i16v4);
+    u32 = pack32(u16v2);
+    u64 = pack64(u16v4);
+    i16v  = unpack16(i32);
+    i16v4 = unpack16(i64);
+    u16v2 = unpack16(u32);
+    u16v4 = unpack16(u64);
+    bv    = lessThan(u16v, u16vec3(u16));
+    bv.xy = lessThan(i16v, i16vec2(i16));
+    bv    = lessThanEqual(u16v, u16vec3(u16));
+    bv.xy = lessThanEqual(i16v, i16vec2(i16));
+    bv    = greaterThan(u16v, u16vec3(u16));
+    bv.xy = greaterThan(i16v, i16vec2(i16));
+    bv    = greaterThanEqual(u16v, u16vec3(u16));
+    bv.xy = greaterThanEqual(i16v, i16vec2(i16));
+    bv    = equal(u16v, u16vec3(u16));
+    bv.xy = equal(i16v, i16vec2(i16));
+    bv    = notEqual(u16v, u16vec3(u16));
+    bv.xy = notEqual(i16v, i16vec2(i16));
+}
+layout(constant_id = 100) const int16_t  si16 = int16_t(-10);
+layout(constant_id = 101) const uint16_t su16 = uint16_t(20);

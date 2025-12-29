@@ -1,0 +1,7 @@
+precision highp float;
+layout(location=1) tileImageEXT highp attachmentEXT in_color;
+layout(location=0) out highp vec4 out_color;
+void main(void)
+{
+     out_color = colorAttachmentReadEXT(in_color);
+}

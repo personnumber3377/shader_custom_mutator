@@ -1,0 +1,27 @@
+layout(location = 5) in outBlock {
+    vec4 o3;
+};
+in vec2 o2;
+in vec4 o1;
+out vec4 outColor;
+uniform vec2 u1;
+uniform vec3 u2;
+uniform vec4 u3 = vec4(0);
+uniform mat2 um2 = mat2(4.0);
+layout (location = 0, binding = 0) uniform sampler2D glass;
+uniform crossStageBlock1 {
+    uniform vec4 a;
+    vec4 b;
+};
+buffer fragOnlyBlock {
+    vec2 fb1;
+};
+uniform crossStageBlock2 {
+    uniform vec4 a;
+    vec2 b;
+} blockName2 [2];
+void main()
+{
+    vec4 color = o1 * u1.rgrg * u2.rgbr * u3.rgba;
+    outColor = color;
+}

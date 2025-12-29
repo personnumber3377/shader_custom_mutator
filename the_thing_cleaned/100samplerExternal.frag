@@ -1,0 +1,28 @@
+uniform samplerExternalOES sExt;
+precision mediump samplerExternalOES;
+uniform samplerExternalOES mediumExt;
+uniform highp samplerExternalOES highExt;
+void main()
+{
+    texture2D(sExt, vec2(0.2));
+    texture2D(mediumExt, vec2(0.2));
+    texture2D(highExt, vec2(0.2));
+    texture2DProj(sExt, vec3(0.3));
+    texture2DProj(sExt, vec4(0.3));
+    int lod = 0;
+    highp float bias = 0.01;
+    textureSize(sExt, lod);
+    texture(sExt, vec2(0.2));
+    texture(sExt, vec2(0.2), bias);
+    textureProj(sExt, vec3(0.2));
+    textureProj(sExt, vec3(0.2), bias);
+    textureProj(sExt, vec4(0.2));
+    textureProj(sExt, vec4(0.2), bias);
+    texelFetch(sExt, ivec2(4), lod);
+    texture3D(sExt, vec3(0.3));
+    texture2DProjLod(sExt, vec3(0.3), 0.3);
+    texture(sExt, vec3(0.3));
+    textureProjLod(sExt, vec3(0.3), 0.3);
+}
+uniform samplerExternalOES badExt;
+uniform samplerExternalOES badExt;

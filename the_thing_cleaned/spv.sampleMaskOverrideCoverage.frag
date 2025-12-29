@@ -1,0 +1,5 @@
+in vec4 color;
+layout(override_coverage) out int gl_SampleMask[];
+void main() {
+    gl_SampleMask[0] = int(0xFFFFFFFF);
+}

@@ -1,0 +1,14 @@
+layout(location = 4, component = 2) in vec2 a;
+layout(location = 4, component = 1) in float b;
+layout(location = 4, component = 2) in vec2 h;
+layout(location = 3, component = 2) in vec3 c;
+layout(location = 20, component = 0) in vec3 e[6];
+layout(location = 20, component = 3) in float f[6];
+layout(location = 30, component = 3) out int be;
+layout(location = 30, component = 0) out vec3 bf;
+writeonly uniform;
+readonly in;
+flat out;
+mediump uniform;
+layout(offset=12) uniform;
+layout(align=16) uniform;
