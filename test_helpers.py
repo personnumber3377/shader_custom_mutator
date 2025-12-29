@@ -3,13 +3,16 @@ import subprocess
 import tempfile
 import os
 
-def strip_header_and_null(buf, header_len=0):
-    # 1) Strip header
-    data = buf[header_len:]
+# Here check for the null byte and if found, then assume fuzz input...
 
-    # 2) Strip final null byte if present
+def strip_header_and_null(buf, header_len=0):
+    
     if data and data[-1] == 0:
+        # 1) Strip header
+        data = buf[header_len:]
+        # 2) Strip final null byte if present
         data = data[:-1]
+
     return data
 
 def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:

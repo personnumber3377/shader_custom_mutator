@@ -1,4 +1,4 @@
-float linearToSRGB(float linear)
+mediump float linearToSRGB(mediump float linear)
 {
   if ((linear <= 0.5031308))
   {

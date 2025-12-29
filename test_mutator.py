@@ -3,6 +3,8 @@ import os
 import sys
 import random
 
+from test_helpers import * # For 
+
 TEST_DIR = "tests/"
 
 import shader_parser # The parser...
@@ -31,8 +33,18 @@ def run_parse_tests(only_one=None): # Run the parse tests..
 		print(unparsed_src)
 	return
 
+def run_roundtrip(directory: str) -> None: # Run the roundtrip tests...
+
 if __name__=="__main__":
 	fn = None
+	if len(sys.argv) == 2: # Check for special flags...
+		if "--run-small" in sys.argv: # Run the small testset...
+			run_parse_tests(only_one=None)
+			exit(0)
+	if len(sys.argv) == 3: # We need the directory and the thing...
+		if "--run-roundtrip" == sys.argv[1]:
+			run_roundtrip_tests(sys.argv[2]) # Pass the directory name as filename...
+			exit(0)
 	if len(sys.argv) >= 2:
 		fn = sys.argv[1]
 	run_parse_tests(only_one=fn)
