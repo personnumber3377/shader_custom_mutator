@@ -493,7 +493,7 @@ def gen_leaf(want, scope, env, rng, kind):
     
     dlog(f"vars with want=={str(want)} : {str(vars)}")
 
-    if vars and coin(0.20): # Instead of automatically using a variable, throw a coin instead...
+    if vars and coin(rng, 0.20): # Instead of automatically using a variable, throw a coin instead...
         name = rng.choice(vars)
         return Identifier(name)
 
@@ -523,7 +523,9 @@ BIN_OPS = {
 }
 
 def gen_binary(want, scope, env, rng, depth):
+    dlog(f"Called gen_binary with want == {str(want.name)}")
     if want.name not in BIN_OPS:
+        abort("Called gen_binary with an invalid thing...")
         return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
 
     op = rng.choice(BIN_OPS[want.name])
@@ -540,9 +542,10 @@ UNARY_OPS = {
 }
 
 def gen_unary(want, scope, env, rng, depth):
-
+    dlog(f"Called gen_unary with want == {str(want.name)}")
     if want.name not in UNARY_OPS:
-        return gen_leaf(...)
+        abort("Called gen_unary with an invalid thing...")
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
     op = rng.choice(UNARY_OPS.get(want.name, ["+"]))
 
     operand = gen_expr(want, scope, env, rng, depth + 1)
@@ -723,6 +726,8 @@ def gen_constructor_expr(ti: TypeInfo, scope, env, rng):
         args = []
         for f in fields:
             fti = structfield_to_typeinfo(f)
+            if fti.is_array():
+                continue
             args.append(gen_expr(fti, scope, env, rng))
         return CallExpr(Identifier(name), args)
 
