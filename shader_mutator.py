@@ -523,10 +523,13 @@ BIN_OPS = {
 }
 
 def gen_binary(want, scope, env, rng, depth):
-    op = rng.choice(BIN_OPS.get(want.name, ["+"]))
+    if want.name not in BIN_OPS:
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
 
-    left = gen_expr(want, scope, env, rng, depth + 1)
-    right = gen_expr(want, scope, env, rng, depth + 1)
+    op = rng.choice(BIN_OPS[want.name])
+
+    left = gen_expr(TypeInfo(want.name), scope, env, rng, depth + 1)
+    right = gen_expr(TypeInfo(want.name), scope, env, rng, depth + 1)
 
     return BinaryExpr(op, left, right)
 
@@ -537,6 +540,9 @@ UNARY_OPS = {
 }
 
 def gen_unary(want, scope, env, rng, depth):
+
+    if want.name not in UNARY_OPS:
+        return gen_leaf(...)
     op = rng.choice(UNARY_OPS.get(want.name, ["+"]))
 
     operand = gen_expr(want, scope, env, rng, depth + 1)
