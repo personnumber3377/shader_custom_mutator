@@ -138,6 +138,9 @@ def gen_struct_vardecl(scope: Scope, env: Env, rng: random.Random) -> Optional[D
 def abort(msg: str): # Crash with message
     assert False, msg
 
+def is_lvalue_expr(e: Expr) -> bool: # left hand side value???
+    return isinstance(e, (Identifier, IndexExpr, MemberExpr))
+
 # ----------------------------
 # Type info helpers
 # ----------------------------
@@ -764,7 +767,11 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
         op = e.op
         operand = mutate_expr(e.operand, rng, scope, env)
         if coin(rng, 0.20):
-            op = rng.choice(["+", "-", "!", "~", "++", "--"])
+            # op = rng.choice(["+", "-", "!", "~", "++", "--"])
+            candidates = ["+", "-", "!", "~"]
+            if not is_lvalue_expr(e): # If right hand value, then add the things.
+                candidates.extend(["--", "++"])
+            op = rng.choice(candidates)
         return UnaryExpr(op, operand, postfix=e.postfix)
 
     # Binary
@@ -896,7 +903,10 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
     else:
         if v2.init is None:
             ti = vardecl_to_typeinfo(v2)
-            v2.init = gen_expr(ti, scope, env, rng)
+            if ti.is_array(): # This is to prevent generating "int i[1] = 0;" etc
+                v2.init = gen_atom(ti, scope, env, rng)
+            else:
+                v2.init = gen_expr(ti, scope, env, rng)
 
     # mutate array dims
     if hasattr(v2, "array_dims"):
