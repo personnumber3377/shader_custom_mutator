@@ -459,7 +459,7 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
     # Vectors / matrices
     if "vec" in name: # name.startswith("vec"):
         return gen_vector(name, scope, env, rng, atom=True)
-    if mat in name: # name.startswith("mat"):
+    if "mat" in name: # name.startswith("mat"):
         return gen_matrix(name, scope, env, rng, atom=True)
 
     # Structs

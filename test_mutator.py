@@ -3,7 +3,7 @@ import os
 import sys
 import random
 
-from test_helpers import * # For 
+from test_helpers import * # For the utilities...
 
 TEST_DIR = "tests/"
 
@@ -33,7 +33,40 @@ def run_parse_tests(only_one=None): # Run the parse tests..
 		print(unparsed_src)
 	return
 
-def run_roundtrip(directory: str) -> None: # Run the roundtrip tests...
+def roundtrip_one(filename: str): # Run the thing...
+
+	fh = open(filename, "rb")
+	source = fh.read() # Read the source code...
+	source = strip_header_and_null(source, header_len=128) # Cut off the shit...
+	fh.close()
+
+	ok_orig, _ = run_external_checker(source) # Run the checker for this source code...
+	if not ok_orig: # Ignore the files which we can not parse...
+		return
+
+	# Roundtrip...
+
+	tree = shader_parser.parse_to_tree(source)
+	unparsed_src = shader_unparser.unparse_tu(tree)
+
+	# Same?
+
+	ok_new, _ = run_external_checker(unparsed_src)
+
+	if ok_orig != ok_new:
+		print("Filename: "+str(filename)+" failed roundtrip test!!!")
+		assert False
+
+	return
+
+def run_roundtrip_tests(directory: str) -> None: # Run the roundtrip tests...
+	# Do the stuff...
+	if directory[-1] != "/": # Append the slash here...
+		directory += "/"
+	test_files = os.listdir(directory) # List all of the things...
+	for f in test_files:
+		roundtrip_one(directory+f) # Run one roundtrip thing...
+	return
 
 if __name__=="__main__":
 	fn = None
