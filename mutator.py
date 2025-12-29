@@ -7,6 +7,7 @@ import traceback
 import subprocess
 import tempfile
 import os
+import traceback
 from typing import Optional
 
 # -----------------------------
@@ -300,6 +301,7 @@ if __name__ == "__main__":
         with open(args.output, "wb") as f:
             f.write(buf)
     except Exception as e:
+        traceback.print_exc()
         print("FAIL: "+str(e))
 
 

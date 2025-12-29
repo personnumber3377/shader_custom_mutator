@@ -8,6 +8,13 @@ import random
 
 from shader_ast import *
 
+# Debugging???
+
+DEBUG = True
+
+def dlog(msg: str): # Debug logging...
+    print("[DEBUG] "+str(msg))
+    return
 
 # ----------------------------
 # Utilities
@@ -41,6 +48,31 @@ NUMERIC_LITERALS = {
     "float": lambda r: FloatLiteral(r.choice([0.0, 0.5, 1.0, -1.0, 2.0])),
     "bool":  lambda r: BoolLiteral(r.choice([True, False])),
 }
+
+BINOPS = [
+    # arithmetic
+    ("+",  "float", "float", "float"),
+    ("-",  "float", "float", "float"),
+    ("*",  "float", "float", "float"),
+    ("/",  "float", "float", "float"),
+
+    ("+",  "vec3",  "vec3",  "vec3"),
+    ("-",  "vec3",  "vec3",  "vec3"),
+
+    # comparisons
+    ("<",  "float", "float", "bool"),
+    (">",  "float", "float", "bool"),
+
+    # logical
+    ("&&", "bool",  "bool",  "bool"),
+    ("||", "bool",  "bool",  "bool"),
+]
+
+UNOPS = [
+    ("!",  "bool",  "bool"),
+    ("-",  "float", "float"),
+    ("-",  "vec3",  "vec3"),
+]
 
 def deepclone(x):
     # dataclasses + simple classes: copy.deepcopy is fine
@@ -277,9 +309,12 @@ def candidates_by_type(scope: Scope, env: Env, want: Optional[TypeInfo]) -> List
         return names
 
     same = [n for n, ti in allv.items() if ti.name == want.name]
+    dlog("same: "+str(same))
     if same:
         return same
-    return names
+    # return names
+    # Here actually return an empty list, because otherwise we get bogus types...
+    return []
 
 
 def all_struct_field_names(env: Env, struct_name: str) -> List[str]:
@@ -289,9 +324,76 @@ def all_struct_field_names(env: Env, struct_name: str) -> List[str]:
         return [f.name for f in env.interface_blocks[struct_name]]
     return []
 
+def array_len_from_typeinfo(ti: TypeInfo) -> int | None:
+    """Return N for T[N], else None. Only supports 1D and constant sizes."""
+    dims = getattr(ti, "array_dims", None)
+    dlog("dims: "+str(dims))
+    if not dims:
+        return None
+
+    # If dims is something like [[...]] flatten one level
+    if len(dims) == 1 and isinstance(dims[0], list):
+        dims = dims[0]
+
+    if len(dims) != 1:
+        abort("Multidimensional arrays not supported...")
+
+    d0 = dims[0]
+
+    # Common cases
+    if isinstance(d0, int):
+        return d0
+
+    # If your parser stores dimension as a literal node
+    if hasattr(d0, "value") and isinstance(d0.value, int):  # IntLiteral(value=100)
+        return d0.value
+
+    # Sometimes it's a token/string
+    if isinstance(d0, str) and d0.isdigit():
+        return int(d0)
+
+    # If it’s an expression, you can’t safely expand it here
+    return None
+
 # ----------------------------
 # Mutations: generate expressions
 # ----------------------------
+
+MAX_EXPLICIT_ARRAY = 150 # Don't try to generate explicit arrays larger than this, because otherwise it takes two years to generate one...
+
+def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
+    name = want.name
+
+    n = array_len_from_typeinfo(want)
+    if n is not None:
+        base = TypeInfo(name)  # IMPORTANT: base must have NO array dims
+        if n > MAX_EXPLICIT_ARRAY:
+            # Cheap fill: float[100](0.0) style
+            zero = gen_atom(base, scope, env, rng)
+            return CallExpr(Identifier(f"{name}[{n}]"), [zero])
+        else:
+            elems = [gen_atom(base, scope, env, rng) for _ in range(n)]
+            return CallExpr(Identifier(f"{name}[{n}]"), elems)
+
+    # --- scalars ---
+    if name in NUMERIC_LITERALS:
+        return NUMERIC_LITERALS[name](rng)
+    if name == "bool":
+        return BoolLiteral(bool(rng.getrandbits(1)))
+
+    # --- vectors/matrices ---
+    if name.startswith("vec"):
+        return gen_vector(name, scope, env, rng, atom=True)
+    if name.startswith("mat"):
+        return gen_matrix(name, scope, env, rng, atom=True)
+
+    # --- structs ---
+    if name in env.struct_defs:
+        fields = env.struct_defs[name]
+        args = [gen_atom(structfield_to_typeinfo(f), scope, env, rng) for f in fields]
+        return CallExpr(Identifier(name), args)
+
+    abort(f"gen_atom: cannot build {want}")
 
 # What kind of expression?
 
@@ -307,9 +409,14 @@ def gen_expr(
     depth: int = 0,
     kind=ExprKind.RVALUE,
 ) -> Expr:
-
+    
+    # dlog(f"gen_expr({str(want)}, {str(scope)}, {str(env)}, {str(rng)}, {str(depth)}, {str(kind)})")
+    dlog("want: "+str(want))
     if depth >= MAX_EXPR_DEPTH:
-        return gen_leaf(want, scope, env, rng, kind)
+        # abort("Max depth exceeded...")
+        l = gen_leaf(want, scope, env, rng, kind)
+        dlog("Leaf generated when max depth reached: "+str(l))
+        return l
 
     choices = []
 
@@ -354,9 +461,13 @@ def gen_expr(
 
 def gen_leaf(want, scope, env, rng, kind):
 
-    vars = candidates_by_type(scope, env, want)
+    name = want.name # Get name
 
-    if vars:
+    vars = candidates_by_type(scope, env, want)
+    
+    dlog(f"vars with want=={str(want)} : {str(vars)}")
+
+    if vars and coin(0.20): # Instead of automatically using a variable, throw a coin instead...
         name = rng.choice(vars)
         return Identifier(name)
 
@@ -367,9 +478,11 @@ def gen_leaf(want, scope, env, rng, kind):
     if want and want.name in NUMERIC_LITERALS:
         return NUMERIC_LITERALS[want.name](rng)
 
-    abort("Reached end of gen_leaf with want == "+str(want))
+    # Instead of aborting, just call the atom thing...
 
-    return IntLiteral(0)
+    return gen_atom(want, scope, env, rng)
+    # abort("Reached end of gen_leaf with want == "+str(want))
+    # return IntLiteral(0)
 
 def gen_assignment_stmt(scope, env, rng):
     lhs = gen_expr(None, scope, env, rng, kind=ExprKind.LVALUE)
@@ -540,19 +653,38 @@ def gen_struct_definition(new_items, rng, env):
     new_items.insert(0, struct)
     env.struct_defs[name] = fields
 
+def gen_matrix(name, scope, env, rng, atom=False):
+    # Generate matrix
+    n = int(name[-1])
+    # args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
+
+    if atom:
+        args = [FloatLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n * n)]
+    else:
+        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
+
+    return CallExpr(Identifier(name), args)
+
+def gen_vector(name, scope, env, rng, atom=False):
+    n = int(name[-1])
+    # args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
+    
+    if atom:
+        args = [FloatLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n)]
+    else:
+        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
+
+    return CallExpr(Identifier(name), args)
+
 # This is used to generate more interesting built in types such as matrixes etc...
 def gen_constructor_expr(ti: TypeInfo, scope, env, rng):
     name = ti.name
 
     if name.startswith("vec"):
-        n = int(name[-1])
-        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
-        return CallExpr(Identifier(name), args)
+        return gen_vector(name, scope, env, rng)
 
     if name.startswith("mat"):
-        n = int(name[-1])
-        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
-        return CallExpr(Identifier(name), args)
+        return gen_matrix(name, scope, env, rng)
 
     if name in env.struct_defs:
         fields = env.struct_defs[name]
@@ -736,10 +868,16 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
     # mutate initializer
     if v2.init is not None and coin(rng, 0.35):
         v2.init = mutate_expr(v2.init, rng, scope, env)
-    elif v2.init is None and coin(rng, 0.15):
+
+    elif v2.init is None and coin(rng, 0.15): # TODO: Disabled for now...
         # create a simple initializer
         # (for fuzzing we don't care if types mismatch sometimes)
-        v2.init = rng.choice([IntLiteral(0), IntLiteral(1), FloatLiteral(1.0), BoolLiteral(True)])
+        # abort("Called the invalid type mutator...")
+        # v2.init = rng.choice([IntLiteral(0), IntLiteral(1), FloatLiteral(1.0), BoolLiteral(True)])
+
+        ti = vardecl_to_typeinfo(v2)
+        v2.init = gen_atom(ti, scope, env, rng)
+
     else:
         if v2.init is None:
             ti = vardecl_to_typeinfo(v2)
