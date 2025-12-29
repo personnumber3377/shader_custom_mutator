@@ -370,29 +370,36 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
     name = want.name
 
     n = array_len_from_typeinfo(want)
+
+    # Array case
     if n is not None:
-        base = TypeInfo(name)  # IMPORTANT: base must have NO array dims
+        base = TypeInfo(name)  # IMPORTANT: strip array dims
         if n > MAX_EXPLICIT_ARRAY:
-            # Cheap fill: float[100](0.0) style
             zero = gen_atom(base, scope, env, rng)
             return CallExpr(Identifier(f"{name}[{n}]"), [zero])
         else:
             elems = [gen_atom(base, scope, env, rng) for _ in range(n)]
             return CallExpr(Identifier(f"{name}[{n}]"), elems)
 
-    # --- scalars ---
+    # Unsized array → generate a reasonable default
+    if want.array_dims == [[]]:
+        base = TypeInfo(name)
+        zero = gen_atom(base, scope, env, rng)
+        return CallExpr(Identifier(f"{name}[1]"), [zero])
+
+    # Scalars
     if name in NUMERIC_LITERALS:
         return NUMERIC_LITERALS[name](rng)
     if name == "bool":
         return BoolLiteral(bool(rng.getrandbits(1)))
 
-    # --- vectors/matrices ---
+    # Vectors / matrices
     if name.startswith("vec"):
         return gen_vector(name, scope, env, rng, atom=True)
     if name.startswith("mat"):
         return gen_matrix(name, scope, env, rng, atom=True)
 
-    # --- structs ---
+    # Structs
     if name in env.struct_defs:
         fields = env.struct_defs[name]
         args = [gen_atom(structfield_to_typeinfo(f), scope, env, rng) for f in fields]
