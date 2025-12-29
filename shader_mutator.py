@@ -189,6 +189,11 @@ def infer_expr_type(e: Expr, scope: Scope, env: Env) -> Optional[TypeInfo]: # Tr
 
     return None
 
+def mutate_expr_typed(e, want, rng, scope, env):
+    if coin(rng, 0.05):
+        return gen_expr(want, scope, env, rng)
+    return mutate_expr(e, rng, scope, env)
+
 # ----------------------------
 # Type info helpers
 # ----------------------------
@@ -448,9 +453,9 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
         return BoolLiteral(bool(rng.getrandbits(1)))
 
     # Vectors / matrices
-    if name.startswith("vec"):
+    if "vec" in name: # name.startswith("vec"):
         return gen_vector(name, scope, env, rng, atom=True)
-    if name.startswith("mat"):
+    if mat in name: # name.startswith("mat"):
         return gen_matrix(name, scope, env, rng, atom=True)
 
     # Structs
@@ -533,7 +538,7 @@ def gen_leaf(want, scope, env, rng, kind):
     
     dlog(f"vars with want=={str(want)} : {str(vars)}")
 
-    if vars and coin(0.20): # Instead of automatically using a variable, throw a coin instead...
+    if vars and coin(rng, 0.20): # Instead of automatically using a variable, throw a coin instead...
         name = rng.choice(vars)
         return Identifier(name)
 
@@ -723,22 +728,35 @@ def gen_matrix(name, scope, env, rng, atom=False):
     # Generate matrix
     n = int(name[-1])
     # args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
-
-    if atom:
-        args = [FloatLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n * n)]
+    integer = name[0] == "i" # Check for integer...
+    # args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
+    if integer:
+        if atom:
+            args = [IntLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n * n)]
+        else:
+            args = [gen_expr(TypeInfo("int"), scope, env, rng) for _ in range(n * n)]
     else:
-        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
+        if atom:
+            args = [FloatLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n * n)]
+        else:
+            args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n * n)]
 
     return CallExpr(Identifier(name), args)
 
 def gen_vector(name, scope, env, rng, atom=False):
     n = int(name[-1])
+    integer = name[0] == "i" # Check for integer...
     # args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
-    
-    if atom:
-        args = [FloatLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n)]
+    if integer:
+        if atom:
+            args = [IntLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n)]
+        else:
+            args = [gen_expr(TypeInfo("int"), scope, env, rng) for _ in range(n)]
     else:
-        args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
+        if atom:
+            args = [FloatLiteral(rng.choice([-1.0, -0.5, 0.0, 0.5, 1.0, 2.0])) for _ in range(n)]
+        else:
+            args = [gen_expr(TypeInfo("float"), scope, env, rng) for _ in range(n)]
 
     return CallExpr(Identifier(name), args)
 
@@ -746,10 +764,10 @@ def gen_vector(name, scope, env, rng, atom=False):
 def gen_constructor_expr(ti: TypeInfo, scope, env, rng):
     name = ti.name
 
-    if name.startswith("vec"):
+    if "vec" in name: # name.startswith("vec"):
         return gen_vector(name, scope, env, rng)
 
-    if name.startswith("mat"):
+    if "mat" in name: # name.startswith("mat"):
         return gen_matrix(name, scope, env, rng)
 
     if name in env.struct_defs:
@@ -826,7 +844,12 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
 
     # Binary
     if isinstance(e, BinaryExpr):
-        left = mutate_expr(e.left, rng, scope, env)
+        # left = mutate_expr(e.left, rng, scope, env)
+        lt = infer_expr_type(e.left, scope, env)
+        left = mutate_expr_typed(e.left, lt, rng, scope, env)
+        
+
+
         right = mutate_expr(e.right, rng, scope, env)
         op = e.op
         if coin(rng, 0.15):
