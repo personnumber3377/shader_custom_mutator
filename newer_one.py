@@ -138,6 +138,9 @@ def gen_struct_vardecl(scope: Scope, env: Env, rng: random.Random) -> Optional[D
 def abort(msg: str): # Crash with message
     assert False, msg
 
+def struct_fields(env: Env, name: str) -> List[StructField]:
+    return env.struct_defs.get(name) or env.interface_blocks.get(name) or []
+
 # ----------------------------
 # Type info helpers
 # ----------------------------
@@ -382,13 +385,13 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
             return CallExpr(Identifier(f"{name}[{n}]"), elems)
 
     # Unsized array → generate a reasonable default
-    if want.array_dims == [[]]:
-        base = TypeInfo(name)
-        zero = gen_atom(base, scope, env, rng)
-        return CallExpr(Identifier(f"{name}[1]"), [zero])
+    # if want.array_dims == [[]]:
+    #     base = TypeInfo(name)
+    #     zero = gen_atom(base, scope, env, rng)
+    #     return CallExpr(Identifier(f"{name}[1]"), [zero])
 
-    # if n is not None and want.array_dims == [[]]:
-    #     return gen_atom(TypeInfo(name), scope, env, rng)
+    if n is not None and want.array_dims == [[]]:
+        return gen_atom(TypeInfo(name), scope, env, rng)
 
     # Scalars
     if name in NUMERIC_LITERALS:
@@ -403,9 +406,25 @@ def gen_atom(want: TypeInfo, scope, env, rng) -> Expr:
         return gen_matrix(name, scope, env, rng, atom=True)
 
     # Structs
+    # if name in env.struct_defs:
+    #     fields = env.struct_defs[name]
+    #     args = [gen_atom(structfield_to_typeinfo(f), scope, env, rng) for f in fields]
+    #     return CallExpr(Identifier(name), args)
+
+    fields = struct_fields(env, name)
+    if not fields:
+        # unknown shape; don’t emit bar()
+        return Identifier(choose(rng, candidates_by_type(scope, env, TypeInfo(name))) or "/*noinit*/")
+
     if name in env.struct_defs:
         fields = env.struct_defs[name]
-        args = [gen_atom(structfield_to_typeinfo(f), scope, env, rng) for f in fields]
+        args = []
+        for f in fields:
+            fti = structfield_to_typeinfo(f)
+            if fti.is_array():
+                # Skip array fields entirely
+                continue
+            args.append(gen_expr(fti, scope, env, rng))
         return CallExpr(Identifier(name), args)
 
     abort(f"gen_atom: cannot build {want}")
@@ -482,7 +501,7 @@ def gen_leaf(want, scope, env, rng, kind):
     
     dlog(f"vars with want=={str(want)} : {str(vars)}")
 
-    if vars and coin(0.20): # Instead of automatically using a variable, throw a coin instead...
+    if vars and coin(rng, 0.20): # Instead of automatically using a variable, throw a coin instead...
         name = rng.choice(vars)
         return Identifier(name)
 
@@ -512,10 +531,15 @@ BIN_OPS = {
 }
 
 def gen_binary(want, scope, env, rng, depth):
-    op = rng.choice(BIN_OPS.get(want.name, ["+"]))
+    dlog(f"Called gen_binary with want == {str(want.name)}")
+    if want.name not in BIN_OPS:
+        abort("Called gen_binary with an invalid thing...")
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
 
-    left = gen_expr(want, scope, env, rng, depth + 1)
-    right = gen_expr(want, scope, env, rng, depth + 1)
+    op = rng.choice(BIN_OPS[want.name])
+
+    left = gen_expr(TypeInfo(want.name), scope, env, rng, depth + 1)
+    right = gen_expr(TypeInfo(want.name), scope, env, rng, depth + 1)
 
     return BinaryExpr(op, left, right)
 
@@ -526,6 +550,10 @@ UNARY_OPS = {
 }
 
 def gen_unary(want, scope, env, rng, depth):
+    dlog(f"Called gen_unary with want == {str(want.name)}")
+    if want.name not in UNARY_OPS:
+        abort("Called gen_unary with an invalid thing...")
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
     op = rng.choice(UNARY_OPS.get(want.name, ["+"]))
 
     operand = gen_expr(want, scope, env, rng, depth + 1)
@@ -701,11 +729,18 @@ def gen_constructor_expr(ti: TypeInfo, scope, env, rng):
     if name.startswith("mat"):
         return gen_matrix(name, scope, env, rng)
 
+    fields = struct_fields(env, name)
+    if not fields:
+        # unknown shape; don’t emit bar()
+        return Identifier(choose(rng, candidates_by_type(scope, env, TypeInfo(name))) or "/*noinit*/")
+
     if name in env.struct_defs:
         fields = env.struct_defs[name]
         args = []
         for f in fields:
             fti = structfield_to_typeinfo(f)
+            if fti.is_array():
+                continue
             args.append(gen_expr(fti, scope, env, rng))
         return CallExpr(Identifier(name), args)
 
@@ -896,7 +931,15 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
     else:
         if v2.init is None:
             ti = vardecl_to_typeinfo(v2)
-            v2.init = gen_expr(ti, scope, env, rng)
+            # only add init for types we can actually construct
+            if ti.name in NUMERIC_LITERALS or ti.name.startswith(("vec","mat")):
+                v2.init = gen_expr(ti, scope, env, rng)
+            elif ti.name in env.struct_defs:
+                # only init if constructor args would match all fields
+                ctor = gen_constructor_expr(ti, scope, env, rng)
+                if ctor is not None:
+                    v2.init = ctor
+                # else leave uninitialized
 
     # mutate array dims
     if hasattr(v2, "array_dims"):
