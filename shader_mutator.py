@@ -22,7 +22,7 @@ BUILTIN_NUMERIC_TYPES = {
     "mat2", "mat3", "mat4",
 }
 
-MAX_EXPR_DEPTH = 10
+MAX_EXPR_DEPTH = 300
 
 MATRIX_TYPES = ["mat2", "mat3", "mat4"]
 
@@ -102,6 +102,9 @@ def gen_struct_vardecl(scope: Scope, env: Env, rng: random.Random) -> Optional[D
 
     vd = VarDecl(TypeName(sname), vname, init=init, array_dims=None)
     return DeclStmt([vd])
+
+def abort(msg: str): # Crash with message
+    assert False, msg
 
 # ----------------------------
 # Type info helpers
@@ -321,7 +324,7 @@ def gen_expr(
         ])
 
     if want and is_composite(want, env) and coin(rng, 0.90): # 30 percent change to to something like this...
-        print("Hit the thing...")
+        # print("Hit the thing...")
         ctor = gen_constructor_expr(want, scope, env, rng)
         if ctor:
             return ctor
@@ -350,6 +353,7 @@ def gen_expr(
     return rng.choice(choices)()
 
 def gen_leaf(want, scope, env, rng, kind):
+
     vars = candidates_by_type(scope, env, want)
 
     if vars:
@@ -362,6 +366,8 @@ def gen_leaf(want, scope, env, rng, kind):
 
     if want and want.name in NUMERIC_LITERALS:
         return NUMERIC_LITERALS[want.name](rng)
+
+    abort("Reached end of gen_leaf with want == "+str(want))
 
     return IntLiteral(0)
 

@@ -197,6 +197,15 @@ def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> byt
 # CLI testing helper
 # -----------------------------
 
+def strip_header_and_null(buf, header_len=0):
+    # 1) Strip header
+    data = buf[header_len:]
+
+    # 2) Strip final null byte if present
+    if data and data[-1] == 0:
+        data = data[:-1]
+    return data
+
 def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:
     """
     Returns (ok, output).
@@ -204,12 +213,9 @@ def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:
     ok == False -> ERROR found or checker failed
     """
 
-    # 1) Strip header
-    data = buf[header_len:]
+    # 1) 2) Strip header and null
 
-    # 2) Strip final null byte if present
-    if data and data[-1] == 0:
-        data = data[:-1]
+    data = strip_header_and_null(buf, header_len=header_len)
 
     # 3) Write to temp file
     with tempfile.NamedTemporaryFile(
@@ -265,19 +271,30 @@ if __name__ == "__main__":
     init(random.randrange(100000)) # Random shit here...
     buf = bytearray(data)
 
-    for _ in range(args.iters):
-        buf = fuzz(buf, None, 1_000_000)
+    try:
 
-        ok, out = run_external_checker(buf, header_len=HEADER_SIZE)
+        for _ in range(args.iters):
+            buf = fuzz(buf, None, 1_000_000)
 
-        if not ok: # Produced invalid syntax???
-            print("External syntax checker failed with: "+str(out))
-            exit(1)
+            source = strip_header_and_null(buf, header_len=HEADER_SIZE).decode("utf-8")
+            print(source)
 
-        # Save mutated output...
-        fh = open("mutated.bin", "wb")
-        fh.write(buf)
-        fh.close()
-    with open(args.output, "wb") as f:
-        f.write(buf)
+            ok, out = run_external_checker(buf, header_len=HEADER_SIZE)
+
+            if not ok: # Produced invalid syntax???
+                print("External syntax checker failed with: "+str(out))
+                fh = open("failed.glsl", "w")
+                fh.write(source)
+                fh.close()
+                exit(1)
+
+            # Save mutated output...
+            fh = open("mutated.bin", "wb")
+            fh.write(buf)
+            fh.close()
+        with open(args.output, "wb") as f:
+            f.write(buf)
+    except Exception as e:
+        print("FAIL: "+str(e))
+
 
