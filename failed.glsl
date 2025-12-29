@@ -1,17 +1,12 @@
-struct foo {
-  vec3 a;
-  vec2 b;
-  float c[100];
-};
-
-struct bar {
-  foo a;
-  foo b;
-  foo c;
-} a, b, c;
-
 void main()
 {
-  bar a = bar(), b = bar(), c = bar();
+  int i = 0;
+  while (vec4(-1.0, -0.5, 2.0, 0.0))
+  {
+  }
+  while ((i < 10))
+  {
+    vec4(-1.0, --1.0, -1.0, ((true || !false) ? -(-1.0 + 2.0) : 0.0));
+  }
 }
 
