@@ -532,6 +532,9 @@ def gen_expr(
 
 def gen_leaf(want, scope, env, rng, kind):
 
+    if not want: # want is null, so any type goes...
+        return gen_atom(want, scope, env, rng)
+
     name = want.name # Get name
 
     vars = candidates_by_type(scope, env, want)
@@ -835,10 +838,11 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
         op = e.op
         operand = mutate_expr(e.operand, rng, scope, env)
         if coin(rng, 0.20):
+            dlog("Unary stuff...")
             # op = rng.choice(["+", "-", "!", "~", "++", "--"])
             candidates = ["+", "-", "!", "~"]
-            if not is_lvalue_expr(e): # If right hand value, then add the things.
-                candidates.extend(["--", "++"])
+            # if not is_lvalue_expr(e): # If right hand value, then add the things.
+            #     candidates.extend(["--", "++"])
             op = rng.choice(candidates)
         return UnaryExpr(op, operand, postfix=e.postfix)
 

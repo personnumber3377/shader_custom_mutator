@@ -269,8 +269,8 @@ if __name__ == "__main__":
     if len(data) < HEADER_SIZE:
         data = b"\x00" * HEADER_SIZE + data
 
-    seed = random.randrange(10000000) # 5 # Modify this to appropriate values when debugging...
-    # seed = 4303230
+    # seed = random.randrange(10000000) # 5 # Modify this to appropriate values when debugging...
+    seed = 300346
     print("SEED: "+str(seed))
     # init(random.randrange(100000)) # Random shit here...
     

@@ -1,12 +1,12 @@
 void main()
 {
-  while (true)
+  int i = 0;
+  while (false)
   {
   }
-  while ((true ? (true ? false : true) : false))
+  while ((i < 10))
   {
-    -1.0;
   }
-  int i[1] = -8;
+  ivec2(3, ~i);
 }
 
