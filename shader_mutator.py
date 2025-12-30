@@ -66,6 +66,7 @@ BINOPS = [
     # logical
     ("&&", "bool",  "bool",  "bool"),
     ("||", "bool",  "bool",  "bool"),
+    ("^^", "bool",  "bool",  "bool"), # This wasn't previously here, but was added later...
 ]
 
 UNOPS = [
@@ -868,7 +869,7 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
             buckets = [
                 ["+", "-", "*", "/"],
                 ["<", "<=", ">", ">=", "==", "!="],
-                ["&&", "||"],
+                ["&&", "||", "^^"],
                 # ["=", "+=", "-=", "*=", "/="], # Allowing these leads to silly source code snippets like "(main()(srcValue.g) *= srcValue.g);"
             ]
             for b in buckets:

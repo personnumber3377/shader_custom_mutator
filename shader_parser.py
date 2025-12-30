@@ -17,17 +17,18 @@ PRECEDENCE = {
     ",": 1,  # sequence
     "=": 2, "+=": 2, "-=": 2, "*=": 2, "/=": 2, "%=": 2, "<<=": 2, ">>=": 2,
     "||": 3,
-    "&&": 4,
-    "|": 5,
-    "^": 6,
-    "&": 7,
-    "==": 8, "!=": 8,
-    "<": 9, ">": 9, "<=": 9, ">=": 9,
-    "<<": 10, ">>": 10,
-    "+": 11, "-": 11,
-    "*": 12, "/": 12, "%": 12,
-    ".": 13,  # member access handled as postfix
-    "CALL": 14, "INDEX": 14,  # postfix
+    "^^": 4,
+    "&&": 5,
+    "|": 6,
+    "^": 7,
+    "&": 8,
+    "==": 9, "!=": 9,
+    "<": 10, ">": 10, "<=": 10, ">=": 10,
+    "<<": 11, ">>": 11,
+    "+": 12, "-": 12,
+    "*": 13, "/": 13, "%": 13,
+    ".": 14,  # member access handled as postfix
+    "CALL": 15, "INDEX": 15,  # postfix
 }
 
 RIGHT_ASSOC = {
@@ -96,7 +97,7 @@ class Parser:
 
         while True:
             t = self.peek()
-            # print(t)
+            print(t)
             if t.kind == "OP" and t.value in ("++", "--"):
                 # print("stuff")
                 # postfix binds very tightly
