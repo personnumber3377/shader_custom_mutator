@@ -82,6 +82,10 @@ def benchmark_mutation_success(
             print(f"Valid mutations:     {success}")
             print(f"Success rate:        {rate:.2f}%")
         fn = random.choice(files)
+        if ".vert" in fn:
+            as_vertex = True
+        else:
+            as_vertex = False
 
         try:
             with open(fn, "rb") as f:
@@ -92,7 +96,7 @@ def benchmark_mutation_success(
             # Check original validity
             # print("is valid???")
             # print("data: "+str(data))
-            v, err = is_valid_shader(data)
+            v, err = run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
             if not v:
                 continue  # skip invalid seeds
             buf = bytearray(data)
@@ -103,7 +107,7 @@ def benchmark_mutation_success(
 
             total += 1
 
-            v, err = is_valid_shader(buf)
+            v, err = run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
 
             if v:
                 success += 1
