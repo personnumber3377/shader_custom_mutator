@@ -1,4 +1,4 @@
-['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'directives.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'OverlayDraw.frag', 'interface_blocks.glsl', 'builtin_types.glsl', 'structures.glsl', 'while_statement.glsl', 'first_character_invalid.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
+['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'OverlayDraw.frag', 'interface_blocks.glsl', 'builtin_types.glsl', 'structures.glsl', 'while_statement.glsl', 'first_character_invalid.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
 Running ./tests/arrays.glsl
 Filename: ./tests/arrays.glsl passed with orig: True and new: True
 Running ./tests/integer_literals.glsl
@@ -50,19 +50,80 @@ ERROR: 0:6: 'i' : syntax error
 
 
 Filename: ./tests/negation.glsl passed with orig: False and new: False
-Running ./tests/directives.glsl
-filename ./tests/directives.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:4: 'version' : #version directive must occur before anything else, except for comments and white space 
+Running ./tests/sequence.glsl
+Filename: ./tests/sequence.glsl passed with orig: True and new: True
+Running ./tests/ternary.glsl
+filename ./tests/ternary.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:5: '=' :  cannot convert from 'const mediump int' to 'float'
+ERROR: 0:5: '=' :  cannot convert from 'const mediump int' to 'float'
+ERROR: 0:5: '=' :  cannot convert from 'const mediump int' to 'float'
+ERROR: 0:5: '=' :  cannot convert from 'const mediump int' to 'float'
+ERROR: 0:6: '' : boolean expression expected 
+ERROR: 0:7: '' : boolean expression expected 
+ERROR: 0:7: '' : boolean expression expected 
 
 #### END COMPILER 0 INFO LOG ####
 
 
 
-Filename: ./tests/directives.glsl failed roundtrip test!!!
+Filename: ./tests/ternary.glsl passed with orig: False and new: False
+Running ./tests/actual_shader.glsl
+filename ./tests/actual_shader.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'version' : #version directive must occur before anything else, except for comments and white space 
+ERROR: 0:12: '"' : invalid file number 
+ERROR: 0:24: '1.0f' : invalid number 
+ERROR: 0:24: '/' : syntax error 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Filename: ./tests/actual_shader.glsl passed with orig: False and new: False
+Running ./tests/OverlayDraw.frag
+filename ./tests/OverlayDraw.frag errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:16: 'version' : #version directive must occur before anything else, except for comments and white space 
+ERROR: 0:25: 'uint' : syntax error 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Filename: ./tests/OverlayDraw.frag passed with orig: False and new: False
+Running ./tests/interface_blocks.glsl
+filename ./tests/interface_blocks.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'uniform_block' : syntax error 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Filename: ./tests/interface_blocks.glsl passed with orig: False and new: False
+Running ./tests/builtin_types.glsl
+filename ./tests/builtin_types.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:6: 'uint' : syntax error 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Filename: ./tests/builtin_types.glsl passed with orig: False and new: False
+Running ./tests/structures.glsl
+Filename: ./tests/structures.glsl passed with orig: True and new: True
+Running ./tests/while_statement.glsl
+Filename: ./tests/while_statement.glsl passed with orig: True and new: True
+Running ./tests/first_character_invalid.glsl
+filename ./tests/first_character_invalid.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: '`' : invalid character 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Filename: ./tests/first_character_invalid.glsl failed roundtrip test!!!
 Original source code: precision mediump float;
 precision mediump int;
 
-#version 330 core
+`
 
 
 
