@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 mediump float linearToSRGB(mediump float linear)
 {
   if ((linear <= 0.5031308))

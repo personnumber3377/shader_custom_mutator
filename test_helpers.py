@@ -9,7 +9,7 @@ def strip_header_and_null(data, header_len=0):
     
     if data and data[-1] == 0:
         # 1) Strip header
-        data = buf[header_len:]
+        data = data[header_len:]
         # 2) Strip final null byte if present
         data = data[:-1]
 
