@@ -9,7 +9,7 @@ import copy
 def strip_header_and_null(data, header_len=0):
     datanew = copy.deepcopy(data)
     if datanew and datanew[-1] == 0:
-        print("Cutting the header...")
+        # print("Cutting the header...")
         # 1) Strip header
         datanew = datanew[header_len:]
         # 2) Strip final null byte if present
@@ -83,11 +83,8 @@ def run_as_frag_and_vertex(buf: bytes, header_len: int) -> tuple[bool, str]:
         # print("filename "+str(filename)+" errored with: "+str(err))
         ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
     '''
-    print("buffer before: "+str(buf))
     source = strip_header_and_null(buf, header_len=header_len) # Cut off the shit...
-    print("source: "+str(source))
     ok, err = run_external_checker(source, 128) # Run the checker for this source code...
-    print("After the thing...")
     if not ok: # Error? Try to parse as vertex shader...
         print("Failed with these errors here when running as fragment: "+str(err))
         ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...

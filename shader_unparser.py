@@ -44,12 +44,14 @@ def unparse_expr(e: Expr) -> str:
             return f"{unparse_expr(e.operand)}{e.op}"
         return f"{e.op}{unparse_expr(e.operand)}"
     if isinstance(e, BinaryExpr):
+        if e.op == ",": # Check for the comma "operator" which is actually used to separate function arguments and such...
+            return f"{unparse_expr(e.left)} {e.op} {unparse_expr(e.right)}"
         return f"({unparse_expr(e.left)} {e.op} {unparse_expr(e.right)})"
     if isinstance(e, TernaryExpr):
         return f"({unparse_expr(e.cond)} ? {unparse_expr(e.then_expr)} : {unparse_expr(e.else_expr)})"
     if isinstance(e, CallExpr):
         args = ", ".join(unparse_expr(a) for a in e.args)
-        return f"{unparse_expr(e.callee)}({args})"
+        return f"{unparse_expr(e.callee)}({args})" # This originally had the paranthesis around it, but because we actually break the call convention, because we get function calls like "pow((1, 2))" instead of "pow(1, 2)"
     if isinstance(e, IndexExpr):
         return f"{unparse_expr(e.base)}[{unparse_expr(e.index)}]"
     if isinstance(e, MemberExpr):

@@ -21,7 +21,7 @@ void main()
   vec3 atan_c = vec3(0.0);
   vec3 scale = vec3(1.0);
   vec3 sign = vec3(1.0);
-  vec4 result = vec4((((0.0 , 0.0) , 0.0) , 1.0));
+  vec4 result = vec4(0.0 , 0.0 , 0.0 , 1.0);
   const float epsilon = 0.0001;
   if (((x[0] > epsilon) || (abs(y[0]) > epsilon)))
   {
@@ -32,34 +32,34 @@ void main()
     if ((abs(y[0]) <= abs(x[0])))
     {
       (c[0] = abs((y[0] / x[0])));
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(1))) / float(1)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(3))) / float(3)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(5))) / float(5)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(7))) / float(7)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(9))) / float(9)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(11))) / float(11)));
       (scale[0] *= -1.0);
       (result[0] = (((sign[0] * atan_c[0]) / (2.0 * M_PI)) + 0.5));
     }
     else
     {
       (c[0] = abs((x[0] / y[0])));
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(1))) / float(1)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(3))) / float(3)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(5))) / float(5)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(7))) / float(7)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(9))) / float(9)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(11))) / float(11)));
       (scale[0] *= -1.0);
       (result[0] = (((sign[0] * ((M_PI / 2.0) - atan_c[0])) / (2.0 * M_PI)) + 0.5));
     }
@@ -79,34 +79,34 @@ void main()
     if ((abs(y[1]) <= color(x[1])))
     {
       (c[1] = abs((y[1] / x[1])));
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(1))) / float(1)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(3)))) / float(3)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(3))) / float(3)));
       (scale[0] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(5))) / float(5)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(7))) / float(7)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(9))) / float(9)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(11))) / float(11)));
       (scale[1] *= -1.0);
       (result[1] = (((sign[1] * atan_c[1]) / (2.0 * M_PI)) + 0.5));
     }
     else
     {
       (c[1] = abs((x[1] / y[1])));
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(1))) / float(1)));
       (scale[1] *= -1.0);
       (atan_c[1] += (float(3) / (scale[1] * pow(c[1]))));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(5))) / float(5)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(7))) / float(7)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(9))) / float(9)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(11))) / float(11)));
       (scale[1] *= -1.0);
       (result[1] = (((sign[1] * ((M_PI / 2.0) - atan_c[1])) / (2.0 * M_PI)) + 0.5));
     }
@@ -127,34 +127,34 @@ void main()
     if ((abs(y[2]) <= abs(x[2])))
     {
       (c[2] = abs((y[2] / x[2])));
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(1))) / float(1)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(3))) / float(3)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(5))) / float(5)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(7))) / float(7)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(9))) / float(9)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(11))) / float(11)));
       (scale[2] *= -1.0);
       (result[2] = (((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 0.5));
     }
     else
     {
       (c[2] = abs((x[2] / y[2])));
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(1))) / float(1)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(3))) / float(3)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(5))) / float(5)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(7))) / float(7)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(9))) / float(9)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(11))) / float(11)));
       (scale[2] *= -1.0);
       (result[2] = (((sign[2] * ((M_PI / 2.0) - atan_c[2])) / (2.0 * M_PI)) + 0.5));
     }

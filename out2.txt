@@ -1,9 +1,5 @@
 SEED: 5660207
 Using /home/oof/webgl_fuzz_inputs/vec4_empty_in_vec4_array_frag.bin as input filename...
-buffer before: bytearray(b'0\x8b\x00\x00\x02\x00\x00\x00\x0f\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00precision mediump float;\nprecision mediump int;\n\nprecision mediump float;\nvarying vec4 color;\nvoid main ()\n{\n\tconst float M_PI = 3.14159265358979323846;\n\tvec3 x = 2.0 * (color.ggg - 0.5);\n\tvec3 y = 2.0 * (color.bbb - 0.5);\n\tvec3 c;\n\tvec3 atan_c = vec3(0.0);\n\tvec3 scale = vec3(1.0);\n\tvec3 sign = vec3(1.0);\n\tvec4 result = vec4(0.0, 0.0, 0.0, 1.0);\n\tconst float epsilon = 1.0e-4;\n\tif(x[0] > epsilon || abs(y[0]) > epsilon)\n\t{\n\t\tif(x[0] < 0.0 ^^ y[0] < 0.0)\n\t\t{\n\t\t\tsign[0] = -1.0;\n\t\t}\n\t\tif(abs(y[0]) <= abs(x[0]))\n\t\t{\n\t\t\tc[0] = abs(y[0] / x[0]);\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(1)) / float(1);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(3)) / float(3);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(5)) / float(5);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(7)) / float(7);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(9)) / float(9);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(11)) / float(11);\n\t\t\tscale[0] *= -1.0;\n\t\t\tresult[0] = sign[0] * atan_c[0] / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tc[0] = abs(x[0] / y[0]);\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(1)) / float(1);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(3)) / float(3);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(5)) / float(5);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(7)) / float(7);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(9)) / float(9);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(11)) / float(11);\n\t\t\tscale[0] *= -1.0;\n\t\t\tresult[0] = sign[0] * (M_PI / 2.0 - atan_c[0]) / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\tif(x[0] < 0.0)\n\t\t\tif(y[0] < 0.0) result[0] -= 0.5;\n\t\t\telse if(y[0] > 0.0) result[0] += 0.5;\n\t}\n\tif(x[1] > epsilon || abs(y[1]) > epsilon)\n\t{\n\t\tif(x[1] < 0.0 ^^ y[1] < 0.0)\n\t\t{\n\t\t\tsign[1] = -1.0;\n\t\t}\n\t\tif(abs(y[1]) <= abs(x[1]))\n\t\t{\n\t\t\tc[1] = abs(y[1] / x[1]);\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(1)) / float(1);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(3)) / float(3);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(5)) / float(5);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(7)) / float(7);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(9)) / float(9);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(11)) / float(11);\n\t\t\tscale[1] *= -1.0;\n\t\t\tresult[1] = sign[1] * atan_c[1] / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tc[1] = abs(x[1] / y[1]);\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(1)) / float(1);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(3)) / float(3);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(5)) / float(5);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(7)) / float(7);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(9)) / float(9);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(11)) / float(11);\n\t\t\tscale[1] *= -1.0;\n\t\t\tresult[1] = sign[1] * (M_PI / 2.0 - atan_c[1]) / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\tif(x[1] < 0.0)\n\t\t\tif(y[1] < 0.0) result[1] -= 0.5;\n\t\t\telse if(y[1] > 0.0) result[1] += 0.5;\n\t}\n\tif(x[2] > epsilon || abs(y[2]) > epsilon)\n\t{\n\t\tif(x[2] < 0.0 ^^ y[2] < 0.0)\n\t\t{\n\t\t\tsign[2] = -1.0;\n\t\t}\n\t\tif(abs(y[2]) <= abs(x[2]))\n\t\t{\n\t\t\tc[2] = abs(y[2] / x[2]);\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(1)) / float(1);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(3)) / float(3);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(5)) / float(5);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(7)) / float(7);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(9)) / float(9);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(11)) / float(11);\n\t\t\tscale[2] *= -1.0;\n\t\t\tresult[2] = sign[2] * atan_c[2] / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tc[2] = abs(x[2] / y[2]);\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(1)) / float(1);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(3)) / float(3);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(5)) / float(5);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(7)) / float(7);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(9)) / float(9);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(11)) / float(11);\n\t\t\tscale[2] *= -1.0;\n\t\t\tresult[2] = sign[2] * (M_PI / 2.0 - atan_c[2]) / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\tif(x[2] < 0.0)\n\t\t\tif(y[2] < 0.0) result[2] -= 0.5;\n\t\t\telse if(y[2] > 0.0) result[2] += 0.5;\n\t}\n\tgl_FragColor = result;\n}\n\x00')
-Cutting the header...
-source: bytearray(b'precision mediump float;\nprecision mediump int;\n\nprecision mediump float;\nvarying vec4 color;\nvoid main ()\n{\n\tconst float M_PI = 3.14159265358979323846;\n\tvec3 x = 2.0 * (color.ggg - 0.5);\n\tvec3 y = 2.0 * (color.bbb - 0.5);\n\tvec3 c;\n\tvec3 atan_c = vec3(0.0);\n\tvec3 scale = vec3(1.0);\n\tvec3 sign = vec3(1.0);\n\tvec4 result = vec4(0.0, 0.0, 0.0, 1.0);\n\tconst float epsilon = 1.0e-4;\n\tif(x[0] > epsilon || abs(y[0]) > epsilon)\n\t{\n\t\tif(x[0] < 0.0 ^^ y[0] < 0.0)\n\t\t{\n\t\t\tsign[0] = -1.0;\n\t\t}\n\t\tif(abs(y[0]) <= abs(x[0]))\n\t\t{\n\t\t\tc[0] = abs(y[0] / x[0]);\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(1)) / float(1);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(3)) / float(3);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(5)) / float(5);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(7)) / float(7);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(9)) / float(9);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(11)) / float(11);\n\t\t\tscale[0] *= -1.0;\n\t\t\tresult[0] = sign[0] * atan_c[0] / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tc[0] = abs(x[0] / y[0]);\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(1)) / float(1);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(3)) / float(3);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(5)) / float(5);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(7)) / float(7);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(9)) / float(9);\n\t\t\tscale[0] *= -1.0;\n\t\t\tatan_c[0] += scale[0] * pow(c[0], float(11)) / float(11);\n\t\t\tscale[0] *= -1.0;\n\t\t\tresult[0] = sign[0] * (M_PI / 2.0 - atan_c[0]) / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\tif(x[0] < 0.0)\n\t\t\tif(y[0] < 0.0) result[0] -= 0.5;\n\t\t\telse if(y[0] > 0.0) result[0] += 0.5;\n\t}\n\tif(x[1] > epsilon || abs(y[1]) > epsilon)\n\t{\n\t\tif(x[1] < 0.0 ^^ y[1] < 0.0)\n\t\t{\n\t\t\tsign[1] = -1.0;\n\t\t}\n\t\tif(abs(y[1]) <= abs(x[1]))\n\t\t{\n\t\t\tc[1] = abs(y[1] / x[1]);\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(1)) / float(1);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(3)) / float(3);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(5)) / float(5);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(7)) / float(7);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(9)) / float(9);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(11)) / float(11);\n\t\t\tscale[1] *= -1.0;\n\t\t\tresult[1] = sign[1] * atan_c[1] / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tc[1] = abs(x[1] / y[1]);\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(1)) / float(1);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(3)) / float(3);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(5)) / float(5);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(7)) / float(7);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(9)) / float(9);\n\t\t\tscale[1] *= -1.0;\n\t\t\tatan_c[1] += scale[1] * pow(c[1], float(11)) / float(11);\n\t\t\tscale[1] *= -1.0;\n\t\t\tresult[1] = sign[1] * (M_PI / 2.0 - atan_c[1]) / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\tif(x[1] < 0.0)\n\t\t\tif(y[1] < 0.0) result[1] -= 0.5;\n\t\t\telse if(y[1] > 0.0) result[1] += 0.5;\n\t}\n\tif(x[2] > epsilon || abs(y[2]) > epsilon)\n\t{\n\t\tif(x[2] < 0.0 ^^ y[2] < 0.0)\n\t\t{\n\t\t\tsign[2] = -1.0;\n\t\t}\n\t\tif(abs(y[2]) <= abs(x[2]))\n\t\t{\n\t\t\tc[2] = abs(y[2] / x[2]);\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(1)) / float(1);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(3)) / float(3);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(5)) / float(5);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(7)) / float(7);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(9)) / float(9);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(11)) / float(11);\n\t\t\tscale[2] *= -1.0;\n\t\t\tresult[2] = sign[2] * atan_c[2] / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tc[2] = abs(x[2] / y[2]);\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(1)) / float(1);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(3)) / float(3);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(5)) / float(5);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(7)) / float(7);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(9)) / float(9);\n\t\t\tscale[2] *= -1.0;\n\t\t\tatan_c[2] += scale[2] * pow(c[2], float(11)) / float(11);\n\t\t\tscale[2] *= -1.0;\n\t\t\tresult[2] = sign[2] * (M_PI / 2.0 - atan_c[2]) / (2.0 * M_PI) + 0.5;\n\t\t}\n\t\tif(x[2] < 0.0)\n\t\t\tif(y[2] < 0.0) result[2] -= 0.5;\n\t\t\telse if(y[2] > 0.0) result[2] += 0.5;\n\t}\n\tgl_FragColor = result;\n}\n')
-After the thing...
 Token(kind=';', value=';', pos=151)
 Token(kind='OP', value='*', pos=167)
 Token(kind='OP', value='.', pos=175)
@@ -1489,7 +1485,6 @@ Token(kind=';', value=';', pos=4607)
 [DEBUG] want: TypeInfo(int, dims=0)
 [DEBUG] same: []
 [DEBUG] vars with want==TypeInfo(int, dims=0) : []
-Cutting the header...
 precision mediump float;
 precision mediump int;
 
@@ -1513,7 +1508,7 @@ void main()
   vec3 atan_c = vec3(0.0);
   vec3 scale = vec3(1.0);
   vec3 sign = vec3(1.0);
-  vec4 result = vec4((((0.0 , 0.0) , 0.0) , 1.0));
+  vec4 result = vec4(0.0 , 0.0 , 0.0 , 1.0);
   const float epsilon = 0.0001;
   if (((x[0] > epsilon) || (abs(y[0]) > epsilon)))
   {
@@ -1524,34 +1519,34 @@ void main()
     if ((abs(y[0]) <= abs(x[0])))
     {
       (c[0] = abs((y[0] / x[0])));
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(1))) / float(1)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(3))) / float(3)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(5))) / float(5)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(7))) / float(7)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(9))) / float(9)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(11))) / float(11)));
       (scale[0] *= -1.0);
       (result[0] = (((sign[0] * atan_c[0]) / (2.0 * M_PI)) + 0.5));
     }
     else
     {
       (c[0] = abs((x[0] / y[0])));
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(1))) / float(1)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(3))) / float(3)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(5))) / float(5)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(7))) / float(7)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(9))) / float(9)));
       (scale[0] *= -1.0);
-      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));
+      (atan_c[0] += ((scale[0] * pow(c[0] , float(11))) / float(11)));
       (scale[0] *= -1.0);
       (result[0] = (((sign[0] * ((M_PI / 2.0) - atan_c[0])) / (2.0 * M_PI)) + 0.5));
     }
@@ -1571,34 +1566,34 @@ void main()
     if ((abs(y[1]) <= color(x[1])))
     {
       (c[1] = abs((y[1] / x[1])));
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(1))) / float(1)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(3)))) / float(3)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(3))) / float(3)));
       (scale[0] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(5))) / float(5)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(7))) / float(7)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(9))) / float(9)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(11))) / float(11)));
       (scale[1] *= -1.0);
       (result[1] = (((sign[1] * atan_c[1]) / (2.0 * M_PI)) + 0.5));
     }
     else
     {
       (c[1] = abs((x[1] / y[1])));
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(1))) / float(1)));
       (scale[1] *= -1.0);
       (atan_c[1] += (float(3) / (scale[1] * pow(c[1]))));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(5))) / float(5)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(7))) / float(7)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(9))) / float(9)));
       (scale[1] *= -1.0);
-      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));
+      (atan_c[1] += ((scale[1] * pow(c[1] , float(11))) / float(11)));
       (scale[1] *= -1.0);
       (result[1] = (((sign[1] * ((M_PI / 2.0) - atan_c[1])) / (2.0 * M_PI)) + 0.5));
     }
@@ -1619,34 +1614,34 @@ void main()
     if ((abs(y[2]) <= abs(x[2])))
     {
       (c[2] = abs((y[2] / x[2])));
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(1))) / float(1)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(3))) / float(3)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(5))) / float(5)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(7))) / float(7)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(9))) / float(9)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(11))) / float(11)));
       (scale[2] *= -1.0);
       (result[2] = (((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 0.5));
     }
     else
     {
       (c[2] = abs((x[2] / y[2])));
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(1))) / float(1)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(3))) / float(3)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(5))) / float(5)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(7))) / float(7)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(9))) / float(9)));
       (scale[2] *= -1.0);
-      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));
+      (atan_c[2] += ((scale[2] * pow(c[2] , float(11))) / float(11)));
       (scale[2] *= -1.0);
       (result[2] = (((sign[2] * ((M_PI / 2.0) - atan_c[2])) / (2.0 * M_PI)) + 0.5));
     }
@@ -1661,93 +1656,19 @@ void main()
 }
 
 
-buffer before: bytearray(b'0\x8b\x00\x00\x02\x00\x08\x00\x0f\x00\x01\x00\x01 \x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00 \x00\x00\x00\x00\x00\x02\x01\x04\x00\x00@\x00\x00\x00\x10\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00precision mediump float;\nprecision mediump int;\n\nstruct FuzzStruct22637 {\n  bvec2 f_3145[1];\n  vec4 f_4197;\n  bvec3 f_1953;\n  ivec2 f_3368;\n  ivec2 f_8515;\n  bvec2 f_2974;\n};\n\nvec4 color;\n\nvoid main()\n{\n  const float M_PI = 3.141592653589793;\n  vec3 x = (2.0 * (color.ggg - 0.5));\n  vec3 y = (2.0 * (color.bbb - 0.5));\n  vec3 c;\n  vec3 atan_c = vec3(0.0);\n  vec3 scale = vec3(1.0);\n  vec3 sign = vec3(1.0);\n  vec4 result = vec4((((0.0 , 0.0) , 0.0) , 1.0));\n  const float epsilon = 0.0001;\n  if (((x[0] > epsilon) || (abs(y[0]) > epsilon)))\n  {\n    if (((x[0] < 0.0) ^^ (y[0] < 0.0)))\n    {\n      (sign[0] = -1.0);\n    }\n    if ((abs(y[0]) <= abs(x[0])))\n    {\n      (c[0] = abs((y[0] / x[0])));\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));\n      (scale[0] *= -1.0);\n      (result[0] = (((sign[0] * atan_c[0]) / (2.0 * M_PI)) + 0.5));\n    }\n    else\n    {\n      (c[0] = abs((x[0] / y[0])));\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));\n      (scale[0] *= -1.0);\n      (result[0] = (((sign[0] * ((M_PI / 2.0) - atan_c[0])) / (2.0 * M_PI)) + 0.5));\n    }\n    if ((x[0] < 0.0))\n      if ((y[0] < 0.0))\n        (result[0] -= 0.5);\n      else\n        if ((y[0] > 0.0))\n          (result[0] += 0.5);\n  }\n  if (((x[1] > epsilon) || (color(color[1]) > epsilon)))\n  {\n    if (((x[1] < 0.0) ^^ (y[1] < 0.0)))\n    {\n      (sign[1] = -1.0);\n    }\n    if ((abs(y[1]) <= color(x[1])))\n    {\n      (c[1] = abs((y[1] / x[1])));\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(3)))) / float(3)));\n      (scale[0] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));\n      (scale[1] *= -1.0);\n      (result[1] = (((sign[1] * atan_c[1]) / (2.0 * M_PI)) + 0.5));\n    }\n    else\n    {\n      (c[1] = abs((x[1] / y[1])));\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += (float(3) / (scale[1] * pow(c[1]))));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));\n      (scale[1] *= -1.0);\n      (result[1] = (((sign[1] * ((M_PI / 2.0) - atan_c[1])) / (2.0 * M_PI)) + 0.5));\n    }\n    if ((x[1] < 0.0))\n      if ((y[1] < 0.0))\n        (result[1] -= 0.5);\n      else\n        if ((y[1] > 0.0))\n          (result[1] += 0.5);\n    ivec2(7, (2 + 6));\n  }\n  if (((x[2] > epsilon) || (abs(y[2]) > epsilon)))\n  {\n    if (((x[2] < 0.0) ^^ (y[2] < 0.0)))\n    {\n      (sign[2] = -1.0);\n    }\n    if ((abs(y[2]) <= abs(x[2])))\n    {\n      (c[2] = abs((y[2] / x[2])));\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));\n      (scale[2] *= -1.0);\n      (result[2] = (((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 0.5));\n    }\n    else\n    {\n      (c[2] = abs((x[2] / y[2])));\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));\n      (scale[2] *= -1.0);\n      (result[2] = (((sign[2] * ((M_PI / 2.0) - atan_c[2])) / (2.0 * M_PI)) + 0.5));\n    }\n    if ((x[2] < 0.0))\n      if ((y[2] < 0.0))\n        (result[2] -= 0.5);\n      else\n        if ((y[2] > 0.0))\n          (result[2] += 0.5);\n  }\n  (gl_FragColor = result);\n}\n\n\x00')
-Cutting the header...
-source: bytearray(b'precision mediump float;\nprecision mediump int;\n\nstruct FuzzStruct22637 {\n  bvec2 f_3145[1];\n  vec4 f_4197;\n  bvec3 f_1953;\n  ivec2 f_3368;\n  ivec2 f_8515;\n  bvec2 f_2974;\n};\n\nvec4 color;\n\nvoid main()\n{\n  const float M_PI = 3.141592653589793;\n  vec3 x = (2.0 * (color.ggg - 0.5));\n  vec3 y = (2.0 * (color.bbb - 0.5));\n  vec3 c;\n  vec3 atan_c = vec3(0.0);\n  vec3 scale = vec3(1.0);\n  vec3 sign = vec3(1.0);\n  vec4 result = vec4((((0.0 , 0.0) , 0.0) , 1.0));\n  const float epsilon = 0.0001;\n  if (((x[0] > epsilon) || (abs(y[0]) > epsilon)))\n  {\n    if (((x[0] < 0.0) ^^ (y[0] < 0.0)))\n    {\n      (sign[0] = -1.0);\n    }\n    if ((abs(y[0]) <= abs(x[0])))\n    {\n      (c[0] = abs((y[0] / x[0])));\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));\n      (scale[0] *= -1.0);\n      (result[0] = (((sign[0] * atan_c[0]) / (2.0 * M_PI)) + 0.5));\n    }\n    else\n    {\n      (c[0] = abs((x[0] / y[0])));\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(1)))) / float(1)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(3)))) / float(3)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(5)))) / float(5)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(7)))) / float(7)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(9)))) / float(9)));\n      (scale[0] *= -1.0);\n      (atan_c[0] += ((scale[0] * pow((c[0] , float(11)))) / float(11)));\n      (scale[0] *= -1.0);\n      (result[0] = (((sign[0] * ((M_PI / 2.0) - atan_c[0])) / (2.0 * M_PI)) + 0.5));\n    }\n    if ((x[0] < 0.0))\n      if ((y[0] < 0.0))\n        (result[0] -= 0.5);\n      else\n        if ((y[0] > 0.0))\n          (result[0] += 0.5);\n  }\n  if (((x[1] > epsilon) || (color(color[1]) > epsilon)))\n  {\n    if (((x[1] < 0.0) ^^ (y[1] < 0.0)))\n    {\n      (sign[1] = -1.0);\n    }\n    if ((abs(y[1]) <= color(x[1])))\n    {\n      (c[1] = abs((y[1] / x[1])));\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(3)))) / float(3)));\n      (scale[0] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));\n      (scale[1] *= -1.0);\n      (result[1] = (((sign[1] * atan_c[1]) / (2.0 * M_PI)) + 0.5));\n    }\n    else\n    {\n      (c[1] = abs((x[1] / y[1])));\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(1)))) / float(1)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += (float(3) / (scale[1] * pow(c[1]))));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(5)))) / float(5)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(7)))) / float(7)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(9)))) / float(9)));\n      (scale[1] *= -1.0);\n      (atan_c[1] += ((scale[1] * pow((c[1] , float(11)))) / float(11)));\n      (scale[1] *= -1.0);\n      (result[1] = (((sign[1] * ((M_PI / 2.0) - atan_c[1])) / (2.0 * M_PI)) + 0.5));\n    }\n    if ((x[1] < 0.0))\n      if ((y[1] < 0.0))\n        (result[1] -= 0.5);\n      else\n        if ((y[1] > 0.0))\n          (result[1] += 0.5);\n    ivec2(7, (2 + 6));\n  }\n  if (((x[2] > epsilon) || (abs(y[2]) > epsilon)))\n  {\n    if (((x[2] < 0.0) ^^ (y[2] < 0.0)))\n    {\n      (sign[2] = -1.0);\n    }\n    if ((abs(y[2]) <= abs(x[2])))\n    {\n      (c[2] = abs((y[2] / x[2])));\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));\n      (scale[2] *= -1.0);\n      (result[2] = (((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 0.5));\n    }\n    else\n    {\n      (c[2] = abs((x[2] / y[2])));\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(1)))) / float(1)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(3)))) / float(3)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(5)))) / float(5)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(7)))) / float(7)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(9)))) / float(9)));\n      (scale[2] *= -1.0);\n      (atan_c[2] += ((scale[2] * pow((c[2] , float(11)))) / float(11)));\n      (scale[2] *= -1.0);\n      (result[2] = (((sign[2] * ((M_PI / 2.0) - atan_c[2])) / (2.0 * M_PI)) + 0.5));\n    }\n    if ((x[2] < 0.0))\n      if ((y[2] < 0.0))\n        (result[2] -= 0.5);\n      else\n        if ((y[2] > 0.0))\n          (result[2] += 0.5);\n  }\n  (gl_FragColor = result);\n}\n\n')
-After the thing...
 Failed with these errors here when running as fragment: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:35: 'pow' : no matching overloaded function found
-ERROR: 0:37: 'pow' : no matching overloaded function found
-ERROR: 0:39: 'pow' : no matching overloaded function found
-ERROR: 0:41: 'pow' : no matching overloaded function found
-ERROR: 0:43: 'pow' : no matching overloaded function found
-ERROR: 0:45: 'pow' : no matching overloaded function found
-ERROR: 0:52: 'pow' : no matching overloaded function found
-ERROR: 0:54: 'pow' : no matching overloaded function found
-ERROR: 0:56: 'pow' : no matching overloaded function found
-ERROR: 0:58: 'pow' : no matching overloaded function found
-ERROR: 0:60: 'pow' : no matching overloaded function found
-ERROR: 0:62: 'pow' : no matching overloaded function found
 ERROR: 0:73: 'color' : function name expected
 ERROR: 0:79: 'color' : function name expected
-ERROR: 0:82: 'pow' : no matching overloaded function found
-ERROR: 0:84: 'pow' : no matching overloaded function found
-ERROR: 0:86: 'pow' : no matching overloaded function found
-ERROR: 0:88: 'pow' : no matching overloaded function found
-ERROR: 0:90: 'pow' : no matching overloaded function found
-ERROR: 0:92: 'pow' : no matching overloaded function found
-ERROR: 0:99: 'pow' : no matching overloaded function found
 ERROR: 0:101: 'pow' : no matching overloaded function found
-ERROR: 0:103: 'pow' : no matching overloaded function found
-ERROR: 0:105: 'pow' : no matching overloaded function found
-ERROR: 0:107: 'pow' : no matching overloaded function found
-ERROR: 0:109: 'pow' : no matching overloaded function found
-ERROR: 0:130: 'pow' : no matching overloaded function found
-ERROR: 0:132: 'pow' : no matching overloaded function found
-ERROR: 0:134: 'pow' : no matching overloaded function found
-ERROR: 0:136: 'pow' : no matching overloaded function found
-ERROR: 0:138: 'pow' : no matching overloaded function found
-ERROR: 0:140: 'pow' : no matching overloaded function found
-ERROR: 0:147: 'pow' : no matching overloaded function found
-ERROR: 0:149: 'pow' : no matching overloaded function found
-ERROR: 0:151: 'pow' : no matching overloaded function found
-ERROR: 0:153: 'pow' : no matching overloaded function found
-ERROR: 0:155: 'pow' : no matching overloaded function found
-ERROR: 0:157: 'pow' : no matching overloaded function found
 
 #### END COMPILER 0 INFO LOG ####
 
 
 
 Failed with these errors here when running as vertex shader: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:35: 'pow' : no matching overloaded function found
-ERROR: 0:37: 'pow' : no matching overloaded function found
-ERROR: 0:39: 'pow' : no matching overloaded function found
-ERROR: 0:41: 'pow' : no matching overloaded function found
-ERROR: 0:43: 'pow' : no matching overloaded function found
-ERROR: 0:45: 'pow' : no matching overloaded function found
-ERROR: 0:52: 'pow' : no matching overloaded function found
-ERROR: 0:54: 'pow' : no matching overloaded function found
-ERROR: 0:56: 'pow' : no matching overloaded function found
-ERROR: 0:58: 'pow' : no matching overloaded function found
-ERROR: 0:60: 'pow' : no matching overloaded function found
-ERROR: 0:62: 'pow' : no matching overloaded function found
 ERROR: 0:73: 'color' : function name expected
 ERROR: 0:79: 'color' : function name expected
-ERROR: 0:82: 'pow' : no matching overloaded function found
-ERROR: 0:84: 'pow' : no matching overloaded function found
-ERROR: 0:86: 'pow' : no matching overloaded function found
-ERROR: 0:88: 'pow' : no matching overloaded function found
-ERROR: 0:90: 'pow' : no matching overloaded function found
-ERROR: 0:92: 'pow' : no matching overloaded function found
-ERROR: 0:99: 'pow' : no matching overloaded function found
 ERROR: 0:101: 'pow' : no matching overloaded function found
-ERROR: 0:103: 'pow' : no matching overloaded function found
-ERROR: 0:105: 'pow' : no matching overloaded function found
-ERROR: 0:107: 'pow' : no matching overloaded function found
-ERROR: 0:109: 'pow' : no matching overloaded function found
-ERROR: 0:130: 'pow' : no matching overloaded function found
-ERROR: 0:132: 'pow' : no matching overloaded function found
-ERROR: 0:134: 'pow' : no matching overloaded function found
-ERROR: 0:136: 'pow' : no matching overloaded function found
-ERROR: 0:138: 'pow' : no matching overloaded function found
-ERROR: 0:140: 'pow' : no matching overloaded function found
-ERROR: 0:147: 'pow' : no matching overloaded function found
-ERROR: 0:149: 'pow' : no matching overloaded function found
-ERROR: 0:151: 'pow' : no matching overloaded function found
-ERROR: 0:153: 'pow' : no matching overloaded function found
-ERROR: 0:155: 'pow' : no matching overloaded function found
-ERROR: 0:157: 'pow' : no matching overloaded function found
 ERROR: 0:168: 'gl_FragColor' : undeclared identifier
 ERROR: 0:168: 'assign' : l-value required (can't modify a const)
 ERROR: 0:168: '=' : dimension mismatch
@@ -1758,44 +1679,9 @@ ERROR: 0:168: 'assign' : cannot convert from 'mediump 4-component vector of floa
 
 
 External syntax checker failed with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:35: 'pow' : no matching overloaded function found
-ERROR: 0:37: 'pow' : no matching overloaded function found
-ERROR: 0:39: 'pow' : no matching overloaded function found
-ERROR: 0:41: 'pow' : no matching overloaded function found
-ERROR: 0:43: 'pow' : no matching overloaded function found
-ERROR: 0:45: 'pow' : no matching overloaded function found
-ERROR: 0:52: 'pow' : no matching overloaded function found
-ERROR: 0:54: 'pow' : no matching overloaded function found
-ERROR: 0:56: 'pow' : no matching overloaded function found
-ERROR: 0:58: 'pow' : no matching overloaded function found
-ERROR: 0:60: 'pow' : no matching overloaded function found
-ERROR: 0:62: 'pow' : no matching overloaded function found
 ERROR: 0:73: 'color' : function name expected
 ERROR: 0:79: 'color' : function name expected
-ERROR: 0:82: 'pow' : no matching overloaded function found
-ERROR: 0:84: 'pow' : no matching overloaded function found
-ERROR: 0:86: 'pow' : no matching overloaded function found
-ERROR: 0:88: 'pow' : no matching overloaded function found
-ERROR: 0:90: 'pow' : no matching overloaded function found
-ERROR: 0:92: 'pow' : no matching overloaded function found
-ERROR: 0:99: 'pow' : no matching overloaded function found
 ERROR: 0:101: 'pow' : no matching overloaded function found
-ERROR: 0:103: 'pow' : no matching overloaded function found
-ERROR: 0:105: 'pow' : no matching overloaded function found
-ERROR: 0:107: 'pow' : no matching overloaded function found
-ERROR: 0:109: 'pow' : no matching overloaded function found
-ERROR: 0:130: 'pow' : no matching overloaded function found
-ERROR: 0:132: 'pow' : no matching overloaded function found
-ERROR: 0:134: 'pow' : no matching overloaded function found
-ERROR: 0:136: 'pow' : no matching overloaded function found
-ERROR: 0:138: 'pow' : no matching overloaded function found
-ERROR: 0:140: 'pow' : no matching overloaded function found
-ERROR: 0:147: 'pow' : no matching overloaded function found
-ERROR: 0:149: 'pow' : no matching overloaded function found
-ERROR: 0:151: 'pow' : no matching overloaded function found
-ERROR: 0:153: 'pow' : no matching overloaded function found
-ERROR: 0:155: 'pow' : no matching overloaded function found
-ERROR: 0:157: 'pow' : no matching overloaded function found
 ERROR: 0:168: 'gl_FragColor' : undeclared identifier
 ERROR: 0:168: 'assign' : l-value required (can't modify a const)
 ERROR: 0:168: '=' : dimension mismatch
