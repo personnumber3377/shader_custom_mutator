@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 struct foo
 {
     vec3 a;

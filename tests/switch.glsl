@@ -1,5 +1,5 @@
-void test() {
-    // simple test
+void main() {
+    // simple main
     int i = 10;
     switch (i) {
     case 0: break;

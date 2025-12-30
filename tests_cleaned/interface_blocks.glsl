@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 uniform uniform_block { float x; };
 in input_block { float y; };
 out output_block { float z; };

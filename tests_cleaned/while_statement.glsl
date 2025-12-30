@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 void test() {
     int i = 0;
     while (true) { }

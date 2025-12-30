@@ -1,2 +1,5 @@
+precision mediump float;
+precision mediump int;
+
 uniform float float1;
-uniform float float2 = 10.0f;
+uniform float float2 = 10.0;

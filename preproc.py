@@ -101,9 +101,9 @@ def process_shader(path: Path, out_clean: Path, out_fuzz: Path):
     cleaned = clean_shader_source(expanded)
 
     final_src = (
-        "#version 300 es\n"
-        "precision highp float;\n"
-        "precision highp int;\n\n"
+        # "#version 300 es\n"
+        "precision mediump float;\n"
+        "precision mediump int;\n\n"
         + cleaned
         + "\n"
     )

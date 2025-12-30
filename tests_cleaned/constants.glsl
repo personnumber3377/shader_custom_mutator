@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 const float test = 1;
 const float test_neg = -1;
 const float test_pos_two_sub = test - test_neg;

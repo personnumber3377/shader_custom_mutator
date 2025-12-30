@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 float linearToSRGB(float linear)
 {
     if(linear <= 0.0031308)
@@ -6,7 +9,7 @@ float linearToSRGB(float linear)
     }
     else
     {
-        return pow(linear,(1.0f / 2.4f))* 1.055f - 0.055f;
+        return pow(linear,(1.0 / 2.4))* 1.055 - 0.055;
     }
 }
 ivec2 transformImageCoords(ivec2 glFragCoords)

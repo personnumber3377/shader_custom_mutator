@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 uint getChar(const uvec2 coordInWidget, const uint fontGlyphWidth)
 {
     const uint charIndex = coordInWidget.x / fontGlyphWidth;

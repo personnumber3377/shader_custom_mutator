@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 void test() {
     int test_uninitialized_int;
     int test_initialized_int = 42;

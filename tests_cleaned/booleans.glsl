@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 void test() {
     bool test_uninitialized;
     bool test_true_initialized = true;
