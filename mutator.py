@@ -4,6 +4,7 @@ from __future__ import annotations
 import sys
 import random
 import traceback
+import os
 from typing import Optional
 
 # -----------------------------
@@ -205,16 +206,31 @@ if __name__ == "__main__":
     ap.add_argument("--iters", type=int, default=1)
     args = ap.parse_args()
 
-    with open(args.input, "rb") as f:
-        data = f.read()
+    seed = 5660207
+    print("SEED: "+str(seed))
+
+    random.seed(seed)
+
+    inp = args.input
+
+    if os.path.isdir(inp): # Select a random file as input from the thing...
+        fn = random.choice(os.listdir(inp))
+        if inp[-1] != "/":
+            inp = inp + "/"
+        # Now construct the full filename...
+        fn = inp + fn
+        with open(fn, "rb") as f:
+            data = f.read()
+    else:
+        with open(inp, "rb") as f:
+            data = f.read()
 
     # if len(data) < HEADER_SIZE:
     # Always prepend the header...
     data = b"\x00" * HEADER_SIZE + data
 
     # seed = random.randrange(10000000) # 5 # Modify this to appropriate values when debugging...
-    seed = 5660207
-    print("SEED: "+str(seed))
+    
     # init(random.randrange(100000)) # Random shit here...
     
     init(seed)
