@@ -24,7 +24,7 @@ BUILTIN_NUMERIC_TYPES = {
     "bool", "int", "uint", "float", "double",
     "vec2", "vec3", "vec4",
     "ivec2", "ivec3", "ivec4",
-    "uvec2", "uvec3", "uvec4",
+    # "uvec2", "uvec3", "uvec4",
     "bvec2", "bvec3", "bvec4",
     "mat2", "mat3", "mat4",
 }
@@ -33,10 +33,17 @@ MAX_EXPR_DEPTH = 3
 
 MATRIX_TYPES = ["mat2", "mat3", "mat4"]
 
+VEC_TYPE_FLATTENED = {
+    "vec2","vec3","vec4",
+    "ivec2","ivec3","ivec4",
+    "uvec2","uvec3","uvec4",
+    "bvec2","bvec3","bvec4",
+}
+
 VECTOR_TYPES = {
     "bool":  ["bvec2", "bvec3", "bvec4"],
     "int":   ["ivec2", "ivec3", "ivec4"],
-    "uint":  ["uvec2", "uvec3", "uvec4"],
+    # "uint":  ["uvec2", "uvec3", "uvec4"],
     "float": ["vec2", "vec3", "vec4"],
 }
 
@@ -98,12 +105,7 @@ def has_side_effect(e: Expr) -> bool:
 # These next utilities are for creating composite types more smartly...
 
 def is_vector_name(name: str) -> bool:
-    return name in {
-        "vec2","vec3","vec4",
-        "ivec2","ivec3","ivec4",
-        "uvec2","uvec3","uvec4",
-        "bvec2","bvec3","bvec4",
-    }
+    return name in VEC_TYPE_FLATTENED
 
 def is_matrix_name(name: str) -> bool:
     return name in {"mat2","mat3","mat4"}
@@ -1042,9 +1044,11 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
 
 def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
     # Block introduces scope
+    dlog("Mutating this thing here: "+str(s))
     if isinstance(s, BlockStmt):
         child = Scope(scope)
         out_stmts: List[Stmt] = []
+        '''
         for st in s.stmts:
             out_stmts.append(mutate_stmt(st, rng, child, env))
 
@@ -1054,6 +1058,12 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
                 sd = gen_struct_vardecl(child, env, rng)
                 if sd:
                     out_stmts.append(sd)
+        '''
+
+        out_stmts = copy.deepcopy(s.stmts)
+        rand_ind = rng.randrange(len(out_stmts))
+        out_stmts[rand_ind] = mutate_stmt(out_stmts[rand_ind], rng, child, env)
+
         # Add a new expression too maybe???
         if coin(rng, 0.30):
             '''
@@ -1079,12 +1089,27 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
 
     if isinstance(s, DeclStmt):
         # define vars into scope, and mutate decls
+        '''
         new_decls = []
         for d in s.decls:
             d2 = mutate_vardecl(d, rng, scope, env)
             new_decls.append(d2)
             # register in scope
             scope.define(d2.name, vardecl_to_typeinfo(d2))
+        '''
+
+        new_decls = []
+        mut_i = rng.randrange(len(s.decls)) if s.decls else None
+
+        for i, d in enumerate(s.decls):
+            if i == mut_i:
+                d2 = mutate_vardecl(d, rng, scope, env)
+            else:
+                d2 = d  # reuse original object (or deepclone if needed)
+
+            new_decls.append(d2)
+            scope.define(d2.name, vardecl_to_typeinfo(d2))
+
         # maybe reorder decl list
         if len(new_decls) > 1 and coin(rng, 0.10):
             rng.shuffle(new_decls)
@@ -1144,6 +1169,7 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
         return CaseStmt(expr, stmts)
 
     if isinstance(s, DefaultStmt):
+        assert False
         child = Scope(scope)
         stmts = [mutate_stmt(x, rng, child, env) for x in s.stmts]
         return DefaultStmt(stmts)
