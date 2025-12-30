@@ -1,39 +1,35 @@
 precision mediump float;
 precision mediump int;
 
-vec4 color = vec4((2.0 + -0.5), 2.0, (!!false ? 2.0 : -0.5), -0.5);
+vec4 color;
 
 void main()
 {
   const float M_PI = 3.141592653589793;
   vec3 x = (2.0 * (color.ggg - 0.5));
-  vec3 y = (2.0 * (color.bbb + 0.25));
-  vec3 c = vec3(0.0, 2.0, -0.5);
-  vec3 atan_c = vec3(-0.5);
-  vec3 scale = vec3(1.0);
-  vec3 sign = y(1.0);
-  vec4 result = vec4((((0.0 , 0.0) , 0.0) , 1.0));
+  vec3 y = (2.0 * (color.bbb - 0.5));
+  vec3 c = vec3(-1.0, (true ? --1.0 : 0.0), --(false ? M_PI : 0.0));
+  vec3 atan_c = vec3(0.0);
+  vec3 scale = vec3(1.5);
+  vec3 sign = vec3(1.0);
+  vec4 result = vec4(((0.0 , 0.0) , 0.0));
   const float epsilon = 0.0001;
-  if (((vec3((-1.0 - -1.0), 2.0, +0.5)[-2] > epsilon) || (epsilon <= epsilon)))
+  if (((x[0] > epsilon) || false))
   {
-    if ((true ? true : true))
+    if (((x[0] < 0.0) ^^ (0.0 < vec3((true ? ((true && true) ? 0.0 : 0.5) : 0.0), M_PI, (false ? 0.5 : (1.0 + (true ? 0.5 : 2.0))))[0])))
     {
-      (false ? 0.5 : (1.0 + (true ? 0.5 : 2.0)));
+      (sign[0] = -1.0);
     }
-    else
+    if ((abs(y[0]) <= abs(c[2])))
     {
-      M_PI;
-    }
-    if ((abs(y[16]) <= y(vec3((1.0 * (true ? -1.0 : (epsilon * 0.0))), 1.0, ((2.0 * -0.5) - 2.0)))))
-    {
-      (y[0] = abs((atan_c / vec3(M_PI, +0.5, (++M_PI - M_PI))[0])));
-      (atan_c[0] += ((scale[1] + result(c[0])) / float(1)));
-      (scale[0] *= +1.0);
-      vec3((((true || false) && false) ? +(0.0 + epsilon) : -1.0), 0.0, -1.0);
-      vec3(M_PI, (false ? (1.0 - (0.0 / M_PI)) : M_PI), (false ? 0.5 : (true ? (epsilon - -1.0) : 2.0)));
-      (atan_c[0] += ((scale[0] * pow(c[0])) / float(5)));
-      (scale[-16] *= -1.0);
-      (vec3(((false || !true) ? (0.5 * 0.0) : +(2.0 / 1.0)), M_PI, --2.0) += (y / float(7)));
+      (c[0] = abs((atan_c / x[0])));
+      vec3(+(+0.5 - M_PI), 2.0, 1.0);
+      (scale[8] *= -1.0);
+      (atan_c[-2] += ((scale[-1] * pow(c[0])) / atan_c(3)));
+      (scale[(false ? +4 : 8)] *= 0.0);
+      (y[-1] += ((scale[0] * (false ? 0.5 : (true ? 2.0 : epsilon))) / float(5)));
+      (scale[16] *= -0.0);
+      (atan_c[0] += ((scale[0] - pow(vec3((false ? 0.5 : epsilon), (0.5 * ((2.0 * 0.0) - 0.5)), ((false ? M_PI : -0.5) / (M_PI - 0.0))))) / float(7)));
       (vec3(0.5, +-1.0, -epsilon) *= !(+2.0 + 1.0));
       (vec3(2.0, 2.0, (((false || true) && (false ? false : false)) ? 2.0 : -(true ? -1.0 : 0.0))) += ((vec3(2.0, 2.0, -(-2.0 - (M_PI * 0.5))) * sign(c[0])) / float(9)));
       ((false ? 1.0 : (1.0 - 0.5)) *= x[0]);

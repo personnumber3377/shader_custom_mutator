@@ -805,6 +805,19 @@ def gen_constructor_expr(ti: TypeInfo, scope, env, rng):
 # Mutations: expressions
 # ----------------------------
 
+# This class is used to keep track when we have already mutated something...
+
+class MutCtx:
+    def __init__(self, budget: int):
+        self.budget = budget
+
+    def can_mutate(self) -> bool:
+        return self.budget > 0
+
+    def consume(self):
+        assert self.budget > 0
+        self.budget -= 1
+
 def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     """
     Returns possibly-mutated expression.
@@ -1286,8 +1299,28 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
 
     # Mutate each item; keep env updated as we go.
     new_items: List[TopLevel] = []
-    for item in tu2.items:
-        new_items.append(mutate_toplevel(item, rng, env))
+    # for item in tu2.items:
+    #     new_items.append(mutate_toplevel(item, rng, env))
+
+    # Instead of mutating each expression, just mutate a randomly chosen one...
+
+    new_items = copy.deepcopy(tu2.items) # Copy...
+
+    # Now get one...
+
+    ind = rng.randrange(len(new_items))
+
+    # Now pop that ...
+
+    item = new_items.pop(ind)
+
+    # Mutate
+
+    item = mutate_toplevel(item, rng, env)
+
+    # Now add that back...
+
+    new_items.insert(ind, item)
 
     # Structural additions etc...
 
