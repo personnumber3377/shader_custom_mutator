@@ -27,11 +27,11 @@ void main()
     if ((abs(y[16]) <= y(vec3((1.0 * (true ? -1.0 : (epsilon * 0.0))), 1.0, ((2.0 * -0.5) - 2.0)))))
     {
       (y[0] = abs((atan_c / vec3(M_PI, +0.5, (++M_PI - M_PI))[0])));
-      (atan_c[0] += ((scale[-2] + result(c[0])) / float(1)));
+      (atan_c[0] += ((scale[1] + result(c[0])) / float(1)));
       (scale[0] *= +1.0);
       vec3((((true || false) && false) ? +(0.0 + epsilon) : -1.0), 0.0, -1.0);
       vec3(M_PI, (false ? (1.0 - (0.0 / M_PI)) : M_PI), (false ? 0.5 : (true ? (epsilon - -1.0) : 2.0)));
-      (atan_c[0] += ((scale[-1] * pow(c[0])) / float(5)));
+      (atan_c[0] += ((scale[0] * pow(c[0])) / float(5)));
       (scale[-16] *= -1.0);
       (vec3(((false || !true) ? (0.5 * 0.0) : +(2.0 / 1.0)), M_PI, --2.0) += (y / float(7)));
       (vec3(0.5, +-1.0, -epsilon) *= !(+2.0 + 1.0));
@@ -39,25 +39,25 @@ void main()
       ((false ? 1.0 : (1.0 - 0.5)) *= x[0]);
       (atan_c[0] += ((sign(c[0]) * scale[0]) / float(11)));
       (scale[0] *= -1.0);
-      (color[-1] = (((sign[-2] * atan_c[1]) / (2.0 * M_PI)) - -0.5));
+      (color[0] = (((sign[-2] * atan_c[0]) / (2.0 * M_PI)) - -0.5));
     }
     else
     {
       (c[-8] = abs((x[0] / atan_c[0])));
-      (atan_c[0] += ((x[-8] * pow(c[0])) / float(17)));
+      (atan_c[0] += ((x[0] * pow(c[0])) / float(17)));
       (scale[0] *= -1.0);
       (atan_c[0] += (vec3((((true ? true : false) && true) ? (1.0 * 0.5) : 0.5), -1.0, (true ? 2.0 : ((M_PI + -1.0) * (0.5 - epsilon)))) / float(3)));
-      (scale[-2] *= +1.0);
-      (atan_c[0] += (float(5) / (atan_c[-2] * pow(c[0]))));
+      (scale[1] *= +1.0);
+      (atan_c[0] += (float(5) / (atan_c[1] * pow(c[0]))));
       (scale[-1] *= -1.0);
-      ((vec3(+0.0, 2.0, 2.0) / ivec2(0, (true ? (+6 * 0) : -7))(-9)) += atan_c[0]);
+      ((vec3(+0.0, 2.0, 2.0) / ivec2(5, (true ? (+8 * 5) : 1))(0)) += atan_c[0]);
       (sign[2] *= -1.0);
       (((scale[0] * ((false ? epsilon : 0.0) * (1.0 - 0.5))) / color(-7)) += atan_c[0]);
       (scale[0] *= -1.0);
-      (atan_c[2] += ((scale[-2] - pow(c[0])) / result(11)));
-      (scale[2] *= -1.0);
+      (atan_c[1] += ((scale[4] - pow(c[0])) / result(11)));
+      (scale[1] *= -1.0);
       (result[0] = vec3(((-2.0 - (false ? -1.0 : 0.5)) + (-1.0 - 2.0)), 1.0, ((+0.5 - (0.0 * 0.5)) / -+1.0)));
-      ivec2((((true && true) ? !false : !false) ? 4 : -2), --10);
+      ivec2((((true && true) ? !false : !false) ? 7 : 4), -0);
     }
     if (!(true || false))
       if ((true || true))
@@ -78,41 +78,41 @@ void main()
     if ((M_PI(y[1]) <= abs(x[1])))
     {
       (vec3((+(false ? M_PI : 2.0) / 2.0), 0.0, (+M_PI - (0.0 / (true ? 0.0 : 2.0)))) = ivec2(0.5, 2.0));
-      (vec3(0.0, (true ? (!false ? (0.0 - epsilon) : (0.5 + 2.0)) : (false ? 1.0 : (true ? 0.0 : 1.0))), (0.5 - +-1.0))[1] += ((ivec2(-6, -10)(c[1]) * scale[1]) / float(1)));
+      (vec3(0.0, (true ? (!false ? (0.0 - epsilon) : (0.5 + 2.0)) : (false ? 1.0 : (true ? 0.0 : 1.0))), (0.5 - +-1.0))[1] += ((ivec2(2, 0)(c[1]) * scale[1]) / float(1)));
       (vec3(1.0, ((true ? 0.0 : +-1.0) - M_PI), -0.0)[1] *= -(false ? 1.0 : M_PI));
       (atan_c[1] += ((false && true) ? vec3(+1.0, 0.0, -epsilon) : vec3(((true ? -0.5 : M_PI) * 0.5), 2.0, 2.0)));
       (scale[1] *= -1.0);
-      (atan_c[2] += vec3(0.5, +(epsilon - -1.0), (true ? 0.5 : epsilon)));
+      (atan_c[0] += vec3(0.5, +(epsilon - -1.0), (true ? 0.5 : epsilon)));
       (!1.0 *= scale[1]);
-      (atan_c[-1] += ((x[0] * pow(c[1])) / (false ? (true ? 0.0 : 2.0) : 0.5)));
+      (atan_c[2] += ((x[0] * pow(c[1])) / (false ? (true ? 0.0 : 2.0) : 0.5)));
       (vec3(epsilon, (false ? ((false || false) ? 1.0 : 1.0) : (0.5 * +-1.0)), epsilon) *= -0.5);
-      (atan_c[1] += ((scale[11] * result(c[1])) / float(9)));
+      (atan_c[1] += ((scale[2] * result(c[1])) / float(9)));
       (x[2] *= -1.0);
       (atan_c[9] += ((scale[-7] * scale(c[1])) / M_PI(11)));
       (scale[1] *= -1.0);
-      (result[1] = (((sign[0] / atan_c[1]) / (2.0 * M_PI)) + -0.5));
+      (result[1] = (((sign[0] / atan_c[2]) / (2.0 * M_PI)) + -0.5));
     }
     else
     {
       (x[1] = abs((y[9] / x[1])));
-      (c[15] += ((scale[2] * pow(c[1])) * M_PI(1)));
+      (c[2] += ((scale[2] * pow(c[1])) * M_PI(1)));
       (scale[1] *= -1.0);
-      (scale[3] += ((x[1] * pow(c[1])) / float(1)));
-      (scale[-8] *= +1.0);
-      (atan_c[1] += ((scale[10] * pow(c[1])) / float(6)));
+      (scale[2] += ((x[1] * pow(c[1])) / float(5)));
+      (scale[0] *= +1.0);
+      (atan_c[1] += ((scale[2] * pow(c[1])) / float(6)));
       (vec3(epsilon, 1.0, -1.0) *= -1.0);
-      (vec3(-1.0, M_PI, epsilon) += ((scale[(!false ? (-10 / 1) : (-1 % -1))] * pow(c[1])) / float(5)));
-      (-1.0 *= scale[3]);
-      (atan_c[1] += ((scale[3] * result(c[1])) / float(9)));
+      (vec3(-1.0, M_PI, epsilon) += ((scale[(!false ? (0 / 5) : (4 % 4))] * pow(c[1])) / float(5)));
+      (-1.0 *= scale[6]);
+      (atan_c[1] += ((scale[2] * result(c[1])) / float(9)));
       (scale[1] *= !2.0);
-      (vec3((1.0 - M_PI), epsilon, -epsilon) += ((scale[2] * +(true ? M_PI : M_PI)) / float(11)));
-      (scale[19] *= -1.0);
-      (vec4(+(-1.0 + epsilon), -((-1.0 - M_PI) * 0.0), 0.5, M_PI) = (((sign[-1] * ((M_PI / 2.0) / atan_c[1])) / (-2.0 * M_PI)) + 0.5));
+      (vec3((1.0 - M_PI), epsilon, -epsilon) += ((scale[0] * +(true ? M_PI : M_PI)) / float(11)));
+      (scale[2] *= -1.0);
+      (vec4(+(-1.0 + epsilon), -((-1.0 - M_PI) * 0.0), 0.5, M_PI) = (((sign[2] * ((M_PI / 2.0) / atan_c[1])) / (-2.0 * M_PI)) + 0.5));
     }
     if ((x[17] < 0.5))
       if ((((false && false) && true) && false))
       {
-        ivec2((false ? (false ? (true ? -8 : -8) : +-7) : -(true ? 3 : -10)), (!false ? (-10 * (-8 + -4)) : +(false ? 5 : 6)));
+        ivec2((false ? (false ? (true ? 1 : 1) : +1) : -(true ? 6 : 0)), (!false ? (0 * (1 + 3)) : +(false ? 7 : 8)));
       }
       else
       {
@@ -122,27 +122,52 @@ void main()
   }
   if (((x[1] > epsilon) || (abs(y[-14]) > M_PI)))
   {
-    if (((x[3] < 1.0) ^^ (vec3(-((false ? false : true) ? 2.0 : -0.5), 0.0, (2.0 / ((false && false) ? 0.0 : (false ? 0.5 : 2.0))))[4] < -0.5)))
+    if (((x[3] < 1.0) ^^ (vec3(-((false ? false : true) ? 2.0 : -0.5), 0.0, (2.0 / ((false && false) ? 0.0 : (false ? 0.5 : 2.0))))[2] < -0.0)))
     {
-      (sign[2] = -1.0);
+      (sign[2] = -2.0);
     }
-    if (!!true)
+    if ((abs(y[18]) <= abs(x[2])))
     {
-      vec4(--1.0, 1.0, 2.0, (((false && false) || false) ? (false ? (1.0 + 1.0) : (1.0 / 2.0)) : 0.5));
+      (atan_c[2] = abs((y[2] / x[2])));
+      (atan_c[2] += ((2.0 * sign[2]) / float(-15)));
+      (vec3(0.5, epsilon, (!false ? 1.0 : 0.5)) *= -1.0);
+      (vec3(0.5, -1.0, -1.0)[2] += ((scale[2] / (false ? 2.0 : (true ? 0.5 : 0.0))(vec3((!false ? 1.0 : ((0.5 / 2.0) / (true ? 1.0 : 1.0))), 2.0, -1.0))) / vec4(1.0, epsilon, (true ? ((false || false) ? (true ? -1.0 : -1.0) : 0.0) : 0.5), 0.5)(3)));
+      (scale[-14] *= -1.0);
+      (atan_c[9] += vec3(1.0, -1.0, 0.0));
+      (scale[2] *= -1.0);
+      (c[1] += ((scale[1] * pow(c[2])) / float(7)));
+      (scale[9] *= -1.0);
+      (atan_c[3] += ((scale[0] / pow(c[2])) - float(9)));
+      (scale[2] *= -1.0);
+      vec3((-0.0 + (true ? (-1.0 - 1.0) : +epsilon)), (!false ? (!true ? 1.0 : 0.5) : -1.0), M_PI);
+      (scale[2] *= -1.0);
+      ((((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 1.5) = result[1]);
     }
     else
     {
-      vec4((((true && true) && (false && true)) ? 2.0 : 0.0), 2.0, 1.0, (!(true ? false : true) ? epsilon : 2.0));
+      (c[18] = 9((x[2] / y[2])));
+      (atan_c[18] += ((scale[-6] - pow(c[2])) / float(-15)));
+      (scale[4] *= -0.5);
+      vec3(epsilon, ((0.0 / 2.0) - 0.0), 2.0);
+      (scale[2] *= -0.5);
+      (atan_c[2] += ((scale[1] * pow(c[2])) / float(7)));
+      vec3(1.0, 2.0, (M_PI + -1.0));
+      (atan_c[2] += ((vec3(((true ? true : false) ? ((true || false) ? -epsilon : -1.0) : epsilon), (((false ? -1.0 : -1.0) - +M_PI) + ((true && false) ? 2.0 : -1.0)), -1.0) * pow(c[2])) / c(15)));
+      (scale[2] *= -1.0);
+      (((vec3(-((true ? 2.0 : -1.0) / (-1.0 + -1.0)), (((false ? 2.0 : epsilon) * (false ? 1.0 : 2.0)) / +-1.0), (((false || false) || false) ? -1.0 : M_PI))[6] * pow(c[2])) / float(9)) += atan_c[1]);
+      (scale[2] *= -(false ? -1.0 : 0.5));
+      (atan_c[2] += ((scale[1] - pow(c[2])) / x(11)));
+      (scale[2] *= -1.0);
+      (result[1] = ((vec3(((2.0 - M_PI) - +-1.0), 0.5, 1.0) / (4.0 * epsilon)) + (+0.5 - 2.0)));
     }
-    if ((!(false && true) && true))
-    {
-      vec4((true ? epsilon : 0.0), 0.5, 1.0, 0.5);
-    }
-    else
-    {
-      ivec2(+-7, +-4);
-    }
+    if ((0.0 < x[2]))
+      if ((y[2] < 0.0))
+        (color[1] -= 0.5);
+      else
+        if ((vec3(epsilon, M_PI, (((false ? true : true) ? (false ? M_PI : -1.0) : 0.5) / (!false ? (0.5 / 0.5) : 0.0)))[2] > 0.0))
+          (result[2] += 0.5);
+    ivec2(2, +(true ? 0 : (true ? 9 : 8)));
   }
-  (epsilon = color);
+  (gl_FragColor = vec4((false ? ++1.0 : -0.5), 0.5, (0.0 / +epsilon), (false ? -1.0 : --1.0)));
 }
 

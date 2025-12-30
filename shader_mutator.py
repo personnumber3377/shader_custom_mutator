@@ -43,7 +43,7 @@ VECTOR_TYPES = {
 SCALAR_TYPES = ["bool", "int", "uint", "float"]
 
 NUMERIC_LITERALS = {
-    "int":   lambda r: IntLiteral(r.randrange(-10, 10)),
+    "int":   lambda r: IntLiteral(r.randrange(0, 10)), # "int":   lambda r: IntLiteral(r.randrange(-10, 10)),
     "uint":  lambda r: IntLiteral(r.randrange(0, 10)),
     "float": lambda r: FloatLiteral(r.choice([0.0, 0.5, 1.0, -1.0, 2.0])),
     "bool":  lambda r: BoolLiteral(r.choice([True, False])),
@@ -415,6 +415,19 @@ def array_len_from_typeinfo(ti: TypeInfo) -> int | None:
         return int(d0)
 
     # Non-constant expression → cannot expand
+    return None
+
+def get_indexable_length(ti: TypeInfo) -> Optional[int]:
+    if ti is None:
+        return None
+    if ti.is_array():
+        return array_len_from_typeinfo(ti)
+    if ti.name in ("vec2", "ivec2", "uvec2", "bvec2"):
+        return 2
+    if ti.name in ("vec3", "ivec3", "uvec3", "bvec3"):
+        return 3
+    if ti.name in ("vec4", "ivec4", "uvec4", "bvec4"):
+        return 4
     return None
 
 # ----------------------------
@@ -819,6 +832,7 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
 
     # Literals
     if isinstance(e, IntLiteral):
+        # TODO: Make sure we do not mutate the index to negative shit... aka array[-1] is invalid...
         if coin(rng, 0.30):
             delta = rng.choice([-2, -1, 1, 2, 8, -8, 16, -16])
             return IntLiteral(e.value + delta)
@@ -912,12 +926,19 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
 
     # Indexing
     if isinstance(e, IndexExpr):
+        # get_indexable_length
         base = mutate_expr(e.base, rng, scope, env)
         idx = mutate_expr(e.index, rng, scope, env)
         if coin(rng, 0.20):
             # nudge constant indices
-            if isinstance(idx, IntLiteral):
-                idx = IntLiteral(idx.value + rng.choice([-1, 1, 2, -2]))
+            base_t = infer_expr_type(base, scope, env)
+            limit = get_indexable_length(base_t)
+            if isinstance(idx, IntLiteral) and limit is not None:
+                # idx = IntLiteral(idx.value + rng.choice([-1, 1, 2, -2]))
+                new = idx.value + rng.choice([-1, 1])
+                new = max(0, min(limit - 1, new))
+                dlog("Clamping the thing...")
+                idx = IntLiteral(new)
         return IndexExpr(base, idx)
 
     # Member access: obj.x -> obj.y if obj is known struct/interface type

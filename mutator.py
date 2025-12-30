@@ -220,6 +220,8 @@ if __name__ == "__main__":
         # Now construct the full filename...
         fn = inp + fn
         print("Using "+str(fn)+" as input filename...")
+        # Override this here...
+        fn = "/home/oof/webgl_fuzz_inputs/atan_vec3_frag_xvaryyvary_ref.bin"
         with open(fn, "rb") as f:
             data = f.read()
     else:
