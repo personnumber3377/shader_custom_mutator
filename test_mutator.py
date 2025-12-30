@@ -6,6 +6,7 @@ import random
 from test_helpers import * # For the utilities...
 
 TEST_DIR = "tests/"
+DEBUG_ENV = True
 
 import shader_parser # The parser...
 import shader_mutator
@@ -90,6 +91,10 @@ def run_one(filename: str): # Run the thing...
 		ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
 		if not ok:
 			print("filename "+str(filename)+ " errored as vertex shader and fragment... Error: "+str(err))
+			if DEBUG_ENV:
+				os.system("rm "+str(filename))
+				new_filename = filename.replace("webgl_cleaned", "webgl_fuzz_inputs")
+				os.system("rm "+str(new_filename))
 		# assert False
 	else:
 		print("filename "+str(filename)+ " passed...")
