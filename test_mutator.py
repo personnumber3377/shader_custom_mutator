@@ -40,23 +40,25 @@ def roundtrip_one(filename: str): # Run the thing...
 	source = strip_header_and_null(source, header_len=128) # Cut off the shit...
 	fh.close()
 
-	ok_orig, _ = run_external_checker(source) # Run the checker for this source code...
+	ok_orig, err = run_external_checker(source, 128) # Run the checker for this source code...
 	if not ok_orig: # Ignore the files which we can not parse...
-		return
+		print("filename "+str(filename)+" errored with: "+str(err))
+		# return
 
 	# Roundtrip...
-
+	source = source.decode("ascii")
 	tree = shader_parser.parse_to_tree(source)
 	unparsed_src = shader_unparser.unparse_tu(tree)
 
 	# Same?
-
-	ok_new, _ = run_external_checker(unparsed_src)
+	unparsed_src = unparsed_src.encode("ascii")
+	ok_new, _ = run_external_checker(unparsed_src, 128)
 
 	if ok_orig != ok_new:
 		print("Filename: "+str(filename)+" failed roundtrip test!!!")
 		assert False
-
+	else:
+		print("Filename: "+str(filename)+" passed with orig: "+str(ok_orig)+" and new: "+str(ok_new))
 	return
 
 def run_roundtrip_tests(directory: str) -> None: # Run the roundtrip tests...
@@ -64,6 +66,7 @@ def run_roundtrip_tests(directory: str) -> None: # Run the roundtrip tests...
 	if directory[-1] != "/": # Append the slash here...
 		directory += "/"
 	test_files = os.listdir(directory) # List all of the things...
+	print(test_files)
 	for f in test_files:
 		roundtrip_one(directory+f) # Run one roundtrip thing...
 	return

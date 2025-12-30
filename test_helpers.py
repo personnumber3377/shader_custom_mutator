@@ -5,7 +5,7 @@ import os
 
 # Here check for the null byte and if found, then assume fuzz input...
 
-def strip_header_and_null(buf, header_len=0):
+def strip_header_and_null(data, header_len=0):
     
     if data and data[-1] == 0:
         # 1) Strip header
@@ -23,6 +23,9 @@ def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:
     """
 
     # 1) 2) Strip header and null
+
+    # if not isinstance(buf, bytes) and not isinstance(buf, bytes): # Maybe string type???
+    #     buf = buf.decode("ascii") # Encode to ascii encoding...
 
     data = strip_header_and_null(buf, header_len=header_len)
 
