@@ -844,7 +844,10 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
         if coin(rng, 0.20):
             dlog("Unary stuff...")
             # op = rng.choice(["+", "-", "!", "~", "++", "--"])
-            candidates = ["+", "-", "!", "~"]
+            # candidates = ["+", "-", "!", "~"]
+            
+            candidates = ["+", "-", "!"] # Remove the not operator which doesn't even actually exist...
+
             # if not is_lvalue_expr(e): # If right hand value, then add the things.
             #     candidates.extend(["--", "++"])
             op = rng.choice(candidates)

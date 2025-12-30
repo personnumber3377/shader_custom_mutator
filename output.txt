@@ -1,4 +1,4 @@
-['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'OverlayDraw.frag', 'interface_blocks.glsl', 'builtin_types.glsl', 'structures.glsl', 'while_statement.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
+['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'OverlayDraw.frag', 'interface_blocks.glsl', 'structures.glsl', 'while_statement.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
 Running ./tests/arrays.glsl
 Filename: ./tests/arrays.glsl passed with orig: True and new: True
 Running ./tests/integer_literals.glsl
@@ -8,21 +8,12 @@ Filename: ./tests/continuations.glsl passed with orig: True and new: True
 Running ./tests/constants.glsl
 Filename: ./tests/constants.glsl passed with orig: True and new: True
 Running ./tests/floating_point_literals.glsl
-filename ./tests/floating_point_literals.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:7: '1.5f' : invalid number 
-ERROR: 0:7: ';' : syntax error 
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
-Filename: ./tests/floating_point_literals.glsl passed with orig: False and new: False
+Filename: ./tests/floating_point_literals.glsl passed with orig: True and new: True
 Running ./tests/booleans.glsl
 Filename: ./tests/booleans.glsl passed with orig: True and new: True
 Running ./tests/uniforms.glsl
 filename ./tests/uniforms.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:5: '10.0f' : invalid number 
-ERROR: 0:5: ';' : syntax error 
+ERROR: 0:5: 'uniform' :  cannot initialize this type of qualifier  
 
 #### END COMPILER 0 INFO LOG ####
 
@@ -42,14 +33,7 @@ ERROR: 0:7: 'switch' : syntax error
 
 Filename: ./tests/switch.glsl passed with orig: False and new: False
 Running ./tests/negation.glsl
-filename ./tests/negation.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:6: 'i' : syntax error 
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
-Filename: ./tests/negation.glsl passed with orig: False and new: False
+Filename: ./tests/negation.glsl passed with orig: True and new: True
 Running ./tests/sequence.glsl
 Filename: ./tests/sequence.glsl passed with orig: True and new: True
 Running ./tests/ternary.glsl
@@ -98,15 +82,6 @@ ERROR: 0:4: 'uniform_block' : syntax error
 
 
 Filename: ./tests/interface_blocks.glsl passed with orig: False and new: False
-Running ./tests/builtin_types.glsl
-filename ./tests/builtin_types.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:6: 'uint' : syntax error 
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
-Filename: ./tests/builtin_types.glsl passed with orig: False and new: False
 Running ./tests/structures.glsl
 Filename: ./tests/structures.glsl passed with orig: True and new: True
 Running ./tests/while_statement.glsl

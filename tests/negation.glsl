@@ -1,6 +1,7 @@
 precision mediump float;
 precision mediump int;
 
-int i = 3;
-
-i = ~i;
+void main() {
+	int i = 3;
+	i = i + 1;
+}
