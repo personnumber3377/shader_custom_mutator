@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 void main() {
     int i = 0;
     for(;;) { }

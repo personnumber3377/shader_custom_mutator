@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 bool main_bool;
 int main_int;
 uint main_uint;

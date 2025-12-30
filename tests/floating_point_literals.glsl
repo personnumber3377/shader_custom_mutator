@@ -1,3 +1,6 @@
+precision mediump float;
+precision mediump int;
+
 void main() {
     float main_float_uninitialized;
     float main_float_initialized = 1.5;
