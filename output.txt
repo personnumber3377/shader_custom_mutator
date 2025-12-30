@@ -1,4 +1,4 @@
-['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'interface_blocks.glsl', 'structures.glsl', 'while_statement.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
+['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'actual_shader.glsl', 'interface_blocks.glsl', 'structures.glsl', 'while_statement.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
 Running ./tests/arrays.glsl
 Filename: ./tests/arrays.glsl passed with orig: True and new: True
 Running ./tests/integer_literals.glsl
@@ -12,20 +12,13 @@ Filename: ./tests/floating_point_literals.glsl passed with orig: True and new: T
 Running ./tests/booleans.glsl
 Filename: ./tests/booleans.glsl passed with orig: True and new: True
 Running ./tests/uniforms.glsl
-filename ./tests/uniforms.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:5: 'uniform' :  cannot initialize this type of qualifier  
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
-Filename: ./tests/uniforms.glsl passed with orig: False and new: False
+Filename: ./tests/uniforms.glsl passed with orig: True and new: True
 Running ./tests/for_statement.glsl
 Filename: ./tests/for_statement.glsl passed with orig: True and new: True
 Running ./tests/switch.glsl
 filename ./tests/switch.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:7: 'switch' : Illegal use of reserved word 
-ERROR: 0:7: 'switch' : syntax error 
+ERROR: 0:9: 'switch' : Illegal use of reserved word 
+ERROR: 0:9: 'switch' : syntax error 
 
 #### END COMPILER 0 INFO LOG ####
 
@@ -36,17 +29,6 @@ Running ./tests/negation.glsl
 Filename: ./tests/negation.glsl passed with orig: True and new: True
 Running ./tests/sequence.glsl
 Filename: ./tests/sequence.glsl passed with orig: True and new: True
-Running ./tests/ternary.glsl
-filename ./tests/ternary.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:6: '' : boolean expression expected 
-ERROR: 0:7: '' : boolean expression expected 
-ERROR: 0:7: '' : boolean expression expected 
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
-Filename: ./tests/ternary.glsl passed with orig: False and new: False
 Running ./tests/actual_shader.glsl
 filename ./tests/actual_shader.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:4: 'version' : #version directive must occur before anything else, except for comments and white space 
