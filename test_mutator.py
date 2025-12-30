@@ -94,17 +94,18 @@ def benchmark_mutation_success(
             data = normalize_input(data)
 
             # Check original validity
-            # print("is valid???")
+            print("is valid???")
             # print("data: "+str(data))
-            v, err = run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
+            v, err = run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
             if not v:
+                print(err)
                 continue  # skip invalid seeds
             buf = bytearray(data)
             print("Original source code: \n"+str(buf.decode("ascii")))
 
             # Mutate exactly once
             buf = mutator.fuzz(buf, None, 1_000_000)
-
+            print("Mutated source code: \n"+str(buf[:-1].decode("ascii")))
             total += 1
 
             v, err = run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
