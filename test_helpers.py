@@ -2,18 +2,20 @@
 import subprocess
 import tempfile
 import os
+import copy
 
 # Here check for the null byte and if found, then assume fuzz input...
 
 def strip_header_and_null(data, header_len=0):
-    
-    if data and data[-1] == 0:
+    datanew = copy.deepcopy(data)
+    if datanew and datanew[-1] == 0:
+        print("Cutting the header...")
         # 1) Strip header
-        data = data[header_len:]
+        datanew = datanew[header_len:]
         # 2) Strip final null byte if present
-        data = data[:-1]
+        datanew = datanew[:-1]
 
-    return data
+    return datanew
 
 def run_external_checker(buf: bytes, header_len: int, as_vertex=False) -> tuple[bool, str]:
     """
@@ -73,3 +75,24 @@ def run_external_checker(buf: bytes, header_len: int, as_vertex=False) -> tuple[
 
     finally:
         os.unlink(fname)
+
+def run_as_frag_and_vertex(buf: bytes, header_len: int) -> tuple[bool, str]:
+    '''
+        ok, err = run_external_checker(source, 128) # Run the checker for this source code...
+    if not ok: # Error? Try to parse as vertex shader...
+        # print("filename "+str(filename)+" errored with: "+str(err))
+        ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
+    '''
+    print("buffer before: "+str(buf))
+    source = strip_header_and_null(buf, header_len=header_len) # Cut off the shit...
+    print("source: "+str(source))
+    ok, err = run_external_checker(source, 128) # Run the checker for this source code...
+    print("After the thing...")
+    if not ok: # Error? Try to parse as vertex shader...
+        print("Failed with these errors here when running as fragment: "+str(err))
+        ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
+        if not ok: # Still errors? Return the error and failure...
+            print("Failed with these errors here when running as vertex shader: "+str(err))
+            return False, err
+
+    return True, None

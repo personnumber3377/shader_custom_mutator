@@ -11,6 +11,7 @@ from pathlib import Path
 # -----------------------------
 
 SHADER_TYPE_FRAGMENT = 0x8B30
+SHADER_TYPE_VERTEX = 0x8B31 # Taken from the source code...
 SHADER_SPEC_GLES3 = 2
 OUTPUT_SPIRV_VULKAN = 15
 HEADER_SIZE = 128
@@ -91,10 +92,14 @@ def clean_shader_source(src: str) -> str:
 # Header construction
 # -----------------------------
 
-def build_angle_header() -> bytes:
+def build_angle_header(vertex=False) -> bytes:
     flags = (1 << 0)
     opts = flags.to_bytes(32, "little")
-    hdr = struct.pack("<III", SHADER_TYPE_FRAGMENT, SHADER_SPEC_GLES3, OUTPUT_SPIRV_VULKAN)
+    if vertex:
+        t = SHADER_TYPE_VERTEX
+    else:
+        t = SHADER_TYPE_FRAGMENT
+    hdr = struct.pack("<III", t, SHADER_SPEC_GLES3, OUTPUT_SPIRV_VULKAN)
     hdr += opts
     hdr += b"\x00" * (HEADER_SIZE - len(hdr))
     return hdr
@@ -121,6 +126,12 @@ def process_shader(path: Path, out_clean: Path, out_fuzz: Path):
 
     fuzz_bytes = build_angle_header() + final_src.encode() + b"\x00"
     fuzz_path = out_fuzz / (path.stem + ".bin")
+    fuzz_path.write_bytes(fuzz_bytes)
+
+    # Also write the vertex version of this...
+
+    fuzz_bytes = build_angle_header(vertex=True) + final_src.encode() + b"\x00"
+    fuzz_path = out_fuzz / (path.stem + ".binvertex")
     fuzz_path.write_bytes(fuzz_bytes)
 
 # -----------------------------

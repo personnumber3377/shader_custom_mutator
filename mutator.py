@@ -228,7 +228,9 @@ if __name__ == "__main__":
 
     # if len(data) < HEADER_SIZE:
     # Always prepend the header...
-    data = b"\x00" * HEADER_SIZE + data
+    # Check for a null byte close to the start, if found, then assume header already appended...
+    if b"\x00" not in data[:HEADER_SIZE]:
+        data = b"\x00" * HEADER_SIZE + data
 
     # seed = random.randrange(10000000) # 5 # Modify this to appropriate values when debugging...
     
@@ -238,6 +240,14 @@ if __name__ == "__main__":
 
     buf = bytearray(data)
 
+    # Run initial thing...
+
+    ok, out = run_as_frag_and_vertex(buf, HEADER_SIZE)
+    if not ok:
+        print("Initial parse is: "+str(out))
+        assert False
+    # assert ok
+
     try:
 
         for _ in range(args.iters):
@@ -246,7 +256,7 @@ if __name__ == "__main__":
             source = strip_header_and_null(buf, header_len=HEADER_SIZE).decode("utf-8")
             print(source)
 
-            ok, out = run_external_checker(buf, header_len=HEADER_SIZE)
+            ok, out = run_as_frag_and_vertex(buf, HEADER_SIZE)
 
             if not ok: # Produced invalid syntax???
                 print("External syntax checker failed with: "+str(out))
