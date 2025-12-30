@@ -9,6 +9,7 @@ ERROR: 0:9: '' : array size must be a constant integer expression
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array5_frag.bin
 filename /home/oof/webgl_cleaned/int_empty_in_int_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/while2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '' : boolean expression expected
@@ -17,6 +18,7 @@ ERROR: 0:8: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/while2_frag.bin
 filename /home/oof/webgl_cleaned/array4_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '' : array size must be non-negative
 
@@ -24,6 +26,7 @@ ERROR: 0:8: '' : array size must be non-negative
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array4_frag.bin
 filename /home/oof/webgl_cleaned/vec3_stp_1vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/3i_frag.frag passed...
 filename /home/oof/webgl_cleaned/radians_vec3_frag_xvary_ref.frag passed...
@@ -37,6 +40,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_mat2.bin
 filename /home/oof/webgl_cleaned/dataType5_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '=' : cannot convert from 'const int' to 'mediump float'
 
@@ -44,6 +48,7 @@ ERROR: 0:8: '=' : cannot convert from 'const int' to 'mediump float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType5_frag.bin
 filename /home/oof/webgl_cleaned/all_bvec2_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/structnest_vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/structnest_vec4_frag.frag passed...
@@ -61,6 +66,7 @@ ERROR: 0:8: 'varying' : cannot be used with a structure
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct6_frag.bin
 filename /home/oof/webgl_cleaned/float_empty_inout_float_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/preprocess10_frag.frag passed...
 filename /home/oof/webgl_cleaned/pow_vec2_frag_xconst2_yvary_ref.frag passed...
@@ -72,6 +78,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_vec4.bin
 filename /home/oof/webgl_cleaned/CorrectSwizzle3_frag.frag passed...
 filename /home/oof/webgl_cleaned/array_const_mat3_frag.frag passed...
 filename /home/oof/webgl_cleaned/1b_frag.frag passed...
@@ -87,6 +94,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_vec4.bin
 filename /home/oof/webgl_cleaned/step_vec3_frag_xvary_edgeconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/log2_float_frag_xvary01_ref.frag passed...
 filename /home/oof/webgl_cleaned/mat4_empty_empty_mat4_empty_frag.frag passed...
@@ -98,6 +106,7 @@ ERROR: 0:8: 'f' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/float2_frag.bin
 filename /home/oof/webgl_cleaned/add_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a left-hand operand of type 'const 3-component vector of float' and a right operand of type 'const 3-component vector of int' (or there is no acceptable conversion)
 
@@ -105,6 +114,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/struct5_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:11: 'assign' : l-value required (can't modify a uniform "s1")
 
@@ -112,6 +122,7 @@ ERROR: 0:11: 'assign' : l-value required (can't modify a uniform "s1")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct5_frag.bin
 filename /home/oof/webgl_cleaned/vec4_zwxy_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/CorrectParse2_frag.frag passed...
 filename /home/oof/webgl_cleaned/normalize_vec3_frag_xvary.frag passed...
@@ -136,6 +147,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_vec3.bin
 filename /home/oof/webgl_cleaned/4i_vert.frag passed...
 filename /home/oof/webgl_cleaned/structcopy_bool_frag.frag passed...
 filename /home/oof/webgl_cleaned/empty_empty_array_float_frag.frag passed...
@@ -150,6 +162,7 @@ ERROR: 0:7: '=' : cannot convert from 'const int' to 'mediump float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/ternary_int_float.bin
 filename /home/oof/webgl_cleaned/not_bvec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/length_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/multiply_int_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -159,6 +172,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_vec2.bin
 filename /home/oof/webgl_cleaned/pow_vec2_frag_xconsthalf_yvary.frag passed...
 filename /home/oof/webgl_cleaned/vec4_xyz_w_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/int_empty_empty_int_empty_frag.frag passed...
@@ -172,6 +186,7 @@ ERROR: 0:13: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderIntegrateGrid.bin
 filename /home/oof/webgl_cleaned/greaterThanEqual_ivec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/hvec2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'hvec2' : Illegal use of reserved word
@@ -181,6 +196,7 @@ ERROR: 0:8: 'hvec2' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/hvec2_frag.bin
 filename /home/oof/webgl_cleaned/uniformBlockShader.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:5: 'in' : storage qualifier supported in GLSL ES 3.00 and above only
 ERROR: 0:6: 'in' : storage qualifier supported in GLSL ES 3.00 and above only
@@ -192,6 +208,7 @@ ERROR: 0:13: 'out' : storage qualifier supported in GLSL ES 3.00 and above only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/uniformBlockShader.bin
 filename /home/oof/webgl_cleaned/22i_frag.frag passed...
 filename /home/oof/webgl_cleaned/atan_float_frag_xvaryyvary.frag passed...
 filename /home/oof/webgl_cleaned/log2_vec3_frag_xvary01.frag passed...
@@ -219,6 +236,7 @@ ERROR: 0:21: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fwidth_frag.bin
 filename /home/oof/webgl_cleaned/vec4_tsqp_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/greaterThanEqual_ivec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/reflect_vec3_frag_ivarynconst_ref.frag passed...
@@ -233,6 +251,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/max_vec3_frag_xvary_yconsthalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/dataType11_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '08' : invalid number
@@ -242,6 +261,7 @@ ERROR: 0:8: ';' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType11_frag.bin
 filename /home/oof/webgl_cleaned/asin_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/log_vec2_frag_xvary01_ref.frag passed...
 filename /home/oof/webgl_cleaned/atan_float_frag_xvaryyvary_ref.frag passed...
@@ -279,6 +299,7 @@ ERROR: 0:12: 'assign' : cannot convert from 'const highp float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/CorrectPreprocess8_frag.bin
 filename /home/oof/webgl_cleaned/lessThan_ivec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/ivec4_empty_out_ivec4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/equal_vec2_frag.frag passed...
@@ -290,6 +311,7 @@ ERROR: 0:9: 'half' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/preprocess7_frag.bin
 filename /home/oof/webgl_cleaned/default_textured.frag passed...
 filename /home/oof/webgl_cleaned/dataType12_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '0xa8g' : invalid number
@@ -299,6 +321,7 @@ ERROR: 0:8: ';' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType12_frag.bin
 filename /home/oof/webgl_cleaned/extension3_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/lessThanEqual_vec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec4_yx_wz_2vec2_frag.frag passed...
@@ -312,6 +335,7 @@ ERROR: 0:8: 'dvec3' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dvec3_frag.bin
 filename /home/oof/webgl_cleaned/identifier2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'gl_' : reserved built-in name
 
@@ -319,6 +343,7 @@ ERROR: 0:8: 'gl_' : reserved built-in name
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/identifier2_frag.bin
 filename /home/oof/webgl_cleaned/vec3_vec2_float_frag.frag passed...
 filename /home/oof/webgl_cleaned/greater_than_equal.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '>=' : wrong operand types - no operation '>=' exists that takes a left-hand operand of type 'const float' and a right operand of type 'const int' (or there is no acceptable conversion)
@@ -327,6 +352,7 @@ ERROR: 0:7: '>=' : wrong operand types - no operation '>=' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/greater_than_equal.bin
 filename /home/oof/webgl_cleaned/floor_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/mat3arrayindirect1_frag.frag passed...
 filename /home/oof/webgl_cleaned/exp_vec3_frag_xvary_ref.frag passed...
@@ -337,6 +363,7 @@ ERROR: 0:10: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dowhile_frag.bin
 filename /home/oof/webgl_cleaned/vec4_qspt_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/pow_float_frag_xvary_yconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/equal_ivec3_frag.frag passed...
@@ -351,6 +378,7 @@ ERROR: 0:7: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shader.bin
 filename /home/oof/webgl_cleaned/gl_FragCoord_w_frag.frag passed...
 filename /home/oof/webgl_cleaned/shaderForceGrid.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:19: 'uvec2' : syntax error
@@ -359,6 +387,7 @@ ERROR: 0:19: 'uvec2' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderForceGrid.bin
 filename /home/oof/webgl_cleaned/preprocess6_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'test4' : undeclared identifier
 ERROR: 0:9: 'assign' : cannot convert from 'const highp float' to 'mediump int'
@@ -375,6 +404,7 @@ ERROR: 0:11: 'assign' : cannot convert from 'const highp float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/preprocess6_frag.bin
 filename /home/oof/webgl_cleaned/2i_vert.frag passed...
 filename /home/oof/webgl_cleaned/length_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/exp_vec2_frag_xvary_ref.frag passed...
@@ -394,6 +424,7 @@ ERROR: 0:9: '}' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct7_frag.bin
 filename /home/oof/webgl_cleaned/unary_frag.frag passed...
 filename /home/oof/webgl_cleaned/mat2_copy_frag.frag passed...
 filename /home/oof/webgl_cleaned/sin_vec2_frag_xvary.frag passed...
@@ -405,6 +436,7 @@ ERROR: 0:5: 'uval' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/uintUniformShader.bin
 filename /home/oof/webgl_cleaned/while_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '' : boolean expression expected
 
@@ -412,6 +444,7 @@ ERROR: 0:9: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/while_frag.bin
 filename /home/oof/webgl_cleaned/shaderDensityGrid.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:17: 'uvec2' : syntax error
 
@@ -419,6 +452,7 @@ ERROR: 0:17: 'uvec2' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderDensityGrid.bin
 filename /home/oof/webgl_cleaned/vec4_xyzw_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/matrix_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/fract_vec2_frag_xvary_ref.frag passed...
@@ -430,6 +464,7 @@ ERROR: 0:8: 'hvec4' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/hvec4_frag.bin
 filename /home/oof/webgl_cleaned/CorrectBuiltInOveride_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec4_qsp_t_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec4_stpq_1vec4_frag.frag passed...
@@ -440,6 +475,7 @@ ERROR: 0:11: '-' : wrong operand type - no operation '-' exists that takes an op
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct11_frag.bin
 filename /home/oof/webgl_cleaned/increment4_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'assign' : l-value required
 
@@ -447,6 +483,7 @@ ERROR: 0:9: 'assign' : l-value required
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/increment4_frag.bin
 filename /home/oof/webgl_cleaned/cos_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/int_empty_in_int_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/equal_bvec2_frag.frag passed...
@@ -459,6 +496,7 @@ ERROR: 0:8: 'assign' : l-value required (can't modify a const "i")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function6_frag.bin
 filename /home/oof/webgl_cleaned/wood.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:35: 'gl_FragColor' : undeclared identifier
 ERROR: 0:35: 'assign' : l-value required (can't modify a const)
@@ -470,6 +508,7 @@ ERROR: 0:36: '}' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/wood.bin
 filename /home/oof/webgl_cleaned/extension8_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/faceforward_vec3_frag_nvaryiconst.frag passed...
 filename /home/oof/webgl_cleaned/dataType3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -479,6 +518,7 @@ ERROR: 0:6: 'uniform' :  cannot initialize this type of qualifier
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType3_frag.bin
 filename /home/oof/webgl_cleaned/array7_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: ']' : syntax error
 
@@ -486,6 +526,7 @@ ERROR: 0:9: ']' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array7_frag.bin
 filename /home/oof/webgl_cleaned/mat3_copy_frag.frag passed...
 filename /home/oof/webgl_cleaned/log_float_frag_xvary01_ref.frag passed...
 filename /home/oof/webgl_cleaned/dataType13_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -495,6 +536,7 @@ ERROR: 0:10: '*' : wrong operand types - no operation '*' exists that takes a le
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType13_frag.bin
 filename /home/oof/webgl_cleaned/bvec4_empty_in_bvec4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/min_vec2_frag_xvary_yconsthalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/break_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -504,6 +546,7 @@ ERROR: 0:8: '' : break statement only allowed in loops and switch statements
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/break_frag.bin
 filename /home/oof/webgl_cleaned/vec4_empty_out_vec4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/asin_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/struct_mat4_frag.frag passed...
@@ -518,6 +561,7 @@ ERROR: 0:11: 'assign' : cannot convert from 'const int' to 'array[2] of structur
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct10_frag.bin
 filename /home/oof/webgl_cleaned/dot_vec3_frag_xvaryythird_ref.frag passed...
 filename /home/oof/webgl_cleaned/compressed_paletted_texture.frag passed...
 filename /home/oof/webgl_cleaned/vec3_br_g_1vec2_1float_frag.frag passed...
@@ -534,6 +578,7 @@ ERROR: 0:14: '++' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/scoping1_frag.bin
 filename /home/oof/webgl_cleaned/typecast_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: ')' : syntax error
 
@@ -541,6 +586,7 @@ ERROR: 0:9: ')' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/typecast_frag.bin
 filename /home/oof/webgl_cleaned/struct4_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '=' : syntax error
 
@@ -548,6 +594,7 @@ ERROR: 0:7: '=' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct4_frag.bin
 filename /home/oof/webgl_cleaned/notEqual_bvec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/vertexOnly_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:15: 'gtf_Point' : syntax error
@@ -556,6 +603,7 @@ ERROR: 0:15: 'gtf_Point' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/vertexOnly_frag.bin
 filename /home/oof/webgl_cleaned/dataType10_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'f' : redefinition
 
@@ -563,6 +611,7 @@ ERROR: 0:9: 'f' : redefinition
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType10_frag.bin
 filename /home/oof/webgl_cleaned/function_ivec4_vec4.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'foo' : no matching overloaded function found
 ERROR: 0:9: '=' : dimension mismatch
@@ -572,6 +621,7 @@ ERROR: 0:9: '=' : cannot convert from 'const mediump float' to 'mediump 4-compon
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/parser9_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '&&' : wrong operand types - no operation '&&' exists that takes a left-hand operand of type 'mediump float' and a right operand of type 'mediump float' (or there is no acceptable conversion)
 
@@ -579,6 +629,7 @@ ERROR: 0:9: '&&' : wrong operand types - no operation '&&' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser9_frag.bin
 filename /home/oof/webgl_cleaned/faceforward_vec2_frag_nvaryiconst_ref.frag passed...
 filename /home/oof/webgl_cleaned/log_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/swizzle2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -588,6 +639,7 @@ ERROR: 0:9: 'assign' :  l-value of swizzle cannot have duplicate components
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/swizzle2_frag.bin
 filename /home/oof/webgl_cleaned/assign_int_to_float.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '=' : cannot convert from 'const int' to 'mediump float'
 
@@ -595,6 +647,7 @@ ERROR: 0:7: '=' : cannot convert from 'const int' to 'mediump float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/assign_int_to_float.bin
 filename /home/oof/webgl_cleaned/clamp_float_frag_xvary_yconstquarter.frag passed...
 filename /home/oof/webgl_cleaned/2f_frag.frag passed...
 filename /home/oof/webgl_cleaned/dataType19_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -604,6 +657,7 @@ ERROR: 0:9: 'constructor' : cannot convert a variable with type sampler2D
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType19_frag.bin
 filename /home/oof/webgl_cleaned/vec4_empty_inout_vec4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/greaterThan_ivec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/pow_float_frag_xvary_yconsthalf_ref.frag passed...
@@ -615,6 +669,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_mat4.bin
 filename /home/oof/webgl_cleaned/for_break_frag.frag passed...
 filename /home/oof/webgl_cleaned/identifier1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '1i' : invalid number
@@ -623,6 +678,7 @@ ERROR: 0:8: '1i' : invalid number
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/identifier1_frag.bin
 filename /home/oof/webgl_cleaned/point_rasterization.frag passed...
 filename /home/oof/webgl_cleaned/atan_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/cos_vec2_frag_xvary_ref.frag passed...
@@ -633,6 +689,7 @@ ERROR: 0:7: '=' : global variable initializers must be constant expressions
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType2_frag.bin
 filename /home/oof/webgl_cleaned/normal_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'assign' : l-value required (can't modify an attribute "gtf_Normal")
 ERROR: 0:8: '=' : dimension mismatch
@@ -642,6 +699,7 @@ ERROR: 0:8: 'assign' : cannot convert from 'const 3-component vector of float' t
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/normal_vert.bin
 filename /home/oof/webgl_cleaned/atan_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/2i_frag.frag passed...
 filename /home/oof/webgl_cleaned/4b_firstthree_vert.frag passed...
@@ -657,6 +715,7 @@ ERROR: 0:12: 'in' : function must have the same parameter qualifiers in all of i
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function9_frag.bin
 filename /home/oof/webgl_cleaned/ceil_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/float_empty_inout_float_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/ParseTest3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -670,6 +729,7 @@ ERROR: 0:12: 'assign' : cannot convert from 'mediump 4-component vector of float
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/ParseTest3_frag.bin
 filename /home/oof/webgl_cleaned/dFdy_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:14: 'gl_FragCoord' : undeclared identifier
 ERROR: 0:14: 'y' :  field selection requires structure or vector on left hand side
@@ -688,6 +748,7 @@ ERROR: 0:21: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dFdy_frag.bin
 filename /home/oof/webgl_cleaned/mat4_frag.frag passed...
 filename /home/oof/webgl_cleaned/array8_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '[]' : implicitly sized array supported in GLSL ES 3.00 and above only
@@ -698,6 +759,7 @@ ERROR: 0:9: 'f' : redefinition
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array8_frag.bin
 filename /home/oof/webgl_cleaned/pow_float_frag_xconsthalf_yvary.frag passed...
 filename /home/oof/webgl_cleaned/Include_Preprocessor_Directive_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: Missing main()
@@ -706,6 +768,7 @@ ERROR: Missing main()
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/Include_Preprocessor_Directive_frag.bin
 filename /home/oof/webgl_cleaned/equal_vec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/abs_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/not_equal_int_float.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -715,6 +778,7 @@ ERROR: 0:7: '!=' : wrong operand types - no operation '!=' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/not_equal_int_float.bin
 filename /home/oof/webgl_cleaned/greaterThan_vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/distance_float_frag_xvaryyhalf.frag passed...
 filename /home/oof/webgl_cleaned/structcopy_vec2_frag.frag passed...
@@ -729,6 +793,7 @@ ERROR: 0:10: 'assign' : cannot convert from 'mediump float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/comma2_vert.bin
 filename /home/oof/webgl_cleaned/for_nested_break_frag.frag passed...
 filename /home/oof/webgl_cleaned/logical_frag.frag passed...
 filename /home/oof/webgl_cleaned/function_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -740,6 +805,7 @@ ERROR: 0:9: '=' : cannot convert from 'const mediump float' to 'mediump 3-compon
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/CorrectExtension4_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/structnest_bvec2bvec3bvec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/not_equal_ivec2_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -749,6 +815,7 @@ ERROR: 0:7: '!=' : wrong operand types - no operation '!=' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/not_equal_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/sqrt_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/structcopy_float_frag.frag passed...
 filename /home/oof/webgl_cleaned/parser3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -758,6 +825,7 @@ ERROR: 0:9: '[]' : array index out of range
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser3_frag.bin
 filename /home/oof/webgl_cleaned/lessThan_vec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/lessThan_vec2_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/refract_vec2_frag_ivarynconst_ref.frag passed...
@@ -775,6 +843,7 @@ ERROR: 0:9: 'assign' : cannot convert from 'const mediump 4-component vector of 
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/ParseTest4_frag.bin
 filename /home/oof/webgl_cleaned/notEqual_vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/3f_frag.frag passed...
 filename /home/oof/webgl_cleaned/lessThanEqual_vec2_frag_ref.frag passed...
@@ -788,6 +857,7 @@ ERROR: 0:8: 'f' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/float3_frag.bin
 filename /home/oof/webgl_cleaned/exp2_vec2_frag_xvaryneg.frag passed...
 filename /home/oof/webgl_cleaned/add_int_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a left-hand operand of type 'const 2-component vector of float' and a right operand of type 'const int' (or there is no acceptable conversion)
@@ -796,6 +866,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_vec2.bin
 filename /home/oof/webgl_cleaned/dvec2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'dvec2' : Illegal use of reserved word
 ERROR: 0:8: 'dvec2' : syntax error
@@ -804,6 +875,7 @@ ERROR: 0:8: 'dvec2' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dvec2_frag.bin
 filename /home/oof/webgl_cleaned/sqrt_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/mix_vec3_frag_xvary_yconsthalf_aconsthalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/acos_vec2_frag_xvary.frag passed...
@@ -824,6 +896,7 @@ ERROR: 0:9: 'assign' : cannot convert from 'mediump 4-component vector of float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/gl_Color_array_index_out_of_bounds_frag.bin
 filename /home/oof/webgl_cleaned/log2_float_frag_xvary01.frag passed...
 filename /home/oof/webgl_cleaned/vec4_zx_wy_2vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/sin_float_frag_xvary.frag passed...
@@ -835,6 +908,7 @@ ERROR: 0:14: 'assign' : cannot convert from 'structure 'ss' (symbol id 3003) (sp
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct8_frag.bin
 filename /home/oof/webgl_cleaned/any_bvec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec4_pqst_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/webgl_struct.vert passed...
@@ -845,6 +919,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/4m_frag.frag passed...
 filename /home/oof/webgl_cleaned/notEqual_vec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/structcopy_vec3_frag.frag passed...
@@ -857,6 +932,7 @@ ERROR: 0:8: '' : continue statement only allowed in loops
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/continue_frag.bin
 filename /home/oof/webgl_cleaned/any_bvec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/21f_frag.frag passed...
 filename /home/oof/webgl_cleaned/bvec4_empty_inout_bvec4_bigarray_frag.frag passed...
@@ -869,6 +945,7 @@ ERROR: 0:8: 'assign' : l-value required (can't modify an attribute "gtf_Vertex")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/vertex_vert.bin
 filename /home/oof/webgl_cleaned/notEqual_bvec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/buffer_objects_pointSize.frag passed...
 filename /home/oof/webgl_cleaned/mat4_empty_in_mat4_empty_frag.frag passed...
@@ -879,6 +956,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/acos_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/fract_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/struct_float_frag.frag passed...
@@ -889,6 +967,7 @@ ERROR: 0:9: 'constructor' : not enough data provided for construction
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/constructor2_frag.bin
 filename /home/oof/webgl_cleaned/multiply_int_mat4.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a left-hand operand of type 'const 4X4 matrix of float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -896,6 +975,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_mat4.bin
 filename /home/oof/webgl_cleaned/vec4_rgba_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/int_empty_inout_int_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/mix_float_frag_xvary_yconsthalf_aconsthalf_ref.frag passed...
@@ -911,6 +991,7 @@ ERROR: 0:9: '++' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser4_frag.bin
 filename /home/oof/webgl_cleaned/void_empty_empty_void_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/webgl_variable.vert passed...
 filename /home/oof/webgl_cleaned/struct_vec4_frag.frag passed...
@@ -927,6 +1008,7 @@ ERROR: 0:11: 'assign' : cannot convert from 'const mediump 4-component vector of
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/comma2_frag.bin
 filename /home/oof/webgl_cleaned/asin_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/equal_vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/const_mat3_frag.frag passed...
@@ -939,6 +1021,7 @@ ERROR: 0:7: '=' : cannot convert from 'const 4-component vector of int' to 'medi
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/assign_ivec4_to_vec4.bin
 filename /home/oof/webgl_cleaned/equal_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a left-hand operand of type 'const 3-component vector of float' and a right operand of type 'const 3-component vector of int' (or there is no acceptable conversion)
 
@@ -946,6 +1029,7 @@ ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/equal_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/asin_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/tan_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/structnest_float_frag.frag passed...
@@ -958,6 +1042,7 @@ ERROR: 0:11: 'assign' : cannot convert from 'mediump float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/comma3_vert.bin
 filename /home/oof/webgl_cleaned/bool_empty_in_bool_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/mat4_empty_out_mat4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/mod_float_frag_xvary_yconst1.frag passed...
@@ -968,6 +1053,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_mat4.bin
 filename /home/oof/webgl_cleaned/vec4_empty_empty_vec4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/webgl_field.vert passed...
 filename /home/oof/webgl_cleaned/bvec4_2int_2float_frag.frag passed...
@@ -990,6 +1076,7 @@ ERROR: 0:21: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dFdx_frag.bin
 filename /home/oof/webgl_cleaned/empty_uniform_array_float_frag.frag passed...
 filename /home/oof/webgl_cleaned/exp2_vec3_frag_xvaryneg_ref.frag passed...
 filename /home/oof/webgl_cleaned/subtract_ivec2_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -999,6 +1086,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/mat4_empty_in_mat4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/int_empty_inout_int_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec4_empty_empty_vec4_array_frag.frag passed...
@@ -1010,6 +1098,7 @@ ERROR: 0:9: 'constructor' : Structure constructor arguments do not match structu
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/construct_struct.bin
 filename /home/oof/webgl_cleaned/Main_Parameters_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:5: ':' : syntax error
 
@@ -1017,6 +1106,7 @@ ERROR: 0:5: ':' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/Main_Parameters_vert.bin
 filename /home/oof/webgl_cleaned/multiply_ivec2_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a left-hand operand of type 'const 2-component vector of float' and a right operand of type 'const 2-component vector of int' (or there is no acceptable conversion)
 
@@ -1024,6 +1114,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/vec3_bgr_1vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/asin_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/unsuccessfulcompile_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1033,6 +1124,7 @@ ERROR: 0:23: ';' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/unsuccessfulcompile_vert.bin
 filename /home/oof/webgl_cleaned/increment6_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '++' : l-value required
 
@@ -1040,6 +1132,7 @@ ERROR: 0:9: '++' : l-value required
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/increment6_frag.bin
 filename /home/oof/webgl_cleaned/floor_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/ternary_ivec2_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '?:' : mismatching ternary operator operand types 'const 2-component vector of float and 'const 2-component vector of int'
@@ -1049,6 +1142,7 @@ ERROR: 0:7: '=' : cannot convert from 'const 2-component vector of int' to 'medi
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/ternary_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/vec4_zwx_y_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/distance_vec3_frag_xvaryyhalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/expected.frag passed...
@@ -1061,6 +1155,7 @@ ERROR: 0:9: 'constructor' : too many arguments
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/constructor3_V100_frag.bin
 filename /home/oof/webgl_cleaned/vec4_yxwz_1vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/shaderRearrange.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:15: 'layout' : syntax error
@@ -1069,6 +1164,7 @@ ERROR: 0:15: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderRearrange.bin
 filename /home/oof/webgl_cleaned/scoping2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:12: 'i' : undeclared identifier
 ERROR: 0:12: '++' : l-value required (can't modify a const)
@@ -1077,6 +1173,7 @@ ERROR: 0:12: '++' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/scoping2_frag.bin
 filename /home/oof/webgl_cleaned/faceforward_vec2_frag_nvaryiconst.frag passed...
 filename /home/oof/webgl_cleaned/mat3_frag.frag passed...
 filename /home/oof/webgl_cleaned/nestedstructcomb_various_frag.frag passed...
@@ -1089,6 +1186,7 @@ ERROR: 0:9: 'f' : redefinition
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array11_frag.bin
 filename /home/oof/webgl_cleaned/floor_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/vec4_gr_ab_2vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/subtract_int_vec4.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1098,6 +1196,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_vec4.bin
 filename /home/oof/webgl_cleaned/normalize_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/4b_firstthree_frag.frag passed...
 filename /home/oof/webgl_cleaned/add_ivec4_vec4.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1107,6 +1206,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/pow_vec2_frag_xvary_yconsthalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/bool_empty_empty_bool_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/struct2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1116,6 +1216,7 @@ ERROR: 0:7: '=' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct2_frag.bin
 filename /home/oof/webgl_cleaned/sqrt_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/radians_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/divide_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1125,6 +1226,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/float_empty_out_float_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/struct_mat2_frag.frag passed...
 filename /home/oof/webgl_cleaned/lessThanEqual_ivec3_frag_ref.frag passed...
@@ -1136,6 +1238,7 @@ ERROR: 0:9: 'assign' : cannot convert from 'const float' to 'mediump 2-component
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/swizzle1_frag.bin
 filename /home/oof/webgl_cleaned/3f_vert.frag passed...
 filename /home/oof/webgl_cleaned/varying_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'varying' : only allowed at global scope
@@ -1146,6 +1249,7 @@ ERROR: 0:8: 'varying' : invalid qualifier combination
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/varying_frag.bin
 filename /home/oof/webgl_cleaned/bvec_tests.frag passed...
 filename /home/oof/webgl_cleaned/tan_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/float_empty_out_float_array_frag.frag passed...
@@ -1162,6 +1266,7 @@ ERROR: 0:7: 'assign' : cannot convert from 'const bool' to 'const highp float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fragmentOnly1_vert.bin
 filename /home/oof/webgl_cleaned/vec3_yz_x_1vec2_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/3b_frag.frag passed...
 filename /home/oof/webgl_cleaned/exp2_vec2_frag_xvary.frag passed...
@@ -1179,6 +1284,7 @@ ERROR: 0:8: 'out' : storage qualifier supported in GLSL ES 3.00 and above only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/uniformBlockShader.bin
 filename /home/oof/webgl_cleaned/comma1_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:10: 'assign' : cannot convert from 'mediump float' to 'mediump int'
 
@@ -1186,6 +1292,7 @@ ERROR: 0:10: 'assign' : cannot convert from 'mediump float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/comma1_vert.bin
 filename /home/oof/webgl_cleaned/ivec4_empty_in_ivec4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/gl_FragCoord_xy_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/const_mat2_copy_frag.frag passed...
@@ -1208,6 +1315,7 @@ ERROR: 0:9: 'foo' : no matching overloaded function found
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function_int_float.bin
 filename /home/oof/webgl_cleaned/sign_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/clamp_vec2_frag_xvary_yconstquarter.frag passed...
 filename /home/oof/webgl_cleaned/array2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1218,6 +1326,7 @@ ERROR: 0:8: 'array' : variables with qualifier 'const' must be initialized
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array2_frag.bin
 filename /home/oof/webgl_cleaned/add_int_float.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a left-hand operand of type 'const float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -1225,6 +1334,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_float.bin
 filename /home/oof/webgl_cleaned/fwidth_frag_ref_dy.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:13: 'gl_FragCoord' : undeclared identifier
 ERROR: 0:13: 'x' :  field selection requires structure or vector on left hand side
@@ -1245,6 +1355,7 @@ ERROR: 0:19: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fwidth_frag_ref_dy.bin
 filename /home/oof/webgl_cleaned/not_equal_ivec4_vec4.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '!=' : wrong operand types - no operation '!=' exists that takes a left-hand operand of type 'const 4-component vector of float' and a right operand of type 'const 4-component vector of int' (or there is no acceptable conversion)
 
@@ -1252,6 +1363,7 @@ ERROR: 0:7: '!=' : wrong operand types - no operation '!=' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/not_equal_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/pow_float_frag_xconst2_yvary.frag passed...
 filename /home/oof/webgl_cleaned/greaterThanEqual_ivec2_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/exp_float_frag_xvary_ref.frag passed...
@@ -1264,6 +1376,7 @@ ERROR: 0:7: '=' : cannot convert from 'const 3-component vector of int' to 'medi
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/assign_ivec3_to_vec3.bin
 filename /home/oof/webgl_cleaned/vec4_empty_inout_vec4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/step_vec2_frag_xvary_edgeconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/bool_empty_out_bool_empty_frag.frag passed...
@@ -1280,6 +1393,7 @@ ERROR: 0:10: 'f' : redefinition
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array10_frag.bin
 filename /home/oof/webgl_cleaned/vec3_xy_z_1vec2_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/dataType1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'v' : illegal use of type 'void'
@@ -1288,6 +1402,7 @@ ERROR: 0:8: 'v' : illegal use of type 'void'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType1_frag.bin
 filename /home/oof/webgl_cleaned/shaderTranspose.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: 'memoryBarrierShared' : no matching overloaded function found
 ERROR: 0:7: 'barrier' : no matching overloaded function found
@@ -1297,6 +1412,7 @@ ERROR: 0:15: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderTranspose.bin
 filename /home/oof/webgl_cleaned/ivec4_empty_empty_ivec4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/sign_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/2f_vert.frag passed...
@@ -1313,6 +1429,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_mat2.bin
 filename /home/oof/webgl_cleaned/CorrectParseTest_frag.frag passed...
 filename /home/oof/webgl_cleaned/pow_float_frag_xvary_yconst2_ref.frag passed...
 filename /home/oof/webgl_cleaned/mat2_2vec2_frag.frag passed...
@@ -1327,6 +1444,7 @@ ERROR: 0:9: '++' : wrong operand type - no operation '++' exists that takes an o
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/increment3_frag.bin
 filename /home/oof/webgl_cleaned/divide_int_mat3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a left-hand operand of type 'const 3X3 matrix of float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -1334,6 +1452,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_mat3.bin
 filename /home/oof/webgl_cleaned/4b_lastthree_frag.frag passed...
 filename /home/oof/webgl_cleaned/length_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/cos_vec2_frag_xvary.frag passed...
@@ -1345,6 +1464,7 @@ ERROR: 0:8: 'f' : variables with qualifier 'const' must be initialized
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType6_frag.bin
 filename /home/oof/webgl_cleaned/max_vec2_frag_xvary_yconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/mod_float_frag_xvary_yconst1_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec2_2float_frag.frag passed...
@@ -1357,6 +1477,7 @@ ERROR: 0:7: '<=' : wrong operand types - no operation '<=' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/less_than_equal.bin
 filename /home/oof/webgl_cleaned/degrees_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/min_vec3_frag_xvary_yconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/swizzle3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1368,6 +1489,7 @@ ERROR: 0:9: '=' : cannot convert from 'mediump float' to 'mediump 3-component ve
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/swizzle3_frag.bin
 filename /home/oof/webgl_cleaned/fragmentOnly_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: 'gl_FragDepth' : undeclared identifier
 ERROR: 0:7: 'assign' : l-value required (can't modify a const)
@@ -1376,6 +1498,7 @@ ERROR: 0:7: 'assign' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fragmentOnly_vert.bin
 filename /home/oof/webgl_cleaned/const_mat2_frag.frag passed...
 filename /home/oof/webgl_cleaned/3b_vert.frag passed...
 filename /home/oof/webgl_cleaned/buffer_objects_multitexturing.frag passed...
@@ -1392,6 +1515,7 @@ ERROR: 0:20: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderDensityShared.bin
 filename /home/oof/webgl_cleaned/atan_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec3_vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/1i_vert.frag passed...
@@ -1407,6 +1531,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/const_mat3_copy_frag.frag passed...
 filename /home/oof/webgl_cleaned/preprocess3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'test3' : no matching overloaded function found
@@ -1442,6 +1567,7 @@ ERROR: 0:21: 'assign' : cannot convert from 'const mediump float' to 'mediump in
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/preprocess3_frag.bin
 filename /home/oof/webgl_cleaned/version2_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/faceforward_float_frag_nvaryiconst.frag passed...
 filename /home/oof/webgl_cleaned/discard_cond_frag.frag passed...
@@ -1459,6 +1585,7 @@ ERROR: 0:8: 'return' : void function cannot return a value
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function1_frag.bin
 filename /home/oof/webgl_cleaned/divide_int_float.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a left-hand operand of type 'const float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -1466,6 +1593,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_float.bin
 filename /home/oof/webgl_cleaned/subtract_int_mat3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a left-hand operand of type 'const 3X3 matrix of float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -1473,6 +1601,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_mat3.bin
 filename /home/oof/webgl_cleaned/CorrectModule_frag.frag passed...
 filename /home/oof/webgl_cleaned/qualifiers_struct_frag.frag passed...
 filename /home/oof/webgl_cleaned/array3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1483,6 +1612,7 @@ ERROR: 0:9: '==' : wrong operand types - no operation '==' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array3_frag.bin
 filename /home/oof/webgl_cleaned/CorrectExtension1_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/constructor1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'constructor' : not enough data provided for construction
@@ -1491,6 +1621,7 @@ ERROR: 0:8: 'constructor' : not enough data provided for construction
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/constructor1_frag.bin
 filename /home/oof/webgl_cleaned/length_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/parser1_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'gl_Position' : syntax error
@@ -1499,6 +1630,7 @@ ERROR: 0:8: 'gl_Position' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser1_vert.bin
 filename /home/oof/webgl_cleaned/shaderForceShared.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: 'memoryBarrierShared' : no matching overloaded function found
 ERROR: 0:8: 'barrier' : no matching overloaded function found
@@ -1508,6 +1640,7 @@ ERROR: 0:23: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderForceShared.bin
 filename /home/oof/webgl_cleaned/extension6_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/Texture_Rectangle_Samplers_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: 'GL_ARB_texture_rectangle' : extension is not supported
@@ -1520,6 +1653,7 @@ ERROR: 0:9: 'assign' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/Texture_Rectangle_Samplers_frag.bin
 filename /home/oof/webgl_cleaned/vec4_xy_zw_2vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/greaterThanEqual_ivec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/not_bvec3_frag_ref.frag passed...
@@ -1532,6 +1666,7 @@ ERROR: 0:9: 'assign' : cannot convert from 'bool' to 'mediump float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser6_frag.bin
 filename /home/oof/webgl_cleaned/CorrectVersion_V100_frag.frag passed...
 filename /home/oof/webgl_cleaned/pow_float_frag_xvary_yconst2.frag passed...
 filename /home/oof/webgl_cleaned/smoothstep_float_frag_xvary_edgeconstquarter.frag passed...
@@ -1546,6 +1681,7 @@ ERROR: 0:6: 'varying' :  cannot initialize this type of qualifier
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/varying3_frag.bin
 filename /home/oof/webgl_cleaned/parser5_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'z' : vector field selection out of range
 
@@ -1553,6 +1689,7 @@ ERROR: 0:9: 'z' : vector field selection out of range
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser5_frag.bin
 filename /home/oof/webgl_cleaned/1i_frag.frag passed...
 filename /home/oof/webgl_cleaned/emit2.glsl passed...
 filename /home/oof/webgl_cleaned/_webgl_variable.vert passed...
@@ -1567,6 +1704,7 @@ ERROR: 0:10: 'assign' : cannot convert from 'const highp float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/preprocess4_frag.bin
 filename /home/oof/webgl_cleaned/tan_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/2m_frag.frag passed...
 filename /home/oof/webgl_cleaned/bool_empty_inout_bool_array_frag.frag passed...
@@ -1579,6 +1717,7 @@ ERROR: 0:7: '>' : wrong operand types - no operation '>' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/greater_than.bin
 filename /home/oof/webgl_cleaned/ternary_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '?:' : mismatching ternary operator operand types 'const 3-component vector of float and 'const 3-component vector of int'
 ERROR: 0:7: '=' : cannot convert from 'const 3-component vector of int' to 'mediump 3-component vector of float'
@@ -1587,6 +1726,7 @@ ERROR: 0:7: '=' : cannot convert from 'const 3-component vector of int' to 'medi
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/ternary_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/vec3_pts_1vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/max_vec3_frag_xvary_yconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/vec4_arb_g_1vec3_1float_frag.frag passed...
@@ -1597,6 +1737,7 @@ ERROR: 0:7: '<' : wrong operand types - no operation '<' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/less_than.bin
 filename /home/oof/webgl_cleaned/mat2_frag.frag passed...
 filename /home/oof/webgl_cleaned/bvec4_empty_in_bvec4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/reflect_vec2_frag_ivarynconst.frag passed...
@@ -1609,6 +1750,7 @@ ERROR: 0:7: 'uvec2' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderClearGridIndices.bin
 filename /home/oof/webgl_cleaned/log_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/lessThanEqual_vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/length_float_frag_xvary_ref.frag passed...
@@ -1637,6 +1779,7 @@ ERROR: 0:21: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fwidth_frag_dx.bin
 filename /home/oof/webgl_cleaned/equal_bvec3_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/dot_vec3_frag_xvaryythird.frag passed...
 filename /home/oof/webgl_cleaned/brick.frag passed...
@@ -1650,6 +1793,7 @@ ERROR: 0:10: '' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/comment_frag.bin
 filename /home/oof/webgl_cleaned/mat3arrayindirect0_frag.frag passed...
 filename /home/oof/webgl_cleaned/abs_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/parser8_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1660,6 +1804,7 @@ ERROR: 0:10: '==' : wrong operand types - no operation '==' exists that takes a 
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser8_frag.bin
 filename /home/oof/webgl_cleaned/subtract_int_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a left-hand operand of type 'const 3-component vector of float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -1667,6 +1812,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_vec3.bin
 filename /home/oof/webgl_cleaned/3m_frag.frag passed...
 filename /home/oof/webgl_cleaned/attribute_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: 'attribute' : only allowed at global scope
@@ -1677,6 +1823,7 @@ ERROR: 0:7: 'attribute' : invalid qualifier combination
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/attribute_vert.bin
 filename /home/oof/webgl_cleaned/initfunc_empty_array_float_frag.frag passed...
 filename /home/oof/webgl_cleaned/increment2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '++' :  l-value required
@@ -1685,6 +1832,7 @@ ERROR: 0:9: '++' :  l-value required
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/increment2_frag.bin
 filename /home/oof/webgl_cleaned/function2_V100_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: '[]' : implicitly sized array supported in GLSL ES 3.00 and above only
 ERROR: 0:6: 'i' : function parameter array must specify a size
@@ -1694,6 +1842,7 @@ ERROR: 0:12: 'function' : no matching overloaded function found
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function2_V100_frag.bin
 filename /home/oof/webgl_cleaned/log_vec3_frag_xvary01_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec4_pqs_t_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/Permissive_Constant_Conversions_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1703,6 +1852,7 @@ ERROR: 0:8: '=' : cannot convert from 'const int' to 'mediump float'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/Permissive_Constant_Conversions_frag.bin
 filename /home/oof/webgl_cleaned/inversesqrt_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/structcopy_mat2_frag.frag passed...
 filename /home/oof/webgl_cleaned/distance_vec2_frag_xvaryyhalf.frag passed...
@@ -1721,6 +1871,7 @@ ERROR: 0:13: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderBitonicSort.bin
 filename /home/oof/webgl_cleaned/uniform1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:16: 'assign' : l-value required (can't modify a uniform "gtf_Fog")
 
@@ -1728,6 +1879,7 @@ ERROR: 0:16: 'assign' : l-value required (can't modify a uniform "gtf_Fog")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/uniform1_frag.bin
 filename /home/oof/webgl_cleaned/increment1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:12: '++' : wrong operand type - no operation '++' exists that takes an operand of type structure 's' (symbol id 3001) (specifier) (or there is no acceptable conversion)
 
@@ -1735,6 +1887,7 @@ ERROR: 0:12: '++' : wrong operand type - no operation '++' exists that takes an 
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/increment1_frag.bin
 filename /home/oof/webgl_cleaned/successfulcompile_frag.frag passed...
 filename /home/oof/webgl_cleaned/preprocess0_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'test' : no matching overloaded function found
@@ -1745,6 +1898,7 @@ ERROR: 0:8: 'assign' : cannot convert from 'const highp float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/preprocess0_frag.bin
 filename /home/oof/webgl_cleaned/Low_Level_Assembly_Reserved_Words_frag.frag passed...
 filename /home/oof/webgl_cleaned/exp_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/array_float_frag.frag passed...
@@ -1755,6 +1909,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_mat4.bin
 filename /home/oof/webgl_cleaned/acos_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/matrix2arrayVSU.frag passed...
 filename /home/oof/webgl_cleaned/tan_vec2_frag_xvary.frag passed...
@@ -1767,6 +1922,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_vec2.bin
 filename /home/oof/webgl_cleaned/preprocess1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 't1' : undeclared identifier
 ERROR: 0:9: 't2' : undeclared identifier
@@ -1788,6 +1944,7 @@ ERROR: 0:13: 'assign' : cannot convert from 'const highp float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/preprocess1_frag.bin
 filename /home/oof/webgl_cleaned/conditional1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:10: '' : boolean expression expected
 
@@ -1795,6 +1952,7 @@ ERROR: 0:10: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/conditional1_frag.bin
 filename /home/oof/webgl_cleaned/shaderBuildGridIndices.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: 'uint' : syntax error
 
@@ -1802,6 +1960,7 @@ ERROR: 0:7: 'uint' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderBuildGridIndices.bin
 filename /home/oof/webgl_cleaned/addsubtract_frag.frag passed...
 filename /home/oof/webgl_cleaned/struct3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: 'uniform' : invalid qualifier on struct member
@@ -1810,6 +1969,7 @@ ERROR: 0:7: 'uniform' : invalid qualifier on struct member
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct3_frag.bin
 filename /home/oof/webgl_cleaned/assign_ivec2_to_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '=' : cannot convert from 'const 2-component vector of int' to 'mediump 2-component vector of float'
 
@@ -1817,6 +1977,7 @@ ERROR: 0:7: '=' : cannot convert from 'const 2-component vector of int' to 'medi
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/assign_ivec2_to_vec2.bin
 filename /home/oof/webgl_cleaned/shaderDensitySimple.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:16: 'layout' : syntax error
 
@@ -1824,6 +1985,7 @@ ERROR: 0:16: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderDensitySimple.bin
 filename /home/oof/webgl_cleaned/FunctionParam_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: '' : constant expression required
 ERROR: 0:6: '' : array size must be a constant integer expression
@@ -1832,6 +1994,7 @@ ERROR: 0:6: '' : array size must be a constant integer expression
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/FunctionParam_vert.bin
 filename /home/oof/webgl_cleaned/structnest_mat3_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec_tests.frag passed...
 filename /home/oof/webgl_cleaned/inversesqrt_float_frag_xvary.frag passed...
@@ -1850,6 +2013,7 @@ ERROR: 0:36: '}' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/unsuccessfulcompile_frag.bin
 filename /home/oof/webgl_cleaned/array1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '[]' : arrays of arrays supported in GLSL ES 3.10 and above only
 
@@ -1857,6 +2021,7 @@ ERROR: 0:8: '[]' : arrays of arrays supported in GLSL ES 3.10 and above only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array1_frag.bin
 filename /home/oof/webgl_cleaned/pow_vec3_frag_xvary_yconst2.frag passed...
 filename /home/oof/webgl_cleaned/equal_bvec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/gl_FrontFacing_frag.frag passed...
@@ -1869,6 +2034,7 @@ ERROR: 0:13: 'function' : Constant value cannot be passed for 'out' or 'inout' p
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function4_frag.bin
 filename /home/oof/webgl_cleaned/log_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/ternary_ivec4_vec4.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '?:' : mismatching ternary operator operand types 'const 4-component vector of float and 'const 4-component vector of int'
@@ -1878,6 +2044,7 @@ ERROR: 0:7: '=' : cannot convert from 'const 4-component vector of int' to 'medi
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/ternary_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/ivec4_empty_inout_ivec4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/multiply_int_mat3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a left-hand operand of type 'const 3X3 matrix of float' and a right operand of type 'const int' (or there is no acceptable conversion)
@@ -1886,6 +2053,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_mat3.bin
 filename /home/oof/webgl_cleaned/notEqual_vec2_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/const_mat4_frag.frag passed...
 filename /home/oof/webgl_cleaned/asin_float_frag_xvary.frag passed...
@@ -1901,6 +2069,7 @@ ERROR: 0:11: 'assign' : cannot convert from 'mediump 4X4 matrix of float' to 'co
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/TernaryOp_frag.bin
 filename /home/oof/webgl_cleaned/faceforward_vec3_frag_nvaryiconst_ref.frag passed...
 filename /home/oof/webgl_cleaned/array_const_mat2_frag.frag passed...
 filename /home/oof/webgl_cleaned/exp_float_frag_xvaryneg.frag passed...
@@ -1911,6 +2080,7 @@ ERROR: 0:11: 'uint' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderBuildGrid.bin
 filename /home/oof/webgl_cleaned/gl_MaxCombinedTextureImageUnits_frag.frag passed...
 filename /home/oof/webgl_cleaned/postfixdecrement_frag.frag passed...
 filename /home/oof/webgl_cleaned/varying2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1920,6 +2090,7 @@ ERROR: 0:6: 'varying' : cannot be bool or int
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/varying2_frag.bin
 filename /home/oof/webgl_cleaned/vec4_bar_g_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/equal_ivec2_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/equal_ivec2_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1929,6 +2100,7 @@ ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/equal_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/vec4_rgb_a_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/qualifiers_float_frag.frag passed...
 filename /home/oof/webgl_cleaned/extension9_V100_frag.frag passed...
@@ -1939,6 +2111,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/cos_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/vec4_ts_qp_2vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/equal_vec2_frag_ref.frag passed...
@@ -1950,6 +2123,7 @@ ERROR: 0:8: 'hvec3' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/hvec3_frag.bin
 filename /home/oof/webgl_cleaned/vec3_yxz_1vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec4_vec3_float_frag.frag passed...
 filename /home/oof/webgl_cleaned/dvec4_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1960,6 +2134,7 @@ ERROR: 0:8: 'dvec4' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dvec4_frag.bin
 filename /home/oof/webgl_cleaned/greaterThanEqual_vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/length_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/uniform_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -1971,6 +2146,7 @@ ERROR: 0:8: 'uniform' : invalid qualifier combination
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/uniform_frag.bin
 filename /home/oof/webgl_cleaned/ivec_tests.frag passed...
 filename /home/oof/webgl_cleaned/buffer_objects.frag passed...
 filename /home/oof/webgl_cleaned/max_vec2_frag_xvary_yconsthalf_ref.frag passed...
@@ -1982,6 +2158,7 @@ ERROR: 0:19: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderForceSimple.bin
 filename /home/oof/webgl_cleaned/array_const_mat4_frag.frag passed...
 filename /home/oof/webgl_cleaned/degrees_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/normalize_float_frag_xvary_ref.frag passed...
@@ -1994,6 +2171,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_float.bin
 filename /home/oof/webgl_cleaned/division_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec4_qs_pt_2vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec3arraydirect_frag.frag passed...
@@ -2008,6 +2186,7 @@ ERROR: 0:9: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/if1_frag.bin
 filename /home/oof/webgl_cleaned/vec3_rgb_1vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/sqrt_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/notEqual_ivec2_frag_ref.frag passed...
@@ -2025,6 +2204,7 @@ ERROR: 0:5: 'int' : main function cannot return a value
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/main3_vert.bin
 filename /home/oof/webgl_cleaned/exp2_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec3single_frag.frag passed...
 filename /home/oof/webgl_cleaned/non-ascii.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2035,6 +2215,7 @@ ERROR: 0:5: 'rbhh' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/non-ascii.bin
 filename /home/oof/webgl_cleaned/normalize_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/fwidth_frag_ref.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:13: 'gl_FragCoord' : undeclared identifier
@@ -2058,6 +2239,7 @@ ERROR: 0:19: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fwidth_frag_ref.bin
 filename /home/oof/webgl_cleaned/default.frag passed...
 filename /home/oof/webgl_cleaned/function7_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: 'uniform' : only allowed at global scope
@@ -2067,6 +2249,7 @@ ERROR: 0:6: 'uniform' : Invalid parameter qualifier
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function7_frag.bin
 filename /home/oof/webgl_cleaned/lighting_diffuse.frag passed...
 filename /home/oof/webgl_cleaned/equal_int_float.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a left-hand operand of type 'const float' and a right operand of type 'const int' (or there is no acceptable conversion)
@@ -2075,6 +2258,7 @@ ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/equal_int_float.bin
 filename /home/oof/webgl_cleaned/pow_vec3_frag_xvary_yconsthalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/degrees_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/ivec4_empty_in_ivec4_empty_frag.frag passed...
@@ -2096,6 +2280,7 @@ ERROR: 0:19: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dFdx_frag_ref.bin
 filename /home/oof/webgl_cleaned/subtract_int_vec2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a left-hand operand of type 'const 2-component vector of float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -2103,6 +2288,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_vec2.bin
 filename /home/oof/webgl_cleaned/gl_MaxVertexAttribs_frag.frag passed...
 filename /home/oof/webgl_cleaned/structcopy_bvec2bvec3bvec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/add_int_mat3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2112,6 +2298,7 @@ ERROR: 0:7: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/add_int_mat3.bin
 filename /home/oof/webgl_cleaned/lighting_diffuse_ref.frag passed...
 filename /home/oof/webgl_cleaned/mod_x_large_y_large_frag.frag passed...
 filename /home/oof/webgl_cleaned/ivec4_empty_inout_ivec4_bigarray_frag.frag passed...
@@ -2131,6 +2318,7 @@ ERROR: 0:8: 'assign' : l-value required (can't modify a const "i")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function3_frag.bin
 filename /home/oof/webgl_cleaned/sign_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/attribute2_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:5: 'attribute' : cannot declare arrays of this qualifier
@@ -2139,6 +2327,7 @@ ERROR: 0:5: 'attribute' : cannot declare arrays of this qualifier
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/attribute2_vert.bin
 filename /home/oof/webgl_cleaned/vec2_vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/clamp_vec3_frag_xvary_yconstquarter_ref.frag passed...
 filename /home/oof/webgl_cleaned/log2_vec2_frag_xvary01.frag passed...
@@ -2171,6 +2360,7 @@ ERROR: 0:19: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dFdy_frag_ref.bin
 filename /home/oof/webgl_cleaned/pow_vec3_frag_xvary_yconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/main1_vert.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:5: 'main' : syntax error
@@ -2179,6 +2369,7 @@ ERROR: 0:5: 'main' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/main1_vert.bin
 filename /home/oof/webgl_cleaned/reflect_float_frag_ivarynconst.frag passed...
 filename /home/oof/webgl_cleaned/distance_float_frag_xvaryyhalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/function8_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2189,6 +2380,7 @@ ERROR: 0:8: 'assign' : l-value required (can't modify a const "i")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function8_frag.bin
 filename /home/oof/webgl_cleaned/relational_frag.frag passed...
 filename /home/oof/webgl_cleaned/ivec3_3int_frag.frag passed...
 filename /home/oof/webgl_cleaned/acos_float_frag_xvary_ref.frag passed...
@@ -2202,6 +2394,7 @@ ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/equal_ivec4_vec4.bin
 filename /home/oof/webgl_cleaned/log_float_frag_xvary01.frag passed...
 filename /home/oof/webgl_cleaned/dataType7_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'assign' : l-value required (can't modify a uniform "f")
@@ -2210,6 +2403,7 @@ ERROR: 0:9: 'assign' : l-value required (can't modify a uniform "f")
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType7_frag.bin
 filename /home/oof/webgl_cleaned/mix_vec3_frag_xvary_yconsthalf_aconsthalf.frag passed...
 filename /home/oof/webgl_cleaned/if2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:10: '' : boolean expression expected
@@ -2218,6 +2412,7 @@ ERROR: 0:10: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/if2_frag.bin
 filename /home/oof/webgl_cleaned/conditional2_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:11: '?:' : mismatching ternary operator operand types 'mediump int and 'mediump float'
 
@@ -2225,6 +2420,7 @@ ERROR: 0:11: '?:' : mismatching ternary operator operand types 'mediump int and 
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/conditional2_frag.bin
 filename /home/oof/webgl_cleaned/mat4_copy_frag.frag passed...
 filename /home/oof/webgl_cleaned/subtract_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a left-hand operand of type 'const 3-component vector of float' and a right operand of type 'const 3-component vector of int' (or there is no acceptable conversion)
@@ -2233,6 +2429,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/CorrectPreprocess9_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:11: 't1' : undeclared identifier
 ERROR: 0:11: 't2' : undeclared identifier
@@ -2250,6 +2447,7 @@ ERROR: 0:15: 'assign' : cannot convert from 'mediump 4-component vector of float
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/CorrectPreprocess9_frag.bin
 filename /home/oof/webgl_cleaned/shaderIntegrate.comp errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:13: 'layout' : syntax error
 
@@ -2257,6 +2455,7 @@ ERROR: 0:13: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shaderIntegrate.bin
 filename /home/oof/webgl_cleaned/vec4_st_pq_2vec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/sign_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/mod_vec3_frag_xvary_yconst1.frag passed...
@@ -2268,6 +2467,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/vec4_wxz_y_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/inversesqrt_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/greaterThan_vec3_frag.frag passed...
@@ -2283,6 +2483,7 @@ ERROR: 0:8: 'attribute' : invalid qualifier combination
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/attribute_frag.bin
 filename /home/oof/webgl_cleaned/divide_int_mat2.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a left-hand operand of type 'const 2X2 matrix of float' and a right operand of type 'const int' (or there is no acceptable conversion)
 
@@ -2290,6 +2491,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_mat2.bin
 filename /home/oof/webgl_cleaned/max_float_frag_xvary_yconsthalf_ref.frag passed...
 filename /home/oof/webgl_cleaned/exp_vec3_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/extension2_V100_frag.frag passed...
@@ -2300,6 +2502,7 @@ ERROR: 0:5: 'main' : function cannot take any parameter(s)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/main2_vert.bin
 filename /home/oof/webgl_cleaned/CG_Data_Types_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'half' : Illegal use of reserved word
 ERROR: 0:8: 'half' : syntax error
@@ -2308,6 +2511,7 @@ ERROR: 0:8: 'half' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/CG_Data_Types_frag.bin
 filename /home/oof/webgl_cleaned/pow_vec3_frag_xconsthalf_yvary.frag passed...
 filename /home/oof/webgl_cleaned/log2_vec2_frag_xvary01_ref.frag passed...
 filename /home/oof/webgl_cleaned/lessThanEqual_ivec2_frag.frag passed...
@@ -2318,6 +2522,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_mat2.bin
 filename /home/oof/webgl_cleaned/function10_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:10: 'function' : no matching overloaded function found
 
@@ -2325,6 +2530,7 @@ ERROR: 0:10: 'function' : no matching overloaded function found
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function10_frag.bin
 filename /home/oof/webgl_cleaned/array6_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '' : array size must be a constant integer expression
 
@@ -2332,6 +2538,7 @@ ERROR: 0:9: '' : array size must be a constant integer expression
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array6_frag.bin
 filename /home/oof/webgl_cleaned/structnest_mat4_frag.frag passed...
 filename /home/oof/webgl_cleaned/inversesqrt_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/sign_vec2_frag_xvary.frag passed...
@@ -2344,6 +2551,7 @@ ERROR: 0:9: '=' : cannot convert from 'const mediump float' to 'mediump 2-compon
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/function_ivec2_vec2.bin
 filename /home/oof/webgl_cleaned/vec3array_frag.frag passed...
 filename /home/oof/webgl_cleaned/fract_float_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/normalize_vec3_frag_xvary_ref.frag passed...
@@ -2354,6 +2562,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_vec4.bin
 filename /home/oof/webgl_cleaned/radians_float_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/refract_vec3_frag_ivarynconst_ref.frag passed...
 filename /home/oof/webgl_cleaned/23f_frag.frag passed...
@@ -2380,6 +2589,7 @@ ERROR: 0:21: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fwidth_frag_dy.bin
 filename /home/oof/webgl_cleaned/vec4_gra_b_1vec3_1float_frag.frag passed...
 filename /home/oof/webgl_cleaned/1f_vert.frag passed...
 filename /home/oof/webgl_cleaned/radians_float_frag_xvary_ref.frag passed...
@@ -2397,6 +2607,7 @@ ERROR: 0:14: 'assign' : cannot convert from 'mediump 4-component vector of float
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/constFunc_frag.bin
 filename /home/oof/webgl_cleaned/atan_vec3_frag_xvaryyvary.frag passed...
 filename /home/oof/webgl_cleaned/gl_MaxVertexUniformVectors_frag.frag passed...
 filename /home/oof/webgl_cleaned/fract_vec2_frag_xvary.frag passed...
@@ -2408,6 +2619,7 @@ ERROR: 0:8: 'assign' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser10_frag.bin
 filename /home/oof/webgl_cleaned/24f_frag.frag passed...
 filename /home/oof/webgl_cleaned/subtract_int_float.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a left-hand operand of type 'const float' and a right operand of type 'const int' (or there is no acceptable conversion)
@@ -2416,6 +2628,7 @@ ERROR: 0:7: '-' : wrong operand types - no operation '-' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/subtract_int_float.bin
 filename /home/oof/webgl_cleaned/identifier3_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: 'x' : undeclared identifier
 
@@ -2423,6 +2636,7 @@ ERROR: 0:9: 'x' : undeclared identifier
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/identifier3_frag.bin
 filename /home/oof/webgl_cleaned/for_continue_frag.frag passed...
 filename /home/oof/webgl_cleaned/log_vec2_frag_xvary01.frag passed...
 filename /home/oof/webgl_cleaned/vector_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2432,6 +2646,7 @@ ERROR: 0:9: '+' : wrong operand types - no operation '+' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/vector_frag.bin
 filename /home/oof/webgl_cleaned/structnest_bool_frag.frag passed...
 filename /home/oof/webgl_cleaned/smoothstep_vec3_frag_xvary_edgeconstquarter_ref.frag passed...
 filename /home/oof/webgl_cleaned/atan_vec3_frag_xvary.frag passed...
@@ -2442,6 +2657,7 @@ ERROR: 0:7: '/' : wrong operand types - no operation '/' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/divide_int_vec3.bin
 filename /home/oof/webgl_cleaned/refract_vec3_frag_ivarynconst.frag passed...
 filename /home/oof/webgl_cleaned/radians_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/log2_vec3_frag_xvary_ref.frag passed...
@@ -2453,6 +2669,7 @@ ERROR: 0:8: 'f' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/float4_frag.bin
 filename /home/oof/webgl_cleaned/gl_MaxVertexTextureImageUnits_frag.frag passed...
 filename /home/oof/webgl_cleaned/user_clip_planes.frag passed...
 filename /home/oof/webgl_cleaned/fract_vec3_frag_xvary.frag passed...
@@ -2471,6 +2688,7 @@ ERROR: 0:7: 'assign' : cannot convert from 'const 4-component vector of float' t
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fragmentOnly2_vert.bin
 filename /home/oof/webgl_cleaned/any_bvec2_frag.frag passed...
 filename /home/oof/webgl_cleaned/preprocess2_frag.frag passed...
 filename /home/oof/webgl_cleaned/struct1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2480,6 +2698,7 @@ ERROR: 0:8: 'uniform' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct1_frag.bin
 filename /home/oof/webgl_cleaned/dataType4_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: '=' : cannot convert from 'const float' to 'mediump int'
 
@@ -2487,6 +2706,7 @@ ERROR: 0:8: '=' : cannot convert from 'const float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/dataType4_frag.bin
 filename /home/oof/webgl_cleaned/samplerForWebGL2UniformShader.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: 'sampler3D' : Illegal use of reserved word
 ERROR: 0:6: 'sampler3D' : syntax error
@@ -2495,6 +2715,7 @@ ERROR: 0:6: 'sampler3D' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/samplerForWebGL2UniformShader.bin
 filename /home/oof/webgl_cleaned/acos_vec3_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/lessThan_ivec2_frag_ref.frag passed...
 filename /home/oof/webgl_cleaned/array9_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2504,6 +2725,7 @@ ERROR: 0:9: '.' : cannot apply dot operator to an array
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/array9_frag.bin
 filename /home/oof/webgl_cleaned/exp2_float_frag_xvaryneg.frag passed...
 filename /home/oof/webgl_cleaned/atan_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/dot_float_frag_xvaryyone.frag passed...
@@ -2517,6 +2739,7 @@ ERROR: 0:9: '>' : wrong operand types - no operation '>' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/parser7_frag.bin
 filename /home/oof/webgl_cleaned/shader.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:6: 'layout' : syntax error
 
@@ -2524,6 +2747,7 @@ ERROR: 0:6: 'layout' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/shader.bin
 filename /home/oof/webgl_cleaned/while1_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:9: '' : boolean expression expected
 
@@ -2531,6 +2755,7 @@ ERROR: 0:9: '' : boolean expression expected
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/while1_frag.bin
 filename /home/oof/webgl_cleaned/not_equal_ivec3_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:7: '!=' : wrong operand types - no operation '!=' exists that takes a left-hand operand of type 'const 3-component vector of float' and a right operand of type 'const 3-component vector of int' (or there is no acceptable conversion)
 
@@ -2538,6 +2763,7 @@ ERROR: 0:7: '!=' : wrong operand types - no operation '!=' exists that takes a l
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/not_equal_ivec3_vec3.bin
 filename /home/oof/webgl_cleaned/mat4_4vec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/mat3_3vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/vec4_grab_1vec4_frag.frag passed...
@@ -2550,6 +2776,7 @@ ERROR: 0:10: 'test2' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/CorrectPreprocess5_frag.bin
 filename /home/oof/webgl_cleaned/CG_Standard_Library_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:8: 'round' : no matching overloaded function found
 ERROR: 0:8: '=' : cannot convert from 'const mediump float' to 'mediump int'
@@ -2558,6 +2785,7 @@ ERROR: 0:8: '=' : cannot convert from 'const mediump float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/CG_Standard_Library_frag.bin
 filename /home/oof/webgl_cleaned/abs_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/ivec4_empty_out_ivec4_array_frag.frag passed...
 filename /home/oof/webgl_cleaned/multiply_int_vec3.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
@@ -2567,6 +2795,7 @@ ERROR: 0:7: '*' : wrong operand types - no operation '*' exists that takes a lef
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/multiply_int_vec3.bin
 filename /home/oof/webgl_cleaned/mod_vec3_frag_xvary_yconst1_ref.frag passed...
 filename /home/oof/webgl_cleaned/ceil_vec2_frag_xvary_ref.frag passed...
 filename /home/oof/webgl_cleaned/vec3_tp_s_1vec2_1float_frag.frag passed...
@@ -2585,6 +2814,7 @@ ERROR: 0:5: 'attribute' : cannot be bool or int
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/attribute1_vert.bin
 filename /home/oof/webgl_cleaned/nested_if_else_frag.frag passed...
 filename /home/oof/webgl_cleaned/matForWebGL2UniformShader.vert errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:5: 'mval2x3' : syntax error
@@ -2593,6 +2823,7 @@ ERROR: 0:5: 'mval2x3' : syntax error
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/matForWebGL2UniformShader.bin
 filename /home/oof/webgl_cleaned/fwidth_frag_ref_dx.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:13: 'gl_FragCoord' : undeclared identifier
 ERROR: 0:13: 'x' :  field selection requires structure or vector on left hand side
@@ -2613,6 +2844,7 @@ ERROR: 0:19: 'discard' : discard supported in fragment shaders only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/fwidth_frag_ref_dx.bin
 filename /home/oof/webgl_cleaned/mat4_empty_inout_mat4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/lessThan_vec3_frag.frag passed...
 filename /home/oof/webgl_cleaned/gl_MaxDrawBuffers_frag.frag passed...
@@ -2625,6 +2857,7 @@ ERROR: 0:10: '=' : cannot convert from 'mediump float' to 'mediump int'
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/conditional3_frag.bin
 filename /home/oof/webgl_cleaned/vec4_ivec4_frag.frag passed...
 filename /home/oof/webgl_cleaned/ceil_vec2_frag_xvary.frag passed...
 filename /home/oof/webgl_cleaned/fragmentShader.frag passed...
@@ -2636,6 +2869,7 @@ ERROR: 0:6: 'out' : storage qualifier supported in GLSL ES 3.00 and above only
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/noopUniformShaderES3.bin
 filename /home/oof/webgl_cleaned/vec4_empty_out_vec4_empty_frag.frag passed...
 filename /home/oof/webgl_cleaned/struct9_frag.frag errored as vertex shader and fragment... Error: #### BEGIN COMPILER 0 INFO LOG ####
 ERROR: 0:11: 'assign' : l-value required (can't modify a const)
@@ -2644,3 +2878,4 @@ ERROR: 0:11: 'assign' : l-value required (can't modify a const)
 
 
 
+Removing this here: /home/oof/webgl_fuzz_inputs/struct9_frag.bin

@@ -92,8 +92,12 @@ def run_one(filename: str): # Run the thing...
 		if not ok:
 			print("filename "+str(filename)+ " errored as vertex shader and fragment... Error: "+str(err))
 			if DEBUG_ENV:
+				# print("Removing this filename here: "+str(filename))
 				os.system("rm "+str(filename))
-				new_filename = filename.replace("webgl_cleaned", "webgl_fuzz_inputs")
+				# print("Removing this filename here: "+str(filename))
+				# Also delete the final fuzz input file thing...
+				new_filename = filename.replace("webgl_cleaned", "webgl_fuzz_inputs").replace(".vert", ".bin").replace(".frag", ".bin").replace(".comp", ".bin")
+				print("Removing this here: "+str(new_filename))
 				os.system("rm "+str(new_filename))
 		# assert False
 	else:
