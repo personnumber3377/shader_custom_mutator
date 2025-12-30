@@ -1,7 +1,7 @@
 precision mediump float;
 precision mediump int;
 
-void test() {
+void main() {
     int i = 10;
     switch (i) {
     case 0: break;

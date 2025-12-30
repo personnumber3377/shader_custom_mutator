@@ -1,8 +1,8 @@
 precision mediump float;
 precision mediump int;
 
-const float test = 1;
-const float test_neg = -1;
-const float test_pos_two_sub = test - test_neg;
-const float test_neg_two_sub = test_neg - test;
-const float test_zero_add = test_neg + test;
+const float main = 1;
+const float main_neg = -1;
+const float main_pos_two_sub = main - main_neg;
+const float main_neg_two_sub = main_neg - main;
+const float main_zero_add = main_neg + main;

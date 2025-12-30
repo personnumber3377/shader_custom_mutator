@@ -1,13 +1,13 @@
 precision mediump float;
 precision mediump int;
 
-void test() {
-    bool test_uninitialized;
-    bool test_true_initialized = true;
-    bool test_false_initialized = false;
-    bool test_assign;
-    test_assign = test_true_initialized;
-    test_assign = test_false_initialized;
-    test_assign = true;
-    test_assign = false;
+void main() {
+    bool main_uninitialized;
+    bool main_true_initialized = true;
+    bool main_false_initialized = false;
+    bool main_assign;
+    main_assign = main_true_initialized;
+    main_assign = main_false_initialized;
+    main_assign = true;
+    main_assign = false;
 }
