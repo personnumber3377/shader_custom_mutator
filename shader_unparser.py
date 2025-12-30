@@ -332,4 +332,11 @@ def unparse_tu(tu: TranslationUnit) -> str:
         # unknown => ignore safely
         out += "\n"
 
+    # Check for the mandatory precision statements. If these do not exist, then the shader gets rejected right out the gate...
+
+    if "precision mediump float" not in out:
+
+        prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
+        out = prec_preamble + out # Prepend that...
+
     return out
