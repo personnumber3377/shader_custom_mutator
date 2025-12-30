@@ -82,6 +82,8 @@ def clean_shader_source(src: str) -> str:
 
     src = src.replace("(void)", "()") # Do the stuff...
     src = src.replace("highp", "mediump") # Replace the highp things with mediump because the shader may not support that...
+    # The next line is because there are many "#define ERROR_EPSILON 0.1" lines in the source code, so just "preprocess" the shader source by replacing it...
+    src = src.replace("ERROR_EPSILON", "0.1")
     lines = [ln.rstrip() for ln in src.splitlines() if ln.strip()]
     return "\n".join(lines)
 
@@ -107,7 +109,7 @@ def process_shader(path: Path, out_clean: Path, out_fuzz: Path):
 
     final_src = (
         # "#version 310 es\n"
-        "#define ERROR_EPSILON 0.1\n"
+        # "#define ERROR_EPSILON 0.1\n"
         "precision mediump float;\n"
         "precision mediump int;\n\n"
         + cleaned

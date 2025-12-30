@@ -219,6 +219,7 @@ if __name__ == "__main__":
             inp = inp + "/"
         # Now construct the full filename...
         fn = inp + fn
+        print("Using "+str(fn)+" as input filename...")
         with open(fn, "rb") as f:
             data = f.read()
     else:
