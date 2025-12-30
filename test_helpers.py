@@ -3,6 +3,11 @@ import subprocess
 import tempfile
 import os
 import copy
+import traceback
+import random
+
+HEADER_SIZE = 128
+PRINT_COUNT = 10
 
 # Here check for the null byte and if found, then assume fuzz input...
 
@@ -93,3 +98,5 @@ def run_as_frag_and_vertex(buf: bytes, header_len: int) -> tuple[bool, str]:
             return False, err
 
     return True, None
+
+

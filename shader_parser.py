@@ -97,7 +97,7 @@ class Parser:
 
         while True:
             t = self.peek()
-            print(t)
+            # print(t)
             if t.kind == "OP" and t.value in ("++", "--"):
                 # print("stuff")
                 # postfix binds very tightly

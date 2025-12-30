@@ -368,7 +368,6 @@ def candidates_by_type(scope: Scope, env: Env, want: Optional[TypeInfo]) -> List
         return names
 
     same = [n for n, ti in allv.items() if ti.name == want.name]
-    dlog("same: "+str(same))
     if same:
         return same
     # return names
@@ -501,12 +500,9 @@ def gen_expr(
     kind=ExprKind.RVALUE,
 ) -> Expr:
     
-    # dlog(f"gen_expr({str(want)}, {str(scope)}, {str(env)}, {str(rng)}, {str(depth)}, {str(kind)})")
-    dlog("want: "+str(want))
     if depth >= MAX_EXPR_DEPTH:
         # abort("Max depth exceeded...")
         l = gen_leaf(want, scope, env, rng, kind)
-        dlog("Leaf generated when max depth reached: "+str(l))
         return l
 
     choices = []
@@ -558,8 +554,6 @@ def gen_leaf(want, scope, env, rng, kind):
     name = want.name # Get name
 
     vars = candidates_by_type(scope, env, want)
-    
-    dlog(f"vars with want=={str(want)} : {str(vars)}")
 
     if vars and coin(rng, 0.20): # Instead of automatically using a variable, throw a coin instead...
         name = rng.choice(vars)
@@ -824,10 +818,8 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
     """
     Returns possibly-mutated expression.
     """
-    dlog("Mutating this expression here: "+str(e))
     # Randomly also generate new statements...
     if coin(rng, 0.05):
-        dlog("Now we are generating the bullshit here...")
         t = infer_expr_type(e, scope, env)
         return gen_expr(t, scope, env, rng, depth=1)
 
@@ -872,7 +864,6 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
         op = e.op
         operand = mutate_expr(e.operand, rng, scope, env)
         if coin(rng, 0.20):
-            dlog("Unary stuff...")
             # op = rng.choice(["+", "-", "!", "~", "++", "--"])
             # candidates = ["+", "-", "!", "~"]
             
@@ -908,7 +899,6 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
         if coin(rng, 0.10):
             # occasional operand swap
             left, right = right, left
-        dlog("Here is the binary stuff here: "+str(left)+" and "+str(right))
         return BinaryExpr(op, left, right)
 
     # Ternary
@@ -952,7 +942,6 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
                 # idx = IntLiteral(idx.value + rng.choice([-1, 1, 2, -2]))
                 new = idx.value + rng.choice([-1, 1])
                 new = max(0, min(limit - 1, new))
-                dlog("Clamping the thing...")
                 idx = IntLiteral(new)
         return IndexExpr(base, idx)
 
@@ -1044,7 +1033,6 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
 
 def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
     # Block introduces scope
-    dlog("Mutating this thing here: "+str(s))
     if isinstance(s, BlockStmt):
         child = Scope(scope)
         out_stmts: List[Stmt] = []
