@@ -9,4 +9,3 @@ precision mediump int;
  * block-comment
  */
 
-;

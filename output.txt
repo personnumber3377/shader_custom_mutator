@@ -1,4 +1,4 @@
-['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'OverlayDraw.frag', 'interface_blocks.glsl', 'builtin_types.glsl', 'structures.glsl', 'while_statement.glsl', 'first_character_invalid.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
+['arrays.glsl', 'integer_literals.glsl', 'continuations.glsl', 'constants.glsl', 'floating_point_literals.glsl', 'booleans.glsl', 'uniforms.glsl', 'for_statement.glsl', 'switch.glsl', 'negation.glsl', 'sequence.glsl', 'ternary.glsl', 'actual_shader.glsl', 'OverlayDraw.frag', 'interface_blocks.glsl', 'builtin_types.glsl', 'structures.glsl', 'while_statement.glsl', 'add.glsl', 'comments.glsl', 'increment.glsl', 'do_statement.glsl']
 Running ./tests/arrays.glsl
 Filename: ./tests/arrays.glsl passed with orig: True and new: True
 Running ./tests/integer_literals.glsl
@@ -111,31 +111,11 @@ Running ./tests/structures.glsl
 Filename: ./tests/structures.glsl passed with orig: True and new: True
 Running ./tests/while_statement.glsl
 Filename: ./tests/while_statement.glsl passed with orig: True and new: True
-Running ./tests/first_character_invalid.glsl
-filename ./tests/first_character_invalid.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
-ERROR: 0:4: '`' : invalid character 
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
-Filename: ./tests/first_character_invalid.glsl failed roundtrip test!!!
-Original source code: precision mediump float;
-precision mediump int;
-
-`
-
-
-
-
-
-New source code: precision mediump float;
-precision mediump int;
-
-
-New errors: #### BEGIN COMPILER 0 INFO LOG ####
-
-#### END COMPILER 0 INFO LOG ####
-
-
-
+Running ./tests/add.glsl
+Filename: ./tests/add.glsl passed with orig: True and new: True
+Running ./tests/comments.glsl
+Filename: ./tests/comments.glsl passed with orig: True and new: True
+Running ./tests/increment.glsl
+Filename: ./tests/increment.glsl passed with orig: True and new: True
+Running ./tests/do_statement.glsl
+Filename: ./tests/do_statement.glsl passed with orig: True and new: True

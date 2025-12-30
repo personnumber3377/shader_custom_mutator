@@ -60,6 +60,7 @@ def roundtrip_one(filename: str): # Run the thing...
 		print("Original source code: "+str(source))
 		print("\n\n\n")
 		print("New source code: "+str(unparsed_src.decode("ascii")))
+		print("Previous errors: "+str(err))
 		print("New errors: "+str(err_new))
 		assert False
 	else:
