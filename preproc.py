@@ -77,6 +77,10 @@ def clean_shader_source(src: str) -> str:
     # Remove float suffixes: 1.0f → 1.0
     src = re.sub(r'(\d+\.\d+)f\b', r'\1', src)
 
+    # Remove empty arguments as void to just empty paranthesis...
+
+    src = src.replace("(void)", "()") # Do the stuff...
+
     lines = [ln.rstrip() for ln in src.splitlines() if ln.strip()]
     return "\n".join(lines)
 

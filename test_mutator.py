@@ -52,10 +52,14 @@ def roundtrip_one(filename: str): # Run the thing...
 
 	# Same?
 	unparsed_src = unparsed_src.encode("ascii")
-	ok_new, _ = run_external_checker(unparsed_src, 128)
+	ok_new, err_new = run_external_checker(unparsed_src, 128)
 
 	if ok_orig != ok_new:
 		print("Filename: "+str(filename)+" failed roundtrip test!!!")
+		print("Original source code: "+str(source))
+		print("\n\n\n")
+		print("New source code: "+str(unparsed_src.decode("ascii")))
+		print("New errors: "+str(err_new))
 		assert False
 	else:
 		print("Filename: "+str(filename)+" passed with orig: "+str(ok_orig)+" and new: "+str(ok_new))
