@@ -85,8 +85,11 @@ def run_one(filename: str): # Run the thing...
 	fh.close()
 
 	ok, err = run_external_checker(source, 128) # Run the checker for this source code...
-	if not ok: # Error on parse error
-		print("filename "+str(filename)+" errored with: "+str(err))
+	if not ok: # Error? Try to parse as vertex shader...
+		# print("filename "+str(filename)+" errored with: "+str(err))
+		ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
+		if not ok:
+			print("filename "+str(filename)+ " errored as vertex shader and fragment... Error: "+str(err))
 		# assert False
 	else:
 		print("filename "+str(filename)+ " passed...")

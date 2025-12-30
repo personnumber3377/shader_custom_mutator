@@ -15,7 +15,7 @@ def strip_header_and_null(data, header_len=0):
 
     return data
 
-def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:
+def run_external_checker(buf: bytes, header_len: int, as_vertex=False) -> tuple[bool, str]:
     """
     Returns (ok, output).
     ok == True  -> no ERROR found
@@ -30,18 +30,27 @@ def run_external_checker(buf: bytes, header_len: int) -> tuple[bool, str]:
     data = strip_header_and_null(buf, header_len=header_len)
 
     # 3) Write to temp file
-    with tempfile.NamedTemporaryFile(
-        mode="wb",
-        suffix=".glsl",
-        delete=False
-    ) as f:
-        fname = f.name
-        f.write(data)
+    if as_vertex:
+        with tempfile.NamedTemporaryFile(
+            mode="wb",
+            suffix=".vert",
+            delete=False
+        ) as f:
+            fname = f.name
+            f.write(data)
+    else:
+        with tempfile.NamedTemporaryFile(
+            mode="wb",
+            suffix=".glsl",
+            delete=False
+        ) as f:
+            fname = f.name
+            f.write(data)
 
     try:
         # 4) Run checker
         proc = subprocess.run(
-            ["./checker", fname],
+            ["./angle_shader_translator", "-b=g330", fname], # ["./checker", fname],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,

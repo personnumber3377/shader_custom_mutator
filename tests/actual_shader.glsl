@@ -1,15 +1,13 @@
 precision mediump float;
 precision mediump int;
 
-#version 450 core
-
 //#extension GL_GOOGLE_include_directive : require
 //#extension GL_EXT_samplerless_texture_functions : require
 
 // layout(set = 0, binding = 0)uniform texture2D src;
 // layout(location = 0)out uvec4 dst;
 
-#line 1 "shaders/src/ImageCopy.inc"
+// #line 1 "shaders/src/ImageCopy.inc"
 
 
 float linearToSRGB(float linear)
@@ -21,7 +19,7 @@ float linearToSRGB(float linear)
     }
     else
     {
-        return pow(linear,(1.0f / 2.4f))* 1.055f - 0.055f;
+        return pow(linear,(1.0 / 2.4))* 1.055 - 0.055;
     }
 }
 

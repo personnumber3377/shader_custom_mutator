@@ -69,6 +69,7 @@ def expand_includes(path: Path, seen: set[Path]) -> str:
 # -----------------------------
 
 def clean_shader_source(src: str) -> str:
+    # ERROR: 0:4: 'highp' : precision is not supported in fragment shader
     src = RE_BLOCK_COMMENT.sub("", src)
     src = RE_LINE_COMMENT.sub("", src)
     src = RE_DIRECTIVE.sub("", src)
@@ -80,7 +81,7 @@ def clean_shader_source(src: str) -> str:
     # Remove empty arguments as void to just empty paranthesis...
 
     src = src.replace("(void)", "()") # Do the stuff...
-
+    src = src.replace("highp", "mediump") # Replace the highp things with mediump because the shader may not support that...
     lines = [ln.rstrip() for ln in src.splitlines() if ln.strip()]
     return "\n".join(lines)
 
@@ -105,7 +106,8 @@ def process_shader(path: Path, out_clean: Path, out_fuzz: Path):
     cleaned = clean_shader_source(expanded)
 
     final_src = (
-        # "#version 300 es\n"
+        # "#version 310 es\n"
+        "#define ERROR_EPSILON 0.1\n"
         "precision mediump float;\n"
         "precision mediump int;\n\n"
         + cleaned
