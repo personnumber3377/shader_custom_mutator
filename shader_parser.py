@@ -180,12 +180,18 @@ class Parser:
                     self.expect("]")
 
             init = None
-            if self.match("="):
+            # if self.match("="):
+            #     init = self.parse_expr(0)
+
+            if self.peek().kind == "OP" and self.peek().value == "=":
+                self.advance()
                 init = self.parse_expr(0)
 
             decls.append(Declarator(name, base_type, array_size, init))
 
             if not self.match(","):
+                print("self.peek().kind: "+str(self.peek().kind))
+                print("self.peek().value: "+str(self.peek().value))
                 break
         return decls
 
@@ -624,7 +630,10 @@ class Parser:
 
         declarators = []
         # After `}` may come `;` or declarators
-        if self.peek().kind == "ID":
+        # if self.peek().kind == "ID":
+        #     declarators = self.parse_declarator_list(struct_type)
+
+        if not self.peek().kind == ";":
             declarators = self.parse_declarator_list(struct_type)
 
         self.expect(";")

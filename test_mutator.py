@@ -173,6 +173,8 @@ def run_parse_tests(only_one=None): # Run the parse tests..
 		print(unparsed_src)
 	return
 
+PRINT_SOURCE = True
+
 def roundtrip_one(filename: str): # Run the thing...
 	print("Running "+str(filename))
 	fh = open(filename, "rb")
@@ -203,6 +205,11 @@ def roundtrip_one(filename: str): # Run the thing...
 		print("New errors: "+str(err_new))
 		assert False
 	else:
+		if PRINT_SOURCE:
+			print("Original source code: "+str(source))
+			print("\n\n\n")
+			print("New source code: "+str(unparsed_src.decode("ascii")))
+
 		print("Filename: "+str(filename)+" passed with orig: "+str(ok_orig)+" and new: "+str(ok_new))
 	return
 
