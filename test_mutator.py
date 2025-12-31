@@ -21,25 +21,29 @@ def normalize_input(data: bytes) -> bytes:
     """
     # If header is missing, prepend it
     if b"\x00" not in data[:HEADER_SIZE]:
-        return data
-        # data = b"\x00" * HEADER_SIZE + data
+        # return data
+        data = b"\x00" * HEADER_SIZE + data
 
     # Strip accidental nulls in shader body
     body = data[HEADER_SIZE:]
     body = body.replace(b"\x00", b"")
 
-    return data[:HEADER_SIZE] + body
+    return data[:HEADER_SIZE] + body + b"\x00"
 
 
 def is_valid_shader(buf: bytes) -> bool:
     """
     Check fragment first, then vertex.
     """
-    ok, err = run_external_checker(buf, HEADER_SIZE)
+    ok, err1 = run_external_checker(buf, HEADER_SIZE)
     if ok:
-        return True
-    ok, err = run_external_checker(buf, HEADER_SIZE, as_vertex=True)
-    return ok, err
+        return True, err1
+    ok, err2 = run_external_checker(buf, HEADER_SIZE, as_vertex=True)
+    # Count errors and return the one with the least errors...
+    if err1.count("ERROR") < err2.count("ERROR"):
+        return ok, err1 # Return the one that has less errors...
+    else:
+        return ok, err2
 
 
 def benchmark_mutation_success(
@@ -72,11 +76,11 @@ def benchmark_mutation_success(
     total = 0
     success = 0
 
-    for i in range(1000000): # range(trials):
+    for i in range(1000): # range(trials):
         rate = (success / total * 100.0) if total else 0.0
         if rate != 0.0: # Is not zero?
             print(rate)
-            break
+            # break
         if i % PRINT_COUNT == 0:
             print(f"Mutations attempted: {total}")
             print(f"Valid mutations:     {success}")
@@ -88,34 +92,41 @@ def benchmark_mutation_success(
             as_vertex = False
 
         try:
-            with open(fn, "rb") as f:
-                data = f.read()
+            print("Processing this: "+str(fn))
 
-            data = normalize_input(data)
+            with open(fn, "rb") as f:
+                dataorig = f.read()
+
+            # dataorig = b"\x00" * 128 + dataorig + b"\x00" # Convert to fuzz format...
+
+            data = normalize_input(dataorig)
 
             # Check original validity
-            print("is valid???")
+            # print("is valid???")
             # print("data: "+str(data))
-            v, err = run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
+            v, err = is_valid_shader(data) # run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
             if not v:
                 print(err)
                 continue  # skip invalid seeds
             buf = bytearray(data)
-            print("Original source code: \n"+str(buf.decode("ascii")))
+            print("Original source code: \n"+str(dataorig.decode("ascii")))
 
             # Mutate exactly once
+            print("Passing this here: "+str(buf))
             buf = mutator.fuzz(buf, None, 1_000_000)
-            print("Mutated source code: \n"+str(buf[:-1].decode("ascii")))
+            print("Mutated source code: \n"+str(buf[128:-1].decode("ascii")))
+            print("As vertex? : "+str(as_vertex))
             total += 1
 
-            v, err = run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
+            v, err = is_valid_shader(buf) # run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
 
             if v:
+                print("SUCCESS!")
                 success += 1
             else:
                 print("Errored with this here: "+str(err))
                 print("="*30)
-                print(buf[:-1].decode("ascii"))
+                print(buf[128:-1].decode("ascii"))
                 print("="*30)
                 if dump_failures:
                     out = strip_header_and_null(buf, HEADER_SIZE)
@@ -128,7 +139,7 @@ def benchmark_mutation_success(
                         fh.write(out.decode("utf-8", errors="ignore"))
 
         except Exception:
-            # traceback.print_exc()
+            traceback.print_exc()
             continue
 
     rate = (success / total * 100.0) if total else 0.0
@@ -266,7 +277,11 @@ if __name__=="__main__":
 			):
 			'''
 
-			benchmark_mutation_success(input_dir=sys.argv[2], trials=1000, seed=random.randrange(100000), dump_failures=False)
+			s = random.randrange(100000)
+
+			print("Using this seed: "+str(s))
+
+			benchmark_mutation_success(input_dir=sys.argv[2], trials=1000, seed=s, dump_failures=False)
 			exit(0)
 
 	if len(sys.argv) >= 2:

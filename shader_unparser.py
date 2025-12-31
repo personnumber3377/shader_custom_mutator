@@ -44,7 +44,7 @@ def unparse_expr(e: Expr) -> str:
             return f"{unparse_expr(e.operand)}{e.op}"
         return f"{e.op}{unparse_expr(e.operand)}"
     if isinstance(e, BinaryExpr):
-        if e.op == ",": # Check for the comma "operator" which is actually used to separate function arguments and such...
+        if e.op == "," or e.op == "=": # Check for the comma "operator" which is actually used to separate function arguments and such... Also do not wrap when assigning variables etc etc...
             return f"{unparse_expr(e.left)} {e.op} {unparse_expr(e.right)}"
         return f"({unparse_expr(e.left)} {e.op} {unparse_expr(e.right)})"
     if isinstance(e, TernaryExpr):
