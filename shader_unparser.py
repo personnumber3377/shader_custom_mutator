@@ -325,6 +325,17 @@ def unparse_tu(tu: TranslationUnit) -> str:
             out += "\n"
             continue
 
+        if isinstance(item, FunctionDecl):
+            params = []
+            for p in item.params:
+                ps = f"{unparse_type(p.type_name)} {p.name}"
+                ps += unparse_array_suffix(getattr(p, "array_dims", None) or getattr(p, "array_size", None))
+                params.append(ps)
+            out += f"{unparse_type(item.return_type)} {item.name}(" + ", ".join(params) + ");\n"
+            # out += unparse_stmt(item.body, 0)
+            # out += "\n"
+            continue
+
         if isinstance(item, GlobalDecl):
             # group as single declaration statement
             out += unparse_stmt(DeclStmt(item.decls), 0)

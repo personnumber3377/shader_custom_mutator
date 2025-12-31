@@ -649,16 +649,31 @@ class Parser:
         self.expect(";")
         return StructDef(name, fields)
 
-    def parse_function_def(self) -> FunctionDef:
+    def parse_function_def_or_decl(self) -> FunctionDef:
         ret = self.parse_type_name()
         fname = self.expect("ID").value
         self.expect("(")
         params: List[FunctionParam] = []
         if not self.match(")"):
             while True:
+                '''
                 ptype = self.parse_type_name()
                 pname = self.expect("ID").value
                 parr: Optional[Expr] = None
+                if self.match("["):
+                    if not self.match("]"):
+                        parr = self.parse_expr(0)
+                        self.expect("]")
+                '''
+
+                ptype = self.parse_type_name()
+
+                # Parameter name is OPTIONAL
+                pname = None
+                if self.peek().kind == "ID":
+                    pname = self.expect("ID").value
+
+                parr = None
                 if self.match("["):
                     if not self.match("]"):
                         parr = self.parse_expr(0)
@@ -667,8 +682,13 @@ class Parser:
                 if self.match(")"):
                     break
                 self.expect(",")
-        body = self.parse_block()
-        return FunctionDef(ret, fname, params, body)
+        # Declaration or definition?
+        if self.peek().kind == "{": # Function definition (normal route...)
+            body = self.parse_block()
+            return FunctionDef(ret, fname, params, body)
+        else:
+            self.expect(";") # The semicolon after the declaration...
+            return FunctionDecl(ret, fname, params)
 
     def _looks_like_interface_block(self) -> bool:
         j = self.i
@@ -728,7 +748,7 @@ class Parser:
                 _ = self.expect("ID")
                 if self.peek().kind == "(":
                     self.i = save
-                    items.append(self.parse_function_def())
+                    items.append(self.parse_function_def_or_decl())
                 else:
                     self.i = save
                     items.append(self.parse_global_decl())

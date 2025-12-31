@@ -193,6 +193,13 @@ class FunctionParam:
     name: str
     array_size: Optional[Expr] = None
 
+# This is for function definitions without a body...
+@dataclass
+class FunctionDecl:
+    return_type: TypeName
+    name: str
+    params: List[FunctionParam]
+
 @dataclass
 class FunctionDef(TopLevel):
     return_type: TypeName

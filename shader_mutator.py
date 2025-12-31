@@ -1296,6 +1296,8 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
                 d.init = mutate_expr(d.init, rng, dummy_scope, env)
         return it
 
+    # TODO add function declarations here too...
+
     return item
 
 
