@@ -1,0 +1,32 @@
+precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color = vec4(1.0, 0.0, -1.0, 0.5);
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+varying vec4 color;
+
+void main()
+{
+  const float M_PI = 3.141592653589793;
+  vec3 c = (((0.5 * M_PI) * 2.0) * (gtf_Color.rgb - 0.5));
+  vec3 o;
+  if ((abs(c.r) < 0.5))
+    o.r = ((0.5 * (sin(c.r) / cos(c.r))) + 0.5);
+  else
+    o.r = ((0.5 * (cos(c.r) / sin(c.r))) + 0.5);
+  if ((abs(c.g) < 0.5))
+    o.g = ((0.5 * (sin(c.g) / cos(c.g))) + 0.5);
+  else
+    o.g = ((0.5 * (cos(c.g) / sin(c.g))) + 0.5);
+  if ((abs(c.b) < 0.5))
+    o.b = ((0.5 * (sin(c.b) / cos(c.b))) + 0.5);
+  else
+    o.b = ((0.5 * (cos(c.b) / sin(c.b))) + 0.5);
+  color = vec4(o, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+

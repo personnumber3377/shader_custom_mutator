@@ -1,0 +1,19 @@
+precision mediump float;
+precision mediump int;
+
+precision mediump float;
+uniform float MIN;
+uniform float R0;
+uniform float FOGC;
+uniform float CUBE;
+uniform float f;
+uniform float o;
+uniform float p;
+uniform float w;
+uniform float x;
+uniform float y;
+uniform float z;
+void main()
+{
+	gl_FragColor = vec4(f, o, p, w);
+}

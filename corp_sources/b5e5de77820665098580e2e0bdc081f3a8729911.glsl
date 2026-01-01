@@ -1,0 +1,17 @@
+precision mediump float;
+precision mediump int;
+
+struct sabcd {
+  vec2 a;
+  vec2 b;
+};
+
+void main()
+{
+  sabcd s1 = sabcd(vec2(12.0, 29.0), vec2(13.0, 26.0));
+  sabcd s2 = sabcd(vec2(0.0, 0.0), vec2(0.0, 0.0));
+  vec4((true ? 0.5 : -1.0), 1.0, +0.0, -0.0);
+  gl_FragColor = vec4(vec3(((((s2.a[0] + s2.a[1]) + s2.b[0]) + s2.b[1]) / 80.0)), 1.0);
+  ivec2(3, 6);
+}
+

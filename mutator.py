@@ -148,7 +148,7 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
             body = body[:-1]
 
         # mutate header lightly
-        header = mutate_header(header, rng)
+        # header = mutate_header(header, rng) # TODO: This almost always produces invalid headers. Disabled for now.
 
         # structural mutation
         mutated_body = mutate_shader_structural(body, max_size - HEADER_SIZE, rng)

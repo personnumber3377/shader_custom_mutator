@@ -1,0 +1,18 @@
+precision mediump float;
+precision mediump int;
+
+precision mediump float;
+void testVoid (vec4 v, vec4 v1)
+{
+}
+void testVoid (ivec4 v, ivec4 v1)
+{
+}
+void main()
+{
+    vec4 v;
+    ivec4 i;
+    testVoid(i, i);
+    testVoid(v, v);
+    gl_FragColor = v;
+}

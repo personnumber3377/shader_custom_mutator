@@ -1,0 +1,21 @@
+precision mediump float;
+precision mediump int;
+
+varying vec4 color;
+
+void main()
+{
+  const float M_PI = 3.141592653589793;
+  vec2 c = (((0.5 * M_PI) * 2.0) * (color.rg - 0.5));
+  vec2 o;
+  if ((abs(c.r) < 0.5))
+    o.r = ((0.5 * (sin(c.r) / cos(c.r))) + 0.5);
+  else
+    o.r = ((0.5 * (cos(c.r) / sin(c.r))) + 0.5);
+  if ((abs(c.g) < 0.5))
+    o.g = ((0.5 * (sin(c.g) / cos(c.g))) + 0.5);
+  else
+    o.g = ((0.5 * (cos(c.g) / sin(c.g))) + 0.5);
+  gl_FragColor = vec4(o, 0.0, 1.0);
+}
+

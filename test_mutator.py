@@ -151,15 +151,26 @@ def benchmark_mutation_success(
     return rate
 
 def run_parse_tests(only_one=None): # Run the parse tests..
+	d = False
+	# if os.path.isfile(only_one)
 	if only_one == None:
 		test_files = os.listdir(TEST_DIR)
 	else:
-		if only_one.startswith(TEST_DIR): # Cut off the thing...
-			only_one = only_one[len(TEST_DIR):]
-		test_files = [only_one]
+		if os.path.isdir(only_one): # Check for a directory of files instead of singular one...
+			test_files = os.listdir(only_one)
+			if only_one[-1] != "/": # Append slash if it doesn't exist...
+				only_one = only_one + "/"
+			d = True
+		else:
+			if only_one.startswith(TEST_DIR): # Cut off the thing...
+				only_one = only_one[len(TEST_DIR):]
+			test_files = [only_one]
 
 	for fn in test_files:
-		complete_fn = TEST_DIR + fn # Add the directory name too...
+		if d:
+			complete_fn = only_one + fn
+		else:
+			complete_fn = TEST_DIR + fn # Add the directory name too...
 		print("Running "+str(complete_fn)+" ...")
 		fh = open(complete_fn, "r")
 		shader_src = fh.read()

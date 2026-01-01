@@ -54,7 +54,7 @@ def scan_directory(directory: str) -> None:
 
         if ok:
             # Copy good files to the good corpus directory.
-            os.system("cp "+str(path)+" ./"+str(GOOD_CORPUS_DIR))
+            # os.system("cp "+str(path)+" ./"+str(GOOD_CORPUS_DIR))
             ok_count += 1
         else:
             fail_count += 1
