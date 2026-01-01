@@ -1049,8 +1049,9 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
         '''
 
         out_stmts = copy.deepcopy(s.stmts)
-        rand_ind = rng.randrange(len(out_stmts))
-        out_stmts[rand_ind] = mutate_stmt(out_stmts[rand_ind], rng, child, env)
+        if out_stmts:
+            rand_ind = rng.randrange(len(out_stmts))
+            out_stmts[rand_ind] = mutate_stmt(out_stmts[rand_ind], rng, child, env)
 
         # Add a new expression too maybe???
         if coin(rng, 0.30):
