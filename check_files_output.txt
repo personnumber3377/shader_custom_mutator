@@ -1,0 +1,3740 @@
+['mat_tests2.vert', 'log2_vec3_frag_xvary.frag', 'fract_vec3_vert_xvary_ref.vert', 'equal_bvec3_vert.vert', 'pow_float_frag_xconst2_yvary_ref.frag', 'int_empty_in_int_array_frag.frag', 'fract_float_vert_xvary_ref.vert', 'buffer_objects_multitexturing.vert', 'vec3_stp_1vec3_frag.frag', '3i_frag.frag', 'intArrayUniformShader.vert', 'radians_vec3_frag_xvary_ref.frag', 'ivec4_empty_empty_ivec4_empty_frag.frag', 'equality_frag.frag', 'mat3_9float_frag.frag', 'all_bvec2_frag_ref.frag', 'structnest_vec2_frag.frag', '2b_vert.vert', 'atan_vec3_vert_xvary.vert', 'structnest_vec4_frag.frag', 'emit1.glsl', 'log2_float_frag_xvary.frag', 'CorrectSwizzle2_frag.frag', 'pow_vec2_vert_xvary_yconsthalf.vert', 'exp_vec2_frag_xvaryneg_ref.frag', 'lessThan_ivec3_vert_ref.vert', 'exp_vec2_frag_xvaryneg.frag', 'gl_FragCoord_z_frag_ref.frag', 'clamp_float_frag_xvary_yconstquarter_ref.frag', 'radians_vec3_vert_xvary_ref.vert', 'float_empty_inout_float_empty_frag.frag', 'normalize_vec2_vert_xvary_ref.vert', 'preprocess10_frag.frag', 'log2_vec3_vert_xvary.vert', 'pow_vec2_frag_xconst2_yvary_ref.frag', 'sqrt_float_frag_xvary_ref.frag', 'CorrectSwizzle3_frag.frag', 'array_const_mat3_frag.frag', '1b_frag.frag', 'ivec4_empty_in_ivec4_array_vert.vert', 'all_bvec3_vert_ref.vert', 'structcopy_float_vert.vert', 'length_float_vert_xvary_ref.vert', 'buffer_objects_pointSize.vert', 'vec4_yxw_z_1vec3_1float_vert.vert', 'log2_float_frag_xvary_ref.frag', 'vec3_zyx_1vec3_frag.frag', 'sin_vec2_frag_xvary_ref.frag', 'mat4_empty_inout_mat4_array_frag.frag', 'const_mat4_copy_frag.frag', 'step_vec3_frag_xvary_edgeconsthalf.frag', 'structcopy_mat3_vert.vert', 'log2_float_frag_xvary01_ref.frag', 'mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert', 'mat4_empty_empty_mat4_empty_frag.frag', 'atan_vec2_vert_xvary.vert', 'vec4_zwxy_1vec4_frag.frag', 'CorrectParse2_frag.frag', 'normalize_vec3_frag_xvary.frag', 'dot_float_vert_xvaryyone_ref.vert', 'non-ascii-comments.vert', 'floor_float_frag_xvary.frag', 'not_bvec2_frag.frag', 'vec4_yxw_z_1vec3_1float_frag.frag', '4i_frag.frag', 'tan_float_vert_xvary.vert', 'vec4_rg_ba_2vec2_frag.frag', 'dot_float_frag_xvaryyone_ref.frag', 'vec4_ar_bg_2vec2_frag.frag', 'vec2_2float_vert.vert', 'bvec4_empty_inout_bvec4_bigarray_vert.vert', 'faceforward_float_frag_nvaryiconst_ref.frag', 'mat4_empty_out_mat4_empty_vert.vert', 'pow_vec2_frag_xvary_yconsthalf.frag', 'asin_vec3_vert_xvary_ref.vert', 'pow_vec2_vert_xconsthalf_yvary.vert', '1b_vert.vert', 'notEqual_ivec3_vert_ref.vert', '24i_frag.frag', '_webgl_field.vert', 'greaterThanEqual_vec2_frag_ref.frag', 'notEqual_vec2_vert.vert', 'mat4_empty_empty_mat4_array_vert.vert', 'struct_mat2_vert.vert', 'vec4_arbg_1vec4_frag.frag', 'any_bvec2_frag_ref.frag', 'vec3_sp_t_1vec2_1float_vert.vert', 'vec4_arbg_1vec4_vert.vert', 'array_const_mat4_vert.vert', 'log_vec2_vert_xvary.vert', '4i_vert.frag', 'structcopy_bool_frag.frag', 'empty_empty_array_float_frag.frag', 'log_vec3_frag_xvary01.frag', 'float_empty_empty_float_array_frag.frag', 'min_vec3_frag_xvary_yconsthalf_ref.frag', 'array_float_vert.vert', 'lessThan_vec3_vert.vert', 'dFdx_frag_ref.vert', 'reflect_vec3_vert_ivarynconst.vert', 'dot_vec3_vert_xvaryythird.vert', '1i_vert.vert', 'not_bvec3_frag.frag', 'length_vec3_frag_xvary.frag', 'sin_float_vert_xvary.vert', 'pow_vec2_frag_xconsthalf_yvary.frag', 'vec4_xyz_w_1vec3_1float_frag.frag', 'int_empty_empty_int_empty_frag.frag', 'exp2_vec2_vert_xvary_ref.vert', 'CorrectParse1_frag.frag', 'bvec4_empty_out_bvec4_empty_vert.vert', 'lighting_diffuse_ref.vert', 'smoothstep_vec2_frag_xvary_edgeconstquarter_ref.frag', 'pow_float_vert_xconsthalf_yvary_ref.vert', 'vec3_xyz_1vec3_vert.vert', 'samplerUniformShader.frag', 'exp_vec3_vert_xvaryneg.vert', 'greaterThanEqual_ivec2_frag.frag', 'lessThanEqual_vec3_vert.vert', 'vec4_stpq_1vec4_vert.vert', 'lighting_diffuse.vert', 'vertexShader.vert', 'all_bvec3_vert.vert', '22i_frag.frag', 'log2_vec2_vert_xvary01.vert', 'atan_float_frag_xvaryyvary.frag', 'vec_tests.vert', 'vec4_gr_ab_2vec2_vert.vert', 'greaterThan_ivec2_vert_ref.vert', 'log2_vec3_frag_xvary01.frag', 'const_mat3_vert.vert', 'length_vec3_vert_xvary.vert', 'floor_vec3_frag_xvary.frag', 'vec4_empty_in_vec4_array_vert.vert', 'vec4_tsqp_1vec4_frag.frag', 'greaterThanEqual_ivec3_frag.frag', 'not_bvec3_vert_ref.vert', 'mat3_vert.vert', 'reflect_vec3_frag_ivarynconst_ref.frag', 'structnest_vec2_vert.vert', 'bool_empty_out_bool_empty_vert.vert', 'pow_vec2_frag_xconsthalf_yvary_ref.frag', 'atan_vec3_frag_xvaryyvary_ref.frag', 'vec3_vec2_float_vert.vert', 'log_vec3_vert_xvary_ref.vert', 'for_break_vert.vert', 'struct_bool_frag.frag', 'degrees_vec2_vert_xvary.vert', 'texture.frag', 'vec3_stp_1vec3_vert.vert', 'max_vec3_frag_xvary_yconsthalf_ref.frag', 'asin_vec2_frag_xvary_ref.frag', 'log_vec2_frag_xvary01_ref.frag', 'dot_vec2_vert_xvaryyhalf_ref.vert', 'atan_float_frag_xvaryyvary_ref.frag', 'smoothstep_vec2_vert_xvary_edgeconstquarter_ref.vert', 'vec4_rg_ba_2vec2_vert.vert', 'greaterThan_vec3_vert_ref.vert', 'discard_cond_frag_ref.frag', 'pow_float_frag_xconsthalf_yvary_ref.frag', 'vec3arrayindirect_frag.frag', 'lessThan_ivec3_frag_ref.frag', 'ivec4_empty_out_ivec4_empty_frag.frag', 'equal_vec2_frag.frag', 'CorrectFull_vert.vert', 'CorrectConstFolding1_vert.vert', 'log_vec3_vert_xvary01.vert', 'vec4_tsqp_1vec4_vert.vert', 'min_float_vert_xvary_yconsthalf.vert', 'default_textured.frag', 'extension3_V100_frag.frag', 'lessThanEqual_vec3_frag_ref.frag', 'float_empty_in_float_array_vert.vert', 'vec3_vec4_vert.vert', 'point_rasterization.vert', 'vec4_yx_wz_2vec2_frag.frag', 'all_bvec2_frag.frag', 'bvec4_empty_empty_bvec4_empty_frag.frag', 'bvec4_empty_inout_bvec4_empty_vert.vert', 'vec3_vec2_float_frag.frag', 'faceforward_vec3_vert_nvaryiconst_ref.vert', 'floor_vec3_frag_xvary_ref.frag', 'mat3arrayindirect1_frag.frag', 'struct_vec3_vert.vert', 'exp_vec3_frag_xvary_ref.frag', 'fract_float_vert_xvary.vert', 'const_mat2_vert.vert', 'qualifiers_float_vert.vert', 'atan_float_vert_xvaryyvary_ref.vert', 'vec4_qspt_1vec4_frag.frag', 'step_vec2_vert_xvary_edgeconsthalf_ref.vert', 'pow_float_frag_xvary_yconsthalf.frag', 'equal_ivec3_frag.frag', 'dot_vec3_vert_xvaryythird_ref.vert', 'cos_vec3_frag_xvary_ref.frag', 'bool_empty_in_bool_array_frag.frag', '3i_vert.frag', 'vec4_zx_wy_2vec2_vert.vert', 'equal_ivec2_vert.vert', 'log_vec3_vert_xvary01_ref.vert', 'DepthRange_vert.vert', 'gl_FragCoord_w_frag.frag', 'vec4_tsq_p_1vec3_1float_vert.vert', 'pow_float_vert_xvary_yconsthalf_ref.vert', 'brick_mat4.vert', '2i_vert.frag', 'length_vec2_frag_xvary.frag', 'struct_mat4_vert.vert', 'exp_vec2_frag_xvary_ref.frag', 'vec3_xz_y_1vec2_1float_frag.frag', 'greaterThan_vec3_frag_ref.frag', 'mix_float_frag_xvary_yconsthalf_aconsthalf.frag', 'sin_vec3_vert_xvary.vert', 'pow_vec3_frag_xconst2_yvary.frag', 'clamp_float_vert_xvary_yconstquarter_ref.vert', 'reflect_vec2_vert_ivarynconst.vert', 'exp_float_vert_xvaryneg_ref.vert', 'fboShader0.frag', 'mat3_float_vert.vert', 'cos_float_vert_xvary.vert', 'version3_V100_frag.frag', '_webgl_struct.vert', 'vec3_xyz_1vec3_frag.frag', 'exp_vec3_vert_xvary_ref.vert', 'step_vec2_frag_xvary_edgeconsthalf_ref.frag', 'const_mat4_vert.vert', 'mod_x_large_y_large_vert.vert', 'unary_frag.frag', 'prefixincrement_vert.vert', 'mat2_copy_frag.frag', 'sin_vec2_frag_xvary.frag', 'all_bvec3_frag_ref.frag', 'pow_vec3_vert_xconst2_yvary.vert', 'int_empty_empty_int_array_vert.vert', 'int_empty_out_int_array_vert.vert', 'equality_vert.vert', 'dot_float_vert_xvaryyone.vert', 'log_float_vert_xvary_ref.vert', 'greaterThan_ivec3_vert.vert', 'vec3_float_vec2_vert.vert', 'vec4_xyzw_1vec4_frag.frag', 'matrix_V100_frag.frag', 'fract_vec2_frag_xvary_ref.frag', 'lessThanEqual_ivec2_vert.vert', 'CorrectBuiltInOveride_frag.frag', 'vec4_empty_empty_vec4_array_vert.vert', 'vec4_qsp_t_1vec3_1float_frag.frag', 'vec4_stpq_1vec4_frag.frag', 'pow_vec3_vert_xconsthalf_yvary_ref.vert', 'cos_float_frag_xvary_ref.frag', 'log2_vec2_vert_xvary_ref.vert', 'notEqual_bvec3_vert.vert', 'int_empty_in_int_empty_frag.frag', 'equal_bvec2_frag.frag', 'pow_vec2_vert_xconsthalf_yvary_ref.vert', 'vec3_ps_t_1vec2_1float_vert.vert', 'atan_float_frag_xvary_ref.frag', 'int_empty_inout_int_array_vert.vert', 'clamp_vec2_vert_xvary_yconstquarter.vert', 'normalize_vec2_vert_xvary.vert', 'extension8_V100_frag.frag', 'faceforward_vec3_frag_nvaryiconst.frag', 'refract_vec2_vert_ivarynconst_ref.vert', 'vec3_rg_b_1vec2_1float_vert.vert', 'mat3_copy_frag.frag', 'vec4_xy_zw_2vec2_vert.vert', 'log_float_frag_xvary01_ref.frag', 'bvec4_empty_in_bvec4_array_frag.frag', 'min_vec2_frag_xvary_yconsthalf_ref.frag', 'matrixMultComp_mat3_vert_ref.vert', 'inversesqrt_vec2_vert_xvary_ref.vert', 'vec4_empty_out_vec4_array_frag.frag', 'asin_float_frag_xvary_ref.frag', 'inversesqrt_vec3_vert_xvary_ref.vert', 'struct_mat4_frag.frag', 'array_const_mat3_vert.vert', 'pow_vec2_frag_xvary_yconst2.frag', 'vec3_xz_y_1vec2_1float_vert.vert', 'noopUniformShader.frag', 'atan_vec2_vert_xvaryyvary.vert', 'equal_vec2_vert.vert', 'struct_bvec2bvec3bvec4_frag.frag', 'greaterThanEqual_vec2_vert.vert', 'dot_vec3_frag_xvaryythird_ref.frag', 'compressed_paletted_texture.frag', 'vec3_br_g_1vec2_1float_frag.frag', 'equal_ivec3_frag_ref.frag', 'vec4_vec3_float_vert.vert', 'CorrectComma_frag.frag', 'vec3_st_p_1vec2_1float_frag.frag', 'degrees_vec2_frag_xvary_ref.frag', '2b_vert.frag', 'floor_vec2_vert_xvary.vert', 'notEqual_bvec2_frag.frag', 'float_empty_out_float_array_vert.vert', 'pow_vec2_vert_xvary_yconst2_ref.vert', 'vec4_pqs_t_1vec3_1float_vert.vert', 'faceforward_vec2_frag_nvaryiconst_ref.frag', 'log_vec2_frag_xvary.frag', 'reflect_float_vert_ivarynconst_ref.vert', 'fract_vec3_vert_xvary.vert', 'clamp_float_frag_xvary_yconstquarter.frag', '2f_frag.frag', 'vec4_empty_inout_vec4_empty_frag.frag', 'mat2_4float_vert.vert', 'greaterThan_ivec3_frag_ref.frag', 'pow_float_frag_xvary_yconsthalf_ref.frag', '4b_lastthree_vert.frag', 'vec3_grb_1vec3_vert.vert', 'for_break_frag.frag', 'not_bvec3_vert.vert', 'point_rasterization.frag', 'atan_float_frag_xvary.frag', 'cos_vec2_frag_xvary_ref.frag', 'atan_vec2_frag_xvary_ref.frag', 'log_float_vert_xvary01_ref.vert', '2i_frag.frag', '4b_firstthree_vert.frag', 'atan_vec2_frag_xvaryyvary.frag', 'refract_vec2_frag_ivarynconst.frag', 'exp2_vec3_frag_xvaryneg.frag', 'abs_vec2_vert_xvary.vert', 'vec4_x_y_z_w_4float_frag.frag', 'log_vec3_frag_xvary.frag', 'const_mat2_copy_vert.vert', 'ceil_vec3_frag_xvary.frag', 'simple.vert', 'notEqual_vec3_vert.vert', 'mat3arrayindirect0_vert.vert', 'float_empty_inout_float_array_frag.frag', 'vec4_arb_g_1vec3_1float_vert.vert', 'fwidth_frag.vert', 'equal_bvec2_vert_ref.vert', 'any_bvec3_vert_ref.vert', 'mat4_frag.frag', 'intUniformShader.vert', 'pow_float_frag_xconsthalf_yvary.frag', 'equal_vec3_frag_ref.frag', 'precision_specifiers.vert', 'abs_vec3_frag_xvary_ref.frag', 'acos_vec2_vert_xvary_ref.vert', 'float_empty_out_float_empty_vert.vert', 'greaterThan_vec2_frag.frag', 'degrees_float_vert_xvary_ref.vert', 'distance_float_frag_xvaryyhalf.frag', 'structcopy_vec2_frag.frag', 'equal_bvec2_frag_ref.frag', 'mat4_empty_empty_mat4_array_frag.frag', 'copy_texture.frag', 'matrixMultComp_mat3_frag.frag', 'for_nested_break_frag.frag', 'logical_frag.frag', 'length_vec2_vert_xvary.vert', 'CorrectExtension4_V100_frag.frag', 'clamp_vec3_vert_xvary_yconstquarter_ref.vert', 'lessThanEqual_vec2_vert.vert', 'sin_vec2_vert_xvary.vert', 'structnest_bvec2bvec3bvec4_frag.frag', 'bool_empty_inout_bool_empty_vert.vert', 'asin_vec2_vert_xvary.vert', 'gl_MaxVertexUniformVectors_vert.vert', 'sqrt_float_frag_xvary.frag', 'structcopy_float_frag.frag', 'vec3array_vert.vert', 'step_float_vert_xvary_edgeconsthalf_ref.vert', 'lessThan_vec3_frag_ref.frag', 'bvec4_2int_2float_vert.vert', 'lessThan_vec2_frag_ref.frag', 'refract_vec2_frag_ivarynconst_ref.frag', 'smoothstep_vec3_frag_xvary_edgeconstquarter.frag', 'all_bvec3_frag.frag', 'exp2_vec2_vert_xvaryneg_ref.vert', 'bvec_tests.vert', 'equal_bvec2_vert.vert', 'notEqual_vec3_frag.frag', '3f_frag.frag', 'float_empty_inout_float_empty_vert.vert', 'lessThanEqual_vec2_frag_ref.frag', 'vec4_empty_in_vec4_array_frag.frag', 'matrixMultComp_mat2_frag_ref.frag', 'pow_float_vert_xvary_yconsthalf.vert', '2i_vert.vert', 'acos_float_vert_xvary.vert', 'exp_float_vert_xvaryneg.vert', 'exp2_vec2_frag_xvaryneg.frag', 'prefixdecrement_vert.vert', 'vec4_empty_inout_vec4_array_vert.vert', 'lessThan_vec2_vert_ref.vert', 'int_empty_in_int_empty_vert.vert', 'sqrt_vec3_frag_xvary_ref.frag', 'mix_vec3_frag_xvary_yconsthalf_aconsthalf_ref.frag', 'abs_vec3_vert_xvary_ref.vert', 'acos_vec2_frag_xvary.frag', 'vec3_st_p_1vec2_1float_vert.vert', 'vec3_tsp_1vec3_frag.frag', 'structnest_mat2_frag.frag', 'sign_float_frag_xvary.frag', 'vec4_gra_b_1vec3_1float_vert.vert', 'vec4_r_g_b_a_4float_vert.vert', 'notEqual_bvec2_frag_ref.frag', 'struct_mat3_vert.vert', 'vec3_zx_y_1vec2_1float_frag.frag', 'void_empty_empty_void_empty_vert.vert', 'exp2_vec3_frag_xvary.frag', 'mat2_copy_vert.vert', 'log2_float_frag_xvary01.frag', 'vec4_zx_wy_2vec2_frag.frag', 'sin_float_frag_xvary.frag', 'float_empty_empty_float_empty_frag.frag', 'exp_vec2_vert_xvaryneg_ref.vert', 'fwidth_frag_dx.vert', 'any_bvec3_frag_ref.frag', 'vec4_pqst_1vec4_frag.frag', 'dataType9_frag.frag', 'tan_vec3_vert_xvary.vert', 'fwidth_frag_ref_dx.vert', 'webgl_struct.vert', '4m_frag.frag', 'notEqual_vec3_frag_ref.frag', 'clamp_float_vert_xvary_yconstquarter.vert', 'matrix2VSU.vert', 'degrees_vec3_vert_xvary_ref.vert', 'structcopy_vec3_frag.frag', 'min_vec2_frag_xvary_yconsthalf.frag', 'gl_MaxCombinedTextureImageUnits_vert.vert', 'dot_vec2_frag_xvaryyhalf.frag', 'atan_float_vert_xvaryyvary.vert', 'for_continue_vert.vert', 'asin_float_vert_xvary.vert', 'any_bvec3_frag.frag', '21f_frag.frag', 'sign_float_vert_xvary_ref.vert', 'structcopy_vec3_vert.vert', 'bvec4_empty_inout_bvec4_bigarray_frag.frag', 'matrixVSU.frag', 'pow_vec3_frag_xconst2_yvary_ref.frag', 'notEqual_bvec3_frag.frag', 'faceforward_vec2_vert_nvaryiconst.vert', 'buffer_objects_pointSize.frag', 'mat4_empty_in_mat4_empty_frag.frag', 'struct_float_vert.vert', 'vec3_tp_s_1vec2_1float_vert.vert', 'acos_vec2_frag_xvary_ref.frag', 'distance_vec2_vert_xvaryyhalf.vert', 'length_float_vert_xvary.vert', 'fract_vec3_frag_xvary_ref.frag', 'struct_float_frag.frag', 'noopUniformShaderES3.vert', 'vec4_rgba_1vec4_frag.frag', 'assignments_vert.vert', 'int_empty_inout_int_empty_frag.frag', 'CorrectFuncOverload_vert.vert', 'greaterThan_vec2_vert.vert', 'mix_float_frag_xvary_yconsthalf_aconsthalf_ref.frag', 'smoothstep_float_frag_xvary_edgeconstquarter_ref.frag', 'distance_vec2_frag_xvaryyhalf_ref.frag', 'lessThan_vec2_vert.vert', 'fragmentOnly4_vert.vert', 'CorrectExtension10_V100_frag.frag', 'exp2_float_frag_xvaryneg_ref.frag', 'mod_vec2_vert_xvary_yconst1.vert', 'void_empty_empty_void_empty_frag.frag', 'webgl_variable.vert', 'struct_vec4_frag.frag', 'asin_vec3_frag_xvary.frag', 'log_float_vert_xvary.vert', 'equal_vec3_frag.frag', 'const_mat3_frag.frag', 'struct_bvec2bvec3bvec4_vert.vert', 'exp_vec2_vert_xvary_ref.vert', 'sin_vec2_vert_xvary_ref.vert', 'int_empty_empty_int_array_frag.frag', 'step_vec3_frag_xvary_edgeconsthalf_ref.frag', 'smoothstep_vec2_vert_xvary_edgeconstquarter.vert', 'asin_vec2_frag_xvary.frag', 'tan_vec3_frag_xvary.frag', 'varying1_frag.frag', 'structnest_float_frag.frag', 'exp2_float_frag_xvary.frag', 'int_empty_out_int_array_frag.frag', 'bool_empty_in_bool_empty_frag.frag', 'pow_float_vert_xconst2_yvary.vert', 'mat4_empty_out_mat4_array_frag.frag', 'mod_float_frag_xvary_yconst1.frag', 'vec4_empty_empty_vec4_empty_frag.frag', 'webgl_field.vert', 'bvec4_2int_2float_frag.frag', 'exp2_vec2_vert_xvaryneg.vert', 'equal_vec3_vert_ref.vert', 'max_float_frag_xvary_yconsthalf.frag', 'fwidth_frag_ref_dy.vert', 'pow_float_vert_xvary_yconst2.vert', 'mod_vec3_vert_xvary_yconst1_ref.vert', 'empty_uniform_array_float_frag.frag', 'acos_float_vert_xvary_ref.vert', 'radians_vec3_vert_xvary.vert', 'exp2_vec3_frag_xvaryneg_ref.frag', 'greaterThanEqual_ivec2_vert.vert', 'mat4_empty_in_mat4_array_frag.frag', 'ceil_float_vert_xvary.vert', 'CorrectConstFolding2_vert.vert', 'vec4_qs_pt_2vec2_vert.vert', 'int_empty_inout_int_array_frag.frag', 'vec4_empty_empty_vec4_array_frag.frag', 'mix_float_vert_xvary_yconsthalf_aconsthalf_ref.vert', 'struct_vec2_frag.frag', 'mix_vec2_vert_xvary_yconsthalf_aconsthalf_ref.vert', 'lessThan_ivec2_vert_ref.vert', 'clamp_vec3_vert_xvary_yconstquarter.vert', 'pow_vec3_vert_xconst2_yvary_ref.vert', 'vec3_bgr_1vec3_frag.frag', 'greaterThanEqual_ivec3_vert.vert', 'asin_vec3_frag_xvary_ref.frag', 'mix_vec2_vert_xvary_yconsthalf_aconsthalf.vert', 'asin_float_vert_xvary_ref.vert', 'floor_vec2_frag_xvary_ref.frag', 'vec4_zwx_y_1vec3_1float_frag.frag', 'pow_float_vert_xconst2_yvary_ref.vert', 'distance_vec3_frag_xvaryyhalf_ref.frag', 'expected.frag', 'floor_vec3_vert_xvary_ref.vert', 'notEqual_ivec2_frag.frag', 'pow_vec3_vert_xvary_yconsthalf.vert', 'fract_float_frag_xvary.frag', 'vec4_yxwz_1vec4_frag.frag', 'sign_float_vert_xvary.vert', 'log2_float_vert_xvary.vert', '3b_vert.vert', 'faceforward_vec2_frag_nvaryiconst.frag', 'mat3_frag.frag', 'notEqual_bvec2_vert.vert', 'nestedstructcomb_various_frag.frag', 'floor_vec2_frag_xvary.frag', 'vec4_gr_ab_2vec2_frag.frag', 'greaterThanEqual_ivec2_vert_ref.vert', 'normalize_vec2_frag_xvary_ref.frag', '4b_firstthree_frag.frag', 'mat2_float_vert.vert', 'pow_vec2_frag_xvary_yconsthalf_ref.frag', 'abs_float_vert_xvary_ref.vert', 'bool_empty_empty_bool_empty_frag.frag', 'const_mat4_copy_vert.vert', 'vec3_xy_z_1vec2_1float_vert.vert', 'sqrt_vec3_frag_xvary.frag', 'radians_vec2_frag_xvary_ref.frag', 'bool_empty_inout_bool_array_vert.vert', 'min_vec3_vert_xvary_yconsthalf.vert', 'float_empty_out_float_empty_frag.frag', 'struct_mat2_frag.frag', 'pow_float_vert_xconsthalf_yvary.vert', 'abs_float_vert_xvary.vert', 'lessThanEqual_ivec3_frag_ref.frag', '3f_vert.frag', 'mix_vec3_vert_xvary_yconsthalf_aconsthalf_ref.vert', 'mat2_2vec2_vert.vert', 'bvec_tests.frag', 'equal_bvec3_vert_ref.vert', 'tan_vec3_frag_xvary_ref.frag', 'any_bvec2_vert.vert', 'normalize_vec3_vert_xvary_ref.vert', 'float_empty_out_float_array_frag.frag', 'CorrectSwizzle1_vert.vert', 'precision_specifiers.frag', 'greaterThanEqual_ivec3_vert_ref.vert', 'abs_float_frag_xvary_ref.frag', 'step_float_frag_xvary_edgeconsthalf.frag', 'lessThan_ivec3_frag.frag', 'vec3_yz_x_1vec2_1float_frag.frag', 'vec4_s_t_p_q_4float_vert.vert', 'fwidth_frag_dy.vert', 'float_empty_inout_float_array_vert.vert', 'faceforward_vec2_vert_nvaryiconst_ref.vert', '3b_frag.frag', 'vec4_pqst_1vec4_vert.vert', 'asin_vec3_vert_xvary.vert', 'exp2_vec2_frag_xvary.frag', 'min_float_frag_xvary_yconsthalf.frag', 'abs_vec2_frag_xvary.frag', 'exp2_float_vert_xvary.vert', 'CorrectFunction1_vert.vert', 'CorrectParse2_vert.vert', 'prefixincrement_frag.frag', 'fboShader0.vert', 'notEqual_bvec3_vert_ref.vert', 'CorrectFuncOverload_frag.frag', 'mat4_copy_vert.vert', 'structnest_bvec2bvec3bvec4_vert.vert', 'mix_vec2_frag_xvary_yconsthalf_aconsthalf.frag', 'faceforward_vec3_vert_nvaryiconst.vert', 'ivec4_empty_in_ivec4_array_frag.frag', 'gl_FragCoord_xy_frag_ref.frag', 'logical_vert.vert', 'const_mat2_copy_frag.frag', 'equal_ivec3_vert_ref.vert', 'pow_vec3_frag_xvary_yconst2_ref.frag', 'ivec4_empty_inout_ivec4_array_vert.vert', 'degrees_vec3_frag_xvary.frag', 'any_bvec2_vert_ref.vert', 'cos_vec2_vert_xvary.vert', 'sqrt_vec3_vert_xvary.vert', 'mod_vec2_frag_xvary_yconst1.frag', '22f_frag.frag', 'cross_vec3_frag_xvaryyconst_ref.frag', 'refract_float_frag_ivarynconst.frag', 'normalize_float_frag_xvary.frag', 'step_float_frag_xvary_edgeconsthalf_ref.frag', 'gl_MaxTextureImageUnits_frag.frag', 'exp2_vec3_vert_xvary.vert', 'mod_float_vert_xvary_yconst1.vert', 'vec3_rg_b_1vec2_1float_frag.frag', 'int_empty_empty_int_empty_vert.vert', 'tan_float_frag_xvary_ref.frag', 'all_bvec2_vert.vert', 'gl_FragCoord_xy_frag.frag', 'exp2_float_vert_xvaryneg_ref.vert', 'sign_float_frag_xvary_ref.frag', 'clamp_vec2_frag_xvary_yconstquarter.frag', 'mat4_16float_vert.vert', 'pow_float_frag_xconst2_yvary.frag', 'pow_float_vert_xvary_yconst2_ref.vert', 'step_vec3_vert_xvary_edgeconsthalf.vert', 'greaterThanEqual_ivec2_frag_ref.frag', 'exp_float_frag_xvary_ref.frag', 'matrixMultComp_mat3_frag_ref.frag', 'sign_vec2_vert_xvary_ref.vert', 'ivec4_empty_inout_ivec4_array_frag.frag', 'default.vert', '1f_vert.vert', 'distance_float_vert_xvaryyhalf.vert', 'vec4_empty_inout_vec4_array_frag.frag', 'matrix2arrayVSU.vert', 'ceil_vec2_vert_xvary_ref.vert', 'step_vec2_frag_xvary_edgeconsthalf.frag', 'brick_vec.vert', 'normalize_vec3_vert_xvary.vert', 'bool_empty_out_bool_empty_frag.frag', 'pow_vec2_frag_xvary_yconst2_ref.frag', 'structcopy_mat4_frag.frag', 'dot_vec2_frag_xvaryyhalf_ref.frag', 'sqrt_float_vert_xvary.vert', 'matrixMultComp_mat2_frag.frag', 'gl_MaxVertexTextureImageUnits_vert.vert', 'vec4_xyz_w_1vec3_1float_vert.vert', 'vec3_xy_z_1vec2_1float_frag.frag', 'distance_float_vert_xvaryyhalf_ref.vert', 'ivec4_empty_empty_ivec4_array_frag.frag', 'lessThanEqual_vec2_vert_ref.vert', 'sign_vec3_frag_xvary_ref.frag', '2f_vert.frag', 'int_empty_out_int_empty_frag.frag', 'vec3_zyx_1vec3_vert.vert', 'smoothstep_vec2_frag_xvary_edgeconstquarter.frag', 'exp2_vec3_vert_xvaryneg.vert', 'exp2_vec2_frag_xvaryneg_ref.frag', 'log_float_frag_xvary_ref.frag', 'mat2_4float_frag.frag', 'exp_vec3_frag_xvaryneg.frag', 'CorrectParseTest_frag.frag', 'pow_float_frag_xvary_yconst2_ref.frag', 'mat2_2vec2_frag.frag', 'vec4_empty_out_vec4_array_vert.vert', 'length_vec2_vert_xvary_ref.vert', 'mat3arraysimple_frag.frag', 'extension7_V100_frag.frag', 'bool_empty_out_bool_array_frag.frag', 'greaterThan_vec2_vert_ref.vert', '4b_lastthree_frag.frag', 'length_vec2_frag_xvary_ref.frag', 'cos_vec2_frag_xvary.frag', 'simple.frag', 'max_vec2_frag_xvary_yconsthalf.frag', 'int_empty_in_int_array_vert.vert', 'refract_vec3_vert_ivarynconst_ref.vert', 'mod_float_frag_xvary_yconst1_ref.frag', 'smoothstep_vec3_vert_xvary_edgeconstquarter.vert', 'vec4_rgba_1vec4_vert.vert', 'matrixMultComp_mat3_vert.vert', 'vec2_2float_frag.frag', 'vec3_ps_t_1vec2_1float_frag.frag', 'Permissive_Scalar_Vector_Expressions_frag.frag', 'float_empty_empty_float_empty_vert.vert', 'gl_MaxVertexAttribs_vert.vert', 'vec3_yz_x_1vec2_1float_vert.vert', 'degrees_float_frag_xvary_ref.frag', 'mod_vec3_vert_xvary_yconst1.vert', 'min_vec3_frag_xvary_yconsthalf.frag', 'atan_vec3_vert_xvaryyvary.vert', 'const_mat2_frag.frag', 'normalize_float_vert_xvary.vert', '3b_vert.frag', 'buffer_objects_multitexturing.frag', 'vec4_br_ag_2vec2_frag.frag', 'log2_float_vert_xvary01_ref.vert', 'vec3_gb_r_1vec2_1float_frag.frag', 'array_const_mat2_vert.vert', 'cross_vec3_vert_xvaryyconst_ref.vert', 'bool_empty_empty_bool_array_vert.vert', '4f_vert.frag', 'buffer_objects.vert', 'bvec4_empty_inout_bvec4_empty_frag.frag', 'atan_vec3_frag_xvary_ref.frag', 'vec3_vec4_frag.frag', '1i_vert.frag', 'distance_vec3_frag_xvaryyhalf.frag', 'inversesqrt_float_vert_xvary_ref.vert', 'notEqual_ivec2_vert_ref.vert', 'vec4_ar_bg_2vec2_vert.vert', 'exp2_float_vert_xvary_ref.vert', 'cos_vec3_frag_xvary.frag', 'lessThan_vec2_frag.frag', 'fragmentOnly3_vert.vert', 'point_sprites.frag', 'const_mat3_copy_frag.frag', 'max_float_vert_xvary_yconsthalf_ref.vert', 'for_nested_break_vert.vert', 'version2_V100_frag.frag', 'faceforward_float_frag_nvaryiconst.frag', 'struct_bool_vert.vert', 'struct_vec4_vert.vert', 'discard_cond_frag.frag', 'bool_empty_in_bool_array_vert.vert', 'log_vec3_frag_xvary_ref.frag', 'inversesqrt_vec3_frag_xvary.frag', 'exp_vec3_vert_xvaryneg_ref.vert', 'mat4_16float_frag.frag', 'tan_vec3_vert_xvary_ref.vert', 'bvec4_empty_out_bvec4_array_frag.frag', 'tan_vec2_frag_xvary_ref.frag', 'vec4_barg_1vec4_frag.frag', 'gl_MaxDrawBuffers_vert.vert', 'atan_vec2_vert_xvary_ref.vert', 'structnest_bool_vert.vert', '1f_frag.frag', 'gl_MaxVaryingVectors_vert.vert', 'CorrectModule_frag.frag', 'qualifiers_struct_frag.frag', 'structnest_vec3_vert.vert', 'CorrectExtension1_V100_frag.frag', 'vec4_qsp_t_1vec3_1float_vert.vert', 'length_vec3_frag_xvary_ref.frag', 'brick.vert', 'extension6_V100_frag.frag', 'pow_vec3_vert_xvary_yconst2.vert', 'floor_float_vert_xvary.vert', 'vec4_xy_zw_2vec2_frag.frag', 'notEqual_vec2_vert_ref.vert', '3i_vert.vert', 'greaterThanEqual_ivec3_frag_ref.frag', 'not_bvec3_frag_ref.frag', 'for_nested_continue_vert.vert', 'exp_vec3_frag_xvaryneg_ref.frag', 'gl_MaxVaryingVectors_frag.frag', 'CorrectVersion_V100_frag.frag', 'pow_float_frag_xvary_yconst2.frag', 'bool_empty_out_bool_array_vert.vert', 'smoothstep_float_frag_xvary_edgeconstquarter.frag', 'log2_vec3_vert_xvary01.vert', 'pow_vec2_vert_xconst2_yvary_ref.vert', 'postfixincrement_frag.frag', 'bvec4_empty_in_bvec4_empty_vert.vert', 'greaterThanEqual_vec3_frag_ref.frag', 'clamp_vec2_frag_xvary_yconstquarter_ref.frag', 'structnest_mat3_vert.vert', 'extension5_V100_frag.frag', 'vec4_ts_qp_2vec2_vert.vert', 'normalize_float_vert_xvary_ref.vert', 'sqrt_float_vert_xvary_ref.vert', '1i_frag.frag', 'emit2.glsl', '_webgl_variable.vert', 'sin_vec3_vert_xvary_ref.vert', 'cos_vec3_vert_xvary_ref.vert', 'lessThanEqual_ivec3_frag.frag', 'abs_vec3_frag_xvary.frag', 'user_clip_planes.vert', 'atan_float_vert_xvary_ref.vert', 'tan_float_frag_xvary.frag', 'dFdy_frag_ref.vert', '2m_frag.frag', 'mat4_empty_empty_mat4_empty_vert.vert', 'vec4_empty_inout_vec4_bigarray_vert.vert', 'bool_empty_inout_bool_array_frag.frag', 'vec4_wxzy_1vec4_frag.frag', 'dFdy_frag.vert', 'ceil_float_frag_xvary.frag', 'sign_vec3_vert_xvary.vert', 'vec3_pts_1vec3_frag.frag', 'max_vec3_frag_xvary_yconsthalf.frag', 'radians_vec2_vert_xvary.vert', 'vec4_arb_g_1vec3_1float_frag.frag', 'mat2_frag.frag', 'reflect_float_vert_ivarynconst.vert', 'bvec4_empty_in_bvec4_empty_frag.frag', 'distance_vec3_vert_xvaryyhalf_ref.vert', 'reflect_vec2_frag_ivarynconst.frag', 'log2_vec2_frag_xvary_ref.frag', 'ceil_float_frag_xvary_ref.frag', 'log_float_frag_xvary.frag', 'lessThanEqual_vec2_frag.frag', 'brick_mat2.vert', 'sin_float_vert_xvary_ref.vert', 'length_float_frag_xvary_ref.frag', 'vec4_empty_inout_vec4_bigarray_frag.frag', 'struct_vec3_frag.frag', 'vec4_wx_zy_2vec2_frag.frag', 'fract_vec2_vert_xvary.vert', 'bvec4_empty_out_bvec4_array_vert.vert', 'radians_vec3_frag_xvary.frag', 'lessThan_ivec3_vert.vert', 'equal_bvec3_frag_ref.frag', 'step_vec3_vert_xvary_edgeconsthalf_ref.vert', 'mat_tests.vert', 'vertexOnly2_frag.frag', 'dot_vec3_frag_xvaryythird.frag', 'brick.frag', 'nested_if_else_vert.vert', 'float_empty_in_float_empty_frag.frag', 'cross_vec3_frag_xvaryyconst.frag', 'tan_vec2_vert_xvary_ref.vert', 'fract_vec2_vert_xvary_ref.vert', 'pow_vec2_vert_xconst2_yvary.vert', 'mat3arrayindirect0_frag.frag', 'structcopy_vec2_vert.vert', 'abs_float_frag_xvary.frag', 'refract_float_vert_ivarynconst_ref.vert', 'log_float_vert_xvary01.vert', 'vec4_yxwz_1vec4_vert.vert', 'ivec3_3int_vert.vert', '3m_frag.frag', 'initfunc_empty_array_float_frag.frag', 'reflect_vec3_vert_ivarynconst_ref.vert', 'log_vec3_frag_xvary01_ref.frag', 'vec4_pqs_t_1vec3_1float_frag.frag', 'postfixincrement_vert.vert', 'vec3_yxz_1vec3_vert.vert', 'pow_vec3_vert_xvary_yconsthalf_ref.vert', 'degrees_vec3_vert_xvary.vert', 'mat3arraysimple_vert.vert', 'greaterThanEqual_vec3_vert_ref.vert', 'inversesqrt_vec3_frag_xvary_ref.frag', 'struct_vec2_vert.vert', 'vec4_st_pq_2vec2_vert.vert', 'mat4_vert.vert', 'structcopy_mat2_frag.frag', 'matrixMultComp_mat2_vert_ref.vert', 'distance_vec2_frag_xvaryyhalf.frag', 'structUniformShader.vert', 'compressed_paletted_texture.vert', 'ceil_vec3_vert_xvary_ref.vert', 'log2_vec3_vert_xvary_ref.vert', 'min_float_frag_xvary_yconsthalf_ref.frag', '23i_frag.frag', 'vec4_r_g_b_a_4float_frag.frag', 'max_float_vert_xvary_yconsthalf.vert', 'exp_float_vert_xvary.vert', 'notEqual_ivec3_frag_ref.frag', 'matrix2VSU.frag', 'bvec4_empty_empty_bvec4_array_frag.frag', 'bvec4_empty_in_bvec4_array_vert.vert', 'successfulcompile_frag.frag', 'ceil_vec2_vert_xvary.vert', 'Low_Level_Assembly_Reserved_Words_frag.frag', 'abs_vec3_vert_xvary.vert', 'exp_float_frag_xvary.frag', 'array_float_frag.frag', 'acos_vec3_frag_xvary.frag', 'division_vert.vert', 'floor_vec3_vert_xvary.vert', 'matrix2arrayVSU.frag', 'atan_vec2_vert_xvaryyvary_ref.vert', 'tan_vec2_frag_xvary.frag', 'mix_vec2_frag_xvary_yconsthalf_aconsthalf_ref.frag', 'assignments_frag.frag', 'addsubtract_frag.frag', 'vec4_wx_zy_2vec2_vert.vert', 'structnest_mat3_frag.frag', 'vec_tests.frag', 'inversesqrt_float_frag_xvary.frag', 'vec3_rb_g_1vec2_1float_frag.frag', 'refract_float_frag_ivarynconst_ref.frag', 'exp2_vec3_vert_xvary_ref.vert', 'radians_vec2_vert_xvary_ref.vert', 'mat4_empty_out_mat4_array_vert.vert', 'webgl_function.vert', 'lessThanEqual_ivec3_vert_ref.vert', '2b_frag.frag', 'log2_vec2_frag_xvary.frag', 'pow_vec3_frag_xvary_yconst2.frag', 'pow_vec3_vert_xvary_yconst2_ref.vert', 'equal_bvec3_frag.frag', 'gl_FrontFacing_frag.frag', 'bool_empty_in_bool_empty_vert.vert', 'lessThanEqual_vec3_frag.frag', 'not_bvec2_vert_ref.vert', 'vec3_gb_r_1vec2_1float_vert.vert', 'log_vec2_frag_xvary_ref.frag', '2f_vert.vert', 'ivec4_empty_inout_ivec4_empty_frag.frag', 'notEqual_vec2_frag_ref.frag', 'bvec4_empty_inout_bvec4_array_vert.vert', 'const_mat4_frag.frag', 'exp2_vec2_vert_xvary.vert', 'asin_float_frag_xvary.frag', 'atan_vec3_vert_xvaryyvary_ref.vert', 'atan_vec2_frag_xvaryyvary_ref.frag', 'any_bvec3_vert.vert', 'faceforward_vec3_frag_nvaryiconst_ref.frag', 'array_const_mat2_frag.frag', 'exp_float_frag_xvaryneg.frag', 'degrees_float_vert_xvary.vert', 'gl_MaxCombinedTextureImageUnits_frag.frag', 'postfixdecrement_frag.frag', 'pow_vec2_vert_xvary_yconst2.vert', 'pow_vec2_vert_xvary_yconsthalf_ref.vert', 'mat4_4vec4_vert.vert', 'vec4_bar_g_1vec3_1float_frag.frag', 'equal_ivec2_frag_ref.frag', 'vec4_rgb_a_1vec3_1float_frag.frag', 'brick_mat3.vert', 'qualifiers_float_frag.frag', 'vec4_ivec4_vert.vert', 'extension9_V100_frag.frag', 'cos_float_frag_xvary.frag', 'vec4_zwx_y_1vec3_1float_vert.vert', 'mod_vec2_vert_xvary_yconst1_ref.vert', 'vec4_ts_qp_2vec2_frag.frag', 'max_vec3_vert_xvary_yconsthalf_ref.vert', 'equal_vec2_frag_ref.frag', 'postfixdecrement_vert.vert', 'int_empty_inout_int_empty_vert.vert', 'vec3_yxz_1vec3_frag.frag', 'vec4_vec3_float_frag.frag', 'vec4_bar_g_1vec3_1float_vert.vert', 'greaterThanEqual_vec2_frag.frag', 'length_float_frag_xvary.frag', 'sqrt_vec3_vert_xvary_ref.vert', 'vec4_barg_1vec4_vert.vert', 'greaterThan_ivec3_vert_ref.vert', 'vec2_vec3_vert.vert', 'log2_vec2_vert_xvary.vert', 'ivec_tests.frag', 'fwidth_frag_ref.vert', 'buffer_objects.frag', 'selection_vert.vert', 'max_vec2_frag_xvary_yconsthalf_ref.frag', 'ivec4_empty_out_ivec4_array_vert.vert', 'vec4_qspt_1vec4_vert.vert', 'DuplicateVersion1_V100_frag.frag', 'unary_vert.vert', 'array_const_mat4_frag.frag', 'float_empty_in_float_empty_vert.vert', 'floor_float_vert_xvary_ref.vert', 'ivec4_empty_empty_ivec4_array_vert.vert', 'faceforward_float_vert_nvaryiconst_ref.vert', 'vec3arrayindirect_vert.vert', 'degrees_vec2_frag_xvary.frag', '4f_vert.vert', 'normalize_float_frag_xvary_ref.frag', 'mat4_empty_in_mat4_array_vert.vert', 'selection_frag.frag', 'cos_vec3_vert_xvary.vert', 'vec3_sp_t_1vec2_1float_frag.frag', 'division_frag.frag', 'dFdx_frag.vert', 'vec4_qs_pt_2vec2_frag.frag', 'vec3arraydirect_frag.frag', 'refract_float_vert_ivarynconst.vert', 'dataType8_frag.frag', 'ivec4_empty_empty_ivec4_empty_vert.vert', 'initfunc_empty_array_float_vert.vert', 'noopUniformShader.vert', 'vec4_tsq_p_1vec3_1float_frag.frag', 'structcopy_vec4_frag.frag', 'sin_vec3_frag_xvary_ref.frag', 'greaterThan_ivec3_frag.frag', 'vec3_rgb_1vec3_frag.frag', 'sqrt_vec2_frag_xvary.frag', 'notEqual_ivec2_frag_ref.frag', 'exp_float_frag_xvaryneg_ref.frag', 'mat4_empty_in_mat4_empty_vert.vert', 'point_size.vert', 'exp2_vec2_frag_xvary_ref.frag', 'exp2_vec3_frag_xvary_ref.frag', 'greaterThan_ivec2_frag_ref.frag', 'float_empty_in_float_array_frag.frag', 'structcopy_bvec2bvec3bvec4_vert.vert', '4f_frag.frag', 'equal_vec3_vert.vert', 'log_vec2_vert_xvary_ref.vert', 'clamp_vec3_frag_xvary_yconstquarter.frag', 'wood.vert', 'exp2_float_frag_xvary_ref.frag', 'vec3single_frag.frag', 'inversesqrt_float_vert_xvary.vert', 'matrixMultComp_mat2_vert.vert', 'cos_vec2_vert_xvary_ref.vert', 'normalize_vec2_frag_xvary.frag', 'notEqual_ivec2_vert.vert', 'step_float_vert_xvary_edgeconsthalf.vert', 'all_bvec2_vert_ref.vert', 'default.frag', 'mat2_vert.vert', 'lighting_diffuse.frag', 'pow_vec3_frag_xvary_yconsthalf_ref.frag', 'atan_float_vert_xvary.vert', 'pow_vec3_vert_xconsthalf_yvary.vert', 'bvec4_empty_empty_bvec4_empty_vert.vert', 'reflect_vec2_vert_ivarynconst_ref.vert', 'degrees_float_frag_xvary.frag', 'ivec4_empty_in_ivec4_empty_frag.frag', 'structcopy_mat3_frag.frag', 'exp2_float_vert_xvaryneg.vert', 'gl_MaxVertexAttribs_frag.frag', 'tan_float_vert_xvary_ref.vert', 'structcopy_bvec2bvec3bvec4_frag.frag', 'sign_vec3_vert_xvary_ref.vert', 'gl_MaxFragmentUniformVectors_vert.vert', 'lighting_diffuse_ref.frag', 'mod_x_large_y_large_frag.frag', 'ivec4_empty_inout_ivec4_bigarray_frag.frag', 'mod_vec2_frag_xvary_yconst1_ref.frag', 'sqrt_vec2_vert_xvary_ref.vert', 'bool_empty_empty_bool_array_frag.frag', 'sin_float_frag_xvary_ref.frag', 'distance_vec2_vert_xvaryyhalf_ref.vert', 'bvec4_empty_out_bvec4_empty_frag.frag', 'atan_vec3_vert_xvary_ref.vert', 'greaterThan_vec2_frag_ref.frag', 'sqrt_vec2_frag_xvary_ref.frag', 'discard_frag.frag', 'structcopy_mat2_vert.vert', 'mat_tests.frag', 'inversesqrt_vec2_frag_xvary.frag', 'vec4_zwxy_1vec4_vert.vert', 'sign_vec2_frag_xvary_ref.frag', 'vec2_vec3_frag.frag', 'clamp_vec3_frag_xvary_yconstquarter_ref.frag', 'log2_vec2_frag_xvary01.frag', 'CorrectSwizzle1_frag.frag', 'nestedstructcomb_various_vert.vert', 'sin_vec3_frag_xvary.frag', '21i_frag.frag', 'structnest_float_vert.vert', 'vec4_wxzy_1vec4_vert.vert', 'mat4_empty_inout_mat4_array_vert.vert', 'exp_vec3_vert_xvary.vert', 'cross_vec3_vert_xvaryyconst.vert', 'acos_float_frag_xvary.frag', 'min_vec2_vert_xvary_yconsthalf_ref.vert', 'vec3_pts_1vec3_vert.vert', 'reflect_float_frag_ivarynconst_ref.frag', 'exp_float_vert_xvary_ref.vert', 'vec4_s_t_p_q_4float_frag.frag', 'floor_float_frag_xvary_ref.frag', 'structcopy_bool_vert.vert', 'reflect_vec2_frag_ivarynconst_ref.frag', 'log2_vec3_frag_xvary01_ref.frag', 'float_empty_empty_float_array_vert.vert', 'pow_vec3_frag_xconsthalf_yvary_ref.frag', 'notEqual_vec2_frag.frag', 'point_sprites.vert', 'max_vec3_vert_xvary_yconsthalf.vert', 'lessThanEqual_ivec2_vert_ref.vert', 'notEqual_bvec3_frag_ref.frag', 'structcopy_mat4_vert.vert', 'pow_vec3_frag_xvary_yconsthalf.frag', 'mat3_3vec3_vert.vert', 'step_vec2_vert_xvary_edgeconsthalf.vert', 'ceil_vec3_vert_xvary.vert', 'reflect_float_frag_ivarynconst.frag', 'CorrectConstruct_vert.vert', 'min_vec2_vert_xvary_yconsthalf.vert', 'distance_float_frag_xvaryyhalf_ref.frag', 'relational_frag.frag', 'mat3_9float_vert.vert', 'greaterThanEqual_vec3_vert.vert', 'ivec3_3int_frag.frag', 'acos_float_frag_xvary_ref.frag', 'notEqual_vec3_vert_ref.vert', 'lessThan_ivec2_frag.frag', 'exp_vec2_frag_xvary.frag', 'vec3_grb_1vec3_frag.frag', 'log_float_frag_xvary01.frag', 'equal_ivec2_vert_ref.vert', 'vec3single_vert.vert', 'mix_vec3_frag_xvary_yconsthalf_aconsthalf.frag', 'structnest_mat2_vert.vert', 'min_float_vert_xvary_yconsthalf_ref.vert', 'mat4_copy_frag.frag', 'mat4_empty_inout_mat4_empty_vert.vert', 'default_textured.vert', 'vec4_st_pq_2vec2_frag.frag', 'sign_vec3_frag_xvary.frag', 'mod_vec3_frag_xvary_yconst1.frag', 'greaterThan_vec3_vert.vert', 'mat3_float_frag.frag', 'vec3arraydirect_vert.vert', 'int_empty_out_int_empty_vert.vert', 'vec3_rb_g_1vec2_1float_vert.vert', '_webgl_function.vert', 'acos_vec2_vert_xvary.vert', 'exp_vec2_vert_xvary.vert', 'relational_vert.vert', 'vec4_wxz_y_1vec3_1float_frag.frag', 'inversesqrt_vec2_frag_xvary_ref.frag', 'greaterThan_vec3_frag.frag', 'ceil_vec3_frag_xvary_ref.frag', 'successfulcompile_vert.vert', 'multiplicative_frag.frag', 'CorrectParseTest1_frag.frag', 'tan_vec2_vert_xvary.vert', 'max_float_frag_xvary_yconsthalf_ref.frag', 'exp_vec3_frag_xvary.frag', 'extension2_V100_frag.frag', 'pow_vec3_frag_xconsthalf_yvary.frag', 'addsubtract_vert.vert', 'greaterThanEqual_vec2_vert_ref.vert', 'log2_vec2_frag_xvary01_ref.frag', 'sign_vec2_vert_xvary.vert', 'lessThanEqual_ivec2_frag.frag', 'floatUniformShader.vert', 'clamp_vec2_vert_xvary_yconstquarter_ref.vert', 'vec3_rgb_1vec3_vert.vert', 'structnest_mat4_frag.frag', 'boolUniformShader.vert', 'acos_vec3_vert_xvary.vert', 'inversesqrt_float_frag_xvary_ref.frag', 'vec4_empty_inout_vec4_empty_vert.vert', 'sign_vec2_frag_xvary.frag', 'exp_vec2_vert_xvaryneg.vert', 'vec3array_frag.frag', 'fract_float_frag_xvary_ref.frag', 'bvec4_empty_empty_bvec4_array_vert.vert', 'normalize_vec3_frag_xvary_ref.frag', 'vec3_zx_y_1vec2_1float_vert.vert', 'const_mat3_copy_vert.vert', 'refract_vec3_vert_ivarynconst.vert', 'radians_float_frag_xvary.frag', 'structnest_vec4_vert.vert', 'sqrt_vec2_vert_xvary.vert', 'refract_vec3_frag_ivarynconst_ref.frag', '23f_frag.frag', 'radians_float_vert_xvary.vert', 'smoothstep_float_vert_xvary_edgeconstquarter.vert', 'pow_vec2_frag_xconst2_yvary.frag', 'gl_MaxFragmentUniformVectors_frag.frag', '3f_vert.vert', 'vec3_br_g_1vec2_1float_vert.vert', 'distance_vec3_vert_xvaryyhalf.vert', 'log2_vec3_vert_xvary01_ref.vert', 'structnest_mat4_vert.vert', 'vec4_gra_b_1vec3_1float_frag.frag', '1f_vert.frag', 'radians_float_frag_xvary_ref.frag', 'lessThan_vec3_vert_ref.vert', 'vec4_stp_q_1vec3_1float_frag.frag', 'not_bvec2_frag_ref.frag', '1b_vert.frag', 'vec4_ps_qt_2vec2_vert.vert', 'atan_vec3_frag_xvaryyvary.frag', 'gl_MaxVertexUniformVectors_frag.frag', 'fract_vec2_frag_xvary.frag', 'not_bvec2_vert.vert', 'matrixVSU.vert', 'CorrectSwizzle2_vert.vert', 'mat4_empty_out_mat4_empty_frag.frag', 'empty_uniform_array_float_vert.vert', 'smoothstep_float_vert_xvary_edgeconstquarter_ref.vert', 'mat3_copy_vert.vert', '24f_frag.frag', 'vec4_br_ag_2vec2_vert.vert', 'vec4_empty_empty_vec4_empty_vert.vert', 'ivec4_empty_inout_ivec4_bigarray_vert.vert', 'mix_float_vert_xvary_yconsthalf_aconsthalf.vert', 'for_continue_frag.frag', 'max_vec2_vert_xvary_yconsthalf_ref.vert', 'log_vec2_frag_xvary01.frag', 'min_vec3_vert_xvary_yconsthalf_ref.vert', 'structnest_bool_frag.frag', 'smoothstep_vec3_frag_xvary_edgeconstquarter_ref.frag', 'atan_vec3_frag_xvary.frag', 'qualifiers_struct_vert.vert', 'refract_vec3_frag_ivarynconst.frag', 'radians_vec2_frag_xvary.frag', 'log2_vec3_frag_xvary_ref.frag', 'lessThanEqual_ivec3_vert.vert', 'ivec_tests.vert', 'gl_MaxTextureImageUnits_vert.vert', 'gl_MaxVertexTextureImageUnits_frag.frag', 'greaterThan_ivec2_vert.vert', 'dot_vec2_vert_xvaryyhalf.vert', 'log_vec3_vert_xvary.vert', 'user_clip_planes.frag', 'fract_vec3_frag_xvary.frag', 'bool_empty_inout_bool_empty_frag.frag', 'vec4_ps_qt_2vec2_frag.frag', 'log_vec2_vert_xvary01_ref.vert', 'DepthRange_frag.frag', 'length_vec3_vert_xvary_ref.vert', 'faceforward_float_vert_nvaryiconst.vert', 'vec4_empty_in_vec4_empty_frag.frag', 'equal_ivec2_frag.frag', 'matUniformShader.vert', 'bool_empty_empty_bool_empty_vert.vert', 'mat3arrayindirect1_vert.vert', 'acos_vec3_vert_xvary_ref.vert', 'structcopy_vec4_vert.vert', 'any_bvec2_frag.frag', 'preprocess2_frag.frag', 'log2_float_vert_xvary_ref.vert', 'notEqual_bvec2_vert_ref.vert', 'vec3_bgr_1vec3_vert.vert', 'multiplicative_vert.vert', 'acos_vec3_frag_xvary_ref.frag', 'gl_FragCoord_z_frag_ref.vert', 'lessThan_ivec2_frag_ref.frag', 'exp2_float_frag_xvaryneg.frag', 'vec4_x_y_z_w_4float_vert.vert', 'atan_vec2_frag_xvary.frag', 'smoothstep_vec3_vert_xvary_edgeconstquarter_ref.vert', 'dot_float_frag_xvaryyone.frag', 'prefixdecrement_frag.frag', 'structnest_vec3_frag.frag', 'equal_vec2_vert_ref.vert', 'vec4_empty_in_vec4_empty_vert.vert', 'ivec4_empty_in_ivec4_empty_vert.vert', '4b_vert.vert', 'degrees_vec2_vert_xvary_ref.vert', 'mat4_4vec4_frag.frag', 'mat3_3vec3_frag.frag', 'vec4_grab_1vec4_frag.frag', 'degrees_vec3_frag_xvary_ref.frag', 'max_vec2_vert_xvary_yconsthalf.vert', 'vec4_empty_out_vec4_empty_vert.vert', 'cos_float_vert_xvary_ref.vert', 'ivec4_empty_inout_ivec4_empty_vert.vert', 'abs_vec2_frag_xvary_ref.frag', 'vec4_grab_1vec4_vert.vert', 'ivec4_empty_out_ivec4_array_frag.frag', 'mod_vec3_frag_xvary_yconst1_ref.frag', 'floor_vec2_vert_xvary_ref.vert', 'lessThanEqual_vec3_vert_ref.vert', 'exp2_vec3_vert_xvaryneg_ref.vert', 'vec4_wxz_y_1vec3_1float_vert.vert', 'log2_float_vert_xvary01.vert', 'ceil_vec2_frag_xvary_ref.frag', 'lessThan_ivec2_vert.vert', 'vec4_xyzw_1vec4_vert.vert', 'vec3_tp_s_1vec2_1float_frag.frag', 'inversesqrt_vec3_vert_xvary.vert', 'notEqual_ivec3_frag.frag', 'vec4_rgb_a_1vec3_1float_vert.vert', 'log2_vec2_vert_xvary01_ref.vert', 'for_nested_continue_frag.frag', 'greaterThanEqual_vec3_frag.frag', 'vec4_stp_q_1vec3_1float_vert.vert', 'mat2_float_frag.frag', 'ivec4_empty_out_ivec4_empty_vert.vert', 'asin_vec2_vert_xvary_ref.vert', 'greaterThan_ivec2_frag.frag', 'vec3_float_vec2_frag.frag', 'log_vec2_vert_xvary01.vert', 'bvec4_empty_inout_bvec4_array_frag.frag', 'struct_mat3_frag.frag', 'ceil_float_vert_xvary_ref.vert', 'nested_if_else_frag.frag', 'abs_vec2_vert_xvary_ref.vert', 'vec3_tsp_1vec3_vert.vert', 'vec4_yx_wz_2vec2_vert.vert', 'equal_ivec3_vert.vert', 'mod_float_vert_xvary_yconst1_ref.vert', 'radians_float_vert_xvary_ref.vert', '4i_vert.vert', 'mat4_empty_inout_mat4_empty_frag.frag', 'lessThan_vec3_frag.frag', 'gl_MaxDrawBuffers_frag.frag', 'empty_empty_array_float_vert.vert', 'lessThanEqual_ivec2_frag_ref.frag', 'gl_FragCoord_z_frag.frag', 'vec4_ivec4_frag.frag', 'ceil_vec2_frag_xvary.frag', 'fragmentShader.frag', 'inversesqrt_vec2_vert_xvary.vert', 'refract_vec2_vert_ivarynconst.vert', 'reflect_vec3_frag_ivarynconst.frag', 'vec4_empty_out_vec4_empty_frag.frag', 'notEqual_ivec3_vert.vert']
+Running /home/oof/webgl_cleaned/mat_tests2.vert
+filename /home/oof/webgl_cleaned/mat_tests2.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:6: 'attribute' :  supported in vertex shaders only
+ERROR: 0:7: 'attribute' :  supported in vertex shaders only
+ERROR: 0:11: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:14: 'gl_Position' : undeclared identifier
+ERROR: 0:14: 'assign' : l-value required (can't modify a const)
+ERROR: 0:14: '=' : dimension mismatch
+ERROR: 0:14: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+attribute mat2 att2;
+attribute mat3 att3;
+varying vec4 color;
+void main ()
+{
+	color = vec4( att2[0][0] + att2[0][1] + att2[1][0] + att2[1][1],
+		      att3[0][0] + att3[0][1] + att3[0][2] + att3[1][0] + att3[1][1] + att3[1][2] + att3[2][0] + att3[2][1] + att3[2][2],
+                     1.0, 1.0 );
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+mat2 att2;
+
+mat3 att3;
+
+vec4 color;
+
+void main()
+{
+  color = vec4((((att2[0][0] + att2[0][1]) + att2[1][0]) + att2[1][1]), ((((((((att3[0][0] + att3[0][1]) + att3[0][2]) + att3[1][0]) + att3[1][1]) + att3[1][2]) + att3[2][0]) + att3[2][1]) + att3[2][2]), 1.0, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/mat_tests2.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/log2_vec3_frag_xvary.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	vec3 c = 31.0 * color.rgb + 1.0;
+	gl_FragColor = vec4(log2(c) / 5.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  vec3 c = ((31.0 * color.rgb) + 1.0);
+  gl_FragColor = vec4((log2(c) / 5.0), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/log2_vec3_frag_xvary.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/fract_vec3_vert_xvary_ref.vert
+filename /home/oof/webgl_cleaned/fract_vec3_vert_xvary_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	vec3 c = 10.0 * 2.0 * (gtf_Color.rgb - 0.5);
+	c = abs((c - floor(c)) - 0.5) * 2.0;
+	color = vec4(c, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  vec3 c = ((10.0 * 2.0) * (gtf_Color.rgb - 0.5));
+  c = (abs(((c - floor(c)) - 0.5)) * 2.0);
+  color = vec4(c, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/fract_vec3_vert_xvary_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/equal_bvec3_vert.vert
+filename /home/oof/webgl_cleaned/equal_bvec3_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	vec3 c = floor(1.5 * gtf_Color.rgb);
+	vec3 result = vec3(equal(bvec3(c), bvec3(true)));
+	color = vec4(result, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  vec3 c = floor((1.5 * gtf_Color.rgb));
+  vec3 result = vec3(equal(bvec3(c), bvec3(true)));
+  color = vec4(result, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/equal_bvec3_vert.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/pow_float_frag_xconst2_yvary_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	float c = 2.0 * (color.r - 0.5);
+	gl_FragColor = vec4(exp2(2.0 * c) / 4.0, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  float c = (2.0 * (color.r - 0.5));
+  gl_FragColor = vec4((exp2((2.0 * c)) / 4.0), 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/pow_float_frag_xconst2_yvary_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/int_empty_in_int_array_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+int function(in int par[3]);
+bool is_all(const in int array[3], const in int value);
+void set_all(out int array[3], const in int value);
+void main ()
+{
+	int par[3];
+	int ret = 0;
+	float gray = 0.0;
+	set_all(par, 1);
+	ret = function(par);
+	if(is_all(par, 1) && (ret == 1))
+	{
+		gray = 1.0;
+	}
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+int function(in int par[3])
+{
+	if(is_all(par, 1))
+	{
+		set_all(par, 0);
+		return 1;
+	}
+	else
+		return 0;
+}
+bool is_all(const in int array[3], const in int value)
+{
+	bool ret = true;
+	if(array[0] != value)
+		ret = false;
+	if(array[1] != value)
+		ret = false;
+	if(array[2] != value)
+		ret = false;
+	return ret;
+}
+void set_all(out int array[3], const in int value)
+{
+	array[0] = value;
+	array[1] = value;
+	array[2] = value;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+int function(in int par[3]);
+bool is_all(const in int array[3], const in int value);
+void set_all(out int array[3], const in int value);
+void main()
+{
+  int par[3];
+  int ret = 0;
+  float gray = 0.0;
+  set_all(par, 1);
+  ret = function(par);
+  if ((is_all(par, 1) && (ret == 1)))
+  {
+    gray = 1.0;
+  }
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+int function(in int par[3])
+{
+  if (is_all(par, 1))
+  {
+    set_all(par, 0);
+    return 1;
+  }
+  else
+    return 0;
+}
+
+bool is_all(const in int array[3], const in int value)
+{
+  bool ret = true;
+  if ((array[0] != value))
+    ret = false;
+  if ((array[1] != value))
+    ret = false;
+  if ((array[2] != value))
+    ret = false;
+  return ret;
+}
+
+void set_all(out int array[3], const in int value)
+{
+  array[0] = value;
+  array[1] = value;
+  array[2] = value;
+}
+
+
+Filename: /home/oof/webgl_cleaned/int_empty_in_int_array_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/fract_float_vert_xvary_ref.vert
+filename /home/oof/webgl_cleaned/fract_float_vert_xvary_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	float c = 10.0 * 2.0 * (gtf_Color.r - 0.5);
+	c = abs((c - floor(c)) - 0.5) * 2.0;
+	color = vec4(c, 0.0, 0.0, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  float c = ((10.0 * 2.0) * (gtf_Color.r - 0.5));
+  c = (abs(((c - floor(c)) - 0.5)) * 2.0);
+  color = vec4(c, 0.0, 0.0, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/fract_float_vert_xvary_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/buffer_objects_multitexturing.vert
+filename /home/oof/webgl_cleaned/buffer_objects_multitexturing.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:6: 'attribute' :  supported in vertex shaders only
+ERROR: 0:7: 'attribute' :  supported in vertex shaders only
+ERROR: 0:8: 'attribute' :  supported in vertex shaders only
+ERROR: 0:13: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:14: 'assign' : l-value required (can't modify a varying "gtf_TexCoord")
+ERROR: 0:15: 'assign' : l-value required (can't modify a varying "gtf_TexCoord")
+ERROR: 0:16: 'gl_Position' : undeclared identifier
+ERROR: 0:16: 'assign' : l-value required (can't modify a const)
+ERROR: 0:16: '=' : dimension mismatch
+ERROR: 0:16: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+attribute vec4 gtf_MultiTexCoord0;
+attribute vec4 gtf_MultiTexCoord1;
+varying vec4 color;
+varying vec4 gtf_TexCoord[2];
+void main ()
+{
+	color = gtf_Color;
+	gtf_TexCoord[0] = gtf_MultiTexCoord0;
+	gtf_TexCoord[1] = gtf_MultiTexCoord1;
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+vec4 gtf_MultiTexCoord0;
+
+vec4 gtf_MultiTexCoord1;
+
+vec4 color;
+
+vec4 gtf_TexCoord[2];
+
+void main()
+{
+  color = gtf_Color;
+  gtf_TexCoord[0] = gtf_MultiTexCoord0;
+  gtf_TexCoord[1] = gtf_MultiTexCoord1;
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/buffer_objects_multitexturing.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/vec3_stp_1vec3_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	vec4 al = color;
+	vec3 m = al.stp;
+	vec4 a = vec4(m.stp,al.q);
+	gl_FragColor = a;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  vec4 al = color;
+  vec3 m = al.stp;
+  vec4 a = vec4(m.stp, al.q);
+  gl_FragColor = a;
+}
+
+
+Filename: /home/oof/webgl_cleaned/vec3_stp_1vec3_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/3i_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+uniform ivec3 color;
+void main ()
+{
+	gl_FragColor = vec4 (color[0], color[1], color[2], 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform ivec3 color;
+
+void main()
+{
+  gl_FragColor = vec4(color[0], color[1], color[2], 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/3i_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/intArrayUniformShader.vert
+filename /home/oof/webgl_cleaned/intArrayUniformShader.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:9: 'gl_Position' : undeclared identifier
+ERROR: 0:9: 'assign' : l-value required (can't modify a const)
+ERROR: 0:9: '=' : dimension mismatch
+ERROR: 0:9: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+uniform int ival;
+uniform int ival2[2];
+void main()
+{
+    int sum = ival + ival2[0] + ival2[1];
+    gl_Position = vec4(sum, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform int ival;
+
+uniform int ival2[2];
+
+void main()
+{
+  int sum = ((ival + ival2[0]) + ival2[1]);
+  gl_Position = vec4(sum, 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/intArrayUniformShader.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/radians_vec3_frag_xvary_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	const float M_PI = 3.14159265358979323846;
+	vec3 c = 360.0 * 2.0 * (color.rgb - 0.5);
+	gl_FragColor = vec4((c * M_PI / 180.0) / (4.0 * M_PI) + 0.5, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  const float M_PI = 3.141592653589793;
+  vec3 c = ((360.0 * 2.0) * (color.rgb - 0.5));
+  gl_FragColor = vec4(((((c * M_PI) / 180.0) / (4.0 * M_PI)) + 0.5), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/radians_vec3_frag_xvary_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/ivec4_empty_empty_ivec4_empty_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+ivec4 function(ivec4 par);
+bool is_all(const in ivec4 par, const in int value);
+void set_all(out ivec4 par, const in int value);
+void main ()
+{
+	ivec4 par = ivec4(1, 1, 1, 1);
+	ivec4 ret = ivec4(0, 0, 0, 0);
+	float gray = 0.0;
+	ret = function(par);
+	if(is_all(par, 1) && is_all(ret, 1))
+	{
+		gray = 1.0;
+	}
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+ivec4 function(ivec4 par)
+{
+	if(is_all(par, 1))
+	{
+		set_all(par, 0);
+		return ivec4(1, 1, 1, 1);
+	}
+	else
+		return ivec4(0, 0, 0, 0);
+}
+bool is_all(const in ivec4 par, const in int value)
+{
+	bool ret = true;
+	if(par[0] != value)
+		ret = false;
+	if(par[1] != value)
+		ret = false;
+	if(par[2] != value)
+		ret = false;
+	if(par[3] != value)
+		ret = false;
+	return ret;
+}
+void set_all(out ivec4 par, const in int value)
+{
+	par[0] = value;
+	par[1] = value;
+	par[2] = value;
+	par[3] = value;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+ivec4 function(ivec4 par);
+bool is_all(const in ivec4 par, const in int value);
+void set_all(out ivec4 par, const in int value);
+void main()
+{
+  ivec4 par = ivec4(1, 1, 1, 1);
+  ivec4 ret = ivec4(0, 0, 0, 0);
+  float gray = 0.0;
+  ret = function(par);
+  if ((is_all(par, 1) && is_all(ret, 1)))
+  {
+    gray = 1.0;
+  }
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+ivec4 function(ivec4 par)
+{
+  if (is_all(par, 1))
+  {
+    set_all(par, 0);
+    return ivec4(1, 1, 1, 1);
+  }
+  else
+    return ivec4(0, 0, 0, 0);
+}
+
+bool is_all(const in ivec4 par, const in int value)
+{
+  bool ret = true;
+  if ((par[0] != value))
+    ret = false;
+  if ((par[1] != value))
+    ret = false;
+  if ((par[2] != value))
+    ret = false;
+  if ((par[3] != value))
+    ret = false;
+  return ret;
+}
+
+void set_all(out ivec4 par, const in int value)
+{
+  par[0] = value;
+  par[1] = value;
+  par[2] = value;
+  par[3] = value;
+}
+
+
+Filename: /home/oof/webgl_cleaned/ivec4_empty_empty_ivec4_empty_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/equality_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	int m = 102;
+	int k = 12;
+	bool equalto = (m == 102);
+	bool notequalto = (k != 102);
+	float gray;
+	if( equalto && notequalto )
+	gray=1.0;
+	else gray=0.0;
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  int m = 102;
+  int k = 12;
+  bool equalto = (m == 102);
+  bool notequalto = (k != 102);
+  float gray;
+  if ((equalto && notequalto))
+    gray = 1.0;
+  else
+    gray = 0.0;
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/equality_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/mat3_9float_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	mat3 m = mat3(color.r, color.g, color.b, color.r, color.g, color.b, color.r, color.g, color.b);
+	vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+	vec4 result = vec4(1.0, 1.0, 1.0, 1.0);
+	if(m[0][0] != color.r) result = black;
+	if(m[0][1] != color.g) result = black;
+	if(m[0][2] != color.b) result = black;
+	if(m[1][0] != color.r) result = black;
+	if(m[1][1] != color.g) result = black;
+	if(m[1][2] != color.b) result = black;
+	if(m[2][0] != color.r) result = black;
+	if(m[2][1] != color.g) result = black;
+	if(m[2][2] != color.b) result = black;
+	gl_FragColor = result;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  mat3 m = mat3(color.r, color.g, color.b, color.r, color.g, color.b, color.r, color.g, color.b);
+  vec4 black = vec4(0.0, 0.0, 0.0, 1.0);
+  vec4 result = vec4(1.0, 1.0, 1.0, 1.0);
+  if ((m[0][0] != color.r))
+    result = black;
+  if ((m[0][1] != color.g))
+    result = black;
+  if ((m[0][2] != color.b))
+    result = black;
+  if ((m[1][0] != color.r))
+    result = black;
+  if ((m[1][1] != color.g))
+    result = black;
+  if ((m[1][2] != color.b))
+    result = black;
+  if ((m[2][0] != color.r))
+    result = black;
+  if ((m[2][1] != color.g))
+    result = black;
+  if ((m[2][2] != color.b))
+    result = black;
+  gl_FragColor = result;
+}
+
+
+Filename: /home/oof/webgl_cleaned/mat3_9float_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/all_bvec2_frag_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+bool _all(in bvec2 a)
+{
+	bool temp = true;
+	if(!a[0]) temp = false;
+	if(!a[1]) temp = false;
+	return temp;
+}
+void main ()
+{
+	vec2 c = floor(4.0 * color.rg);
+	gl_FragColor = vec4(vec3(_all(bvec2(c))), 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+bool _all(in bvec2 a)
+{
+  bool temp = true;
+  if (!a[0])
+    temp = false;
+  if (!a[1])
+    temp = false;
+  return temp;
+}
+
+void main()
+{
+  vec2 c = floor((4.0 * color.rg));
+  gl_FragColor = vec4(vec3(_all(bvec2(c))), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/all_bvec2_frag_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/structnest_vec2_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+struct nestb
+{
+	vec2 b;
+};
+struct nesta
+{
+	vec2 a;
+	nestb nest_b;
+};
+struct nest
+{
+	nesta nest_a;
+};
+void main ()
+{
+	nest s = nest(nesta(vec2(11, 13), nestb(vec2(12, 19) ) ) );
+	gl_FragColor = vec4( vec3(  (s.nest_a.a[0] + s.nest_a.a[1] + s.nest_a.nest_b.b[0] + s.nest_a.nest_b.b[1] ) / 55.0 ), 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+struct nestb {
+  vec2 b;
+};
+
+struct nesta {
+  vec2 a;
+  nestb nest_b;
+};
+
+struct nest {
+  nesta nest_a;
+};
+
+void main()
+{
+  nest s = nest(nesta(vec2(11, 13), nestb(vec2(12, 19))));
+  gl_FragColor = vec4(vec3(((((s.nest_a.a[0] + s.nest_a.a[1]) + s.nest_a.nest_b.b[0]) + s.nest_a.nest_b.b[1]) / 55.0)), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/structnest_vec2_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/2b_vert.vert
+filename /home/oof/webgl_cleaned/2b_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:6: 'attribute' :  supported in vertex shaders only
+ERROR: 0:11: 'assign' : l-value required (can't modify a varying "col")
+ERROR: 0:12: 'gl_Position' : undeclared identifier
+ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+ERROR: 0:12: '=' : dimension mismatch
+ERROR: 0:12: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+attribute vec4 gtf_Color;
+uniform bvec2 color;
+varying vec2 col;
+void main ()
+{
+	col = vec2(color);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 gtf_Color;
+
+uniform bvec2 color;
+
+vec2 col;
+
+void main()
+{
+  col = vec2(color);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/2b_vert.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/atan_vec3_vert_xvary.vert
+filename /home/oof/webgl_cleaned/atan_vec3_vert_xvary.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+attribute vec4 gtf_Color;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	const float M_PI = 3.14159265358979323846;
+	vec3 c = 4.0 * 2.0 * (gtf_Color.rgb - 0.5);
+	color = vec4(atan(c) / M_PI + 0.5, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+vec4 gtf_Color;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  const float M_PI = 3.141592653589793;
+  vec3 c = ((4.0 * 2.0) * (gtf_Color.rgb - 0.5));
+  color = vec4(((atan(c) / M_PI) + 0.5), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/atan_vec3_vert_xvary.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/structnest_vec4_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+struct nestb
+{
+	vec4 b;
+};
+struct nesta
+{
+	vec4 a;
+	nestb nest_b;
+};
+struct nest
+{
+	nesta nest_a;
+};
+void main ()
+{
+	nest s = nest(nesta(vec4(11, 13, 17, 31), nestb(vec4(12, 19, 29, 69) ) ) );
+	gl_FragColor = vec4( vec3(  (s.nest_a.a[0] + s.nest_a.a[1] + s.nest_a.a[2] + s.nest_a.a[3] + s.nest_a.nest_b.b[0] + s.nest_a.nest_b.b[1] + s.nest_a.nest_b.b[2] + s.nest_a.nest_b.b[3]) / 201.0 ), 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+struct nestb {
+  vec4 b;
+};
+
+struct nesta {
+  vec4 a;
+  nestb nest_b;
+};
+
+struct nest {
+  nesta nest_a;
+};
+
+void main()
+{
+  nest s = nest(nesta(vec4(11, 13, 17, 31), nestb(vec4(12, 19, 29, 69))));
+  gl_FragColor = vec4(vec3(((((((((s.nest_a.a[0] + s.nest_a.a[1]) + s.nest_a.a[2]) + s.nest_a.a[3]) + s.nest_a.nest_b.b[0]) + s.nest_a.nest_b.b[1]) + s.nest_a.nest_b.b[2]) + s.nest_a.nest_b.b[3]) / 201.0)), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/structnest_vec4_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/emit1.glsl
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+uniform sampler2D GLGE_EMIT;
+varying vec2 texCoord;
+float blurSize=0.007;
+void main(){
+	vec4 color=vec4(0.0,0.0,0.0,0.0);
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x - 4.0*blurSize, texCoord.y)) * 0.05;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x - 3.0*blurSize, texCoord.y)) * 0.09;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x - 2.0*blurSize, texCoord.y)) * 0.12;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x - blurSize, texCoord.y)) * 0.15;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x, texCoord.y)) * 0.16;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x + blurSize, texCoord.y)) * 0.15;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x + 2.0*blurSize, texCoord.y)) * 0.12;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x + 3.0*blurSize, texCoord.y)) * 0.09;
+	color += texture2D(GLGE_EMIT, vec2(texCoord.x + 4.0*blurSize, texCoord.y)) * 0.05;
+    gl_FragColor = vec4(color.rgb,1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform sampler2D GLGE_EMIT;
+
+vec2 texCoord;
+
+float blurSize = 0.007;
+
+void main()
+{
+  vec4 color = vec4(0.0, 0.0, 0.0, 0.0);
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x - (4.0 * blurSize)), texCoord.y)) * 0.05));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x - (3.0 * blurSize)), texCoord.y)) * 0.09));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x - (2.0 * blurSize)), texCoord.y)) * 0.12));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x - blurSize), texCoord.y)) * 0.15));
+  (color += (texture2D(GLGE_EMIT, vec2(texCoord.x, texCoord.y)) * 0.16));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x + blurSize), texCoord.y)) * 0.15));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x + (2.0 * blurSize)), texCoord.y)) * 0.12));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x + (3.0 * blurSize)), texCoord.y)) * 0.09));
+  (color += (texture2D(GLGE_EMIT, vec2((texCoord.x + (4.0 * blurSize)), texCoord.y)) * 0.05));
+  gl_FragColor = vec4(color.rgb, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/emit1.glsl passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/log2_float_frag_xvary.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	float c = 31.0 * color.r + 1.0;
+	gl_FragColor = vec4(log2(c) / 5.0, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  float c = ((31.0 * color.r) + 1.0);
+  gl_FragColor = vec4((log2(c) / 5.0), 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/log2_float_frag_xvary.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/CorrectSwizzle2_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+void main()
+{
+    float f, f1, f2;
+    f = f1 = f2;
+    f += f1 += f2;
+    vec4 v, v1, v2;
+    v = v1 = v2;
+    v += v1 += v2;
+    v.wx = v1.zx = v2.yx;
+    v.wx += v1.zx += v2.yx;
+    mat4  m, m1, m2;
+    m = m1 = m2;
+    m += m1 += m2;
+    m[3].wx = m1[2].zx = m2[1].yx;
+    m[3].wx += m1[2].zx += m2[1].yx;
+    mat4  am[4], am1[4], am2[4];
+    am[3] = am1[2] = am2[1];
+    am[3] += am1[2] += am2[1];
+    am[3][3].wx = am1[2][2].zx = am2[1][1].yx;
+    am[3][3].wx += am1[2][2].zx += am2[1][1].yx;
+    am[3][3].wx += am1[2][2].zx += ++(am2[1][1].yx);
+    am[3][3].wx += am1[2][2].zx += (am2[1][1].yx)++;
+    gl_FragColor = vec4(am[3][3].z, m[3].w, v.w, f);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  float f, f1, f2;
+  f = f1 = f2;
+  (f += (f1 += f2));
+  vec4 v, v1, v2;
+  v = v1 = v2;
+  (v += (v1 += v2));
+  v.wx = v1.zx = v2.yx;
+  (v.wx += (v1.zx += v2.yx));
+  mat4 m, m1, m2;
+  m = m1 = m2;
+  (m += (m1 += m2));
+  m[3].wx = m1[2].zx = m2[1].yx;
+  (m[3].wx += (m1[2].zx += m2[1].yx));
+  mat4 am[4], am1[4], am2[4];
+  am[3] = am1[2] = am2[1];
+  (am[3] += (am1[2] += am2[1]));
+  am[3][3].wx = am1[2][2].zx = am2[1][1].yx;
+  (am[3][3].wx += (am1[2][2].zx += am2[1][1].yx));
+  (am[3][3].wx += (am1[2][2].zx += ++am2[1][1].yx));
+  (am[3][3].wx += (am1[2][2].zx += am2[1][1].yx++));
+  gl_FragColor = vec4(am[3][3].z, m[3].w, v.w, f);
+}
+
+
+Filename: /home/oof/webgl_cleaned/CorrectSwizzle2_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/pow_vec2_vert_xvary_yconsthalf.vert
+filename /home/oof/webgl_cleaned/pow_vec2_vert_xvary_yconsthalf.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:11: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:12: 'gl_Position' : undeclared identifier
+ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+ERROR: 0:12: '=' : dimension mismatch
+ERROR: 0:12: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	vec2 c = 16.0 * gtf_Color.rg;
+	color = vec4(pow(c, vec2(0.5)) / 4.0, 0.0, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  vec2 c = (16.0 * gtf_Color.rg);
+  color = vec4((pow(c, vec2(0.5)) / 4.0), 0.0, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/pow_vec2_vert_xvary_yconsthalf.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/exp_vec2_frag_xvaryneg_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	const float exp1 = 2.7183;
+	vec2 c = color.rg;
+	gl_FragColor = vec4(1.0 / pow(vec2(exp1), 3.0 * c), 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  const float exp1 = 2.7183;
+  vec2 c = color.rg;
+  gl_FragColor = vec4((1.0 / pow(vec2(exp1), (3.0 * c))), 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/exp_vec2_frag_xvaryneg_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/lessThan_ivec3_vert_ref.vert
+filename /home/oof/webgl_cleaned/lessThan_ivec3_vert_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:23: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:24: 'gl_Position' : undeclared identifier
+ERROR: 0:24: 'assign' : l-value required (can't modify a const)
+ERROR: 0:24: '=' : dimension mismatch
+ERROR: 0:24: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+bvec3 lt(in ivec3 a, in ivec3 b)
+{
+	bvec3 result;
+	if(a[0] < b[0]) result[0] = true;
+	else result[0] = false;
+	if(a[1] < b[1]) result[1] = true;
+	else result[1] = false;
+	if(a[2] < b[2]) result[2] = true;
+	else result[2] = false;
+	return result;
+}
+void main ()
+{
+	vec3 c = floor(10.0 * gtf_Color.rgb - 4.5);
+	vec3 result = vec3(lt(ivec3(c), ivec3(0)));
+	color = vec4(result, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+bvec3 lt(in ivec3 a, in ivec3 b)
+{
+  bvec3 result;
+  if ((a[0] < b[0]))
+    result[0] = true;
+  else
+    result[0] = false;
+  if ((a[1] < b[1]))
+    result[1] = true;
+  else
+    result[1] = false;
+  if ((a[2] < b[2]))
+    result[2] = true;
+  else
+    result[2] = false;
+  return result;
+}
+
+void main()
+{
+  vec3 c = floor(((10.0 * gtf_Color.rgb) - 4.5));
+  vec3 result = vec3(lt(ivec3(c), ivec3(0)));
+  color = vec4(result, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/lessThan_ivec3_vert_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/exp_vec2_frag_xvaryneg.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	vec2 c = -color.rg;
+	gl_FragColor = vec4(exp(3.0 * c), 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  vec2 c = -color.rg;
+  gl_FragColor = vec4(exp((3.0 * c)), 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/exp_vec2_frag_xvaryneg.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/gl_FragCoord_z_frag_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 position;
+void main()
+{
+	float z = position.z / position.w;
+	float f = gl_DepthRange.far;
+	float n = gl_DepthRange.near;
+	z = ((f - n) / 2.0) * z + (f + n) / 2.0;
+	gl_FragColor = vec4(vec3(z), 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 position;
+
+void main()
+{
+  float z = (position.z / position.w);
+  float f = gl_DepthRange.far;
+  float n = gl_DepthRange.near;
+  z = ((((f - n) / 2.0) * z) + ((f + n) / 2.0));
+  gl_FragColor = vec4(vec3(z), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/gl_FragCoord_z_frag_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/clamp_float_frag_xvary_yconstquarter_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	const float min_c = 0.25;
+	const float max_c = 0.75;
+	float c = color.r;
+	if(c > max_c) c = max_c;
+	if(c < min_c) c = min_c;
+	gl_FragColor = vec4(c, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  const float min_c = 0.25;
+  const float max_c = 0.75;
+  float c = color.r;
+  if ((c > max_c))
+    c = max_c;
+  if ((c < min_c))
+    c = min_c;
+  gl_FragColor = vec4(c, 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/clamp_float_frag_xvary_yconstquarter_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/radians_vec3_vert_xvary_ref.vert
+filename /home/oof/webgl_cleaned/radians_vec3_vert_xvary_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	const float M_PI = 3.14159265358979323846;
+	vec3 c = 360.0 * 2.0 * (gtf_Color.rgb - 0.5);
+	color = vec4((c * M_PI / 180.0) / (4.0 * M_PI) + 0.5, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  const float M_PI = 3.141592653589793;
+  vec3 c = ((360.0 * 2.0) * (gtf_Color.rgb - 0.5));
+  color = vec4(((((c * M_PI) / 180.0) / (4.0 * M_PI)) + 0.5), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/radians_vec3_vert_xvary_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/float_empty_inout_float_empty_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+float function(inout float par);
+void main ()
+{
+	float par = 1.0;
+	float ret = 0.0;
+	float gray = 0.0;
+	ret = function(par);
+	if((par == 0.0) && (ret == 1.0))
+	{
+		gray = 1.0;
+	}
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+float function(inout float par)
+{
+	if(par == 1.0)
+	{
+		par = 0.0;
+		return 1.0;
+	}
+	else
+		return 0.0;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+float function(inout float par);
+void main()
+{
+  float par = 1.0;
+  float ret = 0.0;
+  float gray = 0.0;
+  ret = function(par);
+  if (((par == 0.0) && (ret == 1.0)))
+  {
+    gray = 1.0;
+  }
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+float function(inout float par)
+{
+  if ((par == 1.0))
+  {
+    par = 0.0;
+    return 1.0;
+  }
+  else
+    return 0.0;
+}
+
+
+Filename: /home/oof/webgl_cleaned/float_empty_inout_float_empty_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/normalize_vec2_vert_xvary_ref.vert
+filename /home/oof/webgl_cleaned/normalize_vec2_vert_xvary_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:11: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:12: 'gl_Position' : undeclared identifier
+ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+ERROR: 0:12: '=' : dimension mismatch
+ERROR: 0:12: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	vec4 tmp_Color = gtf_Color + vec4(0.25);
+	color = vec4(tmp_Color.rg / length(tmp_Color.rg), 0.0, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  vec4 tmp_Color = (gtf_Color + vec4(0.25));
+  color = vec4((tmp_Color.rg / length(tmp_Color.rg)), 0.0, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/normalize_vec2_vert_xvary_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/preprocess10_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+void main()
+{
+   gl_FragColor = vec4(1);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  gl_FragColor = vec4(1);
+}
+
+
+Filename: /home/oof/webgl_cleaned/preprocess10_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/log2_vec3_vert_xvary.vert
+filename /home/oof/webgl_cleaned/log2_vec3_vert_xvary.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:11: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:12: 'gl_Position' : undeclared identifier
+ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+ERROR: 0:12: '=' : dimension mismatch
+ERROR: 0:12: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	vec3 c = 31.0 * gtf_Color.rgb + 1.0;
+	color = vec4(log2(c) / 5.0, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  vec3 c = ((31.0 * gtf_Color.rgb) + 1.0);
+  color = vec4((log2(c) / 5.0), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/log2_vec3_vert_xvary.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/pow_vec2_frag_xconst2_yvary_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	vec2 c = 2.0 * (color.rg - 0.5);
+	gl_FragColor = vec4(exp2(2.0 * c) / 4.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  vec2 c = (2.0 * (color.rg - 0.5));
+  gl_FragColor = vec4((exp2((2.0 * c)) / 4.0), 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/pow_vec2_frag_xconst2_yvary_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/sqrt_float_frag_xvary_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	float c = 100.0 * color.r;
+	gl_FragColor = vec4(c / 100.0, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  float c = (100.0 * color.r);
+  gl_FragColor = vec4((c / 100.0), 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/sqrt_float_frag_xvary_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/CorrectSwizzle3_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+void main()
+{
+    vec4 v = vec4(5,6,7,8);
+    v.wzyx.zywx.wzy.zy = (v.wzyx.zywx.wx)++;
+    gl_FragColor = vec4(v);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  vec4 v = vec4(5, 6, 7, 8);
+  v.wzyx.zywx.wzy.zy = v.wzyx.zywx.wx++;
+  gl_FragColor = vec4(v);
+}
+
+
+Filename: /home/oof/webgl_cleaned/CorrectSwizzle3_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/array_const_mat3_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+const int array_size = 2;
+void main ()
+{
+	const mat3 a = mat3(1.0, 2.0, 3.0,
+		            4.0, 5.0, 6.0,
+			    7.0, 8.0, 9.0);
+	const mat3 b = mat3(10.0, 11.0, 12.0,
+		            13.0, 14.0, 15.0,
+			    16.0, 17.0, 18.0);
+	mat3 array[array_size];
+	float gray;
+	array[0] = a;
+	array[1] = b;
+	if((array[0] == a) && (array[1] == b))
+		gray = 1.0;
+	else
+		gray = 0.0;
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+const int array_size = 2;
+
+void main()
+{
+  const mat3 a = mat3(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0);
+  const mat3 b = mat3(10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0);
+  mat3 array[array_size];
+  float gray;
+  array[0] = a;
+  array[1] = b;
+  if (((array[0] == a) && (array[1] == b)))
+    gray = 1.0;
+  else
+    gray = 0.0;
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/array_const_mat3_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/1b_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+uniform bool color;
+void main ()
+{
+	gl_FragColor = vec4 (float(color), 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform bool color;
+
+void main()
+{
+  gl_FragColor = vec4(float(color), 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/1b_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/ivec4_empty_in_ivec4_array_vert.vert
+filename /home/oof/webgl_cleaned/ivec4_empty_in_ivec4_array_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:22: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:23: 'gl_Position' : undeclared identifier
+ERROR: 0:23: 'assign' : l-value required (can't modify a const)
+ERROR: 0:23: '=' : dimension mismatch
+ERROR: 0:23: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+ivec4 function(in ivec4 par[3]);
+bool is_all(const in ivec4 par, const in int value);
+bool is_all(const in ivec4 array[3], const in ivec4 value);
+void set_all(out ivec4 array[3], const in ivec4 value);
+void main ()
+{
+	ivec4 par[3];
+	ivec4 ret = ivec4(0, 0, 0, 0);
+	float gray = 0.0;
+	set_all(par, ivec4(1, 1, 1, 1));
+	ret = function(par);
+	if(is_all(par, ivec4(1, 1, 1, 1)) && is_all(ret, 1))
+	{
+		gray = 1.0;
+	}
+	color = vec4(gray, gray, gray, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+ivec4 function(in ivec4 par[3])
+{
+	if(is_all(par, ivec4(1, 1, 1, 1)))
+	{
+		set_all(par, ivec4(0, 0, 0, 0));
+		return ivec4(1, 1, 1, 1);
+	}
+	else
+		return ivec4(0, 0, 0, 0);
+}
+bool is_all(const in ivec4 par, const in int value)
+{
+	bool ret = true;
+	if(par[0] != value)
+		ret = false;
+	if(par[1] != value)
+		ret = false;
+	if(par[2] != value)
+		ret = false;
+	if(par[3] != value)
+		ret = false;
+	return ret;
+}
+bool is_all(const in ivec4 array[3], const in ivec4 value)
+{
+	bool ret = true;
+	if(array[0] != value)
+		ret = false;
+	if(array[1] != value)
+		ret = false;
+	if(array[2] != value)
+		ret = false;
+	return ret;
+}
+void set_all(out ivec4 array[3], const in ivec4 value)
+{
+	array[0] = value;
+	array[1] = value;
+	array[2] = value;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+ivec4 function(in ivec4 par[3]);
+bool is_all(const in ivec4 par, const in int value);
+bool is_all(const in ivec4 array[3], const in ivec4 value);
+void set_all(out ivec4 array[3], const in ivec4 value);
+void main()
+{
+  ivec4 par[3];
+  ivec4 ret = ivec4(0, 0, 0, 0);
+  float gray = 0.0;
+  set_all(par, ivec4(1, 1, 1, 1));
+  ret = function(par);
+  if ((is_all(par, ivec4(1, 1, 1, 1)) && is_all(ret, 1)))
+  {
+    gray = 1.0;
+  }
+  color = vec4(gray, gray, gray, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+ivec4 function(in ivec4 par[3])
+{
+  if (is_all(par, ivec4(1, 1, 1, 1)))
+  {
+    set_all(par, ivec4(0, 0, 0, 0));
+    return ivec4(1, 1, 1, 1);
+  }
+  else
+    return ivec4(0, 0, 0, 0);
+}
+
+bool is_all(const in ivec4 par, const in int value)
+{
+  bool ret = true;
+  if ((par[0] != value))
+    ret = false;
+  if ((par[1] != value))
+    ret = false;
+  if ((par[2] != value))
+    ret = false;
+  if ((par[3] != value))
+    ret = false;
+  return ret;
+}
+
+bool is_all(const in ivec4 array[3], const in ivec4 value)
+{
+  bool ret = true;
+  if ((array[0] != value))
+    ret = false;
+  if ((array[1] != value))
+    ret = false;
+  if ((array[2] != value))
+    ret = false;
+  return ret;
+}
+
+void set_all(out ivec4 array[3], const in ivec4 value)
+{
+  array[0] = value;
+  array[1] = value;
+  array[2] = value;
+}
+
+
+Filename: /home/oof/webgl_cleaned/ivec4_empty_in_ivec4_array_vert.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/all_bvec3_vert_ref.vert
+filename /home/oof/webgl_cleaned/all_bvec3_vert_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:19: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:20: 'gl_Position' : undeclared identifier
+ERROR: 0:20: 'assign' : l-value required (can't modify a const)
+ERROR: 0:20: '=' : dimension mismatch
+ERROR: 0:20: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+attribute vec4 gtf_Color;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+bool _all(in bvec3 a)
+{
+	bool temp = true;
+	if(!a[0]) temp = false;
+	if(!a[1]) temp = false;
+	if(!a[2]) temp = false;
+	return temp;
+}
+void main ()
+{
+	vec3 c = floor(4.0 * gtf_Color.rgb);
+	color = vec4(vec3(_all(bvec3(c))), 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+vec4 gtf_Color;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+bool _all(in bvec3 a)
+{
+  bool temp = true;
+  if (!a[0])
+    temp = false;
+  if (!a[1])
+    temp = false;
+  if (!a[2])
+    temp = false;
+  return temp;
+}
+
+void main()
+{
+  vec3 c = floor((4.0 * gtf_Color.rgb));
+  color = vec4(vec3(_all(bvec3(c))), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/all_bvec3_vert_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/structcopy_float_vert.vert
+filename /home/oof/webgl_cleaned/structcopy_float_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:19: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:20: 'gl_Position' : undeclared identifier
+ERROR: 0:20: 'assign' : l-value required (can't modify a const)
+ERROR: 0:20: '=' : dimension mismatch
+ERROR: 0:20: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+struct sabcd
+{
+	float a;
+	float b;
+	float c;
+	float d;
+};
+void main ()
+{
+	sabcd s = sabcd(1.0, 2.0, 4.0, 8.0);
+	sabcd s2 = sabcd(0.0, 0.0, 0.0, 0.0);
+	s2 = s;
+	color = vec4((s.a + s.b + s.c + s.d) / 15.0, (s2.a + s2.b + s2.c + s2.d) / 15.0, 1.0, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+struct sabcd {
+  float a;
+  float b;
+  float c;
+  float d;
+};
+
+void main()
+{
+  sabcd s = sabcd(1.0, 2.0, 4.0, 8.0);
+  sabcd s2 = sabcd(0.0, 0.0, 0.0, 0.0);
+  s2 = s;
+  color = vec4(((((s.a + s.b) + s.c) + s.d) / 15.0), ((((s2.a + s2.b) + s2.c) + s2.d) / 15.0), 1.0, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/structcopy_float_vert.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/length_float_vert_xvary_ref.vert
+filename /home/oof/webgl_cleaned/length_float_vert_xvary_ref.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:10: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:11: 'gl_Position' : undeclared identifier
+ERROR: 0:11: 'assign' : l-value required (can't modify a const)
+ERROR: 0:11: '=' : dimension mismatch
+ERROR: 0:11: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	color = vec4(vec3(gtf_Color.r), 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  color = vec4(vec3(gtf_Color.r), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/length_float_vert_xvary_ref.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/buffer_objects_pointSize.vert
+filename /home/oof/webgl_cleaned/buffer_objects_pointSize.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:6: 'attribute' :  supported in vertex shaders only
+ERROR: 0:11: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:12: 'gl_Position' : undeclared identifier
+ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+ERROR: 0:12: '=' : dimension mismatch
+ERROR: 0:12: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+ERROR: 0:13: 'gl_PointSize' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+attribute float gtf_PointSize;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	color = gtf_Color;
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+	gl_PointSize = gtf_PointSize;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+float gtf_PointSize;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  color = gtf_Color;
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+  gl_PointSize = gtf_PointSize;
+}
+
+
+Filename: /home/oof/webgl_cleaned/buffer_objects_pointSize.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/vec4_yxw_z_1vec3_1float_vert.vert
+filename /home/oof/webgl_cleaned/vec4_yxw_z_1vec3_1float_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:14: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:15: 'gl_Position' : undeclared identifier
+ERROR: 0:15: 'assign' : l-value required (can't modify a const)
+ERROR: 0:15: '=' : dimension mismatch
+ERROR: 0:15: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	vec4 lightloc = gtf_Vertex;
+	vec3 m = lightloc.yxw;
+	float z = lightloc.z;
+	vec4 a = vec4(m.y, m.x, z, m.z);
+	color = gtf_Color;
+	gl_Position = gtf_ModelViewProjectionMatrix * a;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  vec4 lightloc = gtf_Vertex;
+  vec3 m = lightloc.yxw;
+  float z = lightloc.z;
+  vec4 a = vec4(m.y, m.x, z, m.z);
+  color = gtf_Color;
+  gl_Position = (gtf_ModelViewProjectionMatrix * a);
+}
+
+
+Filename: /home/oof/webgl_cleaned/vec4_yxw_z_1vec3_1float_vert.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/log2_float_frag_xvary_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+const float ln2 = 0.69314718055994530941723212145818;
+void main ()
+{
+	float x = 31.0 * color.r + 1.0;
+	float y = 0.0;
+	float z;
+	int n = 50;
+	z = (x - 1.0) / (x + 1.0);
+	float p = z;
+	for(int i = 1; i <= 101; i += 2)
+	{
+		y += p / float(i);
+		p *= z * z;
+	}
+	y *= 2.0 / ln2;
+	gl_FragColor = vec4(y / 5.0, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+const float ln2 = 0.6931471805599453;
+
+void main()
+{
+  float x = ((31.0 * color.r) + 1.0);
+  float y = 0.0;
+  float z;
+  int n = 50;
+  z = ((x - 1.0) / (x + 1.0));
+  float p = z;
+  for (int i = 1; (i <= 101); (i += 2))
+  {
+    (y += (p / float(i)));
+    (p *= (z * z));
+  }
+  (y *= (2.0 / ln2));
+  gl_FragColor = vec4((y / 5.0), 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/log2_float_frag_xvary_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/vec3_zyx_1vec3_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	vec4 al = color;
+	vec3 m = al.xyz;
+	vec3 t = m.zyx;
+	vec4 a = vec4(t.z, t.y, t.x ,al.w);
+	gl_FragColor = a;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  vec4 al = color;
+  vec3 m = al.xyz;
+  vec3 t = m.zyx;
+  vec4 a = vec4(t.z, t.y, t.x, al.w);
+  gl_FragColor = a;
+}
+
+
+Filename: /home/oof/webgl_cleaned/vec3_zyx_1vec3_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/sin_vec2_frag_xvary_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+float lerp(float a, float b, float s)
+{
+	return a + (b - a) * s;
+}
+void main ()
+{
+	float sinValues[17];
+	sinValues[0] = 0.0;
+	sinValues[1] = 0.382683;
+	sinValues[2] = 0.707107;
+	sinValues[3] = 0.92388;
+	sinValues[4] = 1.0;
+	sinValues[5] = 0.92388;
+	sinValues[6] = 0.707107;
+	sinValues[7] = 0.382683;
+	sinValues[8] = 0.0;
+	sinValues[9] = -0.382683;
+	sinValues[10] = -0.707107;
+	sinValues[11] = -0.92388;
+	sinValues[12] = -1.0;
+	sinValues[13] = -0.923879;
+	sinValues[14] = -0.707107;
+	sinValues[15] = -0.382683;
+	sinValues[16] = 0.0;
+	const float M_PI = 3.14159265358979323846;
+	vec2 c = 2.0 * M_PI * color.rg;
+	vec2 arrVal = c * 2.546478971;
+	int arr0x = int(floor(arrVal.x));
+	int arr0y = int(floor(arrVal.y));
+	vec2 weight = arrVal - floor(arrVal);
+	vec2 sin_c = vec2(0.0, 0.0);
+	if (arr0x == 0)
+		sin_c.x = lerp(sinValues[0], sinValues[1], weight.x);
+	else if (arr0x == 1)
+		sin_c.x = lerp(sinValues[1], sinValues[2], weight.x);
+	else if (arr0x == 2)
+		sin_c.x = lerp(sinValues[2], sinValues[3], weight.x);
+	else if (arr0x == 3)
+		sin_c.x = lerp(sinValues[3], sinValues[4], weight.x);
+	else if (arr0x == 4)
+		sin_c.x = lerp(sinValues[4], sinValues[5], weight.x);
+	else if (arr0x == 5)
+		sin_c.x = lerp(sinValues[5], sinValues[6], weight.x);
+	else if (arr0x == 6)
+		sin_c.x = lerp(sinValues[6], sinValues[7], weight.x);
+	else if (arr0x == 7)
+		sin_c.x = lerp(sinValues[7], sinValues[8], weight.x);
+	else if (arr0x == 8)
+		sin_c.x = lerp(sinValues[8], sinValues[9], weight.x);
+	else if (arr0x == 9)
+		sin_c.x = lerp(sinValues[9], sinValues[10], weight.x);
+	else if (arr0x == 10)
+		sin_c.x = lerp(sinValues[10], sinValues[11], weight.x);
+	else if (arr0x == 11)
+		sin_c.x = lerp(sinValues[11], sinValues[12], weight.x);
+	else if (arr0x == 12)
+		sin_c.x = lerp(sinValues[12], sinValues[13], weight.x);
+	else if (arr0x == 13)
+		sin_c.x = lerp(sinValues[13], sinValues[14], weight.x);
+	else if (arr0x == 14)
+		sin_c.x = lerp(sinValues[14], sinValues[15], weight.x);
+	else if (arr0x == 15)
+		sin_c.x = lerp(sinValues[15], sinValues[16], weight.x);
+        else if (arr0x == 16)
+                sin_c.x = sinValues[16];
+	if (arr0y == 0)
+		sin_c.y = lerp(sinValues[0], sinValues[1], weight.y);
+	else if (arr0y == 1)
+		sin_c.y = lerp(sinValues[1], sinValues[2], weight.y);
+	else if (arr0y == 2)
+		sin_c.y = lerp(sinValues[2], sinValues[3], weight.y);
+	else if (arr0y == 3)
+		sin_c.y = lerp(sinValues[3], sinValues[4], weight.y);
+	else if (arr0y == 4)
+		sin_c.y = lerp(sinValues[4], sinValues[5], weight.y);
+	else if (arr0y == 5)
+		sin_c.y = lerp(sinValues[5], sinValues[6], weight.y);
+	else if (arr0y == 6)
+		sin_c.y = lerp(sinValues[6], sinValues[7], weight.y);
+	else if (arr0y == 7)
+		sin_c.y = lerp(sinValues[7], sinValues[8], weight.y);
+	else if (arr0y == 8)
+		sin_c.y = lerp(sinValues[8], sinValues[9], weight.y);
+	else if (arr0y == 9)
+		sin_c.y = lerp(sinValues[9], sinValues[10], weight.y);
+	else if (arr0y == 10)
+		sin_c.y = lerp(sinValues[10], sinValues[11], weight.y);
+	else if (arr0y == 11)
+		sin_c.y = lerp(sinValues[11], sinValues[12], weight.y);
+	else if (arr0y == 12)
+		sin_c.y = lerp(sinValues[12], sinValues[13], weight.y);
+	else if (arr0y == 13)
+		sin_c.y = lerp(sinValues[13], sinValues[14], weight.y);
+	else if (arr0y == 14)
+		sin_c.y = lerp(sinValues[14], sinValues[15], weight.y);
+	else if (arr0y == 15)
+		sin_c.y = lerp(sinValues[15], sinValues[16], weight.y);
+        else if (arr0y == 16)
+                sin_c.y = sinValues[16];
+	gl_FragColor = vec4(0.5 * sin_c + 0.5, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+float lerp(float a, float b, float s)
+{
+  return (a + ((b - a) * s));
+}
+
+void main()
+{
+  float sinValues[17];
+  sinValues[0] = 0.0;
+  sinValues[1] = 0.382683;
+  sinValues[2] = 0.707107;
+  sinValues[3] = 0.92388;
+  sinValues[4] = 1.0;
+  sinValues[5] = 0.92388;
+  sinValues[6] = 0.707107;
+  sinValues[7] = 0.382683;
+  sinValues[8] = 0.0;
+  sinValues[9] = -0.382683;
+  sinValues[10] = -0.707107;
+  sinValues[11] = -0.92388;
+  sinValues[12] = -1.0;
+  sinValues[13] = -0.923879;
+  sinValues[14] = -0.707107;
+  sinValues[15] = -0.382683;
+  sinValues[16] = 0.0;
+  const float M_PI = 3.141592653589793;
+  vec2 c = ((2.0 * M_PI) * color.rg);
+  vec2 arrVal = (c * 2.546478971);
+  int arr0x = int(floor(arrVal.x));
+  int arr0y = int(floor(arrVal.y));
+  vec2 weight = (arrVal - floor(arrVal));
+  vec2 sin_c = vec2(0.0, 0.0);
+  if ((arr0x == 0))
+    sin_c.x = lerp(sinValues[0], sinValues[1], weight.x);
+  else
+    if ((arr0x == 1))
+      sin_c.x = lerp(sinValues[1], sinValues[2], weight.x);
+    else
+      if ((arr0x == 2))
+        sin_c.x = lerp(sinValues[2], sinValues[3], weight.x);
+      else
+        if ((arr0x == 3))
+          sin_c.x = lerp(sinValues[3], sinValues[4], weight.x);
+        else
+          if ((arr0x == 4))
+            sin_c.x = lerp(sinValues[4], sinValues[5], weight.x);
+          else
+            if ((arr0x == 5))
+              sin_c.x = lerp(sinValues[5], sinValues[6], weight.x);
+            else
+              if ((arr0x == 6))
+                sin_c.x = lerp(sinValues[6], sinValues[7], weight.x);
+              else
+                if ((arr0x == 7))
+                  sin_c.x = lerp(sinValues[7], sinValues[8], weight.x);
+                else
+                  if ((arr0x == 8))
+                    sin_c.x = lerp(sinValues[8], sinValues[9], weight.x);
+                  else
+                    if ((arr0x == 9))
+                      sin_c.x = lerp(sinValues[9], sinValues[10], weight.x);
+                    else
+                      if ((arr0x == 10))
+                        sin_c.x = lerp(sinValues[10], sinValues[11], weight.x);
+                      else
+                        if ((arr0x == 11))
+                          sin_c.x = lerp(sinValues[11], sinValues[12], weight.x);
+                        else
+                          if ((arr0x == 12))
+                            sin_c.x = lerp(sinValues[12], sinValues[13], weight.x);
+                          else
+                            if ((arr0x == 13))
+                              sin_c.x = lerp(sinValues[13], sinValues[14], weight.x);
+                            else
+                              if ((arr0x == 14))
+                                sin_c.x = lerp(sinValues[14], sinValues[15], weight.x);
+                              else
+                                if ((arr0x == 15))
+                                  sin_c.x = lerp(sinValues[15], sinValues[16], weight.x);
+                                else
+                                  if ((arr0x == 16))
+                                    sin_c.x = sinValues[16];
+  if ((arr0y == 0))
+    sin_c.y = lerp(sinValues[0], sinValues[1], weight.y);
+  else
+    if ((arr0y == 1))
+      sin_c.y = lerp(sinValues[1], sinValues[2], weight.y);
+    else
+      if ((arr0y == 2))
+        sin_c.y = lerp(sinValues[2], sinValues[3], weight.y);
+      else
+        if ((arr0y == 3))
+          sin_c.y = lerp(sinValues[3], sinValues[4], weight.y);
+        else
+          if ((arr0y == 4))
+            sin_c.y = lerp(sinValues[4], sinValues[5], weight.y);
+          else
+            if ((arr0y == 5))
+              sin_c.y = lerp(sinValues[5], sinValues[6], weight.y);
+            else
+              if ((arr0y == 6))
+                sin_c.y = lerp(sinValues[6], sinValues[7], weight.y);
+              else
+                if ((arr0y == 7))
+                  sin_c.y = lerp(sinValues[7], sinValues[8], weight.y);
+                else
+                  if ((arr0y == 8))
+                    sin_c.y = lerp(sinValues[8], sinValues[9], weight.y);
+                  else
+                    if ((arr0y == 9))
+                      sin_c.y = lerp(sinValues[9], sinValues[10], weight.y);
+                    else
+                      if ((arr0y == 10))
+                        sin_c.y = lerp(sinValues[10], sinValues[11], weight.y);
+                      else
+                        if ((arr0y == 11))
+                          sin_c.y = lerp(sinValues[11], sinValues[12], weight.y);
+                        else
+                          if ((arr0y == 12))
+                            sin_c.y = lerp(sinValues[12], sinValues[13], weight.y);
+                          else
+                            if ((arr0y == 13))
+                              sin_c.y = lerp(sinValues[13], sinValues[14], weight.y);
+                            else
+                              if ((arr0y == 14))
+                                sin_c.y = lerp(sinValues[14], sinValues[15], weight.y);
+                              else
+                                if ((arr0y == 15))
+                                  sin_c.y = lerp(sinValues[15], sinValues[16], weight.y);
+                                else
+                                  if ((arr0y == 16))
+                                    sin_c.y = sinValues[16];
+  gl_FragColor = vec4(((0.5 * sin_c) + 0.5), 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/sin_vec2_frag_xvary_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/mat4_empty_inout_mat4_array_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+const mat4 mat_ones = mat4(1.0, 1.0, 1.0, 1.0,
+			   1.0, 1.0, 1.0, 1.0,
+			   1.0, 1.0, 1.0, 1.0,
+			   1.0, 1.0, 1.0, 1.0);
+const mat4 mat_zeros = mat4(0.0, 0.0, 0.0, 0.0,
+			    0.0, 0.0, 0.0, 0.0,
+			    0.0, 0.0, 0.0, 0.0,
+			    0.0, 0.0, 0.0, 0.0);
+mat4 function(inout mat4 par[2]);
+bool is_all(const in mat4 par, const in float value);
+bool is_all(const in mat4 array[2], const in mat4 value);
+void set_all(out mat4 array[2], const in mat4 value);
+void main ()
+{
+	mat4 par[2];
+	mat4 ret = mat_zeros;
+	float gray = 0.0;
+	set_all(par, mat_ones);
+	ret = function(par);
+	if(is_all(par, mat_zeros) && is_all(ret, 1.0))
+	{
+		gray = 1.0;
+	}
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+mat4 function(inout mat4 par[2])
+{
+	if(is_all(par, mat_ones))
+	{
+		set_all(par, mat_zeros);
+		return mat_ones;
+	}
+	else
+		return mat_zeros;
+}
+bool is_all(const in mat4 par, const in float value)
+{
+	bool ret = true;
+	if(par[0][0] != value)
+		ret = false;
+	if(par[0][1] != value)
+		ret = false;
+	if(par[0][2] != value)
+		ret = false;
+	if(par[0][3] != value)
+		ret = false;
+	if(par[1][0] != value)
+		ret = false;
+	if(par[1][1] != value)
+		ret = false;
+	if(par[1][2] != value)
+		ret = false;
+	if(par[1][3] != value)
+		ret = false;
+	if(par[2][0] != value)
+		ret = false;
+	if(par[2][1] != value)
+		ret = false;
+	if(par[2][2] != value)
+		ret = false;
+	if(par[2][3] != value)
+		ret = false;
+	if(par[3][0] != value)
+		ret = false;
+	if(par[3][1] != value)
+		ret = false;
+	if(par[3][2] != value)
+		ret = false;
+	if(par[3][3] != value)
+		ret = false;
+	return ret;
+}
+bool is_all(const in mat4 array[2], const in mat4 value)
+{
+	bool ret = true;
+	if(array[0] != value)
+		ret = false;
+	if(array[1] != value)
+		ret = false;
+	return ret;
+}
+void set_all(out mat4 array[2], const in mat4 value)
+{
+	array[0] = value;
+	array[1] = value;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+const mat4 mat_ones = mat4(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
+
+const mat4 mat_zeros = mat4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+mat4 function(inout mat4 par[2]);
+bool is_all(const in mat4 par, const in float value);
+bool is_all(const in mat4 array[2], const in mat4 value);
+void set_all(out mat4 array[2], const in mat4 value);
+void main()
+{
+  mat4 par[2];
+  mat4 ret = mat_zeros;
+  float gray = 0.0;
+  set_all(par, mat_ones);
+  ret = function(par);
+  if ((is_all(par, mat_zeros) && is_all(ret, 1.0)))
+  {
+    gray = 1.0;
+  }
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+mat4 function(inout mat4 par[2])
+{
+  if (is_all(par, mat_ones))
+  {
+    set_all(par, mat_zeros);
+    return mat_ones;
+  }
+  else
+    return mat_zeros;
+}
+
+bool is_all(const in mat4 par, const in float value)
+{
+  bool ret = true;
+  if ((par[0][0] != value))
+    ret = false;
+  if ((par[0][1] != value))
+    ret = false;
+  if ((par[0][2] != value))
+    ret = false;
+  if ((par[0][3] != value))
+    ret = false;
+  if ((par[1][0] != value))
+    ret = false;
+  if ((par[1][1] != value))
+    ret = false;
+  if ((par[1][2] != value))
+    ret = false;
+  if ((par[1][3] != value))
+    ret = false;
+  if ((par[2][0] != value))
+    ret = false;
+  if ((par[2][1] != value))
+    ret = false;
+  if ((par[2][2] != value))
+    ret = false;
+  if ((par[2][3] != value))
+    ret = false;
+  if ((par[3][0] != value))
+    ret = false;
+  if ((par[3][1] != value))
+    ret = false;
+  if ((par[3][2] != value))
+    ret = false;
+  if ((par[3][3] != value))
+    ret = false;
+  return ret;
+}
+
+bool is_all(const in mat4 array[2], const in mat4 value)
+{
+  bool ret = true;
+  if ((array[0] != value))
+    ret = false;
+  if ((array[1] != value))
+    ret = false;
+  return ret;
+}
+
+void set_all(out mat4 array[2], const in mat4 value)
+{
+  array[0] = value;
+  array[1] = value;
+}
+
+
+Filename: /home/oof/webgl_cleaned/mat4_empty_inout_mat4_array_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/const_mat4_copy_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+void main ()
+{
+	float x;
+	const mat4 a = mat4( 1.0,  2.0,  3.0,  4.0,
+	                     5.0,  6.0,  7.0,  8.0,
+	                     9.0, 10.0, 11.0, 12.0,
+	                    13.0, 14.0, 15.0, 16.0);
+	mat4 b = a;
+	bool elms = true;
+	if(b[0][0] !=  1.0) elms = false;
+	if(b[0][1] !=  2.0) elms = false;
+	if(b[0][2] !=  3.0) elms = false;
+	if(b[0][3] !=  4.0) elms = false;
+	if(b[1][0] !=  5.0) elms = false;
+	if(b[1][1] !=  6.0) elms = false;
+	if(b[1][2] !=  7.0) elms = false;
+	if(b[1][3] !=  8.0) elms = false;
+	if(b[2][0] !=  9.0) elms = false;
+	if(b[2][1] != 10.0) elms = false;
+	if(b[2][2] != 11.0) elms = false;
+	if(b[2][3] != 12.0) elms = false;
+	if(b[3][0] != 13.0) elms = false;
+	if(b[3][1] != 14.0) elms = false;
+	if(b[3][2] != 15.0) elms = false;
+	if(b[3][3] != 16.0) elms = false;
+	bool rows = true;
+	x = b[0][0] + b[1][0] + b[2][0] + b[3][0];
+	if(x < 28.0-0.1 || x > 28.0+0.1) rows = false;
+	x = b[0][1] + b[1][1] + b[2][1] + b[3][1];
+	if(x < 32.0-0.1 || x > 32.0+0.1) rows = false;
+	x = b[0][2] + b[1][2] + b[2][2] + b[3][2];
+	if(x < 36.0-0.1 || x > 36.0+0.1) rows = false;
+	x = b[0][3] + b[1][3] + b[2][3] + b[3][3];
+	if(x < 40.0-0.1 || x > 40.0+0.1) rows = false;
+	bool cols = true;
+	x = b[0][0] + b[0][1] + b[0][2] + b[0][3];
+	if(x < 10.0-0.1 || x > 10.0+0.1) cols = false;
+	x = b[1][0] + b[1][1] + b[1][2] + b[1][3];
+	if(x < 26.0-0.1 || x > 26.0+0.1) cols = false;
+	x = b[2][0] + b[2][1] + b[2][2] + b[2][3];
+	if(x < 42.0-0.1 || x > 42.0+0.1) cols = false;
+	x = b[3][0] + b[3][1] + b[3][2] + b[3][3];
+	if(x < 58.0-0.1 || x > 58.0+0.1) cols = false;
+	float gray = elms && rows && cols ? 1.0 : 0.0;
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  float x;
+  const mat4 a = mat4(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0);
+  mat4 b = a;
+  bool elms = true;
+  if ((b[0][0] != 1.0))
+    elms = false;
+  if ((b[0][1] != 2.0))
+    elms = false;
+  if ((b[0][2] != 3.0))
+    elms = false;
+  if ((b[0][3] != 4.0))
+    elms = false;
+  if ((b[1][0] != 5.0))
+    elms = false;
+  if ((b[1][1] != 6.0))
+    elms = false;
+  if ((b[1][2] != 7.0))
+    elms = false;
+  if ((b[1][3] != 8.0))
+    elms = false;
+  if ((b[2][0] != 9.0))
+    elms = false;
+  if ((b[2][1] != 10.0))
+    elms = false;
+  if ((b[2][2] != 11.0))
+    elms = false;
+  if ((b[2][3] != 12.0))
+    elms = false;
+  if ((b[3][0] != 13.0))
+    elms = false;
+  if ((b[3][1] != 14.0))
+    elms = false;
+  if ((b[3][2] != 15.0))
+    elms = false;
+  if ((b[3][3] != 16.0))
+    elms = false;
+  bool rows = true;
+  x = (((b[0][0] + b[1][0]) + b[2][0]) + b[3][0]);
+  if (((x < (28.0 - 0.1)) || (x > (28.0 + 0.1))))
+    rows = false;
+  x = (((b[0][1] + b[1][1]) + b[2][1]) + b[3][1]);
+  if (((x < (32.0 - 0.1)) || (x > (32.0 + 0.1))))
+    rows = false;
+  x = (((b[0][2] + b[1][2]) + b[2][2]) + b[3][2]);
+  if (((x < (36.0 - 0.1)) || (x > (36.0 + 0.1))))
+    rows = false;
+  x = (((b[0][3] + b[1][3]) + b[2][3]) + b[3][3]);
+  if (((x < (40.0 - 0.1)) || (x > (40.0 + 0.1))))
+    rows = false;
+  bool cols = true;
+  x = (((b[0][0] + b[0][1]) + b[0][2]) + b[0][3]);
+  if (((x < (10.0 - 0.1)) || (x > (10.0 + 0.1))))
+    cols = false;
+  x = (((b[1][0] + b[1][1]) + b[1][2]) + b[1][3]);
+  if (((x < (26.0 - 0.1)) || (x > (26.0 + 0.1))))
+    cols = false;
+  x = (((b[2][0] + b[2][1]) + b[2][2]) + b[2][3]);
+  if (((x < (42.0 - 0.1)) || (x > (42.0 + 0.1))))
+    cols = false;
+  x = (((b[3][0] + b[3][1]) + b[3][2]) + b[3][3]);
+  if (((x < (58.0 - 0.1)) || (x > (58.0 + 0.1))))
+    cols = false;
+  float gray = (((elms && rows) && cols) ? 1.0 : 0.0);
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/const_mat4_copy_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/step_vec3_frag_xvary_edgeconsthalf.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	const vec3 edge = vec3(0.5, 0.5, 0.5);
+	gl_FragColor = vec4(step(edge, color.rgb), 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  const vec3 edge = vec3(0.5, 0.5, 0.5);
+  gl_FragColor = vec4(step(edge, color.rgb), 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/step_vec3_frag_xvary_edgeconsthalf.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/structcopy_mat3_vert.vert
+filename /home/oof/webgl_cleaned/structcopy_mat3_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:26: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:27: 'gl_Position' : undeclared identifier
+ERROR: 0:27: 'assign' : l-value required (can't modify a const)
+ERROR: 0:27: '=' : dimension mismatch
+ERROR: 0:27: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+struct sabcd
+{
+ mat3 a;
+};
+void main ()
+{
+	sabcd s = sabcd(mat3(12.0, 29.0, 13.0, 26.0, 71.0, 63.0, 90.0, 118.0, 128.0) );
+	sabcd s2 = sabcd(mat3(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0) );
+	s2 = s;
+	float sum=0.0;
+	sum = sum + s2.a[0][0];
+	sum = sum + s2.a[0][1];
+	sum = sum + s2.a[0][2];
+	sum = sum + s2.a[1][0];
+	sum = sum + s2.a[1][1];
+	sum = sum + s2.a[1][2];
+	sum = sum + s2.a[2][0];
+	sum = sum + s2.a[2][1];
+	sum = sum + s2.a[2][2];
+	color = vec4( vec3(  sum / 550.0  ), 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+struct sabcd {
+  mat3 a;
+};
+
+void main()
+{
+  sabcd s = sabcd(mat3(12.0, 29.0, 13.0, 26.0, 71.0, 63.0, 90.0, 118.0, 128.0));
+  sabcd s2 = sabcd(mat3(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+  s2 = s;
+  float sum = 0.0;
+  sum = (sum + s2.a[0][0]);
+  sum = (sum + s2.a[0][1]);
+  sum = (sum + s2.a[0][2]);
+  sum = (sum + s2.a[1][0]);
+  sum = (sum + s2.a[1][1]);
+  sum = (sum + s2.a[1][2]);
+  sum = (sum + s2.a[2][0]);
+  sum = (sum + s2.a[2][1]);
+  sum = (sum + s2.a[2][2]);
+  color = vec4(vec3((sum / 550.0)), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/structcopy_mat3_vert.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/log2_float_frag_xvary01_ref.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+const float ln2 = 0.69314718055994530941723212145818;
+void main ()
+{
+	float x = (color.r + 0.01) / 1.01;
+	float y = 0.0;
+	float z;
+	int n = 50;
+	z = abs((x - 1.0) / (x + 1.0));
+	float p = z;
+	for(int i = 1; i <= 101; i += 2)
+	{
+		y += p / float(i);
+		p *= z * z;
+	}
+	y *= -2.0 / ln2;
+	gl_FragColor = vec4(y / -8.0, 0.0, 0.0, 1.0);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+const float ln2 = 0.6931471805599453;
+
+void main()
+{
+  float x = ((color.r + 0.01) / 1.01);
+  float y = 0.0;
+  float z;
+  int n = 50;
+  z = abs(((x - 1.0) / (x + 1.0)));
+  float p = z;
+  for (int i = 1; (i <= 101); (i += 2))
+  {
+    (y += (p / float(i)));
+    (p *= (z * z));
+  }
+  (y *= (-2.0 / ln2));
+  gl_FragColor = vec4((y / -8.0), 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/webgl_cleaned/log2_float_frag_xvary01_ref.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert
+filename /home/oof/webgl_cleaned/mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Color;
+attribute vec4 gtf_Vertex;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	const vec3 y = vec3(0.5, 0.5, 0.5);
+	const vec3 a = vec3(0.5, 0.5, 0.5);
+	color = vec4(mix(gtf_Color.rgb, y, a), 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Color;
+
+vec4 gtf_Vertex;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  const vec3 y = vec3(0.5, 0.5, 0.5);
+  const vec3 a = vec3(0.5, 0.5, 0.5);
+  color = vec4(mix(gtf_Color.rgb, y, a), 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/mat4_empty_empty_mat4_empty_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+mat4 function(mat4 par);
+bool is_all(const in mat4 par, const in float value);
+void set_all(out mat4 par, const in float value);
+void main ()
+{
+	mat4 par = mat4(1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0,
+			1.0, 1.0, 1.0, 1.0);
+	mat4 ret = mat4(0.0, 0.0, 0.0, 0.0,
+			0.0, 0.0, 0.0, 0.0,
+			0.0, 0.0, 0.0, 0.0,
+			0.0, 0.0, 0.0, 0.0);
+	float gray = 0.0;
+	ret = function(par);
+	if(is_all(par, 1.0) && is_all(ret, 1.0))
+	{
+		gray = 1.0;
+	}
+	gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+mat4 function(mat4 par)
+{
+	if(is_all(par, 1.0))
+	{
+		set_all(par, 0.0);
+		return mat4(1.0, 1.0, 1.0, 1.0,
+			    1.0, 1.0, 1.0, 1.0,
+			    1.0, 1.0, 1.0, 1.0,
+			    1.0, 1.0, 1.0, 1.0);
+	}
+	else
+		return mat4(0.0, 0.0, 0.0, 0.0,
+			    0.0, 0.0, 0.0, 0.0,
+			    0.0, 0.0, 0.0, 0.0,
+			    0.0, 0.0, 0.0, 0.0);
+}
+bool is_all(const in mat4 par, const in float value)
+{
+	bool ret = true;
+	if(par[0][0] != value)
+		ret = false;
+	if(par[0][1] != value)
+		ret = false;
+	if(par[0][2] != value)
+		ret = false;
+	if(par[0][3] != value)
+		ret = false;
+	if(par[1][0] != value)
+		ret = false;
+	if(par[1][1] != value)
+		ret = false;
+	if(par[1][2] != value)
+		ret = false;
+	if(par[1][3] != value)
+		ret = false;
+	if(par[2][0] != value)
+		ret = false;
+	if(par[2][1] != value)
+		ret = false;
+	if(par[2][2] != value)
+		ret = false;
+	if(par[2][3] != value)
+		ret = false;
+	if(par[3][0] != value)
+		ret = false;
+	if(par[3][1] != value)
+		ret = false;
+	if(par[3][2] != value)
+		ret = false;
+	if(par[3][3] != value)
+		ret = false;
+	return ret;
+}
+void set_all(out mat4 par, const in float value)
+{
+	par[0][0] = value;
+	par[0][1] = value;
+	par[0][2] = value;
+	par[0][3] = value;
+	par[1][0] = value;
+	par[1][1] = value;
+	par[1][2] = value;
+	par[1][3] = value;
+	par[2][0] = value;
+	par[2][1] = value;
+	par[2][2] = value;
+	par[2][3] = value;
+	par[3][0] = value;
+	par[3][1] = value;
+	par[3][2] = value;
+	par[3][3] = value;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+mat4 function(mat4 par);
+bool is_all(const in mat4 par, const in float value);
+void set_all(out mat4 par, const in float value);
+void main()
+{
+  mat4 par = mat4(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
+  mat4 ret = mat4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+  float gray = 0.0;
+  ret = function(par);
+  if ((is_all(par, 1.0) && is_all(ret, 1.0)))
+  {
+    gray = 1.0;
+  }
+  gl_FragColor = vec4(gray, gray, gray, 1.0);
+}
+
+mat4 function(mat4 par)
+{
+  if (is_all(par, 1.0))
+  {
+    set_all(par, 0.0);
+    return mat4(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
+  }
+  else
+    return mat4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+}
+
+bool is_all(const in mat4 par, const in float value)
+{
+  bool ret = true;
+  if ((par[0][0] != value))
+    ret = false;
+  if ((par[0][1] != value))
+    ret = false;
+  if ((par[0][2] != value))
+    ret = false;
+  if ((par[0][3] != value))
+    ret = false;
+  if ((par[1][0] != value))
+    ret = false;
+  if ((par[1][1] != value))
+    ret = false;
+  if ((par[1][2] != value))
+    ret = false;
+  if ((par[1][3] != value))
+    ret = false;
+  if ((par[2][0] != value))
+    ret = false;
+  if ((par[2][1] != value))
+    ret = false;
+  if ((par[2][2] != value))
+    ret = false;
+  if ((par[2][3] != value))
+    ret = false;
+  if ((par[3][0] != value))
+    ret = false;
+  if ((par[3][1] != value))
+    ret = false;
+  if ((par[3][2] != value))
+    ret = false;
+  if ((par[3][3] != value))
+    ret = false;
+  return ret;
+}
+
+void set_all(out mat4 par, const in float value)
+{
+  par[0][0] = value;
+  par[0][1] = value;
+  par[0][2] = value;
+  par[0][3] = value;
+  par[1][0] = value;
+  par[1][1] = value;
+  par[1][2] = value;
+  par[1][3] = value;
+  par[2][0] = value;
+  par[2][1] = value;
+  par[2][2] = value;
+  par[2][3] = value;
+  par[3][0] = value;
+  par[3][1] = value;
+  par[3][2] = value;
+  par[3][3] = value;
+}
+
+
+Filename: /home/oof/webgl_cleaned/mat4_empty_empty_mat4_empty_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/atan_vec2_vert_xvary.vert
+filename /home/oof/webgl_cleaned/atan_vec2_vert_xvary.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+ERROR: 0:13: 'gl_Position' : undeclared identifier
+ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+ERROR: 0:13: '=' : dimension mismatch
+ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: precision mediump float;
+precision mediump int;
+
+attribute vec4 gtf_Vertex;
+attribute vec4 gtf_Color;
+uniform mat4 gtf_ModelViewProjectionMatrix;
+varying vec4 color;
+void main ()
+{
+	const float M_PI = 3.14159265358979323846;
+	vec2 c = 4.0 * 2.0 * (gtf_Color.rg - 0.5);
+	color = vec4(atan(c) / M_PI + 0.5, 0.0, 1.0);
+	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 gtf_Vertex;
+
+vec4 gtf_Color;
+
+uniform mat4 gtf_ModelViewProjectionMatrix;
+
+vec4 color;
+
+void main()
+{
+  const float M_PI = 3.141592653589793;
+  vec2 c = ((4.0 * 2.0) * (gtf_Color.rg - 0.5));
+  color = vec4(((atan(c) / M_PI) + 0.5), 0.0, 1.0);
+  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+}
+
+
+Filename: /home/oof/webgl_cleaned/atan_vec2_vert_xvary.vert passed with orig: False and new: False
+Running /home/oof/webgl_cleaned/vec4_zwxy_1vec4_frag.frag
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+varying vec4 color;
+void main ()
+{
+	vec4 al = color;
+	vec4 m = al.zwxy;
+	vec4 a = vec4(m.z, m.w, m.x, m.y);
+	gl_FragColor = a;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+vec4 color;
+
+void main()
+{
+  vec4 al = color;
+  vec4 m = al.zwxy;
+  vec4 a = vec4(m.z, m.w, m.x, m.y);
+  gl_FragColor = a;
+}
+
+
+Filename: /home/oof/webgl_cleaned/vec4_zwxy_1vec4_frag.frag passed with orig: True and new: True
+Running /home/oof/webgl_cleaned/CorrectParse2_frag.frag
+Filename: /home/oof/webgl_cleaned/CorrectParse2_frag.frag failed roundtrip test!!!
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+const float FloatConst1 = 3.0 * 8.0, floatConst2 = 4.0;
+const bool BoolConst1 = true && true || false;
+const bool BoolConst2 = false || !false && false;
+void main ()
+{
+    float float1 = 4.0, float2 = floatConst2;
+    int int_1 = int(FloatConst1);
+    vec4 vec4_1;
+    vec3 vec3_1;
+    bool bool4, bool5;
+    bool4 = bool5;
+    bool4 = 4.0 > 5.0;
+    bool4 = !(3.2 != 0.0);
+    bool4 = bool(float1);
+    bool4 = bool(int_1);
+    float1 = float(bool4);
+    float1 = float(int_1);
+    int_1 = int(float1);
+    int_1 = int(bool4);
+    {
+        int a, b, c;
+        a = b;
+        b = c;
+        {
+            int b, c, d;
+            b = c;
+            c = d;
+            {
+                int a, d, e;
+                a = d;
+                d = e;
+            }
+            {
+                int a, b, c;
+                a = b;
+                b = c;
+            }
+        }
+        a = b;
+        b = c;
+    }
+    {
+        float f1, f2;
+        vec3 v31, v32;
+        max(f1, f2);
+        max(v31, v32);
+        vec4 v4 = vec4(3.0);
+        vec3 v3 = -vec3(2.0, 1.0, 3.0);
+        mat2 m2 = mat2(3.0, 4.0, 6.0, 3.0);
+    }
+    if (BoolConst1)
+        ++vec3_1;
+    else
+        --vec3_1;
+    if (BoolConst2)
+        ++vec3_1;
+    else
+        --vec3_1;
+    if (BoolConst1 || BoolConst2)
+        ++vec3_1;
+    else
+        --vec3_1;
+    if (BoolConst2 && BoolConst1)
+        ++vec3_1;
+    else
+        --vec3_1;
+    if (FloatConst1 != 0.0)
+        --int_1;
+    else
+        ++int_1;
+    if (0 != 0)
+        ++int_1;
+    else
+        --int_1;
+    bool4 = BoolConst1 && ! (int_1 != 0) && ! BoolConst1  && ! (FloatConst1 != 0.0) && (FloatConst1 != 0.0) && (float1 != 0.0);
+    float1 = 5 != 0 ? float1 : float(int_1);
+    float1 = 0 != 0 ? float1 : float(int_1);
+    if (float1 != float1)
+        ++int_1;
+    else
+        --int_1;
+    float1 = float1 != float1 ? float1 : float(int_1);
+    --int_1;
+    ++float1;
+    (vec4_1.x)--;
+    vec3_1++;
+	if (int_1 != 4)
+		discard;
+    float1 = 4.0 + 6.0;
+    int ii,jj,kk;
+    float ff;
+    ii = jj, kk, ff;
+    vec4_1 = vec4_1 + 2.0;
+    ivec4 iv;
+    iv = iv + 2;
+    gl_FragColor = vec4(float1+float1, float1, float1, float(int_1));
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+const float FloatConst1 = ((3.0 * 8.0) , floatConst2 = 4.0);
+
+const bool BoolConst1 = ((true && true) || false);
+
+const bool BoolConst2 = (false || (!false && false));
+
+void main()
+{
+  float float1 = (4.0 , float2 = floatConst2);
+  int int_1 = int(FloatConst1);
+  vec4 vec4_1;
+  vec3 vec3_1;
+  bool bool4, bool5;
+  bool4 = bool5;
+  bool4 = (4.0 > 5.0);
+  bool4 = !(3.2 != 0.0);
+  bool4 = bool(float1);
+  bool4 = bool(int_1);
+  float1 = float(bool4);
+  float1 = float(int_1);
+  int_1 = int(float1);
+  int_1 = int(bool4);
+  {
+    int a, b, c;
+    a = b;
+    b = c;
+    {
+      int b, c, d;
+      b = c;
+      c = d;
+      {
+        int a, d, e;
+        a = d;
+        d = e;
+      }
+      {
+        int a, b, c;
+        a = b;
+        b = c;
+      }
+    }
+    a = b;
+    b = c;
+  }
+  {
+    float f1, f2;
+    vec3 v31, v32;
+    max(f1, f2);
+    max(v31, v32);
+    vec4 v4 = vec4(3.0);
+    vec3 v3 = -vec3(2.0, 1.0, 3.0);
+    mat2 m2 = mat2(3.0, 4.0, 6.0, 3.0);
+  }
+  if (BoolConst1)
+    ++vec3_1;
+  else
+    --vec3_1;
+  if (BoolConst2)
+    ++vec3_1;
+  else
+    --vec3_1;
+  if ((BoolConst1 || BoolConst2))
+    ++vec3_1;
+  else
+    --vec3_1;
+  if ((BoolConst2 && BoolConst1))
+    ++vec3_1;
+  else
+    --vec3_1;
+  if ((FloatConst1 != 0.0))
+    --int_1;
+  else
+    ++int_1;
+  if ((0 != 0))
+    ++int_1;
+  else
+    --int_1;
+  bool4 = (((((BoolConst1 && !(int_1 != 0)) && !BoolConst1) && !(FloatConst1 != 0.0)) && (FloatConst1 != 0.0)) && (float1 != 0.0));
+  (float1 = (5 != 0) ? float1 : float(int_1));
+  (float1 = (0 != 0) ? float1 : float(int_1));
+  if ((float1 != float1))
+    ++int_1;
+  else
+    --int_1;
+  (float1 = (float1 != float1) ? float1 : float(int_1));
+  --int_1;
+  ++float1;
+  vec4_1.x--;
+  vec3_1++;
+  if ((int_1 != 4))
+    discard;
+  float1 = (4.0 + 6.0);
+  int ii, jj, kk;
+  float ff;
+  ((ii = jj , kk) , ff);
+  vec4_1 = (vec4_1 + 2.0);
+  ivec4 iv;
+  iv = (iv + 2);
+  gl_FragColor = vec4((float1 + float1), float1, float1, float(int_1));
+}
+
+
+Previous errors: #### BEGIN COMPILER 0 INFO LOG ####
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+New errors: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'floatConst2' : undeclared identifier
+ERROR: 0:4: 'assign' : l-value required (can't modify a const)
+ERROR: 0:4: '=' : global variable initializers must be constant expressions
+ERROR: 0:12: 'float2' : undeclared identifier
+ERROR: 0:12: 'floatConst2' : undeclared identifier
+ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
