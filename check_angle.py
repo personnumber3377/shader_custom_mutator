@@ -7,6 +7,7 @@ from typing import List
 
 CHECKER_PATH = "./angle_shader_checker"  # <-- change if needed
 TIMEOUT = 5.0
+GOOD_CORPUS_DIR = "good/"
 
 def check_file(path: str) -> tuple[bool, str]:
     """
@@ -52,6 +53,8 @@ def scan_directory(directory: str) -> None:
         ok, stderr = check_file(path)
 
         if ok:
+            # Copy good files to the good corpus directory.
+            os.system("cp "+str(path)+" ./"+str(GOOD_CORPUS_DIR))
             ok_count += 1
         else:
             fail_count += 1
