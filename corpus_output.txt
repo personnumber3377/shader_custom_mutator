@@ -1,0 +1,1391 @@
+['a2481877291c8302.sample.glsl', 'becacb17c3879d2f.sample.glsl', 'b3eafeeb844af409.sample.glsl', '08f07e486929f97a.sample.glsl', 'bf70a2c057ac5a0e.sample.glsl', '1d457be3a9d51984.sample.glsl', '22b3fbf72f47a49c.sample.glsl', 'c3b75cf451649583.sample.glsl', 'd96543bebe7e4026.sample.glsl', 'f6d76a9bcfe9f312.sample.glsl', 'cbb4e86da291b0a1.sample.glsl', 'e56de7defac63ffe.sample.glsl', 'f00f6f56be00c25e.sample.glsl', '55642304d872c520.sample.glsl', '4f6e48b13acbf4ca.sample.glsl', 'eccca63902b8eaaa.sample.glsl', '44d7a0c70dcc743b.sample.glsl', '089999293668cfbc.sample.glsl', '08e1df36c30291de.sample.glsl', 'feab3d4513545873.sample.glsl', '05dd9a1bc47073c7.sample.glsl', 'ac32b4b51adf0ca3.sample.glsl', 'b887439a02110d51.sample.glsl', '65ef08c4bc216a0b.sample.glsl', 'eff88eacd2764a47.sample.glsl', '74d0c03f5e343a81.sample.glsl', 'ae9d68ad2147d72a.sample.glsl', '3e29d8cdb6c2c31e.sample.glsl', '603f64e0f3e0a929.sample.glsl', '1889d7af909d28ca.sample.glsl', 'c6651890cafdc3ee.sample.glsl', 'f425710bd41a8161.sample.glsl', 'fcdd5b73430479b7.sample.glsl', '290382d7f5f5012b.sample.glsl', '11c394acbeda8a50.sample.glsl', '15f9052bde479f0b.sample.glsl', 'd250503b1dec87f8.sample.glsl', 'd74247d244e848d8.sample.glsl', '0d2e10eac0816008.sample.glsl', '0acd8a861acc233e.sample.glsl', '29ea20593dc97878.sample.glsl', '57e29c92fc8b2610.sample.glsl', '4a5a1071a17843d8.sample.glsl', '10361eaa316e189b.sample.glsl', 'a4d789fd42f11f49.sample.glsl', '371cb3c73d048775.sample.glsl', '9c32d972918f40c6.sample.glsl', '423a2084cbae5a00.sample.glsl', '71e6508e73f3bd22.sample.glsl', '485bff6cae1d2439.sample.glsl', 'a5c3a0055e99f8d2.sample.glsl', '9aff4fa8a44e9c68.sample.glsl', '6f5b40260d8aada2.sample.glsl', '0f521138e4349873.sample.glsl', 'a234cd731b10dc4a.sample.glsl', 'a6c6cba0fc702c69.sample.glsl', '2a8a3d428505b3d7.sample.glsl', '0e9ce5f2864ff639.sample.glsl', '7296f9a2b95ff600.sample.glsl', '6e308fd2c35b5607.sample.glsl', 'b8693b58cdc65040.sample.glsl', '916071e63a858328.sample.glsl', '0b0d94343d11fb7e.sample.glsl', 'a1609649e9d8d4fe.sample.glsl', '1c8a90c1db29ee2e.sample.glsl', '70ad008857708752.sample.glsl', '2f5a4c42094d6130.sample.glsl', '438566597fd726fc.sample.glsl', 'f89ca53e99683034.sample.glsl', '5f5abde7571f5af4.sample.glsl', '02794a719bfbb6b1.sample.glsl', '4d8d14c93b85b778.sample.glsl', '7a078a61290d75dc.sample.glsl', '71318dd89e3c9518.sample.glsl', 'cbbdedf54fe5aca5.sample.glsl', '5f8c709345f1f8e8.sample.glsl', '409694d327b01a87.sample.glsl', 'e1eec1cb6f312ba9.sample.glsl', 'a3251b281c431584.sample.glsl', '58a82767db0e692f.sample.glsl', 'c26186afe63fe566.sample.glsl', '968076da43b724fa.sample.glsl', 'b6895cf473b84d4b.sample.glsl', '6cb5151fcc6e6794.sample.glsl', '174c66561c571ef0.sample.glsl', 'a2a43ce9848c62c2.sample.glsl', '3475cf7e708f9b93.sample.glsl', '51983f56fe29ae50.sample.glsl', '7c8cadda2c21fcc4.sample.glsl', 'c6115e66b92ab0b5.sample.glsl', '9b11c7aedbda33f9.sample.glsl', '14b4def436a79648.sample.glsl', 'caf899226f382441.sample.glsl', 'cdaeb448f8e609d2.sample.glsl', 'ee5964f7a8773863.sample.glsl', '46aa00cf2d32fb4b.sample.glsl', '2e4a5607fdc749a5.sample.glsl', 'a665cab423e4b881.sample.glsl', '190097831a3302a2.sample.glsl', '9a06574258334a26.sample.glsl', '2cd2ceb49bbbb38b.sample.glsl', '5296225c2af66121.sample.glsl', 'b97eba3db7f64518.sample.glsl', '12d96de229b7bc14.sample.glsl', '81a11a86737859cd.sample.glsl', '2d41cccf01d49f46.sample.glsl', '8616f9ab4a224079.sample.glsl', 'cbfa409913d107b8.sample.glsl', '0ab0764066d6035a.sample.glsl', 'f833e5872b046f3b.sample.glsl', '141bfc6120cfff60.sample.glsl', '3a7531a21a9334fc.sample.glsl', 'a80dc27b44371a28.sample.glsl', 'c9a9e9ec635b1991.sample.glsl', '9c234a92b122a6d8.sample.glsl', 'd299d6f4197c0444.sample.glsl', '5dce4b33eaba1b33.sample.glsl', '902c54b800e2235b.sample.glsl', 'f596aba36f1eb574.sample.glsl', '0240019c1b213715.sample.glsl', '9fbb61849da35f1b.sample.glsl', 'd1264a23ee3f004d.sample.glsl', 'ed9e94d7fe7ec0de.sample.glsl', 'c3a99a3af180a56a.sample.glsl', '279d58693ac3833d.sample.glsl', '576a75c3840eb7ad.sample.glsl', 'f13409e6a47c8874.sample.glsl', '1604254eb362239a.sample.glsl', 'ce495482d58ba727.sample.glsl', 'd50ae36881b18db8.sample.glsl', 'e8ec4e6206f6cb80.sample.glsl', 'c316acbbb6f14dd3.sample.glsl', '8cf7f36f4b172287.sample.glsl', '9b9fc4c23e01214e.sample.glsl', 'f9874e7893959932.sample.glsl', 'a78c11bc63e37b5e.sample.glsl', '5aeb2882c10bd3ff.sample.glsl', '3cedcf2f7118b972.sample.glsl', '1c0bb0fe8a28fbf8.sample.glsl', '6f38538a9f13b7c7.sample.glsl', '5cfdf98d9f7554de.sample.glsl', '04ae384a70424b9d.sample.glsl', 'c5d81b643e338281.sample.glsl', 'ac5279e18e01dfed.sample.glsl', '0d990eb984edaff2.sample.glsl', '74f2495203c900b6.sample.glsl', '3d07f4eff4d93d90.sample.glsl', 'a34b86986bc48165.sample.glsl', 'ec054fd741ff6c75.sample.glsl', 'b919f86119f50e1a.sample.glsl', 'f57721ffa6158851.sample.glsl', 'd1c673c1605d142e.sample.glsl', 'a6e7650d60b42a58.sample.glsl', '9b7a506aa1180e23.sample.glsl', '7467918df8a22c05.sample.glsl', 'e62e22f176b19ff1.sample.glsl', '403b1f4352888d82.sample.glsl', 'df935867a435581c.sample.glsl', '764af1c4706ce4c3.sample.glsl', '400a269791ee38d5.sample.glsl', '19fc947841920b75.sample.glsl', '28acbc74de09d67e.sample.glsl', '14d10ab7ab47351f.sample.glsl', '905c264cd06a1a7a.sample.glsl', '7340730b1340236d.sample.glsl', '72937189ce57f8e0.sample.glsl', '1edf9c45e0fb6dc2.sample.glsl', '6759124157fb6691.sample.glsl', '9c1df2e1559dd90a.sample.glsl', '9b297667d572b4c3.sample.glsl', '0218c4788ce5b0e4.sample.glsl', 'a5bb8b3b9aaa0545.sample.glsl', 'fb0da32605ecffe3.sample.glsl', 'd621b2c4b8450c1f.sample.glsl', '4f30e416bd8e6e57.sample.glsl', 'fd7147337aee9ae3.sample.glsl', '72401f8b046ad61e.sample.glsl', '50ce5190537e0189.sample.glsl', '3bf7f95899b4e1a5.sample.glsl', '3fba354184ddb6c4.sample.glsl', '97951ff5f56721df.sample.glsl', 'baf8949f632cd38f.sample.glsl', '808a059de15460a5.sample.glsl', '35314423cbfa4741.sample.glsl', '2dd0adb90a0e601f.sample.glsl', 'd3597dbc023ea2bd.sample.glsl', '3666644c801e86e3.sample.glsl', '569fe894b9273ff5.sample.glsl', '81f5194972b68d5f.sample.glsl', '3625fa402d8f1b07.sample.glsl', '9e2d1a5e104f1592.sample.glsl', '2bd8c3607d663ffa.sample.glsl', '36ab6df8aa09e123.sample.glsl', 'ed45c6bf8b517582.sample.glsl', 'bb2ac7ecd30ad222.sample.glsl', '300a2dc9b0bf554a.sample.glsl', 'f358a523cbc92362.sample.glsl', '53a8af71b1455e9b.sample.glsl', '7b2cb03d42a1aa9a.sample.glsl', 'c730b4d11be275e3.sample.glsl', 'd1172c9ed5ac5c42.sample.glsl', 'd520d41c0fccb085.sample.glsl', 'cbc8b2897802aec2.sample.glsl', 'ba0475d9cd7f74ee.sample.glsl', '3a794489759470ad.sample.glsl', '1e8a26f622d967dd.sample.glsl', '2e0d96ae6993810d.sample.glsl', '7a18bc24fb615511.sample.glsl', 'bc5ab76d00867fa0.sample.glsl', '2be5568b58d9c022.sample.glsl', 'cf13878f48460a08.sample.glsl', '3689c522768688a2.sample.glsl', 'f981966f8ac1c235.sample.glsl', 'b686d164b4008e64.sample.glsl', '5eb9b8b62cb6feb3.sample.glsl', '95088cb15f2573f3.sample.glsl', 'c7811a4a1f5253f9.sample.glsl', 'f122431ff33d95cb.sample.glsl', '56be35001146a0b0.sample.glsl', '03117bfb770bf780.sample.glsl', '2f2bf44892b0a9b7.sample.glsl', 'b1e3d0bae4b9bde8.sample.glsl', '030fa7b74d74b919.sample.glsl', 'eefa1f016aef1434.sample.glsl', '1a4a1609babaabaf.sample.glsl', '584696f7f0ce5423.sample.glsl', 'f5d0e915aeab16be.sample.glsl', 'b4ec8773d3186c44.sample.glsl', 'd54068e495d911f6.sample.glsl', '9d5d563a420f6c21.sample.glsl', 'e860915004f68493.sample.glsl', '8da7c1016ca0c355.sample.glsl', 'c77aa3969b76f3cb.sample.glsl', 'e14edab21de2410f.sample.glsl', '8ea496fa14b61ae4.sample.glsl', 'ee2d8a9c289aad51.sample.glsl', '4908120781ea3b13.sample.glsl', '9c664f761a453651.sample.glsl', '5b0343949e2fdaae.sample.glsl', '9d8949bbd4b6c4a2.sample.glsl', 'ccb8a03d11154007.sample.glsl', '325ddc0475cf630a.sample.glsl', 'd2d85ec65b5ef349.sample.glsl', 'e8edd818ef2e3dc2.sample.glsl', '93b447c75b9bde24.sample.glsl', '60b16282d32b61ea.sample.glsl', 'c0ed70dd6a4c38e8.sample.glsl', '95ba0f7810891082.sample.glsl', '68955aacdc88924c.sample.glsl', '1218b5a1f7a581d6.sample.glsl', '5ceaa7a4b39ba1f5.sample.glsl', '0f792a0fb73aa505.sample.glsl', '1ec881678a2f6a85.sample.glsl', '71950500c12e263b.sample.glsl', '8b3eaab9c0674153.sample.glsl', 'fbcaf6a7164ab88f.sample.glsl', 'a08280e8be7629fd.sample.glsl', '7f2269e260fdac35.sample.glsl', '54d3b10554da387d.sample.glsl', '95546aa0db4c4af7.sample.glsl', 'ced9fb19cc9a8ff1.sample.glsl', '32b528016917a699.sample.glsl', 'ca74a216c4ae7137.sample.glsl', '9b53d12efc89c7ef.sample.glsl', 'd96a195e5b46788c.sample.glsl', '18c5712ec88088a8.sample.glsl', '3e8ec1edc5b7bc1f.sample.glsl', '02809ffc8bad9f97.sample.glsl', '2fd9cf0251f4af8e.sample.glsl', '261786c292882f9f.sample.glsl', '896bbd0b48c7953b.sample.glsl', 'd59a3d8e3bc4f036.sample.glsl', 'c99b52b6f9f47675.sample.glsl', '4c54428f9966f26b.sample.glsl', 'bb54d1a9d7846e31.sample.glsl', '2f7cba4583cfa62f.sample.glsl', '59ccd5b59bd6457e.sample.glsl', 'b349cdf53f9157cf.sample.glsl', '04cbf9b468e42344.sample.glsl', 'b6e4656a50d5a604.sample.glsl', '751260ce67979bc4.sample.glsl', '32df3518a1df4d66.sample.glsl', '954d77222da60367.sample.glsl', 'e1bc65c1f6da7c2c.sample.glsl', '3ab596308a11d91d.sample.glsl', '7dd1f58ffa514143.sample.glsl', '28258a763bfe0f6c.sample.glsl', '706d1283e6b12608.sample.glsl', 'd33f36a5d551388d.sample.glsl', '85607202d8fe7375.sample.glsl', '27481c357b06a77c.sample.glsl', 'fd7123c4397757d8.sample.glsl', 'ee35d4237d95ffd9.sample.glsl', '61bceee3831dfde5.sample.glsl', '9583d4d3cf7d8988.sample.glsl', '4855f98c57e1a2da.sample.glsl', '4ca545f4ac3a51a9.sample.glsl', '2293c65ac3d8a463.sample.glsl', '21b09039f7a0cd05.sample.glsl', '592f4cd3075ed93e.sample.glsl', 'a7af7851bf0d80ae.sample.glsl', '59102447da116a4c.sample.glsl', '90daeac1e87e2b2a.sample.glsl', 'e34f09958116f0cf.sample.glsl', '414f91774385972d.sample.glsl', 'c74e6a90abdf2f79.sample.glsl', '078a840ca8611b8d.sample.glsl', '0614cf6b590497d7.sample.glsl', 'eb60d50171d0eefd.sample.glsl', '01cdc6a78281fb7a.sample.glsl', '9b0c0a8b844337fd.sample.glsl', '5c02fe1ced861ab6.sample.glsl', 'd8321bbc64d46967.sample.glsl', '5d3f3c5b71f2c520.sample.glsl', 'c57f0f167dec09f2.sample.glsl', '35b5095ef2b14459.sample.glsl', 'b028b95668e537f4.sample.glsl', '0068e34ddccea471.sample.glsl', 'c5719d4cf67ab11c.sample.glsl', '619d8c1427b781f3.sample.glsl', '54b5f9d545a97c36.sample.glsl', 'aa103e997b04b3a9.sample.glsl', 'effb9c88b11f5136.sample.glsl', '89f2d0bf61ff425e.sample.glsl', '229499cf2da7083a.sample.glsl', '939e0d738075c528.sample.glsl', 'aa26ca732a265075.sample.glsl', '0d3fa9cdfadb4b4f.sample.glsl', '46ada6eb126ceea3.sample.glsl', '630854173ed2d497.sample.glsl', '110e7718adbccd5f.sample.glsl', '9f95ee4c80e62a1c.sample.glsl', 'e7fb57cb0aefd66c.sample.glsl', 'ede55d93b7c7f530.sample.glsl', '0e09fdaa21ec909a.sample.glsl', '0b99a989f8b0c67d.sample.glsl', 'b03d4895cd97934f.sample.glsl', '0436a6a9f3e5f60d.sample.glsl', '019155052a2e8e12.sample.glsl', 'fa3d8ec149c01b12.sample.glsl', '7ebc365b869c68f1.sample.glsl', '82981abb94a80c42.sample.glsl', 'bf9acc9911b2d3ec.sample.glsl', '41cb66a63fb5701f.sample.glsl', '06ae3ac262494206.sample.glsl', '7d324d9505ef0b3d.sample.glsl', '05230fc34c5dad70.sample.glsl', '856da2ef9b2db118.sample.glsl', '815f9f48be0345ba.sample.glsl', '307f489d4a446690.sample.glsl', 'ab97008c274887cf.sample.glsl', '774f72573db42a7c.sample.glsl', 'b85eeefe80cfa5df.sample.glsl', 'c29dfdd16ab00a61.sample.glsl', '37ca8944318836dd.sample.glsl', '8654eb33b9c75335.sample.glsl', '3af35c6430d76a0f.sample.glsl', 'fb0dc1a3f2ad826e.sample.glsl', '3893f011701db474.sample.glsl', '0ca531e3a6fd29f8.sample.glsl', 'd8c881ca379ad273.sample.glsl', 'e3f19f5b62dbce73.sample.glsl', 'c65656b321be5314.sample.glsl', '419a827fb5d9f71a.sample.glsl', '60dea32320d0d22e.sample.glsl', '08b457b8fc810577.sample.glsl', 'd91bd0a9f36217ad.sample.glsl', '12c0ef77d8a4bd5a.sample.glsl', '5f8e79e0bbcd9a18.sample.glsl', '07e2aa1af0ec467a.sample.glsl', 'be7f6205d412d6bc.sample.glsl', '8f9b2630d24a791d.sample.glsl', '7029a297a3aad0d9.sample.glsl', '1d81015f027c7161.sample.glsl', 'f7b159b6125e011c.sample.glsl', '926610c9d625973a.sample.glsl', '1108009d69063d1f.sample.glsl', '7f4ad151ce613418.sample.glsl', 'a99bf9b9f5e6e6da.sample.glsl', '7c7422121ed01b24.sample.glsl', '15972ea7c3c3d36d.sample.glsl', '0a584b6da0460366.sample.glsl', '5ccd2e3550cf632c.sample.glsl', '36d3bd0a929b2894.sample.glsl', 'd7af821b00bfd98a.sample.glsl', 'c9facb3708f6df27.sample.glsl', '465150aff69274c4.sample.glsl', 'b98e8f5fed1923f0.sample.glsl', '763eaf557c066616.sample.glsl', 'f32b959f4c47175e.sample.glsl', '0427c35284f6719b.sample.glsl', '024775cca14ddd13.sample.glsl', '9beadae81ce2f46f.sample.glsl', 'c69b0f39d112d674.sample.glsl', 'a467f04973d98049.sample.glsl', '7511f727980e7807.sample.glsl', '05fdf989b7705a62.sample.glsl', '2992c40f279e777b.sample.glsl', '843c71a04532510c.sample.glsl', '107ec84067127948.sample.glsl', 'ee0a9d21b081818d.sample.glsl', '6d9433b4c50a9b67.sample.glsl', '81be68bdac9f2980.sample.glsl', '21acaa02c851b9b1.sample.glsl', '569f98adaa091617.sample.glsl', '5cec1710d6b73753.sample.glsl', '3c20a2962cd44d34.sample.glsl', '6e3f0a2b1e2f5fbb.sample.glsl', '5db55f0e998556a5.sample.glsl', '6d9fff35474afcb9.sample.glsl', '44230102ed061790.sample.glsl', '14f4e02b31ba590b.sample.glsl', 'c2766deaea2f639c.sample.glsl', '93d0a68601a7b164.sample.glsl', '7d0926f5d4cb9eaa.sample.glsl', 'eb88f6aabe6b8daf.sample.glsl', '399647c52d773fe1.sample.glsl', 'f3ccfd7fc920357a.sample.glsl', 'c93bd486c1fb54a8.sample.glsl', 'be3f25cb6364d5eb.sample.glsl', 'c4d14accc7a066bd.sample.glsl', '8fc4055fb1628a04.sample.glsl', 'f53537b373c8892c.sample.glsl', 'f45ad3e84f553f43.sample.glsl', '5261d5765b21cd88.sample.glsl', '9e928e336cf780c7.sample.glsl', 'a5efb8aebefbcabc.sample.glsl', '5beb2eea160e5cf9.sample.glsl', '546f7f7092e1a8dc.sample.glsl', '388c8b558fce26be.sample.glsl', 'da7a09208fed8987.sample.glsl', '30ce63c38b6f2093.sample.glsl', '3812a5260b36e29e.sample.glsl', '5ae5b2cf5f005263.sample.glsl', '73ca6d593f4d544f.sample.glsl', '79bf6142592bb99f.sample.glsl', 'b698c2d01fa0c261.sample.glsl', '7fa5ab9c2d327516.sample.glsl', '558f226b32b42ba5.sample.glsl', 'd3f2086f8f1554ba.sample.glsl', '0059daeec6e2bee5.sample.glsl', '46bb9c625ceec0f9.sample.glsl', 'e11e8960b3a47e48.sample.glsl', '64a4e2ff68bd38a2.sample.glsl', '1a35de41b15b1275.sample.glsl', '4b74f6d327e864db.sample.glsl', '181b994cc645fcf5.sample.glsl', 'a7f3475413b1e7d6.sample.glsl', '5e38b56896dfc1fe.sample.glsl', 'ba0db5d1ea8df630.sample.glsl', 'd9e00ac719b15d3d.sample.glsl', '51cf44d8e1318302.sample.glsl', 'dc31ff9d9c835ea3.sample.glsl', '619abb116ee39fc7.sample.glsl', 'bd0df4632d5a1893.sample.glsl', 'fdeeb0437f97a5a4.sample.glsl', 'ffcca9e9bf7b7eb0.sample.glsl', '94cbf7193da87640.sample.glsl', '333660822c03b19c.sample.glsl', '5da4229430bc376b.sample.glsl', '0dd8050593b7cdd7.sample.glsl', 'dcdf26102ede8524.sample.glsl', 'c4bcd3f7599e5f44.sample.glsl', '0362d5439bc3b715.sample.glsl', '97fe950c2a619b4c.sample.glsl', '9e0117b2c0d97368.sample.glsl', 'c7bdc1c2c72e6535.sample.glsl', '31f6ee38e7fa6014.sample.glsl', 'eeab0c869a5e6f0b.sample.glsl', '7d4ca5d00b047df5.sample.glsl', '34c77093dc72c13d.sample.glsl', 'f948eace4c799980.sample.glsl', 'f58c90c1d92ede25.sample.glsl', '91734c16537aeea5.sample.glsl', '68f2e52778de8115.sample.glsl', '062dc567576be2a0.sample.glsl', 'b989a270bc0dea43.sample.glsl', '81d62307c19d5167.sample.glsl', '64cff163c2bc4218.sample.glsl', '70f6f8ff2ea41ac0.sample.glsl', '709a31fae2b8e417.sample.glsl', '3b1badc8397a7e47.sample.glsl', '26dc4079c44b6bcc.sample.glsl', '48f3a2e603d6cd15.sample.glsl', 'cd3f260dda77a1ea.sample.glsl', '3348072e21d3f653.sample.glsl', 'a7179fdd6c314d2b.sample.glsl', '10bc61b6336cc193.sample.glsl', '5ffdbd059623ff78.sample.glsl', '82afbcb7ccbb1a22.sample.glsl', 'f4c619e40ebf23d5.sample.glsl', '051ed850a8080488.sample.glsl', '341b59f37e8d528b.sample.glsl', 'e8520643787a778b.sample.glsl', 'f2cbcdbe1978cd3b.sample.glsl', 'fe9339a08d815a26.sample.glsl', 'd31e0cbfc2417502.sample.glsl', '2ccaed6815dd78e7.sample.glsl', 'bf5357aae5adb812.sample.glsl', 'ebbb47561324e7f3.sample.glsl', '0e1f8d77676d355e.sample.glsl', 'd02d9838bb4b2793.sample.glsl', 'ce59d80692c1ac92.sample.glsl', '6f4d7f0bae10a61a.sample.glsl', '36a771f53658c618.sample.glsl', '97b70d19fab9e2c5.sample.glsl', '735fd16180981d73.sample.glsl', 'e6759dfebb7fead3.sample.glsl', 'b427965af0ddacd8.sample.glsl', '67d8abe5cf054266.sample.glsl', '7f6f2bb5006dd45a.sample.glsl', '6535cd6ffe79e062.sample.glsl', 'c15ff8d225f97cca.sample.glsl', 'caae2790cd4efc4f.sample.glsl', '89522f151ea9b2bd.sample.glsl', '650f35e49810f495.sample.glsl', 'fb865c7f2735d667.sample.glsl', '05e08bab2ed764b1.sample.glsl', 'd239066a7f5104b6.sample.glsl', 'c9627fed730b2709.sample.glsl', '1bea270539eae493.sample.glsl', '08ab50fcdf16c230.sample.glsl', '6e25b566c31a0b71.sample.glsl', '6154edc292700bf1.sample.glsl', 'd7e74c29de075e95.sample.glsl', 'e9e7f9dae436b128.sample.glsl', '3886f481689e0930.sample.glsl', '54c74bd768eebb6c.sample.glsl', '01d6ec78409a3167.sample.glsl', '00d99769a10a7e78.sample.glsl', 'c19b399eedf4f6d3.sample.glsl', '7d6344ee1c79ca92.sample.glsl', 'fc390633eb92225c.sample.glsl', '88fd96ede96f8bc2.sample.glsl', '50c9b03243391d0c.sample.glsl', '95b4e002df136c9b.sample.glsl', '79afe27b24d09612.sample.glsl', '839f9757f21197c6.sample.glsl', '25a5690dc32a4f95.sample.glsl', '67ad9bdb3aa91774.sample.glsl', '54b6a5cd2e9b61bd.sample.glsl', '0027f40047ac1555.sample.glsl', 'a17a84661ae3dad8.sample.glsl', '9fe9c04167400d11.sample.glsl', '111e1bbd497b792c.sample.glsl', 'ec2ba724b2cf90b9.sample.glsl', 'f84376f69027be12.sample.glsl', '7976b9d9656a1e96.sample.glsl', '1cfd1f6c3c374eef.sample.glsl', '3b7b49856e9a1756.sample.glsl', '0860325f067bcf38.sample.glsl', 'd63cb4b76bb20758.sample.glsl', 'b538cca59cd0007a.sample.glsl', 'e4c5c387152d3678.sample.glsl', '910ff8707a134c76.sample.glsl', '9d95df98fb6f8bb0.sample.glsl', '1b83ed8bdb39540b.sample.glsl', '5035c40820dd55ea.sample.glsl', '657fc7287b6412f3.sample.glsl', '76c983bbbfbb28c1.sample.glsl', 'ea09fd57b6f97237.sample.glsl', '46d4adffdce363ca.sample.glsl', '0ba9b7ce2327dad0.sample.glsl', '2a4d0861d940703e.sample.glsl', 'f54937aacd7aca4f.sample.glsl', 'db8b4a657b05a6e8.sample.glsl', 'c982c78148b2bc20.sample.glsl', '8bdec8199b411458.sample.glsl', '47ae6f99fdc9f809.sample.glsl', '291f6bc6932debe6.sample.glsl', '0ec919c43e957727.sample.glsl', '62e18eeeca9e7c32.sample.glsl', '5789c2a3300ef2c0.sample.glsl', 'f727c63f9b722081.sample.glsl', 'ec780a4b21ab2e49.sample.glsl', '025c95c8ac1c04d4.sample.glsl', '47f4a10281867aae.sample.glsl', 'f8791569e3769feb.sample.glsl', 'deac87ba236a4543.sample.glsl', 'f6acf9b8bfcb4d83.sample.glsl', '49b0053fe5443a35.sample.glsl', '0d5442a7c57e87a4.sample.glsl', 'd9053eb3dad80f0a.sample.glsl', 'd015c213a7496993.sample.glsl', '61dab6b49dea1237.sample.glsl', '376afbc5a17b7578.sample.glsl', '69c4c3992e208e6f.sample.glsl', '70a7edb967e546e6.sample.glsl', '924173755d629248.sample.glsl', '32662a00c23cc4f2.sample.glsl', '0091e28b7a4d06d0.sample.glsl', '1e4999e4112fec63.sample.glsl', 'ce6fabc4e52ef11a.sample.glsl', 'e577488d5dccbeda.sample.glsl', '5471170bdfd21e26.sample.glsl', '0e6d29333efd5fd9.sample.glsl', '0662671cf235ae35.sample.glsl', 'e6ef6644ea752d2a.sample.glsl', '0a7d6ef3157b365b.sample.glsl', 'eda6e7963b27cebc.sample.glsl', 'fbfbd5d5c13e8eb1.sample.glsl', '648110fee624d302.sample.glsl', '4e101ea165c81291.sample.glsl', '60feae3e56b28780.sample.glsl', '47a8beabf11d6fe5.sample.glsl', '9385914294139280.sample.glsl', '85827ec3ad6157be.sample.glsl', '4d803e5688392d43.sample.glsl', '05d3191389206384.sample.glsl', '69301b20c9cd797d.sample.glsl', '6c8170670491b8a8.sample.glsl', '452f64d751dbe08c.sample.glsl', '4a807715f157805c.sample.glsl', 'a697a35103eb7cb1.sample.glsl', 'd2f53756c5fadea5.sample.glsl', '6e35f2c9c51a30a7.sample.glsl', '576ec4c6a51ab854.sample.glsl', '47a8161eb321913c.sample.glsl', 'b31955f32df1f19a.sample.glsl', '1fe73e16b55e6691.sample.glsl', '90370b4d0824e12b.sample.glsl', '3f06ed60961f4ba9.sample.glsl', '436c7d0fd0c315c6.sample.glsl', 'd099ea97b29ed44f.sample.glsl', 'b69dbe88769d590e.sample.glsl', '61a669ec141799ee.sample.glsl', '5e5406185563efd9.sample.glsl', 'b130daf6aee5554b.sample.glsl', '3e5e14548d1e2c1a.sample.glsl', '2517f529b2b35814.sample.glsl', '8565b0c18de51cea.sample.glsl', 'd35570dc1b25bbef.sample.glsl', '4f5035c744d7d8c6.sample.glsl', '84ba2fb1b2a0cae8.sample.glsl', '9acfd9a260c86e62.sample.glsl', '6b4f021361a84049.sample.glsl', '09cc8d09cf72c92c.sample.glsl', '281505f62aaf1374.sample.glsl', '508fd07bd876fc13.sample.glsl', '21dc8aa4ac711de3.sample.glsl', '9b0430719d6d0aad.sample.glsl', '7f5551ee42d4b5fe.sample.glsl', '599347c3d9e19584.sample.glsl', '8c0aeb8a2c6526d0.sample.glsl', '818b5a4769efb0b9.sample.glsl', '62fea8510e8e7739.sample.glsl']
+Running /home/oof/angle_corpus_sources/a2481877291c8302.sample.glsl
+filename /home/oof/angle_corpus_sources/a2481877291c8302.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_blend_func_extended' : extension is not supported
+ERROR: 0:4: 'layout' : syntax error
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+precision mediump float;
+layout(location = 0) out mediump vec4 fragColor;out mediump vec4 
+Expected ;  at 51, got OP::
+Filename: /home/oof/angle_corpus_sources/a2481877291c8302.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/becacb17c3879d2f.sample.glsl
+filename /home/oof/angle_corpus_sources/becacb17c3879d2f.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='x')
+e.right: IntLiteral(value=5)
+e.left: Identifier(name='x')
+e.right: IntLiteral(value=6)
+e.left: Identifier(name='x')
+e.right: IntLiteral(value=7)
+e.left: Identifier(name='i')
+e.right: IntLiteral(value=5)
+e.left: Identifier(name='i')
+e.right: IntLiteral(value=4)
+e.left: Identifier(name='i')
+e.right: IntLiteral(value=5)
+e.left: Identifier(name='i')
+e.right: IntLiteral(value=5)
+e.left: Identifier(name='i')
+e.right: IntLiteral(value=5)
+Original source code: #version 300 es
+        precision highp float;
+
+        int ifElseDemo() {
+          int x = 5;
+          if (x == 5) {
+            return 6;
+          } else if (x == 6) {
+            return 7;
+          } else {
+            return 8;
+          }
+        }
+
+        void switchDemo() {
+          int x = 5;
+          switch (x) {
+          case 5:
+          case 6:
+            discard;
+          case 7: {
+            return;
+          }
+          case 8:
+          case 9:
+            {
+              x = 7;
+            }
+            return;
+          default:
+            return;
+          }
+        }
+
+        void forLoopDemo() {
+          for (int i = 0; i < 5; i++) {
+            if (i == 4) {
+              break;
+            } else if (i == 5) {
+              continue;
+            }
+          }
+        }
+
+        void whileLoopDemo() {
+          int i = 0;
+          while (i < 5) {
+            i++;
+          }
+
+          do {
+            i++;
+          } while (i < 5);
+        }
+
+        void main()
+        {
+          ifElseDemo();
+          switchDemo();
+          forLoopDemo();
+          whileLoopDemo();
+        }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+int ifElseDemo()
+{
+  int x = 5;
+  if ((x == 5))
+  {
+    return 6;
+  }
+  else
+    if ((x == 6))
+    {
+      return 7;
+    }
+    else
+    {
+      return 8;
+    }
+}
+
+void switchDemo()
+{
+  int x = 5;
+  switch (x)
+  {
+    case 5:
+    case 6:
+      discard;
+    case 7:
+      {
+        return;
+      }
+    case 8:
+    case 9:
+      {
+        x = 7;
+      }
+      return;
+    default:
+      return;
+  }
+}
+
+void forLoopDemo()
+{
+  for (int i = 0; (i < 5); i++)
+  {
+    if ((i == 4))
+    {
+      break;
+    }
+    else
+      if ((i == 5))
+      {
+        continue;
+      }
+  }
+}
+
+void whileLoopDemo()
+{
+  int i = 0;
+  while ((i < 5))
+  {
+    i++;
+  }
+  do
+  {
+    i++;
+  }
+  while ((i < 5));
+}
+
+void main()
+{
+  ifElseDemo();
+  switchDemo();
+  forLoopDemo();
+  whileLoopDemo();
+}
+
+
+Filename: /home/oof/angle_corpus_sources/becacb17c3879d2f.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/b3eafeeb844af409.sample.glsl
+filename /home/oof/angle_corpus_sources/b3eafeeb844af409.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'B' : variable expected
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: CallExpr(callee=Identifier(name='f'), args=[])
+e.right: Identifier(name='B')
+Original source code: #version 300 es
+        uniform B { uint e; };
+        mediump float f() { return .0; }
+        void main() { f(), B; }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform B {
+  uint e;
+};
+
+mediump float f()
+{
+  return 0.0;
+}
+
+void main()
+{
+  f() , B;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/b3eafeeb844af409.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/08f07e486929f97a.sample.glsl
+filename /home/oof/angle_corpus_sources/08f07e486929f97a.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: [3];
+        mediump float f() { return .0; }
+        void main() { f(), b[0].e; }
+Expected ;  at 47, got [:[
+Filename: /home/oof/angle_corpus_sources/08f07e486929f97a.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/bf70a2c057ac5a0e.sample.glsl
+Original source code: precision mediump float;
+        void main()
+        {
+            vec4 myUnreferencedVec;
+        }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  vec4 myUnreferencedVec;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/bf70a2c057ac5a0e.sample.glsl passed with orig: True and new: True
+Running /home/oof/angle_corpus_sources/1d457be3a9d51984.sample.glsl
+filename /home/oof/angle_corpus_sources/1d457be3a9d51984.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='out_fragColor')
+e.right: Identifier(name='color')
+Original source code: #version 300 es
+        precision mediump float;
+        out vec4 out_fragColor;
+        uniform int u;
+        void main()
+        {
+            vec4 color = vec4(0.0);
+            if (false)
+            {
+                u;
+            }
+            out_fragColor = color;
+        }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+out vec4 out_fragColor;
+
+uniform int u;
+
+void main()
+{
+  vec4 color = vec4(0.0);
+  if (false)
+  {
+    u;
+  }
+  out_fragColor = color;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/1d457be3a9d51984.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/22b3fbf72f47a49c.sample.glsl
+filename /home/oof/angle_corpus_sources/22b3fbf72f47a49c.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_OES_standard_derivatives' : extension is not supported
+ERROR: 0:9: 'fwidth' : no matching overloaded function found
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+
+    precision mediump float;
+    varying float x;
+
+    void main()
+    {
+        gl_FragC
+Expected ;  at 52, got OP::
+Filename: /home/oof/angle_corpus_sources/22b3fbf72f47a49c.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/c3b75cf451649583.sample.glsl
+filename /home/oof/angle_corpus_sources/c3b75cf451649583.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_blend_func_extended' : extension is not supported
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+precision mediump float;
+out mediump vec4 fragColor;out mediump vec4 secondaryFragColor;vo
+Expected ;  at 54, got OP::
+Filename: /home/oof/angle_corpus_sources/c3b75cf451649583.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/d96543bebe7e4026.sample.glsl
+filename /home/oof/angle_corpus_sources/d96543bebe7e4026.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: '' : No precision specified for (float)
+ERROR: 0:9: 'gl_Position' : undeclared identifier
+ERROR: 0:9: 'assign' : l-value required (can't modify a const)
+ERROR: 0:9: '=' : dimension mismatch
+ERROR: 0:9: 'assign' : cannot convert from '4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+self.peek().kind: ;
+self.peek().value: ;
+e.left: Identifier(name='gl_Position')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=BinaryExpr(op=',', left=MemberExpr(base=Identifier(name='u'), member='field'), right=FloatLiteral(value=0.0)), right=FloatLiteral(value=0.0)), right=FloatLiteral(value=1.0))])
+Original source code: #version 300 es
+        uniform struct
+        {
+            float field;
+        } u;
+
+        void main()
+        {
+            gl_Position = vec4(u.field, 0.0, 0.0, 1.0);
+        }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+struct {
+  float field;
+} u;
+
+void main()
+{
+  gl_Position = vec4(u.field, 0.0, 0.0, 1.0);
+}
+
+
+Filename: /home/oof/angle_corpus_sources/d96543bebe7e4026.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/f6d76a9bcfe9f312.sample.glsl
+filename /home/oof/angle_corpus_sources/f6d76a9bcfe9f312.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_blend_func_extended' : extension is not supported
+ERROR: 0:5: 'gl_FragColor' : undeclared identifier
+ERROR: 0:5: 'assign' : l-value required (can't modify a const)
+ERROR: 0:5: '=' : dimension mismatch
+ERROR: 0:5: 'assign' : cannot convert from 'const 4-component vector of float' to 'const highp float'
+ERROR: 0:6: 'gl_SecondaryFragColorEXT' : undeclared identifier
+ERROR: 0:6: 'gl_MaxDualSourceDrawBuffersEXT' : undeclared identifier
+ERROR: 0:6: '/' : wrong operand types - no operation '/' exists that takes a left-hand operand of type 'const highp float' and a right operand of type 'const int' (or there is no acceptable conversion)
+ERROR: 0:6: 'assign' : l-value required (can't modify a const)
+ERROR: 0:6: '=' : dimension mismatch
+ERROR: 0:6: 'assign' : cannot convert from 'const highp 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+precision mediump float;
+void main() { 
+    gl_FragColor = vec4(1.0);
+    gl_SecondaryFrag
+Expected ;  at 54, got OP::
+Filename: /home/oof/angle_corpus_sources/f6d76a9bcfe9f312.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/cbb4e86da291b0a1.sample.glsl
+filename /home/oof/angle_corpus_sources/cbb4e86da291b0a1.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='fragColor')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[Identifier(name='u')])
+Original source code: #version 300 es
+        precision mediump float;
+        layout(location = 0) out mediump vec4 fragColor;
+        void main()
+        {
+           vec2 v;
+           uint u = packUnorm2x16(v);
+           fragColor = vec4(u);
+        }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+out mediump vec4 fragColor;
+
+void main()
+{
+  vec2 v;
+  uint u = packUnorm2x16(v);
+  fragColor = vec4(u);
+}
+
+
+Filename: /home/oof/angle_corpus_sources/cbb4e86da291b0a1.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/e56de7defac63ffe.sample.glsl
+filename /home/oof/angle_corpus_sources/e56de7defac63ffe.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:3: '' : No precision specified for (float)
+ERROR: 0:5: '' : No precision specified for (float)
+ERROR: 0:7: 'gl_Position' : undeclared identifier declared as invariant or precise
+ERROR: 0:11: '' : No precision specified for (float)
+ERROR: 0:13: '' : No precision specified for (float)
+ERROR: 0:15: '' : No precision specified for (float)
+ERROR: 0:21: '' : No precision specified for (float)
+ERROR: 0:22: '' : No precision specified for (float)
+ERROR: 0:24: 'gl_Position' : undeclared identifier
+ERROR: 0:24: 'assign' : l-value required (can't modify a const)
+ERROR: 0:24: '=' : dimension mismatch
+ERROR: 0:24: 'assign' : cannot convert from '4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='m1')
+e.right: Identifier(name='v1')
+e.left: Identifier(name='v1')
+e.right: Identifier(name='m1')
+e.left: Identifier(name='m1')
+e.right: Identifier(name='m1')
+e.left: Identifier(name='m1')
+e.right: Identifier(name='u')
+e.left: Identifier(name='v1')
+e.right: Identifier(name='u')
+e.left: Identifier(name='gl_Position')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=BinaryExpr(op=',', left=IndexExpr(base=IndexExpr(base=Identifier(name='m1'), index=IntLiteral(value=0)), index=IntLiteral(value=0)), right=IndexExpr(base=Identifier(name='v1'), index=IntLiteral(value=0))), right=Identifier(name='f2')), right=IntLiteral(value=0))])
+e.left: Identifier(name='o')
+e.right: Identifier(name='f1')
+Original source code: #version 320 es
+
+uniform float u;
+
+out float o;
+
+precise gl_Position;
+
+void main()
+{
+    mat4 m1 = mat4(u);      // m1 is precise, even if not all components are used to determine the
+                            // gl_Position.
+    vec4 v1 = vec4(u);      // v1 is precise
+
+    vec4 v2 = m1 * v1;
+    v1 *= m1;               // NoContraction
+    m1 *= m1;               // NoContraction
+    m1 *= u;                // NoContraction
+    v1 *= u;                // NoContraction
+
+    float f1 = dot(v1, v1);
+    float f2 = dot(v1, v1); // NoContraction
+
+    gl_Position = vec4(m1[0][0], v1[0], f2, 0);
+    o = f1;
+}
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform float u;
+
+out float o;
+
+precise gl_Position;
+
+void main()
+{
+  mat4 m1 = mat4(u);
+  vec4 v1 = vec4(u);
+  vec4 v2 = (m1 * v1);
+  (v1 *= m1);
+  (m1 *= m1);
+  (m1 *= u);
+  (v1 *= u);
+  float f1 = dot(v1, v1);
+  float f2 = dot(v1, v1);
+  gl_Position = vec4(m1[0][0], v1[0], f2, 0);
+  o = f1;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/e56de7defac63ffe.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/f00f6f56be00c25e.sample.glsl
+filename /home/oof/angle_corpus_sources/f00f6f56be00c25e.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'sin' : undeclared identifier
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: CallExpr(callee=Identifier(name='sin'), args=[FloatLiteral(value=3.0)])
+e.right: Identifier(name='sin')
+Original source code: #version 300 es
+        void main() { sin(3.0), sin; }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  sin(3.0) , sin;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/f00f6f56be00c25e.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/55642304d872c520.sample.glsl
+filename /home/oof/angle_corpus_sources/55642304d872c520.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_KHR_blend_equation_advanced' : extension is not supported
+ERROR: 0:3: 'GL_EXT_shader_framebuffer_fetch_non_coherent' : extension is not supported
+ERROR: 0:7: 'GL_KHR_blend_equation_advanced' : extension is not supported
+ERROR: 0:7: '?' : Error during layout qualifier parsing.
+ERROR: 0:8: 'GL_EXT_shader_framebuffer_fetch_non_coherent' : extension is not supported
+ERROR: 0:8: 'inout' : invalid qualifier: can be used with either function parameters or the variables for fetching input attachment data
+ERROR: 0:8: 'location' : invalid layout qualifier: only valid on shader inputs, outputs, and uniforms
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+#extension GL_EXT_shader_framebuffer_fetch_non_coherent : require
+
+    precision highp flo
+Expected ;  at 58, got OP::
+Filename: /home/oof/angle_corpus_sources/55642304d872c520.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/4f6e48b13acbf4ca.sample.glsl
+e.left: Identifier(name='gl_FragColor')
+e.right: Identifier(name='a')
+Original source code: precision mediump float;
+uniform float u1;
+uniform float u2;
+uniform float u3;
+uniform float u4;
+void main() {
+   vec4 a = vec4(u1, u2, u3, u4);
+   gl_FragColor = a;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform float u1;
+
+uniform float u2;
+
+uniform float u3;
+
+uniform float u4;
+
+void main()
+{
+  vec4 a = vec4(u1, u2, u3, u4);
+  gl_FragColor = a;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/4f6e48b13acbf4ca.sample.glsl passed with orig: True and new: True
+Running /home/oof/angle_corpus_sources/eccca63902b8eaaa.sample.glsl
+filename /home/oof/angle_corpus_sources/eccca63902b8eaaa.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:1: '\' : unexpected token
+ERROR: 0:2: '[]' : implicitly sized array supported in GLSL ES 3.00 and above only
+ERROR: 0:2: 'A' : implicitly sized arrays only allowed for tessellation shaders or geometry shader inputs
+ERROR: 0:3: '[]' : implicitly sized array supported in GLSL ES 3.00 and above only
+ERROR: 0:3: '[]' : arrays of arrays supported in GLSL ES 3.10 and above only
+ERROR: 0:3: '[]' : array constructor supported in GLSL ES 3.00 and above only
+ERROR: 0:3: 'constructor' : constructing from an unsized array
+ERROR: 0:3: '' : array size must be a constant integer expression
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: int A[];
+int B[int[][](A)];
+Expected ;  at 19, got KW:int
+Filename: /home/oof/angle_corpus_sources/eccca63902b8eaaa.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/44d7a0c70dcc743b.sample.glsl
+filename /home/oof/angle_corpus_sources/44d7a0c70dcc743b.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'gl_Position' : undeclared identifier
+ERROR: 0:4: 'assign' : l-value required (can't modify a const)
+ERROR: 0:4: '=' : dimension mismatch
+ERROR: 0:4: 'assign' : cannot convert from 'const 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='gl_Position')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[IntLiteral(value=0)])
+Original source code: 
+    void main()
+    {
+        gl_Position = vec4(0);
+    }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  gl_Position = vec4(0);
+}
+
+
+Filename: /home/oof/angle_corpus_sources/44d7a0c70dcc743b.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/089999293668cfbc.sample.glsl
+filename /home/oof/angle_corpus_sources/089999293668cfbc.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_YUV_target' : extension is not supported
+ERROR: 0:4: 'yuvCscStandardEXT' : syntax error
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+precision mediump float;
+    yuvCscStandardEXT conv = itu_709;
+
+    out vec4 my_color;
+
+  
+Expected ;  at 45, got OP::
+Filename: /home/oof/angle_corpus_sources/089999293668cfbc.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/08e1df36c30291de.sample.glsl
+filename /home/oof/angle_corpus_sources/08e1df36c30291de.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='fragColor')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=Identifier(name='v'), right=FloatLiteral(value=0.0)), right=FloatLiteral(value=0.0))])
+Original source code: #version 300 es
+        precision mediump float;
+        layout(location = 0) out mediump vec4 fragColor;
+        void main()
+        {
+            uint u;
+            vec2 v = unpackHalf2x16(u);
+            fragColor = vec4(v, 0.0, 0.0);
+        }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+out mediump vec4 fragColor;
+
+void main()
+{
+  uint u;
+  vec2 v = unpackHalf2x16(u);
+  fragColor = vec4(v, 0.0, 0.0);
+}
+
+
+Filename: /home/oof/angle_corpus_sources/08e1df36c30291de.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/feab3d4513545873.sample.glsl
+e.left: CallExpr(callee=Identifier(name='float'), args=[Identifier(name='r')])
+e.right: FloatLiteral(value=255.0)
+e.left: CallExpr(callee=Identifier(name='float'), args=[Identifier(name='g')])
+e.right: FloatLiteral(value=255.0)
+e.left: CallExpr(callee=Identifier(name='float'), args=[Identifier(name='b')])
+e.right: FloatLiteral(value=255.0)
+e.left: Identifier(name='gl_FragColor')
+e.right: BinaryExpr(op='+', left=Identifier(name='u_color'), right=CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op='+', left=Identifier(name='hairColor0'), right=Identifier(name='faceColor2')), right=IntLiteral(value=0))]))
+e.left: Identifier(name='u_color')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op='+', left=Identifier(name='hairColor0'), right=Identifier(name='faceColor2')), right=IntLiteral(value=0))])
+e.left: Identifier(name='hairColor0')
+e.right: Identifier(name='faceColor2')
+Original source code: precision mediump float;
+        uniform vec4 u_color;
+
+        vec3 rgb(int r, int g, int b) {
+            return vec3(float(r) / 255.0, float(g) / 255.0, float(b) / 255.0);
+        }
+
+        void main() {
+            vec3 hairColor0 = rgb(151, 200, 234);
+            vec3 faceColor2 = rgb(183, 148, 133);
+            gl_FragColor = u_color + vec4(hairColor0 + faceColor2, 0);
+        }
+    
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform vec4 u_color;
+
+vec3 rgb(int r, int g, int b)
+{
+  return vec3((float(r) / 255.0), (float(g) / 255.0), (float(b) / 255.0));
+}
+
+void main()
+{
+  vec3 hairColor0 = rgb(151, 200, 234);
+  vec3 faceColor2 = rgb(183, 148, 133);
+  gl_FragColor = (u_color + vec4((hairColor0 + faceColor2), 0));
+}
+
+
+Filename: /home/oof/angle_corpus_sources/feab3d4513545873.sample.glsl passed with orig: True and new: True
+Running /home/oof/angle_corpus_sources/05dd9a1bc47073c7.sample.glsl
+filename /home/oof/angle_corpus_sources/05dd9a1bc47073c7.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: BinaryExpr(op='*', left=MemberExpr(base=Identifier(name='v0'), member='x'), right=MemberExpr(base=Identifier(name='v1'), member='x'))
+e.right: FloatLiteral(value=1.0)
+e.left: MemberExpr(base=Identifier(name='v0'), member='x')
+e.right: MemberExpr(base=Identifier(name='v1'), member='x')
+e.left: Identifier(name='my_FragColor')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=BinaryExpr(op=',', left=FloatLiteral(value=0.0), right=FloatLiteral(value=1.0)), right=FloatLiteral(value=0.0)), right=FloatLiteral(value=1.0))])
+e.left: Identifier(name='my_FragColor')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=BinaryExpr(op=',', left=FloatLiteral(value=1.0), right=FloatLiteral(value=0.0)), right=FloatLiteral(value=0.0)), right=FloatLiteral(value=1.0))])
+Original source code: #version 300 es
+precision mediump float;
+precision mediump int;
+uniform uint uu;
+out vec4 my_FragColor;
+void main() {
+   vec2 v0 = unpackSnorm2x16(uu);
+   vec2 v1 = unpackUnorm2x16(uu);
+   if (v0.x * v1.x > 1.0) {
+       my_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+   } else {
+       my_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+   }
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform uint uu;
+
+out vec4 my_FragColor;
+
+void main()
+{
+  vec2 v0 = unpackSnorm2x16(uu);
+  vec2 v1 = unpackUnorm2x16(uu);
+  if (((v0.x * v1.x) > 1.0))
+  {
+    my_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+  }
+  else
+  {
+    my_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+  }
+}
+
+
+Filename: /home/oof/angle_corpus_sources/05dd9a1bc47073c7.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/ac32b4b51adf0ca3.sample.glsl
+filename /home/oof/angle_corpus_sources/ac32b4b51adf0ca3.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_blend_func_extended' : extension is not supported
+ERROR: 0:4: 'GL_EXT_blend_func_extended' : extension is not supported
+ERROR: 0:4: 'index' : invalid layout qualifier
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+precision mediump float;
+layout(index = 0) out vec4 fragColor;
+void main() {
+    fragColor
+Expected ;  at 54, got OP::
+Filename: /home/oof/angle_corpus_sources/ac32b4b51adf0ca3.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/b887439a02110d51.sample.glsl
+filename /home/oof/angle_corpus_sources/b887439a02110d51.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:3: 'triangles' : invalid layout qualifier
+ERROR: 0:3: '?' : Error during layout qualifier parsing.
+ERROR: 0:4: 'points' : invalid layout qualifier
+ERROR: 0:4: 'max_vertices' : invalid layout qualifier
+ERROR: 0:4: '?' : Error during layout qualifier parsing.
+ERROR: 0:7: 'gl_Position' : undeclared identifier
+ERROR: 0:7: 'gl_in' : undeclared identifier
+ERROR: 0:7: 'expression' :  left of '[' is not of type array, matrix, or vector 
+ERROR: 0:7: 'gl_Position' :  field selection requires structure, vector, or interface block on left hand side
+ERROR: 0:7: 'assign' : l-value required (can't modify a const)
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+layout (triangles) in;
+layout (points, max_vertices = 2) out;
+void main()
+        {
+      
+Expected ;  at 50, got OP::
+Filename: /home/oof/angle_corpus_sources/b887439a02110d51.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/65ef08c4bc216a0b.sample.glsl
+filename /home/oof/angle_corpus_sources/65ef08c4bc216a0b.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:3: '' : No precision specified for (float)
+ERROR: 0:5: '' : No precision specified for (float)
+ERROR: 0:9: 'gl_Position' : undeclared identifier
+ERROR: 0:9: 'assign' : l-value required (can't modify a const)
+ERROR: 0:9: '=' : dimension mismatch
+ERROR: 0:9: 'assign' : cannot convert from 'in 4-component vector of float' to 'const highp float'
+ERROR: 0:10: 'gl_ClipDistance' : undeclared identifier
+ERROR: 0:10: 'expression' :  left of '[' is not of type array, matrix, or vector 
+ERROR: 0:10: 'assign' : l-value required (can't modify a const)
+ERROR: 0:11: 'gl_CullDistance' : undeclared identifier
+ERROR: 0:11: 'expression' :  left of '[' is not of type array, matrix, or vector 
+ERROR: 0:11: 'assign' : l-value required (can't modify a const)
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='gl_Position')
+e.right: Identifier(name='aPosition')
+e.left: IndexExpr(base=Identifier(name='gl_ClipDistance'), index=IntLiteral(value=1))
+e.right: CallExpr(callee=Identifier(name='dot'), args=[BinaryExpr(op=',', left=Identifier(name='aPosition'), right=Identifier(name='uPlane'))])
+e.left: IndexExpr(base=Identifier(name='gl_CullDistance'), index=IntLiteral(value=1))
+e.right: CallExpr(callee=Identifier(name='dot'), args=[BinaryExpr(op=',', left=Identifier(name='aPosition'), right=Identifier(name='uPlane'))])
+Original source code: #version 300 es
+
+    uniform vec4 uPlane;
+
+    in vec4 aPosition;
+
+    void main()
+    {
+        gl_Position = aPosition;
+        gl_ClipDistance[1] = dot(aPosition, uPlane);
+        gl_CullDistance[1] = dot(aPosition, uPlane);
+    }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform vec4 uPlane;
+
+in vec4 aPosition;
+
+void main()
+{
+  gl_Position = aPosition;
+  gl_ClipDistance[1] = dot(aPosition, uPlane);
+  gl_CullDistance[1] = dot(aPosition, uPlane);
+}
+
+
+Filename: /home/oof/angle_corpus_sources/65ef08c4bc216a0b.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/eff88eacd2764a47.sample.glsl
+filename /home/oof/angle_corpus_sources/eff88eacd2764a47.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_blend_func_extended' : extension is not supported
+ERROR: 0:6: 'gl_SecondaryFragDataEXT' : undeclared identifier
+ERROR: 0:6: 'gl_MaxDualSourceDrawBuffersEXT' : undeclared identifier
+ERROR: 0:6: '[]' : integer expression required
+ERROR: 0:6: 'expression' :  left of '[' is not of type array, matrix, or vector 
+ERROR: 0:6: 'assign' : l-value required (can't modify a const)
+ERROR: 0:6: '=' : dimension mismatch
+ERROR: 0:6: 'assign' : cannot convert from 'const 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+precision mediump float;
+void main() {
+    gl_FragColor = vec4(1.0);
+    gl_SecondaryFragD
+Expected ;  at 51, got OP::
+Filename: /home/oof/angle_corpus_sources/eff88eacd2764a47.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/74d0c03f5e343a81.sample.glsl
+e.left: Identifier(name='gl_FragColor')
+e.right: MemberExpr(base=Identifier(name='s'), member='a')
+Original source code: precision mediump float;
+uniform vec4 u1;
+uniform vec4 u2;
+struct S { highp vec4 a; highp vec4 b; };
+void main() {
+   S s = S(u1, u2);
+   gl_FragColor = s.a;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform vec4 u1;
+
+uniform vec4 u2;
+
+struct S {
+  highp vec4 a;
+  highp vec4 b;
+};
+
+void main()
+{
+  S s = S(u1, u2);
+  gl_FragColor = s.a;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/74d0c03f5e343a81.sample.glsl passed with orig: True and new: True
+Running /home/oof/angle_corpus_sources/ae9d68ad2147d72a.sample.glsl
+filename /home/oof/angle_corpus_sources/ae9d68ad2147d72a.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:3: 'points' : invalid layout qualifier
+ERROR: 0:3: '?' : Error during layout qualifier parsing.
+ERROR: 0:4: 'points' : invalid layout qualifier
+ERROR: 0:4: 'max_vertices' : invalid layout qualifier
+ERROR: 0:4: '?' : Error during layout qualifier parsing.
+ERROR: 0:5: 'out' : invalid qualifier combination
+ERROR: 0:5: '' : No precision specified for (float)
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+layout (points) in;
+layout (points, max_vertices = 2) out;
+flat out vec4 texcoord;
+void ma
+Expected ;  at 50, got OP::
+Filename: /home/oof/angle_corpus_sources/ae9d68ad2147d72a.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/3e29d8cdb6c2c31e.sample.glsl
+filename /home/oof/angle_corpus_sources/3e29d8cdb6c2c31e.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:5: 'GL_KHR_blend_equation_advanced' : extension is not supported
+ERROR: 0:5: '?' : Error during layout qualifier parsing.
+ERROR: 0:6: 'GL_EXT_shader_framebuffer_fetch_non_coherent' : extension is not supported
+ERROR: 0:6: 'inout' : invalid qualifier: can be used with either function parameters or the variables for fetching input attachment data
+ERROR: 0:6: 'location' : invalid layout qualifier: only valid on shader inputs, outputs, and uniforms
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='oCol')
+e.right: CallExpr(callee=Identifier(name='mix'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=Identifier(name='oCol'), right=Identifier(name='uSrcCol')), right=FloatLiteral(value=0.5))])
+Original source code: #version 310 es
+
+    precision highp float;
+
+    layout (blend_support_multiply) out;
+    layout (location = 0, noncoherent) inout vec4 oCol;
+
+    uniform vec4 uSrcCol;
+
+    void main (void)
+    {
+        oCol = mix(oCol, uSrcCol, 0.5f);
+    }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+inout vec4 oCol;
+
+uniform vec4 uSrcCol;
+
+void main(void None)
+{
+  oCol = mix(oCol, uSrcCol, 0.5);
+}
+
+
+Filename: /home/oof/angle_corpus_sources/3e29d8cdb6c2c31e.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/603f64e0f3e0a929.sample.glsl
+filename /home/oof/angle_corpus_sources/603f64e0f3e0a929.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:5: 'gl_SecondaryFragColorEXT' : undeclared identifier
+ERROR: 0:5: 'gl_MaxDualSourceDrawBuffersEXT' : undeclared identifier
+ERROR: 0:5: '/' : wrong operand types - no operation '/' exists that takes a left-hand operand of type 'const highp float' and a right operand of type 'const int' (or there is no acceptable conversion)
+ERROR: 0:5: 'assign' : l-value required (can't modify a const)
+ERROR: 0:5: '=' : dimension mismatch
+ERROR: 0:5: 'assign' : cannot convert from 'const highp 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='gl_FragColor')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[FloatLiteral(value=1.0)])
+e.left: Identifier(name='gl_SecondaryFragColorEXT')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op='/', left=Identifier(name='gl_MaxDualSourceDrawBuffersEXT'), right=IntLiteral(value=10))])
+e.left: Identifier(name='gl_MaxDualSourceDrawBuffersEXT')
+e.right: IntLiteral(value=10)
+Original source code: #version 100
+precision mediump float;
+void main() { 
+    gl_FragColor = vec4(1.0);
+    gl_SecondaryFragColorEXT = vec4(gl_MaxDualSourceDrawBuffersEXT / 10);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  gl_FragColor = vec4(1.0);
+  gl_SecondaryFragColorEXT = vec4((gl_MaxDualSourceDrawBuffersEXT / 10));
+}
+
+
+Filename: /home/oof/angle_corpus_sources/603f64e0f3e0a929.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/1889d7af909d28ca.sample.glsl
+filename /home/oof/angle_corpus_sources/1889d7af909d28ca.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:4: 'gl_FragDepth' : undeclared identifier
+ERROR: 0:4: 'assign' : l-value required (can't modify a const)
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: Identifier(name='gl_FragDepth')
+e.right: FloatLiteral(value=1.0)
+Original source code: #version 100
+precision mediump float;
+void main() { 
+    gl_FragDepth = 1.0;
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  gl_FragDepth = 1.0;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/1889d7af909d28ca.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/c6651890cafdc3ee.sample.glsl
+filename /home/oof/angle_corpus_sources/c6651890cafdc3ee.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_OVR_multiview2' : extension is not supported
+ERROR: 0:3: 'num_views' : invalid layout qualifier
+ERROR: 0:3: '?' : Error during layout qualifier parsing.
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+layout(num_views = 3) in;
+void main()
+{
+}
+
+Expected ;  at 45, got OP::
+Filename: /home/oof/angle_corpus_sources/c6651890cafdc3ee.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/f425710bd41a8161.sample.glsl
+filename /home/oof/angle_corpus_sources/f425710bd41a8161.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:3: 'gl_' : reserved built-in name
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: 
+void main() {
+gl_DepthRangeParameters testVariable;
+}
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  gl_DepthRangeParameters testVariable;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/f425710bd41a8161.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/fcdd5b73430479b7.sample.glsl
+filename /home/oof/angle_corpus_sources/fcdd5b73430479b7.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:3: 'a' : Function parameter type cannot be a structure definition
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got error here: struct S {float f;} a) {
+    return a.f;
+}
+void main() { }
+Expected type name at 47, got KW:struct
+Filename: /home/oof/angle_corpus_sources/fcdd5b73430479b7.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/290382d7f5f5012b.sample.glsl
+filename /home/oof/angle_corpus_sources/290382d7f5f5012b.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:1: 'GL_EXT_blend_func_extended' : extension is not supported
+ERROR: 0:2: 'GL_EXT_draw_buffers' : extension is not supported
+ERROR: 0:6: 'gl_SecondaryFragDataEXT' : undeclared identifier
+ERROR: 0:6: 'gl_MaxDualSourceDrawBuffersEXT' : undeclared identifier
+ERROR: 0:6: '-' : wrong operand types - no operation '-' exists that takes a left-hand operand of type 'const highp float' and a right operand of type 'const int' (or there is no acceptable conversion)
+ERROR: 0:6: '[]' : integer expression required
+ERROR: 0:6: 'expression' :  left of '[' is not of type array, matrix, or vector 
+ERROR: 0:6: 'assign' : l-value required (can't modify a const)
+ERROR: 0:6: '=' : dimension mismatch
+ERROR: 0:6: 'assign' : cannot convert from 'const 4-component vector of float' to 'const highp float'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+#extension GL_EXT_draw_buffers : require
+precision mediump float;
+void main() {
+    gl_Fra
+Expected ;  at 38, got OP::
+Filename: /home/oof/angle_corpus_sources/290382d7f5f5012b.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/11c394acbeda8a50.sample.glsl
+filename /home/oof/angle_corpus_sources/11c394acbeda8a50.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+e.left: CallExpr(callee=Identifier(name='f'), args=[])
+e.right: MemberExpr(base=Identifier(name='b'), member='e')
+Original source code: #version 300 es
+         uniform B { uint e; } b;
+         mediump float f() { return .0; }
+         void main() { f(), b.e; }
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+uniform B {
+  uint e;
+} b;
+
+mediump float f()
+{
+  return 0.0;
+}
+
+void main()
+{
+  f() , b.e;
+}
+
+
+Filename: /home/oof/angle_corpus_sources/11c394acbeda8a50.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/15f9052bde479f0b.sample.glsl
+filename /home/oof/angle_corpus_sources/15f9052bde479f0b.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_OVR_multiview2' : extension is not supported
+ERROR: 0:3: 'num_views' : invalid layout qualifier
+ERROR: 0:3: '?' : Error during layout qualifier parsing.
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+layout(num_views = 3) in;
+void main()
+{
+}
+
+Expected ;  at 45, got OP::
+Filename: /home/oof/angle_corpus_sources/15f9052bde479f0b.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/d250503b1dec87f8.sample.glsl
+filename /home/oof/angle_corpus_sources/d250503b1dec87f8.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Original source code: #version 300 es
+precision mediump float;
+void main()
+{
+    switch(1)
+    {
+      case 1:
+      default:
+        42;
+        break;
+    }
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+  switch (1)
+  {
+    case 1:
+    default:
+      42;
+      break;
+  }
+}
+
+
+Filename: /home/oof/angle_corpus_sources/d250503b1dec87f8.sample.glsl passed with orig: False and new: False
+Running /home/oof/angle_corpus_sources/d74247d244e848d8.sample.glsl
+filename /home/oof/angle_corpus_sources/d74247d244e848d8.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_EXT_clip_cull_distance' : extension is not supported
+ERROR: 0:8: 'gl_ClipDistance' : undeclared identifier
+ERROR: 0:8: 'expression' :  left of '[' is not of type array, matrix, or vector 
+ERROR: 0:8: 'gl_CullDistance' : undeclared identifier
+ERROR: 0:8: 'expression' :  left of '[' is not of type array, matrix, or vector 
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+
+    out highp vec4 fragColor;
+
+    void main()
+    {
+        fragColor = vec4(gl_ClipDist
+Expected ;  at 53, got OP::
+Filename: /home/oof/angle_corpus_sources/d74247d244e848d8.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/0d2e10eac0816008.sample.glsl
+filename /home/oof/angle_corpus_sources/0d2e10eac0816008.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:2: 'GL_OVR_multiview' : extension is not supported
+ERROR: 0:3: 'num_views' : invalid layout qualifier
+ERROR: 0:3: '?' : Error during layout qualifier parsing.
+ERROR: 0:4: 'out' : invalid qualifier combination
+ERROR: 0:7: 'gl_Position' : undeclared identifier
+ERROR: 0:7: 'x' :  field selection requires structure, vector, or interface block on left hand side
+ERROR: 0:7: 'gl_ViewID_OVR' : undeclared identifier
+ERROR: 0:7: '==' : wrong operand types - no operation '==' exists that takes a left-hand operand of type 'const highp float' and a right operand of type 'const uint' (or there is no acceptable conversion)
+ERROR: 0:7: 'assign' : l-value required (can't modify a const)
+ERROR: 0:8: 'gl_Position' : undeclared identifier
+ERROR: 0:8: 'yzw' :  field selection requires structure, vector, or interface block on left hand side
+ERROR: 0:8: 'assign' : l-value required (can't modify a const)
+ERROR: 0:8: '=' : dimension mismatch
+ERROR: 0:8: 'assign' : cannot convert from 'const 3-component vector of float' to 'const highp float'
+ERROR: 0:9: 'gl_InstanceID' : undeclared identifier
+ERROR: 0:9: 'assign' : cannot convert from 'const highp float' to 'flat mediump int'
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Got failure here: : require
+layout(num_views = 3) in;
+flat out int myInstance;
+void main()
+{
+   gl_Position.x = gl_Vie
+Expected ;  at 44, got OP::
+Filename: /home/oof/angle_corpus_sources/0d2e10eac0816008.sample.glslerrored... continuing anyway...
+Running /home/oof/angle_corpus_sources/0acd8a861acc233e.sample.glsl
+filename /home/oof/angle_corpus_sources/0acd8a861acc233e.sample.glsl errored with: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+Filename: /home/oof/angle_corpus_sources/0acd8a861acc233e.sample.glsl failed roundtrip test!!!
+Original source code: #version 300 es
+void main()
+{
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+void main()
+{
+}
+
+
+Previous errors: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: unsupported shader version
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+New errors: #### BEGIN COMPILER 0 INFO LOG ####
+
+#### END COMPILER 0 INFO LOG ####
+
+
+

@@ -197,7 +197,7 @@ def roundtrip_one(filename: str): # Run the thing...
 		print(str(e))
 		# Error while parsing? Log the file and continue...
 		print("Filename: "+str(filename)+ "errored... continuing anyway...")
-		raise e
+		# raise e
 		return
 	# Same?
 	unparsed_src = unparsed_src.encode("ascii")
