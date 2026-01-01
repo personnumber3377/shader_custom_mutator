@@ -49,7 +49,7 @@ TYPELIKE_KEYWORDS = {
 }
 
 
-QUALIFIERS = {"const", "in", "out", "inout", "uniform"}
+QUALIFIERS = {"const", "in", "out", "inout", "uniform", "varying"} # This didn't have "varying" before...
 PRECISIONS = {"lowp", "mediump", "highp"}
 
 
