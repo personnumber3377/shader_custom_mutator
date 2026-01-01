@@ -10,6 +10,9 @@ from collections.abc import Iterable
 class ParseError(Exception):
     pass
 
+DEBUG = True
+
+current_input = None
 
 # Precedence table (higher = binds tighter)
 # This is "good enough" for GLSL fuzzing purposes.
@@ -86,6 +89,8 @@ class Parser:
         else:
             if (t.kind == kind and t.value == value) or (t.kind == value and t.value == value):
                 return self.advance()
+        if DEBUG:
+            print("Got failure here: "+str(current_input[t.pos:t.pos+100]))
         raise ParseError(f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
 
     # -----------------------
@@ -186,6 +191,9 @@ class Parser:
             if self.peek().kind == "OP" and self.peek().value == "=":
                 self.advance()
                 init = self.parse_expr(0)
+                # init = self.parse_expr(PRECEDENCE[","] + 1)
+                if self.peek().kind == ",":
+                    pass
 
             decls.append(Declarator(name, base_type, array_size, init))
 
@@ -291,7 +299,8 @@ class Parser:
         if t.kind == "ID":
             name = self.advance().value
             return TypeName(name=name, precision=precision, qualifiers=qualifiers)
-
+        if DEBUG:
+            print("Got error here: "+str(current_input[t.pos:t.pos+100])) # Print for debugging the thing...
         raise ParseError(f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
     '''
     def parse_struct_member(self) -> StructField:
@@ -364,6 +373,9 @@ class Parser:
         init = None
         if self.match("OP", "="):
             init = self.parse_expr(0)
+            # init = self.parse_expr(PRECEDENCE[","] + 1)
+            if self.peek().kind == ",":
+                pass
 
         return VarDecl(type_name, name, array_dims, init)
 
@@ -612,8 +624,20 @@ class Parser:
             return False
         t = self.toks[j]
         # type can be builtin keyword or identifier (user-defined struct type)
-        if not ((t.kind == "KW" and t.value in TYPELIKE_KEYWORDS) or t.kind == "ID"):
+        # if not ((t.kind == "KW" and t.value in TYPELIKE_KEYWORDS) or t.kind == "ID"):
+        #     return False
+
+        # The previous codeblock didn't handle inline structs properly, therefore put the thing here...
+
+        
+        if not (
+            (t.kind == "KW" and t.value in TYPELIKE_KEYWORDS)
+            or t.kind == "ID"
+            # or (t.kind == "KW" and t.value == "struct")
+        ):
             return False
+        
+
         # next must exist and be an identifier (var name) or '(' (function)
         if j + 1 >= len(self.toks):
             return False
@@ -769,6 +793,9 @@ class Parser:
 
 
 def parse_to_tree(shader_source: str) -> TranslationUnit:
+    if DEBUG:
+        global current_input
+        current_input = shader_source
     tokens = lex(shader_source)
     p = Parser(tokens)
     return p.parse_translation_unit()

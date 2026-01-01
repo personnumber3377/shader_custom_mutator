@@ -189,9 +189,16 @@ def roundtrip_one(filename: str): # Run the thing...
 
 	# Roundtrip...
 	source = source.decode("ascii")
-	tree = shader_parser.parse_to_tree(source)
-	unparsed_src = shader_unparser.unparse_tu(tree)
-
+	try:
+		tree = shader_parser.parse_to_tree(source)
+		unparsed_src = shader_unparser.unparse_tu(tree)
+	except Exception as e:
+		# raise e # Raise exception
+		print(str(e))
+		# Error while parsing? Log the file and continue...
+		print("Filename: "+str(filename)+ "errored... continuing anyway...")
+		raise e
+		return
 	# Same?
 	unparsed_src = unparsed_src.encode("ascii")
 	ok_new, err_new = run_external_checker(unparsed_src, 128)

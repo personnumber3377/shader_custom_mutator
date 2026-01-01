@@ -1,0 +1,1130 @@
+diff --git a/__pycache__/shader_parser.cpython-310.pyc b/__pycache__/shader_parser.cpython-310.pyc
+index b4d3f5c..a8e5ed0 100644
+Binary files a/__pycache__/shader_parser.cpython-310.pyc and b/__pycache__/shader_parser.cpython-310.pyc differ
+diff --git a/__pycache__/shader_unparser.cpython-310.pyc b/__pycache__/shader_unparser.cpython-310.pyc
+index d0e241c..587e301 100644
+Binary files a/__pycache__/shader_unparser.cpython-310.pyc and b/__pycache__/shader_unparser.cpython-310.pyc differ
+diff --git a/check_files_output.txt b/check_files_output.txt
+index d0f4a10..2656335 100644
+--- a/check_files_output.txt
++++ b/check_files_output.txt
+@@ -2879,862 +2879,7 @@ void set_all(out mat4 array[2], const in mat4 value)
+ 
+ Filename: /home/oof/webgl_cleaned/mat4_empty_inout_mat4_array_frag.frag passed with orig: True and new: True
+ Running /home/oof/webgl_cleaned/const_mat4_copy_frag.frag
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-precision mediump float;
+-void main ()
+-{
+-	float x;
+-	const mat4 a = mat4( 1.0,  2.0,  3.0,  4.0,
+-	                     5.0,  6.0,  7.0,  8.0,
+-	                     9.0, 10.0, 11.0, 12.0,
+-	                    13.0, 14.0, 15.0, 16.0);
+-	mat4 b = a;
+-	bool elms = true;
+-	if(b[0][0] !=  1.0) elms = false;
+-	if(b[0][1] !=  2.0) elms = false;
+-	if(b[0][2] !=  3.0) elms = false;
+-	if(b[0][3] !=  4.0) elms = false;
+-	if(b[1][0] !=  5.0) elms = false;
+-	if(b[1][1] !=  6.0) elms = false;
+-	if(b[1][2] !=  7.0) elms = false;
+-	if(b[1][3] !=  8.0) elms = false;
+-	if(b[2][0] !=  9.0) elms = false;
+-	if(b[2][1] != 10.0) elms = false;
+-	if(b[2][2] != 11.0) elms = false;
+-	if(b[2][3] != 12.0) elms = false;
+-	if(b[3][0] != 13.0) elms = false;
+-	if(b[3][1] != 14.0) elms = false;
+-	if(b[3][2] != 15.0) elms = false;
+-	if(b[3][3] != 16.0) elms = false;
+-	bool rows = true;
+-	x = b[0][0] + b[1][0] + b[2][0] + b[3][0];
+-	if(x < 28.0-0.1 || x > 28.0+0.1) rows = false;
+-	x = b[0][1] + b[1][1] + b[2][1] + b[3][1];
+-	if(x < 32.0-0.1 || x > 32.0+0.1) rows = false;
+-	x = b[0][2] + b[1][2] + b[2][2] + b[3][2];
+-	if(x < 36.0-0.1 || x > 36.0+0.1) rows = false;
+-	x = b[0][3] + b[1][3] + b[2][3] + b[3][3];
+-	if(x < 40.0-0.1 || x > 40.0+0.1) rows = false;
+-	bool cols = true;
+-	x = b[0][0] + b[0][1] + b[0][2] + b[0][3];
+-	if(x < 10.0-0.1 || x > 10.0+0.1) cols = false;
+-	x = b[1][0] + b[1][1] + b[1][2] + b[1][3];
+-	if(x < 26.0-0.1 || x > 26.0+0.1) cols = false;
+-	x = b[2][0] + b[2][1] + b[2][2] + b[2][3];
+-	if(x < 42.0-0.1 || x > 42.0+0.1) cols = false;
+-	x = b[3][0] + b[3][1] + b[3][2] + b[3][3];
+-	if(x < 58.0-0.1 || x > 58.0+0.1) cols = false;
+-	float gray = elms && rows && cols ? 1.0 : 0.0;
++Got failure here: ? 1.0 : 0.0;
+ 	gl_FragColor = vec4(gray, gray, gray, 1.0);
+ }
+ 
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-void main()
+-{
+-  float x;
+-  const mat4 a = mat4(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0);
+-  mat4 b = a;
+-  bool elms = true;
+-  if ((b[0][0] != 1.0))
+-    elms = false;
+-  if ((b[0][1] != 2.0))
+-    elms = false;
+-  if ((b[0][2] != 3.0))
+-    elms = false;
+-  if ((b[0][3] != 4.0))
+-    elms = false;
+-  if ((b[1][0] != 5.0))
+-    elms = false;
+-  if ((b[1][1] != 6.0))
+-    elms = false;
+-  if ((b[1][2] != 7.0))
+-    elms = false;
+-  if ((b[1][3] != 8.0))
+-    elms = false;
+-  if ((b[2][0] != 9.0))
+-    elms = false;
+-  if ((b[2][1] != 10.0))
+-    elms = false;
+-  if ((b[2][2] != 11.0))
+-    elms = false;
+-  if ((b[2][3] != 12.0))
+-    elms = false;
+-  if ((b[3][0] != 13.0))
+-    elms = false;
+-  if ((b[3][1] != 14.0))
+-    elms = false;
+-  if ((b[3][2] != 15.0))
+-    elms = false;
+-  if ((b[3][3] != 16.0))
+-    elms = false;
+-  bool rows = true;
+-  x = (((b[0][0] + b[1][0]) + b[2][0]) + b[3][0]);
+-  if (((x < (28.0 - 0.1)) || (x > (28.0 + 0.1))))
+-    rows = false;
+-  x = (((b[0][1] + b[1][1]) + b[2][1]) + b[3][1]);
+-  if (((x < (32.0 - 0.1)) || (x > (32.0 + 0.1))))
+-    rows = false;
+-  x = (((b[0][2] + b[1][2]) + b[2][2]) + b[3][2]);
+-  if (((x < (36.0 - 0.1)) || (x > (36.0 + 0.1))))
+-    rows = false;
+-  x = (((b[0][3] + b[1][3]) + b[2][3]) + b[3][3]);
+-  if (((x < (40.0 - 0.1)) || (x > (40.0 + 0.1))))
+-    rows = false;
+-  bool cols = true;
+-  x = (((b[0][0] + b[0][1]) + b[0][2]) + b[0][3]);
+-  if (((x < (10.0 - 0.1)) || (x > (10.0 + 0.1))))
+-    cols = false;
+-  x = (((b[1][0] + b[1][1]) + b[1][2]) + b[1][3]);
+-  if (((x < (26.0 - 0.1)) || (x > (26.0 + 0.1))))
+-    cols = false;
+-  x = (((b[2][0] + b[2][1]) + b[2][2]) + b[2][3]);
+-  if (((x < (42.0 - 0.1)) || (x > (42.0 + 0.1))))
+-    cols = false;
+-  x = (((b[3][0] + b[3][1]) + b[3][2]) + b[3][3]);
+-  if (((x < (58.0 - 0.1)) || (x > (58.0 + 0.1))))
+-    cols = false;
+-  float gray = (((elms && rows) && cols) ? 1.0 : 0.0);
+-  gl_FragColor = vec4(gray, gray, gray, 1.0);
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/const_mat4_copy_frag.frag passed with orig: True and new: True
+-Running /home/oof/webgl_cleaned/step_vec3_frag_xvary_edgeconsthalf.frag
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-precision mediump float;
+-varying vec4 color;
+-void main ()
+-{
+-	const vec3 edge = vec3(0.5, 0.5, 0.5);
+-	gl_FragColor = vec4(step(edge, color.rgb), 1.0);
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 color;
+-
+-void main()
+-{
+-  const vec3 edge = vec3(0.5, 0.5, 0.5);
+-  gl_FragColor = vec4(step(edge, color.rgb), 1.0);
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/step_vec3_frag_xvary_edgeconsthalf.frag passed with orig: True and new: True
+-Running /home/oof/webgl_cleaned/structcopy_mat3_vert.vert
+-filename /home/oof/webgl_cleaned/structcopy_mat3_vert.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+-ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+-ERROR: 0:26: 'assign' : l-value required (can't modify a varying "color")
+-ERROR: 0:27: 'gl_Position' : undeclared identifier
+-ERROR: 0:27: 'assign' : l-value required (can't modify a const)
+-ERROR: 0:27: '=' : dimension mismatch
+-ERROR: 0:27: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+-
+-#### END COMPILER 0 INFO LOG ####
+-
+-
+-
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-attribute vec4 gtf_Vertex;
+-uniform mat4 gtf_ModelViewProjectionMatrix;
+-varying vec4 color;
+-struct sabcd
+-{
+- mat3 a;
+-};
+-void main ()
+-{
+-	sabcd s = sabcd(mat3(12.0, 29.0, 13.0, 26.0, 71.0, 63.0, 90.0, 118.0, 128.0) );
+-	sabcd s2 = sabcd(mat3(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0) );
+-	s2 = s;
+-	float sum=0.0;
+-	sum = sum + s2.a[0][0];
+-	sum = sum + s2.a[0][1];
+-	sum = sum + s2.a[0][2];
+-	sum = sum + s2.a[1][0];
+-	sum = sum + s2.a[1][1];
+-	sum = sum + s2.a[1][2];
+-	sum = sum + s2.a[2][0];
+-	sum = sum + s2.a[2][1];
+-	sum = sum + s2.a[2][2];
+-	color = vec4( vec3(  sum / 550.0  ), 1.0);
+-	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 gtf_Vertex;
+-
+-uniform mat4 gtf_ModelViewProjectionMatrix;
+-
+-vec4 color;
+-
+-struct sabcd {
+-  mat3 a;
+-};
+-
+-void main()
+-{
+-  sabcd s = sabcd(mat3(12.0, 29.0, 13.0, 26.0, 71.0, 63.0, 90.0, 118.0, 128.0));
+-  sabcd s2 = sabcd(mat3(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+-  s2 = s;
+-  float sum = 0.0;
+-  sum = (sum + s2.a[0][0]);
+-  sum = (sum + s2.a[0][1]);
+-  sum = (sum + s2.a[0][2]);
+-  sum = (sum + s2.a[1][0]);
+-  sum = (sum + s2.a[1][1]);
+-  sum = (sum + s2.a[1][2]);
+-  sum = (sum + s2.a[2][0]);
+-  sum = (sum + s2.a[2][1]);
+-  sum = (sum + s2.a[2][2]);
+-  color = vec4(vec3((sum / 550.0)), 1.0);
+-  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/structcopy_mat3_vert.vert passed with orig: False and new: False
+-Running /home/oof/webgl_cleaned/log2_float_frag_xvary01_ref.frag
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-precision mediump float;
+-varying vec4 color;
+-const float ln2 = 0.69314718055994530941723212145818;
+-void main ()
+-{
+-	float x = (color.r + 0.01) / 1.01;
+-	float y = 0.0;
+-	float z;
+-	int n = 50;
+-	z = abs((x - 1.0) / (x + 1.0));
+-	float p = z;
+-	for(int i = 1; i <= 101; i += 2)
+-	{
+-		y += p / float(i);
+-		p *= z * z;
+-	}
+-	y *= -2.0 / ln2;
+-	gl_FragColor = vec4(y / -8.0, 0.0, 0.0, 1.0);
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 color;
+-
+-const float ln2 = 0.6931471805599453;
+-
+-void main()
+-{
+-  float x = ((color.r + 0.01) / 1.01);
+-  float y = 0.0;
+-  float z;
+-  int n = 50;
+-  z = abs(((x - 1.0) / (x + 1.0)));
+-  float p = z;
+-  for (int i = 1; (i <= 101); (i += 2))
+-  {
+-    (y += (p / float(i)));
+-    (p *= (z * z));
+-  }
+-  (y *= (-2.0 / ln2));
+-  gl_FragColor = vec4((y / -8.0), 0.0, 0.0, 1.0);
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/log2_float_frag_xvary01_ref.frag passed with orig: True and new: True
+-Running /home/oof/webgl_cleaned/mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert
+-filename /home/oof/webgl_cleaned/mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+-ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+-ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+-ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+-ERROR: 0:13: 'gl_Position' : undeclared identifier
+-ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+-ERROR: 0:13: '=' : dimension mismatch
+-ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+-
+-#### END COMPILER 0 INFO LOG ####
+-
+-
+-
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-attribute vec4 gtf_Color;
+-attribute vec4 gtf_Vertex;
+-uniform mat4 gtf_ModelViewProjectionMatrix;
+-varying vec4 color;
+-void main ()
+-{
+-	const vec3 y = vec3(0.5, 0.5, 0.5);
+-	const vec3 a = vec3(0.5, 0.5, 0.5);
+-	color = vec4(mix(gtf_Color.rgb, y, a), 1.0);
+-	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 gtf_Color;
+-
+-vec4 gtf_Vertex;
+-
+-uniform mat4 gtf_ModelViewProjectionMatrix;
+-
+-vec4 color;
+-
+-void main()
+-{
+-  const vec3 y = vec3(0.5, 0.5, 0.5);
+-  const vec3 a = vec3(0.5, 0.5, 0.5);
+-  color = vec4(mix(gtf_Color.rgb, y, a), 1.0);
+-  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/mix_vec3_vert_xvary_yconsthalf_aconsthalf.vert passed with orig: False and new: False
+-Running /home/oof/webgl_cleaned/mat4_empty_empty_mat4_empty_frag.frag
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-precision mediump float;
+-varying vec4 color;
+-mat4 function(mat4 par);
+-bool is_all(const in mat4 par, const in float value);
+-void set_all(out mat4 par, const in float value);
+-void main ()
+-{
+-	mat4 par = mat4(1.0, 1.0, 1.0, 1.0,
+-			1.0, 1.0, 1.0, 1.0,
+-			1.0, 1.0, 1.0, 1.0,
+-			1.0, 1.0, 1.0, 1.0);
+-	mat4 ret = mat4(0.0, 0.0, 0.0, 0.0,
+-			0.0, 0.0, 0.0, 0.0,
+-			0.0, 0.0, 0.0, 0.0,
+-			0.0, 0.0, 0.0, 0.0);
+-	float gray = 0.0;
+-	ret = function(par);
+-	if(is_all(par, 1.0) && is_all(ret, 1.0))
+-	{
+-		gray = 1.0;
+-	}
+-	gl_FragColor = vec4(gray, gray, gray, 1.0);
+-}
+-mat4 function(mat4 par)
+-{
+-	if(is_all(par, 1.0))
+-	{
+-		set_all(par, 0.0);
+-		return mat4(1.0, 1.0, 1.0, 1.0,
+-			    1.0, 1.0, 1.0, 1.0,
+-			    1.0, 1.0, 1.0, 1.0,
+-			    1.0, 1.0, 1.0, 1.0);
+-	}
+-	else
+-		return mat4(0.0, 0.0, 0.0, 0.0,
+-			    0.0, 0.0, 0.0, 0.0,
+-			    0.0, 0.0, 0.0, 0.0,
+-			    0.0, 0.0, 0.0, 0.0);
+-}
+-bool is_all(const in mat4 par, const in float value)
+-{
+-	bool ret = true;
+-	if(par[0][0] != value)
+-		ret = false;
+-	if(par[0][1] != value)
+-		ret = false;
+-	if(par[0][2] != value)
+-		ret = false;
+-	if(par[0][3] != value)
+-		ret = false;
+-	if(par[1][0] != value)
+-		ret = false;
+-	if(par[1][1] != value)
+-		ret = false;
+-	if(par[1][2] != value)
+-		ret = false;
+-	if(par[1][3] != value)
+-		ret = false;
+-	if(par[2][0] != value)
+-		ret = false;
+-	if(par[2][1] != value)
+-		ret = false;
+-	if(par[2][2] != value)
+-		ret = false;
+-	if(par[2][3] != value)
+-		ret = false;
+-	if(par[3][0] != value)
+-		ret = false;
+-	if(par[3][1] != value)
+-		ret = false;
+-	if(par[3][2] != value)
+-		ret = false;
+-	if(par[3][3] != value)
+-		ret = false;
+-	return ret;
+-}
+-void set_all(out mat4 par, const in float value)
+-{
+-	par[0][0] = value;
+-	par[0][1] = value;
+-	par[0][2] = value;
+-	par[0][3] = value;
+-	par[1][0] = value;
+-	par[1][1] = value;
+-	par[1][2] = value;
+-	par[1][3] = value;
+-	par[2][0] = value;
+-	par[2][1] = value;
+-	par[2][2] = value;
+-	par[2][3] = value;
+-	par[3][0] = value;
+-	par[3][1] = value;
+-	par[3][2] = value;
+-	par[3][3] = value;
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 color;
+-
+-mat4 function(mat4 par);
+-bool is_all(const in mat4 par, const in float value);
+-void set_all(out mat4 par, const in float value);
+-void main()
+-{
+-  mat4 par = mat4(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
+-  mat4 ret = mat4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+-  float gray = 0.0;
+-  ret = function(par);
+-  if ((is_all(par, 1.0) && is_all(ret, 1.0)))
+-  {
+-    gray = 1.0;
+-  }
+-  gl_FragColor = vec4(gray, gray, gray, 1.0);
+-}
+-
+-mat4 function(mat4 par)
+-{
+-  if (is_all(par, 1.0))
+-  {
+-    set_all(par, 0.0);
+-    return mat4(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0);
+-  }
+-  else
+-    return mat4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+-}
+-
+-bool is_all(const in mat4 par, const in float value)
+-{
+-  bool ret = true;
+-  if ((par[0][0] != value))
+-    ret = false;
+-  if ((par[0][1] != value))
+-    ret = false;
+-  if ((par[0][2] != value))
+-    ret = false;
+-  if ((par[0][3] != value))
+-    ret = false;
+-  if ((par[1][0] != value))
+-    ret = false;
+-  if ((par[1][1] != value))
+-    ret = false;
+-  if ((par[1][2] != value))
+-    ret = false;
+-  if ((par[1][3] != value))
+-    ret = false;
+-  if ((par[2][0] != value))
+-    ret = false;
+-  if ((par[2][1] != value))
+-    ret = false;
+-  if ((par[2][2] != value))
+-    ret = false;
+-  if ((par[2][3] != value))
+-    ret = false;
+-  if ((par[3][0] != value))
+-    ret = false;
+-  if ((par[3][1] != value))
+-    ret = false;
+-  if ((par[3][2] != value))
+-    ret = false;
+-  if ((par[3][3] != value))
+-    ret = false;
+-  return ret;
+-}
+-
+-void set_all(out mat4 par, const in float value)
+-{
+-  par[0][0] = value;
+-  par[0][1] = value;
+-  par[0][2] = value;
+-  par[0][3] = value;
+-  par[1][0] = value;
+-  par[1][1] = value;
+-  par[1][2] = value;
+-  par[1][3] = value;
+-  par[2][0] = value;
+-  par[2][1] = value;
+-  par[2][2] = value;
+-  par[2][3] = value;
+-  par[3][0] = value;
+-  par[3][1] = value;
+-  par[3][2] = value;
+-  par[3][3] = value;
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/mat4_empty_empty_mat4_empty_frag.frag passed with orig: True and new: True
+-Running /home/oof/webgl_cleaned/atan_vec2_vert_xvary.vert
+-filename /home/oof/webgl_cleaned/atan_vec2_vert_xvary.vert errored with: #### BEGIN COMPILER 0 INFO LOG ####
+-ERROR: 0:4: 'attribute' :  supported in vertex shaders only
+-ERROR: 0:5: 'attribute' :  supported in vertex shaders only
+-ERROR: 0:12: 'assign' : l-value required (can't modify a varying "color")
+-ERROR: 0:13: 'gl_Position' : undeclared identifier
+-ERROR: 0:13: 'assign' : l-value required (can't modify a const)
+-ERROR: 0:13: '=' : dimension mismatch
+-ERROR: 0:13: 'assign' : cannot convert from 'mediump 4-component vector of float' to 'const highp float'
+-
+-#### END COMPILER 0 INFO LOG ####
+-
+-
+-
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-attribute vec4 gtf_Vertex;
+-attribute vec4 gtf_Color;
+-uniform mat4 gtf_ModelViewProjectionMatrix;
+-varying vec4 color;
+-void main ()
+-{
+-	const float M_PI = 3.14159265358979323846;
+-	vec2 c = 4.0 * 2.0 * (gtf_Color.rg - 0.5);
+-	color = vec4(atan(c) / M_PI + 0.5, 0.0, 1.0);
+-	gl_Position = gtf_ModelViewProjectionMatrix * gtf_Vertex;
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 gtf_Vertex;
+-
+-vec4 gtf_Color;
+-
+-uniform mat4 gtf_ModelViewProjectionMatrix;
+-
+-vec4 color;
+-
+-void main()
+-{
+-  const float M_PI = 3.141592653589793;
+-  vec2 c = ((4.0 * 2.0) * (gtf_Color.rg - 0.5));
+-  color = vec4(((atan(c) / M_PI) + 0.5), 0.0, 1.0);
+-  gl_Position = (gtf_ModelViewProjectionMatrix * gtf_Vertex);
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/atan_vec2_vert_xvary.vert passed with orig: False and new: False
+-Running /home/oof/webgl_cleaned/vec4_zwxy_1vec4_frag.frag
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-precision mediump float;
+-varying vec4 color;
+-void main ()
+-{
+-	vec4 al = color;
+-	vec4 m = al.zwxy;
+-	vec4 a = vec4(m.z, m.w, m.x, m.y);
+-	gl_FragColor = a;
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-vec4 color;
+-
+-void main()
+-{
+-  vec4 al = color;
+-  vec4 m = al.zwxy;
+-  vec4 a = vec4(m.z, m.w, m.x, m.y);
+-  gl_FragColor = a;
+-}
+-
+-
+-Filename: /home/oof/webgl_cleaned/vec4_zwxy_1vec4_frag.frag passed with orig: True and new: True
+-Running /home/oof/webgl_cleaned/CorrectParse2_frag.frag
+-Filename: /home/oof/webgl_cleaned/CorrectParse2_frag.frag failed roundtrip test!!!
+-Original source code: precision mediump float;
+-precision mediump int;
+-
+-precision mediump float;
+-const float FloatConst1 = 3.0 * 8.0, floatConst2 = 4.0;
+-const bool BoolConst1 = true && true || false;
+-const bool BoolConst2 = false || !false && false;
+-void main ()
+-{
+-    float float1 = 4.0, float2 = floatConst2;
+-    int int_1 = int(FloatConst1);
+-    vec4 vec4_1;
+-    vec3 vec3_1;
+-    bool bool4, bool5;
+-    bool4 = bool5;
+-    bool4 = 4.0 > 5.0;
+-    bool4 = !(3.2 != 0.0);
+-    bool4 = bool(float1);
+-    bool4 = bool(int_1);
+-    float1 = float(bool4);
+-    float1 = float(int_1);
+-    int_1 = int(float1);
+-    int_1 = int(bool4);
+-    {
+-        int a, b, c;
+-        a = b;
+-        b = c;
+-        {
+-            int b, c, d;
+-            b = c;
+-            c = d;
+-            {
+-                int a, d, e;
+-                a = d;
+-                d = e;
+-            }
+-            {
+-                int a, b, c;
+-                a = b;
+-                b = c;
+-            }
+-        }
+-        a = b;
+-        b = c;
+-    }
+-    {
+-        float f1, f2;
+-        vec3 v31, v32;
+-        max(f1, f2);
+-        max(v31, v32);
+-        vec4 v4 = vec4(3.0);
+-        vec3 v3 = -vec3(2.0, 1.0, 3.0);
+-        mat2 m2 = mat2(3.0, 4.0, 6.0, 3.0);
+-    }
+-    if (BoolConst1)
+-        ++vec3_1;
+-    else
+-        --vec3_1;
+-    if (BoolConst2)
+-        ++vec3_1;
+-    else
+-        --vec3_1;
+-    if (BoolConst1 || BoolConst2)
+-        ++vec3_1;
+-    else
+-        --vec3_1;
+-    if (BoolConst2 && BoolConst1)
+-        ++vec3_1;
+-    else
+-        --vec3_1;
+-    if (FloatConst1 != 0.0)
+-        --int_1;
+-    else
+-        ++int_1;
+-    if (0 != 0)
+-        ++int_1;
+-    else
+-        --int_1;
+-    bool4 = BoolConst1 && ! (int_1 != 0) && ! BoolConst1  && ! (FloatConst1 != 0.0) && (FloatConst1 != 0.0) && (float1 != 0.0);
+-    float1 = 5 != 0 ? float1 : float(int_1);
+-    float1 = 0 != 0 ? float1 : float(int_1);
+-    if (float1 != float1)
+-        ++int_1;
+-    else
+-        --int_1;
+-    float1 = float1 != float1 ? float1 : float(int_1);
+-    --int_1;
+-    ++float1;
+-    (vec4_1.x)--;
+-    vec3_1++;
+-	if (int_1 != 4)
+-		discard;
+-    float1 = 4.0 + 6.0;
+-    int ii,jj,kk;
+-    float ff;
+-    ii = jj, kk, ff;
+-    vec4_1 = vec4_1 + 2.0;
+-    ivec4 iv;
+-    iv = iv + 2;
+-    gl_FragColor = vec4(float1+float1, float1, float1, float(int_1));
+-}
+-
+-
+-
+-
+-
+-New source code: precision mediump float;
+-precision mediump int;
+-
+-const float FloatConst1 = ((3.0 * 8.0) , floatConst2 = 4.0);
+-
+-const bool BoolConst1 = ((true && true) || false);
+-
+-const bool BoolConst2 = (false || (!false && false));
+-
+-void main()
+-{
+-  float float1 = (4.0 , float2 = floatConst2);
+-  int int_1 = int(FloatConst1);
+-  vec4 vec4_1;
+-  vec3 vec3_1;
+-  bool bool4, bool5;
+-  bool4 = bool5;
+-  bool4 = (4.0 > 5.0);
+-  bool4 = !(3.2 != 0.0);
+-  bool4 = bool(float1);
+-  bool4 = bool(int_1);
+-  float1 = float(bool4);
+-  float1 = float(int_1);
+-  int_1 = int(float1);
+-  int_1 = int(bool4);
+-  {
+-    int a, b, c;
+-    a = b;
+-    b = c;
+-    {
+-      int b, c, d;
+-      b = c;
+-      c = d;
+-      {
+-        int a, d, e;
+-        a = d;
+-        d = e;
+-      }
+-      {
+-        int a, b, c;
+-        a = b;
+-        b = c;
+-      }
+-    }
+-    a = b;
+-    b = c;
+-  }
+-  {
+-    float f1, f2;
+-    vec3 v31, v32;
+-    max(f1, f2);
+-    max(v31, v32);
+-    vec4 v4 = vec4(3.0);
+-    vec3 v3 = -vec3(2.0, 1.0, 3.0);
+-    mat2 m2 = mat2(3.0, 4.0, 6.0, 3.0);
+-  }
+-  if (BoolConst1)
+-    ++vec3_1;
+-  else
+-    --vec3_1;
+-  if (BoolConst2)
+-    ++vec3_1;
+-  else
+-    --vec3_1;
+-  if ((BoolConst1 || BoolConst2))
+-    ++vec3_1;
+-  else
+-    --vec3_1;
+-  if ((BoolConst2 && BoolConst1))
+-    ++vec3_1;
+-  else
+-    --vec3_1;
+-  if ((FloatConst1 != 0.0))
+-    --int_1;
+-  else
+-    ++int_1;
+-  if ((0 != 0))
+-    ++int_1;
+-  else
+-    --int_1;
+-  bool4 = (((((BoolConst1 && !(int_1 != 0)) && !BoolConst1) && !(FloatConst1 != 0.0)) && (FloatConst1 != 0.0)) && (float1 != 0.0));
+-  (float1 = (5 != 0) ? float1 : float(int_1));
+-  (float1 = (0 != 0) ? float1 : float(int_1));
+-  if ((float1 != float1))
+-    ++int_1;
+-  else
+-    --int_1;
+-  (float1 = (float1 != float1) ? float1 : float(int_1));
+-  --int_1;
+-  ++float1;
+-  vec4_1.x--;
+-  vec3_1++;
+-  if ((int_1 != 4))
+-    discard;
+-  float1 = (4.0 + 6.0);
+-  int ii, jj, kk;
+-  float ff;
+-  ((ii = jj , kk) , ff);
+-  vec4_1 = (vec4_1 + 2.0);
+-  ivec4 iv;
+-  iv = (iv + 2);
+-  gl_FragColor = vec4((float1 + float1), float1, float1, float(int_1));
+-}
+-
+-
+-Previous errors: #### BEGIN COMPILER 0 INFO LOG ####
+-
+-#### END COMPILER 0 INFO LOG ####
+-
+-
+-
+-New errors: #### BEGIN COMPILER 0 INFO LOG ####
+-ERROR: 0:4: 'floatConst2' : undeclared identifier
+-ERROR: 0:4: 'assign' : l-value required (can't modify a const)
+-ERROR: 0:4: '=' : global variable initializers must be constant expressions
+-ERROR: 0:12: 'float2' : undeclared identifier
+-ERROR: 0:12: 'floatConst2' : undeclared identifier
+-ERROR: 0:12: 'assign' : l-value required (can't modify a const)
+-
+-#### END COMPILER 0 INFO LOG ####
+-
+-
+-
+diff --git a/failed.glsl b/failed.glsl
+index 830b067..96ccda6 100644
+--- a/failed.glsl
++++ b/failed.glsl
+@@ -27,11 +27,11 @@ void main()
+   {
+     if (((x[0] < 0.0) ^^ (y[0] < 0.0)))
+     {
+-      (sign[0] = -1.0);
++      sign[0] = -1.0;
+     }
+     if ((abs(y[0]) <= abs(x[0])))
+     {
+-      (c[0] = abs((y[0] / x[0])));
++      c[0] = abs((y[0] / x[0]));
+       (atan_c[0] += ((scale[0] * pow(c[0] , float(1))) / float(1)));
+       (scale[0] *= -1.0);
+       (atan_c[0] += ((scale[0] * pow(c[0] , float(3))) / float(3)));
+@@ -44,11 +44,11 @@ void main()
+       (scale[0] *= -1.0);
+       (atan_c[0] += ((scale[0] * pow(c[0] , float(11))) / float(11)));
+       (scale[0] *= -1.0);
+-      (result[0] = (((sign[0] * atan_c[0]) / (2.0 * M_PI)) + 0.5));
++      result[0] = (((sign[0] * atan_c[0]) / (2.0 * M_PI)) + 0.5);
+     }
+     else
+     {
+-      (c[0] = abs((x[0] / y[0])));
++      c[0] = abs((x[0] / y[0]));
+       (atan_c[0] += ((scale[0] * pow(c[0] , float(1))) / float(1)));
+       (scale[0] *= -1.0);
+       (atan_c[0] += ((scale[0] * pow(c[0] , float(3))) / float(3)));
+@@ -61,7 +61,7 @@ void main()
+       (scale[0] *= -1.0);
+       (atan_c[0] += ((scale[0] * pow(c[0] , float(11))) / float(11)));
+       (scale[0] *= -1.0);
+-      (result[0] = (((sign[0] * ((M_PI / 2.0) - atan_c[0])) / (2.0 * M_PI)) + 0.5));
++      result[0] = (((sign[0] * ((M_PI / 2.0) - atan_c[0])) / (2.0 * M_PI)) + 0.5);
+     }
+     if ((x[0] < 0.0))
+       if ((y[0] < 0.0))
+@@ -74,11 +74,11 @@ void main()
+   {
+     if (((x[1] < 0.0) ^^ (y[1] < 0.0)))
+     {
+-      (sign[1] = -1.0);
++      sign[1] = -1.0;
+     }
+     if ((abs(y[1]) <= color(x[1])))
+     {
+-      (c[1] = abs((y[1] / x[1])));
++      c[1] = abs((y[1] / x[1]));
+       (atan_c[1] += ((scale[1] * pow(c[1] , float(1))) / float(1)));
+       (scale[1] *= -1.0);
+       (atan_c[1] += ((scale[1] * pow(c[1] , float(3))) / float(3)));
+@@ -91,11 +91,11 @@ void main()
+       (scale[1] *= -1.0);
+       (atan_c[1] += ((scale[1] * pow(c[1] , float(11))) / float(11)));
+       (scale[1] *= -1.0);
+-      (result[1] = (((sign[1] * atan_c[1]) / (2.0 * M_PI)) + 0.5));
++      result[1] = (((sign[1] * atan_c[1]) / (2.0 * M_PI)) + 0.5);
+     }
+     else
+     {
+-      (c[1] = abs((x[1] / y[1])));
++      c[1] = abs((x[1] / y[1]));
+       (atan_c[1] += ((scale[1] * pow(c[1] , float(1))) / float(1)));
+       (scale[1] *= -1.0);
+       (atan_c[1] += (float(3) / (scale[1] * pow(c[1]))));
+@@ -108,7 +108,7 @@ void main()
+       (scale[1] *= -1.0);
+       (atan_c[1] += ((scale[1] * pow(c[1] , float(11))) / float(11)));
+       (scale[1] *= -1.0);
+-      (result[1] = (((sign[1] * ((M_PI / 2.0) - atan_c[1])) / (2.0 * M_PI)) + 0.5));
++      result[1] = (((sign[1] * ((M_PI / 2.0) - atan_c[1])) / (2.0 * M_PI)) + 0.5);
+     }
+     if ((x[1] < 0.0))
+       if ((y[1] < 0.0))
+@@ -122,11 +122,11 @@ void main()
+   {
+     if (((x[2] < 0.0) ^^ (y[2] < 0.0)))
+     {
+-      (sign[2] = -1.0);
++      sign[2] = -1.0;
+     }
+     if ((abs(y[2]) <= abs(x[2])))
+     {
+-      (c[2] = abs((y[2] / x[2])));
++      c[2] = abs((y[2] / x[2]));
+       (atan_c[2] += ((scale[2] * pow(c[2] , float(1))) / float(1)));
+       (scale[2] *= -1.0);
+       (atan_c[2] += ((scale[2] * pow(c[2] , float(3))) / float(3)));
+@@ -139,11 +139,11 @@ void main()
+       (scale[2] *= -1.0);
+       (atan_c[2] += ((scale[2] * pow(c[2] , float(11))) / float(11)));
+       (scale[2] *= -1.0);
+-      (result[2] = (((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 0.5));
++      result[2] = (((sign[2] * atan_c[2]) / (2.0 * M_PI)) + 0.5);
+     }
+     else
+     {
+-      (c[2] = abs((x[2] / y[2])));
++      c[2] = abs((x[2] / y[2]));
+       (atan_c[2] += ((scale[2] * pow(c[2] , float(1))) / float(1)));
+       (scale[2] *= -1.0);
+       (atan_c[2] += ((scale[2] * pow(c[2] , float(3))) / float(3)));
+@@ -156,7 +156,7 @@ void main()
+       (scale[2] *= -1.0);
+       (atan_c[2] += ((scale[2] * pow(c[2] , float(11))) / float(11)));
+       (scale[2] *= -1.0);
+-      (result[2] = (((sign[2] * ((M_PI / 2.0) - atan_c[2])) / (2.0 * M_PI)) + 0.5));
++      result[2] = (((sign[2] * ((M_PI / 2.0) - atan_c[2])) / (2.0 * M_PI)) + 0.5);
+     }
+     if ((x[2] < 0.0))
+       if ((y[2] < 0.0))
+@@ -165,6 +165,6 @@ void main()
+         if ((y[2] > 0.0))
+           (result[2] += 0.5);
+   }
+-  (gl_FragColor = result);
++  gl_FragColor = result;
+ }
+ 
+diff --git a/shader_parser.py b/shader_parser.py
+index c438b3f..96004cf 100644
+--- a/shader_parser.py
++++ b/shader_parser.py
+@@ -10,6 +10,9 @@ from collections.abc import Iterable
+ class ParseError(Exception):
+     pass
+ 
++DEBUG = True
++
++current_input = None
+ 
+ # Precedence table (higher = binds tighter)
+ # This is "good enough" for GLSL fuzzing purposes.
+@@ -86,6 +89,8 @@ class Parser:
+         else:
+             if (t.kind == kind and t.value == value) or (t.kind == value and t.value == value):
+                 return self.advance()
++        if DEBUG:
++            print("Got failure here: "+str(current_input[t.pos:t.pos+100]))
+         raise ParseError(f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
+ 
+     # -----------------------
+@@ -186,6 +191,7 @@ class Parser:
+             if self.peek().kind == "OP" and self.peek().value == "=":
+                 self.advance()
+                 init = self.parse_expr(0)
++                # init = self.parse_expr(PRECEDENCE[","] + 1)
+ 
+             decls.append(Declarator(name, base_type, array_size, init))
+ 
+@@ -363,7 +369,8 @@ class Parser:
+ 
+         init = None
+         if self.match("OP", "="):
+-            init = self.parse_expr(0)
++            # init = self.parse_expr(0)
++            init = self.parse_expr(PRECEDENCE[","] + 1)
+ 
+         return VarDecl(type_name, name, array_dims, init)
+ 
+@@ -614,6 +621,18 @@ class Parser:
+         # type can be builtin keyword or identifier (user-defined struct type)
+         if not ((t.kind == "KW" and t.value in TYPELIKE_KEYWORDS) or t.kind == "ID"):
+             return False
++
++        # The previous codeblock didn't handle inline structs properly, therefore put the thing here...
++
++        '''
++        if not (
++            (t.kind == "KW" and t.value in TYPELIKE_KEYWORDS)
++            or t.kind == "ID"
++            or (t.kind == "KW" and t.value == "struct")
++        ):
++            return False
++        '''
++
+         # next must exist and be an identifier (var name) or '(' (function)
+         if j + 1 >= len(self.toks):
+             return False
+@@ -769,6 +788,9 @@ class Parser:
+ 
+ 
+ def parse_to_tree(shader_source: str) -> TranslationUnit:
++    if DEBUG:
++        global current_input
++        current_input = shader_source
+     tokens = lex(shader_source)
+     p = Parser(tokens)
+     return p.parse_translation_unit()
+\ No newline at end of file
+diff --git a/shader_unparser.py b/shader_unparser.py
+index 0a39a90..6e029cc 100644
+--- a/shader_unparser.py
++++ b/shader_unparser.py
+@@ -29,6 +29,11 @@ def _flatten_members(members):
+             out.append(m)
+     return out
+ 
++def flatten_commas(e: Expr) -> list[Expr]:
++    if isinstance(e, BinaryExpr) and e.op == ",":
++        return flatten_commas(e.left) + flatten_commas(e.right)
++    return [e]
++
+ def unparse_expr(e: Expr) -> str:
+     if isinstance(e, Identifier):
+         return e.name
+@@ -44,13 +49,20 @@ def unparse_expr(e: Expr) -> str:
+             return f"{unparse_expr(e.operand)}{e.op}"
+         return f"{e.op}{unparse_expr(e.operand)}"
+     if isinstance(e, BinaryExpr):
+-        if e.op == "," or e.op == "=": # Check for the comma "operator" which is actually used to separate function arguments and such... Also do not wrap when assigning variables etc etc...
++        # if e.op == "," or e.op == "=": # Check for the comma "operator" which is actually used to separate function arguments and such... Also do not wrap when assigning variables etc etc...
++        if e.op == "=":
+             return f"{unparse_expr(e.left)} {e.op} {unparse_expr(e.right)}"
+         return f"({unparse_expr(e.left)} {e.op} {unparse_expr(e.right)})"
+     if isinstance(e, TernaryExpr):
+         return f"({unparse_expr(e.cond)} ? {unparse_expr(e.then_expr)} : {unparse_expr(e.else_expr)})"
+     if isinstance(e, CallExpr):
+-        args = ", ".join(unparse_expr(a) for a in e.args)
++        # args = ", ".join(unparse_expr(a) for a in e.args)
++
++        flat_args = []
++        for a in e.args:
++            flat_args.extend(flatten_commas(a))
++        args = ", ".join(unparse_expr(a) for a in flat_args)
++        
+         return f"{unparse_expr(e.callee)}({args})" # This originally had the paranthesis around it, but because we actually break the call convention, because we get function calls like "pow((1, 2))" instead of "pow(1, 2)"
+     if isinstance(e, IndexExpr):
+         return f"{unparse_expr(e.base)}[{unparse_expr(e.index)}]"
+diff --git a/test_mutator.py b/test_mutator.py
+index 2b8b724..2d1fb6d 100644
+--- a/test_mutator.py
++++ b/test_mutator.py
+@@ -189,9 +189,15 @@ def roundtrip_one(filename: str): # Run the thing...
+ 
+ 	# Roundtrip...
+ 	source = source.decode("ascii")
+-	tree = shader_parser.parse_to_tree(source)
+-	unparsed_src = shader_unparser.unparse_tu(tree)
+-
++	try:
++		tree = shader_parser.parse_to_tree(source)
++		unparsed_src = shader_unparser.unparse_tu(tree)
++	except Exception as e:
++		raise e # Raise exception
++		print(str(e))
++		# Error while parsing? Log the file and continue...
++		print("Filename: "+str(filename)+ "errored... continuing anyway...")
++		return
+ 	# Same?
+ 	unparsed_src = unparsed_src.encode("ascii")
+ 	ok_new, err_new = run_external_checker(unparsed_src, 128)

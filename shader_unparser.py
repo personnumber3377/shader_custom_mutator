@@ -29,6 +29,11 @@ def _flatten_members(members):
             out.append(m)
     return out
 
+def flatten_commas(e: Expr) -> list[Expr]:
+    if isinstance(e, BinaryExpr) and e.op == ",":
+        return flatten_commas(e.left) + flatten_commas(e.right)
+    return [e]
+
 def unparse_expr(e: Expr) -> str:
     if isinstance(e, Identifier):
         return e.name
@@ -44,13 +49,22 @@ def unparse_expr(e: Expr) -> str:
             return f"{unparse_expr(e.operand)}{e.op}"
         return f"{e.op}{unparse_expr(e.operand)}"
     if isinstance(e, BinaryExpr):
-        if e.op == "," or e.op == "=": # Check for the comma "operator" which is actually used to separate function arguments and such... Also do not wrap when assigning variables etc etc...
+        print("e.left: "+str(e.left))
+        print("e.right: "+str(e.right))
+        # if e.op == "," or e.op == "=": # Check for the comma "operator" which is actually used to separate function arguments and such... Also do not wrap when assigning variables etc etc...
+        if e.op == "=" or e.op == ",":
             return f"{unparse_expr(e.left)} {e.op} {unparse_expr(e.right)}"
         return f"({unparse_expr(e.left)} {e.op} {unparse_expr(e.right)})"
     if isinstance(e, TernaryExpr):
         return f"({unparse_expr(e.cond)} ? {unparse_expr(e.then_expr)} : {unparse_expr(e.else_expr)})"
     if isinstance(e, CallExpr):
-        args = ", ".join(unparse_expr(a) for a in e.args)
+        # args = ", ".join(unparse_expr(a) for a in e.args)
+
+        flat_args = []
+        for a in e.args:
+            flat_args.extend(flatten_commas(a))
+        args = ", ".join(unparse_expr(a) for a in flat_args)
+
         return f"{unparse_expr(e.callee)}({args})" # This originally had the paranthesis around it, but because we actually break the call convention, because we get function calls like "pow((1, 2))" instead of "pow(1, 2)"
     if isinstance(e, IndexExpr):
         return f"{unparse_expr(e.base)}[{unparse_expr(e.index)}]"

@@ -1,0 +1,59 @@
+['CorrectComma_frag.frag', 'struct_with_definition.glsl']
+Running /home/oof/shader_custom_mutator/tests_complex/CorrectComma_frag.frag
+e.left: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=BinaryExpr(op=',', left=IntLiteral(value=1), right=IntLiteral(value=2)), right=IntLiteral(value=3)), right=IntLiteral(value=4))])
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=BinaryExpr(op=',', left=IntLiteral(value=5), right=IntLiteral(value=6)), right=IntLiteral(value=7)), right=IntLiteral(value=8))])
+e.left: CallExpr(callee=Identifier(name='s'), args=[BinaryExpr(op=',', left=FloatLiteral(value=9.0), right=CallExpr(callee=Identifier(name='vec3'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=IntLiteral(value=10), right=IntLiteral(value=11)), right=IntLiteral(value=12))]))])
+e.right: CallExpr(callee=Identifier(name='s'), args=[BinaryExpr(op=',', left=FloatLiteral(value=13.0), right=CallExpr(callee=Identifier(name='vec3'), args=[BinaryExpr(op=',', left=BinaryExpr(op=',', left=IntLiteral(value=14), right=IntLiteral(value=15)), right=IntLiteral(value=16))]))])
+e.left: Identifier(name='gl_FragColor')
+e.right: BinaryExpr(op='+', left=Identifier(name='v'), right=CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=MemberExpr(base=Identifier(name='s1'), member='f'), right=MemberExpr(base=Identifier(name='s1'), member='v'))]))
+e.left: Identifier(name='v')
+e.right: CallExpr(callee=Identifier(name='vec4'), args=[BinaryExpr(op=',', left=MemberExpr(base=Identifier(name='s1'), member='f'), right=MemberExpr(base=Identifier(name='s1'), member='v'))])
+Filename: /home/oof/shader_custom_mutator/tests_complex/CorrectComma_frag.frag failed roundtrip test!!!
+Original source code: precision mediump float;
+precision mediump int;
+
+precision mediump float;
+struct s {
+    float f;
+    vec3 v;
+};
+void main()
+{
+    const vec4 v = (vec4(1,2,3,4), vec4(5,6,7,8));
+    const s s1 = (s(9.0, vec3(10,11,12)), s(13.0, vec3(14,15,16)));
+    gl_FragColor = v + vec4(s1.f, s1.v);
+}
+
+
+
+
+
+New source code: precision mediump float;
+precision mediump int;
+
+struct s {
+  float f;
+  vec3 v;
+};
+
+void main()
+{
+  const vec4 v = vec4(1, 2, 3, 4) , vec4(5, 6, 7, 8);
+  const s s1 = s(9.0, vec3(10, 11, 12)) , s(13.0, vec3(14, 15, 16));
+  gl_FragColor = (v + vec4(s1.f, s1.v));
+}
+
+
+Previous errors: #### BEGIN COMPILER 0 INFO LOG ####
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
+New errors: #### BEGIN COMPILER 0 INFO LOG ####
+ERROR: 0:11: 'vec4' : syntax error
+
+#### END COMPILER 0 INFO LOG ####
+
+
+
