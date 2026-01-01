@@ -6,7 +6,7 @@ import random
 from test_helpers import * # For the utilities...
 
 TEST_DIR = "tests/"
-DEBUG_ENV = True
+DEBUG_ENV = False
 
 import shader_parser # The parser...
 import shader_mutator
@@ -240,7 +240,8 @@ def run_one(filename: str): # Run the thing...
 	ok, err = run_external_checker(source, 128) # Run the checker for this source code...
 	if not ok: # Error? Try to parse as vertex shader...
 		# print("filename "+str(filename)+" errored with: "+str(err))
-		ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
+		# ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
+		ok = False
 		if not ok:
 			print("filename "+str(filename)+ " errored as vertex shader and fragment... Error: "+str(err))
 			if DEBUG_ENV:
@@ -248,9 +249,14 @@ def run_one(filename: str): # Run the thing...
 				os.system("rm "+str(filename))
 				# print("Removing this filename here: "+str(filename))
 				# Also delete the final fuzz input file thing...
+
+
+				'''
 				new_filename = filename.replace("webgl_cleaned", "webgl_fuzz_inputs").replace(".vert", ".bin").replace(".frag", ".bin").replace(".comp", ".bin")
 				print("Removing this here: "+str(new_filename))
 				os.system("rm "+str(new_filename))
+				'''
+
 		# assert False
 	else:
 		print("filename "+str(filename)+ " passed...")
