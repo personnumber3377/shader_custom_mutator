@@ -13,8 +13,6 @@ import shader_mutator
 import shader_unparser
 import mutator
 
-
-
 def normalize_input(data: bytes) -> bytes:
     """
     Ensure buffer has header and no embedded nulls in shader body.
@@ -99,17 +97,52 @@ def benchmark_mutation_success(
 
             # dataorig = b"\x00" * 128 + dataorig + b"\x00" # Convert to fuzz format...
 
+
+            '''
+			shader_type, spec, output = parse_header(data)
+            shader_src = strip_header_and_null(data)
+
+            if not shader_src:
+                continue
+
+            ok, msg = run_checker(shader_src, shader_type, spec, output, name)
+            total += 1
+
+            if not ok:
+                failures += 1
+                if printed < PRINT_LIMIT:
+            '''
+
+
+            shader_type, spec, output = parse_header(dataorig)
+            shader_src = strip_header_and_null(dataorig)
+
+            if not shader_src:
+                continue
+
+            v, msg = run_checker(shader_src, shader_type, spec, output)
+            total += 1
+
+            # if not ok:
+            #     failures += 1
+            #     if printed < PRINT_LIMIT:
+
+
             data = normalize_input(dataorig)
 
             # Check original validity
             # print("is valid???")
             # print("data: "+str(data))
-            v, err = is_valid_shader(data) # run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
+            # v, err = is_valid_shader(data) # run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
+
+
             if not v:
                 print(err)
                 continue  # skip invalid seeds
             buf = bytearray(data)
-            print("Original source code: \n"+str(dataorig.decode("ascii")))
+            # print("Original source code: \n"+str(dataorig.decode("ascii")))
+
+            print("Original source code: \n"+str(buf[128:-1].decode("ascii")))
 
             # Mutate exactly once
             print("Passing this here: "+str(buf))
@@ -118,7 +151,9 @@ def benchmark_mutation_success(
             print("As vertex? : "+str(as_vertex))
             total += 1
 
-            v, err = is_valid_shader(buf) # run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
+            # v, err = is_valid_shader(buf) # run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
+
+            v, err = run_checker(shader_src, shader_type, spec, output)
 
             if v:
                 print("SUCCESS!")
