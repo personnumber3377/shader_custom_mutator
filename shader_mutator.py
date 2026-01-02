@@ -667,7 +667,7 @@ def gen_builtin_call(want, scope, env, rng, depth):
         # generic family
         if base in GENERIC_EXPANSION:
             concrete = rng.choice(GENERIC_EXPANSION[base])
-            args.append(gen_expr(Type(concrete), scope, env, rng, depth + 1))
+            args.append(gen_expr(TypeInfo(concrete), scope, env, rng, depth + 1)) # Originally had "gen_expr(Type(concrete), ...)"
             continue
 
         # special opaque types → use builtin variables
@@ -679,17 +679,17 @@ def gen_builtin_call(want, scope, env, rng, depth):
             continue
 
         # normal type
-        args.append(gen_expr(Type(base), scope, env, rng, depth + 1))
+        args.append(gen_expr(TypeInfo(base), scope, env, rng, depth + 1)) # Originally had "gen_expr(Type(concrete), ...)"
 
     return CallExpr(Identifier(fname), args)
 
 def gen_call(want, scope, env, rng, depth):
     candidates = []
 
-    if coin(0.10, rng): # 10% chance to generate a builtin function call...
+    if coin(rng, 0.10): # 10% chance to generate a builtin function call...
         call = gen_builtin_call(want, scope, env, rng, depth)
         if call: # Return the generated call if one was found...
-            assert False
+            # assert False
             return call
 
     for fname, (ret, params) in env.funcs.items():
