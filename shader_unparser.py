@@ -270,6 +270,15 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
             out += unparse_stmt(st, indent + 1)
         return out
 
+    # This is to handle inline struct definitions inside functions...
+    if isinstance(s, StructDecl):
+        out = unparse_struct_specifier(s.struct_type) # Originally was +=
+        if s.declarators:
+            out += " " + ", ".join(_unparse_declarator(d) for d in s.declarators)
+        out += ";\n\n"
+        # continue
+        return out
+
     raise TypeError(f"Unhandled stmt: {type(s)}")
 
 
