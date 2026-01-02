@@ -97,6 +97,22 @@ class Parser:
     # Expression parsing (Pratt)
     # -----------------------
 
+    # This is a helper for parsing inline struct definitions...
+
+    def _looks_like_struct_decl_stmt(self) -> bool:
+        j = self.i
+
+        # Skip qualifiers like const, in, out, uniform, etc.
+        while j < len(self.toks):
+            t = self.toks[j]
+            if t.kind == "KW" and t.value in QUALIFIERS:
+                j += 1
+                continue
+            break
+
+        # Now must see 'struct'
+        return j < len(self.toks) and self.toks[j].kind == "KW" and self.toks[j].value == "struct"
+
     def parse_expr(self, min_prec: int = 0) -> Expr:
         left = self.parse_prefix()
 
@@ -495,6 +511,13 @@ class Parser:
         if t.kind == "{":
             return self.parse_block()
 
+        # struct definition inside a block (???)
+        # if t.kind == "KW" and t.value == "struct": # TODO: This check here fails, because struct definitions can have "const" in the front of it etc..
+        if self._looks_like_struct_decl_stmt():
+            # print("paskaaaa"*1000)
+            struct_decl = self.parse_struct_toplevel_decl()
+            return struct_decl
+
         # empty
         if t.kind == ";":
             self.advance()
@@ -594,6 +617,7 @@ class Parser:
 
         # expression statement
         e = self.parse_expr(0)
+        # print(t)
         self.expect(";")
         return ExprStmt(e)
 
@@ -648,6 +672,7 @@ class Parser:
     # Top-level parsing
     # -----------------------
 
+    '''
     def parse_struct_toplevel_decl(self):
         # token is KW struct
         struct_type = self.parse_struct_specifier()
@@ -662,7 +687,30 @@ class Parser:
 
         self.expect(";")
         return StructDecl(struct_type, declarators)
+    '''
 
+    def parse_struct_toplevel_decl(self):
+        # ---- NEW: parse qualifiers first ----
+        qualifiers = []
+        while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
+            qualifiers.append(self.advance().value)
+
+        # Now we MUST see 'struct'
+        struct_type = self.parse_struct_specifier()
+
+        # Attach qualifiers to the struct type
+        if qualifiers:
+            struct_type.qualifiers = qualifiers
+
+        declarators = []
+
+        # After `}` may come `;` or declarators
+        if self.peek().kind != ";":
+            declarators = self.parse_declarator_list(struct_type)
+
+        self.expect(";")
+        return StructDecl(struct_type, declarators)
+    
     def parse_struct_def(self) -> StructDef:
         self.expect("KW", "struct")
         name = self.expect("ID").value
@@ -772,7 +820,7 @@ class Parser:
 
         self.expect(";")
         return InterfaceBlock(storage, name, members, instance, array_dims)
-        
+
     def parse_global_decl(self) -> GlobalDecl:
         # parse type then one or more var decls then ;
         tname = self.parse_type_name()

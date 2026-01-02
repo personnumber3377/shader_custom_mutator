@@ -1,36 +1,37 @@
 precision mediump float;
 precision mediump int;
 
+struct s5 {
+float k;
+};
+const struct s {
+    int i;
+    float j;
+    s5 s55;
+} ss = s(4,1.0, s5(1.0));
+const struct s2 {
+   int i;
+   vec3 v3;
+   bvec4 bv4;
+} s22  = s2(8, vec3(9, 10, 11), bvec4(true, false, true, false));
+struct s4 {
+      int ii;
+      vec4 v4;
+  };
+const struct s1 {
+  s2 ss;
+  int i;
+  float f;
+  mat4 m;
+  s4 s44;
+ } s11 = s1(s22, 2, 4.0, mat4(5), s4(6, vec4(7, 8, 9, 10))) ;
+const struct s7 {
+   int i;
+   mat3 m3;
+} s77 = s7(12, mat3(15));
+
 void main()
 {
-    struct s5 {
-    float k;
-    };
-    const struct s {
-        int i;
-    	float j;
-      s5 s55;
-    } ss = s(4,1.0, s5(1.0));
-   const struct s2 {
-       int i;
-       vec3 v3;
-       bvec4 bv4;
-   } s22  = s2(8, vec3(9, 10, 11), bvec4(true, false, true, false));
-  struct s4 {
-          int ii;
-          vec4 v4;
-      };
-   const struct s1 {
-      s2 ss;
-      int i;
-      float f;
-      mat4 m;
-      s4 s44;
-     } s11 = s1(s22, 2, 4.0, mat4(5), s4(6, vec4(7, 8, 9, 10))) ;
-   const struct s7 {
-       int i;
-       mat3 m3;
-   } s77 = s7(12, mat3(15));
   vec2       v21 = vec2(1);
   const vec2 v22 = vec2(11);
   const vec4 v41 = vec4(2);
