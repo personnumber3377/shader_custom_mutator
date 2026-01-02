@@ -12,7 +12,8 @@ from typing import List
 HEADER_SIZE = 128
 PRINT_COUNT = 10
 
-CHECKER_PATH = "./angle_shader_checker"  # <-- change if needed
+# CHECKER_PATH = "./angle_shader_checker"  # <-- change if needed
+CHECKER_PATH = "./newest_angle"
 TIMEOUT = 5.0
 GOOD_CORPUS_DIR = "good/"
 

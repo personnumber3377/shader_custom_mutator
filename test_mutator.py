@@ -95,52 +95,21 @@ def benchmark_mutation_success(
             with open(fn, "rb") as f:
                 dataorig = f.read()
 
-            # dataorig = b"\x00" * 128 + dataorig + b"\x00" # Convert to fuzz format...
-
-
-            '''
-			shader_type, spec, output = parse_header(data)
-            shader_src = strip_header_and_null(data)
-
-            if not shader_src:
-                continue
-
-            ok, msg = run_checker(shader_src, shader_type, spec, output, name)
-            total += 1
-
-            if not ok:
-                failures += 1
-                if printed < PRINT_LIMIT:
-            '''
-
-
             shader_type, spec, output = parse_header(dataorig)
             shader_src = strip_header_and_null(dataorig)
 
             if not shader_src:
                 continue
 
-            v, msg = run_checker(shader_src, shader_type, spec, output, name)
-            total += 1
-
-            # if not ok:
-            #     failures += 1
-            #     if printed < PRINT_LIMIT:
-
+            v, err = run_checker(shader_src, shader_type, spec, output) # Originally had the name too
 
             data = normalize_input(dataorig)
-
-            # Check original validity
-            # print("is valid???")
-            # print("data: "+str(data))
-            # v, err = is_valid_shader(data) # run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
-
 
             if not v:
                 print(err)
                 continue  # skip invalid seeds
             buf = bytearray(data)
-            print("Original source code: \n"+str(dataorig.decode("ascii")))
+            print("Original source code: \n"+str(dataorig[128:-1].decode("ascii")))
 
             # Mutate exactly once
             print("Passing this here: "+str(buf))
@@ -149,9 +118,12 @@ def benchmark_mutation_success(
             print("As vertex? : "+str(as_vertex))
             total += 1
 
+            shader_type, spec, output = parse_header(buf)
+            shader_src = strip_header_and_null(buf)
+
             # v, err = is_valid_shader(buf) # run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
 
-            v, err = run_checker(shader_src, shader_type, spec, output, name)
+            v, err = run_checker(shader_src, shader_type, spec, output) # Originally had the name here too...
 
             if v:
                 print("SUCCESS!")
@@ -182,6 +154,132 @@ def benchmark_mutation_success(
     print(f"Success rate:        {rate:.2f}%")
 
     return rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def benchmark_mutation_success_fuzzer(
+    input_dir: str,
+    trials: int = 100,
+    seed: int | None = None,
+    dump_failures: bool = False,
+    dump_dir: str = "mutation_failures",
+):
+    """
+    Randomly samples shaders, mutates once, checks validity.
+    Returns success ratio.
+    """
+
+    if seed is not None:
+        random.seed(seed)
+        mutator.init(seed)
+    files = [
+        os.path.join(input_dir, f)
+        for f in os.listdir(input_dir)
+        if os.path.isfile(os.path.join(input_dir, f))
+    ]
+
+    if not files:
+        raise RuntimeError("No input files found")
+
+    if dump_failures:
+        os.makedirs(dump_dir, exist_ok=True)
+
+    total = 0
+    success = 0
+
+    for i in range(1000): # range(trials):
+        rate = (success / total * 100.0) if total else 0.0
+        if rate != 0.0: # Is not zero?
+            print(rate)
+            # break
+        if i % PRINT_COUNT == 0:
+            print(f"Mutations attempted: {total}")
+            print(f"Valid mutations:     {success}")
+            print(f"Success rate:        {rate:.2f}%")
+        fn = random.choice(files)
+
+        try:
+            print("Processing this: "+str(fn))
+
+            with open(fn, "rb") as f:
+                data = f.read()
+
+            # if not shader_src:
+            #     continue
+
+            v, msg = check_file_bytes(data)
+
+            if not v:
+                print(err)
+                continue  # skip invalid seeds
+            buf = bytearray(data)
+            # print("Original source code: \n"+str(dataorig.decode("ascii")))
+
+            print("Original source code: \n"+str(buf[128:-1].decode("ascii")))
+
+            # Mutate exactly once
+            # print("Passing this here: "+str(buf))
+            buf = mutator.fuzz(buf, None, 1_000_000)
+            print("Mutated source code: \n"+str(buf[128:-1].decode("ascii")))
+            total += 1
+
+            v, err = check_file_bytes(buf)
+
+            if v:
+                print("SUCCESS!")
+                success += 1
+            else:
+                print("Errored with this here: "+str(err))
+                print("="*30)
+                print(buf[128:-1].decode("ascii"))
+                print("="*30)
+                if dump_failures:
+                    out = strip_header_and_null(buf, HEADER_SIZE)
+                    with open(
+                        os.path.join(dump_dir, f"fail_{i}.glsl"),
+                        "w",
+                        encoding="utf-8",
+                        errors="ignore",
+                    ) as fh:
+                        fh.write(out.decode("utf-8", errors="ignore"))
+
+        except Exception:
+            traceback.print_exc()
+            continue
+
+    rate = (success / total * 100.0) if total else 0.0
+
+    print(f"Mutations attempted: {total}")
+    print(f"Valid mutations:     {success}")
+    print(f"Success rate:        {rate:.2f}%")
+
+    return rate
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def run_parse_tests(only_one=None): # Run the parse tests..
 	d = False
@@ -323,7 +421,7 @@ if __name__=="__main__":
 		if "--run-small" in sys.argv: # Run the small testset...
 			run_parse_tests(only_one=None)
 			exit(0)
-	if len(sys.argv) == 3: # We need the directory and the thing...
+	if len(sys.argv) >= 3: # We need the directory and the thing...
 		if "--run-roundtrip" == sys.argv[1]:
 			run_roundtrip_tests(sys.argv[2]) # Pass the directory name as filename...
 			exit(0)
@@ -344,8 +442,15 @@ if __name__=="__main__":
 			s = random.randrange(100000)
 
 			print("Using this seed: "+str(s))
+			# Use the binary thing???
 
-			benchmark_mutation_success(input_dir=sys.argv[2], trials=1000, seed=s, dump_failures=False)
+			if "--use-fuzzer" not in sys.argv:
+
+				benchmark_mutation_success(input_dir=sys.argv[-1], trials=1000, seed=s, dump_failures=False)
+			
+			else:
+				benchmark_mutation_success_fuzzer(input_dir=sys.argv[-1], trials=1000, seed=s, dump_failures=False)
+
 			exit(0)
 
 	if len(sys.argv) >= 2:
