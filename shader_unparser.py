@@ -280,6 +280,15 @@ def _unparse_var_decl(d: VarDecl) -> str:
 def unparse_tu(tu: TranslationUnit) -> str:
     out = ""
 
+    # Process directives first
+    for d in getattr(tu, "directives", []):
+        if isinstance(d, VersionDirective):
+            out += f"#version {d.version}\n"
+        elif isinstance(d, ExtensionDirective):
+            out += f"#extension {d.name} : {d.behavior}\n"
+    if out:
+        out += "\n"
+
     for item in tu.items:
         # old explicit struct definition form (if you still use it)
         if isinstance(item, StructDef):
@@ -361,7 +370,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
     # Check for the mandatory precision statements. If these do not exist, then the shader gets rejected right out the gate...
 
-    if "precision mediump float" not in out:
+    if "precision mediump float" not in out and "highp" not in out: # Check for the high precision floats, if they do exist, then do not emit the mediump preamble thing...
 
         prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
         out = prec_preamble + out # Prepend that...

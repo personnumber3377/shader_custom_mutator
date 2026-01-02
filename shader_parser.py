@@ -791,7 +791,7 @@ class Parser:
 
         return TranslationUnit(items)
 
-
+'''
 def parse_to_tree(shader_source: str) -> TranslationUnit:
     if DEBUG:
         global current_input
@@ -799,3 +799,43 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
     tokens = lex(shader_source)
     p = Parser(tokens)
     return p.parse_translation_unit()
+'''
+
+def parse_directive(line: str):
+    parts = line.split()
+    if parts[0] == "#version":
+        return VersionDirective(parts[1])
+    if parts[0] == "#extension":
+        # "#extension GL_EXT_YUV_target : require"
+        name = parts[1]
+        behavior = parts[-1]
+        return ExtensionDirective(name, behavior)
+    return None
+
+# This here also supports the directives...
+def parse_to_tree(shader_source: str) -> TranslationUnit:
+    if DEBUG:
+        global current_input
+        current_input = shader_source
+
+    lines = shader_source.splitlines()
+    directives = []
+    body_lines = []
+
+    for line in lines:
+        s = line.strip()
+        if s.startswith("#version"):
+            directives.append(("version", s))
+        elif s.startswith("#extension"):
+            directives.append(("extension", s))
+        else:
+            body_lines.append(line)
+
+    tokens = lex("\n".join(body_lines))
+    p = Parser(tokens)
+    tu = p.parse_translation_unit()
+
+    # tu.directives = directives
+    tu.directives = [parse_directive(s) for _, s in directives]
+
+    return tu

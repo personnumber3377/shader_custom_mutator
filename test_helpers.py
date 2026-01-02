@@ -52,7 +52,8 @@ def check_file_bytes(data: bytes) -> tuple[bool, str]:
 
 def strip_header_and_null(buf: bytes) -> bytes:
     if not buf or buf[-1] != 0:
-        return b""
+        # return b""
+        return buf
     return buf[HEADER_SIZE:-1]
 
 def run_external_checker(buf: bytes, header_len: int, as_vertex=False) -> tuple[bool, str]:
@@ -67,7 +68,7 @@ def run_external_checker(buf: bytes, header_len: int, as_vertex=False) -> tuple[
     # if not isinstance(buf, bytes) and not isinstance(buf, bytes): # Maybe string type???
     #     buf = buf.decode("ascii") # Encode to ascii encoding...
 
-    data = strip_header_and_null(buf, header_len=header_len)
+    data = strip_header_and_null(buf)
 
     # 3) Write to temp file
     if as_vertex:
@@ -121,7 +122,7 @@ def run_as_frag_and_vertex(buf: bytes, header_len: int) -> tuple[bool, str]:
         # print("filename "+str(filename)+" errored with: "+str(err))
         ok, err = run_external_checker(source, 128, as_vertex=True) # Try again with a vertex thing...
     '''
-    source = strip_header_and_null(buf, header_len=header_len) # Cut off the shit...
+    source = strip_header_and_null(buf) # Cut off the shit...
     ok, err = run_external_checker(source, 128) # Run the checker for this source code...
     if not ok: # Error? Try to parse as vertex shader...
         print("Failed with these errors here when running as fragment: "+str(err))

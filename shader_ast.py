@@ -226,6 +226,17 @@ class InterfaceBlock(TopLevel):
         self.members = members
         self.instance = instance
 
+# Directives (version and extensions...)
+class VersionDirective:
+    def __init__(self, version: str):
+        self.version = version
+
+class ExtensionDirective:
+    def __init__(self, name: str, behavior: str):
+        self.name = name
+        self.behavior = behavior
+
 @dataclass
 class TranslationUnit:
     items: List[TopLevel]
+    # directives: List[str] # These are the directives shit here...
