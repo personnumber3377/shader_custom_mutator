@@ -6,9 +6,37 @@ import copy
 import traceback
 import random
 import struct
+import sys
+from typing import List
 
 HEADER_SIZE = 128
 PRINT_COUNT = 10
+
+CHECKER_PATH = "./angle_shader_checker"  # <-- change if needed
+TIMEOUT = 5.0
+GOOD_CORPUS_DIR = "good/"
+
+def check_file_fuzzer(path: str) -> tuple[bool, str]:
+    """
+    Runs the checker on a single file.
+    Returns (ok, stderr_output).
+    ok == True  -> "SUCCESS" found in stderr
+    ok == False -> otherwise
+    """
+    try:
+        proc = subprocess.run(
+            [CHECKER_PATH, path],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=TIMEOUT,
+            text=True,
+        )
+    except subprocess.TimeoutExpired:
+        return False, "TIMEOUT"
+
+    stderr = proc.stderr or ""
+    ok = "SUCCESS" in stderr
+    return ok, stderr.strip()
 
 # Here check for the null byte and if found, then assume fuzz input...
 
@@ -138,10 +166,12 @@ OUTPUT_FLAGS = {
 
 # ---- Helpers ----
 
+'''
 def strip_header_and_null(buf: bytes) -> bytes:
     if not buf or buf[-1] != 0:
         return b""
     return buf[HEADER_SIZE:-1]
+'''
 
 def parse_header(buf: bytes):
     if len(buf) < HEADER_SIZE:
