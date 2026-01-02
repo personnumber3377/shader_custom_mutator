@@ -746,13 +746,33 @@ class Parser:
             members.append(self.parse_struct_member())
         self.expect("}")
 
+        # This next snippet of code doesn't support arrays
+        '''
         instance = None
         if self.peek().kind == "ID":
             instance = self.advance().value
 
         self.expect(";")
         return InterfaceBlock(storage, name, members, instance)
+        '''
 
+        instance = None
+        array_dims = []
+
+        if self.peek().kind == "ID":
+            instance = self.advance().value
+
+            # ---- NEW: parse optional array dimensions ----
+            while self.match("["):
+                if self.match("]"):
+                    array_dims.append(None)
+                else:
+                    array_dims.append(self.parse_expr(0))
+                    self.expect("]")
+
+        self.expect(";")
+        return InterfaceBlock(storage, name, members, instance, array_dims)
+        
     def parse_global_decl(self) -> GlobalDecl:
         # parse type then one or more var decls then ;
         tname = self.parse_type_name()

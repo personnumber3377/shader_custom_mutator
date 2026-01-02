@@ -220,11 +220,13 @@ class Declaration(TopLevel):
 # This next class is used for the more complex struct blocks like:   buffer buffer_block { float w; };
 
 class InterfaceBlock(TopLevel):
-    def __init__(self, storage, name, members, instance):
+    def __init__(self, storage, name, members, instance, array_dims):
         self.storage = storage
         self.name = name
         self.members = members
         self.instance = instance
+        # array_dims: List[Optional[Expr]]
+        self.array_dims = array_dims
 
 # Directives (version and extensions...)
 class VersionDirective:

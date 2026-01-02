@@ -334,6 +334,8 @@ def unparse_tu(tu: TranslationUnit) -> str:
             out += _unparse_struct_body(tmp_struct)
             if item.instance:
                 out += f" {item.instance}"
+                # Add possible array lengths...
+                out += unparse_array_suffix(item.array_dims)
             out += ";\n\n"
             continue
 
