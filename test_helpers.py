@@ -16,16 +16,25 @@ CHECKER_PATH = "./angle_shader_checker"  # <-- change if needed
 TIMEOUT = 5.0
 GOOD_CORPUS_DIR = "good/"
 
-def check_file_fuzzer(path: str) -> tuple[bool, str]:
+def check_file_bytes(data: bytes) -> tuple[bool, str]:
     """
     Runs the checker on a single file.
     Returns (ok, stderr_output).
     ok == True  -> "SUCCESS" found in stderr
     ok == False -> otherwise
     """
+
+    with tempfile.NamedTemporaryFile(
+        mode="wb",
+        suffix=".bin",
+        delete=False
+    ) as f:
+        fname = f.name
+        f.write(data)
+
     try:
         proc = subprocess.run(
-            [CHECKER_PATH, path],
+            [CHECKER_PATH, fname],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=TIMEOUT,
