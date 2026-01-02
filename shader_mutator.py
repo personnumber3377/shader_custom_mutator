@@ -82,6 +82,15 @@ UNOPS = [
     ("-",  "vec3",  "vec3"),
 ]
 
+# These are types that can not be "generated", so ban these.
+OPAQUE_TYPES = {
+    "sampler2D", "sampler3D", "samplerCube",
+    "sampler2DArray",
+    "image2D", "image3D",
+    "atomic_uint",
+    "void",
+}
+
 def deepclone(x):
     # dataclasses + simple classes: copy.deepcopy is fine
     return copy.deepcopy(x)
@@ -563,11 +572,19 @@ def gen_leaf(want, scope, env, rng, kind):
         # cannot generate literal as lvalue
         return Identifier(rng.choice(list(scope.all_vars().keys())))
 
-    if want and want.name in NUMERIC_LITERALS:
-        return NUMERIC_LITERALS[want.name](rng)
+    if want and name in NUMERIC_LITERALS:
+        return NUMERIC_LITERALS[name](rng)
+
+    # Check for banned types...
+    if want and name in OPAQUE_TYPES:
+        # Only valid leaf is an identifier of that type
+        vars = candidates_by_type(scope, env, want)
+        if vars:
+            return Identifier(rng.choice(vars))
+        # otherwise: give up gracefully
+        return NUMERIC_LITERALS["int"](rng)
 
     # Instead of aborting, just call the atom thing...
-
     return gen_atom(want, scope, env, rng)
     # abort("Reached end of gen_leaf with want == "+str(want))
     # return IntLiteral(0)
