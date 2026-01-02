@@ -306,7 +306,9 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
     # Process directives first
     for d in getattr(tu, "directives", []):
-        if isinstance(d, VersionDirective):
+        if isinstance(d, PragmaDirective):
+            out += f"#pragma {d.pragma_string}"
+        elif isinstance(d, VersionDirective):
             out += f"#version {d.version}\n"
         elif isinstance(d, ExtensionDirective):
             out += f"#extension {d.name} : {d.behavior}\n"

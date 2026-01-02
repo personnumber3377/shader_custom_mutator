@@ -238,6 +238,11 @@ class ExtensionDirective:
         self.name = name
         self.behavior = behavior
 
+class PragmaDirective:
+    def __init__(self, pragma_string: str):
+        self.pragma_string = pragma_string
+        # self.behavior = behavior
+
 @dataclass
 class TranslationUnit:
     items: List[TopLevel]

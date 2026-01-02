@@ -710,7 +710,7 @@ class Parser:
 
         self.expect(";")
         return StructDecl(struct_type, declarators)
-    
+
     def parse_struct_def(self) -> StructDef:
         self.expect("KW", "struct")
         name = self.expect("ID").value
@@ -878,6 +878,9 @@ def parse_directive(line: str):
         name = parts[1]
         behavior = parts[-1]
         return ExtensionDirective(name, behavior)
+    if parts[0] == "#pragma": # Pragma directives too...
+        pragma_string = " ".join(parts[1:])
+        return PragmaDirective(pragma_string)
     return None
 
 # This here also supports the directives...
