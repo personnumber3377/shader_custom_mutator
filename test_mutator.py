@@ -84,33 +84,74 @@ def benchmark_mutation_success(
             print(f"Valid mutations:     {success}")
             print(f"Success rate:        {rate:.2f}%")
         fn = random.choice(files)
+        if ".vert" in fn:
+            as_vertex = True
+        else:
+            as_vertex = False
 
         try:
             print("Processing this: "+str(fn))
 
             with open(fn, "rb") as f:
-                data = f.read()
+                dataorig = f.read()
+
+            # dataorig = b"\x00" * 128 + dataorig + b"\x00" # Convert to fuzz format...
+
+
+            '''
+			shader_type, spec, output = parse_header(data)
+            shader_src = strip_header_and_null(data)
 
             if not shader_src:
                 continue
 
-            v, msg = check_file_bytes(data) # run_checker(shader_src, shader_type, spec, output)
+            ok, msg = run_checker(shader_src, shader_type, spec, output, name)
+            total += 1
+
+            if not ok:
+                failures += 1
+                if printed < PRINT_LIMIT:
+            '''
+
+
+            shader_type, spec, output = parse_header(dataorig)
+            shader_src = strip_header_and_null(dataorig)
+
+            if not shader_src:
+                continue
+
+            v, msg = run_checker(shader_src, shader_type, spec, output, name)
+            total += 1
+
+            # if not ok:
+            #     failures += 1
+            #     if printed < PRINT_LIMIT:
+
+
+            data = normalize_input(dataorig)
+
+            # Check original validity
+            # print("is valid???")
+            # print("data: "+str(data))
+            # v, err = is_valid_shader(data) # run_external_checker(data, HEADER_SIZE, as_vertex=as_vertex) # is_valid_shader(data)
+
 
             if not v:
                 print(err)
                 continue  # skip invalid seeds
             buf = bytearray(data)
-            # print("Original source code: \n"+str(dataorig.decode("ascii")))
-
-            print("Original source code: \n"+str(buf[128:-1].decode("ascii")))
+            print("Original source code: \n"+str(dataorig.decode("ascii")))
 
             # Mutate exactly once
-            # print("Passing this here: "+str(buf))
+            print("Passing this here: "+str(buf))
             buf = mutator.fuzz(buf, None, 1_000_000)
             print("Mutated source code: \n"+str(buf[128:-1].decode("ascii")))
+            print("As vertex? : "+str(as_vertex))
             total += 1
 
-            v, err = check_file_bytes(data) # run_checker(shader_src, shader_type, spec, output)
+            # v, err = is_valid_shader(buf) # run_external_checker(buf, HEADER_SIZE, as_vertex=as_vertex)
+
+            v, err = run_checker(shader_src, shader_type, spec, output, name)
 
             if v:
                 print("SUCCESS!")
