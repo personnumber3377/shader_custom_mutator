@@ -221,7 +221,7 @@ void main()
     float test_float2 = .01;
     float test_float3 = 10.;
     float test_float4 = 10.01;
-    float test_float5 = 23e+2;
+    float test_float5 = 2300.0;
     float test_float6 = 23.0;
     float test_float8 = 23.0;
     bool test_bool6 = BoolConst1 && ! (test_int1 != 0) && ! BoolConst1  && ! (FloatConst1 != 0.0) && (FloatConst1 != 0.0) && (test_float1 != 0.0);
