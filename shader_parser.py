@@ -899,6 +899,8 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
             directives.append(("version", s))
         elif s.startswith("#extension"):
             directives.append(("extension", s))
+        elif s.startswith("#pragma"):
+            directives.append(("pragma", s))
         else:
             body_lines.append(line)
 
