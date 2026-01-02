@@ -143,13 +143,28 @@ def _unparse_struct_body(struct_type: StructType) -> str:
     out += "}"
     return out
 
-
+'''
 def unparse_struct_specifier(struct_type: StructType) -> str:
     name = struct_type.name if struct_type.name else ""
     if name:
         return f"struct {name} {_unparse_struct_body(struct_type)}"
     return f"struct {_unparse_struct_body(struct_type)}"
+'''
 
+def unparse_struct_specifier(struct_type: StructType) -> str:
+    parts = []
+
+    # ---- NEW: print qualifiers ----
+    if getattr(struct_type, "qualifiers", None):
+        parts.extend(struct_type.qualifiers)
+
+    name = struct_type.name if struct_type.name else ""
+    if name:
+        parts.append(f"struct {name} {_unparse_struct_body(struct_type)}")
+    else:
+        parts.append(f"struct {_unparse_struct_body(struct_type)}")
+
+    return " ".join(parts)
 
 # -----------------------------
 # Statements
