@@ -8,6 +8,9 @@ import random
 
 from shader_ast import *
 
+# For the builtin functions etc...
+from builtin_data import BUILTIN_FUNCTIONS
+
 # Debugging???
 
 DEBUG = True
@@ -19,6 +22,22 @@ def dlog(msg: str): # Debug logging...
 # ----------------------------
 # Utilities
 # ----------------------------
+
+SPECIAL_TYPES = {
+    "sampler2D",
+    "samplerCube",
+    "samplerExternalOES",
+    "gsampler2D",
+    "image2D",
+    "atomic_uint",
+}
+
+GENERIC_EXPANSION = {
+    "genType": ["float", "vec2", "vec3", "vec4"],
+    "genIType": ["int", "ivec2", "ivec3", "ivec4"],
+    "genUType": ["uint", "uvec2", "uvec3", "uvec4"],
+    "genBType": ["bool", "bvec2", "bvec3", "bvec4"],
+}
 
 BUILTIN_NUMERIC_TYPES = {
     "bool", "int", "uint", "float", "double",
@@ -627,8 +646,51 @@ def gen_ternary(want, scope, env, rng, depth):
     f = gen_expr(want, scope, env, rng, depth + 1)
     return TernaryExpr(cond, t, f)
 
+
+def gen_builtin_call(want, scope, env, rng, depth):
+    candidates = []
+
+    for fname, info in BUILTIN_FUNCTIONS.items():
+        ret = info["return"]
+        if want is None or ret == want.name:
+            candidates.append((fname, info))
+
+    if not candidates:
+        return None
+
+    fname, info = rng.choice(candidates)
+    args = []
+
+    for p in info["params"]:
+        base = p.split("[", 1)[0]
+
+        # generic family
+        if base in GENERIC_EXPANSION:
+            concrete = rng.choice(GENERIC_EXPANSION[base])
+            args.append(gen_expr(Type(concrete), scope, env, rng, depth + 1))
+            continue
+
+        # special opaque types → use builtin variables
+        if base in SPECIAL_TYPES:
+            var = env.get_builtin_var(base)
+            if var is None:
+                return None
+            args.append(Identifier(var))
+            continue
+
+        # normal type
+        args.append(gen_expr(Type(base), scope, env, rng, depth + 1))
+
+    return CallExpr(Identifier(fname), args)
+
 def gen_call(want, scope, env, rng, depth):
     candidates = []
+
+    if coin(0.10, rng): # 10% chance to generate a builtin function call...
+        call = gen_builtin_call(want, scope, env, rng, depth)
+        if call: # Return the generated call if one was found...
+            assert False
+            return call
 
     for fname, (ret, params) in env.funcs.items():
         if want is None or ret.name == want.name:
