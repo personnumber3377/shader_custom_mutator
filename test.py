@@ -289,7 +289,7 @@ def main():
     ap.add_argument("--mutation-bench", action="store_true")
     ap.add_argument("--roundtrip", action="store_true")
     ap.add_argument("--check-corpus", action="store_true")
-    ap.add_argument("--iters", type=int, default=100)
+    ap.add_argument("--iters", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--add-default-header", action="store_true",
                 help="Add default HEADER to all text shaders in directory")

@@ -304,6 +304,12 @@ def gen_coord_for_image(image_expr: Identifier, scope: Scope, env: Env, rng: ran
 
     return gen_expr(TypeInfo(coord_type), scope, env, rng)
 
+def find_struct_def_index(items, struct_name: str) -> int | None:
+    for i, item in enumerate(items):
+        if isinstance(item, StructDef) and item.name == struct_name:
+            return i
+    return None
+
 # ----------------------------
 # Type info helpers
 # ----------------------------
@@ -827,6 +833,9 @@ def gen_member_access(want, scope, env, rng, depth):
         f = rng.choice(fields)
         expr = MemberExpr(expr, f.name)
         ti = structfield_to_typeinfo(f)
+        # Stop here for now...
+        # global stop
+        # stop = True
 
         if ti.name not in env.struct_defs:
             break
@@ -1544,8 +1553,8 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
         for p in it.params:
             if coin(rng, 0.25):
-                global stop
-                stop = True
+                # global stop
+                # stop = True
                 p.type_name = mutate_typename(p.type_name, rng)
 
         return it
@@ -1614,27 +1623,47 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     if len(new_items) > 2 and coin(rng, 0.03):
         rng.shuffle(new_items)
 
-    if coin(rng, 0.05) and env.struct_defs: # Add an instance of a struct?
+    if coin(rng, 0.99) and env.struct_defs:
         sname = rng.choice(list(env.struct_defs.keys()))
         vname = f"g_{rng.randrange(10000)}"
         init = gen_constructor_expr(TypeInfo(sname), Scope(None), env, rng)
 
         decl = GlobalDecl([
-            VarDecl(TypeName(sname), vname, init=init, array_dims=None)
+            VarDecl(
+                TypeName(sname),
+                vname,
+                init=init,
+                array_dims=[]
+            )
         ])
 
-        new_items.insert(rng.randrange(len(new_items)+1), decl)
+        # 🔴 FIND STRUCT DEF LOCATION
+        idx = find_struct_def_index(new_items, sname)
+
+        if idx is not None:
+            # insert immediately AFTER struct definition
+            new_items.insert(idx + 1, decl)
+        else:
+            # fallback (should be rare)
+            assert False
+            new_items.insert(0, decl)
+
         env.globals[vname] = TypeInfo(sname)
+        # global stop
+        # stop = True
 
     tu2.items = new_items
 
     # Now try to unparse that shit...
 
+
+    '''
     if stop:
         result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
         # Now print the thing...
         print("Mutated source code when hit the thing: "+str(result))
         print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
         exit(0)
-
+    '''
+    
     return tu2
