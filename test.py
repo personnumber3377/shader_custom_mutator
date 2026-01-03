@@ -217,8 +217,10 @@ def roundtrip_test(path: str):
             raise RuntimeError(f"Initial shader invalid:\n{msg}")
 
         src = strip_header_and_null(data).decode("utf-8")
+        print("Passing this source code: "+str(src))
         tu = shader_parser.parse_to_tree(src)
         out = shader_unparser.unparse_tu(tu)
+        print("Got this source code back: "+str(out))
 
         rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
         ok2, msg2 = check_file_bytes(rebuilt)

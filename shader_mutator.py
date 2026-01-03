@@ -50,6 +50,17 @@ BUILTIN_NUMERIC_TYPES = {
     "mat2", "mat3", "mat4",
 }
 
+STORAGE_QUALIFIERS = [
+    "const", "uniform", "in", "out", "inout",
+    "attribute", "varying", "buffer", None
+]
+
+PRECISION_QUALIFIERS = [
+    "lowp", "mediump", "highp", None
+]
+
+PARAM_QUALIFIERS = ["in", "out", "inout"]
+
 MAX_EXPR_DEPTH = 3
 
 MATRIX_TYPES = ["mat2", "mat3", "mat4"]
@@ -1173,6 +1184,29 @@ def mutate_array_dims(dims: List[Optional[Expr]], rng: random.Random, scope: Sco
 
     return dims
 
+# Used for mutating qualifiers of typenames primarily...
+
+def mutate_typename(t: TypeName, rng: random.Random) -> TypeName:
+    t2 = deepclone(t)
+
+    qs = set(t2.qualifiers or [])
+
+    # remove qualifier
+    if qs and coin(rng, 0.3):
+        qs.remove(rng.choice(list(qs)))
+
+    # add storage qualifier
+    if coin(rng, 0.3):
+        q = rng.choice(list(STORAGE_QUALIFIERS))
+        qs.add(q)
+
+    t2.qualifiers = list(qs)
+
+    # precision is exclusive
+    if coin(rng, 0.3):
+        t2.precision = rng.choice(list(PRECISION_QUALIFIERS) + [None])
+
+    return t2
 
 def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> VarDecl:
     v2 = deepclone(v)
@@ -1197,6 +1231,34 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
                 v2.init = gen_atom(ti, scope, env, rng)
             else:
                 v2.init = gen_expr(ti, scope, env, rng)
+
+    # TODO: Here we actually mutate the qualifiers. Make this smart such that it know which variables you can add which qualifier to???
+    # mutate qualifiers
+    '''
+    if hasattr(v2, "qualifiers") and coin(rng, 0.30):
+        qs = set(v2.qualifiers or [])
+
+        # randomly drop
+        if qs and coin(rng, 0.5):
+            qs.pop()
+
+        # randomly add
+        if coin(rng, 0.5):
+            q = rng.choice(STORAGE_QUALIFIERS)
+            if q:
+                qs.add(q)
+
+        # precision
+        if coin(rng, 0.5):
+            q = rng.choice(PRECISION_QUALIFIERS)
+            if q:
+                qs.add(q)
+
+        v2.qualifiers = list(qs)
+    '''
+
+    if coin(rng, 0.25): # Mutate qualifiers???
+        v2.type_name = mutate_typename(v2.type_name, rng)
 
     # mutate array dims
     if hasattr(v2, "array_dims"):
@@ -1451,6 +1513,16 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
     # FunctionDef
     if isinstance(item, FunctionDef):
+        # TODO: Add qualifier mutation. Maybe something like the following? :
+        '''
+        for p in it.params:
+            if coin(rng, 0.25):
+                p.qualifier = rng.choice(PARAM_QUALIFIERS)
+        '''
+
+
+
+
         it = deepclone(item)
 
         # build function scope with params
@@ -1464,6 +1536,10 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
         # maybe reorder params sometimes
         if len(it.params) > 1 and coin(rng, 0.05):
             rng.shuffle(it.params)
+
+        for p in it.params:
+            if coin(rng, 0.25):
+                p.type_name = mutate_typename(p.type_name, rng)
 
         return it
 
