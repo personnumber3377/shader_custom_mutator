@@ -1,3 +1,4 @@
+HEADER: frag 3 6
 #version 300 es
 #extension GL_OES_standard_derivatives : require
 
