@@ -133,6 +133,31 @@ def load_text_shader(path: str) -> bytes:
     body = "\n".join(src.splitlines()[1:]).encode("utf-8")
     return header + body + b"\x00"
 
+def text_to_binary(src_path: str, out_path: str):
+    src = open(src_path, "r", encoding="utf-8").read()
+    header = build_header_from_directive(src)
+    body = "\n".join(src.splitlines()[1:]).encode("utf-8")
+    blob = header + body + b"\x00"
+
+    with open(out_path, "wb") as f:
+        f.write(blob)
+
+    print(f"[text→bin] {src_path} -> {out_path}")
+
+def binary_to_text(bin_path: str, out_path: str):
+    data = open(bin_path, "rb").read()
+    shader_type, spec, output = struct.unpack_from("<III", data, 0)
+
+    shader_type_str = "vert" if shader_type == GL_VERTEX_SHADER else "frag"
+    header_line = f"HEADER: {shader_type_str} {spec} {output}"
+
+    body = strip_header_and_null(data).decode("utf-8", errors="ignore")
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(header_line + "\n" + body)
+
+    print(f"[bin→text] {bin_path} -> {out_path}")
+
 # -----------------------------
 # Utilities
 # -----------------------------
@@ -203,6 +228,32 @@ def roundtrip_test(path: str):
 
     print("✔ Roundtrip tests passed")
 
+def add_default_header_to_directory(
+    directory: str,
+    default_header: str = "HEADER: frag 3 6"
+):
+    for name in os.listdir(directory):
+        path = os.path.join(directory, name)
+        if not os.path.isfile(path):
+            continue
+
+        # Skip binaries
+        try:
+            data = open(path, "rb").read()
+            data.decode("utf-8")
+        except Exception:
+            continue
+
+        with open(path, "r", encoding="utf-8") as f:
+            src = f.read()
+
+        if src.startswith("HEADER:"):
+            continue  # already has header
+
+        print(f"[add-header] {path}")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(default_header + "\n" + src)
+
 def corpus_check(path: str):
     total = 0
     failures = 0
@@ -236,6 +287,12 @@ def main():
     ap.add_argument("--check-corpus", action="store_true")
     ap.add_argument("--iters", type=int, default=100)
     ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--add-default-header", action="store_true",
+                help="Add default HEADER to all text shaders in directory")
+    ap.add_argument("--text-to-bin", action="store_true",
+                help="Convert text shader to binary format")
+    ap.add_argument("--bin-to-text", action="store_true",
+                help="Convert binary shader to text format")
     args = ap.parse_args()
 
     seed = args.seed or random.randrange(1 << 30)
@@ -248,6 +305,20 @@ def main():
             roundtrip_test(args.path)
         elif args.check_corpus:
             corpus_check(args.path)
+        elif args.add_default_header:
+            if not os.path.isdir(args.path):
+                ap.error("--add-default-header requires a directory")
+            add_default_header_to_directory(args.path)
+        elif args.text_to_bin:
+            if not os.path.isfile(args.path):
+                ap.error("--text-to-bin requires a file")
+            out = args.path + ".bin"
+            text_to_binary(args.path, out)
+        elif args.bin_to_text:
+            if not os.path.isfile(args.path):
+                ap.error("--bin-to-text requires a file")
+            out = args.path + ".glsl"
+            binary_to_text(args.path, out)
         else:
             ap.error("no test selected")
     except Exception:
