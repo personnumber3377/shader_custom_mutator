@@ -214,8 +214,8 @@ class Parser:
             decls.append(Declarator(name, base_type, array_size, init))
 
             if not self.match(","):
-                print("self.peek().kind: "+str(self.peek().kind))
-                print("self.peek().value: "+str(self.peek().value))
+                # print("self.peek().kind: "+str(self.peek().kind))
+                # print("self.peek().value: "+str(self.peek().value))
                 break
         return decls
 
@@ -412,10 +412,7 @@ class Parser:
         return StructType(name, members)
 
     def parse_decl_stmt(self) -> DeclStmt:
-        # print("self.peek().value: "+str(self.peek().value))
-        # print("self.peek().value: "+str(self.peek().value))
         if self.peek().value == "struct":
-            # print("poopoo")
             struct_type = self.parse_struct_specifier()
 
             declarators = []
@@ -495,7 +492,6 @@ class Parser:
 
     def parse_stmt(self) -> Stmt:
         t = self.peek()
-        # print(t)
 
         # switch statements
         if t.value == "switch": # This originally was t.kind == "KW"
@@ -514,7 +510,6 @@ class Parser:
         # struct definition inside a block (???)
         # if t.kind == "KW" and t.value == "struct": # TODO: This check here fails, because struct definitions can have "const" in the front of it etc..
         if self._looks_like_struct_decl_stmt():
-            # print("paskaaaa"*1000)
             struct_decl = self.parse_struct_toplevel_decl()
             return struct_decl
 
@@ -617,7 +612,6 @@ class Parser:
 
         # expression statement
         e = self.parse_expr(0)
-        # print(t)
         self.expect(";")
         return ExprStmt(e)
 

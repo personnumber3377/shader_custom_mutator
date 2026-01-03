@@ -211,7 +211,7 @@ def roundtrip_test(path: str):
     for fn in files:
         print(f"[roundtrip] {fn}")
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
-        print("passing this here: "+str(data))
+        # print("passing this here: "+str(data))
         ok, msg = check_file_bytes(data)
         if not ok:
             raise RuntimeError(f"Initial shader invalid:\n{msg}")
