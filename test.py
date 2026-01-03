@@ -190,10 +190,12 @@ def mutation_benchmark(path: str, iters: int, seed: int):
         ok, _ = check_file_bytes(data)
         if not ok:
             continue
-
-        mutated = mutator.fuzz(bytearray(data), None, 1_000_000)
-        ok2, _ = check_file_bytes(mutated)
-
+        try:
+            mutated = mutator.fuzz(bytearray(data), None, 1_000_000)
+            ok2, _ = check_file_bytes(mutated)
+        except Exception as e: # TODO: The mutator may fail for example with "ValueError: invalid literal for int() with base 10: 'c'" ... Please fix this!
+            total += 1
+            continue
         total += 1
         success += int(ok2)
 
