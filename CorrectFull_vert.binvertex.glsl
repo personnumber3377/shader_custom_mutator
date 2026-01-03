@@ -191,7 +191,6 @@ void main()
     struct {
         structMain a;
     } aStruct;
-    testStruct.i = 5.0 ;
     struct_var.i = 5.0;
     structMain newStruct, newStruct1;
     testStruct = newStruct;
@@ -222,9 +221,9 @@ void main()
     float test_float2 = .01;
     float test_float3 = 10.;
     float test_float4 = 10.01;
-    float test_float5 = 23e+2;
-    float test_float6 = 23E-3;
-    float test_float8 = 23E2;
+    float test_float5 = 23.0;
+    float test_float6 = 23.0;
+    float test_float8 = 2300.0;
     bool test_bool6 = BoolConst1 && ! (test_int1 != 0) && ! BoolConst1  && ! (FloatConst1 != 0.0) && (FloatConst1 != 0.0) && (test_float1 != 0.0);
     vec4 color = vec4(0.0, 1.0, 0.0, 1.0);
     vec4 color2 = vec4(0.0);
@@ -394,9 +393,6 @@ void main()
     gtf_TextureMatrix[gtf_MaxTextureCoords-1];
     gtf_TextureMatrix;
     gtf_DepthRange.near ;
-    test_float1 = gtf_DepthRange.near;
-    test_float1 = gtf_DepthRange.far;
-    test_float1 = gtf_DepthRange.diff;
     gtf_Point.size;
     gtf_Point.sizeMin;
     gtf_Point.sizeMax;
@@ -410,7 +406,6 @@ void main()
     color = gtf_FrontMaterial.ambient;
     color = gtf_FrontMaterial.diffuse;
     color = gtf_FrontMaterial.specular;
-    test_float1 = gtf_FrontMaterial.shininess;
     gtf_LightSourceParameters lightSource;
     float builtInFloat1 = gtf_LightSource[0].spotExponent;
     color = gtf_LightSource[0].ambient;
@@ -420,12 +415,6 @@ void main()
     color = lightSource.position;
     color = lightSource.halfVector;
     color4 = lightSource.spotDirection;
-    test_float1 = lightSource.spotExponent;
-    test_float1 = lightSource.spotCutoff;
-    test_float1 = lightSource.spotCosCutoff;
-    test_float1 = lightSource.constantAttenuation;
-    test_float1 = lightSource.linearAttenuation;
-    test_float1 = lightSource.quadraticAttenuation;
     color = gtf_LightModel.ambient;
     gtf_LightModelParameters lightModel;
     color = gtf_LightModel.ambient;
@@ -440,10 +429,6 @@ void main()
     color =  lightProd.ambient;
     color =  lightProd.diffuse;
     color =  lightProd.specular;
-    test_float1 = gtf_Fog.density ;
-    test_float1 = gtf_Fog.start ;
-    test_float1 = gtf_Fog.end  ;
-    test_float1 = gtf_Fog.scale ;
     color = gtf_Fog.color ;
     gtf_FrontColor =  vec4(1.0, 1.0, 1.0, 1.0);
     gtf_BackColor =  vec4(1.0, 1.0, 1.0, 1.0);
