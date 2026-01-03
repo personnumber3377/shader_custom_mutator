@@ -225,6 +225,20 @@ def roundtrip_test(path: str):
         print("Got this source code back: "+str(out))
 
         rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
+        
+        '''
+        shader_type = 0x8B31  # GL_VERTEX_SHADER
+        shader_spec = 2       # SH_GLES3_SPEC
+        output_format = 15    # SH_SPIRV_VULKAN_OUTPUT
+
+        header_list = list(struct.pack('<III', shader_type, shader_spec, output_format))
+        header_list.extend([0] * (128 - len(header_list)))
+        header_list[12] |= 0x01 # objectCode = true
+        header = bytes(header_list)
+
+        rebuilt = header + out.encode("utf-8") + b"\x00" # Reconstruct the shit...
+        '''
+
         ok2, msg2 = check_file_bytes(rebuilt)
 
         if not ok2:
