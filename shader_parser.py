@@ -872,7 +872,8 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
 def parse_directive(line: str):
     parts = line.split()
     if parts[0] == "#version":
-        return VersionDirective(parts[1])
+        # return VersionDirective(parts[1]) # Doesn't work for example "#version 300 es" has two string parts after the "#version" token...
+        return VersionDirective(" ".join(parts[1:]))
     if parts[0] == "#extension":
         # "#extension GL_EXT_YUV_target : require"
         name = parts[1]

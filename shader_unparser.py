@@ -49,8 +49,8 @@ def unparse_expr(e: Expr) -> str:
             return f"{unparse_expr(e.operand)}{e.op}"
         return f"{e.op}{unparse_expr(e.operand)}"
     if isinstance(e, BinaryExpr):
-        print("e.left: "+str(e.left))
-        print("e.right: "+str(e.right))
+        # print("e.left: "+str(e.left))
+        # print("e.right: "+str(e.right))
         # if e.op == "," or e.op == "=": # Check for the comma "operator" which is actually used to separate function arguments and such... Also do not wrap when assigning variables etc etc...
         if e.op == "=" or e.op == ",":
             return f"{unparse_expr(e.left)} {e.op} {unparse_expr(e.right)}"
@@ -315,6 +315,13 @@ def unparse_tu(tu: TranslationUnit) -> str:
     if out:
         out += "\n"
 
+        # Check for the mandatory precision statements. If these do not exist, then the shader gets rejected right out the gate...
+
+    if "precision mediump float" not in out and "highp" not in out: # Check for the high precision floats, if they do exist, then do not emit the mediump preamble thing...
+
+        prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
+        out += prec_preamble #  + out # Prepend that...
+
     for item in tu.items:
         # old explicit struct definition form (if you still use it)
         if isinstance(item, StructDef):
@@ -395,12 +402,5 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
         # unknown => ignore safely
         out += "\n"
-
-    # Check for the mandatory precision statements. If these do not exist, then the shader gets rejected right out the gate...
-
-    if "precision mediump float" not in out and "highp" not in out: # Check for the high precision floats, if they do exist, then do not emit the mediump preamble thing...
-
-        prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
-        out = prec_preamble + out # Prepend that...
 
     return out
