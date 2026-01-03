@@ -849,7 +849,8 @@ class Parser:
         while self.peek().kind != "EOF":
             t = self.peek()
 
-            if t.kind == "KW" and t.value == "struct":
+            # if t.kind == "KW" and t.value == "struct":
+            if self._looks_like_struct_decl_stmt():
                 items.append(self.parse_struct_toplevel_decl())
                 continue
 

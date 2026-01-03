@@ -143,14 +143,15 @@ def _unparse_struct_body(struct_type: StructType) -> str:
     out += "}"
     return out
 
-'''
+
 def unparse_struct_specifier(struct_type: StructType) -> str:
     name = struct_type.name if struct_type.name else ""
     if name:
         return f"struct {name} {_unparse_struct_body(struct_type)}"
     return f"struct {_unparse_struct_body(struct_type)}"
-'''
 
+
+'''
 def unparse_struct_specifier(struct_type: StructType) -> str:
     parts = []
 
@@ -165,6 +166,7 @@ def unparse_struct_specifier(struct_type: StructType) -> str:
         parts.append(f"struct {_unparse_struct_body(struct_type)}")
 
     return " ".join(parts)
+'''
 
 # -----------------------------
 # Statements
@@ -272,7 +274,16 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
 
     # This is to handle inline struct definitions inside functions...
     if isinstance(s, StructDecl):
-        out = unparse_struct_specifier(s.struct_type) # Originally was +=
+        # assert False
+        storage = None
+        if s.declarators and getattr(s.declarators[0], "storage", None):
+            storage = s.declarators[0].storage
+
+        out = ""
+        if storage:
+            out += storage + " "
+
+        out += unparse_struct_specifier(s.struct_type) # Originally was +=
         if s.declarators:
             out += " " + ", ".join(_unparse_declarator(d) for d in s.declarators)
         out += ";\n\n"
@@ -303,7 +314,7 @@ def _unparse_var_decl(d: VarDecl) -> str:
 
 def unparse_tu(tu: TranslationUnit) -> str:
     out = ""
-
+    print("Got this thing here: "+str(tu))
     # Process directives first
     for d in getattr(tu, "directives", []):
         if isinstance(d, PragmaDirective):
@@ -326,6 +337,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
         out += prec_preamble #  + out # Prepend that...
 
     for item in tu.items:
+        print("Here is the item: "+str(item))
         # old explicit struct definition form (if you still use it)
         if isinstance(item, StructDef):
             out += f"struct {item.name} {{\n"
@@ -342,6 +354,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
         # struct specifier + declarators (your common case)
         if isinstance(item, StructDecl):
+            print("Here is the fucking shit: "+str(item))
             '''
             def unparse_struct_decl(item: StructDecl):
                 storage = None
@@ -357,18 +370,19 @@ def unparse_tu(tu: TranslationUnit) -> str:
                 out += ";\n"
                 return out
             '''
-
+            print("poopoofefefeffe")
             storage = None
             if item.declarators and getattr(item.declarators[0], "storage", None):
                 storage = item.declarators[0].storage
-
-            out = ""
+            print("poopoofefefeffe")
+            # out = ""
             if storage:
                 out += storage + " "
-            
+
             out += unparse_struct_specifier(item.struct_type)
             if item.declarators:
                 out += " " + ", ".join(_unparse_declarator(d) for d in item.declarators)
+            print("out: "+str(out))
             out += ";\n\n"
             continue
 
