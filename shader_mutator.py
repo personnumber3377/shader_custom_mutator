@@ -778,6 +778,8 @@ def gen_call(want, scope, env, rng, depth):
 
     return CallExpr(Identifier(fname), args)
 
+# This code did not use nested structs correctly...
+'''
 def gen_member_access(want, scope, env, rng, depth):
     vars = [(n, ti) for n, ti in scope.all_vars().items()
             if ti.name in env.struct_defs]
@@ -790,6 +792,30 @@ def gen_member_access(want, scope, env, rng, depth):
 
     f = rng.choice(fields)
     return MemberExpr(Identifier(name), f.name)
+'''
+
+def gen_member_access(want, scope, env, rng, depth):
+    candidates = [(n, ti) for n, ti in scope.all_vars().items()
+                  if ti.name in env.struct_defs]
+
+    if not candidates:
+        return gen_leaf(want, scope, env, rng, ExprKind.RVALUE)
+
+    name, ti = rng.choice(candidates)
+    expr = Identifier(name)
+
+    for _ in range(rng.randint(1, 3)):
+        fields = env.struct_defs.get(ti.name)
+        if not fields:
+            break
+        f = rng.choice(fields)
+        expr = MemberExpr(expr, f.name)
+        ti = structfield_to_typeinfo(f)
+
+        if ti.name not in env.struct_defs:
+            break
+
+    return expr
 
 def gen_if(scope, env, rng):
     cond = gen_expr(TypeInfo("bool"), scope, env, rng)
@@ -887,7 +913,7 @@ def gen_struct_definition(new_items, rng, env):
 
     fields = []
     for _ in range(field_count):
-        fields.append(gen_random_struct_field(rng, env, depth=0))
+        fields.append(gen_random_struct_field(rng, env, depth=1))
 
     struct = StructDef(name, fields)
 
@@ -1205,7 +1231,10 @@ def mutate_stmt(s: Stmt, rng: random.Random, scope: Scope, env: Env) -> Stmt:
         if out_stmts:
             rand_ind = rng.randrange(len(out_stmts))
             out_stmts[rand_ind] = mutate_stmt(out_stmts[rand_ind], rng, child, env)
-
+            if coin(rng, 0.10):
+                sd = gen_struct_vardecl(child, env, rng)
+                if sd:
+                    out_stmts.insert(rng.randrange(len(out_stmts)+1), sd)
         # Add a new expression too maybe???
         if coin(rng, 0.30):
             '''
@@ -1501,6 +1530,18 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     # occasional top-level reorder (dangerous but good for fuzzing)
     if len(new_items) > 2 and coin(rng, 0.03):
         rng.shuffle(new_items)
+
+    if coin(rng, 0.05) and env.struct_defs: # Add an instance of a struct?
+        sname = rng.choice(list(env.struct_defs.keys()))
+        vname = f"g_{rng.randrange(10000)}"
+        init = gen_constructor_expr(TypeInfo(sname), Scope(None), env, rng)
+
+        decl = GlobalDecl([
+            VarDecl(TypeName(sname), vname, init=init, array_dims=None)
+        ])
+
+        new_items.insert(rng.randrange(len(new_items)+1), decl)
+        env.globals[vname] = TypeInfo(sname)
 
     tu2.items = new_items
     return tu2
