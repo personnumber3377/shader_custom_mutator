@@ -30,7 +30,7 @@ from test_helpers import (
 # Checker (MANDATORY)
 # -----------------------------
 
-CHECKER_PATH = "./new_angle"
+CHECKER_PATH = "./newest_angle"
 TIMEOUT = 5.0
 
 def check_file_bytes(data: bytes) -> tuple[bool, str]:
