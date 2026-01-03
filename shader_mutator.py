@@ -1623,7 +1623,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     if len(new_items) > 2 and coin(rng, 0.03):
         rng.shuffle(new_items)
 
-    if coin(rng, 0.99) and env.struct_defs:
+    if coin(rng, 0.10) and env.struct_defs:
         sname = rng.choice(list(env.struct_defs.keys()))
         vname = f"g_{rng.randrange(10000)}"
         init = gen_constructor_expr(TypeInfo(sname), Scope(None), env, rng)
@@ -1645,7 +1645,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
             new_items.insert(idx + 1, decl)
         else:
             # fallback (should be rare)
-            assert False
+            # assert False
             new_items.insert(0, decl)
 
         env.globals[vname] = TypeInfo(sname)
@@ -1665,5 +1665,5 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
         print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
         exit(0)
     '''
-    
+
     return tu2
