@@ -15,6 +15,11 @@ from builtin_data import BUILTIN_FUNCTIONS
 
 DEBUG = True
 
+if DEBUG:
+    import shader_unparser
+
+stop = False
+
 def dlog(msg: str): # Debug logging...
     if DEBUG:
         print("[DEBUG] "+str(msg))
@@ -1539,6 +1544,8 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
         for p in it.params:
             if coin(rng, 0.25):
+                global stop
+                stop = True
                 p.type_name = mutate_typename(p.type_name, rng)
 
         return it
@@ -1620,4 +1627,14 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
         env.globals[vname] = TypeInfo(sname)
 
     tu2.items = new_items
+
+    # Now try to unparse that shit...
+
+    if stop:
+        result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
+        # Now print the thing...
+        print("Mutated source code when hit the thing: "+str(result))
+        print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
+        exit(0)
+
     return tu2

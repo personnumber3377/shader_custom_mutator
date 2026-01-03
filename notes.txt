@@ -70,3 +70,5 @@ Executed /tmp/tmprfjttu9r.bin in 3 ms
 oof@oof-h8-1440eo:~/shader_custom_mutator$ 
 
 
+- When mutating function arguments, make those mutations global everywhere such that the calls to that function actually hold...
+
