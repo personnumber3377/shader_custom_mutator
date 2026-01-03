@@ -1,2 +1,15 @@
 - You should check that qualifiers ("const" etc round trip on structs and other datatypes...)
 - Also add the extension includes when generating the builtin calls too...
+- Implement better generic type handling in the generation of inbuilt function calls... aka do something like the following:
+
+if base in GENERIC_EXPANSION:
+    if base not in generic_bindings:
+        generic_bindings[base] = rng.choice(GENERIC_EXPANSION[base])
+    concrete = generic_bindings[base]
+    args.append(gen_expr(TypeInfo(concrete), ...))
+
+because now it sees "genType" (see builtin_function_declarations.txt) and assumes it can create different types for each function call argument. They must still be the same type against one another, but what type they all are is arbitrary...
+
+
+
+

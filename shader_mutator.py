@@ -16,7 +16,8 @@ from builtin_data import BUILTIN_FUNCTIONS
 DEBUG = True
 
 def dlog(msg: str): # Debug logging...
-    print("[DEBUG] "+str(msg))
+    if DEBUG:
+        print("[DEBUG] "+str(msg))
     return
 
 # ----------------------------
@@ -30,6 +31,7 @@ SPECIAL_TYPES = {
     "gsampler2D",
     "image2D",
     "atomic_uint",
+    "IMAGE_PARAMS",
 }
 
 GENERIC_EXPANSION = {
@@ -108,6 +110,34 @@ OPAQUE_TYPES = {
     "image2D", "image3D",
     "atomic_uint",
     "void",
+}
+
+# These are purely for the image operations...
+
+IMAGE_TYPE_TO_COORD = {
+    "image2D": "ivec2",
+    "iimage2D": "ivec2",
+    "uimage2D": "ivec2",
+
+    "image3D": "ivec3",
+    "iimage3D": "ivec3",
+    "uimage3D": "ivec3",
+
+    "imageCube": "ivec3",
+    "iimageCube": "ivec3",
+    "uimageCube": "ivec3",
+
+    "image2DArray": "ivec3",
+    "iimage2DArray": "ivec3",
+    "uimage2DArray": "ivec3",
+
+    "imageCubeArray": "ivec3",
+    "iimageCubeArray": "ivec3",
+    "uimageCubeArray": "ivec3",
+
+    "imageBuffer": "int",
+    "iimageBuffer": "int",
+    "uimageBuffer": "int",
 }
 
 def deepclone(x):
@@ -224,6 +254,39 @@ def mutate_expr_typed(e, want, rng, scope, env):
     if coin(rng, 0.05):
         return gen_expr(want, scope, env, rng)
     return mutate_expr(e, rng, scope, env)
+
+def pick_builtin_image(scope: Scope, env: Env, rng: random.Random) -> Identifier | None:
+    candidates = []
+
+    # Collect all visible variables
+    all_vars = scope.all_vars()
+    for name, ti in env.globals.items():
+        if name not in all_vars:
+            all_vars[name] = ti
+
+    for name, ti in all_vars.items():
+        if ti.name in IMAGE_TYPE_TO_COORD:
+            candidates.append(name)
+
+    # dlog("Here is the candidates list for type")
+
+    if not candidates:
+        return None  # caller should gracefully bail
+
+    return Identifier(rng.choice(candidates))
+
+def gen_coord_for_image(image_expr: Identifier, scope: Scope, env: Env, rng: random.Random) -> Expr:
+    ti = scope.lookup(image_expr.name) or env.globals.get(image_expr.name)
+    if ti is None:
+        # Extremely defensive fallback
+        return IntLiteral(0)
+
+    coord_type = IMAGE_TYPE_TO_COORD.get(ti.name)
+    if coord_type is None:
+        # Should never happen if pick_builtin_image is correct
+        return IntLiteral(0)
+
+    return gen_expr(TypeInfo(coord_type), scope, env, rng)
 
 # ----------------------------
 # Type info helpers
@@ -663,11 +726,21 @@ def gen_builtin_call(want, scope, env, rng, depth):
 
     for p in info["params"]:
         base = p.split("[", 1)[0]
-
         # generic family
         if base in GENERIC_EXPANSION:
             concrete = rng.choice(GENERIC_EXPANSION[base])
             args.append(gen_expr(TypeInfo(concrete), scope, env, rng, depth + 1)) # Originally had "gen_expr(Type(concrete), ...)"
+            continue
+
+        # the IMAGE_PARAMS is a very special type. Handle it before handling other special types...
+
+        if base == 'IMAGE_PARAMS':
+            # exit(0)
+            image_var = pick_builtin_image(scope, env, rng)
+            if not image_var:
+                return None # Unable to generate such a call...
+            coord_expr = gen_coord_for_image(image_var)
+            args.extend([image_var, coord_expr])
             continue
 
         # special opaque types → use builtin variables
@@ -680,7 +753,8 @@ def gen_builtin_call(want, scope, env, rng, depth):
 
         # normal type
         args.append(gen_expr(TypeInfo(base), scope, env, rng, depth + 1)) # Originally had "gen_expr(Type(concrete), ...)"
-
+    dlog("Generated this thing here: "+str(fname)+"("+str(",".join([str(x) for x in args]))+")")
+    # exit(0)
     return CallExpr(Identifier(fname), args)
 
 def gen_call(want, scope, env, rng, depth):

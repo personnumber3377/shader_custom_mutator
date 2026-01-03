@@ -126,6 +126,7 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
     AFL++ custom mutator entrypoint.
     """
     if not _initialized:
+        print("poopooo")
         init(0)
 
     if not isinstance(buf, (bytes, bytearray)):
@@ -163,6 +164,7 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
         return out[:max_size]
 
     except Exception:
+        # print("FUCK!")
         if not ENABLE_FALLBACK:
             save_crashing(buf)
             raise
@@ -199,6 +201,21 @@ def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> byt
 
 from test_helpers import *
 
+def run_mutator(data: bytes): # Run only...
+    # Now assume that data is only the source code of the shader, so add the header thing and then the final null byte...
+    data = b"\x00"*128 + data + b"\x00" # Add the header and the final null byte...
+    while True:
+        try:
+            buf = fuzz(data, None, 1_000_000)
+
+            source = strip_header_and_null(buf).decode("utf-8")
+            print("Mutated source:")
+            print(source)
+        except Exception as e:
+            continue
+    return
+
+
 if __name__ == "__main__":
     import argparse
 
@@ -206,9 +223,11 @@ if __name__ == "__main__":
     ap.add_argument("input", help="input shader")
     ap.add_argument("output", help="output shader")
     ap.add_argument("--iters", type=int, default=1)
+    ap.add_argument("--mutate-only", type=int, default=0)
     args = ap.parse_args()
 
-    seed = 5660207
+    # seed = 5660207
+    seed = random.randrange(10000000)
     print("SEED: "+str(seed))
 
     random.seed(seed)
@@ -222,24 +241,23 @@ if __name__ == "__main__":
         # Now construct the full filename...
         fn = inp + fn
         print("Using "+str(fn)+" as input filename...")
-        # Override this here...
-        fn = "/home/oof/webgl_fuzz_inputs/atan_vec3_frag_xvaryyvary_ref.bin"
-        with open(fn, "rb") as f:
-            data = f.read()
     else:
         with open(inp, "rb") as f:
             data = f.read()
+
+    if args.mutate_only:
+        # Do the stuff...
+        init(seed)
+        run_mutator(data)
+        exit(0)
 
     # if len(data) < HEADER_SIZE:
     # Always prepend the header...
     # Check for a null byte close to the start, if found, then assume header already appended...
     if b"\x00" not in data[:HEADER_SIZE]:
         data = b"\x00" * HEADER_SIZE + data
-
-    # seed = random.randrange(10000000) # 5 # Modify this to appropriate values when debugging...
-    
-    # init(random.randrange(100000)) # Random shit here...
-    
+    # global _initialized
+    # _initialized = True
     init(seed)
 
     buf = bytearray(data)
@@ -257,7 +275,7 @@ if __name__ == "__main__":
         for _ in range(args.iters):
             buf = fuzz(buf, None, 1_000_000)
 
-            source = strip_header_and_null(buf, header_len=HEADER_SIZE).decode("utf-8")
+            source = strip_header_and_null(buf).decode("utf-8")
             print(source)
 
             ok, out = run_as_frag_and_vertex(buf, HEADER_SIZE)
