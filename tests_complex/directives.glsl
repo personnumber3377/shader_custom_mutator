@@ -1,5 +1,5 @@
-HEADER: frag 3 6
-#version 300 es
+HEADER: vert 3 6
+#version 100
 #extension GL_OES_standard_derivatives : require
 
 void main() {
