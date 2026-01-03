@@ -342,6 +342,30 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
         # struct specifier + declarators (your common case)
         if isinstance(item, StructDecl):
+            '''
+            def unparse_struct_decl(item: StructDecl):
+                storage = None
+                if item.declarators and getattr(item.declarators[0], "storage", None):
+                    storage = item.declarators[0].storage
+
+                out = ""
+                if storage:
+                    out += storage + " "
+
+                out += unparse_struct_specifier(item.struct_type)
+                out += " " + ", ".join(d.name for d in item.declarators)
+                out += ";\n"
+                return out
+            '''
+
+            storage = None
+            if item.declarators and getattr(item.declarators[0], "storage", None):
+                storage = item.declarators[0].storage
+
+            out = ""
+            if storage:
+                out += storage + " "
+            
             out += unparse_struct_specifier(item.struct_type)
             if item.declarators:
                 out += " " + ", ".join(_unparse_declarator(d) for d in item.declarators)

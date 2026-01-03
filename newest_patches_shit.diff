@@ -1,0 +1,100 @@
+diff --git a/shader_ast.py b/shader_ast.py
+index 7baebe4..9818059 100644
+--- a/shader_ast.py
++++ b/shader_ast.py
+@@ -82,6 +82,14 @@ class StructType:
+     name: Optional[str]
+     members: List[StructField]
+ 
++'''
++@dataclass
++class Declarator:
++    name: str
++    base_type: object
++    array_size: Optional[Expr] = None
++    init: Optional[Expr] = None
++'''
+ 
+ @dataclass
+ class Declarator:
+@@ -89,6 +97,7 @@ class Declarator:
+     base_type: object
+     array_size: Optional[Expr] = None
+     init: Optional[Expr] = None
++    storage: Optional[str] = None   # 👈 ADD THIS
+ 
+ @dataclass
+ class VarDecl:
+diff --git a/shader_parser.py b/shader_parser.py
+index abcd2a7..1057c59 100644
+--- a/shader_parser.py
++++ b/shader_parser.py
+@@ -683,6 +683,7 @@ class Parser:
+         return StructDecl(struct_type, declarators)
+     '''
+ 
++    '''
+     def parse_struct_toplevel_decl(self):
+         # ---- NEW: parse qualifiers first ----
+         qualifiers = []
+@@ -704,6 +705,25 @@ class Parser:
+ 
+         self.expect(";")
+         return StructDecl(struct_type, declarators)
++    '''
++
++    def parse_struct_toplevel_decl(self):
++        qualifiers = []
++        while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
++            qualifiers.append(self.advance().value)
++
++        struct_type = self.parse_struct_specifier()
++
++        declarators = []
++        if self.peek().kind != ";":
++            declarators = self.parse_declarator_list(struct_type)
++
++            # 👇 APPLY STORAGE TO DECLARATORS, NOT STRUCT
++            for d in declarators:
++                d.storage = qualifiers[0] if qualifiers else None
++
++        self.expect(";")
++        return StructDecl(struct_type, declarators)
+ 
+     def parse_struct_def(self) -> StructDef:
+         self.expect("KW", "struct")
+diff --git a/shader_unparser.py b/shader_unparser.py
+index b08e219..fc243c0 100644
+--- a/shader_unparser.py
++++ b/shader_unparser.py
+@@ -342,6 +342,30 @@ def unparse_tu(tu: TranslationUnit) -> str:
+ 
+         # struct specifier + declarators (your common case)
+         if isinstance(item, StructDecl):
++            '''
++            def unparse_struct_decl(item: StructDecl):
++                storage = None
++                if item.declarators and getattr(item.declarators[0], "storage", None):
++                    storage = item.declarators[0].storage
++
++                out = ""
++                if storage:
++                    out += storage + " "
++
++                out += unparse_struct_specifier(item.struct_type)
++                out += " " + ", ".join(d.name for d in item.declarators)
++                out += ";\n"
++                return out
++            '''
++
++            storage = None
++            if item.declarators and getattr(item.declarators[0], "storage", None):
++                storage = item.declarators[0].storage
++
++            out = ""
++            if storage:
++                out += storage + " "
++            
+             out += unparse_struct_specifier(item.struct_type)
+             if item.declarators:
+                 out += " " + ", ".join(_unparse_declarator(d) for d in item.declarators)

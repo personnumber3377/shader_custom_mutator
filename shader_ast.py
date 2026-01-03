@@ -82,6 +82,14 @@ class StructType:
     name: Optional[str]
     members: List[StructField]
 
+'''
+@dataclass
+class Declarator:
+    name: str
+    base_type: object
+    array_size: Optional[Expr] = None
+    init: Optional[Expr] = None
+'''
 
 @dataclass
 class Declarator:
@@ -89,6 +97,7 @@ class Declarator:
     base_type: object
     array_size: Optional[Expr] = None
     init: Optional[Expr] = None
+    storage: Optional[str] = None   # 👈 ADD THIS
 
 @dataclass
 class VarDecl:

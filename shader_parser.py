@@ -683,6 +683,7 @@ class Parser:
         return StructDecl(struct_type, declarators)
     '''
 
+    '''
     def parse_struct_toplevel_decl(self):
         # ---- NEW: parse qualifiers first ----
         qualifiers = []
@@ -701,6 +702,25 @@ class Parser:
         # After `}` may come `;` or declarators
         if self.peek().kind != ";":
             declarators = self.parse_declarator_list(struct_type)
+
+        self.expect(";")
+        return StructDecl(struct_type, declarators)
+    '''
+
+    def parse_struct_toplevel_decl(self):
+        qualifiers = []
+        while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
+            qualifiers.append(self.advance().value)
+
+        struct_type = self.parse_struct_specifier()
+
+        declarators = []
+        if self.peek().kind != ";":
+            declarators = self.parse_declarator_list(struct_type)
+
+            # 👇 APPLY STORAGE TO DECLARATORS, NOT STRUCT
+            for d in declarators:
+                d.storage = qualifiers[0] if qualifiers else None
 
         self.expect(";")
         return StructDecl(struct_type, declarators)
