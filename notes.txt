@@ -10,6 +10,8 @@ if base in GENERIC_EXPANSION:
 
 because now it sees "genType" (see builtin_function_declarations.txt) and assumes it can create different types for each function call argument. They must still be the same type against one another, but what type they all are is arbitrary...
 
+- Make the mutator add qualifiers (such as "const" and "uniform" etc etc on the different things...)...
+
 
 
 
