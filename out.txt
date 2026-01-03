@@ -1,1348 +1,1436 @@
-[seed] 54682752
-[roundtrip] ./good/refract_float_vert_ivarynconst_ref.binvertex
-[roundtrip] ./good/bvec4_empty_empty_bvec4_empty_vert.binvertex
-[roundtrip] ./good/2b_vert.bin
-[roundtrip] ./good/refract_vec3_vert_ivarynconst.binvertex
-[roundtrip] ./good/vec4_yxwz_1vec4_vert.binvertex
-[roundtrip] ./good/notEqual_bvec2_vert.binvertex
-[roundtrip] ./good/mod_float_frag_xvary_yconst1_ref.bin
-[roundtrip] ./good/sqrt_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/min_float_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/equal_ivec3_vert_ref.binvertex
-[roundtrip] ./good/structcopy_bool_frag.bin
-[roundtrip] ./good/inversesqrt_vec3_frag_xvary.bin
-[roundtrip] ./good/vec4_yx_wz_2vec2_vert.binvertex
-[roundtrip] ./good/sin_vec3_vert_xvary.binvertex
-[roundtrip] ./good/CorrectParseTest1_frag.bin
-[roundtrip] ./good/vec4_barg_1vec4_vert.binvertex
-[roundtrip] ./good/notEqual_ivec2_frag_ref.bin
-[roundtrip] ./good/equal_ivec2_vert_ref.binvertex
-[roundtrip] ./good/equal_bvec3_vert_ref.binvertex
-[roundtrip] ./good/mod_x_large_y_large_frag.bin
-[roundtrip] ./good/acos_float_frag_xvary.bin
-[roundtrip] ./good/const_mat4_frag.bin
-[roundtrip] ./good/bool_empty_out_bool_array_vert.binvertex
-[roundtrip] ./good/clamp_vec2_frag_xvary_yconstquarter_ref.bin
-[roundtrip] ./good/exp2_float_frag_xvaryneg.bin
-[roundtrip] ./good/lessThan_ivec2_frag.bin
-[roundtrip] ./good/reflect_vec2_vert_ivarynconst.binvertex
-[roundtrip] ./good/acos_vec2_frag_xvary.bin
-[roundtrip] ./good/c99b52b6f9f47675.sample
-[roundtrip] ./good/exp_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/log_vec3_vert_xvary.binvertex
-[roundtrip] ./good/successfulcompile_frag.bin
-[roundtrip] ./good/gl_MaxFragmentUniformVectors_vert.binvertex
-[roundtrip] ./good/bool_empty_in_bool_array_frag.bin
-[roundtrip] ./good/CorrectFuncOverload_vert.binvertex
-[roundtrip] ./good/postfixincrement_vert.binvertex
-[roundtrip] ./good/CorrectSwizzle2_frag.bin
-[roundtrip] ./good/mat3_3vec3_vert.binvertex
-[roundtrip] ./good/cos_vec3_frag_xvary.bin
-[roundtrip] ./good/mat2_4float_frag.bin
-[roundtrip] ./good/exp2_vec2_vert_xvaryneg.binvertex
-[roundtrip] ./good/refract_vec3_frag_ivarynconst.bin
-[roundtrip] ./good/dot_vec3_frag_xvaryythird_ref.bin
-[roundtrip] ./good/lessThan_ivec3_frag_ref.bin
-[roundtrip] ./good/sign_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/float_empty_out_float_array_frag.bin
-[roundtrip] ./good/gl_FragCoord_z_frag.bin
-[roundtrip] ./good/lessThanEqual_ivec2_frag.bin
-[roundtrip] ./good/abs_float_frag_xvary_ref.bin
-[roundtrip] ./good/fragmentOnly3_vert.bin
-[roundtrip] ./good/23i_frag.bin
-[roundtrip] ./good/struct_vec4_frag.bin
-[roundtrip] ./good/fract_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/log2_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/structcopy_bvec2bvec3bvec4_frag.bin
-[roundtrip] ./good/vec4_qsp_t_1vec3_1float_frag.bin
-[roundtrip] ./good/1d457be3a9d51984.sample
-[roundtrip] ./good/c3a99a3af180a56a.sample
-[roundtrip] ./good/clamp_vec3_frag_xvary_yconstquarter_ref.bin
-[roundtrip] ./good/degrees_vec3_frag_xvary.bin
-[roundtrip] ./good/gl_MaxCombinedTextureImageUnits_frag.bin
-[roundtrip] ./good/_webgl_field.binvertex
-[roundtrip] ./good/radians_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/3b_frag.bin
-[roundtrip] ./good/pow_vec2_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/ba0475d9cd7f74ee.sample
-[roundtrip] ./good/mat4_empty_empty_mat4_empty_vert.binvertex
-[roundtrip] ./good/vec4_ivec4_vert.binvertex
-[roundtrip] ./good/mat3arrayindirect1_vert.binvertex
-[roundtrip] ./good/vec3_yxz_1vec3_vert.binvertex
-[roundtrip] ./good/refract_vec2_frag_ivarynconst.bin
-[roundtrip] ./good/Low_Level_Assembly_Reserved_Words_frag.bin
-[roundtrip] ./good/vec4_tsq_p_1vec3_1float_frag.bin
-[roundtrip] ./good/vec4_empty_empty_vec4_empty_frag.bin
-[roundtrip] ./good/bvec4_empty_out_bvec4_empty_vert.binvertex
-[roundtrip] ./good/37ca8944318836dd.sample
-[roundtrip] ./good/floor_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/gl_MaxVertexUniformVectors_vert.binvertex
-[roundtrip] ./good/atan_float_frag_xvaryyvary.bin
-[roundtrip] ./good/bool_empty_inout_bool_empty_frag.bin
-[roundtrip] ./good/vec3_tsp_1vec3_vert.binvertex
-[roundtrip] ./good/cross_vec3_vert_xvaryyconst_ref.binvertex
-[roundtrip] ./good/multiplicative_frag.bin
-[roundtrip] ./good/sign_float_frag_xvary.bin
-[roundtrip] ./good/compressed_paletted_texture.binvertex
-[roundtrip] ./good/CorrectModule_frag.bin
-[roundtrip] ./good/3f_vert.binvertex
-[roundtrip] ./good/22f_frag.bin
-[roundtrip] ./good/mat3arraysimple_vert.binvertex
-[roundtrip] ./good/f9874e7893959932.sample
-[roundtrip] ./good/CorrectBuiltInOveride_frag.bin
-[roundtrip] ./good/array_const_mat4_frag.bin
-[roundtrip] ./good/notEqual_vec3_frag_ref.bin
-[roundtrip] ./good/equal_vec3_frag_ref.bin
-[roundtrip] ./good/degrees_vec2_vert_xvary.binvertex
-[roundtrip] ./good/tan_vec2_vert_xvary.binvertex
-[roundtrip] ./good/normalize_vec2_frag_xvary.bin
-[roundtrip] ./good/bool_empty_in_bool_empty_vert.binvertex
-[roundtrip] ./good/exp_float_vert_xvaryneg_ref.binvertex
-[roundtrip] ./good/log2_vec2_frag_xvary01_ref.bin
-[roundtrip] ./good/lessThanEqual_vec3_vert.binvertex
-[roundtrip] ./good/ceil_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/extension7_V100_frag.bin
-[roundtrip] ./good/exp2_vec3_frag_xvaryneg_ref.bin
-[roundtrip] ./good/lessThan_ivec2_vert_ref.binvertex
-[roundtrip] ./good/lessThanEqual_ivec2_frag_ref.bin
-[roundtrip] ./good/vec3_grb_1vec3_vert.binvertex
-[roundtrip] ./good/d33f36a5d551388d.sample
-[roundtrip] ./good/gl_MaxDrawBuffers_vert.binvertex
-[roundtrip] ./good/max_vec3_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/vec4_qspt_1vec4_frag.bin
-[roundtrip] ./good/multiplicative_vert.binvertex
-[roundtrip] ./good/CorrectSwizzle3_frag.bin
-[roundtrip] ./good/step_vec2_frag_xvary_edgeconsthalf.bin
-[roundtrip] ./good/notEqual_ivec3_frag_ref.bin
-[roundtrip] ./good/struct_vec3_frag.bin
-[roundtrip] ./good/any_bvec2_vert_ref.binvertex
-[roundtrip] ./good/ivec3_3int_vert.binvertex
-[roundtrip] ./good/vec3_ps_t_1vec2_1float_frag.bin
-[roundtrip] ./good/1f_vert.bin
-[roundtrip] ./good/95ba0f7810891082.sample
-[roundtrip] ./good/step_float_frag_xvary_edgeconsthalf_ref.bin
-[roundtrip] ./good/vec4_xyzw_1vec4_vert.binvertex
-[roundtrip] ./good/mat4_empty_in_mat4_empty_vert.binvertex
-[roundtrip] ./good/assignments_vert.binvertex
-[roundtrip] ./good/mat4_vert.binvertex
-[roundtrip] ./good/fragmentOnly4_vert.bin
-[roundtrip] ./good/for_break_vert.binvertex
-[roundtrip] ./good/const_mat2_frag.bin
-[roundtrip] ./good/degrees_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/for_nested_break_frag.bin
-[roundtrip] ./good/aa103e997b04b3a9.sample
-[roundtrip] ./good/9b0430719d6d0aad.sample
-[roundtrip] ./good/length_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/normalize_vec2_vert_xvary.binvertex
-[roundtrip] ./good/int_empty_empty_int_empty_vert.binvertex
-[roundtrip] ./good/structcopy_vec2_vert.binvertex
-[roundtrip] ./good/unary_frag.bin
-[roundtrip] ./good/atan_vec3_vert_xvaryyvary.binvertex
-[roundtrip] ./good/vec4_empty_in_vec4_array_frag.bin
-[roundtrip] ./good/7f4ad151ce613418.sample
-[roundtrip] ./good/equal_bvec2_frag.bin
-[roundtrip] ./good/pow_vec3_vert_xvary_yconst2.binvertex
-[roundtrip] ./good/all_bvec3_frag_ref.bin
-[roundtrip] ./good/equal_ivec3_frag.bin
-[roundtrip] ./good/max_vec3_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/log_vec3_frag_xvary01.bin
-[roundtrip] ./good/mat4_empty_out_mat4_empty_frag.bin
-[roundtrip] ./good/exp2_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/vec4_empty_out_vec4_empty_frag.bin
-[roundtrip] ./good/pow_vec2_vert_xconst2_yvary_ref.binvertex
-[roundtrip] ./good/log_vec3_vert_xvary01.binvertex
-[roundtrip] ./good/f54937aacd7aca4f.sample
-[roundtrip] ./good/atan_vec3_frag_xvaryyvary_ref.bin
-[roundtrip] ./good/normalize_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/greaterThan_vec2_frag.bin
-[roundtrip] ./good/any_bvec3_vert_ref.binvertex
-[roundtrip] ./good/bvec4_empty_in_bvec4_empty_frag.bin
-[roundtrip] ./good/tan_float_vert_xvary.binvertex
-[roundtrip] ./good/exp2_float_frag_xvary.bin
-[roundtrip] ./good/pow_vec3_frag_xconsthalf_yvary_ref.bin
-[roundtrip] ./good/clamp_vec2_vert_xvary_yconstquarter.binvertex
-[roundtrip] ./good/bvec4_empty_in_bvec4_empty_vert.binvertex
-[roundtrip] ./good/fract_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec4_arb_g_1vec3_1float_frag.bin
-[roundtrip] ./good/tan_float_frag_xvary.bin
-[roundtrip] ./good/b97eba3db7f64518.sample
-[roundtrip] ./good/webgl_struct.bin
-[roundtrip] ./good/exp_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/2m_frag.bin
-[roundtrip] ./good/e860915004f68493.sample
-[roundtrip] ./good/fract_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/structnest_float_frag.bin
-[roundtrip] ./good/51cf44d8e1318302.sample
-[roundtrip] ./good/structnest_mat3_vert.binvertex
-[roundtrip] ./good/pow_vec2_vert_xconsthalf_yvary_ref.binvertex
-[roundtrip] ./good/smoothstep_vec2_vert_xvary_edgeconstquarter_ref.binvertex
-[roundtrip] ./good/mix_vec3_frag_xvary_yconsthalf_aconsthalf_ref.bin
-[roundtrip] ./good/exp_float_frag_xvaryneg.bin
-[roundtrip] ./good/a1609649e9d8d4fe.sample
-[roundtrip] ./good/4i_frag.bin
-[roundtrip] ./good/79afe27b24d09612.sample
-[roundtrip] ./good/916071e63a858328.sample
-[roundtrip] ./good/vec4_ivec4_frag.bin
-[roundtrip] ./good/structcopy_mat3_vert.binvertex
-[roundtrip] ./good/point_rasterization.bin
-[roundtrip] ./good/equal_bvec2_vert.binvertex
-[roundtrip] ./good/greaterThanEqual_ivec3_vert_ref.binvertex
-[roundtrip] ./good/bool_empty_inout_bool_array_frag.bin
-[roundtrip] ./good/asin_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/acos_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/const_mat4_copy_frag.bin
-[roundtrip] ./good/struct_vec4_vert.binvertex
-[roundtrip] ./good/log2_float_vert_xvary.binvertex
-[roundtrip] ./good/vec3_zyx_1vec3_frag.bin
-[roundtrip] ./good/mix_vec2_frag_xvary_yconsthalf_aconsthalf_ref.bin
-[roundtrip] ./good/gl_FragCoord_w_frag.bin
-[roundtrip] ./good/vec4_arbg_1vec4_frag.bin
-[roundtrip] ./good/const_mat4_vert.binvertex
-[roundtrip] ./good/notEqual_ivec2_vert.binvertex
-[roundtrip] ./good/sin_float_frag_xvary_ref.bin
-[roundtrip] ./good/min_float_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/376afbc5a17b7578.sample
-[roundtrip] ./good/gl_MaxTextureImageUnits_vert.binvertex
-[roundtrip] ./good/array_const_mat3_vert.binvertex
-[roundtrip] ./good/log_vec3_vert_xvary01_ref.binvertex
-[roundtrip] ./good/exp2_vec3_vert_xvaryneg_ref.binvertex
-[roundtrip] ./good/CorrectBuiltInOveride_frag.binvertex
-[roundtrip] ./good/vec3_rgb_1vec3_vert.binvertex
-[roundtrip] ./good/290382d7f5f5012b.sample
-[roundtrip] ./good/equal_vec3_vert_ref.binvertex
-[roundtrip] ./good/b989a270bc0dea43.sample
-[roundtrip] ./good/2i_vert.binvertex
-[roundtrip] ./good/for_continue_frag.bin
-[roundtrip] ./good/mix_float_frag_xvary_yconsthalf_aconsthalf_ref.bin
-[roundtrip] ./good/cos_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/inversesqrt_float_frag_xvary_ref.bin
-[roundtrip] ./good/vec3_gb_r_1vec2_1float_vert.binvertex
-[roundtrip] ./good/e6ef6644ea752d2a.sample
-[roundtrip] ./good/log2_float_frag_xvary01_ref.bin
-[roundtrip] ./good/vec4_wxz_y_1vec3_1float_vert.binvertex
-[roundtrip] ./good/pow_float_vert_xvary_yconst2.binvertex
-[roundtrip] ./good/extension5_V100_frag.binvertex
-[roundtrip] ./good/webgl_field.binvertex
-[roundtrip] ./good/bvec4_empty_inout_bvec4_empty_vert.binvertex
-[roundtrip] ./good/3i_vert.binvertex
-[roundtrip] ./good/float_empty_empty_float_array_vert.binvertex
-[roundtrip] ./good/fwidth_frag.binvertex
-[roundtrip] ./good/brick_mat3.binvertex
-[roundtrip] ./good/struct_bool_vert.binvertex
-[roundtrip] ./good/vec4_rgb_a_1vec3_1float_frag.bin
-[roundtrip] ./good/struct_mat2_frag.bin
-[roundtrip] ./good/log_vec2_frag_xvary01_ref.bin
-[roundtrip] ./good/atan_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec3_xy_z_1vec2_1float_frag.bin
-[roundtrip] ./good/9b297667d572b4c3.sample
-[roundtrip] ./good/exp2_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/step_vec2_frag_xvary_edgeconsthalf_ref.bin
-[roundtrip] ./good/619d8c1427b781f3.sample
-[roundtrip] ./good/float_empty_inout_float_array_frag.bin
-[roundtrip] ./good/pow_vec2_frag_xvary_yconst2.bin
-[roundtrip] ./good/void_empty_empty_void_empty_vert.binvertex
-[roundtrip] ./good/mod_vec3_vert_xvary_yconst1_ref.binvertex
-[roundtrip] ./good/9e928e336cf780c7.sample
-[roundtrip] ./good/exp2_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/log_float_vert_xvary01.binvertex
-[roundtrip] ./good/not_bvec3_frag.bin
-[roundtrip] ./good/extension8_V100_frag.bin
-[roundtrip] ./good/ivec4_empty_empty_ivec4_array_frag.bin
-[roundtrip] ./good/degrees_float_frag_xvary_ref.bin
-[roundtrip] ./good/lessThan_ivec2_vert.binvertex
-[roundtrip] ./good/normalize_float_vert_xvary.binvertex
-[roundtrip] ./good/step_vec3_vert_xvary_edgeconsthalf.binvertex
-[roundtrip] ./good/bool_empty_in_bool_array_vert.binvertex
-[roundtrip] ./good/acos_float_frag_xvary_ref.bin
-[roundtrip] ./good/clamp_vec3_frag_xvary_yconstquarter.bin
-[roundtrip] ./good/atan_float_frag_xvary.bin
-[roundtrip] ./good/mat4_empty_in_mat4_array_vert.binvertex
-[roundtrip] ./good/vec3_bgr_1vec3_frag.bin
-[roundtrip] ./good/const_mat2_copy_frag.bin
-[roundtrip] ./good/mat3_float_frag.bin
-[roundtrip] ./good/structcopy_bvec2bvec3bvec4_vert.binvertex
-[roundtrip] ./good/floor_vec2_frag_xvary.bin
-[roundtrip] ./good/vec4_s_t_p_q_4float_vert.binvertex
-[roundtrip] ./good/sqrt_vec2_vert_xvary.binvertex
-[roundtrip] ./good/exp2_vec2_frag_xvary.bin
-[roundtrip] ./good/radians_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/max_float_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/floor_vec2_vert_xvary.binvertex
-[roundtrip] ./good/vec3_zx_y_1vec2_1float_frag.bin
-[roundtrip] ./good/vec2_2float_frag.bin
-[roundtrip] ./good/exp_float_frag_xvary_ref.bin
-[roundtrip] ./good/vec3_tp_s_1vec2_1float_frag.bin
-[roundtrip] ./good/addsubtract_vert.binvertex
-[roundtrip] ./good/sqrt_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/notEqual_ivec2_frag.bin
-[roundtrip] ./good/structUniformShader.binvertex
-[roundtrip] ./good/log_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/tan_vec3_vert_xvary.binvertex
-[roundtrip] ./good/vec3_st_p_1vec2_1float_vert.binvertex
-[roundtrip] ./good/equal_ivec2_frag.bin
-[roundtrip] ./good/equality_frag.bin
-[roundtrip] ./good/greaterThanEqual_vec3_vert_ref.binvertex
-[roundtrip] ./good/cos_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/structcopy_mat2_frag.bin
-[roundtrip] ./good/struct_vec3_vert.binvertex
-[roundtrip] ./good/logical_vert.binvertex
-[roundtrip] ./good/length_vec2_frag_xvary.bin
-[roundtrip] ./good/floor_vec3_vert_xvary.binvertex
-[roundtrip] ./good/length_vec3_vert_xvary.binvertex
-[roundtrip] ./good/reflect_vec3_frag_ivarynconst.bin
-[roundtrip] ./good/pow_vec2_frag_xconsthalf_yvary_ref.bin
-[roundtrip] ./good/0a7d6ef3157b365b.sample
-[roundtrip] ./good/dot_vec2_vert_xvaryyhalf.binvertex
-[roundtrip] ./good/refract_vec3_vert_ivarynconst_ref.binvertex
-[roundtrip] ./good/ivec4_empty_inout_ivec4_bigarray_vert.binvertex
-[roundtrip] ./good/sin_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/exp_vec3_vert_xvaryneg_ref.binvertex
-[roundtrip] ./good/degrees_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/faceforward_float_frag_nvaryiconst.bin
-[roundtrip] ./good/matrixMultComp_mat3_vert.binvertex
-[roundtrip] ./good/cos_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/division_vert.binvertex
-[roundtrip] ./good/bool_empty_out_bool_empty_frag.bin
-[roundtrip] ./good/radians_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec4_stp_q_1vec3_1float_vert.binvertex
-[roundtrip] ./good/acos_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/_webgl_field.bin
-[roundtrip] ./good/sin_vec2_frag_xvary.bin
-[roundtrip] ./good/discard_frag.bin
-[roundtrip] ./good/log2_vec2_vert_xvary.binvertex
-[roundtrip] ./good/vec4_r_g_b_a_4float_frag.bin
-[roundtrip] ./good/notEqual_bvec3_frag.bin
-[roundtrip] ./good/vec3arrayindirect_frag.bin
-[roundtrip] ./good/log2_float_frag_xvary.bin
-[roundtrip] ./good/pow_float_vert_xvary_yconst2_ref.binvertex
-[roundtrip] ./good/sign_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/asin_float_frag_xvary_ref.bin
-[roundtrip] ./good/greaterThanEqual_ivec3_vert.binvertex
-[roundtrip] ./good/pow_vec2_vert_xvary_yconst2_ref.binvertex
-[roundtrip] ./good/vec4_empty_empty_vec4_empty_vert.binvertex
-[roundtrip] ./good/pow_vec3_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/vec4_yxw_z_1vec3_1float_vert.binvertex
-[roundtrip] ./good/texture.bin
-[roundtrip] ./good/bvec4_empty_in_bvec4_array_frag.bin
-[roundtrip] ./good/vec4_empty_out_vec4_array_vert.binvertex
-[roundtrip] ./good/structcopy_vec4_vert.binvertex
-[roundtrip] ./good/normalize_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/bool_empty_out_bool_empty_vert.binvertex
-[roundtrip] ./good/distance_vec3_vert_xvaryyhalf.binvertex
-[roundtrip] ./good/successfulcompile_vert.binvertex
-[roundtrip] ./good/dot_float_frag_xvaryyone_ref.bin
-[roundtrip] ./good/23f_frag.bin
-[roundtrip] ./good/vec4_gra_b_1vec3_1float_vert.binvertex
-[roundtrip] ./good/noopUniformShader.binvertex
-[roundtrip] ./good/vec4_gra_b_1vec3_1float_frag.bin
-[roundtrip] ./good/pow_vec3_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/equal_ivec3_vert.binvertex
-[roundtrip] ./good/min_float_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/log_vec2_frag_xvary.bin
-[roundtrip] ./good/vec4_empty_inout_vec4_bigarray_frag.bin
-[roundtrip] ./good/vec4_xy_zw_2vec2_frag.bin
-[roundtrip] ./good/bool_empty_inout_bool_empty_vert.binvertex
-[roundtrip] ./good/refract_float_vert_ivarynconst.binvertex
-[roundtrip] ./good/21i_frag.bin
-[roundtrip] ./good/unary_vert.binvertex
-[roundtrip] ./good/all_bvec2_frag_ref.bin
-[roundtrip] ./good/bvec4_empty_empty_bvec4_empty_frag.bin
-[roundtrip] ./good/structnest_float_vert.binvertex
-[roundtrip] ./good/2f_frag.bin
-[roundtrip] ./good/tan_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/notEqual_bvec2_vert_ref.binvertex
-[roundtrip] ./good/lessThanEqual_vec3_frag.bin
-[roundtrip] ./good/pow_float_vert_xconst2_yvary_ref.binvertex
-[roundtrip] ./good/int_empty_in_int_array_frag.bin
-[roundtrip] ./good/vec4_empty_in_vec4_empty_frag.bin
-[roundtrip] ./good/4i_vert.binvertex
-[roundtrip] ./good/sign_vec2_frag_xvary.bin
-[roundtrip] ./good/extension8_V100_frag.binvertex
-[roundtrip] ./good/radians_float_frag_xvary_ref.bin
-[roundtrip] ./good/struct_float_vert.binvertex
-[roundtrip] ./good/exp2_vec3_vert_xvaryneg.binvertex
-[roundtrip] ./good/81f5194972b68d5f.sample
-[roundtrip] ./good/log_vec3_frag_xvary01_ref.bin
-[roundtrip] ./good/greaterThan_ivec2_frag.bin
-[roundtrip] ./good/vec4_ar_bg_2vec2_vert.binvertex
-[roundtrip] ./good/vec4_stpq_1vec4_frag.bin
-[roundtrip] ./good/lessThanEqual_vec2_frag_ref.bin
-[roundtrip] ./good/log2_vec3_frag_xvary01.bin
-[roundtrip] ./good/brick_vec.binvertex
-[roundtrip] ./good/lessThanEqual_vec2_frag.bin
-[roundtrip] ./good/int_empty_out_int_array_frag.bin
-[roundtrip] ./good/sign_vec2_vert_xvary.binvertex
-[roundtrip] ./good/equal_ivec3_frag_ref.bin
-[roundtrip] ./good/tan_float_frag_xvary_ref.bin
-[roundtrip] ./good/lessThanEqual_ivec3_frag_ref.bin
-[roundtrip] ./good/acos_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/equal_bvec3_frag_ref.bin
-[roundtrip] ./good/vec4_barg_1vec4_frag.bin
-[roundtrip] ./good/float_empty_out_float_array_vert.binvertex
-[roundtrip] ./good/exp_vec2_vert_xvaryneg_ref.binvertex
-[roundtrip] ./good/bool_empty_empty_bool_empty_frag.bin
-[roundtrip] ./good/int_empty_empty_int_empty_frag.bin
-[roundtrip] ./good/vec4_pqs_t_1vec3_1float_vert.binvertex
-[roundtrip] ./good/simple.bin
-[roundtrip] ./good/vec4_tsqp_1vec4_frag.bin
-[roundtrip] ./good/5d3f3c5b71f2c520.sample
-[roundtrip] ./good/dot_vec2_vert_xvaryyhalf_ref.binvertex
-[roundtrip] ./good/matrixMultComp_mat2_vert.binvertex
-[roundtrip] ./good/step_float_frag_xvary_edgeconsthalf.bin
-[roundtrip] ./good/d1c673c1605d142e.sample
-[roundtrip] ./good/CorrectExtension10_V100_frag.bin
-[roundtrip] ./good/vec4_xyz_w_1vec3_1float_vert.binvertex
-[roundtrip] ./good/08b457b8fc810577.sample
-[roundtrip] ./good/3fba354184ddb6c4.sample
-[roundtrip] ./good/equal_vec3_frag.bin
-[roundtrip] ./good/atan_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/qualifiers_float_vert.binvertex
-[roundtrip] ./good/vec4_br_ag_2vec2_vert.binvertex
-[roundtrip] ./good/pow_vec2_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/sqrt_float_frag_xvary.bin
-[roundtrip] ./good/lessThanEqual_vec2_vert_ref.binvertex
-[roundtrip] ./good/length_vec3_frag_xvary.bin
-[roundtrip] ./good/tan_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/ivec4_empty_in_ivec4_empty_frag.bin
-[roundtrip] ./good/70ad008857708752.sample
-[roundtrip] ./good/pow_vec2_frag_xconsthalf_yvary.bin
-[roundtrip] ./good/bvec_tests.bin
-[roundtrip] ./good/reflect_float_vert_ivarynconst_ref.binvertex
-[roundtrip] ./good/vec3_pts_1vec3_frag.bin
-[roundtrip] ./good/2i_frag.bin
-[roundtrip] ./good/vec4_qs_pt_2vec2_frag.bin
-[roundtrip] ./good/floatUniformShader.binvertex
-[roundtrip] ./good/1e8a26f622d967dd.sample
-[roundtrip] ./good/vec4_yxw_z_1vec3_1float_frag.bin
-[roundtrip] ./good/3f_frag.bin
-[roundtrip] ./good/array_float_vert.binvertex
-[roundtrip] ./good/lessThan_vec3_vert.binvertex
-[roundtrip] ./good/refract_vec2_vert_ivarynconst_ref.binvertex
-[roundtrip] ./good/structnest_mat2_frag.bin
-[roundtrip] ./good/CorrectFull_vert.binvertex
-[roundtrip] ./good/exp2_float_frag_xvaryneg_ref.bin
-[roundtrip] ./good/bvec4_2int_2float_vert.binvertex
-[roundtrip] ./good/mat3_9float_frag.bin
-[roundtrip] ./good/greaterThanEqual_vec3_frag_ref.bin
-[roundtrip] ./good/floor_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/vec4_arb_g_1vec3_1float_vert.binvertex
-[roundtrip] ./good/mat4_16float_frag.bin
-[roundtrip] ./good/4f_vert.binvertex
-[roundtrip] ./good/log2_float_vert_xvary01.binvertex
-[roundtrip] ./good/vec4_rg_ba_2vec2_vert.binvertex
-[roundtrip] ./good/bf5357aae5adb812.sample
-[roundtrip] ./good/e9e7f9dae436b128.sample
-[roundtrip] ./good/c6115e66b92ab0b5.sample
-[roundtrip] ./good/mat2_float_frag.bin
-[roundtrip] ./good/refract_vec2_vert_ivarynconst.binvertex
-[roundtrip] ./good/vec4_wxz_y_1vec3_1float_frag.bin
-[roundtrip] ./good/max_vec2_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/vec4_bar_g_1vec3_1float_frag.bin
-[roundtrip] ./good/gl_MaxVaryingVectors_frag.bin
-[roundtrip] ./good/gl_MaxVertexAttribs_frag.bin
-[roundtrip] ./good/log2_vec2_frag_xvary01.bin
-[roundtrip] ./good/vec4_zx_wy_2vec2_vert.binvertex
-[roundtrip] ./good/3m_frag.bin
-[roundtrip] ./good/2f7cba4583cfa62f.sample
-[roundtrip] ./good/smoothstep_vec2_frag_xvary_edgeconstquarter_ref.bin
-[roundtrip] ./good/bool_empty_in_bool_empty_frag.bin
-[roundtrip] ./good/structnest_vec4_vert.binvertex
-[roundtrip] ./good/9f95ee4c80e62a1c.sample
-[roundtrip] ./good/acos_vec2_vert_xvary.binvertex
-[roundtrip] ./good/max_float_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/vec3_sp_t_1vec2_1float_vert.binvertex
-[roundtrip] ./good/905c264cd06a1a7a.sample
-[roundtrip] ./good/vec3_tp_s_1vec2_1float_vert.binvertex
-[roundtrip] ./good/degrees_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec4_ts_qp_2vec2_vert.binvertex
-[roundtrip] ./good/equality_vert.binvertex
-[roundtrip] ./good/log_vec2_vert_xvary01.binvertex
-[roundtrip] ./good/abs_vec3_frag_xvary.bin
-[roundtrip] ./good/intUniformShader.binvertex
-[roundtrip] ./good/addsubtract_frag.bin
-[roundtrip] ./good/structnest_vec4_frag.bin
-[roundtrip] ./good/vec3single_frag.bin
-[roundtrip] ./good/log_float_frag_xvary01.bin
-[roundtrip] ./good/max_float_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/abs_vec2_frag_xvary.bin
-[roundtrip] ./good/vec4_st_pq_2vec2_vert.binvertex
-[roundtrip] ./good/sin_float_frag_xvary.bin
-[roundtrip] ./good/equal_vec3_vert.binvertex
-[roundtrip] ./good/log_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/matrix2arrayVSU.bin
-[roundtrip] ./good/clamp_vec2_vert_xvary_yconstquarter_ref.binvertex
-[roundtrip] ./good/pow_vec3_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/emit1.bin
-[roundtrip] ./good/structnest_mat4_frag.bin
-[roundtrip] ./good/ivec4_empty_inout_ivec4_empty_frag.bin
-[roundtrip] ./good/cos_float_frag_xvary.bin
-[roundtrip] ./good/a78c11bc63e37b5e.sample
-[roundtrip] ./good/greaterThan_ivec3_vert_ref.binvertex
-[roundtrip] ./good/mat4_16float_vert.binvertex
-[roundtrip] ./good/equal_bvec2_vert_ref.binvertex
-[roundtrip] ./good/14d10ab7ab47351f.sample
-[roundtrip] ./good/step_vec3_frag_xvary_edgeconsthalf.bin
-[roundtrip] ./good/5e38b56896dfc1fe.sample
-[roundtrip] ./good/_webgl_variable.bin
-[roundtrip] ./good/structcopy_mat4_vert.binvertex
-[roundtrip] ./good/mat3_copy_vert.binvertex
-[roundtrip] ./good/e6759dfebb7fead3.sample
-[roundtrip] ./good/cross_vec3_frag_xvaryyconst_ref.bin
-[roundtrip] ./good/cos_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/exp_vec2_frag_xvaryneg_ref.bin
-[roundtrip] ./good/lessThanEqual_ivec3_vert_ref.binvertex
-[roundtrip] ./good/extension6_V100_frag.bin
-[roundtrip] ./good/for_nested_continue_frag.bin
-[roundtrip] ./good/inversesqrt_vec3_vert_xvary.binvertex
-[roundtrip] ./good/initfunc_empty_array_float_vert.binvertex
-[roundtrip] ./good/gl_MaxVertexTextureImageUnits_frag.bin
-[roundtrip] ./good/structnest_mat2_vert.binvertex
-[roundtrip] ./good/mat2_float_vert.binvertex
-[roundtrip] ./good/vec3_xy_z_1vec2_1float_vert.binvertex
-[roundtrip] ./good/point_size.binvertex
-[roundtrip] ./good/bb2ac7ecd30ad222.sample
-[roundtrip] ./good/structcopy_vec3_vert.binvertex
-[roundtrip] ./good/vec4_pqs_t_1vec3_1float_frag.bin
-[roundtrip] ./good/struct_mat4_frag.bin
-[roundtrip] ./good/tan_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/greaterThanEqual_ivec3_frag_ref.bin
-[roundtrip] ./good/structnest_bool_frag.bin
-[roundtrip] ./good/greaterThanEqual_vec3_vert.binvertex
-[roundtrip] ./good/vec4_empty_empty_vec4_array_vert.binvertex
-[roundtrip] ./good/pow_vec2_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/pow_vec3_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/774f72573db42a7c.sample
-[roundtrip] ./good/DepthRange_frag.bin
-[roundtrip] ./good/step_vec3_vert_xvary_edgeconsthalf_ref.binvertex
-[roundtrip] ./good/notEqual_vec3_frag.bin
-[roundtrip] ./good/floor_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/clamp_float_vert_xvary_yconstquarter.binvertex
-[roundtrip] ./good/sqrt_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/log_vec2_frag_xvary01.bin
-[roundtrip] ./good/length_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/equal_ivec2_vert.binvertex
-[roundtrip] ./good/vec3_br_g_1vec2_1float_vert.binvertex
-[roundtrip] ./good/exp_vec3_frag_xvaryneg_ref.bin
-[roundtrip] ./good/pow_float_vert_xconsthalf_yvary.binvertex
-[roundtrip] ./good/inversesqrt_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec4_grab_1vec4_frag.bin
-[roundtrip] ./good/sin_float_vert_xvary.binvertex
-[roundtrip] ./good/576a75c3840eb7ad.sample
-[roundtrip] ./good/bd0df4632d5a1893.sample
-[roundtrip] ./good/vec4_x_y_z_w_4float_frag.bin
-[roundtrip] ./good/pow_vec2_frag_xvary_yconst2_ref.bin
-[roundtrip] ./good/abs_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/nested_if_else_vert.binvertex
-[roundtrip] ./good/CorrectParseTest_frag.bin
-[roundtrip] ./good/sqrt_float_vert_xvary.binvertex
-[roundtrip] ./good/lessThanEqual_ivec3_vert.binvertex
-[roundtrip] ./good/ede55d93b7c7f530.sample
-[roundtrip] ./good/extension2_V100_frag.bin
-[roundtrip] ./good/sqrt_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/fbfbd5d5c13e8eb1.sample
-[roundtrip] ./good/greaterThan_vec3_vert.binvertex
-[roundtrip] ./good/struct_vec2_vert.binvertex
-[roundtrip] ./good/DuplicateVersion1_V100_frag.bin
-[roundtrip] ./good/any_bvec2_vert.binvertex
-[roundtrip] ./good/d9e00ac719b15d3d.sample
-[roundtrip] ./good/reflect_vec3_frag_ivarynconst_ref.bin
-[roundtrip] ./good/mat4_4vec4_vert.binvertex
-[roundtrip] ./good/mat3_9float_vert.binvertex
-[roundtrip] ./good/mod_vec2_frag_xvary_yconst1.bin
-[roundtrip] ./good/gl_FrontFacing_frag.bin
-[roundtrip] ./good/818b5a4769efb0b9.sample
-[roundtrip] ./good/greaterThanEqual_ivec2_frag_ref.bin
-[roundtrip] ./good/reflect_float_vert_ivarynconst.binvertex
-[roundtrip] ./good/preprocess2_frag.binvertex
-[roundtrip] ./good/abs_vec2_vert_xvary.binvertex
-[roundtrip] ./good/ivec4_empty_inout_ivec4_array_vert.binvertex
-[roundtrip] ./good/matrixMultComp_mat2_frag.bin
-[roundtrip] ./good/mat4_empty_empty_mat4_array_vert.binvertex
-[roundtrip] ./good/inversesqrt_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/lessThan_ivec2_frag_ref.bin
-[roundtrip] ./good/lessThan_ivec3_vert.binvertex
-[roundtrip] ./good/85827ec3ad6157be.sample
-[roundtrip] ./good/relational_frag.bin
-[roundtrip] ./good/not_bvec2_vert_ref.binvertex
-[roundtrip] ./good/log_float_frag_xvary01_ref.bin
-[roundtrip] ./good/pow_vec3_frag_xvary_yconst2_ref.bin
-[roundtrip] ./good/preprocess2_frag.bin
-[roundtrip] ./good/CorrectConstruct_vert.binvertex
-[roundtrip] ./good/mod_float_vert_xvary_yconst1.binvertex
-[roundtrip] ./good/exp2_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/ivec3_3int_frag.bin
-[roundtrip] ./good/greaterThan_vec3_frag.bin
-[roundtrip] ./good/fract_vec2_vert_xvary.binvertex
-[roundtrip] ./good/cos_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/mat_tests2.binvertex
-[roundtrip] ./good/sin_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/structcopy_vec2_frag.bin
-[roundtrip] ./good/44d7a0c70dcc743b.sample
-[roundtrip] ./good/precision_specifiers.bin
-[roundtrip] ./good/CorrectVersion_V100_frag.bin
-[roundtrip] ./good/atan_vec2_frag_xvaryyvary.bin
-[roundtrip] ./good/3i_frag.bin
-[roundtrip] ./good/24f_frag.bin
-[roundtrip] ./good/matrixMultComp_mat2_frag_ref.bin
-[roundtrip] ./good/gl_MaxCombinedTextureImageUnits_vert.binvertex
-[roundtrip] ./good/ivec4_empty_empty_ivec4_empty_frag.bin
-[roundtrip] ./good/mod_vec2_vert_xvary_yconst1.binvertex
-[roundtrip] ./good/f122431ff33d95cb.sample
-[roundtrip] ./good/cos_vec3_vert_xvary.binvertex
-[roundtrip] ./good/atan_vec2_vert_xvary.binvertex
-[roundtrip] ./good/notEqual_bvec3_frag_ref.bin
-[roundtrip] ./good/sign_float_vert_xvary.binvertex
-[roundtrip] ./good/11c394acbeda8a50.sample
-[roundtrip] ./good/atan_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/vec4_xyz_w_1vec3_1float_frag.bin
-[roundtrip] ./good/radians_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/gl_MaxVertexTextureImageUnits_vert.binvertex
-[roundtrip] ./good/min_vec2_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/29ea20593dc97878.sample
-[roundtrip] ./good/pow_float_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/vec3_grb_1vec3_frag.bin
-[roundtrip] ./good/lessThanEqual_ivec2_vert.binvertex
-[roundtrip] ./good/bvec4_empty_out_bvec4_empty_frag.bin
-[roundtrip] ./good/brick_mat4.binvertex
-[roundtrip] ./good/pow_float_frag_xconst2_yvary_ref.bin
-[roundtrip] ./good/tan_vec2_frag_xvary.bin
-[roundtrip] ./good/greaterThanEqual_ivec3_frag.bin
-[roundtrip] ./good/mat2_frag.bin
-[roundtrip] ./good/bvec4_empty_empty_bvec4_array_vert.binvertex
-[roundtrip] ./good/int_empty_inout_int_array_frag.bin
-[roundtrip] ./good/int_empty_inout_int_empty_vert.binvertex
-[roundtrip] ./good/atan_vec2_vert_xvaryyvary.binvertex
-[roundtrip] ./good/degrees_float_frag_xvary.bin
-[roundtrip] ./good/reflect_vec3_vert_ivarynconst.binvertex
-[roundtrip] ./good/mix_float_vert_xvary_yconsthalf_aconsthalf_ref.binvertex
-[roundtrip] ./good/c730b4d11be275e3.sample
-[roundtrip] ./good/1f_frag.bin
-[roundtrip] ./good/sign_vec3_frag_xvary.bin
-[roundtrip] ./good/vec2_vec3_vert.binvertex
-[roundtrip] ./good/matrixMultComp_mat3_vert_ref.binvertex
-[roundtrip] ./good/9e2d1a5e104f1592.sample
-[roundtrip] ./good/51983f56fe29ae50.sample
-[roundtrip] ./good/cos_float_frag_xvary_ref.bin
-[roundtrip] ./good/0e9ce5f2864ff639.sample
-[roundtrip] ./good/struct_bvec2bvec3bvec4_frag.bin
-[roundtrip] ./good/asin_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/greaterThan_vec2_frag_ref.bin
-[roundtrip] ./good/vertexShader.binvertex
-[roundtrip] ./good/sqrt_float_frag_xvary_ref.bin
-[roundtrip] ./good/min_vec3_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/f5d0e915aeab16be.sample
-[roundtrip] ./good/vec3_rg_b_1vec2_1float_vert.binvertex
-[roundtrip] ./good/cos_vec2_frag_xvary.bin
-[roundtrip] ./good/pow_float_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/varying1_frag.binvertex
-[roundtrip] ./good/buffer_objects.bin
-[roundtrip] ./good/emit2.bin
-[roundtrip] ./good/all_bvec2_frag.bin
-[roundtrip] ./good/log_float_frag_xvary_ref.bin
-[roundtrip] ./good/max_vec2_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/ivec4_empty_out_ivec4_array_frag.bin
-[roundtrip] ./good/normalize_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/fract_float_frag_xvary.bin
-[roundtrip] ./good/f8791569e3769feb.sample
-[roundtrip] ./good/lighting_diffuse_ref.bin
-[roundtrip] ./good/equal_ivec2_frag_ref.bin
-[roundtrip] ./good/vec4_rgba_1vec4_frag.bin
-[roundtrip] ./good/vec4_empty_out_vec4_empty_vert.binvertex
-[roundtrip] ./good/greaterThan_ivec2_vert.binvertex
-[roundtrip] ./good/pow_float_frag_xvary_yconst2_ref.bin
-[roundtrip] ./good/28258a763bfe0f6c.sample
-[roundtrip] ./good/reflect_vec2_frag_ivarynconst.bin
-[roundtrip] ./good/struct_mat2_vert.binvertex
-[roundtrip] ./good/greaterThanEqual_ivec2_frag.bin
-[roundtrip] ./good/structnest_mat4_vert.binvertex
-[roundtrip] ./good/vec4_empty_inout_vec4_empty_frag.bin
-[roundtrip] ./good/ceil_vec3_vert_xvary.binvertex
-[roundtrip] ./good/ivec4_empty_out_ivec4_empty_vert.binvertex
-[roundtrip] ./good/mat4_empty_in_mat4_array_frag.bin
-[roundtrip] ./good/mat3_frag.bin
-[roundtrip] ./good/vec3array_vert.binvertex
-[roundtrip] ./good/lessThan_vec2_frag_ref.bin
-[roundtrip] ./good/1b_frag.bin
-[roundtrip] ./good/dot_float_vert_xvaryyone.binvertex
-[roundtrip] ./good/73ca6d593f4d544f.sample
-[roundtrip] ./good/exp2_vec2_frag_xvaryneg.bin
-[roundtrip] ./good/vec3_pts_1vec3_vert.binvertex
-[roundtrip] ./good/log_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/mat4_empty_inout_mat4_empty_frag.bin
-[roundtrip] ./good/vec4_ps_qt_2vec2_frag.bin
-[roundtrip] ./good/const_mat3_copy_frag.bin
-[roundtrip] ./good/distance_vec2_frag_xvaryyhalf.bin
-[roundtrip] ./good/sign_vec3_vert_xvary.binvertex
-[roundtrip] ./good/vec4_x_y_z_w_4float_vert.binvertex
-[roundtrip] ./good/vec3_tsp_1vec3_frag.bin
-[roundtrip] ./good/bvec4_empty_inout_bvec4_empty_frag.bin
-[roundtrip] ./good/inversesqrt_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/atan_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/vec3_yxz_1vec3_frag.bin
-[roundtrip] ./good/dot_float_frag_xvaryyone.bin
-[roundtrip] ./good/pow_vec3_vert_xconsthalf_yvary_ref.binvertex
-[roundtrip] ./good/vec4_grab_1vec4_vert.binvertex
-[roundtrip] ./good/exp_vec2_vert_xvary.binvertex
-[roundtrip] ./good/any_bvec3_vert.binvertex
-[roundtrip] ./good/vec4_rg_ba_2vec2_frag.bin
-[roundtrip] ./good/ivec_tests.binvertex
-[roundtrip] ./good/exp_float_frag_xvary.bin
-[roundtrip] ./good/sign_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/bool_empty_empty_bool_array_vert.binvertex
-[roundtrip] ./good/22i_frag.bin
-[roundtrip] ./good/inversesqrt_float_frag_xvary.bin
-[roundtrip] ./good/radians_vec2_vert_xvary.binvertex
-[roundtrip] ./good/1b83ed8bdb39540b.sample
-[roundtrip] ./good/mat4_frag.bin
-[roundtrip] ./good/fract_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/abs_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec4_ar_bg_2vec2_frag.bin
-[roundtrip] ./good/default.bin
-[roundtrip] ./good/dot_vec2_frag_xvaryyhalf_ref.bin
-[roundtrip] ./good/f3ccfd7fc920357a.sample
-[roundtrip] ./good/faceforward_vec3_frag_nvaryiconst_ref.bin
-[roundtrip] ./good/tan_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/float_empty_in_float_empty_vert.binvertex
-[roundtrip] ./good/gl_FragCoord_z_frag_ref.binvertex
-[roundtrip] ./good/greaterThan_vec2_vert_ref.binvertex
-[roundtrip] ./good/greaterThan_ivec3_frag.bin
-[roundtrip] ./good/vec4_zwxy_1vec4_frag.bin
-[roundtrip] ./good/sin_vec3_frag_xvary.bin
-[roundtrip] ./good/vec3_zyx_1vec3_vert.binvertex
-[roundtrip] ./good/qualifiers_float_frag.bin
-[roundtrip] ./good/float_empty_empty_float_empty_vert.binvertex
-[roundtrip] ./good/atan_float_vert_xvaryyvary_ref.binvertex
-[roundtrip] ./good/pow_vec3_vert_xconsthalf_yvary.binvertex
-[roundtrip] ./good/exp_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/notEqual_ivec3_vert.binvertex
-[roundtrip] ./good/greaterThanEqual_vec3_frag.bin
-[roundtrip] ./good/lessThan_vec2_frag.bin
-[roundtrip] ./good/smoothstep_vec3_frag_xvary_edgeconstquarter_ref.bin
-[roundtrip] ./good/log2_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/gl_MaxVaryingVectors_vert.binvertex
-[roundtrip] ./good/radians_float_vert_xvary.binvertex
-[roundtrip] ./good/faceforward_float_vert_nvaryiconst.binvertex
-[roundtrip] ./good/4b_firstthree_frag.bin
-[roundtrip] ./good/equal_vec2_vert_ref.binvertex
-[roundtrip] ./good/vec3_float_vec2_frag.bin
-[roundtrip] ./good/int_empty_inout_int_empty_frag.bin
-[roundtrip] ./good/extension2_V100_frag.binvertex
-[roundtrip] ./good/mix_vec3_vert_xvary_yconsthalf_aconsthalf.binvertex
-[roundtrip] ./good/struct_bvec2bvec3bvec4_vert.binvertex
-[roundtrip] ./good/greaterThan_ivec2_frag_ref.bin
-[roundtrip] ./good/length_float_frag_xvary_ref.bin
-[roundtrip] ./good/gl_MaxDrawBuffers_frag.bin
-[roundtrip] ./good/clamp_float_vert_xvary_yconstquarter_ref.binvertex
-[roundtrip] ./good/faceforward_vec3_frag_nvaryiconst.bin
-[roundtrip] ./good/vec3_float_vec2_vert.binvertex
-[roundtrip] ./good/length_float_frag_xvary.bin
-[roundtrip] ./good/pow_vec2_frag_xconst2_yvary.bin
-[roundtrip] ./good/vec3_rgb_1vec3_frag.bin
-[roundtrip] ./good/radians_vec3_frag_xvary.bin
-[roundtrip] ./good/log_vec2_vert_xvary.binvertex
-[roundtrip] ./good/mat_tests.bin
-[roundtrip] ./good/clamp_float_frag_xvary_yconstquarter_ref.bin
-[roundtrip] ./good/vec4_gr_ab_2vec2_frag.bin
-[roundtrip] ./good/ivec4_empty_inout_ivec4_array_frag.bin
-[roundtrip] ./good/vec4_ts_qp_2vec2_frag.bin
-[roundtrip] ./good/log_vec2_vert_xvary01_ref.binvertex
-[roundtrip] ./good/sqrt_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/exp_vec2_vert_xvaryneg.binvertex
-[roundtrip] ./good/user_clip_planes.bin
-[roundtrip] ./good/bvec4_2int_2float_frag.bin
-[roundtrip] ./good/int_empty_in_int_array_vert.binvertex
-[roundtrip] ./good/5cfdf98d9f7554de.sample
-[roundtrip] ./good/lessThan_ivec3_vert_ref.binvertex
-[roundtrip] ./good/lessThan_vec2_vert.binvertex
-[roundtrip] ./good/vec4_s_t_p_q_4float_frag.bin
-[roundtrip] ./good/radians_vec2_frag_xvary.bin
-[roundtrip] ./good/float_empty_in_float_empty_frag.bin
-[roundtrip] ./good/CorrectConstFolding1_vert.binvertex
-[roundtrip] ./good/float_empty_empty_float_array_frag.bin
-[roundtrip] ./good/cross_vec3_vert_xvaryyconst.binvertex
-[roundtrip] ./good/smoothstep_float_frag_xvary_edgeconstquarter_ref.bin
-[roundtrip] ./good/ivec4_empty_in_ivec4_array_frag.bin
-[roundtrip] ./good/vec3_zx_y_1vec2_1float_vert.binvertex
-[roundtrip] ./good/exp2_vec2_vert_xvaryneg_ref.binvertex
-[roundtrip] ./good/vec4_zwx_y_1vec3_1float_frag.bin
-[roundtrip] ./good/atan_vec2_frag_xvary.bin
-[roundtrip] ./good/ceil_vec3_frag_xvary.bin
-[roundtrip] ./good/int_empty_in_int_empty_vert.binvertex
-[roundtrip] ./good/matUniformShader.binvertex
-[roundtrip] ./good/gl_FragCoord_xy_frag_ref.bin
-[roundtrip] ./good/exp2_vec3_vert_xvary.binvertex
-[roundtrip] ./good/60b16282d32b61ea.sample
-[roundtrip] ./good/asin_float_frag_xvary.bin
-[roundtrip] ./good/empty_empty_array_float_vert.binvertex
-[roundtrip] ./good/const_mat3_vert.binvertex
-[roundtrip] ./good/notEqual_ivec3_frag.bin
-[roundtrip] ./good/smoothstep_vec2_vert_xvary_edgeconstquarter.binvertex
-[roundtrip] ./good/distance_vec2_vert_xvaryyhalf_ref.binvertex
-[roundtrip] ./good/vec4_rgba_1vec4_vert.binvertex
-[roundtrip] ./good/CorrectExtension10_V100_frag.binvertex
-[roundtrip] ./good/mat3_3vec3_frag.bin
-[roundtrip] ./good/lessThan_vec2_vert_ref.binvertex
-[roundtrip] ./good/gl_FragCoord_xy_frag.bin
-[roundtrip] ./good/matrixMultComp_mat3_frag.bin
-[roundtrip] ./good/b349cdf53f9157cf.sample
-[roundtrip] ./good/structnest_vec3_frag.bin
-[roundtrip] ./good/vec4_rgb_a_1vec3_1float_vert.binvertex
-[roundtrip] ./good/structcopy_mat2_vert.binvertex
-[roundtrip] ./good/22b3fbf72f47a49c.sample
-[roundtrip] ./good/structcopy_mat3_frag.bin
-[roundtrip] ./good/vec4_xyzw_1vec4_frag.bin
-[roundtrip] ./good/exp_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/inversesqrt_vec2_vert_xvary.binvertex
-[roundtrip] ./good/vec3_sp_t_1vec2_1float_frag.bin
-[roundtrip] ./good/log_float_frag_xvary.bin
-[roundtrip] ./good/greaterThanEqual_vec2_frag.bin
-[roundtrip] ./good/5f8c709345f1f8e8.sample
-[roundtrip] ./good/array_const_mat3_frag.bin
-[roundtrip] ./good/faceforward_vec2_frag_nvaryiconst.bin
-[roundtrip] ./good/ivec4_empty_empty_ivec4_array_vert.binvertex
-[roundtrip] ./good/fract_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/exp_vec3_vert_xvary.binvertex
-[roundtrip] ./good/log_float_vert_xvary.binvertex
-[roundtrip] ./good/_webgl_function.binvertex
-[roundtrip] ./good/sign_float_frag_xvary_ref.bin
-[roundtrip] ./good/12d96de229b7bc14.sample
-[roundtrip] ./good/mat4_empty_empty_mat4_empty_frag.bin
-[roundtrip] ./good/mod_vec3_vert_xvary_yconst1.binvertex
-[roundtrip] ./good/log2_float_vert_xvary01_ref.binvertex
-[roundtrip] ./good/degrees_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/ceil_float_vert_xvary.binvertex
-[roundtrip] ./good/vec4_empty_in_vec4_array_vert.binvertex
-[roundtrip] ./good/notEqual_bvec2_frag.bin
-[roundtrip] ./good/56be35001146a0b0.sample
-[roundtrip] ./good/mat4_copy_vert.binvertex
-[roundtrip] ./good/ivec4_empty_out_ivec4_array_vert.binvertex
-[roundtrip] ./good/vec4_wx_zy_2vec2_frag.bin
-[roundtrip] ./good/exp2_float_vert_xvary.binvertex
-[roundtrip] ./good/matrixMultComp_mat3_frag_ref.bin
-[roundtrip] ./good/vec4_ps_qt_2vec2_vert.binvertex
-[roundtrip] ./good/lessThanEqual_ivec3_frag.bin
-[roundtrip] ./good/log2_vec3_frag_xvary01_ref.bin
-[roundtrip] ./good/smoothstep_vec2_frag_xvary_edgeconstquarter.bin
-[roundtrip] ./good/95b4e002df136c9b.sample
-[roundtrip] ./good/sin_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/log2_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/lessThan_vec3_frag.bin
-[roundtrip] ./good/pow_float_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/vec2_2float_vert.binvertex
-[roundtrip] ./good/smoothstep_vec3_vert_xvary_edgeconstquarter_ref.binvertex
-[roundtrip] ./good/min_vec3_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/clamp_float_frag_xvary_yconstquarter.bin
-[roundtrip] ./good/ceil_vec2_frag_xvary.bin
-[roundtrip] ./good/388c8b558fce26be.sample
-[roundtrip] ./good/float_empty_out_float_empty_frag.bin
-[roundtrip] ./good/pow_float_vert_xconsthalf_yvary_ref.binvertex
-[roundtrip] ./good/Permissive_Scalar_Vector_Expressions_frag.binvertex
-[roundtrip] ./good/intArrayUniformShader.binvertex
-[roundtrip] ./good/4b_lastthree_vert.bin
-[roundtrip] ./good/pow_vec3_vert_xconst2_yvary_ref.binvertex
-[roundtrip] ./good/reflect_float_frag_ivarynconst_ref.bin
-[roundtrip] ./good/mat2_copy_frag.bin
-[roundtrip] ./good/mix_vec2_vert_xvary_yconsthalf_aconsthalf_ref.binvertex
-[roundtrip] ./good/notEqual_vec3_vert.binvertex
-[roundtrip] ./good/DepthRange_vert.binvertex
-[roundtrip] ./good/min_float_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/vec4_vec3_float_vert.binvertex
-[roundtrip] ./good/atan_vec3_vert_xvary.binvertex
-[roundtrip] ./good/log2_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/inversesqrt_vec2_frag_xvary.bin
-[roundtrip] ./good/step_vec2_vert_xvary_edgeconsthalf.binvertex
-[roundtrip] ./good/cos_vec2_vert_xvary.binvertex
-[roundtrip] ./good/structnest_vec3_vert.binvertex
-[roundtrip] ./good/step_float_vert_xvary_edgeconsthalf_ref.binvertex
-[roundtrip] ./good/4b_vert.binvertex
-[roundtrip] ./good/CorrectParse1_frag.binvertex
-[roundtrip] ./good/extension9_V100_frag.bin
-[roundtrip] ./good/CorrectParse2_frag.bin
-[roundtrip] ./good/mod_vec2_frag_xvary_yconst1_ref.bin
-[roundtrip] ./good/faceforward_float_frag_nvaryiconst_ref.bin
-[roundtrip] ./good/asin_vec2_frag_xvary.bin
-[roundtrip] ./good/normalize_float_frag_xvary_ref.bin
-[roundtrip] ./good/greaterThan_vec3_vert_ref.binvertex
-[roundtrip] ./good/int_empty_inout_int_array_vert.binvertex
-[roundtrip] ./good/int_empty_out_int_array_vert.binvertex
-[roundtrip] ./good/dFdx_frag.binvertex
-[roundtrip] ./good/CorrectExtension4_V100_frag.bin
-[roundtrip] ./good/4f_frag.bin
-[roundtrip] ./good/structcopy_float_frag.bin
-[roundtrip] ./good/mat4_empty_in_mat4_empty_frag.bin
-[roundtrip] ./good/CorrectSwizzle1_frag.bin
-[roundtrip] ./good/sqrt_vec2_frag_xvary.bin
-[roundtrip] ./good/0f521138e4349873.sample
-[roundtrip] ./good/bvec4_empty_empty_bvec4_array_frag.bin
-[roundtrip] ./good/notEqual_bvec3_vert_ref.binvertex
-[roundtrip] ./good/24i_frag.bin
-[roundtrip] ./good/mod_x_large_y_large_vert.binvertex
-[roundtrip] ./good/gl_MaxTextureImageUnits_frag.bin
-[roundtrip] ./good/pow_float_vert_xconst2_yvary.binvertex
-[roundtrip] ./good/array_const_mat2_frag.bin
-[roundtrip] ./good/nestedstructcomb_various_vert.binvertex
-[roundtrip] ./good/non-ascii-comments.binvertex
-[roundtrip] ./good/CorrectExtension1_V100_frag.bin
-[roundtrip] ./good/bvec4_empty_out_bvec4_array_vert.binvertex
-[roundtrip] ./good/log2_vec3_vert_xvary.binvertex
-[roundtrip] ./good/greaterThan_ivec2_vert_ref.binvertex
-[roundtrip] ./good/smoothstep_float_vert_xvary_edgeconstquarter_ref.binvertex
-[roundtrip] ./good/step_float_vert_xvary_edgeconsthalf.binvertex
-[roundtrip] ./good/lessThanEqual_vec3_vert_ref.binvertex
-[roundtrip] ./good/vec4_zwxy_1vec4_vert.binvertex
-[roundtrip] ./good/webgl_struct.binvertex
-[roundtrip] ./good/291f6bc6932debe6.sample
-[roundtrip] ./good/CorrectExtension4_V100_frag.binvertex
-[roundtrip] ./good/ivec4_empty_in_ivec4_empty_vert.binvertex
-[roundtrip] ./good/struct_mat3_frag.bin
-[roundtrip] ./good/reflect_vec2_vert_ivarynconst_ref.binvertex
-[roundtrip] ./good/vec3_xyz_1vec3_vert.binvertex
-[roundtrip] ./good/distance_float_frag_xvaryyhalf.bin
-[roundtrip] ./good/postfixdecrement_frag.bin
-[roundtrip] ./good/exp2_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/selection_vert.binvertex
-[roundtrip] ./good/21f_frag.bin
-[roundtrip] ./good/structcopy_mat4_frag.bin
-[roundtrip] ./good/not_bvec2_frag.bin
-[roundtrip] ./good/vec3_ps_t_1vec2_1float_vert.binvertex
-[roundtrip] ./good/greaterThanEqual_vec2_frag_ref.bin
-[roundtrip] ./good/exp2_vec3_frag_xvary.bin
-[roundtrip] ./good/dot_vec3_vert_xvaryythird.binvertex
-[roundtrip] ./good/mat4_empty_inout_mat4_array_vert.binvertex
-[roundtrip] ./good/exp_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/cross_vec3_frag_xvaryyconst.bin
-[roundtrip] ./good/CorrectSwizzle1_vert.binvertex
-[roundtrip] ./good/8c0aeb8a2c6526d0.sample
-[roundtrip] ./good/any_bvec2_frag_ref.bin
-[roundtrip] ./good/log2_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/int_empty_in_int_empty_frag.bin
-[roundtrip] ./good/degrees_float_vert_xvary.binvertex
-[roundtrip] ./good/dataType9_frag.binvertex
-[roundtrip] ./good/gl_MaxFragmentUniformVectors_frag.bin
-[roundtrip] ./good/min_vec3_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/CorrectFunction1_vert.binvertex
-[roundtrip] ./good/vec4_yx_wz_2vec2_frag.bin
-[roundtrip] ./good/normalize_vec3_vert_xvary.binvertex
-[roundtrip] ./good/length_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/05fdf989b7705a62.sample
-[roundtrip] ./good/prefixincrement_vert.binvertex
-[roundtrip] ./good/pow_vec3_vert_xvary_yconst2_ref.binvertex
-[roundtrip] ./good/vec3arraydirect_vert.binvertex
-[roundtrip] ./good/log_vec3_frag_xvary.bin
-[roundtrip] ./good/_webgl_struct.bin
-[roundtrip] ./good/structnest_bvec2bvec3bvec4_frag.bin
-[roundtrip] ./good/4b_lastthree_frag.bin
-[roundtrip] ./good/distance_vec2_frag_xvaryyhalf_ref.bin
-[roundtrip] ./good/distance_vec3_vert_xvaryyhalf_ref.binvertex
-[roundtrip] ./good/atan_float_frag_xvary_ref.bin
-[roundtrip] ./good/log2_vec2_frag_xvary.bin
-[roundtrip] ./good/Permissive_Scalar_Vector_Expressions_frag.bin
-[roundtrip] ./good/floor_float_frag_xvary.bin
-[roundtrip] ./good/lessThan_vec3_vert_ref.binvertex
-[roundtrip] ./good/asin_float_vert_xvary.binvertex
-[roundtrip] ./good/d74247d244e848d8.sample
-[roundtrip] ./good/sign_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/const_mat2_copy_vert.binvertex
-[roundtrip] ./good/vec4_gr_ab_2vec2_vert.binvertex
-[roundtrip] ./good/pow_vec2_vert_xconst2_yvary.binvertex
-[roundtrip] ./good/matrixVSU.binvertex
-[roundtrip] ./good/CorrectSwizzle2_vert.binvertex
-[roundtrip] ./good/8565b0c18de51cea.sample
-[roundtrip] ./good/min_vec2_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/61dab6b49dea1237.sample
-[roundtrip] ./good/mod_float_frag_xvary_yconst1.bin
-[roundtrip] ./good/notEqual_vec2_frag.bin
-[roundtrip] ./good/empty_uniform_array_float_vert.binvertex
-[roundtrip] ./good/samplerUniformShader.bin
-[roundtrip] ./good/vec4_empty_inout_vec4_empty_vert.binvertex
-[roundtrip] ./good/matrix2VSU.bin
-[roundtrip] ./good/mat3_vert.binvertex
-[roundtrip] ./good/extension5_V100_frag.bin
-[roundtrip] ./good/ec2ba724b2cf90b9.sample
-[roundtrip] ./good/webgl_variable.binvertex
-[roundtrip] ./good/notEqual_vec2_vert.binvertex
-[roundtrip] ./good/brick.bin
-[roundtrip] ./good/c3b75cf451649583.sample
-[roundtrip] ./good/bool_empty_out_bool_array_frag.bin
-[roundtrip] ./good/bvec4_empty_in_bvec4_array_vert.binvertex
-[roundtrip] ./good/9aff4fa8a44e9c68.sample
-[roundtrip] ./good/int_empty_empty_int_array_frag.bin
-[roundtrip] ./good/normalize_float_frag_xvary.bin
-[roundtrip] ./good/vec4_pqst_1vec4_frag.bin
-[roundtrip] ./good/reflect_float_frag_ivarynconst.bin
-[roundtrip] ./good/structcopy_float_vert.binvertex
-[roundtrip] ./good/fract_vec2_frag_xvary.bin
-[roundtrip] ./good/1d81015f027c7161.sample
-[roundtrip] ./good/floor_vec3_frag_xvary.bin
-[roundtrip] ./good/faceforward_vec3_vert_nvaryiconst_ref.binvertex
-[roundtrip] ./good/vec_tests.bin
-[roundtrip] ./good/length_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/mix_vec3_vert_xvary_yconsthalf_aconsthalf_ref.binvertex
-[roundtrip] ./good/5b0343949e2fdaae.sample
-[roundtrip] ./good/vec4_qspt_1vec4_vert.binvertex
-[roundtrip] ./good/equal_vec2_vert.binvertex
-[roundtrip] ./good/version3_V100_frag.bin
-[roundtrip] ./good/mod_float_vert_xvary_yconst1_ref.binvertex
-[roundtrip] ./good/mat2_copy_vert.binvertex
-[roundtrip] ./good/dot_float_vert_xvaryyone_ref.binvertex
-[roundtrip] ./good/vec4_arbg_1vec4_vert.binvertex
-[roundtrip] ./good/buffer_objects_multitexturing.bin
-[roundtrip] ./good/exp2_vec2_frag_xvaryneg_ref.bin
-[roundtrip] ./good/exp_vec3_frag_xvary.bin
-[roundtrip] ./good/floor_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/mat3arrayindirect1_frag.bin
-[roundtrip] ./good/exp2_float_vert_xvaryneg_ref.binvertex
-[roundtrip] ./good/acos_vec3_vert_xvary.binvertex
-[roundtrip] ./good/notEqual_bvec3_vert.binvertex
-[roundtrip] ./good/gl_MaxVertexUniformVectors_frag.bin
-[roundtrip] ./good/vec4_empty_inout_vec4_array_frag.bin
-[roundtrip] ./good/exp_vec2_frag_xvary.bin
-[roundtrip] ./good/structcopy_vec3_frag.bin
-[roundtrip] ./good/pow_float_frag_xvary_yconst2.bin
-[roundtrip] ./good/distance_float_frag_xvaryyhalf_ref.bin
-[roundtrip] ./good/qualifiers_struct_vert.binvertex
-[roundtrip] ./good/struct_bool_frag.bin
-[roundtrip] ./good/reflect_vec3_vert_ivarynconst_ref.binvertex
-[roundtrip] ./good/dot_vec2_frag_xvaryyhalf.bin
-[roundtrip] ./good/array_float_frag.bin
-[roundtrip] ./good/1i_frag.bin
-[roundtrip] ./good/int_empty_empty_int_array_vert.binvertex
-[roundtrip] ./good/webgl_field.bin
-[roundtrip] ./good/mat3arraysimple_frag.bin
-[roundtrip] ./good/79bf6142592bb99f.sample
-[roundtrip] ./good/max_vec3_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/atan_vec2_vert_xvaryyvary_ref.binvertex
-[roundtrip] ./good/structnest_bvec2bvec3bvec4_vert.binvertex
-[roundtrip] ./good/smoothstep_float_vert_xvary_edgeconstquarter.binvertex
-[roundtrip] ./good/all_bvec3_frag.bin
-[roundtrip] ./good/struct_mat3_vert.binvertex
-[roundtrip] ./good/vec3_stp_1vec3_vert.binvertex
-[roundtrip] ./good/qualifiers_struct_frag.bin
-[roundtrip] ./good/vec3arraydirect_frag.bin
-[roundtrip] ./good/atan_float_frag_xvaryyvary_ref.bin
-[roundtrip] ./good/distance_float_vert_xvaryyhalf_ref.binvertex
-[roundtrip] ./good/structcopy_vec4_frag.bin
-[roundtrip] ./good/vec3_vec4_vert.binvertex
-[roundtrip] ./good/abs_float_vert_xvary.binvertex
-[roundtrip] ./good/atan_vec3_vert_xvaryyvary_ref.binvertex
-[roundtrip] ./good/extension9_V100_frag.binvertex
-[roundtrip] ./good/max_vec3_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/mat4_empty_inout_mat4_array_frag.bin
-[roundtrip] ./good/3b_vert.bin
-[roundtrip] ./good/boolUniformShader.binvertex
-[roundtrip] ./good/030fa7b74d74b919.sample
-[roundtrip] ./good/exp2_vec2_vert_xvary.binvertex
-[roundtrip] ./good/normalize_vec3_frag_xvary.bin
-[roundtrip] ./good/for_nested_continue_vert.binvertex
-[roundtrip] ./good/min_vec2_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/degrees_vec3_vert_xvary.binvertex
-[roundtrip] ./good/vec4_wxzy_1vec4_vert.binvertex
-[roundtrip] ./good/0d3fa9cdfadb4b4f.sample
-[roundtrip] ./good/mod_vec3_frag_xvary_yconst1.bin
-[roundtrip] ./good/fract_float_frag_xvary_ref.bin
-[roundtrip] ./good/for_continue_vert.binvertex
-[roundtrip] ./good/array_const_mat4_vert.binvertex
-[roundtrip] ./good/structnest_bool_vert.binvertex
-[roundtrip] ./good/smoothstep_float_frag_xvary_edgeconstquarter.bin
-[roundtrip] ./good/CorrectFuncOverload_frag.bin
-[roundtrip] ./good/notEqual_vec3_vert_ref.binvertex
-[roundtrip] ./good/10361eaa316e189b.sample
-[roundtrip] ./good/cos_float_vert_xvary.binvertex
-[roundtrip] ./good/for_nested_break_vert.binvertex
-[roundtrip] ./good/any_bvec2_frag.bin
-[roundtrip] ./good/4m_frag.bin
-[roundtrip] ./good/float_empty_inout_float_empty_frag.bin
-[roundtrip] ./good/not_bvec3_vert.binvertex
-[roundtrip] ./good/not_bvec2_vert.binvertex
-[roundtrip] ./good/webgl_function.binvertex
-[roundtrip] ./good/float_empty_inout_float_empty_vert.binvertex
-[roundtrip] ./good/const_mat4_copy_vert.binvertex
-[roundtrip] ./good/empty_uniform_array_float_frag.bin
-[roundtrip] ./good/dataType8_frag.binvertex
-[roundtrip] ./good/bool_empty_inout_bool_array_vert.binvertex
-[roundtrip] ./good/exp_float_vert_xvaryneg.binvertex
-[roundtrip] ./good/acos_float_vert_xvary.binvertex
-[roundtrip] ./good/postfixincrement_frag.bin
-[roundtrip] ./good/808a059de15460a5.sample
-[roundtrip] ./good/lessThan_vec3_frag_ref.bin
-[roundtrip] ./good/vec3_yz_x_1vec2_1float_frag.bin
-[roundtrip] ./good/equal_vec2_frag_ref.bin
-[roundtrip] ./good/min_vec2_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/pow_vec2_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/ceil_float_frag_xvary.bin
-[roundtrip] ./good/bvec4_empty_out_bvec4_array_frag.bin
-[roundtrip] ./good/vec4_bar_g_1vec3_1float_vert.binvertex
-[roundtrip] ./good/mat4_empty_out_mat4_array_frag.bin
-[roundtrip] ./good/3893f011701db474.sample
-[roundtrip] ./good/notEqual_bvec2_frag_ref.bin
-[roundtrip] ./good/notEqual_vec2_vert_ref.binvertex
-[roundtrip] ./good/exp_vec2_frag_xvaryneg.bin
-[roundtrip] ./good/sin_vec2_vert_xvary.binvertex
-[roundtrip] ./good/6e25b566c31a0b71.sample
-[roundtrip] ./good/exp_vec3_vert_xvaryneg.binvertex
-[roundtrip] ./good/67d8abe5cf054266.sample
-[roundtrip] ./good/discard_cond_frag_ref.bin
-[roundtrip] ./good/log_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/dot_vec3_vert_xvaryythird_ref.binvertex
-[roundtrip] ./good/c65656b321be5314.sample
-[roundtrip] ./good/bool_empty_empty_bool_empty_vert.binvertex
-[roundtrip] ./good/reflect_vec2_frag_ivarynconst_ref.bin
-[roundtrip] ./good/5cec1710d6b73753.sample
-[roundtrip] ./good/equal_bvec2_frag_ref.bin
-[roundtrip] ./good/equal_bvec3_vert.binvertex
-[roundtrip] ./good/max_float_vert_xvary_yconsthalf_ref.binvertex
-[roundtrip] ./good/clamp_vec3_vert_xvary_yconstquarter_ref.binvertex
-[roundtrip] ./good/refract_vec2_frag_ivarynconst_ref.bin
-[roundtrip] ./good/mat4_copy_frag.bin
-[roundtrip] ./good/matrixMultComp_mat2_vert_ref.binvertex
-[roundtrip] ./good/atan_vec2_frag_xvaryyvary_ref.bin
-[roundtrip] ./good/lighting_diffuse.bin
-[roundtrip] ./good/fract_vec3_frag_xvary.bin
-[roundtrip] ./good/fragmentShader.bin
-[roundtrip] ./good/mat2_vert.binvertex
-[roundtrip] ./good/greaterThan_vec2_vert.binvertex
-[roundtrip] ./good/vec3_xz_y_1vec2_1float_frag.bin
-[roundtrip] ./good/radians_float_frag_xvary.bin
-[roundtrip] ./good/68955aacdc88924c.sample
-[roundtrip] ./good/extension6_V100_frag.binvertex
-[roundtrip] ./good/not_bvec3_frag_ref.bin
-[roundtrip] ./good/333660822c03b19c.sample
-[roundtrip] ./good/mat4_empty_inout_mat4_empty_vert.binvertex
-[roundtrip] ./good/vec3_rb_g_1vec2_1float_frag.bin
-[roundtrip] ./good/not_bvec2_frag_ref.bin
-[roundtrip] ./good/vec3_xz_y_1vec2_1float_vert.binvertex
-[roundtrip] ./good/abs_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/struct_float_frag.bin
-[roundtrip] ./good/asin_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/prefixdecrement_frag.bin
-[roundtrip] ./good/lessThanEqual_ivec2_vert_ref.binvertex
-[roundtrip] ./good/vec4_xy_zw_2vec2_vert.binvertex
-[roundtrip] ./good/nestedstructcomb_various_frag.bin
-[roundtrip] ./good/pow_vec3_vert_xconst2_yvary.binvertex
-[roundtrip] ./good/inversesqrt_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/all_bvec2_vert.binvertex
-[roundtrip] ./good/selection_frag.bin
-[roundtrip] ./good/vec4_pqst_1vec4_vert.binvertex
-[roundtrip] ./good/all_bvec3_vert.binvertex
-[roundtrip] ./good/dot_vec3_frag_xvaryythird.bin
-[roundtrip] ./good/length_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec3_rg_b_1vec2_1float_frag.bin
-[roundtrip] ./good/_webgl_struct.binvertex
-[roundtrip] ./good/abs_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/min_vec3_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/vec3_yz_x_1vec2_1float_vert.binvertex
-[roundtrip] ./good/mat2_4float_vert.binvertex
-[roundtrip] ./good/webgl_variable.bin
-[roundtrip] ./good/vec4_tsqp_1vec4_vert.binvertex
-[roundtrip] ./good/radians_vec3_vert_xvary.binvertex
-[roundtrip] ./good/vertexOnly2_frag.binvertex
-[roundtrip] ./good/mix_vec2_frag_xvary_yconsthalf_aconsthalf.bin
-[roundtrip] ./good/int_empty_out_int_empty_vert.binvertex
-[roundtrip] ./good/2fd9cf0251f4af8e.sample
-[roundtrip] ./good/CorrectParse2_vert.binvertex
-[roundtrip] ./good/bool_empty_empty_bool_array_frag.bin
-[roundtrip] ./good/log2_vec2_vert_xvary01.binvertex
-[roundtrip] ./good/pow_float_frag_xconst2_yvary.bin
-[roundtrip] ./good/vec3_vec2_float_vert.binvertex
-[roundtrip] ./good/vec3_bgr_1vec3_vert.binvertex
-[roundtrip] ./good/matrix_V100_frag.binvertex
-[roundtrip] ./good/dFdy_frag.binvertex
-[roundtrip] ./good/distance_float_vert_xvaryyhalf.binvertex
-[roundtrip] ./good/vec4_yxwz_1vec4_frag.bin
-[roundtrip] ./good/normalize_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/mat2_2vec2_frag.bin
-[roundtrip] ./good/inversesqrt_float_vert_xvary.binvertex
-[roundtrip] ./good/sin_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/extension7_V100_frag.binvertex
-[roundtrip] ./good/asin_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/log2_vec3_vert_xvary01_ref.binvertex
-[roundtrip] ./good/tan_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/point_sprites.binvertex
-[roundtrip] ./good/const_mat3_copy_vert.binvertex
-[roundtrip] ./good/floor_float_vert_xvary.binvertex
-[roundtrip] ./good/greaterThanEqual_ivec2_vert.binvertex
-[roundtrip] ./good/mat4_empty_empty_mat4_array_frag.bin
-[roundtrip] ./good/clamp_vec3_vert_xvary_yconstquarter.binvertex
-[roundtrip] ./good/CorrectParse1_frag.bin
-[roundtrip] ./good/vec4_zx_wy_2vec2_frag.bin
-[roundtrip] ./good/fract_vec3_vert_xvary.binvertex
-[roundtrip] ./good/version2_V100_frag.bin
-[roundtrip] ./good/vec3_gb_r_1vec2_1float_frag.bin
-[roundtrip] ./good/step_vec2_vert_xvary_edgeconsthalf_ref.binvertex
-[roundtrip] ./good/atan_float_vert_xvaryyvary.binvertex
-[roundtrip] ./good/acos_vec3_frag_xvary.bin
-[roundtrip] ./good/preprocess10_frag.bin
-[roundtrip] ./good/wood.binvertex
-[roundtrip] ./good/smoothstep_vec3_frag_xvary_edgeconstquarter.bin
-[roundtrip] ./good/brick_mat2.binvertex
-[roundtrip] ./good/faceforward_float_vert_nvaryiconst_ref.binvertex
-[roundtrip] ./good/bvec4_empty_inout_bvec4_array_vert.binvertex
-[roundtrip] ./good/vec4_empty_inout_vec4_array_vert.binvertex
-[roundtrip] ./good/for_break_frag.bin
-[roundtrip] ./good/any_bvec3_frag.bin
-[roundtrip] ./good/log_float_vert_xvary01_ref.binvertex
-[roundtrip] ./good/struct_mat4_vert.binvertex
-[roundtrip] ./good/log2_float_frag_xvary01.bin
-[roundtrip] ./good/exp_float_frag_xvaryneg_ref.bin
-[roundtrip] ./good/pow_vec2_frag_xconst2_yvary_ref.bin
-[roundtrip] ./good/extension3_V100_frag.bin
-[roundtrip] ./good/CorrectExtension1_V100_frag.binvertex
-[roundtrip] ./good/asin_vec3_vert_xvary.binvertex
-[roundtrip] ./good/structnest_vec2_vert.binvertex
-[roundtrip] ./good/vec3_stp_1vec3_frag.bin
-[roundtrip] ./good/buffer_objects_pointSize.bin
-[roundtrip] ./good/pow_vec2_vert_xconsthalf_yvary.binvertex
-[roundtrip] ./good/vec4_stpq_1vec4_vert.binvertex
-[roundtrip] ./good/mat3arrayindirect0_vert.binvertex
-[roundtrip] ./good/fract_float_vert_xvary.binvertex
-[roundtrip] ./good/vec4_wx_zy_2vec2_vert.binvertex
-[roundtrip] ./good/mat3_copy_frag.bin
-[roundtrip] ./good/postfixdecrement_vert.binvertex
-[roundtrip] ./good/sign_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec3array_frag.bin
-[roundtrip] ./good/089999293668cfbc.sample
-[roundtrip] ./good/atan_float_vert_xvary.binvertex
-[roundtrip] ./good/01d6ec78409a3167.sample
-[roundtrip] ./good/greaterThanEqual_ivec2_vert_ref.binvertex
-[roundtrip] ./good/refract_float_frag_ivarynconst.bin
-[roundtrip] ./good/structcopy_bool_vert.binvertex
-[roundtrip] ./good/exp_vec3_frag_xvaryneg.bin
-[roundtrip] ./good/void_empty_empty_void_empty_frag.bin
-[roundtrip] ./good/599347c3d9e19584.sample
-[roundtrip] ./good/2f_vert.binvertex
-[roundtrip] ./good/log2_float_frag_xvary_ref.bin
-[roundtrip] ./good/vec3_rb_g_1vec2_1float_vert.binvertex
-[roundtrip] ./good/notEqual_vec2_frag_ref.bin
-[roundtrip] ./good/greaterThan_ivec3_vert.binvertex
-[roundtrip] ./good/bvec4_empty_inout_bvec4_bigarray_frag.bin
-[roundtrip] ./good/degrees_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/greaterThan_ivec3_frag_ref.bin
-[roundtrip] ./good/step_vec3_frag_xvary_edgeconsthalf_ref.bin
-[roundtrip] ./good/asin_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/pow_vec3_frag_xconst2_yvary.bin
-[roundtrip] ./good/float_empty_inout_float_array_vert.binvertex
-[roundtrip] ./good/expected.bin
-[roundtrip] ./good/exp2_float_frag_xvary_ref.bin
-[roundtrip] ./good/bvec4_empty_inout_bvec4_bigarray_vert.binvertex
-[roundtrip] ./good/2b_frag.bin
-[roundtrip] ./good/assignments_frag.bin
-[roundtrip] ./good/float_empty_out_float_empty_vert.binvertex
-[roundtrip] ./good/log2_vec3_frag_xvary.bin
-[roundtrip] ./good/vec3_xyz_1vec3_frag.bin
-[roundtrip] ./good/discard_cond_frag.bin
-[roundtrip] ./good/prefixdecrement_vert.binvertex
-[roundtrip] ./good/asin_vec2_vert_xvary.binvertex
-[roundtrip] ./good/1i_vert.bin
-[roundtrip] ./good/all_bvec2_vert_ref.binvertex
-[roundtrip] ./good/empty_empty_array_float_frag.bin
-[roundtrip] ./good/vec4_tsq_p_1vec3_1float_vert.binvertex
-[roundtrip] ./good/vec4_empty_empty_vec4_array_frag.bin
-[roundtrip] ./good/ivec4_empty_empty_ivec4_empty_vert.binvertex
-[roundtrip] ./good/extension3_V100_frag.binvertex
-[roundtrip] ./good/0d990eb984edaff2.sample
-[roundtrip] ./good/greaterThanEqual_vec2_vert_ref.binvertex
-[roundtrip] ./good/vec4_vec3_float_frag.bin
-[roundtrip] ./good/lessThanEqual_vec3_frag_ref.bin
-[roundtrip] ./good/ivec4_empty_out_ivec4_empty_frag.bin
-[roundtrip] ./good/all_bvec3_vert_ref.binvertex
-[roundtrip] ./good/greaterThanEqual_vec2_vert.binvertex
-[roundtrip] ./good/greaterThan_vec3_frag_ref.bin
-[roundtrip] ./good/length_float_vert_xvary.binvertex
-[roundtrip] ./good/d96543bebe7e4026.sample
-[roundtrip] ./good/distance_vec3_frag_xvaryyhalf.bin
-[roundtrip] ./good/mat2_2vec2_vert.binvertex
-[roundtrip] ./good/length_vec2_vert_xvary.binvertex
-[roundtrip] ./good/vec4_zwx_y_1vec3_1float_vert.binvertex
-[roundtrip] ./good/const_mat3_frag.bin
-[roundtrip] ./good/pow_float_frag_xvary_yconsthalf.bin
-[roundtrip] ./good/pow_vec2_vert_xvary_yconst2.binvertex
-[roundtrip] ./good/pow_float_frag_xconsthalf_yvary_ref.bin
-[roundtrip] ./good/faceforward_vec2_vert_nvaryiconst.binvertex
-[roundtrip] ./good/fd7147337aee9ae3.sample
-[roundtrip] ./good/logical_frag.bin
-[roundtrip] ./good/array_const_mat2_vert.binvertex
-[roundtrip] ./good/lessThan_ivec3_frag.bin
-[roundtrip] ./good/log_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/ceil_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/float_empty_in_float_array_frag.bin
-[roundtrip] ./good/distance_vec3_frag_xvaryyhalf_ref.bin
-[roundtrip] ./good/acos_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/08f07e486929f97a.sample
-[roundtrip] ./good/atan_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/sqrt_vec3_vert_xvary.binvertex
-[roundtrip] ./good/vec3_vec4_frag.bin
-[roundtrip] ./good/normalize_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/ceil_vec2_vert_xvary.binvertex
-[roundtrip] ./good/floor_vec2_frag_xvary_ref.bin
-[roundtrip] ./good/faceforward_vec3_vert_nvaryiconst.binvertex
-[roundtrip] ./good/distance_vec2_vert_xvaryyhalf.binvertex
-[roundtrip] ./good/mix_float_frag_xvary_yconsthalf_aconsthalf.bin
-[roundtrip] ./good/mix_float_vert_xvary_yconsthalf_aconsthalf.binvertex
-[roundtrip] ./good/notEqual_ivec2_vert_ref.binvertex
-[roundtrip] ./good/a5c3a0055e99f8d2.sample
-[roundtrip] ./good/matrix_V100_frag.bin
-[roundtrip] ./good/ivec4_empty_in_ivec4_array_vert.binvertex
-[roundtrip] ./good/abs_float_frag_xvary.bin
-[roundtrip] ./good/mix_vec3_frag_xvary_yconsthalf_aconsthalf.bin
-[roundtrip] ./good/notEqual_ivec3_vert_ref.binvertex
-[roundtrip] ./good/struct_vec2_frag.bin
-[roundtrip] ./good/pow_vec3_frag_xconst2_yvary_ref.bin
-[roundtrip] ./good/clamp_vec2_frag_xvary_yconstquarter.bin
-[roundtrip] ./good/division_frag.bin
-[roundtrip] ./good/vec4_empty_in_vec4_empty_vert.binvertex
-[roundtrip] ./good/acos_vec2_vert_xvary_ref.binvertex
-[roundtrip] ./good/vec4_qsp_t_1vec3_1float_vert.binvertex
-[roundtrip] ./good/bvec4_empty_inout_bvec4_array_frag.bin
-[roundtrip] ./good/vec3single_vert.binvertex
-[roundtrip] ./good/sin_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/abs_vec3_vert_xvary.binvertex
-[roundtrip] ./good/mat4_empty_out_mat4_array_vert.binvertex
-[roundtrip] ./good/ceil_float_vert_xvary_ref.binvertex
-[roundtrip] ./good/max_vec2_frag_xvary_yconsthalf_ref.bin
-[roundtrip] ./good/inversesqrt_vec3_vert_xvary_ref.binvertex
-[roundtrip] ./good/structnest_mat3_frag.bin
-[roundtrip] ./good/log2_vec3_vert_xvary01.binvertex
-[roundtrip] ./good/any_bvec3_frag_ref.bin
-[roundtrip] ./good/float_empty_in_float_array_vert.binvertex
-[roundtrip] ./good/3a7531a21a9334fc.sample
-[roundtrip] ./good/ivec4_empty_inout_ivec4_bigarray_frag.bin
-[roundtrip] ./good/degrees_vec2_frag_xvary.bin
-[roundtrip] ./good/exp_float_vert_xvary.binvertex
-[roundtrip] ./good/4b_firstthree_vert.bin
-[roundtrip] ./good/36ab6df8aa09e123.sample
-[roundtrip] ./good/pow_vec3_frag_xconsthalf_yvary.bin
-[roundtrip] ./good/tan_vec3_frag_xvary.bin
-[roundtrip] ./good/vec4_br_ag_2vec2_frag.bin
-[roundtrip] ./good/equal_bvec3_frag.bin
-[roundtrip] ./good/max_vec2_vert_xvary_yconsthalf.binvertex
-[roundtrip] ./good/vec4_stp_q_1vec3_1float_frag.bin
-[roundtrip] ./good/atan_vec3_frag_xvaryyvary.bin
-[roundtrip] ./good/atan_vec3_frag_xvary.bin
-[roundtrip] ./good/pow_vec3_frag_xvary_yconst2.bin
-[roundtrip] ./good/exp2_float_vert_xvaryneg.binvertex
-[roundtrip] ./good/mat4_empty_out_mat4_empty_vert.binvertex
-[roundtrip] ./good/vec3_br_g_1vec2_1float_frag.bin
-[roundtrip] ./good/d239066a7f5104b6.sample
-[roundtrip] ./good/radians_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/vec4_empty_inout_vec4_bigarray_vert.binvertex
-[roundtrip] ./good/refract_float_frag_ivarynconst_ref.bin
-[roundtrip] ./good/initfunc_empty_array_float_frag.bin
-[roundtrip] ./good/ceil_vec3_frag_xvary_ref.bin
-[roundtrip] ./good/mat3_float_vert.binvertex
-[roundtrip] ./good/vec2_vec3_frag.bin
-[roundtrip] ./good/sqrt_vec3_frag_xvary.bin
-[roundtrip] ./good/smoothstep_vec3_vert_xvary_edgeconstquarter.binvertex
-[roundtrip] ./good/CorrectConstFolding2_vert.binvertex
-[roundtrip] ./good/f89ca53e99683034.sample
-[roundtrip] ./good/ivec4_empty_inout_ivec4_empty_vert.binvertex
-[roundtrip] ./good/mod_vec2_vert_xvary_yconst1_ref.binvertex
-[roundtrip] ./good/mod_vec3_frag_xvary_yconst1_ref.bin
-[roundtrip] ./good/mat4_4vec4_frag.bin
-[roundtrip] ./good/mix_vec2_vert_xvary_yconsthalf_aconsthalf.binvertex
-[roundtrip] ./good/int_empty_out_int_empty_frag.bin
-[roundtrip] ./good/vec4_wxzy_1vec4_frag.bin
-[roundtrip] ./good/not_bvec3_vert_ref.binvertex
-[roundtrip] ./good/floor_float_frag_xvary_ref.bin
-[roundtrip] ./good/log2_vec2_vert_xvary01_ref.binvertex
-[roundtrip] ./good/vec3_st_p_1vec2_1float_frag.bin
-[roundtrip] ./good/CorrectComma_frag.bin
+[seed] 298253258
+[roundtrip] ./good/refract_float_vert_ivarynconst_ref.binvertex (0/1378)
+[roundtrip] ./good/bvec4_empty_empty_bvec4_empty_vert.binvertex (1/1378)
+[roundtrip] ./good/2b_vert.bin (2/1378)
+[roundtrip] ./good/refract_vec3_vert_ivarynconst.binvertex (3/1378)
+[roundtrip] ./good/vec4_yxwz_1vec4_vert.binvertex (4/1378)
+[roundtrip] ./good/notEqual_bvec2_vert.binvertex (5/1378)
+[roundtrip] ./good/mod_float_frag_xvary_yconst1_ref.bin (6/1378)
+[roundtrip] ./good/sqrt_vec3_frag_xvary_ref.bin (7/1378)
+[roundtrip] ./good/min_float_frag_xvary_yconsthalf.bin (8/1378)
+[roundtrip] ./good/equal_ivec3_vert_ref.binvertex (9/1378)
+[roundtrip] ./good/structcopy_bool_frag.bin (10/1378)
+[roundtrip] ./good/inversesqrt_vec3_frag_xvary.bin (11/1378)
+[roundtrip] ./good/vec4_yx_wz_2vec2_vert.binvertex (12/1378)
+[roundtrip] ./good/sin_vec3_vert_xvary.binvertex (13/1378)
+[roundtrip] ./good/CorrectParseTest1_frag.bin (14/1378)
+[roundtrip] ./good/vec4_barg_1vec4_vert.binvertex (15/1378)
+[roundtrip] ./good/notEqual_ivec2_frag_ref.bin (16/1378)
+[roundtrip] ./good/equal_ivec2_vert_ref.binvertex (17/1378)
+[roundtrip] ./good/equal_bvec3_vert_ref.binvertex (18/1378)
+[roundtrip] ./good/mod_x_large_y_large_frag.bin (19/1378)
+[roundtrip] ./good/acos_float_frag_xvary.bin (20/1378)
+[roundtrip] ./good/const_mat4_frag.bin (21/1378)
+[roundtrip] ./good/bool_empty_out_bool_array_vert.binvertex (22/1378)
+[roundtrip] ./good/clamp_vec2_frag_xvary_yconstquarter_ref.bin (23/1378)
+[roundtrip] ./good/exp2_float_frag_xvaryneg.bin (24/1378)
+[roundtrip] ./good/lessThan_ivec2_frag.bin (25/1378)
+[roundtrip] ./good/reflect_vec2_vert_ivarynconst.binvertex (26/1378)
+[roundtrip] ./good/acos_vec2_frag_xvary.bin (27/1378)
+[roundtrip] ./good/c99b52b6f9f47675.sample (28/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/exp_vec2_frag_xvary_ref.bin (29/1378)
+[roundtrip] ./good/log_vec3_vert_xvary.binvertex (30/1378)
+[roundtrip] ./good/successfulcompile_frag.bin (31/1378)
+[roundtrip] ./good/gl_MaxFragmentUniformVectors_vert.binvertex (32/1378)
+[roundtrip] ./good/bool_empty_in_bool_array_frag.bin (33/1378)
+[roundtrip] ./good/CorrectFuncOverload_vert.binvertex (34/1378)
+[roundtrip] ./good/postfixincrement_vert.binvertex (35/1378)
+[roundtrip] ./good/CorrectSwizzle2_frag.bin (36/1378)
+[roundtrip] ./good/mat3_3vec3_vert.binvertex (37/1378)
+[roundtrip] ./good/cos_vec3_frag_xvary.bin (38/1378)
+[roundtrip] ./good/mat2_4float_frag.bin (39/1378)
+[roundtrip] ./good/exp2_vec2_vert_xvaryneg.binvertex (40/1378)
+[roundtrip] ./good/refract_vec3_frag_ivarynconst.bin (41/1378)
+[roundtrip] ./good/dot_vec3_frag_xvaryythird_ref.bin (42/1378)
+[roundtrip] ./good/lessThan_ivec3_frag_ref.bin (43/1378)
+[roundtrip] ./good/sign_vec2_frag_xvary_ref.bin (44/1378)
+[roundtrip] ./good/float_empty_out_float_array_frag.bin (45/1378)
+[roundtrip] ./good/gl_FragCoord_z_frag.bin (46/1378)
+[roundtrip] ./good/lessThanEqual_ivec2_frag.bin (47/1378)
+[roundtrip] ./good/abs_float_frag_xvary_ref.bin (48/1378)
+[roundtrip] ./good/fragmentOnly3_vert.bin (49/1378)
+[roundtrip] ./good/23i_frag.bin (50/1378)
+[roundtrip] ./good/struct_vec4_frag.bin (51/1378)
+[roundtrip] ./good/fract_vec2_frag_xvary_ref.bin (52/1378)
+[roundtrip] ./good/log2_vec3_frag_xvary_ref.bin (53/1378)
+[roundtrip] ./good/structcopy_bvec2bvec3bvec4_frag.bin (54/1378)
+[roundtrip] ./good/vec4_qsp_t_1vec3_1float_frag.bin (55/1378)
+[roundtrip] ./good/1d457be3a9d51984.sample (56/1378)
+[roundtrip] ./good/c3a99a3af180a56a.sample (57/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/clamp_vec3_frag_xvary_yconstquarter_ref.bin (58/1378)
+[roundtrip] ./good/degrees_vec3_frag_xvary.bin (59/1378)
+[roundtrip] ./good/gl_MaxCombinedTextureImageUnits_frag.bin (60/1378)
+[roundtrip] ./good/_webgl_field.binvertex (61/1378)
+[roundtrip] ./good/radians_float_vert_xvary_ref.binvertex (62/1378)
+[roundtrip] ./good/3b_frag.bin (63/1378)
+[roundtrip] ./good/pow_vec2_frag_xvary_yconsthalf_ref.bin (64/1378)
+[roundtrip] ./good/ba0475d9cd7f74ee.sample (65/1378)
+[roundtrip] ./good/mat4_empty_empty_mat4_empty_vert.binvertex (66/1378)
+[roundtrip] ./good/vec4_ivec4_vert.binvertex (67/1378)
+[roundtrip] ./good/mat3arrayindirect1_vert.binvertex (68/1378)
+[roundtrip] ./good/vec3_yxz_1vec3_vert.binvertex (69/1378)
+[roundtrip] ./good/refract_vec2_frag_ivarynconst.bin (70/1378)
+[roundtrip] ./good/Low_Level_Assembly_Reserved_Words_frag.bin (71/1378)
+[roundtrip] ./good/vec4_tsq_p_1vec3_1float_frag.bin (72/1378)
+[roundtrip] ./good/vec4_empty_empty_vec4_empty_frag.bin (73/1378)
+[roundtrip] ./good/bvec4_empty_out_bvec4_empty_vert.binvertex (74/1378)
+[roundtrip] ./good/37ca8944318836dd.sample (75/1378)
+[roundtrip] ./good/floor_vec3_vert_xvary_ref.binvertex (76/1378)
+[roundtrip] ./good/gl_MaxVertexUniformVectors_vert.binvertex (77/1378)
+[roundtrip] ./good/atan_float_frag_xvaryyvary.bin (78/1378)
+[roundtrip] ./good/bool_empty_inout_bool_empty_frag.bin (79/1378)
+[roundtrip] ./good/vec3_tsp_1vec3_vert.binvertex (80/1378)
+[roundtrip] ./good/cross_vec3_vert_xvaryyconst_ref.binvertex (81/1378)
+[roundtrip] ./good/multiplicative_frag.bin (82/1378)
+[roundtrip] ./good/sign_float_frag_xvary.bin (83/1378)
+[roundtrip] ./good/compressed_paletted_texture.binvertex (84/1378)
+[roundtrip] ./good/CorrectModule_frag.bin (85/1378)
+[roundtrip] ./good/3f_vert.binvertex (86/1378)
+[roundtrip] ./good/22f_frag.bin (87/1378)
+[roundtrip] ./good/mat3arraysimple_vert.binvertex (88/1378)
+[roundtrip] ./good/f9874e7893959932.sample (89/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/CorrectBuiltInOveride_frag.bin (90/1378)
+[roundtrip] ./good/array_const_mat4_frag.bin (91/1378)
+[roundtrip] ./good/notEqual_vec3_frag_ref.bin (92/1378)
+[roundtrip] ./good/equal_vec3_frag_ref.bin (93/1378)
+[roundtrip] ./good/degrees_vec2_vert_xvary.binvertex (94/1378)
+[roundtrip] ./good/tan_vec2_vert_xvary.binvertex (95/1378)
+[roundtrip] ./good/normalize_vec2_frag_xvary.bin (96/1378)
+[roundtrip] ./good/bool_empty_in_bool_empty_vert.binvertex (97/1378)
+[roundtrip] ./good/exp_float_vert_xvaryneg_ref.binvertex (98/1378)
+[roundtrip] ./good/log2_vec2_frag_xvary01_ref.bin (99/1378)
+[roundtrip] ./good/lessThanEqual_vec3_vert.binvertex (100/1378)
+[roundtrip] ./good/ceil_vec2_frag_xvary_ref.bin (101/1378)
+[roundtrip] ./good/extension7_V100_frag.bin (102/1378)
+[roundtrip] ./good/exp2_vec3_frag_xvaryneg_ref.bin (103/1378)
+[roundtrip] ./good/lessThan_ivec2_vert_ref.binvertex (104/1378)
+[roundtrip] ./good/lessThanEqual_ivec2_frag_ref.bin (105/1378)
+[roundtrip] ./good/vec3_grb_1vec3_vert.binvertex (106/1378)
+[roundtrip] ./good/d33f36a5d551388d.sample (107/1378)
+[roundtrip] ./good/gl_MaxDrawBuffers_vert.binvertex (108/1378)
+[roundtrip] ./good/max_vec3_vert_xvary_yconsthalf.binvertex (109/1378)
+[roundtrip] ./good/vec4_qspt_1vec4_frag.bin (110/1378)
+[roundtrip] ./good/multiplicative_vert.binvertex (111/1378)
+[roundtrip] ./good/CorrectSwizzle3_frag.bin (112/1378)
+[roundtrip] ./good/step_vec2_frag_xvary_edgeconsthalf.bin (113/1378)
+[roundtrip] ./good/notEqual_ivec3_frag_ref.bin (114/1378)
+[roundtrip] ./good/struct_vec3_frag.bin (115/1378)
+[roundtrip] ./good/any_bvec2_vert_ref.binvertex (116/1378)
+[roundtrip] ./good/ivec3_3int_vert.binvertex (117/1378)
+[roundtrip] ./good/vec3_ps_t_1vec2_1float_frag.bin (118/1378)
+[roundtrip] ./good/1f_vert.bin (119/1378)
+[roundtrip] ./good/95ba0f7810891082.sample (120/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/step_float_frag_xvary_edgeconsthalf_ref.bin (121/1378)
+[roundtrip] ./good/vec4_xyzw_1vec4_vert.binvertex (122/1378)
+[roundtrip] ./good/mat4_empty_in_mat4_empty_vert.binvertex (123/1378)
+[roundtrip] ./good/assignments_vert.binvertex (124/1378)
+[roundtrip] ./good/mat4_vert.binvertex (125/1378)
+[roundtrip] ./good/fragmentOnly4_vert.bin (126/1378)
+[roundtrip] ./good/for_break_vert.binvertex (127/1378)
+[roundtrip] ./good/const_mat2_frag.bin (128/1378)
+[roundtrip] ./good/degrees_vec3_vert_xvary_ref.binvertex (129/1378)
+[roundtrip] ./good/for_nested_break_frag.bin (130/1378)
+[roundtrip] ./good/aa103e997b04b3a9.sample (131/1378)
+[roundtrip] ./good/9b0430719d6d0aad.sample (132/1378)
+[roundtrip] ./good/length_vec3_vert_xvary_ref.binvertex (133/1378)
+[roundtrip] ./good/normalize_vec2_vert_xvary.binvertex (134/1378)
+[roundtrip] ./good/int_empty_empty_int_empty_vert.binvertex (135/1378)
+[roundtrip] ./good/structcopy_vec2_vert.binvertex (136/1378)
+[roundtrip] ./good/unary_frag.bin (137/1378)
+[roundtrip] ./good/atan_vec3_vert_xvaryyvary.binvertex (138/1378)
+[roundtrip] ./good/vec4_empty_in_vec4_array_frag.bin (139/1378)
+[roundtrip] ./good/7f4ad151ce613418.sample (140/1378)
+[roundtrip] ./good/equal_bvec2_frag.bin (141/1378)
+[roundtrip] ./good/pow_vec3_vert_xvary_yconst2.binvertex (142/1378)
+[roundtrip] ./good/all_bvec3_frag_ref.bin (143/1378)
+[roundtrip] ./good/equal_ivec3_frag.bin (144/1378)
+[roundtrip] ./good/max_vec3_vert_xvary_yconsthalf_ref.binvertex (145/1378)
+[roundtrip] ./good/log_vec3_frag_xvary01.bin (146/1378)
+[roundtrip] ./good/mat4_empty_out_mat4_empty_frag.bin (147/1378)
+[roundtrip] ./good/exp2_vec2_frag_xvary_ref.bin (148/1378)
+[roundtrip] ./good/vec4_empty_out_vec4_empty_frag.bin (149/1378)
+[roundtrip] ./good/pow_vec2_vert_xconst2_yvary_ref.binvertex (150/1378)
+[roundtrip] ./good/log_vec3_vert_xvary01.binvertex (151/1378)
+[roundtrip] ./good/f54937aacd7aca4f.sample (152/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/atan_vec3_frag_xvaryyvary_ref.bin (153/1378)
+[roundtrip] ./good/normalize_float_vert_xvary_ref.binvertex (154/1378)
+[roundtrip] ./good/greaterThan_vec2_frag.bin (155/1378)
+[roundtrip] ./good/any_bvec3_vert_ref.binvertex (156/1378)
+[roundtrip] ./good/bvec4_empty_in_bvec4_empty_frag.bin (157/1378)
+[roundtrip] ./good/tan_float_vert_xvary.binvertex (158/1378)
+[roundtrip] ./good/exp2_float_frag_xvary.bin (159/1378)
+[roundtrip] ./good/pow_vec3_frag_xconsthalf_yvary_ref.bin (160/1378)
+[roundtrip] ./good/clamp_vec2_vert_xvary_yconstquarter.binvertex (161/1378)
+[roundtrip] ./good/bvec4_empty_in_bvec4_empty_vert.binvertex (162/1378)
+[roundtrip] ./good/fract_float_vert_xvary_ref.binvertex (163/1378)
+[roundtrip] ./good/vec4_arb_g_1vec3_1float_frag.bin (164/1378)
+[roundtrip] ./good/tan_float_frag_xvary.bin (165/1378)
+[roundtrip] ./good/b97eba3db7f64518.sample (166/1378)
+[roundtrip] ./good/webgl_struct.bin (167/1378)
+[roundtrip] ./good/exp_vec3_frag_xvary_ref.bin (168/1378)
+[roundtrip] ./good/2m_frag.bin (169/1378)
+[roundtrip] ./good/e860915004f68493.sample (170/1378)
+[roundtrip] ./good/fract_vec3_frag_xvary_ref.bin (171/1378)
+[roundtrip] ./good/structnest_float_frag.bin (172/1378)
+[roundtrip] ./good/51cf44d8e1318302.sample (173/1378)
+[roundtrip] ./good/structnest_mat3_vert.binvertex (174/1378)
+[roundtrip] ./good/pow_vec2_vert_xconsthalf_yvary_ref.binvertex (175/1378)
+[roundtrip] ./good/smoothstep_vec2_vert_xvary_edgeconstquarter_ref.binvertex (176/1378)
+[roundtrip] ./good/mix_vec3_frag_xvary_yconsthalf_aconsthalf_ref.bin (177/1378)
+[roundtrip] ./good/exp_float_frag_xvaryneg.bin (178/1378)
+[roundtrip] ./good/a1609649e9d8d4fe.sample (179/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/4i_frag.bin (180/1378)
+[roundtrip] ./good/79afe27b24d09612.sample (181/1378)
+d.name: GL_EXT_frag_depth
+[roundtrip] ./good/916071e63a858328.sample (182/1378)
+[roundtrip] ./good/vec4_ivec4_frag.bin (183/1378)
+[roundtrip] ./good/structcopy_mat3_vert.binvertex (184/1378)
+[roundtrip] ./good/point_rasterization.bin (185/1378)
+[roundtrip] ./good/equal_bvec2_vert.binvertex (186/1378)
+[roundtrip] ./good/greaterThanEqual_ivec3_vert_ref.binvertex (187/1378)
+[roundtrip] ./good/bool_empty_inout_bool_array_frag.bin (188/1378)
+[roundtrip] ./good/asin_vec2_vert_xvary_ref.binvertex (189/1378)
+[roundtrip] ./good/acos_vec3_vert_xvary_ref.binvertex (190/1378)
+[roundtrip] ./good/const_mat4_copy_frag.bin (191/1378)
+[roundtrip] ./good/struct_vec4_vert.binvertex (192/1378)
+[roundtrip] ./good/log2_float_vert_xvary.binvertex (193/1378)
+[roundtrip] ./good/vec3_zyx_1vec3_frag.bin (194/1378)
+[roundtrip] ./good/mix_vec2_frag_xvary_yconsthalf_aconsthalf_ref.bin (195/1378)
+[roundtrip] ./good/gl_FragCoord_w_frag.bin (196/1378)
+[roundtrip] ./good/vec4_arbg_1vec4_frag.bin (197/1378)
+[roundtrip] ./good/const_mat4_vert.binvertex (198/1378)
+[roundtrip] ./good/notEqual_ivec2_vert.binvertex (199/1378)
+[roundtrip] ./good/sin_float_frag_xvary_ref.bin (200/1378)
+[roundtrip] ./good/min_float_vert_xvary_yconsthalf.binvertex (201/1378)
+[roundtrip] ./good/376afbc5a17b7578.sample (202/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/gl_MaxTextureImageUnits_vert.binvertex (203/1378)
+[roundtrip] ./good/array_const_mat3_vert.binvertex (204/1378)
+[roundtrip] ./good/log_vec3_vert_xvary01_ref.binvertex (205/1378)
+[roundtrip] ./good/exp2_vec3_vert_xvaryneg_ref.binvertex (206/1378)
+[roundtrip] ./good/CorrectBuiltInOveride_frag.binvertex (207/1378)
+[roundtrip] ./good/vec3_rgb_1vec3_vert.binvertex (208/1378)
+[roundtrip] ./good/290382d7f5f5012b.sample (209/1378)
+d.name: GL_EXT_blend_func_extended
+d.name: GL_EXT_draw_buffers
+[roundtrip] ./good/equal_vec3_vert_ref.binvertex (210/1378)
+[roundtrip] ./good/b989a270bc0dea43.sample (211/1378)
+[roundtrip] ./good/2i_vert.binvertex (212/1378)
+[roundtrip] ./good/for_continue_frag.bin (213/1378)
+[roundtrip] ./good/mix_float_frag_xvary_yconsthalf_aconsthalf_ref.bin (214/1378)
+[roundtrip] ./good/cos_vec2_frag_xvary_ref.bin (215/1378)
+[roundtrip] ./good/inversesqrt_float_frag_xvary_ref.bin (216/1378)
+[roundtrip] ./good/vec3_gb_r_1vec2_1float_vert.binvertex (217/1378)
+[roundtrip] ./good/e6ef6644ea752d2a.sample (218/1378)
+[roundtrip] ./good/log2_float_frag_xvary01_ref.bin (219/1378)
+[roundtrip] ./good/vec4_wxz_y_1vec3_1float_vert.binvertex (220/1378)
+[roundtrip] ./good/pow_float_vert_xvary_yconst2.binvertex (221/1378)
+[roundtrip] ./good/extension5_V100_frag.binvertex (222/1378)
+[roundtrip] ./good/webgl_field.binvertex (223/1378)
+[roundtrip] ./good/bvec4_empty_inout_bvec4_empty_vert.binvertex (224/1378)
+[roundtrip] ./good/3i_vert.binvertex (225/1378)
+[roundtrip] ./good/float_empty_empty_float_array_vert.binvertex (226/1378)
+[roundtrip] ./good/fwidth_frag.binvertex (227/1378)
+[roundtrip] ./good/brick_mat3.binvertex (228/1378)
+[roundtrip] ./good/struct_bool_vert.binvertex (229/1378)
+[roundtrip] ./good/vec4_rgb_a_1vec3_1float_frag.bin (230/1378)
+[roundtrip] ./good/struct_mat2_frag.bin (231/1378)
+[roundtrip] ./good/log_vec2_frag_xvary01_ref.bin (232/1378)
+[roundtrip] ./good/atan_vec2_vert_xvary_ref.binvertex (233/1378)
+[roundtrip] ./good/vec3_xy_z_1vec2_1float_frag.bin (234/1378)
+[roundtrip] ./good/9b297667d572b4c3.sample (235/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/exp2_vec2_vert_xvary_ref.binvertex (236/1378)
+[roundtrip] ./good/step_vec2_frag_xvary_edgeconsthalf_ref.bin (237/1378)
+[roundtrip] ./good/619d8c1427b781f3.sample (238/1378)
+d.name: GL_OES_standard_derivatives
+[roundtrip] ./good/float_empty_inout_float_array_frag.bin (239/1378)
+[roundtrip] ./good/pow_vec2_frag_xvary_yconst2.bin (240/1378)
+[roundtrip] ./good/void_empty_empty_void_empty_vert.binvertex (241/1378)
+[roundtrip] ./good/mod_vec3_vert_xvary_yconst1_ref.binvertex (242/1378)
+[roundtrip] ./good/9e928e336cf780c7.sample (243/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/exp2_vec3_frag_xvary_ref.bin (244/1378)
+[roundtrip] ./good/log_float_vert_xvary01.binvertex (245/1378)
+[roundtrip] ./good/not_bvec3_frag.bin (246/1378)
+[roundtrip] ./good/extension8_V100_frag.bin (247/1378)
+[roundtrip] ./good/ivec4_empty_empty_ivec4_array_frag.bin (248/1378)
+[roundtrip] ./good/degrees_float_frag_xvary_ref.bin (249/1378)
+[roundtrip] ./good/lessThan_ivec2_vert.binvertex (250/1378)
+[roundtrip] ./good/normalize_float_vert_xvary.binvertex (251/1378)
+[roundtrip] ./good/step_vec3_vert_xvary_edgeconsthalf.binvertex (252/1378)
+[roundtrip] ./good/bool_empty_in_bool_array_vert.binvertex (253/1378)
+[roundtrip] ./good/acos_float_frag_xvary_ref.bin (254/1378)
+[roundtrip] ./good/clamp_vec3_frag_xvary_yconstquarter.bin (255/1378)
+[roundtrip] ./good/atan_float_frag_xvary.bin (256/1378)
+[roundtrip] ./good/mat4_empty_in_mat4_array_vert.binvertex (257/1378)
+[roundtrip] ./good/vec3_bgr_1vec3_frag.bin (258/1378)
+[roundtrip] ./good/const_mat2_copy_frag.bin (259/1378)
+[roundtrip] ./good/mat3_float_frag.bin (260/1378)
+[roundtrip] ./good/structcopy_bvec2bvec3bvec4_vert.binvertex (261/1378)
+[roundtrip] ./good/floor_vec2_frag_xvary.bin (262/1378)
+[roundtrip] ./good/vec4_s_t_p_q_4float_vert.binvertex (263/1378)
+[roundtrip] ./good/sqrt_vec2_vert_xvary.binvertex (264/1378)
+[roundtrip] ./good/exp2_vec2_frag_xvary.bin (265/1378)
+[roundtrip] ./good/radians_vec2_vert_xvary_ref.binvertex (266/1378)
+[roundtrip] ./good/max_float_frag_xvary_yconsthalf.bin (267/1378)
+[roundtrip] ./good/floor_vec2_vert_xvary.binvertex (268/1378)
+[roundtrip] ./good/vec3_zx_y_1vec2_1float_frag.bin (269/1378)
+[roundtrip] ./good/vec2_2float_frag.bin (270/1378)
+[roundtrip] ./good/exp_float_frag_xvary_ref.bin (271/1378)
+[roundtrip] ./good/vec3_tp_s_1vec2_1float_frag.bin (272/1378)
+[roundtrip] ./good/addsubtract_vert.binvertex (273/1378)
+[roundtrip] ./good/sqrt_vec2_frag_xvary_ref.bin (274/1378)
+[roundtrip] ./good/notEqual_ivec2_frag.bin (275/1378)
+[roundtrip] ./good/structUniformShader.binvertex (276/1378)
+[roundtrip] ./good/log_vec3_vert_xvary_ref.binvertex (277/1378)
+[roundtrip] ./good/tan_vec3_vert_xvary.binvertex (278/1378)
+[roundtrip] ./good/vec3_st_p_1vec2_1float_vert.binvertex (279/1378)
+[roundtrip] ./good/equal_ivec2_frag.bin (280/1378)
+[roundtrip] ./good/equality_frag.bin (281/1378)
+[roundtrip] ./good/greaterThanEqual_vec3_vert_ref.binvertex (282/1378)
+[roundtrip] ./good/cos_float_vert_xvary_ref.binvertex (283/1378)
+[roundtrip] ./good/structcopy_mat2_frag.bin (284/1378)
+[roundtrip] ./good/struct_vec3_vert.binvertex (285/1378)
+[roundtrip] ./good/logical_vert.binvertex (286/1378)
+[roundtrip] ./good/length_vec2_frag_xvary.bin (287/1378)
+[roundtrip] ./good/floor_vec3_vert_xvary.binvertex (288/1378)
+[roundtrip] ./good/length_vec3_vert_xvary.binvertex (289/1378)
+[roundtrip] ./good/reflect_vec3_frag_ivarynconst.bin (290/1378)
+[roundtrip] ./good/pow_vec2_frag_xconsthalf_yvary_ref.bin (291/1378)
+[roundtrip] ./good/0a7d6ef3157b365b.sample (292/1378)
+[roundtrip] ./good/dot_vec2_vert_xvaryyhalf.binvertex (293/1378)
+[roundtrip] ./good/refract_vec3_vert_ivarynconst_ref.binvertex (294/1378)
+[roundtrip] ./good/ivec4_empty_inout_ivec4_bigarray_vert.binvertex (295/1378)
+[roundtrip] ./good/sin_vec2_vert_xvary_ref.binvertex (296/1378)
+[roundtrip] ./good/exp_vec3_vert_xvaryneg_ref.binvertex (297/1378)
+[roundtrip] ./good/degrees_float_vert_xvary_ref.binvertex (298/1378)
+[roundtrip] ./good/faceforward_float_frag_nvaryiconst.bin (299/1378)
+[roundtrip] ./good/matrixMultComp_mat3_vert.binvertex (300/1378)
+[roundtrip] ./good/cos_vec3_frag_xvary_ref.bin (301/1378)
+[roundtrip] ./good/division_vert.binvertex (302/1378)
+[roundtrip] ./good/bool_empty_out_bool_empty_frag.bin (303/1378)
+[roundtrip] ./good/radians_vec3_vert_xvary_ref.binvertex (304/1378)
+[roundtrip] ./good/vec4_stp_q_1vec3_1float_vert.binvertex (305/1378)
+[roundtrip] ./good/acos_vec3_frag_xvary_ref.bin (306/1378)
+[roundtrip] ./good/_webgl_field.bin (307/1378)
+[roundtrip] ./good/sin_vec2_frag_xvary.bin (308/1378)
+[roundtrip] ./good/discard_frag.bin (309/1378)
+[roundtrip] ./good/log2_vec2_vert_xvary.binvertex (310/1378)
+[roundtrip] ./good/vec4_r_g_b_a_4float_frag.bin (311/1378)
+[roundtrip] ./good/notEqual_bvec3_frag.bin (312/1378)
+[roundtrip] ./good/vec3arrayindirect_frag.bin (313/1378)
+[roundtrip] ./good/log2_float_frag_xvary.bin (314/1378)
+[roundtrip] ./good/pow_float_vert_xvary_yconst2_ref.binvertex (315/1378)
+[roundtrip] ./good/sign_float_vert_xvary_ref.binvertex (316/1378)
+[roundtrip] ./good/asin_float_frag_xvary_ref.bin (317/1378)
+[roundtrip] ./good/greaterThanEqual_ivec3_vert.binvertex (318/1378)
+[roundtrip] ./good/pow_vec2_vert_xvary_yconst2_ref.binvertex (319/1378)
+[roundtrip] ./good/vec4_empty_empty_vec4_empty_vert.binvertex (320/1378)
+[roundtrip] ./good/pow_vec3_vert_xvary_yconsthalf.binvertex (321/1378)
+[roundtrip] ./good/vec4_yxw_z_1vec3_1float_vert.binvertex (322/1378)
+[roundtrip] ./good/texture.bin (323/1378)
+[roundtrip] ./good/bvec4_empty_in_bvec4_array_frag.bin (324/1378)
+[roundtrip] ./good/vec4_empty_out_vec4_array_vert.binvertex (325/1378)
+[roundtrip] ./good/structcopy_vec4_vert.binvertex (326/1378)
+[roundtrip] ./good/normalize_vec2_vert_xvary_ref.binvertex (327/1378)
+[roundtrip] ./good/bool_empty_out_bool_empty_vert.binvertex (328/1378)
+[roundtrip] ./good/distance_vec3_vert_xvaryyhalf.binvertex (329/1378)
+[roundtrip] ./good/successfulcompile_vert.binvertex (330/1378)
+[roundtrip] ./good/dot_float_frag_xvaryyone_ref.bin (331/1378)
+[roundtrip] ./good/23f_frag.bin (332/1378)
+[roundtrip] ./good/vec4_gra_b_1vec3_1float_vert.binvertex (333/1378)
+[roundtrip] ./good/noopUniformShader.binvertex (334/1378)
+[roundtrip] ./good/vec4_gra_b_1vec3_1float_frag.bin (335/1378)
+[roundtrip] ./good/pow_vec3_frag_xvary_yconsthalf.bin (336/1378)
+[roundtrip] ./good/equal_ivec3_vert.binvertex (337/1378)
+[roundtrip] ./good/min_float_vert_xvary_yconsthalf_ref.binvertex (338/1378)
+[roundtrip] ./good/log_vec2_frag_xvary.bin (339/1378)
+[roundtrip] ./good/vec4_empty_inout_vec4_bigarray_frag.bin (340/1378)
+[roundtrip] ./good/vec4_xy_zw_2vec2_frag.bin (341/1378)
+[roundtrip] ./good/bool_empty_inout_bool_empty_vert.binvertex (342/1378)
+[roundtrip] ./good/refract_float_vert_ivarynconst.binvertex (343/1378)
+[roundtrip] ./good/21i_frag.bin (344/1378)
+[roundtrip] ./good/unary_vert.binvertex (345/1378)
+[roundtrip] ./good/all_bvec2_frag_ref.bin (346/1378)
+[roundtrip] ./good/bvec4_empty_empty_bvec4_empty_frag.bin (347/1378)
+[roundtrip] ./good/structnest_float_vert.binvertex (348/1378)
+[roundtrip] ./good/2f_frag.bin (349/1378)
+[roundtrip] ./good/tan_vec3_vert_xvary_ref.binvertex (350/1378)
+[roundtrip] ./good/notEqual_bvec2_vert_ref.binvertex (351/1378)
+[roundtrip] ./good/lessThanEqual_vec3_frag.bin (352/1378)
+[roundtrip] ./good/pow_float_vert_xconst2_yvary_ref.binvertex (353/1378)
+[roundtrip] ./good/int_empty_in_int_array_frag.bin (354/1378)
+[roundtrip] ./good/vec4_empty_in_vec4_empty_frag.bin (355/1378)
+[roundtrip] ./good/4i_vert.binvertex (356/1378)
+[roundtrip] ./good/sign_vec2_frag_xvary.bin (357/1378)
+[roundtrip] ./good/extension8_V100_frag.binvertex (358/1378)
+[roundtrip] ./good/radians_float_frag_xvary_ref.bin (359/1378)
+[roundtrip] ./good/struct_float_vert.binvertex (360/1378)
+[roundtrip] ./good/exp2_vec3_vert_xvaryneg.binvertex (361/1378)
+[roundtrip] ./good/81f5194972b68d5f.sample (362/1378)
+[roundtrip] ./good/log_vec3_frag_xvary01_ref.bin (363/1378)
+[roundtrip] ./good/greaterThan_ivec2_frag.bin (364/1378)
+[roundtrip] ./good/vec4_ar_bg_2vec2_vert.binvertex (365/1378)
+[roundtrip] ./good/vec4_stpq_1vec4_frag.bin (366/1378)
+[roundtrip] ./good/lessThanEqual_vec2_frag_ref.bin (367/1378)
+[roundtrip] ./good/log2_vec3_frag_xvary01.bin (368/1378)
+[roundtrip] ./good/brick_vec.binvertex (369/1378)
+[roundtrip] ./good/lessThanEqual_vec2_frag.bin (370/1378)
+[roundtrip] ./good/int_empty_out_int_array_frag.bin (371/1378)
+[roundtrip] ./good/sign_vec2_vert_xvary.binvertex (372/1378)
+[roundtrip] ./good/equal_ivec3_frag_ref.bin (373/1378)
+[roundtrip] ./good/tan_float_frag_xvary_ref.bin (374/1378)
+[roundtrip] ./good/lessThanEqual_ivec3_frag_ref.bin (375/1378)
+[roundtrip] ./good/acos_vec2_frag_xvary_ref.bin (376/1378)
+[roundtrip] ./good/equal_bvec3_frag_ref.bin (377/1378)
+[roundtrip] ./good/vec4_barg_1vec4_frag.bin (378/1378)
+[roundtrip] ./good/float_empty_out_float_array_vert.binvertex (379/1378)
+[roundtrip] ./good/exp_vec2_vert_xvaryneg_ref.binvertex (380/1378)
+[roundtrip] ./good/bool_empty_empty_bool_empty_frag.bin (381/1378)
+[roundtrip] ./good/int_empty_empty_int_empty_frag.bin (382/1378)
+[roundtrip] ./good/vec4_pqs_t_1vec3_1float_vert.binvertex (383/1378)
+[roundtrip] ./good/simple.bin (384/1378)
+[roundtrip] ./good/vec4_tsqp_1vec4_frag.bin (385/1378)
+[roundtrip] ./good/5d3f3c5b71f2c520.sample (386/1378)
+[roundtrip] ./good/dot_vec2_vert_xvaryyhalf_ref.binvertex (387/1378)
+[roundtrip] ./good/matrixMultComp_mat2_vert.binvertex (388/1378)
+[roundtrip] ./good/step_float_frag_xvary_edgeconsthalf.bin (389/1378)
+[roundtrip] ./good/d1c673c1605d142e.sample (390/1378)
+d.name: GL_EXT_blend_func_extended
+d.name: GL_EXT_draw_buffers
+[roundtrip] ./good/CorrectExtension10_V100_frag.bin (391/1378)
+[roundtrip] ./good/vec4_xyz_w_1vec3_1float_vert.binvertex (392/1378)
+[roundtrip] ./good/08b457b8fc810577.sample (393/1378)
+[roundtrip] ./good/3fba354184ddb6c4.sample (394/1378)
+d.name: GL_ANGLE_clip_cull_distance
+[roundtrip] ./good/equal_vec3_frag.bin (395/1378)
+[roundtrip] ./good/atan_float_vert_xvary_ref.binvertex (396/1378)
+[roundtrip] ./good/qualifiers_float_vert.binvertex (397/1378)
+[roundtrip] ./good/vec4_br_ag_2vec2_vert.binvertex (398/1378)
+[roundtrip] ./good/pow_vec2_vert_xvary_yconsthalf.binvertex (399/1378)
+[roundtrip] ./good/sqrt_float_frag_xvary.bin (400/1378)
+[roundtrip] ./good/lessThanEqual_vec2_vert_ref.binvertex (401/1378)
+[roundtrip] ./good/length_vec3_frag_xvary.bin (402/1378)
+[roundtrip] ./good/tan_vec2_frag_xvary_ref.bin (403/1378)
+[roundtrip] ./good/ivec4_empty_in_ivec4_empty_frag.bin (404/1378)
+[roundtrip] ./good/70ad008857708752.sample (405/1378)
+d.name: GL_EXT_shadow_samplers
+[roundtrip] ./good/pow_vec2_frag_xconsthalf_yvary.bin (406/1378)
+[roundtrip] ./good/bvec_tests.bin (407/1378)
+[roundtrip] ./good/reflect_float_vert_ivarynconst_ref.binvertex (408/1378)
+[roundtrip] ./good/vec3_pts_1vec3_frag.bin (409/1378)
+[roundtrip] ./good/2i_frag.bin (410/1378)
+[roundtrip] ./good/vec4_qs_pt_2vec2_frag.bin (411/1378)
+[roundtrip] ./good/floatUniformShader.binvertex (412/1378)
+[roundtrip] ./good/1e8a26f622d967dd.sample (413/1378)
+d.name: GL_EXT_blend_func_extended
+d.name: GL_EXT_draw_buffers
+[roundtrip] ./good/vec4_yxw_z_1vec3_1float_frag.bin (414/1378)
+[roundtrip] ./good/3f_frag.bin (415/1378)
+[roundtrip] ./good/array_float_vert.binvertex (416/1378)
+[roundtrip] ./good/lessThan_vec3_vert.binvertex (417/1378)
+[roundtrip] ./good/refract_vec2_vert_ivarynconst_ref.binvertex (418/1378)
+[roundtrip] ./good/structnest_mat2_frag.bin (419/1378)
+[roundtrip] ./good/CorrectFull_vert.binvertex (420/1378)
+[roundtrip] ./good/exp2_float_frag_xvaryneg_ref.bin (421/1378)
+[roundtrip] ./good/bvec4_2int_2float_vert.binvertex (422/1378)
+[roundtrip] ./good/mat3_9float_frag.bin (423/1378)
+[roundtrip] ./good/greaterThanEqual_vec3_frag_ref.bin (424/1378)
+[roundtrip] ./good/floor_vec3_frag_xvary_ref.bin (425/1378)
+[roundtrip] ./good/vec4_arb_g_1vec3_1float_vert.binvertex (426/1378)
+[roundtrip] ./good/mat4_16float_frag.bin (427/1378)
+[roundtrip] ./good/4f_vert.binvertex (428/1378)
+[roundtrip] ./good/log2_float_vert_xvary01.binvertex (429/1378)
+[roundtrip] ./good/vec4_rg_ba_2vec2_vert.binvertex (430/1378)
+[roundtrip] ./good/bf5357aae5adb812.sample (431/1378)
+d.name: GL_EXT_frag_depth
+[roundtrip] ./good/e9e7f9dae436b128.sample (432/1378)
+[roundtrip] ./good/c6115e66b92ab0b5.sample (433/1378)
+[roundtrip] ./good/mat2_float_frag.bin (434/1378)
+[roundtrip] ./good/refract_vec2_vert_ivarynconst.binvertex (435/1378)
+[roundtrip] ./good/vec4_wxz_y_1vec3_1float_frag.bin (436/1378)
+[roundtrip] ./good/max_vec2_vert_xvary_yconsthalf_ref.binvertex (437/1378)
+[roundtrip] ./good/vec4_bar_g_1vec3_1float_frag.bin (438/1378)
+[roundtrip] ./good/gl_MaxVaryingVectors_frag.bin (439/1378)
+[roundtrip] ./good/gl_MaxVertexAttribs_frag.bin (440/1378)
+[roundtrip] ./good/log2_vec2_frag_xvary01.bin (441/1378)
+[roundtrip] ./good/vec4_zx_wy_2vec2_vert.binvertex (442/1378)
+[roundtrip] ./good/3m_frag.bin (443/1378)
+[roundtrip] ./good/2f7cba4583cfa62f.sample (444/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/smoothstep_vec2_frag_xvary_edgeconstquarter_ref.bin (445/1378)
+[roundtrip] ./good/bool_empty_in_bool_empty_frag.bin (446/1378)
+[roundtrip] ./good/structnest_vec4_vert.binvertex (447/1378)
+[roundtrip] ./good/9f95ee4c80e62a1c.sample (448/1378)
+[roundtrip] ./good/acos_vec2_vert_xvary.binvertex (449/1378)
+[roundtrip] ./good/max_float_frag_xvary_yconsthalf_ref.bin (450/1378)
+[roundtrip] ./good/vec3_sp_t_1vec2_1float_vert.binvertex (451/1378)
+[roundtrip] ./good/905c264cd06a1a7a.sample (452/1378)
+[roundtrip] ./good/vec3_tp_s_1vec2_1float_vert.binvertex (453/1378)
+[roundtrip] ./good/degrees_vec2_vert_xvary_ref.binvertex (454/1378)
+[roundtrip] ./good/vec4_ts_qp_2vec2_vert.binvertex (455/1378)
+[roundtrip] ./good/equality_vert.binvertex (456/1378)
+[roundtrip] ./good/log_vec2_vert_xvary01.binvertex (457/1378)
+[roundtrip] ./good/abs_vec3_frag_xvary.bin (458/1378)
+[roundtrip] ./good/intUniformShader.binvertex (459/1378)
+[roundtrip] ./good/addsubtract_frag.bin (460/1378)
+[roundtrip] ./good/structnest_vec4_frag.bin (461/1378)
+[roundtrip] ./good/vec3single_frag.bin (462/1378)
+[roundtrip] ./good/log_float_frag_xvary01.bin (463/1378)
+[roundtrip] ./good/max_float_vert_xvary_yconsthalf.binvertex (464/1378)
+[roundtrip] ./good/abs_vec2_frag_xvary.bin (465/1378)
+[roundtrip] ./good/vec4_st_pq_2vec2_vert.binvertex (466/1378)
+[roundtrip] ./good/sin_float_frag_xvary.bin (467/1378)
+[roundtrip] ./good/equal_vec3_vert.binvertex (468/1378)
+[roundtrip] ./good/log_vec2_frag_xvary_ref.bin (469/1378)
+[roundtrip] ./good/matrix2arrayVSU.bin (470/1378)
+[roundtrip] ./good/clamp_vec2_vert_xvary_yconstquarter_ref.binvertex (471/1378)
+[roundtrip] ./good/pow_vec3_frag_xvary_yconsthalf_ref.bin (472/1378)
+[roundtrip] ./good/emit1.bin (473/1378)
+[roundtrip] ./good/structnest_mat4_frag.bin (474/1378)
+[roundtrip] ./good/ivec4_empty_inout_ivec4_empty_frag.bin (475/1378)
+[roundtrip] ./good/cos_float_frag_xvary.bin (476/1378)
+[roundtrip] ./good/a78c11bc63e37b5e.sample (477/1378)
+[roundtrip] ./good/greaterThan_ivec3_vert_ref.binvertex (478/1378)
+[roundtrip] ./good/mat4_16float_vert.binvertex (479/1378)
+[roundtrip] ./good/equal_bvec2_vert_ref.binvertex (480/1378)
+[roundtrip] ./good/14d10ab7ab47351f.sample (481/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/step_vec3_frag_xvary_edgeconsthalf.bin (482/1378)
+[roundtrip] ./good/5e38b56896dfc1fe.sample (483/1378)
+[roundtrip] ./good/_webgl_variable.bin (484/1378)
+[roundtrip] ./good/structcopy_mat4_vert.binvertex (485/1378)
+[roundtrip] ./good/mat3_copy_vert.binvertex (486/1378)
+[roundtrip] ./good/e6759dfebb7fead3.sample (487/1378)
+[roundtrip] ./good/cross_vec3_frag_xvaryyconst_ref.bin (488/1378)
+[roundtrip] ./good/cos_vec2_vert_xvary_ref.binvertex (489/1378)
+[roundtrip] ./good/exp_vec2_frag_xvaryneg_ref.bin (490/1378)
+[roundtrip] ./good/lessThanEqual_ivec3_vert_ref.binvertex (491/1378)
+[roundtrip] ./good/extension6_V100_frag.bin (492/1378)
+[roundtrip] ./good/for_nested_continue_frag.bin (493/1378)
+[roundtrip] ./good/inversesqrt_vec3_vert_xvary.binvertex (494/1378)
+[roundtrip] ./good/initfunc_empty_array_float_vert.binvertex (495/1378)
+[roundtrip] ./good/gl_MaxVertexTextureImageUnits_frag.bin (496/1378)
+[roundtrip] ./good/structnest_mat2_vert.binvertex (497/1378)
+[roundtrip] ./good/mat2_float_vert.binvertex (498/1378)
+[roundtrip] ./good/vec3_xy_z_1vec2_1float_vert.binvertex (499/1378)
+[roundtrip] ./good/point_size.binvertex (500/1378)
+[roundtrip] ./good/bb2ac7ecd30ad222.sample (501/1378)
+[roundtrip] ./good/structcopy_vec3_vert.binvertex (502/1378)
+[roundtrip] ./good/vec4_pqs_t_1vec3_1float_frag.bin (503/1378)
+[roundtrip] ./good/struct_mat4_frag.bin (504/1378)
+[roundtrip] ./good/tan_vec3_frag_xvary_ref.bin (505/1378)
+[roundtrip] ./good/greaterThanEqual_ivec3_frag_ref.bin (506/1378)
+[roundtrip] ./good/structnest_bool_frag.bin (507/1378)
+[roundtrip] ./good/greaterThanEqual_vec3_vert.binvertex (508/1378)
+[roundtrip] ./good/vec4_empty_empty_vec4_array_vert.binvertex (509/1378)
+[roundtrip] ./good/pow_vec2_frag_xvary_yconsthalf.bin (510/1378)
+[roundtrip] ./good/pow_vec3_vert_xvary_yconsthalf_ref.binvertex (511/1378)
+[roundtrip] ./good/774f72573db42a7c.sample (512/1378)
+[roundtrip] ./good/DepthRange_frag.bin (513/1378)
+[roundtrip] ./good/step_vec3_vert_xvary_edgeconsthalf_ref.binvertex (514/1378)
+[roundtrip] ./good/notEqual_vec3_frag.bin (515/1378)
+[roundtrip] ./good/floor_vec2_vert_xvary_ref.binvertex (516/1378)
+[roundtrip] ./good/clamp_float_vert_xvary_yconstquarter.binvertex (517/1378)
+[roundtrip] ./good/sqrt_float_vert_xvary_ref.binvertex (518/1378)
+[roundtrip] ./good/log_vec2_frag_xvary01.bin (519/1378)
+[roundtrip] ./good/length_float_vert_xvary_ref.binvertex (520/1378)
+[roundtrip] ./good/equal_ivec2_vert.binvertex (521/1378)
+[roundtrip] ./good/vec3_br_g_1vec2_1float_vert.binvertex (522/1378)
+[roundtrip] ./good/exp_vec3_frag_xvaryneg_ref.bin (523/1378)
+[roundtrip] ./good/pow_float_vert_xconsthalf_yvary.binvertex (524/1378)
+[roundtrip] ./good/inversesqrt_vec2_vert_xvary_ref.binvertex (525/1378)
+[roundtrip] ./good/vec4_grab_1vec4_frag.bin (526/1378)
+[roundtrip] ./good/sin_float_vert_xvary.binvertex (527/1378)
+[roundtrip] ./good/576a75c3840eb7ad.sample (528/1378)
+[roundtrip] ./good/bd0df4632d5a1893.sample (529/1378)
+[roundtrip] ./good/vec4_x_y_z_w_4float_frag.bin (530/1378)
+[roundtrip] ./good/pow_vec2_frag_xvary_yconst2_ref.bin (531/1378)
+[roundtrip] ./good/abs_vec3_vert_xvary_ref.binvertex (532/1378)
+[roundtrip] ./good/nested_if_else_vert.binvertex (533/1378)
+[roundtrip] ./good/CorrectParseTest_frag.bin (534/1378)
+[roundtrip] ./good/sqrt_float_vert_xvary.binvertex (535/1378)
+[roundtrip] ./good/lessThanEqual_ivec3_vert.binvertex (536/1378)
+[roundtrip] ./good/ede55d93b7c7f530.sample (537/1378)
+d.name: GL_EXT_frag_depth
+[roundtrip] ./good/extension2_V100_frag.bin (538/1378)
+[roundtrip] ./good/sqrt_vec3_vert_xvary_ref.binvertex (539/1378)
+[roundtrip] ./good/fbfbd5d5c13e8eb1.sample (540/1378)
+[roundtrip] ./good/greaterThan_vec3_vert.binvertex (541/1378)
+[roundtrip] ./good/struct_vec2_vert.binvertex (542/1378)
+[roundtrip] ./good/DuplicateVersion1_V100_frag.bin (543/1378)
+[roundtrip] ./good/any_bvec2_vert.binvertex (544/1378)
+[roundtrip] ./good/d9e00ac719b15d3d.sample (545/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/reflect_vec3_frag_ivarynconst_ref.bin (546/1378)
+[roundtrip] ./good/mat4_4vec4_vert.binvertex (547/1378)
+[roundtrip] ./good/mat3_9float_vert.binvertex (548/1378)
+[roundtrip] ./good/mod_vec2_frag_xvary_yconst1.bin (549/1378)
+[roundtrip] ./good/gl_FrontFacing_frag.bin (550/1378)
+[roundtrip] ./good/818b5a4769efb0b9.sample (551/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/greaterThanEqual_ivec2_frag_ref.bin (552/1378)
+[roundtrip] ./good/reflect_float_vert_ivarynconst.binvertex (553/1378)
+[roundtrip] ./good/preprocess2_frag.binvertex (554/1378)
+[roundtrip] ./good/abs_vec2_vert_xvary.binvertex (555/1378)
+[roundtrip] ./good/ivec4_empty_inout_ivec4_array_vert.binvertex (556/1378)
+[roundtrip] ./good/matrixMultComp_mat2_frag.bin (557/1378)
+[roundtrip] ./good/mat4_empty_empty_mat4_array_vert.binvertex (558/1378)
+[roundtrip] ./good/inversesqrt_vec3_frag_xvary_ref.bin (559/1378)
+[roundtrip] ./good/lessThan_ivec2_frag_ref.bin (560/1378)
+[roundtrip] ./good/lessThan_ivec3_vert.binvertex (561/1378)
+[roundtrip] ./good/85827ec3ad6157be.sample (562/1378)
+[roundtrip] ./good/relational_frag.bin (563/1378)
+[roundtrip] ./good/not_bvec2_vert_ref.binvertex (564/1378)
+[roundtrip] ./good/log_float_frag_xvary01_ref.bin (565/1378)
+[roundtrip] ./good/pow_vec3_frag_xvary_yconst2_ref.bin (566/1378)
+[roundtrip] ./good/preprocess2_frag.bin (567/1378)
+[roundtrip] ./good/CorrectConstruct_vert.binvertex (568/1378)
+[roundtrip] ./good/mod_float_vert_xvary_yconst1.binvertex (569/1378)
+[roundtrip] ./good/exp2_vec3_vert_xvary_ref.binvertex (570/1378)
+[roundtrip] ./good/ivec3_3int_frag.bin (571/1378)
+[roundtrip] ./good/greaterThan_vec3_frag.bin (572/1378)
+[roundtrip] ./good/fract_vec2_vert_xvary.binvertex (573/1378)
+[roundtrip] ./good/cos_vec3_vert_xvary_ref.binvertex (574/1378)
+[roundtrip] ./good/mat_tests2.binvertex (575/1378)
+[roundtrip] ./good/sin_vec2_frag_xvary_ref.bin (576/1378)
+[roundtrip] ./good/structcopy_vec2_frag.bin (577/1378)
+[roundtrip] ./good/44d7a0c70dcc743b.sample (578/1378)
+[roundtrip] ./good/precision_specifiers.bin (579/1378)
+[roundtrip] ./good/CorrectVersion_V100_frag.bin (580/1378)
+[roundtrip] ./good/atan_vec2_frag_xvaryyvary.bin (581/1378)
+[roundtrip] ./good/3i_frag.bin (582/1378)
+[roundtrip] ./good/24f_frag.bin (583/1378)
+[roundtrip] ./good/matrixMultComp_mat2_frag_ref.bin (584/1378)
+[roundtrip] ./good/gl_MaxCombinedTextureImageUnits_vert.binvertex (585/1378)
+[roundtrip] ./good/ivec4_empty_empty_ivec4_empty_frag.bin (586/1378)
+[roundtrip] ./good/mod_vec2_vert_xvary_yconst1.binvertex (587/1378)
+[roundtrip] ./good/f122431ff33d95cb.sample (588/1378)
+[roundtrip] ./good/cos_vec3_vert_xvary.binvertex (589/1378)
+[roundtrip] ./good/atan_vec2_vert_xvary.binvertex (590/1378)
+[roundtrip] ./good/notEqual_bvec3_frag_ref.bin (591/1378)
+[roundtrip] ./good/sign_float_vert_xvary.binvertex (592/1378)
+[roundtrip] ./good/11c394acbeda8a50.sample (593/1378)
+[roundtrip] ./good/atan_vec2_frag_xvary_ref.bin (594/1378)
+[roundtrip] ./good/vec4_xyz_w_1vec3_1float_frag.bin (595/1378)
+[roundtrip] ./good/radians_vec2_frag_xvary_ref.bin (596/1378)
+[roundtrip] ./good/gl_MaxVertexTextureImageUnits_vert.binvertex (597/1378)
+[roundtrip] ./good/min_vec2_vert_xvary_yconsthalf.binvertex (598/1378)
+[roundtrip] ./good/29ea20593dc97878.sample (599/1378)
+[roundtrip] ./good/pow_float_vert_xvary_yconsthalf.binvertex (600/1378)
+[roundtrip] ./good/vec3_grb_1vec3_frag.bin (601/1378)
+[roundtrip] ./good/lessThanEqual_ivec2_vert.binvertex (602/1378)
+[roundtrip] ./good/bvec4_empty_out_bvec4_empty_frag.bin (603/1378)
+[roundtrip] ./good/brick_mat4.binvertex (604/1378)
+[roundtrip] ./good/pow_float_frag_xconst2_yvary_ref.bin (605/1378)
+[roundtrip] ./good/tan_vec2_frag_xvary.bin (606/1378)
+[roundtrip] ./good/greaterThanEqual_ivec3_frag.bin (607/1378)
+[roundtrip] ./good/mat2_frag.bin (608/1378)
+[roundtrip] ./good/bvec4_empty_empty_bvec4_array_vert.binvertex (609/1378)
+[roundtrip] ./good/int_empty_inout_int_array_frag.bin (610/1378)
+[roundtrip] ./good/int_empty_inout_int_empty_vert.binvertex (611/1378)
+[roundtrip] ./good/atan_vec2_vert_xvaryyvary.binvertex (612/1378)
+[roundtrip] ./good/degrees_float_frag_xvary.bin (613/1378)
+[roundtrip] ./good/reflect_vec3_vert_ivarynconst.binvertex (614/1378)
+[roundtrip] ./good/mix_float_vert_xvary_yconsthalf_aconsthalf_ref.binvertex (615/1378)
+[roundtrip] ./good/c730b4d11be275e3.sample (616/1378)
+[roundtrip] ./good/1f_frag.bin (617/1378)
+[roundtrip] ./good/sign_vec3_frag_xvary.bin (618/1378)
+[roundtrip] ./good/vec2_vec3_vert.binvertex (619/1378)
+[roundtrip] ./good/matrixMultComp_mat3_vert_ref.binvertex (620/1378)
+[roundtrip] ./good/9e2d1a5e104f1592.sample (621/1378)
+[roundtrip] ./good/51983f56fe29ae50.sample (622/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/cos_float_frag_xvary_ref.bin (623/1378)
+[roundtrip] ./good/0e9ce5f2864ff639.sample (624/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/struct_bvec2bvec3bvec4_frag.bin (625/1378)
+[roundtrip] ./good/asin_vec3_vert_xvary_ref.binvertex (626/1378)
+[roundtrip] ./good/greaterThan_vec2_frag_ref.bin (627/1378)
+[roundtrip] ./good/vertexShader.binvertex (628/1378)
+[roundtrip] ./good/sqrt_float_frag_xvary_ref.bin (629/1378)
+[roundtrip] ./good/min_vec3_frag_xvary_yconsthalf_ref.bin (630/1378)
+[roundtrip] ./good/f5d0e915aeab16be.sample (631/1378)
+[roundtrip] ./good/vec3_rg_b_1vec2_1float_vert.binvertex (632/1378)
+[roundtrip] ./good/cos_vec2_frag_xvary.bin (633/1378)
+[roundtrip] ./good/pow_float_vert_xvary_yconsthalf_ref.binvertex (634/1378)
+[roundtrip] ./good/varying1_frag.binvertex (635/1378)
+[roundtrip] ./good/buffer_objects.bin (636/1378)
+[roundtrip] ./good/emit2.bin (637/1378)
+[roundtrip] ./good/all_bvec2_frag.bin (638/1378)
+[roundtrip] ./good/log_float_frag_xvary_ref.bin (639/1378)
+[roundtrip] ./good/max_vec2_frag_xvary_yconsthalf.bin (640/1378)
+[roundtrip] ./good/ivec4_empty_out_ivec4_array_frag.bin (641/1378)
+[roundtrip] ./good/normalize_vec3_vert_xvary_ref.binvertex (642/1378)
+[roundtrip] ./good/fract_float_frag_xvary.bin (643/1378)
+[roundtrip] ./good/f8791569e3769feb.sample (644/1378)
+[roundtrip] ./good/lighting_diffuse_ref.bin (645/1378)
+[roundtrip] ./good/equal_ivec2_frag_ref.bin (646/1378)
+[roundtrip] ./good/vec4_rgba_1vec4_frag.bin (647/1378)
+[roundtrip] ./good/vec4_empty_out_vec4_empty_vert.binvertex (648/1378)
+[roundtrip] ./good/greaterThan_ivec2_vert.binvertex (649/1378)
+[roundtrip] ./good/pow_float_frag_xvary_yconst2_ref.bin (650/1378)
+[roundtrip] ./good/28258a763bfe0f6c.sample (651/1378)
+[roundtrip] ./good/reflect_vec2_frag_ivarynconst.bin (652/1378)
+[roundtrip] ./good/struct_mat2_vert.binvertex (653/1378)
+[roundtrip] ./good/greaterThanEqual_ivec2_frag.bin (654/1378)
+[roundtrip] ./good/structnest_mat4_vert.binvertex (655/1378)
+[roundtrip] ./good/vec4_empty_inout_vec4_empty_frag.bin (656/1378)
+[roundtrip] ./good/ceil_vec3_vert_xvary.binvertex (657/1378)
+[roundtrip] ./good/ivec4_empty_out_ivec4_empty_vert.binvertex (658/1378)
+[roundtrip] ./good/mat4_empty_in_mat4_array_frag.bin (659/1378)
+[roundtrip] ./good/mat3_frag.bin (660/1378)
+[roundtrip] ./good/vec3array_vert.binvertex (661/1378)
+[roundtrip] ./good/lessThan_vec2_frag_ref.bin (662/1378)
+[roundtrip] ./good/1b_frag.bin (663/1378)
+[roundtrip] ./good/dot_float_vert_xvaryyone.binvertex (664/1378)
+[roundtrip] ./good/73ca6d593f4d544f.sample (665/1378)
+[roundtrip] ./good/exp2_vec2_frag_xvaryneg.bin (666/1378)
+[roundtrip] ./good/vec3_pts_1vec3_vert.binvertex (667/1378)
+[roundtrip] ./good/log_float_vert_xvary_ref.binvertex (668/1378)
+[roundtrip] ./good/mat4_empty_inout_mat4_empty_frag.bin (669/1378)
+[roundtrip] ./good/vec4_ps_qt_2vec2_frag.bin (670/1378)
+[roundtrip] ./good/const_mat3_copy_frag.bin (671/1378)
+[roundtrip] ./good/distance_vec2_frag_xvaryyhalf.bin (672/1378)
+[roundtrip] ./good/sign_vec3_vert_xvary.binvertex (673/1378)
+[roundtrip] ./good/vec4_x_y_z_w_4float_vert.binvertex (674/1378)
+[roundtrip] ./good/vec3_tsp_1vec3_frag.bin (675/1378)
+[roundtrip] ./good/bvec4_empty_inout_bvec4_empty_frag.bin (676/1378)
+[roundtrip] ./good/inversesqrt_float_vert_xvary_ref.binvertex (677/1378)
+[roundtrip] ./good/atan_vec3_frag_xvary_ref.bin (678/1378)
+[roundtrip] ./good/vec3_yxz_1vec3_frag.bin (679/1378)
+[roundtrip] ./good/dot_float_frag_xvaryyone.bin (680/1378)
+[roundtrip] ./good/pow_vec3_vert_xconsthalf_yvary_ref.binvertex (681/1378)
+[roundtrip] ./good/vec4_grab_1vec4_vert.binvertex (682/1378)
+[roundtrip] ./good/exp_vec2_vert_xvary.binvertex (683/1378)
+[roundtrip] ./good/any_bvec3_vert.binvertex (684/1378)
+[roundtrip] ./good/vec4_rg_ba_2vec2_frag.bin (685/1378)
+[roundtrip] ./good/ivec_tests.binvertex (686/1378)
+[roundtrip] ./good/exp_float_frag_xvary.bin (687/1378)
+[roundtrip] ./good/sign_vec2_vert_xvary_ref.binvertex (688/1378)
+[roundtrip] ./good/bool_empty_empty_bool_array_vert.binvertex (689/1378)
+[roundtrip] ./good/22i_frag.bin (690/1378)
+[roundtrip] ./good/inversesqrt_float_frag_xvary.bin (691/1378)
+[roundtrip] ./good/radians_vec2_vert_xvary.binvertex (692/1378)
+[roundtrip] ./good/1b83ed8bdb39540b.sample (693/1378)
+[roundtrip] ./good/mat4_frag.bin (694/1378)
+[roundtrip] ./good/fract_vec3_vert_xvary_ref.binvertex (695/1378)
+[roundtrip] ./good/abs_float_vert_xvary_ref.binvertex (696/1378)
+[roundtrip] ./good/vec4_ar_bg_2vec2_frag.bin (697/1378)
+[roundtrip] ./good/default.bin (698/1378)
+[roundtrip] ./good/dot_vec2_frag_xvaryyhalf_ref.bin (699/1378)
+[roundtrip] ./good/f3ccfd7fc920357a.sample (700/1378)
+[roundtrip] ./good/faceforward_vec3_frag_nvaryiconst_ref.bin (701/1378)
+[roundtrip] ./good/tan_vec2_vert_xvary_ref.binvertex (702/1378)
+[roundtrip] ./good/float_empty_in_float_empty_vert.binvertex (703/1378)
+[roundtrip] ./good/gl_FragCoord_z_frag_ref.binvertex (704/1378)
+[roundtrip] ./good/greaterThan_vec2_vert_ref.binvertex (705/1378)
+[roundtrip] ./good/greaterThan_ivec3_frag.bin (706/1378)
+[roundtrip] ./good/vec4_zwxy_1vec4_frag.bin (707/1378)
+[roundtrip] ./good/sin_vec3_frag_xvary.bin (708/1378)
+[roundtrip] ./good/vec3_zyx_1vec3_vert.binvertex (709/1378)
+[roundtrip] ./good/qualifiers_float_frag.bin (710/1378)
+[roundtrip] ./good/float_empty_empty_float_empty_vert.binvertex (711/1378)
+[roundtrip] ./good/atan_float_vert_xvaryyvary_ref.binvertex (712/1378)
+[roundtrip] ./good/pow_vec3_vert_xconsthalf_yvary.binvertex (713/1378)
+[roundtrip] ./good/exp_float_vert_xvary_ref.binvertex (714/1378)
+[roundtrip] ./good/notEqual_ivec3_vert.binvertex (715/1378)
+[roundtrip] ./good/greaterThanEqual_vec3_frag.bin (716/1378)
+[roundtrip] ./good/lessThan_vec2_frag.bin (717/1378)
+[roundtrip] ./good/smoothstep_vec3_frag_xvary_edgeconstquarter_ref.bin (718/1378)
+[roundtrip] ./good/log2_float_vert_xvary_ref.binvertex (719/1378)
+[roundtrip] ./good/gl_MaxVaryingVectors_vert.binvertex (720/1378)
+[roundtrip] ./good/radians_float_vert_xvary.binvertex (721/1378)
+[roundtrip] ./good/faceforward_float_vert_nvaryiconst.binvertex (722/1378)
+[roundtrip] ./good/4b_firstthree_frag.bin (723/1378)
+[roundtrip] ./good/equal_vec2_vert_ref.binvertex (724/1378)
+[roundtrip] ./good/vec3_float_vec2_frag.bin (725/1378)
+[roundtrip] ./good/int_empty_inout_int_empty_frag.bin (726/1378)
+[roundtrip] ./good/extension2_V100_frag.binvertex (727/1378)
+[roundtrip] ./good/mix_vec3_vert_xvary_yconsthalf_aconsthalf.binvertex (728/1378)
+[roundtrip] ./good/struct_bvec2bvec3bvec4_vert.binvertex (729/1378)
+[roundtrip] ./good/greaterThan_ivec2_frag_ref.bin (730/1378)
+[roundtrip] ./good/length_float_frag_xvary_ref.bin (731/1378)
+[roundtrip] ./good/gl_MaxDrawBuffers_frag.bin (732/1378)
+[roundtrip] ./good/clamp_float_vert_xvary_yconstquarter_ref.binvertex (733/1378)
+[roundtrip] ./good/faceforward_vec3_frag_nvaryiconst.bin (734/1378)
+[roundtrip] ./good/vec3_float_vec2_vert.binvertex (735/1378)
+[roundtrip] ./good/length_float_frag_xvary.bin (736/1378)
+[roundtrip] ./good/pow_vec2_frag_xconst2_yvary.bin (737/1378)
+[roundtrip] ./good/vec3_rgb_1vec3_frag.bin (738/1378)
+[roundtrip] ./good/radians_vec3_frag_xvary.bin (739/1378)
+[roundtrip] ./good/log_vec2_vert_xvary.binvertex (740/1378)
+[roundtrip] ./good/mat_tests.bin (741/1378)
+[roundtrip] ./good/clamp_float_frag_xvary_yconstquarter_ref.bin (742/1378)
+[roundtrip] ./good/vec4_gr_ab_2vec2_frag.bin (743/1378)
+[roundtrip] ./good/ivec4_empty_inout_ivec4_array_frag.bin (744/1378)
+[roundtrip] ./good/vec4_ts_qp_2vec2_frag.bin (745/1378)
+[roundtrip] ./good/log_vec2_vert_xvary01_ref.binvertex (746/1378)
+[roundtrip] ./good/sqrt_vec2_vert_xvary_ref.binvertex (747/1378)
+[roundtrip] ./good/exp_vec2_vert_xvaryneg.binvertex (748/1378)
+[roundtrip] ./good/user_clip_planes.bin (749/1378)
+[roundtrip] ./good/bvec4_2int_2float_frag.bin (750/1378)
+[roundtrip] ./good/int_empty_in_int_array_vert.binvertex (751/1378)
+[roundtrip] ./good/5cfdf98d9f7554de.sample (752/1378)
+d.name: GL_EXT_clip_cull_distance
+[roundtrip] ./good/lessThan_ivec3_vert_ref.binvertex (753/1378)
+[roundtrip] ./good/lessThan_vec2_vert.binvertex (754/1378)
+[roundtrip] ./good/vec4_s_t_p_q_4float_frag.bin (755/1378)
+[roundtrip] ./good/radians_vec2_frag_xvary.bin (756/1378)
+[roundtrip] ./good/float_empty_in_float_empty_frag.bin (757/1378)
+[roundtrip] ./good/CorrectConstFolding1_vert.binvertex (758/1378)
+[roundtrip] ./good/float_empty_empty_float_array_frag.bin (759/1378)
+[roundtrip] ./good/cross_vec3_vert_xvaryyconst.binvertex (760/1378)
+[roundtrip] ./good/smoothstep_float_frag_xvary_edgeconstquarter_ref.bin (761/1378)
+[roundtrip] ./good/ivec4_empty_in_ivec4_array_frag.bin (762/1378)
+[roundtrip] ./good/vec3_zx_y_1vec2_1float_vert.binvertex (763/1378)
+[roundtrip] ./good/exp2_vec2_vert_xvaryneg_ref.binvertex (764/1378)
+[roundtrip] ./good/vec4_zwx_y_1vec3_1float_frag.bin (765/1378)
+[roundtrip] ./good/atan_vec2_frag_xvary.bin (766/1378)
+[roundtrip] ./good/ceil_vec3_frag_xvary.bin (767/1378)
+[roundtrip] ./good/int_empty_in_int_empty_vert.binvertex (768/1378)
+[roundtrip] ./good/matUniformShader.binvertex (769/1378)
+[roundtrip] ./good/gl_FragCoord_xy_frag_ref.bin (770/1378)
+[roundtrip] ./good/exp2_vec3_vert_xvary.binvertex (771/1378)
+[roundtrip] ./good/60b16282d32b61ea.sample (772/1378)
+[roundtrip] ./good/asin_float_frag_xvary.bin (773/1378)
+[roundtrip] ./good/empty_empty_array_float_vert.binvertex (774/1378)
+[roundtrip] ./good/const_mat3_vert.binvertex (775/1378)
+[roundtrip] ./good/notEqual_ivec3_frag.bin (776/1378)
+[roundtrip] ./good/smoothstep_vec2_vert_xvary_edgeconstquarter.binvertex (777/1378)
+[roundtrip] ./good/distance_vec2_vert_xvaryyhalf_ref.binvertex (778/1378)
+[roundtrip] ./good/vec4_rgba_1vec4_vert.binvertex (779/1378)
+[roundtrip] ./good/CorrectExtension10_V100_frag.binvertex (780/1378)
+[roundtrip] ./good/mat3_3vec3_frag.bin (781/1378)
+[roundtrip] ./good/lessThan_vec2_vert_ref.binvertex (782/1378)
+[roundtrip] ./good/gl_FragCoord_xy_frag.bin (783/1378)
+[roundtrip] ./good/matrixMultComp_mat3_frag.bin (784/1378)
+[roundtrip] ./good/b349cdf53f9157cf.sample (785/1378)
+[roundtrip] ./good/structnest_vec3_frag.bin (786/1378)
+[roundtrip] ./good/vec4_rgb_a_1vec3_1float_vert.binvertex (787/1378)
+[roundtrip] ./good/structcopy_mat2_vert.binvertex (788/1378)
+[roundtrip] ./good/22b3fbf72f47a49c.sample (789/1378)
+d.name: GL_OES_standard_derivatives
+[roundtrip] ./good/structcopy_mat3_frag.bin (790/1378)
+[roundtrip] ./good/vec4_xyzw_1vec4_frag.bin (791/1378)
+[roundtrip] ./good/exp_vec2_vert_xvary_ref.binvertex (792/1378)
+[roundtrip] ./good/inversesqrt_vec2_vert_xvary.binvertex (793/1378)
+[roundtrip] ./good/vec3_sp_t_1vec2_1float_frag.bin (794/1378)
+[roundtrip] ./good/log_float_frag_xvary.bin (795/1378)
+[roundtrip] ./good/greaterThanEqual_vec2_frag.bin (796/1378)
+[roundtrip] ./good/5f8c709345f1f8e8.sample (797/1378)
+[roundtrip] ./good/array_const_mat3_frag.bin (798/1378)
+[roundtrip] ./good/faceforward_vec2_frag_nvaryiconst.bin (799/1378)
+[roundtrip] ./good/ivec4_empty_empty_ivec4_array_vert.binvertex (800/1378)
+[roundtrip] ./good/fract_vec2_vert_xvary_ref.binvertex (801/1378)
+[roundtrip] ./good/exp_vec3_vert_xvary.binvertex (802/1378)
+[roundtrip] ./good/log_float_vert_xvary.binvertex (803/1378)
+[roundtrip] ./good/_webgl_function.binvertex (804/1378)
+[roundtrip] ./good/sign_float_frag_xvary_ref.bin (805/1378)
+[roundtrip] ./good/12d96de229b7bc14.sample (806/1378)
+[roundtrip] ./good/mat4_empty_empty_mat4_empty_frag.bin (807/1378)
+[roundtrip] ./good/mod_vec3_vert_xvary_yconst1.binvertex (808/1378)
+[roundtrip] ./good/log2_float_vert_xvary01_ref.binvertex (809/1378)
+[roundtrip] ./good/degrees_vec2_frag_xvary_ref.bin (810/1378)
+[roundtrip] ./good/ceil_float_vert_xvary.binvertex (811/1378)
+[roundtrip] ./good/vec4_empty_in_vec4_array_vert.binvertex (812/1378)
+[roundtrip] ./good/notEqual_bvec2_frag.bin (813/1378)
+[roundtrip] ./good/56be35001146a0b0.sample (814/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/mat4_copy_vert.binvertex (815/1378)
+[roundtrip] ./good/ivec4_empty_out_ivec4_array_vert.binvertex (816/1378)
+[roundtrip] ./good/vec4_wx_zy_2vec2_frag.bin (817/1378)
+[roundtrip] ./good/exp2_float_vert_xvary.binvertex (818/1378)
+[roundtrip] ./good/matrixMultComp_mat3_frag_ref.bin (819/1378)
+[roundtrip] ./good/vec4_ps_qt_2vec2_vert.binvertex (820/1378)
+[roundtrip] ./good/lessThanEqual_ivec3_frag.bin (821/1378)
+[roundtrip] ./good/log2_vec3_frag_xvary01_ref.bin (822/1378)
+[roundtrip] ./good/smoothstep_vec2_frag_xvary_edgeconstquarter.bin (823/1378)
+[roundtrip] ./good/95b4e002df136c9b.sample (824/1378)
+[roundtrip] ./good/sin_float_vert_xvary_ref.binvertex (825/1378)
+[roundtrip] ./good/log2_vec2_frag_xvary_ref.bin (826/1378)
+[roundtrip] ./good/lessThan_vec3_frag.bin (827/1378)
+[roundtrip] ./good/pow_float_frag_xvary_yconsthalf_ref.bin (828/1378)
+[roundtrip] ./good/vec2_2float_vert.binvertex (829/1378)
+[roundtrip] ./good/smoothstep_vec3_vert_xvary_edgeconstquarter_ref.binvertex (830/1378)
+[roundtrip] ./good/min_vec3_vert_xvary_yconsthalf.binvertex (831/1378)
+[roundtrip] ./good/clamp_float_frag_xvary_yconstquarter.bin (832/1378)
+[roundtrip] ./good/ceil_vec2_frag_xvary.bin (833/1378)
+[roundtrip] ./good/388c8b558fce26be.sample (834/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/float_empty_out_float_empty_frag.bin (835/1378)
+[roundtrip] ./good/pow_float_vert_xconsthalf_yvary_ref.binvertex (836/1378)
+[roundtrip] ./good/Permissive_Scalar_Vector_Expressions_frag.binvertex (837/1378)
+[roundtrip] ./good/intArrayUniformShader.binvertex (838/1378)
+[roundtrip] ./good/4b_lastthree_vert.bin (839/1378)
+[roundtrip] ./good/pow_vec3_vert_xconst2_yvary_ref.binvertex (840/1378)
+[roundtrip] ./good/reflect_float_frag_ivarynconst_ref.bin (841/1378)
+[roundtrip] ./good/mat2_copy_frag.bin (842/1378)
+[roundtrip] ./good/mix_vec2_vert_xvary_yconsthalf_aconsthalf_ref.binvertex (843/1378)
+[roundtrip] ./good/notEqual_vec3_vert.binvertex (844/1378)
+[roundtrip] ./good/DepthRange_vert.binvertex (845/1378)
+[roundtrip] ./good/min_float_frag_xvary_yconsthalf_ref.bin (846/1378)
+[roundtrip] ./good/vec4_vec3_float_vert.binvertex (847/1378)
+[roundtrip] ./good/atan_vec3_vert_xvary.binvertex (848/1378)
+[roundtrip] ./good/log2_vec3_vert_xvary_ref.binvertex (849/1378)
+[roundtrip] ./good/inversesqrt_vec2_frag_xvary.bin (850/1378)
+[roundtrip] ./good/step_vec2_vert_xvary_edgeconsthalf.binvertex (851/1378)
+[roundtrip] ./good/cos_vec2_vert_xvary.binvertex (852/1378)
+[roundtrip] ./good/structnest_vec3_vert.binvertex (853/1378)
+[roundtrip] ./good/step_float_vert_xvary_edgeconsthalf_ref.binvertex (854/1378)
+[roundtrip] ./good/4b_vert.binvertex (855/1378)
+[roundtrip] ./good/CorrectParse1_frag.binvertex (856/1378)
+[roundtrip] ./good/extension9_V100_frag.bin (857/1378)
+[roundtrip] ./good/CorrectParse2_frag.bin (858/1378)
+[roundtrip] ./good/mod_vec2_frag_xvary_yconst1_ref.bin (859/1378)
+[roundtrip] ./good/faceforward_float_frag_nvaryiconst_ref.bin (860/1378)
+[roundtrip] ./good/asin_vec2_frag_xvary.bin (861/1378)
+[roundtrip] ./good/normalize_float_frag_xvary_ref.bin (862/1378)
+[roundtrip] ./good/greaterThan_vec3_vert_ref.binvertex (863/1378)
+[roundtrip] ./good/int_empty_inout_int_array_vert.binvertex (864/1378)
+[roundtrip] ./good/int_empty_out_int_array_vert.binvertex (865/1378)
+[roundtrip] ./good/dFdx_frag.binvertex (866/1378)
+[roundtrip] ./good/CorrectExtension4_V100_frag.bin (867/1378)
+[roundtrip] ./good/4f_frag.bin (868/1378)
+[roundtrip] ./good/structcopy_float_frag.bin (869/1378)
+[roundtrip] ./good/mat4_empty_in_mat4_empty_frag.bin (870/1378)
+[roundtrip] ./good/CorrectSwizzle1_frag.bin (871/1378)
+[roundtrip] ./good/sqrt_vec2_frag_xvary.bin (872/1378)
+[roundtrip] ./good/0f521138e4349873.sample (873/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/bvec4_empty_empty_bvec4_array_frag.bin (874/1378)
+[roundtrip] ./good/notEqual_bvec3_vert_ref.binvertex (875/1378)
+[roundtrip] ./good/24i_frag.bin (876/1378)
+[roundtrip] ./good/mod_x_large_y_large_vert.binvertex (877/1378)
+[roundtrip] ./good/gl_MaxTextureImageUnits_frag.bin (878/1378)
+[roundtrip] ./good/pow_float_vert_xconst2_yvary.binvertex (879/1378)
+[roundtrip] ./good/array_const_mat2_frag.bin (880/1378)
+[roundtrip] ./good/nestedstructcomb_various_vert.binvertex (881/1378)
+[roundtrip] ./good/non-ascii-comments.binvertex (882/1378)
+[roundtrip] ./good/CorrectExtension1_V100_frag.bin (883/1378)
+[roundtrip] ./good/bvec4_empty_out_bvec4_array_vert.binvertex (884/1378)
+[roundtrip] ./good/log2_vec3_vert_xvary.binvertex (885/1378)
+[roundtrip] ./good/greaterThan_ivec2_vert_ref.binvertex (886/1378)
+[roundtrip] ./good/smoothstep_float_vert_xvary_edgeconstquarter_ref.binvertex (887/1378)
+[roundtrip] ./good/step_float_vert_xvary_edgeconsthalf.binvertex (888/1378)
+[roundtrip] ./good/lessThanEqual_vec3_vert_ref.binvertex (889/1378)
+[roundtrip] ./good/vec4_zwxy_1vec4_vert.binvertex (890/1378)
+[roundtrip] ./good/webgl_struct.binvertex (891/1378)
+[roundtrip] ./good/291f6bc6932debe6.sample (892/1378)
+[roundtrip] ./good/CorrectExtension4_V100_frag.binvertex (893/1378)
+[roundtrip] ./good/ivec4_empty_in_ivec4_empty_vert.binvertex (894/1378)
+[roundtrip] ./good/struct_mat3_frag.bin (895/1378)
+[roundtrip] ./good/reflect_vec2_vert_ivarynconst_ref.binvertex (896/1378)
+[roundtrip] ./good/vec3_xyz_1vec3_vert.binvertex (897/1378)
+[roundtrip] ./good/distance_float_frag_xvaryyhalf.bin (898/1378)
+[roundtrip] ./good/postfixdecrement_frag.bin (899/1378)
+[roundtrip] ./good/exp2_float_vert_xvary_ref.binvertex (900/1378)
+[roundtrip] ./good/selection_vert.binvertex (901/1378)
+[roundtrip] ./good/21f_frag.bin (902/1378)
+[roundtrip] ./good/structcopy_mat4_frag.bin (903/1378)
+[roundtrip] ./good/not_bvec2_frag.bin (904/1378)
+[roundtrip] ./good/vec3_ps_t_1vec2_1float_vert.binvertex (905/1378)
+[roundtrip] ./good/greaterThanEqual_vec2_frag_ref.bin (906/1378)
+[roundtrip] ./good/exp2_vec3_frag_xvary.bin (907/1378)
+[roundtrip] ./good/dot_vec3_vert_xvaryythird.binvertex (908/1378)
+[roundtrip] ./good/mat4_empty_inout_mat4_array_vert.binvertex (909/1378)
+[roundtrip] ./good/exp_vec3_vert_xvary_ref.binvertex (910/1378)
+[roundtrip] ./good/cross_vec3_frag_xvaryyconst.bin (911/1378)
+[roundtrip] ./good/CorrectSwizzle1_vert.binvertex (912/1378)
+[roundtrip] ./good/8c0aeb8a2c6526d0.sample (913/1378)
+[roundtrip] ./good/any_bvec2_frag_ref.bin (914/1378)
+[roundtrip] ./good/log2_vec2_vert_xvary_ref.binvertex (915/1378)
+[roundtrip] ./good/int_empty_in_int_empty_frag.bin (916/1378)
+[roundtrip] ./good/degrees_float_vert_xvary.binvertex (917/1378)
+[roundtrip] ./good/dataType9_frag.binvertex (918/1378)
+[roundtrip] ./good/gl_MaxFragmentUniformVectors_frag.bin (919/1378)
+[roundtrip] ./good/min_vec3_vert_xvary_yconsthalf_ref.binvertex (920/1378)
+[roundtrip] ./good/CorrectFunction1_vert.binvertex (921/1378)
+[roundtrip] ./good/vec4_yx_wz_2vec2_frag.bin (922/1378)
+[roundtrip] ./good/normalize_vec3_vert_xvary.binvertex (923/1378)
+[roundtrip] ./good/length_vec2_frag_xvary_ref.bin (924/1378)
+[roundtrip] ./good/05fdf989b7705a62.sample (925/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/prefixincrement_vert.binvertex (926/1378)
+[roundtrip] ./good/pow_vec3_vert_xvary_yconst2_ref.binvertex (927/1378)
+[roundtrip] ./good/vec3arraydirect_vert.binvertex (928/1378)
+[roundtrip] ./good/log_vec3_frag_xvary.bin (929/1378)
+[roundtrip] ./good/_webgl_struct.bin (930/1378)
+[roundtrip] ./good/structnest_bvec2bvec3bvec4_frag.bin (931/1378)
+[roundtrip] ./good/4b_lastthree_frag.bin (932/1378)
+[roundtrip] ./good/distance_vec2_frag_xvaryyhalf_ref.bin (933/1378)
+[roundtrip] ./good/distance_vec3_vert_xvaryyhalf_ref.binvertex (934/1378)
+[roundtrip] ./good/atan_float_frag_xvary_ref.bin (935/1378)
+[roundtrip] ./good/log2_vec2_frag_xvary.bin (936/1378)
+[roundtrip] ./good/Permissive_Scalar_Vector_Expressions_frag.bin (937/1378)
+[roundtrip] ./good/floor_float_frag_xvary.bin (938/1378)
+[roundtrip] ./good/lessThan_vec3_vert_ref.binvertex (939/1378)
+[roundtrip] ./good/asin_float_vert_xvary.binvertex (940/1378)
+[roundtrip] ./good/d74247d244e848d8.sample (941/1378)
+d.name: GL_EXT_clip_cull_distance
+[roundtrip] ./good/sign_vec3_frag_xvary_ref.bin (942/1378)
+[roundtrip] ./good/const_mat2_copy_vert.binvertex (943/1378)
+[roundtrip] ./good/vec4_gr_ab_2vec2_vert.binvertex (944/1378)
+[roundtrip] ./good/pow_vec2_vert_xconst2_yvary.binvertex (945/1378)
+[roundtrip] ./good/matrixVSU.binvertex (946/1378)
+[roundtrip] ./good/CorrectSwizzle2_vert.binvertex (947/1378)
+[roundtrip] ./good/8565b0c18de51cea.sample (948/1378)
+[roundtrip] ./good/min_vec2_frag_xvary_yconsthalf.bin (949/1378)
+[roundtrip] ./good/61dab6b49dea1237.sample (950/1378)
+d.name: GL_ANGLE_clip_cull_distance
+[roundtrip] ./good/mod_float_frag_xvary_yconst1.bin (951/1378)
+[roundtrip] ./good/notEqual_vec2_frag.bin (952/1378)
+[roundtrip] ./good/empty_uniform_array_float_vert.binvertex (953/1378)
+[roundtrip] ./good/samplerUniformShader.bin (954/1378)
+[roundtrip] ./good/vec4_empty_inout_vec4_empty_vert.binvertex (955/1378)
+[roundtrip] ./good/matrix2VSU.bin (956/1378)
+[roundtrip] ./good/mat3_vert.binvertex (957/1378)
+[roundtrip] ./good/extension5_V100_frag.bin (958/1378)
+[roundtrip] ./good/ec2ba724b2cf90b9.sample (959/1378)
+[roundtrip] ./good/webgl_variable.binvertex (960/1378)
+[roundtrip] ./good/notEqual_vec2_vert.binvertex (961/1378)
+[roundtrip] ./good/brick.bin (962/1378)
+[roundtrip] ./good/c3b75cf451649583.sample (963/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/bool_empty_out_bool_array_frag.bin (964/1378)
+[roundtrip] ./good/bvec4_empty_in_bvec4_array_vert.binvertex (965/1378)
+[roundtrip] ./good/9aff4fa8a44e9c68.sample (966/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/int_empty_empty_int_array_frag.bin (967/1378)
+[roundtrip] ./good/normalize_float_frag_xvary.bin (968/1378)
+[roundtrip] ./good/vec4_pqst_1vec4_frag.bin (969/1378)
+[roundtrip] ./good/reflect_float_frag_ivarynconst.bin (970/1378)
+[roundtrip] ./good/structcopy_float_vert.binvertex (971/1378)
+[roundtrip] ./good/fract_vec2_frag_xvary.bin (972/1378)
+[roundtrip] ./good/1d81015f027c7161.sample (973/1378)
+[roundtrip] ./good/floor_vec3_frag_xvary.bin (974/1378)
+[roundtrip] ./good/faceforward_vec3_vert_nvaryiconst_ref.binvertex (975/1378)
+[roundtrip] ./good/vec_tests.bin (976/1378)
+[roundtrip] ./good/length_vec3_frag_xvary_ref.bin (977/1378)
+[roundtrip] ./good/mix_vec3_vert_xvary_yconsthalf_aconsthalf_ref.binvertex (978/1378)
+[roundtrip] ./good/5b0343949e2fdaae.sample (979/1378)
+[roundtrip] ./good/vec4_qspt_1vec4_vert.binvertex (980/1378)
+[roundtrip] ./good/equal_vec2_vert.binvertex (981/1378)
+[roundtrip] ./good/version3_V100_frag.bin (982/1378)
+[roundtrip] ./good/mod_float_vert_xvary_yconst1_ref.binvertex (983/1378)
+[roundtrip] ./good/mat2_copy_vert.binvertex (984/1378)
+[roundtrip] ./good/dot_float_vert_xvaryyone_ref.binvertex (985/1378)
+[roundtrip] ./good/vec4_arbg_1vec4_vert.binvertex (986/1378)
+[roundtrip] ./good/buffer_objects_multitexturing.bin (987/1378)
+[roundtrip] ./good/exp2_vec2_frag_xvaryneg_ref.bin (988/1378)
+[roundtrip] ./good/exp_vec3_frag_xvary.bin (989/1378)
+[roundtrip] ./good/floor_float_vert_xvary_ref.binvertex (990/1378)
+[roundtrip] ./good/mat3arrayindirect1_frag.bin (991/1378)
+[roundtrip] ./good/exp2_float_vert_xvaryneg_ref.binvertex (992/1378)
+[roundtrip] ./good/acos_vec3_vert_xvary.binvertex (993/1378)
+[roundtrip] ./good/notEqual_bvec3_vert.binvertex (994/1378)
+[roundtrip] ./good/gl_MaxVertexUniformVectors_frag.bin (995/1378)
+[roundtrip] ./good/vec4_empty_inout_vec4_array_frag.bin (996/1378)
+[roundtrip] ./good/exp_vec2_frag_xvary.bin (997/1378)
+[roundtrip] ./good/structcopy_vec3_frag.bin (998/1378)
+[roundtrip] ./good/pow_float_frag_xvary_yconst2.bin (999/1378)
+[roundtrip] ./good/distance_float_frag_xvaryyhalf_ref.bin (1000/1378)
+[roundtrip] ./good/qualifiers_struct_vert.binvertex (1001/1378)
+[roundtrip] ./good/struct_bool_frag.bin (1002/1378)
+[roundtrip] ./good/reflect_vec3_vert_ivarynconst_ref.binvertex (1003/1378)
+[roundtrip] ./good/dot_vec2_frag_xvaryyhalf.bin (1004/1378)
+[roundtrip] ./good/array_float_frag.bin (1005/1378)
+[roundtrip] ./good/1i_frag.bin (1006/1378)
+[roundtrip] ./good/int_empty_empty_int_array_vert.binvertex (1007/1378)
+[roundtrip] ./good/webgl_field.bin (1008/1378)
+[roundtrip] ./good/mat3arraysimple_frag.bin (1009/1378)
+[roundtrip] ./good/79bf6142592bb99f.sample (1010/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/max_vec3_frag_xvary_yconsthalf.bin (1011/1378)
+[roundtrip] ./good/atan_vec2_vert_xvaryyvary_ref.binvertex (1012/1378)
+[roundtrip] ./good/structnest_bvec2bvec3bvec4_vert.binvertex (1013/1378)
+[roundtrip] ./good/smoothstep_float_vert_xvary_edgeconstquarter.binvertex (1014/1378)
+[roundtrip] ./good/all_bvec3_frag.bin (1015/1378)
+[roundtrip] ./good/struct_mat3_vert.binvertex (1016/1378)
+[roundtrip] ./good/vec3_stp_1vec3_vert.binvertex (1017/1378)
+[roundtrip] ./good/qualifiers_struct_frag.bin (1018/1378)
+[roundtrip] ./good/vec3arraydirect_frag.bin (1019/1378)
+[roundtrip] ./good/atan_float_frag_xvaryyvary_ref.bin (1020/1378)
+[roundtrip] ./good/distance_float_vert_xvaryyhalf_ref.binvertex (1021/1378)
+[roundtrip] ./good/structcopy_vec4_frag.bin (1022/1378)
+[roundtrip] ./good/vec3_vec4_vert.binvertex (1023/1378)
+[roundtrip] ./good/abs_float_vert_xvary.binvertex (1024/1378)
+[roundtrip] ./good/atan_vec3_vert_xvaryyvary_ref.binvertex (1025/1378)
+[roundtrip] ./good/extension9_V100_frag.binvertex (1026/1378)
+[roundtrip] ./good/max_vec3_frag_xvary_yconsthalf_ref.bin (1027/1378)
+[roundtrip] ./good/mat4_empty_inout_mat4_array_frag.bin (1028/1378)
+[roundtrip] ./good/3b_vert.bin (1029/1378)
+[roundtrip] ./good/boolUniformShader.binvertex (1030/1378)
+[roundtrip] ./good/030fa7b74d74b919.sample (1031/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/exp2_vec2_vert_xvary.binvertex (1032/1378)
+[roundtrip] ./good/normalize_vec3_frag_xvary.bin (1033/1378)
+[roundtrip] ./good/for_nested_continue_vert.binvertex (1034/1378)
+[roundtrip] ./good/min_vec2_vert_xvary_yconsthalf_ref.binvertex (1035/1378)
+[roundtrip] ./good/degrees_vec3_vert_xvary.binvertex (1036/1378)
+[roundtrip] ./good/vec4_wxzy_1vec4_vert.binvertex (1037/1378)
+[roundtrip] ./good/0d3fa9cdfadb4b4f.sample (1038/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/mod_vec3_frag_xvary_yconst1.bin (1039/1378)
+[roundtrip] ./good/fract_float_frag_xvary_ref.bin (1040/1378)
+[roundtrip] ./good/for_continue_vert.binvertex (1041/1378)
+[roundtrip] ./good/array_const_mat4_vert.binvertex (1042/1378)
+[roundtrip] ./good/structnest_bool_vert.binvertex (1043/1378)
+[roundtrip] ./good/smoothstep_float_frag_xvary_edgeconstquarter.bin (1044/1378)
+[roundtrip] ./good/CorrectFuncOverload_frag.bin (1045/1378)
+[roundtrip] ./good/notEqual_vec3_vert_ref.binvertex (1046/1378)
+[roundtrip] ./good/10361eaa316e189b.sample (1047/1378)
+d.name: GL_EXT_shader_texture_lod
+[roundtrip] ./good/cos_float_vert_xvary.binvertex (1048/1378)
+[roundtrip] ./good/for_nested_break_vert.binvertex (1049/1378)
+[roundtrip] ./good/any_bvec2_frag.bin (1050/1378)
+[roundtrip] ./good/4m_frag.bin (1051/1378)
+[roundtrip] ./good/float_empty_inout_float_empty_frag.bin (1052/1378)
+[roundtrip] ./good/not_bvec3_vert.binvertex (1053/1378)
+[roundtrip] ./good/not_bvec2_vert.binvertex (1054/1378)
+[roundtrip] ./good/webgl_function.binvertex (1055/1378)
+[roundtrip] ./good/float_empty_inout_float_empty_vert.binvertex (1056/1378)
+[roundtrip] ./good/const_mat4_copy_vert.binvertex (1057/1378)
+[roundtrip] ./good/empty_uniform_array_float_frag.bin (1058/1378)
+[roundtrip] ./good/dataType8_frag.binvertex (1059/1378)
+[roundtrip] ./good/bool_empty_inout_bool_array_vert.binvertex (1060/1378)
+[roundtrip] ./good/exp_float_vert_xvaryneg.binvertex (1061/1378)
+[roundtrip] ./good/acos_float_vert_xvary.binvertex (1062/1378)
+[roundtrip] ./good/postfixincrement_frag.bin (1063/1378)
+[roundtrip] ./good/808a059de15460a5.sample (1064/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/lessThan_vec3_frag_ref.bin (1065/1378)
+[roundtrip] ./good/vec3_yz_x_1vec2_1float_frag.bin (1066/1378)
+[roundtrip] ./good/equal_vec2_frag_ref.bin (1067/1378)
+[roundtrip] ./good/min_vec2_frag_xvary_yconsthalf_ref.bin (1068/1378)
+[roundtrip] ./good/pow_vec2_vert_xvary_yconsthalf_ref.binvertex (1069/1378)
+[roundtrip] ./good/ceil_float_frag_xvary.bin (1070/1378)
+[roundtrip] ./good/bvec4_empty_out_bvec4_array_frag.bin (1071/1378)
+[roundtrip] ./good/vec4_bar_g_1vec3_1float_vert.binvertex (1072/1378)
+[roundtrip] ./good/mat4_empty_out_mat4_array_frag.bin (1073/1378)
+[roundtrip] ./good/3893f011701db474.sample (1074/1378)
+[roundtrip] ./good/notEqual_bvec2_frag_ref.bin (1075/1378)
+[roundtrip] ./good/notEqual_vec2_vert_ref.binvertex (1076/1378)
+[roundtrip] ./good/exp_vec2_frag_xvaryneg.bin (1077/1378)
+[roundtrip] ./good/sin_vec2_vert_xvary.binvertex (1078/1378)
+[roundtrip] ./good/6e25b566c31a0b71.sample (1079/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/exp_vec3_vert_xvaryneg.binvertex (1080/1378)
+[roundtrip] ./good/67d8abe5cf054266.sample (1081/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/discard_cond_frag_ref.bin (1082/1378)
+[roundtrip] ./good/log_vec2_vert_xvary_ref.binvertex (1083/1378)
+[roundtrip] ./good/dot_vec3_vert_xvaryythird_ref.binvertex (1084/1378)
+[roundtrip] ./good/c65656b321be5314.sample (1085/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/bool_empty_empty_bool_empty_vert.binvertex (1086/1378)
+[roundtrip] ./good/reflect_vec2_frag_ivarynconst_ref.bin (1087/1378)
+[roundtrip] ./good/5cec1710d6b73753.sample (1088/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/equal_bvec2_frag_ref.bin (1089/1378)
+[roundtrip] ./good/equal_bvec3_vert.binvertex (1090/1378)
+[roundtrip] ./good/max_float_vert_xvary_yconsthalf_ref.binvertex (1091/1378)
+[roundtrip] ./good/clamp_vec3_vert_xvary_yconstquarter_ref.binvertex (1092/1378)
+[roundtrip] ./good/refract_vec2_frag_ivarynconst_ref.bin (1093/1378)
+[roundtrip] ./good/mat4_copy_frag.bin (1094/1378)
+[roundtrip] ./good/matrixMultComp_mat2_vert_ref.binvertex (1095/1378)
+[roundtrip] ./good/atan_vec2_frag_xvaryyvary_ref.bin (1096/1378)
+[roundtrip] ./good/lighting_diffuse.bin (1097/1378)
+[roundtrip] ./good/fract_vec3_frag_xvary.bin (1098/1378)
+[roundtrip] ./good/fragmentShader.bin (1099/1378)
+[roundtrip] ./good/mat2_vert.binvertex (1100/1378)
+[roundtrip] ./good/greaterThan_vec2_vert.binvertex (1101/1378)
+[roundtrip] ./good/vec3_xz_y_1vec2_1float_frag.bin (1102/1378)
+[roundtrip] ./good/radians_float_frag_xvary.bin (1103/1378)
+[roundtrip] ./good/68955aacdc88924c.sample (1104/1378)
+[roundtrip] ./good/extension6_V100_frag.binvertex (1105/1378)
+[roundtrip] ./good/not_bvec3_frag_ref.bin (1106/1378)
+[roundtrip] ./good/333660822c03b19c.sample (1107/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/mat4_empty_inout_mat4_empty_vert.binvertex (1108/1378)
+[roundtrip] ./good/vec3_rb_g_1vec2_1float_frag.bin (1109/1378)
+[roundtrip] ./good/not_bvec2_frag_ref.bin (1110/1378)
+[roundtrip] ./good/vec3_xz_y_1vec2_1float_vert.binvertex (1111/1378)
+[roundtrip] ./good/abs_vec2_frag_xvary_ref.bin (1112/1378)
+[roundtrip] ./good/struct_float_frag.bin (1113/1378)
+[roundtrip] ./good/asin_vec3_frag_xvary_ref.bin (1114/1378)
+[roundtrip] ./good/prefixdecrement_frag.bin (1115/1378)
+[roundtrip] ./good/lessThanEqual_ivec2_vert_ref.binvertex (1116/1378)
+[roundtrip] ./good/vec4_xy_zw_2vec2_vert.binvertex (1117/1378)
+[roundtrip] ./good/nestedstructcomb_various_frag.bin (1118/1378)
+[roundtrip] ./good/pow_vec3_vert_xconst2_yvary.binvertex (1119/1378)
+[roundtrip] ./good/inversesqrt_vec2_frag_xvary_ref.bin (1120/1378)
+[roundtrip] ./good/all_bvec2_vert.binvertex (1121/1378)
+[roundtrip] ./good/selection_frag.bin (1122/1378)
+[roundtrip] ./good/vec4_pqst_1vec4_vert.binvertex (1123/1378)
+[roundtrip] ./good/all_bvec3_vert.binvertex (1124/1378)
+[roundtrip] ./good/dot_vec3_frag_xvaryythird.bin (1125/1378)
+[roundtrip] ./good/length_vec2_vert_xvary_ref.binvertex (1126/1378)
+[roundtrip] ./good/vec3_rg_b_1vec2_1float_frag.bin (1127/1378)
+[roundtrip] ./good/_webgl_struct.binvertex (1128/1378)
+[roundtrip] ./good/abs_vec3_frag_xvary_ref.bin (1129/1378)
+[roundtrip] ./good/min_vec3_frag_xvary_yconsthalf.bin (1130/1378)
+[roundtrip] ./good/vec3_yz_x_1vec2_1float_vert.binvertex (1131/1378)
+[roundtrip] ./good/mat2_4float_vert.binvertex (1132/1378)
+[roundtrip] ./good/webgl_variable.bin (1133/1378)
+[roundtrip] ./good/vec4_tsqp_1vec4_vert.binvertex (1134/1378)
+[roundtrip] ./good/radians_vec3_vert_xvary.binvertex (1135/1378)
+[roundtrip] ./good/vertexOnly2_frag.binvertex (1136/1378)
+[roundtrip] ./good/mix_vec2_frag_xvary_yconsthalf_aconsthalf.bin (1137/1378)
+[roundtrip] ./good/int_empty_out_int_empty_vert.binvertex (1138/1378)
+[roundtrip] ./good/2fd9cf0251f4af8e.sample (1139/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/CorrectParse2_vert.binvertex (1140/1378)
+[roundtrip] ./good/bool_empty_empty_bool_array_frag.bin (1141/1378)
+[roundtrip] ./good/log2_vec2_vert_xvary01.binvertex (1142/1378)
+[roundtrip] ./good/pow_float_frag_xconst2_yvary.bin (1143/1378)
+[roundtrip] ./good/vec3_vec2_float_vert.binvertex (1144/1378)
+[roundtrip] ./good/vec3_bgr_1vec3_vert.binvertex (1145/1378)
+[roundtrip] ./good/matrix_V100_frag.binvertex (1146/1378)
+[roundtrip] ./good/dFdy_frag.binvertex (1147/1378)
+[roundtrip] ./good/distance_float_vert_xvaryyhalf.binvertex (1148/1378)
+[roundtrip] ./good/vec4_yxwz_1vec4_frag.bin (1149/1378)
+[roundtrip] ./good/normalize_vec3_frag_xvary_ref.bin (1150/1378)
+[roundtrip] ./good/mat2_2vec2_frag.bin (1151/1378)
+[roundtrip] ./good/inversesqrt_float_vert_xvary.binvertex (1152/1378)
+[roundtrip] ./good/sin_vec3_vert_xvary_ref.binvertex (1153/1378)
+[roundtrip] ./good/extension7_V100_frag.binvertex (1154/1378)
+[roundtrip] ./good/asin_vec2_frag_xvary_ref.bin (1155/1378)
+[roundtrip] ./good/log2_vec3_vert_xvary01_ref.binvertex (1156/1378)
+[roundtrip] ./good/tan_float_vert_xvary_ref.binvertex (1157/1378)
+[roundtrip] ./good/point_sprites.binvertex (1158/1378)
+[roundtrip] ./good/const_mat3_copy_vert.binvertex (1159/1378)
+[roundtrip] ./good/floor_float_vert_xvary.binvertex (1160/1378)
+[roundtrip] ./good/greaterThanEqual_ivec2_vert.binvertex (1161/1378)
+[roundtrip] ./good/mat4_empty_empty_mat4_array_frag.bin (1162/1378)
+[roundtrip] ./good/clamp_vec3_vert_xvary_yconstquarter.binvertex (1163/1378)
+[roundtrip] ./good/CorrectParse1_frag.bin (1164/1378)
+[roundtrip] ./good/vec4_zx_wy_2vec2_frag.bin (1165/1378)
+[roundtrip] ./good/fract_vec3_vert_xvary.binvertex (1166/1378)
+[roundtrip] ./good/version2_V100_frag.bin (1167/1378)
+[roundtrip] ./good/vec3_gb_r_1vec2_1float_frag.bin (1168/1378)
+[roundtrip] ./good/step_vec2_vert_xvary_edgeconsthalf_ref.binvertex (1169/1378)
+[roundtrip] ./good/atan_float_vert_xvaryyvary.binvertex (1170/1378)
+[roundtrip] ./good/acos_vec3_frag_xvary.bin (1171/1378)
+[roundtrip] ./good/preprocess10_frag.bin (1172/1378)
+[roundtrip] ./good/wood.binvertex (1173/1378)
+[roundtrip] ./good/smoothstep_vec3_frag_xvary_edgeconstquarter.bin (1174/1378)
+[roundtrip] ./good/brick_mat2.binvertex (1175/1378)
+[roundtrip] ./good/faceforward_float_vert_nvaryiconst_ref.binvertex (1176/1378)
+[roundtrip] ./good/bvec4_empty_inout_bvec4_array_vert.binvertex (1177/1378)
+[roundtrip] ./good/vec4_empty_inout_vec4_array_vert.binvertex (1178/1378)
+[roundtrip] ./good/for_break_frag.bin (1179/1378)
+[roundtrip] ./good/any_bvec3_frag.bin (1180/1378)
+[roundtrip] ./good/log_float_vert_xvary01_ref.binvertex (1181/1378)
+[roundtrip] ./good/struct_mat4_vert.binvertex (1182/1378)
+[roundtrip] ./good/log2_float_frag_xvary01.bin (1183/1378)
+[roundtrip] ./good/exp_float_frag_xvaryneg_ref.bin (1184/1378)
+[roundtrip] ./good/pow_vec2_frag_xconst2_yvary_ref.bin (1185/1378)
+[roundtrip] ./good/extension3_V100_frag.bin (1186/1378)
+[roundtrip] ./good/CorrectExtension1_V100_frag.binvertex (1187/1378)
+[roundtrip] ./good/asin_vec3_vert_xvary.binvertex (1188/1378)
+[roundtrip] ./good/structnest_vec2_vert.binvertex (1189/1378)
+[roundtrip] ./good/vec3_stp_1vec3_frag.bin (1190/1378)
+[roundtrip] ./good/buffer_objects_pointSize.bin (1191/1378)
+[roundtrip] ./good/pow_vec2_vert_xconsthalf_yvary.binvertex (1192/1378)
+[roundtrip] ./good/vec4_stpq_1vec4_vert.binvertex (1193/1378)
+[roundtrip] ./good/mat3arrayindirect0_vert.binvertex (1194/1378)
+[roundtrip] ./good/fract_float_vert_xvary.binvertex (1195/1378)
+[roundtrip] ./good/vec4_wx_zy_2vec2_vert.binvertex (1196/1378)
+[roundtrip] ./good/mat3_copy_frag.bin (1197/1378)
+[roundtrip] ./good/postfixdecrement_vert.binvertex (1198/1378)
+[roundtrip] ./good/sign_vec3_vert_xvary_ref.binvertex (1199/1378)
+[roundtrip] ./good/vec3array_frag.bin (1200/1378)
+[roundtrip] ./good/089999293668cfbc.sample (1201/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/atan_float_vert_xvary.binvertex (1202/1378)
+[roundtrip] ./good/01d6ec78409a3167.sample (1203/1378)
+[roundtrip] ./good/greaterThanEqual_ivec2_vert_ref.binvertex (1204/1378)
+[roundtrip] ./good/refract_float_frag_ivarynconst.bin (1205/1378)
+[roundtrip] ./good/structcopy_bool_vert.binvertex (1206/1378)
+[roundtrip] ./good/exp_vec3_frag_xvaryneg.bin (1207/1378)
+[roundtrip] ./good/void_empty_empty_void_empty_frag.bin (1208/1378)
+[roundtrip] ./good/599347c3d9e19584.sample (1209/1378)
+[roundtrip] ./good/2f_vert.binvertex (1210/1378)
+[roundtrip] ./good/log2_float_frag_xvary_ref.bin (1211/1378)
+[roundtrip] ./good/vec3_rb_g_1vec2_1float_vert.binvertex (1212/1378)
+[roundtrip] ./good/notEqual_vec2_frag_ref.bin (1213/1378)
+[roundtrip] ./good/greaterThan_ivec3_vert.binvertex (1214/1378)
+[roundtrip] ./good/bvec4_empty_inout_bvec4_bigarray_frag.bin (1215/1378)
+[roundtrip] ./good/degrees_vec3_frag_xvary_ref.bin (1216/1378)
+[roundtrip] ./good/greaterThan_ivec3_frag_ref.bin (1217/1378)
+[roundtrip] ./good/step_vec3_frag_xvary_edgeconsthalf_ref.bin (1218/1378)
+[roundtrip] ./good/asin_float_vert_xvary_ref.binvertex (1219/1378)
+[roundtrip] ./good/pow_vec3_frag_xconst2_yvary.bin (1220/1378)
+[roundtrip] ./good/float_empty_inout_float_array_vert.binvertex (1221/1378)
+[roundtrip] ./good/expected.bin (1222/1378)
+[roundtrip] ./good/exp2_float_frag_xvary_ref.bin (1223/1378)
+[roundtrip] ./good/bvec4_empty_inout_bvec4_bigarray_vert.binvertex (1224/1378)
+[roundtrip] ./good/2b_frag.bin (1225/1378)
+[roundtrip] ./good/assignments_frag.bin (1226/1378)
+[roundtrip] ./good/float_empty_out_float_empty_vert.binvertex (1227/1378)
+[roundtrip] ./good/log2_vec3_frag_xvary.bin (1228/1378)
+[roundtrip] ./good/vec3_xyz_1vec3_frag.bin (1229/1378)
+[roundtrip] ./good/discard_cond_frag.bin (1230/1378)
+[roundtrip] ./good/prefixdecrement_vert.binvertex (1231/1378)
+[roundtrip] ./good/asin_vec2_vert_xvary.binvertex (1232/1378)
+[roundtrip] ./good/1i_vert.bin (1233/1378)
+[roundtrip] ./good/all_bvec2_vert_ref.binvertex (1234/1378)
+[roundtrip] ./good/empty_empty_array_float_frag.bin (1235/1378)
+[roundtrip] ./good/vec4_tsq_p_1vec3_1float_vert.binvertex (1236/1378)
+[roundtrip] ./good/vec4_empty_empty_vec4_array_frag.bin (1237/1378)
+[roundtrip] ./good/ivec4_empty_empty_ivec4_empty_vert.binvertex (1238/1378)
+[roundtrip] ./good/extension3_V100_frag.binvertex (1239/1378)
+[roundtrip] ./good/0d990eb984edaff2.sample (1240/1378)
+[roundtrip] ./good/greaterThanEqual_vec2_vert_ref.binvertex (1241/1378)
+[roundtrip] ./good/vec4_vec3_float_frag.bin (1242/1378)
+[roundtrip] ./good/lessThanEqual_vec3_frag_ref.bin (1243/1378)
+[roundtrip] ./good/ivec4_empty_out_ivec4_empty_frag.bin (1244/1378)
+[roundtrip] ./good/all_bvec3_vert_ref.binvertex (1245/1378)
+[roundtrip] ./good/greaterThanEqual_vec2_vert.binvertex (1246/1378)
+[roundtrip] ./good/greaterThan_vec3_frag_ref.bin (1247/1378)
+[roundtrip] ./good/length_float_vert_xvary.binvertex (1248/1378)
+[roundtrip] ./good/d96543bebe7e4026.sample (1249/1378)
+[roundtrip] ./good/distance_vec3_frag_xvaryyhalf.bin (1250/1378)
+[roundtrip] ./good/mat2_2vec2_vert.binvertex (1251/1378)
+[roundtrip] ./good/length_vec2_vert_xvary.binvertex (1252/1378)
+[roundtrip] ./good/vec4_zwx_y_1vec3_1float_vert.binvertex (1253/1378)
+[roundtrip] ./good/const_mat3_frag.bin (1254/1378)
+[roundtrip] ./good/pow_float_frag_xvary_yconsthalf.bin (1255/1378)
+[roundtrip] ./good/pow_vec2_vert_xvary_yconst2.binvertex (1256/1378)
+[roundtrip] ./good/pow_float_frag_xconsthalf_yvary_ref.bin (1257/1378)
+[roundtrip] ./good/faceforward_vec2_vert_nvaryiconst.binvertex (1258/1378)
+[roundtrip] ./good/fd7147337aee9ae3.sample (1259/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/logical_frag.bin (1260/1378)
+[roundtrip] ./good/array_const_mat2_vert.binvertex (1261/1378)
+[roundtrip] ./good/lessThan_ivec3_frag.bin (1262/1378)
+[roundtrip] ./good/log_vec3_frag_xvary_ref.bin (1263/1378)
+[roundtrip] ./good/ceil_vec3_vert_xvary_ref.binvertex (1264/1378)
+[roundtrip] ./good/float_empty_in_float_array_frag.bin (1265/1378)
+[roundtrip] ./good/distance_vec3_frag_xvaryyhalf_ref.bin (1266/1378)
+[roundtrip] ./good/acos_float_vert_xvary_ref.binvertex (1267/1378)
+[roundtrip] ./good/08f07e486929f97a.sample (1268/1378)
+[roundtrip] ./good/atan_vec3_vert_xvary_ref.binvertex (1269/1378)
+[roundtrip] ./good/sqrt_vec3_vert_xvary.binvertex (1270/1378)
+[roundtrip] ./good/vec3_vec4_frag.bin (1271/1378)
+[roundtrip] ./good/normalize_vec2_frag_xvary_ref.bin (1272/1378)
+[roundtrip] ./good/ceil_vec2_vert_xvary.binvertex (1273/1378)
+[roundtrip] ./good/floor_vec2_frag_xvary_ref.bin (1274/1378)
+[roundtrip] ./good/faceforward_vec3_vert_nvaryiconst.binvertex (1275/1378)
+[roundtrip] ./good/distance_vec2_vert_xvaryyhalf.binvertex (1276/1378)
+[roundtrip] ./good/mix_float_frag_xvary_yconsthalf_aconsthalf.bin (1277/1378)
+[roundtrip] ./good/mix_float_vert_xvary_yconsthalf_aconsthalf.binvertex (1278/1378)
+[roundtrip] ./good/notEqual_ivec2_vert_ref.binvertex (1279/1378)
+[roundtrip] ./good/a5c3a0055e99f8d2.sample (1280/1378)
+d.name: GL_EXT_blend_func_extended
+d.name: GL_EXT_draw_buffers
+[roundtrip] ./good/matrix_V100_frag.bin (1281/1378)
+[roundtrip] ./good/ivec4_empty_in_ivec4_array_vert.binvertex (1282/1378)
+[roundtrip] ./good/abs_float_frag_xvary.bin (1283/1378)
+[roundtrip] ./good/mix_vec3_frag_xvary_yconsthalf_aconsthalf.bin (1284/1378)
+[roundtrip] ./good/notEqual_ivec3_vert_ref.binvertex (1285/1378)
+[roundtrip] ./good/struct_vec2_frag.bin (1286/1378)
+[roundtrip] ./good/pow_vec3_frag_xconst2_yvary_ref.bin (1287/1378)
+[roundtrip] ./good/clamp_vec2_frag_xvary_yconstquarter.bin (1288/1378)
+[roundtrip] ./good/division_frag.bin (1289/1378)
+[roundtrip] ./good/vec4_empty_in_vec4_empty_vert.binvertex (1290/1378)
+[roundtrip] ./good/acos_vec2_vert_xvary_ref.binvertex (1291/1378)
+[roundtrip] ./good/vec4_qsp_t_1vec3_1float_vert.binvertex (1292/1378)
+[roundtrip] ./good/bvec4_empty_inout_bvec4_array_frag.bin (1293/1378)
+[roundtrip] ./good/vec3single_vert.binvertex (1294/1378)
+[roundtrip] ./good/sin_vec3_frag_xvary_ref.bin (1295/1378)
+[roundtrip] ./good/abs_vec3_vert_xvary.binvertex (1296/1378)
+[roundtrip] ./good/mat4_empty_out_mat4_array_vert.binvertex (1297/1378)
+[roundtrip] ./good/ceil_float_vert_xvary_ref.binvertex (1298/1378)
+[roundtrip] ./good/max_vec2_frag_xvary_yconsthalf_ref.bin (1299/1378)
+[roundtrip] ./good/inversesqrt_vec3_vert_xvary_ref.binvertex (1300/1378)
+[roundtrip] ./good/structnest_mat3_frag.bin (1301/1378)
+[roundtrip] ./good/log2_vec3_vert_xvary01.binvertex (1302/1378)
+[roundtrip] ./good/any_bvec3_frag_ref.bin (1303/1378)
+[roundtrip] ./good/float_empty_in_float_array_vert.binvertex (1304/1378)
+[roundtrip] ./good/3a7531a21a9334fc.sample (1305/1378)
+d.name: GL_EXT_YUV_target
+[roundtrip] ./good/ivec4_empty_inout_ivec4_bigarray_frag.bin (1306/1378)
+[roundtrip] ./good/degrees_vec2_frag_xvary.bin (1307/1378)
+[roundtrip] ./good/exp_float_vert_xvary.binvertex (1308/1378)
+[roundtrip] ./good/4b_firstthree_vert.bin (1309/1378)
+[roundtrip] ./good/36ab6df8aa09e123.sample (1310/1378)
+[roundtrip] ./good/pow_vec3_frag_xconsthalf_yvary.bin (1311/1378)
+[roundtrip] ./good/tan_vec3_frag_xvary.bin (1312/1378)
+[roundtrip] ./good/vec4_br_ag_2vec2_frag.bin (1313/1378)
+[roundtrip] ./good/equal_bvec3_frag.bin (1314/1378)
+[roundtrip] ./good/max_vec2_vert_xvary_yconsthalf.binvertex (1315/1378)
+[roundtrip] ./good/vec4_stp_q_1vec3_1float_frag.bin (1316/1378)
+[roundtrip] ./good/atan_vec3_frag_xvaryyvary.bin (1317/1378)
+[roundtrip] ./good/atan_vec3_frag_xvary.bin (1318/1378)
+[roundtrip] ./good/pow_vec3_frag_xvary_yconst2.bin (1319/1378)
+[roundtrip] ./good/exp2_float_vert_xvaryneg.binvertex (1320/1378)
+[roundtrip] ./good/mat4_empty_out_mat4_empty_vert.binvertex (1321/1378)
+[roundtrip] ./good/vec3_br_g_1vec2_1float_frag.bin (1322/1378)
+[roundtrip] ./good/d239066a7f5104b6.sample (1323/1378)
+d.name: GL_EXT_blend_func_extended
+[roundtrip] ./good/radians_vec3_frag_xvary_ref.bin (1324/1378)
+[roundtrip] ./good/vec4_empty_inout_vec4_bigarray_vert.binvertex (1325/1378)
+[roundtrip] ./good/refract_float_frag_ivarynconst_ref.bin (1326/1378)
+[roundtrip] ./good/initfunc_empty_array_float_frag.bin (1327/1378)
+[roundtrip] ./good/ceil_vec3_frag_xvary_ref.bin (1328/1378)
+[roundtrip] ./good/mat3_float_vert.binvertex (1329/1378)
+[roundtrip] ./good/vec2_vec3_frag.bin (1330/1378)
+[roundtrip] ./good/sqrt_vec3_frag_xvary.bin (1331/1378)
+[roundtrip] ./good/smoothstep_vec3_vert_xvary_edgeconstquarter.binvertex (1332/1378)
+[roundtrip] ./good/CorrectConstFolding2_vert.binvertex (1333/1378)
+[roundtrip] ./good/f89ca53e99683034.sample (1334/1378)
+[roundtrip] ./good/ivec4_empty_inout_ivec4_empty_vert.binvertex (1335/1378)
+[roundtrip] ./good/mod_vec2_vert_xvary_yconst1_ref.binvertex (1336/1378)
+[roundtrip] ./good/mod_vec3_frag_xvary_yconst1_ref.bin (1337/1378)
+[roundtrip] ./good/mat4_4vec4_frag.bin (1338/1378)
+[roundtrip] ./good/mix_vec2_vert_xvary_yconsthalf_aconsthalf.binvertex (1339/1378)
+[roundtrip] ./good/int_empty_out_int_empty_frag.bin (1340/1378)
+[roundtrip] ./good/vec4_wxzy_1vec4_frag.bin (1341/1378)
+[roundtrip] ./good/not_bvec3_vert_ref.binvertex (1342/1378)
+[roundtrip] ./good/floor_float_frag_xvary_ref.bin (1343/1378)
+[roundtrip] ./good/log2_vec2_vert_xvary01_ref.binvertex (1344/1378)
+[roundtrip] ./good/vec3_st_p_1vec2_1float_frag.bin (1345/1378)
+[roundtrip] ./good/faceforward_vec2_vert_nvaryiconst_ref.binvertex (1346/1378)
+[roundtrip] ./good/abs_vec2_vert_xvary_ref.binvertex (1347/1378)
+[roundtrip] ./good/vec4_empty_out_vec4_array_frag.bin (1348/1378)
+[roundtrip] ./good/ceil_float_frag_xvary_ref.bin (1349/1378)
+[roundtrip] ./good/prefixincrement_frag.bin (1350/1378)
+[roundtrip] ./good/vec4_st_pq_2vec2_frag.bin (1351/1378)
+[roundtrip] ./good/equal_vec2_frag.bin (1352/1378)
+[roundtrip] ./good/gl_MaxVertexAttribs_vert.binvertex (1353/1378)
+[roundtrip] ./good/vec3_vec2_float_frag.bin (1354/1378)
+[roundtrip] ./good/nested_if_else_frag.bin (1355/1378)
+[roundtrip] ./good/vec4_qs_pt_2vec2_vert.binvertex (1356/1378)
+[roundtrip] ./good/default_textured.binvertex (1357/1378)
+[roundtrip] ./good/_webgl_variable.binvertex (1358/1378)
+[roundtrip] ./good/fboShader0.binvertex (1359/1378)
+[roundtrip] ./good/ceil_vec2_vert_xvary_ref.binvertex (1360/1378)
+[roundtrip] ./good/lessThanEqual_vec2_vert.binvertex (1361/1378)
+[roundtrip] ./good/structnest_vec2_frag.bin (1362/1378)
+[roundtrip] ./good/1b_vert.bin (1363/1378)
+[roundtrip] ./good/mat3arrayindirect0_frag.bin (1364/1378)
+[roundtrip] ./good/b028b95668e537f4.sample (1365/1378)
+d.name: GL_OES_standard_derivatives
+[roundtrip] ./good/faceforward_vec2_frag_nvaryiconst_ref.bin (1366/1378)
+[roundtrip] ./good/refract_vec3_frag_ivarynconst_ref.bin (1367/1378)
+[roundtrip] ./good/exp2_vec3_frag_xvaryneg.bin (1368/1378)
+[roundtrip] ./good/float_empty_empty_float_empty_frag.bin (1369/1378)
+[roundtrip] ./good/copy_texture.bin (1370/1378)
+[roundtrip] ./good/vec3arrayindirect_vert.binvertex (1371/1378)
+[roundtrip] ./good/asin_vec3_frag_xvary.bin (1372/1378)
+[roundtrip] ./good/fc390633eb92225c.sample (1373/1378)
+d.name: GL_EXT_conservative_depth:
+[roundtrip] ./good/relational_vert.binvertex (1374/1378)
+[roundtrip] ./good/vec4_r_g_b_a_4float_vert.binvertex (1375/1378)
+[roundtrip] ./good/pow_float_frag_xconsthalf_yvary.bin (1376/1378)
+[roundtrip] ./good/const_mat2_vert.binvertex (1377/1378)
+✔ Roundtrip tests passed
