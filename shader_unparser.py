@@ -303,7 +303,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
         elif isinstance(d, VersionDirective):
             out += f"#version {d.version}\n"
         elif isinstance(d, ExtensionDirective):
-            print("d.name: "+str(d.name))
+            # print("d.name: "+str(d.name))
             if ":" in d.name: # Check for potential errors here. This is a parsing artifact due to the way we process these...
                 d.name = d.name.replace(":", "")
             out += f"#extension {d.name} : {d.behavior}\n"

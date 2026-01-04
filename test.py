@@ -219,7 +219,7 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         print(f"[roundtrip] {fn} ({i}/{len(files)})")
         if i and i % PRINT_COUNT == 0:
             print("Roundtrip test failed. Stats:")
-            print("Total: "+str(len(files)))
+            print("Total: "+str(i))
             print("Failed: "+str(fail))
             print("Ignored: "+str(ignored))
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
