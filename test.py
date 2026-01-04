@@ -287,6 +287,8 @@ def corpus_check(path: str):
                 print("=" * 60)
                 print(f"FAIL: {fn}")
                 print(msg)
+            # Delete the files...
+            os.system("rm "+str(fn))
         else:
             print("SUCCESS!")
 
