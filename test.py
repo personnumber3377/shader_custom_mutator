@@ -267,7 +267,7 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         rebuilt = header + out.encode("utf-8") + b"\x00" # Reconstruct the shit...
         '''
 
-        save_file("./crashing.bin", rebuilt)
+        # save_file("./crashing.bin", rebuilt)
 
         ok2, msg2 = check_file_bytes(rebuilt)
 

@@ -156,7 +156,7 @@ def unparse_struct_specifier(struct_type: StructType) -> str:
 
 def unparse_stmt(s: Stmt, indent: int = 0) -> str:
     pad = "  " * indent
-    print("s: "+str(s))
+
     if isinstance(s, EmptyStmt):
         return pad + ";\n"
 
@@ -337,7 +337,6 @@ def unparse_tu(tu: TranslationUnit) -> str:
         if isinstance(item, StructDecl):
             # assert False
             qualifiers = []
-            print("item: "+str(item))
             if item.declarators:
                 qualifiers = item.declarators[0].qualifiers
 
