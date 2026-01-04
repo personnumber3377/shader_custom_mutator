@@ -215,9 +215,11 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
         # print("passing this here: "+str(data))
         ok, msg = check_file_bytes(data)
-        if not ignore_invalid:
-            if not ok:
+        if not ok:
+            if not ignore_invalid:
                 raise RuntimeError(f"Initial shader invalid:\n{msg}")
+            else:
+                return
 
         src = strip_header_and_null(data).decode("utf-8")
         print("Passing this source code: "+str(src))
