@@ -208,7 +208,7 @@ def run_checker(shader_bytes: bytes, shader_type: int, spec: int, output: int, o
 
     try:
         cmd = ["./angle_shader_translator", spec_flag, output_flag, fname]
-        print("Running this command: "+str(" ".join(cmd)))
+        # print("Running this command: "+str(" ".join(cmd)))
         proc = subprocess.run(
             cmd,
             stdout=subprocess.PIPE,

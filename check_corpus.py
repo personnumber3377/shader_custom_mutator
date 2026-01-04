@@ -9,12 +9,20 @@ from test_helpers import *
 
 # ---- Main driver ----
 
+PRINT_GAP = 100
+
 def check_directory(dirpath: str):
     total = 0
     failures = 0
     printed = 0
+    i = 0
 
     for name in sorted(os.listdir(dirpath)):
+        if i % PRINT_GAP == 0 and i:
+            print(f"Total checked : {total}")
+            print(f"Failures      : {failures}")
+            print(f"Success       : {total - failures}")
+        i += 1
         path = os.path.join(dirpath, name)
         if not os.path.isfile(path):
             continue
@@ -34,10 +42,10 @@ def check_directory(dirpath: str):
                 failures += 1
                 if printed < PRINT_LIMIT:
                     printed += 1
-                    print("=" * 60)
-                    print(f"FAIL: {name}")
-                    print(f"  type={hex(shader_type)} spec={spec} output={output}")
-                    print(msg)
+                    # print("=" * 60)
+                    # print(f"FAIL: {name}")
+                    # print(f"  type={hex(shader_type)} spec={spec} output={output}")
+                    # print(msg)
                     # os.system("cp ")
 
         except Exception as e:
