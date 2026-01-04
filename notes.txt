@@ -72,3 +72,190 @@ oof@oof-h8-1440eo:~/shader_custom_mutator$
 
 - When mutating function arguments, make those mutations global everywhere such that the calls to that function actually hold...
 
+
+[ RUN      ] GeometryShaderTest.LayeredFramebufferPreRenderDoubleClear2DArrayColor/ES3_1_Vulkan_EmulatedPrerotation270
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] GeometryShaderTest.LayeredFramebufferPreRenderDoubleClear2DArrayColor/ES3_1_Vulkan_EmulatedPrerotation270 (362 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_OpenGL
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_OpenGL (0 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000dd6a000 (type = Command Buffer(6))
+                            Object: 0xb24eb00000b24eb (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan (321 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader
+../../third_party/angle/src/tests/gl_tests/GeometryShaderTest.cpp:1487: Skipped
+Test skipped: !IsGLExtensionEnabled("GL_EXT_geometry_shader").
+
+[  SKIPPED ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader (236 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000fd86000 (type = Command Buffer(6))
+                            Object: 0xb253100000b2531 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (292 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/gl_tests/GeometryShaderTest.cpp:1487: Skipped
+Test skipped: !IsGLExtensionEnabled("GL_EXT_geometry_shader").
+
+[  SKIPPED ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (229 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation90
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000dd6a000 (type = Command Buffer(6))
+                            Object: 0xb257700000b2577 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation90 (294 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation180
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000fd86000 (type = Command Buffer(6))
+                            Object: 0xb25a500000b25a5 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation180 (290 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation270
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000dd6a000 (type = Command Buffer(6))
+                            Object: 0xb25d300000b25d3 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation270 (293 ms)
+[ RUN      ] GeometryShaderTest.LayeredFramebufferMidRenderClear3DColor/ES3_1_OpenGL
+tgsi_to_nir: unhandled TGSI property 0 = 4
+
+Signal 11 [Segmentation fault]:
+Segmentation fault (core dumped)
+oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[       OK ] TransformFeedbackTest.EndThenBindNewBufferAndRestart/ES3_Vulkan_NoSupportsTransformFeedbackExtension_NoSupportsSPIRV14 (78 ms)
+[ RUN      ] TransformFeedbackTest.DrawWithoutTransformFeedbackThenWith/ES3_OpenGL
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 1.40129846e-45
+  kAttribInitData[index] * 2
+    Which is: 2
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 1.00893489e-43
+  kAttribInitData[index] * 2
+    Which is: 4
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 3.32057244e-16
+  kAttribInitData[index] * 2
+    Which is: 6
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 4.30198629e-42
+  kAttribInitData[index] * 2
+    Which is: 8
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+nouveau: kernel rejected pushbuf: No such device
+nouveau: ch6: krec 0 pushes 1 bufs 3 relocs 0
+nouveau: ch6: buf 00000000 0000000c 00000004 00000004 00000000 0x7f2ba2613000 0xe00000 0x80000
+nouveau: ch6: buf 00000001 00000006 00000004 00000000 00000004 0x7f2bb9fcf000 0x215000 0x1000
+nouveau: ch6: buf 00000002 00000028 00000004 00000004 00000004 (nil) 0x251000 0x1000
+nouveau: ch6: psh 00000000 0000000708 000000071c
+nouveau:  0x200406c0
+nouveau:  0x00000000
+nouveau:  0x00215000
+nouveau:  0x000018ed
+nouveau:  0x1000f010
+angle_end2end_tests: ../nouveau/pushbuf.c:730: nouveau_pushbuf_data: Assertion `kref' failed.
+
+Signal 6 [Aborted]:
+No results file specified.
+Backtrace:
+angle::PrintStackBacktrace() at crash_handler_posix.cpp:500
+angle::Handler(int) at crash_handler_posix.cpp:661
+__restore_rt at libc_sigaction.c:?
+__pthread_kill_implementation at pthread_kill.c:44
+__GI_raise at raise.c:27
+__GI_abort at abort.c:81 (discriminator 21)
+_nl_load_domain at loadmsgcat.c:1177
+__GI___assert_fail at :?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_space at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+__driDriverGetExtensions_d3d12 at ??:?
+__driDriverGetExtensions_d3d12 at ??:?
+__driDriverGetExtensions_d3d12 at ??:?
+glAreTexturesResidentEXT at ??:?
+glIsTextureEXT at ??:?
+rx::DisplayGLX::terminate() at DisplayGLX.cpp:343
+egl::Display::terminate(egl::Thread*, egl::Display::TerminateReason) at Display.cpp:1318
+egl::Terminate(egl::Thread*, egl::Display*) at egl_stubs.cpp:?
+EGL_Terminate at entry_points_egl_autogen.cpp:810
+EGLWindow::destroyGL() at EGLWindow.cpp:678
+ANGLETestBase::ANGLETestTearDown() at ANGLETest.cpp:?
+testing::TestInfo::Run() at gtest.cc:2895
+testing::TestSuite::Run() at gtest.cc:3072
+testing::internal::UnitTestImpl::RunAllTests() at gtest.cc:6062
+testing::UnitTest::Run() at gtest.cc:5601
+angle::TestSuite::run() at gtest.h:2334
+main at angle_end2end_tests_main.cpp:80
+__libc_start_call_main at libc_start_call_main.h:58
+call_init at libc-start.c:128
+_start at ??:?
