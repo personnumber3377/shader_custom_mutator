@@ -113,6 +113,19 @@ class Parser:
         # Now must see 'struct'
         return j < len(self.toks) and self.toks[j].kind == "KW" and self.toks[j].value == "struct"
 
+    # This function basically just skips over the layout things. We do not currently support them in the thing...
+    def parse_layout_qualifier(self):
+        # assumes current token is 'layout'
+        self.advance()              # 'layout'
+        self.expect("(")
+        depth = 1
+        while depth > 0:
+            t = self.advance()
+            if t.kind == "(":
+                depth += 1
+            elif t.kind == ")":
+                depth -= 1
+
     def parse_expr(self, min_prec: int = 0) -> Expr:
         left = self.parse_prefix()
 
