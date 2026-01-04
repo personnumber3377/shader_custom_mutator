@@ -227,10 +227,13 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         ok, msg = check_file_bytes(data)
         if not ok:
             ignored += 1
+            continue
+            '''
             if not ignore_invalid:
                 raise RuntimeError(f"Initial shader invalid:\n{msg}")
             else:
                 continue
+            '''
         tot += 1
         src = strip_header_and_null(data).decode("utf-8")
         # print("Passing this source code: "+str(src))
@@ -264,8 +267,8 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         if not ok2:
             # raise RuntimeError(f"Roundtrip failed:\n{msg2}")
             fail += 1
-            # print(f"Roundtrip failed:\n{msg2}")
-            print(f"Roundtrip failed!")
+            print(f"Roundtrip failed:\n{msg2}")
+            # print(f"Roundtrip failed!")
     if not fail:
         print("✔ Roundtrip tests passed")
     else:

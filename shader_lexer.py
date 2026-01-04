@@ -6,7 +6,7 @@ import re
 
 
 KEYWORDS = {
-    "struct", "uniform", "const", "in", "out", "inout", "varying", # This did not have varying originally...
+    "struct", "uniform", "const", "in", "out", "inout", "varying", "flat", # This did not have varying originally...
     "if", "else", "for", "while", "do",
     "break", "continue", "return", "discard",
     "true", "false",
