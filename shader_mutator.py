@@ -775,7 +775,7 @@ def gen_builtin_call(want, scope, env, rng, depth):
 
         # normal type
         args.append(gen_expr(TypeInfo(base), scope, env, rng, depth + 1)) # Originally had "gen_expr(Type(concrete), ...)"
-    dlog("Generated this thing here: "+str(fname)+"("+str(",".join([str(x) for x in args]))+")")
+    # dlog("Generated this thing here: "+str(fname)+"("+str(",".join([str(x) for x in args]))+")")
     # exit(0)
     return CallExpr(Identifier(fname), args)
 
