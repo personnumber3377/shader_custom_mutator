@@ -1,0 +1,23 @@
+
+source_set("mutator_helper") {
+  # testonly = !is_component_build
+  sources = ["src/compiler/fuzz/python_custom_mutator.cc"]
+  # configs += [":fuzzer_config"]
+  # deps = [
+  #   "../../:pdfium_public_headers",
+  #   "../../core/fxcrt",
+  #   "../../fpdfsdk",
+  # ]
+  include_dirs = [
+    "/usr/include/python3",
+    "/usr/include/x86_64-linux-gnu/python3",
+    "//third_party/pdfium",
+    "../../"
+  ]
+  # Also add these too
+  ldflags = [ "-L/usr/lib/x86_64-linux-gnu" ]
+  libs = [ "python3", "pthread", "dl", "util", "m" ]
+
+}
+
+
