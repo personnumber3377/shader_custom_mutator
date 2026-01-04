@@ -219,7 +219,7 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
             if not ignore_invalid:
                 raise RuntimeError(f"Initial shader invalid:\n{msg}")
             else:
-                return
+                continue
 
         src = strip_header_and_null(data).decode("utf-8")
         print("Passing this source code: "+str(src))
