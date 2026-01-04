@@ -24,6 +24,7 @@ from test_helpers import (
     HEADER_SIZE,
     PRINT_LIMIT,
     strip_header_and_null,
+    PRINT_COUNT,
 )
 
 # -----------------------------
@@ -216,6 +217,11 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
 
     for i, fn in enumerate(files):
         print(f"[roundtrip] {fn} ({i}/{len(files)})")
+        if i and i % PRINT_COUNT == 0:
+            print("Roundtrip test failed. Stats:")
+            print("Total: "+str(len(files)))
+            print("Failed: "+str(fail))
+            print("Ignored: "+str(ignored))
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
         # print("passing this here: "+str(data))
         ok, msg = check_file_bytes(data)
@@ -227,7 +233,7 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
                 continue
         tot += 1
         src = strip_header_and_null(data).decode("utf-8")
-        print("Passing this source code: "+str(src))
+        # print("Passing this source code: "+str(src))
         try:
             tu = shader_parser.parse_to_tree(src)
             out = shader_unparser.unparse_tu(tu)
@@ -236,7 +242,7 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
                 continue
             else:
                 raise e
-        print("Got this source code back: "+str(out))
+        # print("Got this source code back: "+str(out))
 
         rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
         
@@ -258,7 +264,8 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         if not ok2:
             # raise RuntimeError(f"Roundtrip failed:\n{msg2}")
             fail += 1
-            print(f"Roundtrip failed:\n{msg2}")
+            # print(f"Roundtrip failed:\n{msg2}")
+            print(f"Roundtrip failed!")
     if not fail:
         print("✔ Roundtrip tests passed")
     else:

@@ -334,8 +334,8 @@ class Parser:
 
     def parse_struct_member(self) -> list[StructField]:
         # NEW: skip optional layout qualifiers
-        print("self.peek().kind: "+str(self.peek().kind))
-        print("self.peek().value: "+str(self.peek().value))
+        # print("self.peek().kind: "+str(self.peek().kind))
+        # print("self.peek().value: "+str(self.peek().value))
         while self.peek().kind == "KW" and self.peek().value == "layout":
             self.parse_layout_qualifier()
 
