@@ -287,6 +287,8 @@ def corpus_check(path: str):
                 print("=" * 60)
                 print(f"FAIL: {fn}")
                 print(msg)
+        else:
+            print("SUCCESS!")
 
     print("\n=== SUMMARY ===")
     print(f"Total checked: {total}")
