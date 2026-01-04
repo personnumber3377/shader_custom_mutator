@@ -331,19 +331,6 @@ class Parser:
         if DEBUG:
             print("Got error here: "+str(current_input[t.pos:t.pos+100])) # Print for debugging the thing...
         raise ParseError(f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
-    '''
-    def parse_struct_member(self) -> StructField:
-        tname = self.parse_type_name()
-        name = self.expect("ID").value
-
-        arr = None
-        if self.match("["):
-            if not self.match("]"):
-                arr = self.parse_expr(0)
-                self.expect("]")
-        self.expect(";")
-        return StructField(tname, name, arr)
-    '''
 
     def parse_struct_member(self) -> list[StructField]:
         tname = self.parse_type_name()
@@ -368,25 +355,6 @@ class Parser:
 
         self.expect(";")
         return fields
-
-    '''
-    def parse_var_decl(self, type_name: TypeName) -> VarDecl:
-        ident = self.expect("ID")
-        name = ident.value
-
-        array_size: Optional[Expr] = None
-        if self.match("["):
-            if not self.match("]"):
-                array_size = self.parse_expr(0)
-                self.expect("]")
-            # else unsized array
-
-        init: Optional[Expr] = None
-        if self.match("OP", "="):
-            init = self.parse_expr(0)
-
-        return VarDecl(type_name=type_name, name=name, array_size=array_size, init=init)
-    '''
 
     def parse_var_decl(self, type_name: TypeName) -> VarDecl:
         name = self.expect("ID").value
