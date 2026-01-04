@@ -259,3 +259,15 @@ main at angle_end2end_tests_main.cpp:80
 __libc_start_call_main at libc_start_call_main.h:58
 call_init at libc-start.c:128
 _start at ??:?
+
+
+
+Apply the compute shaders too. Currently the fuzzer only fuzzes vertex shaders and fragment shaders...
+
+
+
+
+
+
+
+

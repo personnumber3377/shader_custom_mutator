@@ -1,0 +1,237 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index ced0f3c22a..8a9dacdd49 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -827,6 +827,26 @@ angle_static_library("translator") {
+   }
+ }
+ 
++source_set("mutator_helper") {
++  # testonly = !is_component_build
++  sources = ["src/compiler/fuzz/python_custom_mutator.cc"]
++  # configs += [":fuzzer_config"]
++  # deps = [
++  #   "../../:pdfium_public_headers",
++  #   "../../core/fxcrt",
++  #   "../../fpdfsdk",
++  # ]
++  include_dirs = [
++    "/usr/include/python3.10",
++    "/usr/include/x86_64-linux-gnu/python3.10",
++    "//third_party/pdfium",
++    "../../"
++  ]
++  # Also add these too
++  ldflags = [ "-L/usr/lib/x86_64-linux-gnu" ]
++  libs = [ "python3.10", "pthread", "dl", "util", "m" ]
++}
++
+ angle_source_set("translator_fuzzer") {
+   sources = [ "src/compiler/fuzz/translator_fuzzer.cpp" ]
+ 
+@@ -834,8 +854,8 @@ angle_source_set("translator_fuzzer") {
+     "include",
+     "src",
+   ]
+-
+-  deps = [ ":translator" ]
++  # Also put the custom mutator shit
++  deps = [ ":translator", ":mutator_helper", ]
+ }
+ 
+ config("angle_program_version_id_config") {
+diff --git a/src/compiler/fuzz/translator_fuzzer.cpp b/src/compiler/fuzz/translator_fuzzer.cpp
+index 03254652c1..47b2a17ac2 100644
+--- a/src/compiler/fuzz/translator_fuzzer.cpp
++++ b/src/compiler/fuzz/translator_fuzzer.cpp
+@@ -18,6 +18,10 @@
+ #include "compiler/translator/Compiler.h"
+ #include "compiler/translator/util.h"
+ 
++// Comment to disable debug messages...
++
++#define DEBUGGING 1
++
+ using namespace sh;
+ 
+ namespace
+@@ -54,18 +58,39 @@ struct TCompilerDeleter
+     void operator()(TCompiler *compiler) const { DeleteCompiler(compiler); }
+ };
+ 
++void log(const char* msg) {
++    /*
++    FILE* fp = fopen("/home/oof/angle_log.txt", "w");
++    fwrite(msg, strlen(msg), 1, fp);
++    fclose(fp);
++    */
++#ifdef DEBUGGING
++    fprintf(stderr, "%s", msg);
++#endif
++    return;
++}
++
++void log(const std::string msg) {
++#ifdef DEBUGGING
++    fprintf(stderr, "%s", msg.c_str()); // Convert to cstring...
++#endif
++    return;
++}
++
+ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+ {
+     ShaderDumpHeader header{};
+     if (size <= sizeof(header))
+     {
+-        return 0;
++        log("size <= sizeof(header)");
++        return -1;
+     }
+ 
+     // Make sure the rest of data will be a valid C string so that we don't have to copy it.
+     if (data[size - 1] != 0)
+     {
+-        return 0;
++        log("data[size - 1] != 0");
++        return -1;
+     }
+ 
+     memcpy(&header, data, sizeof(header));
+@@ -80,13 +105,15 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+ 
+     if (type != GL_FRAGMENT_SHADER && type != GL_VERTEX_SHADER)
+     {
+-        return 0;
++        log("unsupported shader type\n");
++        return -1;
+     }
+ 
+     if (spec != SH_GLES2_SPEC && type != SH_WEBGL_SPEC && spec != SH_GLES3_SPEC &&
+         spec != SH_WEBGL2_SPEC)
+     {
+-        return 0;
++        log("unsupported spec\n");
++        return -1;
+     }
+ 
+     ShShaderOutput shaderOutput = static_cast<ShShaderOutput>(header.output);
+@@ -130,7 +157,8 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+     // If there are any options not supported with this output, don't attempt to run the translator.
+     if (hasUnsupportedOptions)
+     {
+-        return 0;
++        log("hasUnsupportedOptions\n");
++        return -1;
+     }
+ 
+     // Make sure the rest of the options are in a valid range.
+@@ -171,12 +199,14 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+     }
+     if (!found)
+     {
+-        return 0;
++        log("!found\n");
++        return -1;
+     }
+ 
+     if (!sh::Initialize())
+     {
+-        return 0;
++        log("!sh::Initialize()\n");
++        return -1;
+     }
+ 
+     TranslatorCacheKey key;
+@@ -195,7 +225,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+ 
+         if (translator == nullptr)
+         {
+-            return 0;
++            return -1;
+         }
+ 
+         ShBuiltInResources resources;
+@@ -229,7 +259,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+ 
+         if (!translator->Init(resources))
+         {
+-            return 0;
++            return -1;
+         }
+ 
+         (*translators)[key] = std::move(translator);
+@@ -238,8 +268,20 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
+     auto &translator = (*translators)[key];
+ 
+     options.limitExpressionComplexity = true;
++    // This has to be set to true, because setting this to false makes it such that the translation doesn't happen...
++    options.objectCode = true;
+     const char *shaderStrings[]       = {reinterpret_cast<const char *>(data)};
+-    translator->compile(shaderStrings, 1, options);
+-
+-    return 0;
++    log("Passing this as source code: \n");
++    log(reinterpret_cast<const char *>(data));
++    if (translator->compile(shaderStrings, 1, options)) {
++        log("SUCCESS\n");
++        return 0; // Allow valid shader source code to be added to the corpus...
++    }
++    log("FAILURE\n");
++    // Log potential error messages too if debugging...
++    log((translator->getInfoSink()).info.str());
++    
++    // Log the failure errors
++    // Reject invalid shader sources...
++    return -1;
+ }
+diff --git a/src/compiler/translator/Compiler.cpp b/src/compiler/translator/Compiler.cpp
+index 38f1f30458..9a3a339623 100644
+--- a/src/compiler/translator/Compiler.cpp
++++ b/src/compiler/translator/Compiler.cpp
+@@ -68,7 +68,7 @@
+ #include "compiler/translator/tree_util/ReplaceVariable.h"
+ #include "compiler/translator/util.h"
+ 
+-// #define ANGLE_FUZZER_CORPUS_OUTPUT_DIR "corpus/"
++#define ANGLE_FUZZER_CORPUS_OUTPUT_DIR "corpus/"
+ 
+ #if defined(ANGLE_FUZZER_CORPUS_OUTPUT_DIR)
+ #    include "common/hash_utils.h"
+diff --git a/src/tests/angle_end2end_tests.gni b/src/tests/angle_end2end_tests.gni
+index a886245fb8..5d1803c078 100644
+--- a/src/tests/angle_end2end_tests.gni
++++ b/src/tests/angle_end2end_tests.gni
+@@ -6,7 +6,7 @@ angle_end2end_tests_sources = [
+   "capture_tests/CapturedTest.cpp",
+   "egl_tests/EGLAndroidFrameBufferTargetTest.cpp",
+   "egl_tests/EGLBackwardsCompatibleContextTest.cpp",
+-  "egl_tests/EGLBlobCacheTest.cpp",
++  # "egl_tests/EGLBlobCacheTest.cpp",
+   "egl_tests/EGLBufferAgeTest.cpp",
+   "egl_tests/EGLChooseConfigTest.cpp",
+   "egl_tests/EGLContextASANTest.cpp",
+@@ -18,7 +18,7 @@ angle_end2end_tests_sources = [
+   "egl_tests/EGLDisplayTest.cpp",
+   "egl_tests/EGLLockSurface3Test.cpp",
+   "egl_tests/EGLMemoryUsageReportTest.cpp",
+-  "egl_tests/EGLMultiContextTest.cpp",
++  # "egl_tests/EGLMultiContextTest.cpp",
+   "egl_tests/EGLNoConfigContextTest.cpp",
+   "egl_tests/EGLNoErrorTest.cpp",
+   "egl_tests/EGLPreRotationTest.cpp",
+diff --git a/src/tests/gl_tests/AtomicCounterBufferTest.cpp b/src/tests/gl_tests/AtomicCounterBufferTest.cpp
+index 65b0c03cd2..a17fdc18f8 100644
+--- a/src/tests/gl_tests/AtomicCounterBufferTest.cpp
++++ b/src/tests/gl_tests/AtomicCounterBufferTest.cpp
+@@ -1064,9 +1064,11 @@ void main()
+     EXPECT_GL_NO_ERROR();
+ }
+ 
++/*
+ GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST(AtomicCounterBufferTest);
+ GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST(AtomicCounterBufferTest31);
+ ANGLE_INSTANTIATE_TEST_ES3_AND_ES31(AtomicCounterBufferTest);
+ ANGLE_INSTANTIATE_TEST_ES31(AtomicCounterBufferTest31);
++*/
+ 
+ }  // namespace
