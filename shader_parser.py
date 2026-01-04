@@ -333,8 +333,13 @@ class Parser:
         raise ParseError(f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
 
     def parse_struct_member(self) -> list[StructField]:
-        tname = self.parse_type_name()
+        # NEW: skip optional layout qualifiers
+        print("self.peek().kind: "+str(self.peek().kind))
+        print("self.peek().value: "+str(self.peek().value))
+        while self.peek().kind == "KW" and self.peek().value == "layout":
+            self.parse_layout_qualifier()
 
+        tname = self.parse_type_name()
         fields = []
 
         while True:

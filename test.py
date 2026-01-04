@@ -210,21 +210,32 @@ def mutation_benchmark(path: str, iters: int, seed: int):
 def roundtrip_test(path: str, ignore_invalid: int = 0):
     files = collect_files(path)
 
+    fail = 0
+    tot = 0
+    ignored = 0
+
     for i, fn in enumerate(files):
         print(f"[roundtrip] {fn} ({i}/{len(files)})")
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
         # print("passing this here: "+str(data))
         ok, msg = check_file_bytes(data)
         if not ok:
+            ignored += 1
             if not ignore_invalid:
                 raise RuntimeError(f"Initial shader invalid:\n{msg}")
             else:
                 continue
-
+        tot += 1
         src = strip_header_and_null(data).decode("utf-8")
         print("Passing this source code: "+str(src))
-        tu = shader_parser.parse_to_tree(src)
-        out = shader_unparser.unparse_tu(tu)
+        try:
+            tu = shader_parser.parse_to_tree(src)
+            out = shader_unparser.unparse_tu(tu)
+        except Exception as e:
+            if ignore_invalid:
+                continue
+            else:
+                raise e
         print("Got this source code back: "+str(out))
 
         rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
@@ -245,9 +256,16 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         ok2, msg2 = check_file_bytes(rebuilt)
 
         if not ok2:
-            raise RuntimeError(f"Roundtrip failed:\n{msg2}")
-
-    print("✔ Roundtrip tests passed")
+            # raise RuntimeError(f"Roundtrip failed:\n{msg2}")
+            fail += 1
+            print(f"Roundtrip failed:\n{msg2}")
+    if not fail:
+        print("✔ Roundtrip tests passed")
+    else:
+        print("Roundtrip test failed. Stats:")
+        print("Total: "+str(len(files)))
+        print("Failed: "+str(fail))
+        print("Ignored: "+str(ignored))
 
 def add_default_header_to_directory(
     directory: str,

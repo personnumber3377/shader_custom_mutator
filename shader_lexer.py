@@ -17,6 +17,7 @@ KEYWORDS = {
     "uvec2", "uvec3", "uvec4", "bvec2", "bvec3", "bvec4",
     "mat2", "mat3", "mat4",
     "sampler2D", "sampler3D", "samplerCube", "sampler2DArray",
+    "layout", # Support layouts too...
 }
 
 # Ordered (longest-first) so ">>=" matches before ">>" etc.
