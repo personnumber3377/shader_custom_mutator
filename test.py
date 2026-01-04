@@ -207,7 +207,7 @@ def mutation_benchmark(path: str, iters: int, seed: int):
     print(f"Valid mutations: {success}")
     print(f"Success rate:    {success/total:.2%}")
 
-def roundtrip_test(path: str):
+def roundtrip_test(path: str, ignore_invalid: int = 0):
     files = collect_files(path)
 
     for i, fn in enumerate(files):
@@ -215,8 +215,9 @@ def roundtrip_test(path: str):
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
         # print("passing this here: "+str(data))
         ok, msg = check_file_bytes(data)
-        if not ok:
-            raise RuntimeError(f"Initial shader invalid:\n{msg}")
+        if not ignore_invalid:
+            if not ok:
+                raise RuntimeError(f"Initial shader invalid:\n{msg}")
 
         src = strip_header_and_null(data).decode("utf-8")
         print("Passing this source code: "+str(src))
@@ -309,6 +310,7 @@ def main():
     ap.add_argument("--check-corpus", action="store_true")
     ap.add_argument("--iters", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--ignore-invalid", type=int, default=0)
     ap.add_argument("--add-default-header", action="store_true",
                 help="Add default HEADER to all text shaders in directory")
     ap.add_argument("--text-to-bin", action="store_true",
@@ -324,7 +326,7 @@ def main():
         if args.mutation_bench:
             mutation_benchmark(args.path, args.iters, seed)
         elif args.roundtrip:
-            roundtrip_test(args.path)
+            roundtrip_test(args.path, ignore_invalid=args.ignore_invalid)
         elif args.check_corpus:
             corpus_check(args.path)
         elif args.add_default_header:
