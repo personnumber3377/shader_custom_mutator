@@ -686,10 +686,6 @@ class Parser:
 
         struct_type = self.parse_struct_specifier()
 
-        qualifiers = []
-        while self.peek().kind == "KW" and self.peek().value in ALL_QUALIFIERS:
-            qualifiers.append(self.advance().value)
-
         declarators = []
         if self.peek().kind != ";":
             declarators = self.parse_declarator_list(struct_type)

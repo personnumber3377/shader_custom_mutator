@@ -257,9 +257,6 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
     # This is to handle inline struct definitions inside functions...
     if isinstance(s, StructDecl):
         # assert False
-        # print("s: "+str(s))
-
-        '''
         storage = None
         if s.declarators and getattr(s.declarators[0], "storage", None):
             storage = s.declarators[0].storage
@@ -267,15 +264,6 @@ def unparse_stmt(s: Stmt, indent: int = 0) -> str:
         out = ""
         if storage:
             out += storage + " "
-        '''
-
-        print("d.qualifiers: "+str(d.qualifiers))
-
-        interp = [q for q in d.qualifiers if q in INTERP_QUALIFIERS]
-        storage = [q for q in d.qualifiers if q in STORAGE_QUALIFIERS]
-        precision = [q for q in d.qualifiers if q in PRECISION_QUALIFIERS]
-
-        out = " ".join(interp + storage + precision)
 
         out += unparse_struct_specifier(s.struct_type) # Originally was +=
         if s.declarators:
@@ -331,7 +319,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
     for item in tu.items:
         # old explicit struct definition form (if you still use it)
-        print("item: "+str(item))
+        # print("item: "+str(item))
         if isinstance(item, StructDef):
             out += f"struct {item.name} {{\n"
             for f in item.fields:
@@ -347,17 +335,24 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
         # struct specifier + declarators (your common case)
         if isinstance(item, StructDecl):
+            # assert False
+            qualifiers = []
+            print("item: "+str(item))
+            if item.declarators:
+                qualifiers = item.declarators[0].qualifiers
 
-            storage = None
-            if item.declarators and getattr(item.declarators[0], "storage", None):
-                storage = item.declarators[0].storage
-            # out = ""
-            if storage:
-                out += storage + " "
+            interp = [q for q in qualifiers if q in INTERP_QUALIFIERS]
+            storage = [q for q in qualifiers if q in STORAGE_QUALIFIERS]
+            precision = [q for q in qualifiers if q in PRECISION_QUALIFIERS]
+
+            if interp or storage or precision:
+                out += " ".join(interp + storage + precision) + " "
 
             out += unparse_struct_specifier(item.struct_type)
+
             if item.declarators:
                 out += " " + ", ".join(_unparse_declarator(d) for d in item.declarators)
+
             out += ";\n\n"
             continue
 
