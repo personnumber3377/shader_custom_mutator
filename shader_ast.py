@@ -91,6 +91,7 @@ class Declarator:
     init: Optional[Expr] = None
 '''
 
+'''
 @dataclass
 class Declarator:
     name: str
@@ -98,6 +99,15 @@ class Declarator:
     array_size: Optional[Expr] = None
     init: Optional[Expr] = None
     storage: Optional[str] = None   # 👈 ADD THIS
+'''
+
+class Declarator:
+    def __init__(self, name, base_type, array_size, init, qualifiers=None):
+        self.name = name
+        self.base_type = base_type
+        self.array_size = array_size
+        self.init = init
+        self.qualifiers = qualifiers or []
 
 @dataclass
 class VarDecl:

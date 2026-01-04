@@ -1,57 +1,55 @@
-[seed] 267214504
-[roundtrip] ./sample_poc/stuff.glsl (0/1)
-Passing this source code: uniform struct S1 { samplerCube ar; } a1;
-uniform struct S2 { S1 s; } a2;
+[seed] 656748546
+[roundtrip] ./shitfuck/roundtrip_failure.glsl (0/1)
+self.peek().kind: KW
+self.peek().kind: flat
+self.peek().kind: KW
+self.peek().kind: out
+self.peek().kind: KW
+self.peek().kind: flat
+self.peek().kind: KW
+self.peek().kind: out
+self.peek().kind: KW
+self.peek().kind: flat
+self.peek().kind: KW
+self.peek().kind: out
+item: GlobalDecl(decls=[VarDecl(type_name=TypeName(name='vec4', precision=None, qualifiers=['in']), name='inputAttribute', array_dims=[], init=None)])
+s: DeclStmt(decls=[VarDecl(type_name=TypeName(name='vec4', precision=None, qualifiers=['in']), name='inputAttribute', array_dims=[], init=None)])
+item: StructDecl(struct_type=StructType(name=None, members=[StructField(type_name=TypeName(name='int', precision=None, qualifiers=[]), name='field', array_size=[])]), declarators=[<shader_ast.Declarator object at 0x7f4806377250>])
+item: StructDecl(struct_type=StructType(name=None, members=[StructField(type_name=TypeName(name='int', precision=None, qualifiers=[]), name='field', array_size=[])]), declarators=[<shader_ast.Declarator object at 0x7f4806377430>])
+item: StructDecl(struct_type=StructType(name=None, members=[StructField(type_name=TypeName(name='int', precision=None, qualifiers=[]), name='field', array_size=[])]), declarators=[<shader_ast.Declarator object at 0x7f4806375480>, <shader_ast.Declarator object at 0x7f4806375000>])
+item: FunctionDef(return_type=TypeName(name='void', precision=None, qualifiers=[]), name='main', params=[], body=BlockStmt(stmts=[ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s0'), member='field'), right=IntLiteral(value=1))), ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s1'), member='field'), right=IntLiteral(value=2))), ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s2'), member='field'), right=IntLiteral(value=3))), ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s3'), member='field'), right=IntLiteral(value=4))), ExprStmt(expr=BinaryExpr(op='=', left=Identifier(name='gl_Position'), right=Identifier(name='inputAttribute')))]))
+s: BlockStmt(stmts=[ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s0'), member='field'), right=IntLiteral(value=1))), ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s1'), member='field'), right=IntLiteral(value=2))), ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s2'), member='field'), right=IntLiteral(value=3))), ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s3'), member='field'), right=IntLiteral(value=4))), ExprStmt(expr=BinaryExpr(op='=', left=Identifier(name='gl_Position'), right=Identifier(name='inputAttribute')))])
+s: ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s0'), member='field'), right=IntLiteral(value=1)))
+s: ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s1'), member='field'), right=IntLiteral(value=2)))
+s: ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s2'), member='field'), right=IntLiteral(value=3)))
+s: ExprStmt(expr=BinaryExpr(op='=', left=MemberExpr(base=Identifier(name='v_s3'), member='field'), right=IntLiteral(value=4)))
+s: ExprStmt(expr=BinaryExpr(op='=', left=Identifier(name='gl_Position'), right=Identifier(name='inputAttribute')))
+Got this source code back: #version 300 es
 
-vec4 v;
-
-void main ()
-{
-    v = textureCube(a2.s.ar, vec3(1.0));
-}
-Got this thing here: TranslationUnit(items=[StructDecl(struct_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), declarators=[Declarator(name='a1', base_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), array_size=None, init=None, storage='uniform')]), StructDecl(struct_type=StructType(name='S2', members=[StructField(type_name=TypeName(name='S1', precision=None, qualifiers=[]), name='s', array_size=[])]), declarators=[Declarator(name='a2', base_type=StructType(name='S2', members=[StructField(type_name=TypeName(name='S1', precision=None, qualifiers=[]), name='s', array_size=[])]), array_size=None, init=None, storage='uniform')]), GlobalDecl(decls=[VarDecl(type_name=TypeName(name='vec4', precision=None, qualifiers=[]), name='v', array_dims=[], init=None)]), FunctionDef(return_type=TypeName(name='void', precision=None, qualifiers=[]), name='main', params=[], body=BlockStmt(stmts=[ExprStmt(expr=BinaryExpr(op='=', left=Identifier(name='v'), right=CallExpr(callee=Identifier(name='textureCube'), args=[BinaryExpr(op=',', left=MemberExpr(base=MemberExpr(base=Identifier(name='a2'), member='s'), member='ar'), right=CallExpr(callee=Identifier(name='vec3'), args=[FloatLiteral(value=1.0)]))])))]))])
-Here is the item: StructDecl(struct_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), declarators=[Declarator(name='a1', base_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), array_size=None, init=None, storage='uniform')])
-Here is the fucking shit: StructDecl(struct_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), declarators=[Declarator(name='a1', base_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), array_size=None, init=None, storage='uniform')])
-poopoofefefeffe
-poopoofefefeffe
-out: precision mediump float;
+precision mediump float;
 precision mediump int;
 
-uniform struct S1 {
-  samplerCube ar;
-} a1
-Here is the item: StructDecl(struct_type=StructType(name='S2', members=[StructField(type_name=TypeName(name='S1', precision=None, qualifiers=[]), name='s', array_size=[])]), declarators=[Declarator(name='a2', base_type=StructType(name='S2', members=[StructField(type_name=TypeName(name='S1', precision=None, qualifiers=[]), name='s', array_size=[])]), array_size=None, init=None, storage='uniform')])
-Here is the fucking shit: StructDecl(struct_type=StructType(name='S2', members=[StructField(type_name=TypeName(name='S1', precision=None, qualifiers=[]), name='s', array_size=[])]), declarators=[Declarator(name='a2', base_type=StructType(name='S2', members=[StructField(type_name=TypeName(name='S1', precision=None, qualifiers=[]), name='s', array_size=[])]), array_size=None, init=None, storage='uniform')])
-poopoofefefeffe
-poopoofefefeffe
-out: precision mediump float;
-precision mediump int;
+in vec4 inputAttribute;
 
-uniform struct S1 {
-  samplerCube ar;
-} a1;
+struct {
+  int field;
+} v_s0;
 
-uniform struct S2 {
-  S1 s;
-} a2
-Here is the item: GlobalDecl(decls=[VarDecl(type_name=TypeName(name='vec4', precision=None, qualifiers=[]), name='v', array_dims=[], init=None)])
-Here is the item: FunctionDef(return_type=TypeName(name='void', precision=None, qualifiers=[]), name='main', params=[], body=BlockStmt(stmts=[ExprStmt(expr=BinaryExpr(op='=', left=Identifier(name='v'), right=CallExpr(callee=Identifier(name='textureCube'), args=[BinaryExpr(op=',', left=MemberExpr(base=MemberExpr(base=Identifier(name='a2'), member='s'), member='ar'), right=CallExpr(callee=Identifier(name='vec3'), args=[FloatLiteral(value=1.0)]))])))]))
-Got this source code back: precision mediump float;
-precision mediump int;
+struct {
+  int field;
+} v_s1;
 
-uniform struct S1 {
-  samplerCube ar;
-} a1;
-
-uniform struct S2 {
-  S1 s;
-} a2;
-
-vec4 v;
+struct {
+  int field;
+} v_s2, v_s3;
 
 void main()
 {
-  v = textureCube(a2.s.ar, vec3(1.0));
+  v_s0.field = 1;
+  v_s1.field = 2;
+  v_s2.field = 3;
+  v_s3.field = 4;
+  gl_Position = inputAttribute;
 }
 
 

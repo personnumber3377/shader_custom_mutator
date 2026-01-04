@@ -96,6 +96,11 @@ OUTPUT_FLAGS = {
     16: "-b=m",
 }
 
+def save_file(fn: str, data: bytes):
+    fh = open(fn, "wb")
+    fh.write(data)
+    fh.close()
+
 def build_header_from_directive(src: str) -> bytes:
     """
     HEADER: <shader_type> <spec> <output>
@@ -245,7 +250,7 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
                 continue
             else:
                 raise e
-        # print("Got this source code back: "+str(out))
+        print("Got this source code back: "+str(out))
 
         rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
         
@@ -261,6 +266,8 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
 
         rebuilt = header + out.encode("utf-8") + b"\x00" # Reconstruct the shit...
         '''
+
+        save_file("./crashing.bin", rebuilt)
 
         ok2, msg2 = check_file_bytes(rebuilt)
 

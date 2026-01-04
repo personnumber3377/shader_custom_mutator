@@ -4,6 +4,7 @@ from typing import List, Optional, Union
 
 from shader_lexer import Token, lex
 from shader_ast import *
+from const import *
 
 from collections.abc import Iterable
 
@@ -13,45 +14,6 @@ class ParseError(Exception):
 DEBUG = True
 
 current_input = None
-
-# Precedence table (higher = binds tighter)
-# This is "good enough" for GLSL fuzzing purposes.
-PRECEDENCE = {
-    ",": 1,  # sequence
-    "=": 2, "+=": 2, "-=": 2, "*=": 2, "/=": 2, "%=": 2, "<<=": 2, ">>=": 2,
-    "||": 3,
-    "^^": 4,
-    "&&": 5,
-    "|": 6,
-    "^": 7,
-    "&": 8,
-    "==": 9, "!=": 9,
-    "<": 10, ">": 10, "<=": 10, ">=": 10,
-    "<<": 11, ">>": 11,
-    "+": 12, "-": 12,
-    "*": 13, "/": 13, "%": 13,
-    ".": 14,  # member access handled as postfix
-    "CALL": 15, "INDEX": 15,  # postfix
-}
-
-RIGHT_ASSOC = {
-    "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=",
-    # ternary is right-associative too but handled separately
-}
-
-
-TYPELIKE_KEYWORDS = {
-    "void", "bool", "int", "uint", "float", "double",
-    "vec2", "vec3", "vec4", "ivec2", "ivec3", "ivec4",
-    "uvec2", "uvec3", "uvec4", "bvec2", "bvec3", "bvec4",
-    "mat2", "mat3", "mat4",
-    "sampler2D", "sampler3D", "samplerCube", "sampler2DArray",
-}
-
-
-QUALIFIERS = {"const", "in", "out", "inout", "uniform", "varying", "flat"} # This didn't have "varying" before... and also not "flat"
-PRECISIONS = {"lowp", "mediump", "highp"}
-
 
 class Parser:
     def __init__(self, tokens: List[Token]):
@@ -693,9 +655,12 @@ class Parser:
         return StructDecl(struct_type, declarators)
     '''
 
+    '''
     def parse_struct_toplevel_decl(self):
         qualifiers = []
         while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
+            print("self.peek().kind: "+str(self.peek().kind))
+            print("self.peek().kind: "+str(self.peek().value))
             qualifiers.append(self.advance().value)
 
         struct_type = self.parse_struct_specifier()
@@ -707,6 +672,29 @@ class Parser:
             # 👇 APPLY STORAGE TO DECLARATORS, NOT STRUCT
             for d in declarators:
                 d.storage = qualifiers[0] if qualifiers else None
+
+        self.expect(";")
+        return StructDecl(struct_type, declarators)
+    '''
+
+    def parse_struct_toplevel_decl(self):
+        qualifiers = []
+        while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
+            print("self.peek().kind: "+str(self.peek().kind))
+            print("self.peek().kind: "+str(self.peek().value))
+            qualifiers.append(self.advance().value)
+
+        struct_type = self.parse_struct_specifier()
+
+        qualifiers = []
+        while self.peek().kind == "KW" and self.peek().value in ALL_QUALIFIERS:
+            qualifiers.append(self.advance().value)
+
+        declarators = []
+        if self.peek().kind != ";":
+            declarators = self.parse_declarator_list(struct_type)
+            for d in declarators:
+                d.qualifiers = qualifiers.copy()
 
         self.expect(";")
         return StructDecl(struct_type, declarators)

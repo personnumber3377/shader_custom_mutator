@@ -1,41 +1,11 @@
 # shader_lexer.py
 from __future__ import annotations
+
+from const import *
+
 from dataclasses import dataclass
 from typing import List, Optional
 import re
-
-
-KEYWORDS = {
-    "struct", "uniform", "const", "in", "out", "inout", "varying", "flat", # This did not have varying originally...
-    "if", "else", "for", "while", "do",
-    "break", "continue", "return", "discard",
-    "true", "false",
-    "precision", "lowp", "mediump", "highp",
-    # basic types / constructors are treated as identifiers but you'll often want them here too:
-    "void", "bool", "int", "uint", "float", "double",
-    "vec2", "vec3", "vec4", "ivec2", "ivec3", "ivec4",
-    "uvec2", "uvec3", "uvec4", "bvec2", "bvec3", "bvec4",
-    "mat2", "mat3", "mat4",
-    "sampler2D", "sampler3D", "samplerCube", "sampler2DArray",
-    "layout", # Support layouts too...
-}
-
-# Ordered (longest-first) so ">>=" matches before ">>" etc.
-OPERATORS = [
-    ">>=", "<<=",
-    "++", "--",
-    "+=", "-=", "*=", "/=", "%=",
-    "==", "!=", "<=", ">=",
-    "&&", "||", "^^",
-    "<<", ">>",
-    "->",  # not GLSL, but harmless if appears
-    "=", "+", "-", "*", "/", "%", "<", ">", "!", "~",
-    "&", "|", "^",
-    "?", ":",
-    ".",  # member access
-]
-
-PUNCT = {"{", "}", "(", ")", "[", "]", ";", ",", "#"}
 
 # Regex building
 _OP_RE = "|".join(re.escape(op) for op in OPERATORS)
