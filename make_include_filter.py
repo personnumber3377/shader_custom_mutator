@@ -124,6 +124,8 @@ tests = [
     "gl_tests/gles1/VertexPointerTest.cpp",
 ]
 
+# tests = ["gl_tests/UniformTest.cpp"]
+
 def suite_name(path: str) -> str:
     return path.split("/")[-1].replace(".cpp", "")
 

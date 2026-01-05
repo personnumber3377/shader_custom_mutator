@@ -271,3 +271,305 @@ Apply the compute shaders too. Currently the fuzzer only fuzzes vertex shaders a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan (58 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader (54 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (58 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (54 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_OpenGL
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_OpenGL (35 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan (61 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader (56 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (67 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (68 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_OpenGL
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_OpenGL (36 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan (59 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader (55 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (61 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (55 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_OpenGL
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_OpenGL (34 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan (58 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader (55 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (60 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (55 ms)
+[ RUN      ] UniformTest.Sampler/ES2_OpenGL
+[       OK ] UniformTest.Sampler/ES2_OpenGL (35 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES2_Vulkan (65 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.Sampler/ES2_Vulkan_SwiftShader (67 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (66 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Sampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (70 ms)
+[ RUN      ] UniformTest.Sampler/ES3_OpenGL
+[       OK ] UniformTest.Sampler/ES3_OpenGL (43 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES3_Vulkan (71 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.Sampler/ES3_Vulkan_SwiftShader (68 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (69 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Sampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (76 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_OpenGL
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_OpenGL (36 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan (70 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader (72 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (68 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (73 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_OpenGL
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_OpenGL (36 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan (69 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader (73 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (72 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (76 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_OpenGL
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_OpenGL (45 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan (89 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader (100 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (84 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (108 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_OpenGL
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_OpenGL (38 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan (86 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader (99 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (90 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (112 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_OpenGL
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_OpenGL (43 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan (199 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader (115 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (209 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (141 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_OpenGL
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_OpenGL (49 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan (202 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader (136 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (202 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (144 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniform/ES2_OpenGL (57 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniform/ES3_OpenGL (44 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_OpenGL (37 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_OpenGL (36 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_OpenGL
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_OpenGL (36 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan (84 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader (99 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (83 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (108 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_OpenGL
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_OpenGL (45 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan (90 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader (99 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (89 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (113 ms)
+[----------] 130 tests from UniformTest (8290 ms total)
+
+[----------] Global test environment tear-down
+[==========] 130 tests from 1 test suite ran. (8533 ms total)
+[  PASSED  ] 114 tests.
+[  SKIPPED ] 16 tests, listed below:
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ cd corpus/

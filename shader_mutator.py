@@ -1448,6 +1448,7 @@ def mutate_struct_fields(fields: List[StructField], rng: random.Random, scope: S
             f.array_dims = mutate_array_dims(f.array_dims, rng, scope, env)
         else:
             if f.array_size is None:
+                # TODO: Generate the array size expression instead???
                 if coin(rng, 0.5):
                     f.array_size = IntLiteral(rng.choice([1, 2, 4, 8, 16]))
             else:
