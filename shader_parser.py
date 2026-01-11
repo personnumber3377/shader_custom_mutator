@@ -93,9 +93,7 @@ class Parser:
 
         while True:
             t = self.peek()
-            # print(t)
             if t.kind == "OP" and t.value in ("++", "--"):
-                # print("stuff")
                 # postfix binds very tightly
                 if PRECEDENCE["CALL"] < min_prec:
                     break
@@ -189,8 +187,6 @@ class Parser:
             decls.append(Declarator(name, base_type, array_size, init))
 
             if not self.match(","):
-                # print("self.peek().kind: "+str(self.peek().kind))
-                # print("self.peek().value: "+str(self.peek().value))
                 break
         return decls
 
@@ -296,8 +292,6 @@ class Parser:
 
     def parse_struct_member(self) -> list[StructField]:
         # NEW: skip optional layout qualifiers
-        # print("self.peek().kind: "+str(self.peek().kind))
-        # print("self.peek().value: "+str(self.peek().value))
         while self.peek().kind == "KW" and self.peek().value == "layout":
             self.parse_layout_qualifier()
 
@@ -680,8 +674,8 @@ class Parser:
     def parse_struct_toplevel_decl(self):
         qualifiers = []
         while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
-            print("self.peek().kind: "+str(self.peek().kind))
-            print("self.peek().kind: "+str(self.peek().value))
+            # print("self.peek().kind: "+str(self.peek().kind))
+            # print("self.peek().kind: "+str(self.peek().value))
             qualifiers.append(self.advance().value)
 
         struct_type = self.parse_struct_specifier()
