@@ -9,6 +9,7 @@ import argparse
 import tempfile
 import subprocess
 import traceback
+import time
 from typing import Tuple, List
 
 # -----------------------------
@@ -33,6 +34,13 @@ from test_helpers import (
 
 CHECKER_PATH = "./newest_angle"
 TIMEOUT = 5.0
+
+# These are for the actual fuzzing benchmark...
+
+ANGLE_BIN = "./angle_translator_fuzzer"
+ASSERT_NEEDLE = b"stripStructSpecifierSamplers"
+ASSERT_OUTDIR = "assert_hits"
+ASSERT_TIMEOUT = 2.0
 
 def check_file_bytes(data: bytes) -> tuple[bool, str]:
     with tempfile.NamedTemporaryFile(mode="wb", suffix=".bin", delete=False) as f:
@@ -168,6 +176,21 @@ def binary_to_text(bin_path: str, out_path: str):
 # Utilities
 # -----------------------------
 
+def run_angle_and_check(buf: bytes) -> bool:
+    try:
+        p = subprocess.run(
+            [ANGLE_BIN],
+            input=buf,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=ASSERT_TIMEOUT,
+        )
+    except subprocess.TimeoutExpired:
+        return False
+
+    combined = p.stdout + p.stderr
+    return ASSERT_NEEDLE in combined
+
 def collect_files(path: str) -> List[str]:
     if os.path.isfile(path):
         return [path]
@@ -180,6 +203,46 @@ def collect_files(path: str) -> List[str]:
 # -----------------------------
 # Tests
 # -----------------------------
+
+def chase_assert_with_custom_mutator(
+    seed_path: str,
+    max_iters: int = 1_000_000,
+):
+    os.makedirs(ASSERT_OUTDIR, exist_ok=True)
+
+    with open(seed_path, "rb") as f:
+        seed = bytearray(f.read())
+
+    # IMPORTANT: never mutate header
+    header = seed[:HEADER_SIZE]
+    body   = seed[HEADER_SIZE:]
+
+    for i in range(max_iters):
+        # reconstruct full buffer each iteration
+        buf = bytearray(header + body)
+
+        # mutate ONCE using your custom mutator
+        buf = mutator.fuzz(buf, None, 1_000_000)
+
+        if run_angle_and_check(buf):
+            ts = int(time.time())
+            out = os.path.join(
+                ASSERT_OUTDIR,
+                f"assert_hit_{ts}_{i}.bin"
+            )
+
+            with open(out, "wb") as f:
+                f.write(buf)
+
+            print("🔥 ASSERT FOUND")
+            print(f"Saved crashing input: {out}")
+            return out
+
+        if i % 1000 == 0:
+            print(f"[assert-chase] iterations: {i}")
+
+    print("❌ No assert found")
+    return None
 
 def mutation_benchmark(path: str, iters: int, seed: int):
     files = collect_files(path)
@@ -347,6 +410,7 @@ def main():
     ap.add_argument("--mutation-bench", action="store_true")
     ap.add_argument("--roundtrip", action="store_true")
     ap.add_argument("--check-corpus", action="store_true")
+    ap.add_argument("--chase-assert", action="store_true")
     ap.add_argument("--iters", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--ignore-invalid", type=int, default=0)
@@ -364,6 +428,9 @@ def main():
     try:
         if args.mutation_bench:
             mutation_benchmark(args.path, args.iters, seed)
+        elif args.chase_assert:
+            chase_assert_with_custom_mutator(args.path)
+            # exit(0)
         elif args.roundtrip:
             roundtrip_test(args.path, ignore_invalid=args.ignore_invalid)
         elif args.check_corpus:
