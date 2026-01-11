@@ -198,11 +198,88 @@ def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> byt
 # libFuzzer entrypoint for custom crossover
 # -----------------------------
 
+def custom_crossover(data1, data2, max_size, seed):
+    # import random
+    random.seed(seed)
+
+    fh = open("/home/oof/thestuff.txt", "wb")
+    fh.write(b"Called custom mut...")
+    fh.close()
+
+    # --- 1. Split header / body ---
+    def split(buf):
+        header = buf[:128]
+        body = buf[128:].rstrip(b"\x00").decode("ascii", errors="ignore")
+        return header, body
+
+    h1, s1 = split(data1)
+    h2, s2 = split(data2)
+
+    # --- 2. Parse both ---
+    try:
+        tu1 = shader_parser.parse_to_tree(s1)
+        tu2 = shader_parser.parse_to_tree(s2)
+    except Exception:
+        # fallback to simple byte crossover
+        cut = random.randrange(min(len(data1), len(data2)))
+        return (data1[:cut] + data2[cut:])[:max_size]
+
+    # --- 3. Classify items ---
+    def split_items(tu):
+        globals_, funcs, main = [], [], None
+        for it in tu.items:
+            if isinstance(it, FunctionDef) and it.name == "main":
+                main = it
+            elif isinstance(it, FunctionDef):
+                funcs.append(it)
+            else:
+                globals_.append(it)
+        return globals_, funcs, main
+
+    g1, f1, m1 = split_items(tu1)
+    g2, f2, m2 = split_items(tu2)
+
+    if not m1 or not m2:
+        return data1[:max_size]
+
+    # --- 4. Merge main bodies ---
+    stmts = list(m1.body.stmts)
+    splice = random.sample(
+        m2.body.stmts,
+        k=min(len(m2.body.stmts), random.randint(1, 5))
+    )
+    insert_at = random.randrange(len(stmts) + 1)
+    stmts[insert_at:insert_at] = splice
+    m1.body.stmts = stmts
+
+    # --- 5. Merge globals / funcs ---
+    def uniq(items):
+        seen = set()
+        out = []
+        for it in items:
+            k = repr(it)
+            if k not in seen:
+                seen.add(k)
+                out.append(it)
+        return out
+
+    new_items = uniq(g1 + g2 + f1 + f2 + [m1])
+    tu1.items = new_items
+
+    # --- 6. Unparse ---
+    out_src = shader_unparser.unparse_tu(tu1)
+    out = h1 + out_src.encode("ascii") + b"\x00"
+
+    return out[:max_size]
+
+
+'''
 def custom_crossover(data1: bytearray, data2: bytearray, max_size: int, seed: int) -> bytearray:
     fh = open("/home/oof/thestuff.txt", "wb")
     fh.write(b"someshit here")
     fh.close()
     return data1 # Just return the original data shit...
+'''
 
 # -----------------------------
 # CLI testing helper
