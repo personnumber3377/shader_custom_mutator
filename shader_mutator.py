@@ -278,6 +278,52 @@ def mutate_expr_typed(e, want, rng, scope, env):
         return gen_expr(want, scope, env, rng)
     return mutate_expr(e, rng, scope, env)
 
+# This is used to select the qualifiers
+
+def mutate_qualifiers(
+    t: TypeName,
+    rng: random.Random,
+    *,
+    storage_pool=STORAGE_QUALIFIERS,
+    precision_pool=PRECISION_QUALIFIERS,
+    p_add=0.4,
+    p_remove=0.3,
+    p_replace=0.2,
+) -> TypeName:
+    """
+    Mutate qualifiers of a TypeName in a controlled way.
+
+    storage_pool: allowed storage qualifiers
+    precision_pool: allowed precision qualifiers
+    """
+    t2 = deepclone(t)
+
+    qs = set(t2.qualifiers or [])
+
+    # ---- storage qualifiers ----
+    if qs and coin(rng, p_remove):
+        qs.remove(rng.choice(list(qs)))
+
+    if coin(rng, p_add):
+        q = rng.choice(storage_pool)
+        if q is not None:
+            qs.add(q)
+
+    if qs and coin(rng, p_replace):
+        qs.clear()
+        q = rng.choice(storage_pool)
+        if q is not None:
+            qs.add(q)
+
+    t2.qualifiers = list(qs)
+
+    # ---- precision (exclusive) ----
+    if coin(rng, 0.3):
+        t2.precision = rng.choice(precision_pool)
+
+    return t2
+
+
 def pick_builtin_image(scope: Scope, env: Env, rng: random.Random) -> Identifier | None:
     candidates = []
 
@@ -1498,13 +1544,27 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
     # StructDecl: struct foo {..} a,b;
     if isinstance(item, StructDecl):
-        dlog("item: "+str(item))
-        dlog("item.declarators[0]: "+str(item.declarators[0]))
-        dexit(msg="StructDecl")
+
+        # dlog("item: "+str(item))
+        # dlog("item.declarators[0]: "+str(item.declarators[0]))
+        # dexit(msg="StructDecl")
+        
         # [DEBUG] item: StructDecl(struct_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), declarators=[<shader_ast.Declarator object at 0x7f3aaa261b70>])
         it = deepclone(item)
         dummy_scope = Scope(None)
         it.struct_type.members = mutate_struct_fields(it.struct_type.members, rng, dummy_scope, env)
+
+        # 🔥 NEW: mutate struct storage qualifiers
+        if coin(rng, 0.35):
+            it.struct_type = StructType(
+                name=it.struct_type.name,
+                members=it.struct_type.members,
+            )
+            it.struct_type.type_name = mutate_qualifiers(
+                TypeName(it.struct_type.name),
+                rng,
+                storage_pool=["uniform", "buffer", "const", None],
+            )
 
         # mutate declarators
         if it.declarators and coin(rng, 0.10):
