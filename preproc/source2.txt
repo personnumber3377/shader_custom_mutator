@@ -1,0 +1,789 @@
+#version 300 es
+precision highp float;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bool enable_texture_2d[4]= bool[4](false, false, false, false);
+bool enable_texture_cube_map[4]= bool[4](false, false, false, false);
+const uint texture_format[4]= uint[4](6408u, 0u, 0u, 0u);
+bool point_sprite_coord_replace[4]= bool[4](false, false, false, false);
+bool clip_plane_enables[6]= bool[6](false, false, false, false, false, false);
+const uint texture_env_mode[4]= uint[4](8448u, 8448u, 8448u, 8448u);
+const uint combine_rgb[4]= uint[4](8448u, 8448u, 8448u, 8448u);
+const uint combine_alpha[4]= uint[4](8448u, 8448u, 8448u, 8448u);
+const uint src0_rgb[4]= uint[4](5890u, 5890u, 5890u, 5890u);
+const uint src0_alpha[4]= uint[4](5890u, 5890u, 5890u, 5890u);
+const uint src1_rgb[4]= uint[4](34168u, 34168u, 34168u, 34168u);
+const uint src1_alpha[4]= uint[4](34168u, 34168u, 34168u, 34168u);
+const uint src2_rgb[4]= uint[4](34166u, 34166u, 34166u, 34166u);
+const uint src2_alpha[4]= uint[4](34166u, 34166u, 34166u, 34166u);
+const uint op0_rgb[4]= uint[4](768u, 768u, 768u, 768u);
+const uint op0_alpha[4]= uint[4](770u, 770u, 770u, 770u);
+const uint op1_rgb[4]= uint[4](768u, 768u, 768u, 768u);
+const uint op1_alpha[4]= uint[4](770u, 770u, 770u, 770u);
+const uint op2_rgb[4]= uint[4](770u, 770u, 770u, 770u);
+const uint op2_alpha[4]= uint[4](770u, 770u, 770u, 770u);
+const uint alpha_func = 519u;
+const uint fog_mode = 2048u;
+
+
+
+
+
+
+uniform mediump sampler2D tex_sampler0;
+uniform mediump samplerCube tex_cube_sampler0;
+
+uniform mediump sampler2D tex_sampler1;
+uniform mediump samplerCube tex_cube_sampler1;
+
+uniform mediump sampler2D tex_sampler2;
+uniform mediump samplerCube tex_cube_sampler2;
+
+uniform mediump sampler2D tex_sampler3;
+uniform mediump samplerCube tex_cube_sampler3;
+
+uniform mediump vec4 texture_env_color[4];
+uniform mediump float texture_env_rgb_scale[4];
+uniform mediump float texture_env_alpha_scale[4];
+
+
+
+in vec4 pos_varying;
+in vec3 normal_varying;
+in mediump vec4 color_varying;
+flat in mediump vec4 color_varying_flat;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+uniform mediump float alpha_test_ref;
+
+
+
+uniform float fog_density;
+uniform float fog_start;
+uniform float fog_end;
+uniform mediump vec4 fog_color;
+
+
+
+uniform vec4 clip_planes[6];
+
+
+
+
+
+
+uniform highp uint logic_op;
+
+
+
+
+
+out mediump vec4 frag_color;
+
+mediump vec4 applyLogicOp(mediump vec4 currentFragment)
+{
+    return currentFragment;
+}
+
+
+bool doAlphaTest(mediump vec4 currentFragment)
+{
+    bool shouldPassAlpha = false;
+    mediump float incAlpha = currentFragment . a;
+
+    switch(alpha_func)
+    {
+        case 0x0200u :
+            shouldPassAlpha = false;
+            break;
+        case 0x0201u :
+            shouldPassAlpha = incAlpha < alpha_test_ref;
+            break;
+        case 0x0203u :
+            shouldPassAlpha = incAlpha <= alpha_test_ref;
+            break;
+        case 0x0202u :
+            shouldPassAlpha = incAlpha == alpha_test_ref;
+            break;
+        case 0x0206u :
+            shouldPassAlpha = incAlpha >= alpha_test_ref;
+            break;
+        case 0x0204u :
+            shouldPassAlpha = incAlpha > alpha_test_ref;
+            break;
+        case 0x0205u :
+            shouldPassAlpha = incAlpha != alpha_test_ref;
+            break;
+        case 0x0207u :
+        default :
+            shouldPassAlpha = true;
+            break;
+    }
+
+    return shouldPassAlpha;
+}
+
+bool doClipPlaneTest()
+{
+    bool res = true;
+
+    for(uint i = 0u;i < 6;i ++)
+    {
+        if(clip_plane_enables[i])
+        {
+            float dist = dot(clip_planes[i]. xyz, pos_varying . xyz)+ clip_planes[i]. w * pos_varying . w;
+            res = res &&(dist >= 0.0);
+        }
+    }
+
+    return res;
+}
+
+mediump vec4 doFog(mediump vec4 currentFragment)
+{
+
+    float eyeDist = abs(pos_varying . z / pos_varying . w);
+    float f = 1.0;
+    switch(fog_mode)
+    {
+        case 0x0800u :
+            f = exp(- fog_density * eyeDist);
+            break;
+        case 0x0801u :
+            f = exp(-(pow(fog_density * eyeDist, 2.0)));
+            break;
+        case 0x2601u :
+            f =(fog_end - eyeDist)/(fog_end - fog_start);
+            break;
+        default :
+            break;
+    }
+
+    f = clamp(f, 0.0, 1.0);
+    mediump vec4 result = vec4(f * currentFragment . rgb +(1.0 - f)* fog_color . rgb, currentFragment . a);
+    return result;
+}
+
+
+bool isTextureUnitEnabled(uint unit)
+{
+    return enable_texture_2d[unit]|| enable_texture_cube_map[unit];
+}
+
+mediump vec4 getTextureColor(uint unit)
+{
+    mediump vec4 res;
+
+    switch(unit)
+    {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        default :
+            break;
+    }
+
+    return res;
+}
+
+mediump vec4 getPointSpriteTextureColor(uint unit)
+{
+    mediump vec4 res;
+
+    switch(unit)
+    {
+        case 0u :
+            if(enable_texture_2d[0])
+            {
+                res = texture(tex_sampler0, gl_PointCoord . xy);
+            }
+            break;
+        case 1u :
+            if(enable_texture_2d[1])
+            {
+                res = texture(tex_sampler1, gl_PointCoord . xy);
+            }
+            break;
+        case 2u :
+            if(enable_texture_2d[2])
+            {
+                res = texture(tex_sampler2, gl_PointCoord . xy);
+            }
+            break;
+        case 3u :
+            if(enable_texture_2d[3])
+            {
+                res = texture(tex_sampler3, gl_PointCoord . xy);
+            }
+            break;
+        default :
+            break;
+    }
+
+    return res;
+}
+
+mediump vec3 textureCombineSrcnOpnRgb(uint srcnRgb,
+                                      uint opnRgb,
+                                      mediump vec4 textureEnvColor,
+                                      mediump vec4 vertexColor,
+                                      mediump vec4 texturePrevColor,
+                                      mediump vec4 textureColor)
+{
+    mediump vec3 res;
+    mediump vec4 op;
+
+    switch(srcnRgb)
+    {
+        case 0x1702u :
+            op = textureColor;
+            break;
+        case 0x8576u :
+            op = textureEnvColor;
+            break;
+        case 0x8577u :
+            op = vertexColor;
+            break;
+        case 0x8578u :
+            op = texturePrevColor;
+            break;
+        default :
+            op = texturePrevColor;
+            break;
+    }
+
+    switch(opnRgb)
+    {
+        case 0x0300u :
+            res = op . rgb;
+            break;
+        case 0x0301u :
+            res = 1.0 - op . rgb;
+            break;
+        case 0x0302u :
+            res = vec3(op . a, op . a, op . a);
+            break;
+        case 0x0303u :
+            res = vec3(1.0 - op . a, 1.0 - op . a, 1.0 - op . a);
+            break;
+        default :
+            break;
+    }
+
+    return res;
+}
+
+mediump float textureCombineSrcnOpnAlpha(uint srcn,
+                                         uint opn,
+                                         mediump vec4 textureEnvColor,
+                                         mediump vec4 vertexColor,
+                                         mediump vec4 texturePrevColor,
+                                         mediump vec4 textureColor)
+{
+    mediump float res;
+    mediump vec4 op;
+
+    switch(srcn)
+    {
+        case 0x1702u :
+            op = textureColor;
+            break;
+        case 0x8576u :
+            op = textureEnvColor;
+            break;
+        case 0x8577u :
+            op = vertexColor;
+            break;
+        case 0x8578u :
+            op = texturePrevColor;
+            break;
+        default :
+            op = texturePrevColor;
+            break;
+    }
+
+    switch(opn)
+    {
+        case 0x0302u :
+            res = op . a;
+            break;
+        case 0x0303u :
+            res = 1.0 - op . a;
+            break;
+        default :
+            break;
+    }
+
+    return res;
+}
+
+mediump vec4 textureCombine(uint combineRgb,
+                            uint combineAlpha,
+                            uint src0Rgb,
+                            uint src0Alpha,
+                            uint src1Rgb,
+                            uint src1Alpha,
+                            uint src2Rgb,
+                            uint src2Alpha,
+                            uint op0Rgb,
+                            uint op0Alpha,
+                            uint op1Rgb,
+                            uint op1Alpha,
+                            uint op2Rgb,
+                            uint op2Alpha,
+                            mediump vec4 textureEnvColor,
+                            mediump float rgbScale,
+                            mediump float alphaScale,
+                            mediump vec4 vertexColor,
+                            mediump vec4 texturePrevColor,
+                            mediump vec4 textureColor)
+{
+
+    mediump vec3 resRgb;
+    mediump float resAlpha;
+
+    mediump vec3 arg0Rgb;
+    mediump float arg0Alpha;
+    mediump vec3 arg1Rgb;
+    mediump float arg1Alpha;
+    mediump vec3 arg2Rgb;
+    mediump float arg2Alpha;
+    mediump float dotVal;
+
+    arg0Rgb = textureCombineSrcnOpnRgb(src0Rgb, op0Rgb, textureEnvColor, vertexColor,
+                                       texturePrevColor, textureColor);
+    arg0Alpha = textureCombineSrcnOpnAlpha(src0Alpha, op0Alpha, textureEnvColor, vertexColor,
+                                           texturePrevColor, textureColor);
+
+    if(combineRgb != 0x1E01u)
+    {
+        arg1Rgb = textureCombineSrcnOpnRgb(src1Rgb, op1Rgb, textureEnvColor, vertexColor,
+                                           texturePrevColor, textureColor);
+    }
+
+    if(combineAlpha != 0x1E01u)
+    {
+        arg1Alpha = textureCombineSrcnOpnAlpha(src1Alpha, op1Alpha, textureEnvColor, vertexColor,
+                                               texturePrevColor, textureColor);
+    }
+
+    if(combineRgb == 0x8575u)
+    {
+        arg2Rgb = textureCombineSrcnOpnRgb(src2Rgb, op2Rgb, textureEnvColor, vertexColor,
+                                           texturePrevColor, textureColor);
+    }
+
+    if(combineAlpha == 0x8575u)
+    {
+        arg2Alpha = textureCombineSrcnOpnAlpha(src2Alpha, op2Alpha, textureEnvColor, vertexColor,
+                                               texturePrevColor, textureColor);
+    }
+
+    switch(combineRgb)
+    {
+        case 0x1E01u :
+            resRgb = arg0Rgb;
+            break;
+        case 0x2100u :
+            resRgb = arg0Rgb * arg1Rgb;
+            break;
+        case 0x0104u :
+            resRgb = arg0Rgb + arg1Rgb;
+            break;
+        case 0x8574u :
+            resRgb = arg0Rgb + arg1Rgb - 0.5;
+            break;
+        case 0x8575u :
+            resRgb = arg0Rgb * arg2Rgb + arg1Rgb *(1.0 - arg2Rgb);
+            break;
+        case 0x84E7u :
+            resRgb = arg0Rgb - arg1Rgb;
+            break;
+        default :
+            break;
+    }
+
+    switch(combineAlpha)
+    {
+        case 0x1E01u :
+            resAlpha = arg0Alpha;
+            break;
+        case 0x2100u :
+            resAlpha = arg0Alpha * arg1Alpha;
+            break;
+        case 0x0104u :
+            resAlpha = arg0Alpha + arg1Alpha;
+            break;
+        case 0x8574u :
+            resAlpha = arg0Alpha + arg1Alpha - 0.5;
+            break;
+        case 0x8575u :
+            resAlpha = arg0Alpha * arg2Alpha + arg1Alpha *(1.0 - arg2Alpha);
+            break;
+        case 0x84E7u :
+            resAlpha = arg0Alpha - arg1Alpha;
+            break;
+        default :
+            break;
+    }
+
+    if(combineRgb == 0x86AEu || combineRgb == 0x86AFu)
+    {
+        dotVal = 4.0 * dot(arg0Rgb - 0.5, arg1Rgb - 0.5);
+
+        if(combineRgb == 0x86AEu)
+        {
+            return vec4(dotVal, dotVal, dotVal, resAlpha);
+        }
+        else
+        {
+            return vec4(dotVal, dotVal, dotVal, dotVal);
+        }
+    }
+    else
+    {
+        return vec4(resRgb, resAlpha);
+    }
+}
+
+mediump vec4 textureFunction(uint unit,
+                             uint texFormat,
+                             uint envMode,
+                             uint combineRgb,
+                             uint combineAlpha,
+                             uint src0Rgb,
+                             uint src0Alpha,
+                             uint src1Rgb,
+                             uint src1Alpha,
+                             uint src2Rgb,
+                             uint src2Alpha,
+                             uint op0Rgb,
+                             uint op0Alpha,
+                             uint op1Rgb,
+                             uint op1Alpha,
+                             uint op2Rgb,
+                             uint op2Alpha,
+                             mediump vec4 textureEnvColor,
+                             mediump float rgbScale,
+                             mediump float alphaScale,
+                             mediump vec4 vertexColor,
+                             mediump vec4 texturePrevColor,
+                             mediump vec4 textureColor)
+{
+
+    if(! isTextureUnitEnabled(unit))
+    {
+        return texturePrevColor;
+    }
+
+    mediump vec4 res;
+
+    switch(envMode)
+    {
+        case 0x1E01u :
+            switch(texFormat)
+            {
+                case 0x1906u :
+                    res . rgb = texturePrevColor . rgb;
+                    res . a = textureColor . a;
+                    break;
+                case 0x1908u :
+                case 0x190Au :
+                    res . rgba = textureColor . rgba;
+                    break;
+                case 0x1907u :
+                case 0x1909u :
+                default :
+                    res . rgb = textureColor . rgb;
+                    res . a = texturePrevColor . a;
+                    break;
+            }
+            break;
+        case 0x2100u :
+            switch(texFormat)
+            {
+                case 0x1906u :
+                    res . rgb = texturePrevColor . rgb;
+                    res . a = texturePrevColor . a * textureColor . a;
+                    break;
+                case 0x1908u :
+                case 0x190Au :
+                    res . rgba = texturePrevColor . rgba * textureColor . rgba;
+                    break;
+                case 0x1907u :
+                case 0x1909u :
+                default :
+                    res . rgb = texturePrevColor . rgb * textureColor . rgb;
+                    res . a = texturePrevColor . a;
+                    break;
+            }
+            break;
+        case 0x2101u :
+            switch(texFormat)
+            {
+                case 0x1907u :
+                    res . rgb = textureColor . rgb;
+                    res . a = texturePrevColor . a;
+                    break;
+                case 0x1908u :
+                    res . rgb = texturePrevColor . rgb *(1.0 - textureColor . a)+
+                              textureColor . rgb * textureColor . a;
+                    res . a = texturePrevColor . a;
+                    break;
+                case 0x1906u :
+                case 0x1909u :
+                case 0x190Au :
+                default :
+                    res . rgb = texturePrevColor . rgb * textureColor . rgb;
+                    res . a = texturePrevColor . a;
+                    break;
+            }
+            break;
+        case 0x0BE2u :
+            switch(texFormat)
+            {
+                case 0x1906u :
+                    res . rgb = texturePrevColor . rgb;
+                    res . a = textureColor . a * texturePrevColor . a;
+                    break;
+                case 0x1909u :
+                case 0x1907u :
+                    res . rgb = texturePrevColor . rgb *(1.0 - textureColor . rgb)+
+                              textureEnvColor . rgb * textureColor . rgb;
+                    res . a = texturePrevColor . a;
+                    break;
+                case 0x190Au :
+                case 0x1908u :
+                default :
+                    res . rgb = texturePrevColor . rgb *(1.0 - textureColor . rgb)+
+                              textureEnvColor . rgb * textureColor . rgb;
+                    res . a = textureColor . a * texturePrevColor . a;
+                    break;
+            }
+            break;
+        case 0x0104u :
+            switch(texFormat)
+            {
+                case 0x1906u :
+                    res . rgb = texturePrevColor . rgb;
+                    res . a = textureColor . a * texturePrevColor . a;
+                    break;
+                case 0x1909u :
+                case 0x1907u :
+                    res . rgb = texturePrevColor . rgb + textureColor . rgb;
+                    res . a = texturePrevColor . a;
+                    break;
+                case 0x190Au :
+                case 0x1908u :
+                default :
+                    res . rgb = texturePrevColor . rgb + textureColor . rgb;
+                    res . a = textureColor . a * texturePrevColor . a;
+                    break;
+            }
+            break;
+        case 0x8570u :
+            res = textureCombine(combineRgb, combineAlpha, src0Rgb, src0Alpha, src1Rgb, src1Alpha,
+                                 src2Rgb, src2Alpha, op0Rgb, op0Alpha, op1Rgb, op1Alpha, op2Rgb,
+                                 op2Alpha, textureEnvColor, rgbScale, alphaScale, vertexColor,
+                                 texturePrevColor, textureColor);
+            res . rgb *= rgbScale;
+            res . a *= alphaScale;
+            break;
+        default :
+            break;
+    }
+
+    return clamp(res, 0.0, 1.0);
+}
+
+void main()
+{
+    if(false && ! false)
+    {
+        if(! doClipPlaneTest())
+        {
+            discard;
+        }
+    }
+
+    mediump vec4 vertex_color;
+
+    if(false)
+    {
+        vertex_color = color_varying_flat;
+    }
+    else
+    {
+        vertex_color = color_varying;
+    }
+
+    mediump vec4 currentFragment = vertex_color;
+
+    mediump vec4 texturePrevColor = currentFragment;
+
+    for(uint i = 0u;i < 0;i ++)
+    {
+        mediump vec4 textureColor;
+
+        if(false && false &&
+            point_sprite_coord_replace[i]){
+            textureColor = getPointSpriteTextureColor(i);
+        } else {
+            textureColor = getTextureColor(i);
+        }
+
+        currentFragment = textureFunction(
+            i, texture_format[i], texture_env_mode[i], combine_rgb[i], combine_alpha[i],
+            src0_rgb[i], src0_alpha[i], src1_rgb[i], src1_alpha[i], src2_rgb[i], src2_alpha[i],
+            op0_rgb[i], op0_alpha[i], op1_rgb[i], op1_alpha[i], op2_rgb[i], op2_alpha[i],
+            texture_env_color[i], texture_env_rgb_scale[i], texture_env_alpha_scale[i],
+            vertex_color, texturePrevColor, textureColor);
+
+        texturePrevColor = currentFragment;
+    }
+
+    if(false)
+    {
+        currentFragment = doFog(currentFragment);
+    }
+
+    if(false && ! doAlphaTest(currentFragment))
+    {
+        discard;
+    }
+
+    frag_color = applyLogicOp(currentFragment);
+}
+
+ 

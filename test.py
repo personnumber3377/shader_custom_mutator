@@ -283,13 +283,16 @@ def mutation_benchmark(path: str, iters: int, seed: int):
             mutated = mutator.fuzz(bytearray(data), None, 1_000_000)
             ok2, err = check_file_bytes(mutated)
         except Exception as e: # TODO: The mutator may fail for example with "ValueError: invalid literal for int() with base 10: 'c'" ... Please fix this!
+            print("Encountered this exception here: "+str(e))
+            print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
             total += 1
             continue
         total += 1
         success += int(ok2)
         if err:
             print("Mutation resulted in this error: "+str(err))
-            print("Source code: "+str(strip_header_and_null(mutated).decode("utf-8")))
+            print("Mutated soource code: "+str(strip_header_and_null(mutated).decode("utf-8")))
+            print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
         if total and total % 10 == 0:
             print(f"[{total}] success rate = {success/total:.2%}")
 

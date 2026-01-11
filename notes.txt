@@ -573,3 +573,23 @@ WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found.
 [  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
 [  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
 oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ cd corpus/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Add custom crossover shit...
+
+
+
