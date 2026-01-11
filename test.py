@@ -37,7 +37,8 @@ TIMEOUT = 5.0
 
 # These are for the actual fuzzing benchmark...
 
-ANGLE_BIN = "./angle_translator_fuzzer"
+# ANGLE_BIN = "./angle_translator_fuzzer"
+ANGLE_BIN = CHECKER_PATH
 ASSERT_NEEDLE = b"stripStructSpecifierSamplers"
 ASSERT_OUTDIR = "assert_hits"
 ASSERT_TIMEOUT = 2.0
