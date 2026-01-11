@@ -193,7 +193,7 @@ def run_angle_and_check(path: str) -> bool:
         return False
 
     combined = p.stdout + p.stderr
-    print("combined: "+str(combined))
+    # print("combined: "+str(combined))
     return ASSERT_NEEDLE in combined
 
 def collect_files(path: str) -> List[str]:
@@ -230,7 +230,7 @@ def chase_assert_with_custom_mutator(
         buf = bytearray(header + body)
 
         # mutate ONCE using your custom mutator
-        print("Passing this here: "+str(buf))
+        # print("Passing this here: "+str(buf))
         buf = mutator.fuzz(buf, None, 1_000_000)
 
         # buf = original_buf # Actually use the original shit...
@@ -263,7 +263,7 @@ def chase_assert_with_custom_mutator(
 def mutation_benchmark(path: str, iters: int, seed: int):
     files = collect_files(path)
     random.seed(seed)
-    mutator.init(seed)
+    # mutator.init(seed)
 
     total = 0
     success = 0
@@ -440,6 +440,9 @@ def main():
 
     seed = args.seed or random.randrange(1 << 30)
     print(f"[seed] {seed}")
+
+    # Initialize the seed to the actual mutator...
+    mutator.init(seed)
 
     try:
         if args.mutation_bench:

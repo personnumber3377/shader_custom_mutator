@@ -1211,6 +1211,7 @@ def mutate_typename(t: TypeName, rng: random.Random) -> TypeName:
 
     # add storage qualifier
     if coin(rng, 0.3):
+        exit(1) # Debug exit...
         q = rng.choice(list(STORAGE_QUALIFIERS))
         qs.add(q)
 

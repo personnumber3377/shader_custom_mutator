@@ -42,6 +42,26 @@ void main()
   textureCube(a2.s.ar, vec3(1.0,  1.0, 1.0));
 }'''
 
+
+
+shader_newest = r'''
+precision mediump float;
+precision mediump int;
+
+struct S1 {
+  samplerCube ar;
+} a1;
+
+uniform struct S2 {
+  S1 s;
+} a2;
+
+void main()
+{
+  textureCube(a2.s.ar, vec3(1.0,  1.0, 1.0));
+}'''
+
+
 # // v = textureCube(a2.s.ar, vec3(1.0));
 
-sys.stdout.buffer.write(header + shader_source.encode('ascii') + b'\x00')
+sys.stdout.buffer.write(header + shader_newest.encode('ascii') + b'\x00')
