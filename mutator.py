@@ -194,6 +194,15 @@ def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> byt
             pass
         return buf
 
+# -----------------------------
+# libFuzzer entrypoint for custom crossover
+# -----------------------------
+
+def custom_crossover(data1: bytearray, data2: bytearray, max_size: int, seed: int) -> bytearray:
+    fh = open("/home/oof/thestuff.txt", "wb")
+    fh.write(b"someshit here")
+    fh.close()
+    return data1 # Just return the original data shit...
 
 # -----------------------------
 # CLI testing helper
