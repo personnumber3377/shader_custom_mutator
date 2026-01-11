@@ -1556,15 +1556,32 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
         # 🔥 NEW: mutate struct storage qualifiers
         if coin(rng, 0.35):
+            # dlog("Example"*1000)
+            dlog("stuff...")
+            dlog("it: "+str(it))
             it.struct_type = StructType(
                 name=it.struct_type.name,
                 members=it.struct_type.members,
             )
+            dlog("it.struct_type.type_name: "+str(it.struct_type.type_name))
+            old_qualifiers = copy.deepcopy(it.struct_type.type_name.qualifiers)
+            dlog("old_qualifiers: "+str(old_qualifiers))
+
             it.struct_type.type_name = mutate_qualifiers(
                 TypeName(it.struct_type.name),
                 rng,
                 storage_pool=["uniform", "buffer", "const", None],
             )
+            
+            # dlog("it.struct_type.type_name: "+str(it.struct_type.type_name))
+
+            dlog("Here is the thing it.struct_type.type_name.qualifiers: "+str(it.struct_type.type_name.qualifiers))
+
+            # Check for uniform...
+            if "uniform" in it.struct_type.type_name.qualifiers and "uniform" not in old_qualifiers: # We added "uniform" ???
+                # Stop the thing...
+                global stop
+                stop = True
 
         # mutate declarators
         if it.declarators and coin(rng, 0.10):
@@ -1742,15 +1759,15 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     tu2.items = new_items
 
     # Now try to unparse that shit...
-
-
-    '''
-    if stop:
-        result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
-        # Now print the thing...
-        print("Mutated source code when hit the thing: "+str(result))
-        print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
-        exit(0)
-    '''
+    # exit(1)
+    if DEBUG:
+    
+        if stop:
+            result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
+            # Now print the thing...
+            print("Mutated source code when hit the thing: "+str(result))
+            print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
+            exit(0)
+    
 
     return tu2
