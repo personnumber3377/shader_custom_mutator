@@ -231,8 +231,12 @@ def chase_assert_with_custom_mutator(
 
         # mutate ONCE using your custom mutator
         # print("Passing this here: "+str(buf))
-        buf = mutator.fuzz(buf, None, 1_000_000)
 
+        # Wrapped in a try since the mutator has some bugs in it still...
+        try:
+            buf = mutator.fuzz(buf, None, 1_000_000)
+        except Exception as e:
+            continue
         # buf = original_buf # Actually use the original shit...
 
         # Now try to write the file and run the checker...
