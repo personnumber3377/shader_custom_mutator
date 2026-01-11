@@ -13,7 +13,9 @@ from builtin_data import BUILTIN_FUNCTIONS
 
 # Debugging???
 
-DEBUG = True
+# DEBUG = True
+
+DEBUG = False
 
 if DEBUG:
     import shader_unparser
