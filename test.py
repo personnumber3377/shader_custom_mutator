@@ -10,6 +10,7 @@ import tempfile
 import subprocess
 import traceback
 import time
+import copy
 from typing import Tuple, List
 
 # -----------------------------
@@ -41,7 +42,9 @@ TIMEOUT = 5.0
 ANGLE_BIN = CHECKER_PATH
 ASSERT_NEEDLE = b"stripStructSpecifierSamplers"
 ASSERT_OUTDIR = "assert_hits"
-ASSERT_TIMEOUT = 2.0
+ASSERT_TIMEOUT = 5.0 # 2.0
+# PRINT_COUNT = 
+INPUT_FILE = "./input.bin"
 
 def check_file_bytes(data: bytes) -> tuple[bool, str]:
     with tempfile.NamedTemporaryFile(mode="wb", suffix=".bin", delete=False) as f:
@@ -177,11 +180,11 @@ def binary_to_text(bin_path: str, out_path: str):
 # Utilities
 # -----------------------------
 
-def run_angle_and_check(buf: bytes) -> bool:
+def run_angle_and_check(path: str) -> bool:
     try:
         p = subprocess.run(
-            [ANGLE_BIN],
-            input=buf,
+            [ANGLE_BIN, path],
+            # input=buf,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=ASSERT_TIMEOUT,
@@ -190,6 +193,7 @@ def run_angle_and_check(buf: bytes) -> bool:
         return False
 
     combined = p.stdout + p.stderr
+    print("combined: "+str(combined))
     return ASSERT_NEEDLE in combined
 
 def collect_files(path: str) -> List[str]:
@@ -213,6 +217,9 @@ def chase_assert_with_custom_mutator(
 
     with open(seed_path, "rb") as f:
         seed = bytearray(f.read())
+    
+    # Make a copy of the original payload...
+    original_buf = copy.deepcopy(seed)
 
     # IMPORTANT: never mutate header
     header = seed[:HEADER_SIZE]
@@ -223,9 +230,17 @@ def chase_assert_with_custom_mutator(
         buf = bytearray(header + body)
 
         # mutate ONCE using your custom mutator
+        print("Passing this here: "+str(buf))
         buf = mutator.fuzz(buf, None, 1_000_000)
 
-        if run_angle_and_check(buf):
+        # buf = original_buf # Actually use the original shit...
+
+        # Now try to write the file and run the checker...
+
+        with open(INPUT_FILE, "wb") as f:
+            f.write(buf)
+
+        if run_angle_and_check(INPUT_FILE): # Originally was buf
             ts = int(time.time())
             out = os.path.join(
                 ASSERT_OUTDIR,
@@ -239,7 +254,7 @@ def chase_assert_with_custom_mutator(
             print(f"Saved crashing input: {out}")
             return out
 
-        if i % 1000 == 0:
+        if i % PRINT_COUNT == 0: # Was originally 1000
             print(f"[assert-chase] iterations: {i}")
 
     print("❌ No assert found")
