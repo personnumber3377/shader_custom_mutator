@@ -280,48 +280,46 @@ def mutate_expr_typed(e, want, rng, scope, env):
 
 # This is used to select the qualifiers
 
-def mutate_qualifiers(
-    t: TypeName,
+def mutate_declarator_qualifiers(
+    d: Declarator,
     rng: random.Random,
     *,
     storage_pool=STORAGE_QUALIFIERS,
     precision_pool=PRECISION_QUALIFIERS,
+    interp_pool=None,
     p_add=0.4,
     p_remove=0.3,
     p_replace=0.2,
-) -> TypeName:
+) -> None:
     """
-    Mutate qualifiers of a TypeName in a controlled way.
-
-    storage_pool: allowed storage qualifiers
-    precision_pool: allowed precision qualifiers
+    Mutate qualifiers in-place on a Declarator.
     """
-    t2 = deepclone(t)
 
-    qs = set(t2.qualifiers or [])
+    qs = set(d.qualifiers or [])
 
-    # ---- storage qualifiers ----
+    all_allowed = set(storage_pool)
+    if interp_pool:
+        all_allowed |= set(interp_pool)
+    all_allowed |= set(precision_pool)
+
+    # remove
     if qs and coin(rng, p_remove):
         qs.remove(rng.choice(list(qs)))
 
+    # add
     if coin(rng, p_add):
-        q = rng.choice(storage_pool)
+        q = rng.choice(list(all_allowed))
         if q is not None:
             qs.add(q)
 
+    # replace
     if qs and coin(rng, p_replace):
         qs.clear()
-        q = rng.choice(storage_pool)
+        q = rng.choice(list(all_allowed))
         if q is not None:
             qs.add(q)
 
-    t2.qualifiers = list(qs)
-
-    # ---- precision (exclusive) ----
-    if coin(rng, 0.3):
-        t2.precision = rng.choice(precision_pool)
-
-    return t2
+    d.qualifiers = list(qs)
 
 
 def pick_builtin_image(scope: Scope, env: Env, rng: random.Random) -> Identifier | None:
@@ -1555,6 +1553,7 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
         it.struct_type.members = mutate_struct_fields(it.struct_type.members, rng, dummy_scope, env)
 
         # 🔥 NEW: mutate struct storage qualifiers
+        '''
         if coin(rng, 0.35):
             # dlog("Example"*1000)
             dlog("stuff...")
@@ -1582,6 +1581,28 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
                 # Stop the thing...
                 global stop
                 stop = True
+        '''
+
+
+        # 🔥 THIS IS THE IMPORTANT PART 🔥
+        # if it.declarators and coin(rng, 0.35):
+        if coin(rng, 0.50):
+            d = rng.choice(it.declarators)
+
+            old = list(d.qualifiers)
+            dlog("stuff")
+            mutate_declarator_qualifiers(
+                d,
+                rng,
+                storage_pool=["uniform", "buffer", "const", None],
+                precision_pool=PRECISION_QUALIFIERS,
+            )
+
+            # optional debug / assert-chasing hook
+            if "uniform" in d.qualifiers and "uniform" not in old:
+                global stop
+                stop = True
+
 
         # mutate declarators
         if it.declarators and coin(rng, 0.10):
@@ -1761,7 +1782,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     # Now try to unparse that shit...
     # exit(1)
     if DEBUG:
-    
+        return tu2 # Short circuit here...
         if stop:
             result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
             # Now print the thing...
