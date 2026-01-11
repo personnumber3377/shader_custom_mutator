@@ -25,6 +25,13 @@ def dlog(msg: str): # Debug logging...
         print("[DEBUG] "+str(msg))
     return
 
+def dexit(msg: str = None): # Exit with error code 1 if in debugging mode...
+    if DEBUG:
+        if msg != None:
+            dlog("[EXITING]: "+str(msg))
+        exit(1)
+    return
+
 # ----------------------------
 # Utilities
 # ----------------------------
@@ -1203,6 +1210,13 @@ def mutate_array_dims(dims: List[Optional[Expr]], rng: random.Random, scope: Sco
 def mutate_typename(t: TypeName, rng: random.Random) -> TypeName:
     t2 = deepclone(t)
 
+    # Exit for debugging...
+    # exit(1)
+
+    dlog("Exiting because reached mutate_typename...")
+    if DEBUG:
+        exit(1)
+
     qs = set(t2.qualifiers or [])
 
     # remove qualifier
@@ -1211,7 +1225,7 @@ def mutate_typename(t: TypeName, rng: random.Random) -> TypeName:
 
     # add storage qualifier
     if coin(rng, 0.3):
-        exit(1) # Debug exit...
+        # exit(1) # Debug exit...
         q = rng.choice(list(STORAGE_QUALIFIERS))
         qs.add(q)
 
@@ -1271,6 +1285,9 @@ def mutate_vardecl(v: VarDecl, rng: random.Random, scope: Scope, env: Env) -> Va
 
         v2.qualifiers = list(qs)
     '''
+
+    if DEBUG:
+        exit(1)
 
     if coin(rng, 0.25): # Mutate qualifiers???
         v2.type_name = mutate_typename(v2.type_name, rng)
@@ -1466,6 +1483,10 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
     # StructDef
     if isinstance(item, StructDef):
+        dlog("mutating struct definition")
+        # if DEBUG:
+        #     exit(1)
+        dexit()
         # mutate fields
         dummy_scope = Scope(None)
         new_fields = mutate_struct_fields(item.fields, rng, dummy_scope, env)
@@ -1477,6 +1498,10 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
     # StructDecl: struct foo {..} a,b;
     if isinstance(item, StructDecl):
+        dlog("item: "+str(item))
+        dlog("item.declarators[0]: "+str(item.declarators[0]))
+        dexit(msg="StructDecl")
+        # [DEBUG] item: StructDecl(struct_type=StructType(name='S1', members=[StructField(type_name=TypeName(name='samplerCube', precision=None, qualifiers=[]), name='ar', array_size=[])]), declarators=[<shader_ast.Declarator object at 0x7f3aaa261b70>])
         it = deepclone(item)
         dummy_scope = Scope(None)
         it.struct_type.members = mutate_struct_fields(it.struct_type.members, rng, dummy_scope, env)

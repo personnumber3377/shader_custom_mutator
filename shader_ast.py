@@ -108,6 +108,10 @@ class Declarator:
         self.array_size = array_size
         self.init = init
         self.qualifiers = qualifiers or []
+    def __str__(self):
+        # Print as string...
+        out_str = "Declarator("+", ".join([str(self.name), str(self.base_type), str(self.array_size), str(self.init), str(self.qualifiers)])+")"
+        return out_str
 
 @dataclass
 class VarDecl:
