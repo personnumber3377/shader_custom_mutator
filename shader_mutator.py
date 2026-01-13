@@ -1704,6 +1704,120 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
 
 # ----------------------------
+# Special havoc mode with very specific mutations...
+# ----------------------------
+
+# TODO: Consider moving these special mutations to another python file???
+
+def _havoc_apply_struct_decl_qualifiers_all(items: List[TopLevel], rng: random.Random, env: Env) -> List[TopLevel]:
+    """
+    Apply a coordinated qualifier mutation across ALL StructDecl declarators.
+
+    Goal: make it easy to reach bugs that require multiple correlated qualifier changes
+    (e.g. BOTH structs getting 'uniform' in the same iteration).
+    """
+    it_items = deepclone(items)
+
+    # Decide a single global "plan" for this havoc iteration.
+    # Keep it biased toward 'uniform' because that's what you care about here.
+    plans = [
+        "force_uniform",     # add uniform everywhere (keep existing qualifiers too)
+        "replace_uniform",   # replace with exactly 'uniform'
+        "toggle_uniform",    # flip uniform on/off everywhere
+        "replace_random",    # replace with one random storage qualifier (uniform/buffer/const or none)
+        "mix_add_remove",    # use mutate_declarator_qualifiers but with aggressive params everywhere
+    ]
+    plan = rng.choice(plans)
+
+    # Pick a global storage qualifier for plans that need it
+    # Heavily bias towards uniform
+    storage_choices = ["uniform", "uniform", "uniform", "buffer", "const", None]
+    global_storage = rng.choice(storage_choices)
+
+    # Optional: also apply a single global precision choice sometimes
+    # (struct declarators probably ignore precision, but it can perturb parser / AST)
+    global_precision = rng.choice(PRECISION_QUALIFIERS)
+
+    changed_any = False
+
+    for i, item in enumerate(it_items):
+        if not isinstance(item, StructDecl):
+            continue
+        if not getattr(item, "declarators", None):
+            continue
+
+        # Mutate all declarators of this struct decl
+        for d in item.declarators:
+            old = list(d.qualifiers or [])
+
+            qs = set(old)
+
+            if plan == "force_uniform":
+                # Ensure uniform present, keep other qualifiers
+                qs.add("uniform")
+
+            elif plan == "replace_uniform":
+                qs = {"uniform"}
+
+            elif plan == "toggle_uniform":
+                if "uniform" in qs:
+                    qs.remove("uniform")
+                else:
+                    qs.add("uniform")
+
+            elif plan == "replace_random":
+                # Replace with exactly one chosen qualifier (or none)
+                qs.clear()
+                if global_storage is not None:
+                    qs.add(global_storage)
+
+            elif plan == "mix_add_remove":
+                # Use your existing mutator but crank it up, applied everywhere.
+                mutate_declarator_qualifiers(
+                    d,
+                    rng,
+                    storage_pool=["uniform", "buffer", "const", None],
+                    precision_pool=PRECISION_QUALIFIERS,
+                    p_add=0.90,
+                    p_remove=0.60,
+                    p_replace=0.80,
+                )
+                # mutate_declarator_qualifiers already wrote d.qualifiers; continue
+                if d.qualifiers != old:
+                    changed_any = True
+                continue
+
+            # Apply global precision sometimes (harmless if ignored)
+            # Note: Declarator has qualifiers; TypeName holds precision.
+            # We can only store precision if Declarator supports it; otherwise skip.
+            # If your Declarator doesn't have a precision field, this is a no-op.
+            if hasattr(d, "precision") and coin(rng, 0.35):
+                d.precision = global_precision
+
+            # Commit qualifier set
+            d.qualifiers = [q for q in qs if q is not None]
+
+            if d.qualifiers != old:
+                changed_any = True
+
+    # Helpful for your assert-chasing debugging hook
+    if changed_any and ("uniform" == global_storage or plan in ("force_uniform", "replace_uniform")):
+        global stop
+        stop = True
+
+    return it_items
+
+def special_havoc(items, rng, env):
+    # Check for the thing here...
+    strats = ["struct_qualifier_all"]
+    strat = rng.choice(strats)
+    if strat == "struct_qualifier_all": # Replace the qualifiers of here with the certain thing.
+        # GIVE ME THE CODE FOR THIS!!!
+        return _havoc_apply_struct_decl_qualifiers_all(items, rng, env)
+
+    return items
+
+# ----------------------------
 # Public entrypoint
 # ----------------------------
 
@@ -1723,6 +1837,14 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     # Instead of mutating each expression, just mutate a randomly chosen one...
 
     new_items = copy.deepcopy(tu2.items) # Copy...
+
+    # Check for the special havoc mode.
+
+    if coin(rng, 0.10): # 10 percent chance of special havoc mode...
+        mutated_items = special_havoc(new_items, rng, env)
+        tu2.items = mutated_items
+        return tu2 # Return the mutated structure...
+
 
     # Now get one...
 
