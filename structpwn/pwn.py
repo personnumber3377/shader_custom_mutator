@@ -12,38 +12,7 @@ header_list.extend([0] * (128 - len(header_list)))
 header_list[12] |= 0x01 # objectCode = true
 header = bytes(header_list)
 
-
-shader_source_old = r'''
-uniform struct S1 { samplerCube ar; } a1;
-uniform struct S2 { S1 s; } a2;
-
-vec4 v;
-
-void main (void)
-{
-    v = textureCube(a2.s.ar, vec3(1.0,  1.0, 1.0));
-}'''
-
-
-shader_source = r'''
-precision mediump float;
-precision mediump int;
-
-uniform struct S1 {
-  samplerCube ar;
-} a1;
-
-uniform struct S2 {
-  S1 s;
-} a2;
-
-void main()
-{
-  textureCube(a2.s.ar, vec3(1.0,  1.0, 1.0));
-}'''
-
-
-
+# Note lack of "uniform" in the struct definitions...
 shader_newest = r'''
 precision mediump float;
 precision mediump int;
@@ -52,7 +21,7 @@ struct S1 {
   samplerCube ar;
 } a1;
 
-uniform struct S2 {
+struct S2 {
   S1 s;
 } a2;
 
