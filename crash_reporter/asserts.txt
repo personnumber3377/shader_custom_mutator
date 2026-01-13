@@ -1,0 +1,48 @@
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: OutputSPIRV.cpp:4914 (visitBinary):      ! Assert failed in visitBinary (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:4914): !node->hasConstantValue()
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: MonomorphizeUnsupportedFunctions.cpp:261 (visitAggregate):       ! Assert failed in visitAggregate (../../third_party/angle/src/compiler/translator/tree_ops/MonomorphizeUnsupportedFunctions.cpp:261): function && mFunctionMap->find(function) != mFunctionMap->end()
+FATAL: OutputSPIRV.cpp:4914 (visitBinary):      ! Assert failed in visitBinary (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:4914): !node->hasConstantValue()
+FATAL: MonomorphizeUnsupportedFunctions.cpp:261 (visitAggregate):       ! Assert failed in visitAggregate (../../third_party/angle/src/compiler/translator/tree_ops/MonomorphizeUnsupportedFunctions.cpp:261): function && mFunctionMap->find(function) != mFunctionMap->end()
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: OutputSPIRV.cpp:4914 (visitBinary):      ! Assert failed in visitBinary (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:4914): !node->hasConstantValue()
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: MonomorphizeUnsupportedFunctions.cpp:261 (visitAggregate):       ! Assert failed in visitAggregate (../../third_party/angle/src/compiler/translator/tree_ops/MonomorphizeUnsupportedFunctions.cpp:261): function && mFunctionMap->find(function) != mFunctionMap->end()
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: OutputSPIRV.cpp:4914 (visitBinary):      ! Assert failed in visitBinary (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:4914): !node->hasConstantValue()
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: OutputSPIRV.cpp:500 (GetStorageClass):   ! Assert failed in GetStorageClass (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:500): type.getInterfaceBlock() != nullptr || qualifier == EvqUniform
+FATAL: OutputSPIRV.cpp:6490 (getSpirv):         ! Assert failed in getSpirv (../../third_party/angle/src/compiler/translator/spirv/OutputSPIRV.cpp:6490): spirv::Validate(result)
+FATAL: Compiler.cpp:862 (validateAST):  ! Assert failed in validateAST (../../third_party/angle/src/compiler/translator/Compiler.cpp:862): valid
