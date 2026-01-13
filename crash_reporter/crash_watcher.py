@@ -119,7 +119,7 @@ def main():
         for fn in sorted(os.listdir(".")):
             if not fn.startswith("crash-"):
                 continue
-
+            print(f"[+] Running {fn}")
             try:
                 stderr = run_fuzzer(fn)
             except Exception as e:
@@ -127,6 +127,7 @@ def main():
                 continue
 
             if not is_interesting(stderr):
+                print("[-] Not interesting: "+str(fn))
                 continue
 
             if banned(stderr, banlist):
@@ -136,6 +137,7 @@ def main():
             sig = fingerprint(stderr)
 
             if sig in seen:
+                print(f"[-] Already seen {fn}")
                 continue
 
             seen.add(sig)
