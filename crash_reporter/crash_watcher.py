@@ -22,9 +22,9 @@ BANLIST = "ban_signatures.txt"
 # Email config (SMTP)
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USER = "your_email@gmail.com"
-SMTP_PASS = "your_app_password"
-EMAIL_TO = "your_email@gmail.com"
+SMTP_USER = os.environ["SMTP_USER"]
+SMTP_PASS = os.environ["SMTP_PASS"] # "your_app_password"
+EMAIL_TO = os.environ["EMAIL_TO"] # "your_email@gmail.com"
 
 # -----------------------
 # UTILS
