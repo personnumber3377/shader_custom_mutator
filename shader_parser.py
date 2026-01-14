@@ -601,8 +601,23 @@ class Parser:
         # next must exist and be an identifier (var name) or '(' (function)
         if j + 1 >= len(self.toks):
             return False
-        t2 = self.toks[j + 1]
-        return t2.kind == "ID"
+        
+        # This is to handle potential functions that returns an array...
+        j2 = j + 1
+        while j2 < len(self.toks) and self.toks[j2].kind == "[":
+            j2 += 1
+            if j2 < len(self.toks) and self.toks[j2].kind != "]":
+                j2 += 1
+            if j2 < len(self.toks) and self.toks[j2].kind == "]":
+                j2 += 1
+
+        if j2 >= len(self.toks):
+            return False
+
+        return self.toks[j2].kind == "ID"
+
+        # t2 = self.toks[j + 1]
+        # return t2.kind == "ID"
 
     # -----------------------
     # Top-level parsing
@@ -710,6 +725,24 @@ class Parser:
 
     def parse_function_def_or_decl(self) -> FunctionDef:
         ret = self.parse_type_name()
+
+        # parse array dimensions on return type
+        array_dims = []
+        while self.match("["):
+            if self.match("]"):
+                array_dims.append(None)
+            else:
+                array_dims.append(self.parse_expr(0))
+                self.expect("]")
+
+        if array_dims:
+            ret = TypeName(
+                name=ret.name,
+                precision=ret.precision,
+                qualifiers=ret.qualifiers,
+                array_dims=array_dims
+            )
+
         fname = self.expect("ID").value
         self.expect("(")
         params: List[FunctionParam] = []
