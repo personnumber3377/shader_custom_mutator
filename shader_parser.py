@@ -856,6 +856,7 @@ class Parser:
                 continue
 
             if self._looks_like_decl():
+                '''
                 save = self.i
                 _ = self.parse_type_name()
                 _ = self.expect("ID")
@@ -867,6 +868,29 @@ class Parser:
                     # print("Function definition...")
                     self.i = save
                     items.append(self.parse_global_decl())
+                '''
+
+                save = self.i
+
+                # Parse return type
+                _ = self.parse_type_name()
+
+                # skip array dimensions on return type
+                while self.match("["):
+                    if not self.match("]"):
+                        self.parse_expr(0)
+                        self.expect("]")
+
+                # Now expect function / variable name
+                _ = self.expect("ID")
+
+                if self.peek().kind == "(":
+                    self.i = save
+                    items.append(self.parse_function_def_or_decl())
+                else:
+                    self.i = save
+                    items.append(self.parse_global_decl())
+
                 continue
             print("Ignoring this stuff here: "+str(self.peek().kind)+" , "+str(self.peek().value))
             self.advance()

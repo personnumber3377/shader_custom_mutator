@@ -10,6 +10,10 @@ class TypeName:
     precision: Optional[str] = None
     qualifiers: List[str] = None
 
+    # This is basically for the function definitions which return arrays...
+
+    array_dims: List[Optional[Expr]] = None
+
     def __post_init__(self):
         if self.qualifiers is None:
             self.qualifiers = []

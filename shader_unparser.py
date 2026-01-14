@@ -80,7 +80,13 @@ def unparse_type(t: TypeName) -> str:
     if getattr(t, "precision", None):
         parts.append(t.precision)
     parts.append(t.name)
-    return " ".join(parts)
+    # Now check for array_dims (array_dims: List[Optional[Expr]] = None)
+    arr = ""
+    # unparse_array_suffix(getattr(p, "array_dims", None)
+    if getattr(t, "array_dims", None):
+        arr += unparse_array_suffix(t.array_dims) # Unparse that shit...
+    print("ar: "+str(arr))
+    return " ".join(parts) + arr
 
 
 def unparse_array_suffix(dims) -> str:
@@ -385,19 +391,22 @@ def unparse_tu(tu: TranslationUnit) -> str:
             continue
 
         if isinstance(item, FunctionDef):
-            # print("function definition item: "+str(item))
+            print("function definition item: "+str(item))
             params = []
             for p in item.params:
                 ps = f"{unparse_type(p.type_name)} {p.name}"
                 ps += unparse_array_suffix(getattr(p, "array_dims", None) or getattr(p, "array_size", None))
                 params.append(ps)
+            # NEW: Unparse the return type array types
+            # array_return = ""
+
             out += f"{unparse_type(item.return_type)} {item.name}(" + ", ".join(params) + ")\n"
             out += unparse_stmt(item.body, 0)
             out += "\n"
             continue
 
         if isinstance(item, FunctionDecl):
-            # print("function declaration item: "+str(item))
+            print("function declaration item: "+str(item))
             params = []
             for p in item.params:
                 ps = f"{unparse_type(p.type_name)} {p.name}"
