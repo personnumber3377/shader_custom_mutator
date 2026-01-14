@@ -1641,9 +1641,9 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
             )
 
             # optional debug / assert-chasing hook
-            if "uniform" in d.qualifiers and "uniform" not in old:
-                global stop
-                stop = True
+            # if "uniform" in d.qualifiers and "uniform" not in old:
+            #     global stop
+            #     stop = True
 
 
         # mutate declarators
@@ -1876,7 +1876,10 @@ def _havoc_function_scalar_to_array(items, rng, env):
     fn = pick_function_for_array_return(items, env, rng)
     if not fn:
         return items
-
+    
+    global stop
+    stop = True
+    
     array_len = mutate_function_return_to_array(fn, rng)
     rewrite_call_sites(items, fn.name, array_len, rng)
 
@@ -1982,7 +1985,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     # Now try to unparse that shit...
     # exit(1)
     if DEBUG:
-        return tu2 # Short circuit here...
+        # return tu2 # Short circuit here...
         if stop:
             result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
             # Now print the thing...
