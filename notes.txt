@@ -988,6 +988,6 @@ Got this source code back: #version 300 es
 
 - Improve the roundtrip testing shit...
 - Implement an automatic testing for coverage etc etc maybe to measure the mutator efficiency better???
-
+- Make the custom mutator actually use the function array return type mutation shit...
 
 
