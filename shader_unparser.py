@@ -317,6 +317,8 @@ def unparse_tu(tu: TranslationUnit) -> str:
         prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
         out += prec_preamble #  + out # Prepend that...
 
+    print("tu.items: "+str(tu.items))
+
     for item in tu.items:
         # old explicit struct definition form (if you still use it)
         # print("item: "+str(item))
@@ -383,6 +385,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
             continue
 
         if isinstance(item, FunctionDef):
+            # print("function definition item: "+str(item))
             params = []
             for p in item.params:
                 ps = f"{unparse_type(p.type_name)} {p.name}"
@@ -394,6 +397,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
             continue
 
         if isinstance(item, FunctionDecl):
+            # print("function declaration item: "+str(item))
             params = []
             for p in item.params:
                 ps = f"{unparse_type(p.type_name)} {p.name}"
