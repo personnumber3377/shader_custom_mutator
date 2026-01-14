@@ -344,6 +344,46 @@ def pick_builtin_image(scope: Scope, env: Env, rng: random.Random) -> Identifier
 
     return Identifier(rng.choice(candidates))
 
+
+# THESE NEXT ONES ARE FOR SPECIAL HAVOC!!!
+
+
+
+# Chooses a function which returns a scalar value. This is used in the special mutation of return values and function calls...
+def pick_function_for_array_return(items, env, rng):
+    candidates = []
+    for item in items:
+        if isinstance(item, FunctionDef):
+            ret = typename_to_typeinfo(item.return_type)
+            if ret.name in ("int", "uint", "float", "bool"):
+                candidates.append(item)
+    return rng.choice(candidates) if candidates else None
+
+
+def rewrite_call_sites(items, fn_name, array_len, rng):
+    def visit_expr(e):
+        if isinstance(e, CallExpr) and isinstance(e.callee, Identifier):
+            if e.callee.name == fn_name:
+                idx = rng.choice([0, 0, 1, array_len - 1])
+                return IndexExpr(e, IntLiteral(idx))
+        # recurse
+        for attr in vars(e):
+            v = getattr(e, attr)
+            if isinstance(v, Expr):
+                setattr(e, attr, visit_expr(v))
+            elif isinstance(v, list):
+                setattr(e, attr, [visit_expr(x) if isinstance(x, Expr) else x for x in v])
+        return e
+
+    for item in items:
+        if isinstance(item, FunctionDef):
+            item.body = visit_expr(item.body)
+
+
+# END SPECIAL HAVOC FUNCTIONS
+
+
+
 def gen_coord_for_image(image_expr: Identifier, scope: Scope, env: Env, rng: random.Random) -> Expr:
     ti = scope.lookup(image_expr.name) or env.globals.get(image_expr.name)
     if ti is None:
@@ -1807,13 +1847,49 @@ def _havoc_apply_struct_decl_qualifiers_all(items: List[TopLevel], rng: random.R
 
     return it_items
 
+def mutate_function_return_to_array(fn: FunctionDef, rng):
+    # N = rng.choice([2, 3, 4, 8, 16, 32, 64, 123])
+    N = rng.choice([0, 2, 3, 4, 8, rng.randrange(0,1000)]) # Generate access index
+    
+    # Change return type
+    fn.return_type = TypeName(fn.return_type.name)
+    fn.return_type.array_dims = [IntLiteral(N)]
+
+    # Rewrite return statements
+    def rewrite_returns(stmt):
+        if isinstance(stmt, ReturnStmt) and stmt.expr:
+            base_type = fn.return_type.name
+            stmt.expr = CallExpr(
+                Identifier(f"{base_type}[{N}]"),
+                [stmt.expr]
+            )
+        elif hasattr(stmt, "stmts"):
+            for s in stmt.stmts:
+                rewrite_returns(s)
+
+    rewrite_returns(fn.body)
+
+    return N
+
+def _havoc_function_scalar_to_array(items, rng, env):
+    items = deepclone(items)
+    fn = pick_function_for_array_return(items, env, rng)
+    if not fn:
+        return items
+
+    array_len = mutate_function_return_to_array(fn, rng)
+    rewrite_call_sites(items, fn.name, array_len, rng)
+
+    return items
+
 def special_havoc(items, rng, env):
     # Check for the thing here...
-    strats = ["struct_qualifier_all"]
+    strats = ["struct_qualifier_all", "function_scalar_to_array"]
     strat = rng.choice(strats)
     if strat == "struct_qualifier_all": # Replace the qualifiers of here with the certain thing.
-        # GIVE ME THE CODE FOR THIS!!!
         return _havoc_apply_struct_decl_qualifiers_all(items, rng, env)
+    elif strat == "function_scalar_to_array":
+        return _havoc_function_scalar_to_array(items, rng, env)
 
     return items
 
