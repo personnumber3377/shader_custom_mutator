@@ -1841,9 +1841,9 @@ def _havoc_apply_struct_decl_qualifiers_all(items: List[TopLevel], rng: random.R
                 changed_any = True
 
     # Helpful for your assert-chasing debugging hook
-    if changed_any and ("uniform" == global_storage or plan in ("force_uniform", "replace_uniform")):
-        global stop
-        stop = True
+    # if changed_any and ("uniform" == global_storage or plan in ("force_uniform", "replace_uniform")):
+    #     global stop
+    #     stop = True
 
     return it_items
 
@@ -1878,8 +1878,8 @@ def _havoc_function_scalar_to_array(items, rng, env):
     if not fn:
         return items
     
-    global stop
-    stop = True
+    # global stop
+    # stop = True
     
     array_len = mutate_function_return_to_array(fn, rng)
     rewrite_call_sites(items, fn.name, array_len, rng)
@@ -1902,7 +1902,7 @@ def special_havoc(items, rng, env):
 # Public entrypoint
 # ----------------------------
 
-DEBUG_STOP = True
+DEBUG_STOP = False
 
 def debug_source(tu, tu2): # Debug the stuff here...
     # exit(0)
@@ -1940,7 +1940,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
 
     # Check for the special havoc mode.
 
-    if coin(rng, 0.99): # 10 percent chance of special havoc mode...
+    if coin(rng, 0.10): # 10 percent chance of special havoc mode...
         mutated_items = special_havoc(new_items, rng, env)
         tu2.items = mutated_items
         debug_source(tu, tu2) # Debug that stuff...

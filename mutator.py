@@ -190,6 +190,7 @@ def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> byt
     try:
         return fuzz(buf, add_buf, max_size)
     except Exception as e:
+        return buf # Short circuit here to avoid blowing up the log file...
         try:
             with open("custom_mutator.log", "a") as f:
                 f.write(f"mutator exception: {e}\n")
