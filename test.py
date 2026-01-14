@@ -264,6 +264,8 @@ def chase_assert_with_custom_mutator(
     print("❌ No assert found")
     return None
 
+VERBOSE = 0
+
 def mutation_benchmark(path: str, iters: int, seed: int):
     files = collect_files(path)
     random.seed(seed)
@@ -283,13 +285,14 @@ def mutation_benchmark(path: str, iters: int, seed: int):
             mutated = mutator.fuzz(bytearray(data), None, 1_000_000)
             ok2, err = check_file_bytes(mutated)
         except Exception as e: # TODO: The mutator may fail for example with "ValueError: invalid literal for int() with base 10: 'c'" ... Please fix this!
-            print("Encountered this exception here: "+str(e))
-            print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
+            if VERBOSE:
+                print("Encountered this exception here: "+str(e))
+                print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
             total += 1
             continue
         total += 1
         success += int(ok2)
-        if err:
+        if err and VERBOSE:
             print("Mutation resulted in this error: "+str(err))
             print("Mutated soource code: "+str(strip_header_and_null(mutated).decode("utf-8")))
             print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))

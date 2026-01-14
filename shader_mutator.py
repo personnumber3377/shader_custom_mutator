@@ -17,8 +17,8 @@ from builtin_data import BUILTIN_FUNCTIONS
 
 DEBUG = False
 
-if DEBUG:
-    import shader_unparser
+# if DEBUG:# Originally was conditional
+import shader_unparser
 
 stop = False
 
@@ -1874,6 +1874,7 @@ def mutate_function_return_to_array(fn: FunctionDef, rng):
 def _havoc_function_scalar_to_array(items, rng, env):
     items = deepclone(items)
     fn = pick_function_for_array_return(items, env, rng)
+    print("fn: "+str(fn))
     if not fn:
         return items
     
@@ -1901,6 +1902,25 @@ def special_havoc(items, rng, env):
 # Public entrypoint
 # ----------------------------
 
+DEBUG_STOP = True
+
+def debug_source(tu, tu2): # Debug the stuff here...
+    # exit(0)
+    if DEBUG_STOP:
+        # exit(0)
+        if stop:
+            # exit(0)
+            try:
+                result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
+            except Exception as e:
+                # ???
+                print(e)
+                exit(1)
+            # Now print the thing...
+            print("Mutated source code when hit the thing: "+str(result))
+            print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
+            exit(0)
+
 def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> TranslationUnit:
     """
     High-level mutator: collects env then mutates items.
@@ -1920,9 +1940,10 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
 
     # Check for the special havoc mode.
 
-    if coin(rng, 0.10): # 10 percent chance of special havoc mode...
+    if coin(rng, 0.99): # 10 percent chance of special havoc mode...
         mutated_items = special_havoc(new_items, rng, env)
         tu2.items = mutated_items
+        debug_source(tu, tu2) # Debug that stuff...
         return tu2 # Return the mutated structure...
 
 
@@ -1987,12 +2008,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     # exit(1)
     if DEBUG:
         # return tu2 # Short circuit here...
-        if stop:
-            result = shader_unparser.unparse_tu(tu2) # Unparse that shit...
-            # Now print the thing...
-            print("Mutated source code when hit the thing: "+str(result))
-            print("Original code was this here: "+str(shader_unparser.unparse_tu(tu)))
-            exit(0)
+        debug_source(tu, tu2)
     
 
     return tu2
