@@ -589,7 +589,8 @@ oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ cd corpus/
 
 
 
-- Add custom crossover shit...
-
-
-
+- Add custom crossover shit... (Done!)
+- Actually make the custom mutator parse the after_preproc_tests stuff correctly maybe???
+- Roundtrip layout stuff properly too?
+- Add special mutations for the different extensions???
+- Add more special mutations in general??
