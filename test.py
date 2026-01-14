@@ -323,6 +323,8 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
         ok, msg = check_file_bytes(data)
         if not ok:
             ignored += 1
+            print("Invalid shader...")
+            print("msg: "+str(msg))
             continue
             '''
             if not ignore_invalid:
