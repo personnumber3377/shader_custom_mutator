@@ -828,12 +828,14 @@ class Parser:
                 _ = self.expect("ID")
                 if self.peek().kind == "(":
                     self.i = save
+                    # print("Function definition...")
                     items.append(self.parse_function_def_or_decl())
                 else:
+                    # print("Function definition...")
                     self.i = save
                     items.append(self.parse_global_decl())
                 continue
-
+            print("Ignoring this stuff here: "+str(self.peek().kind)+" , "+str(self.peek().value))
             self.advance()
 
         return TranslationUnit(items)
@@ -886,6 +888,7 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
 
     tokens = lex("\n".join(body_lines))
     p = Parser(tokens)
+    print("tokens: "+str(tokens))
     tu = p.parse_translation_unit()
 
     # tu.directives = directives

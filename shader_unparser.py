@@ -317,7 +317,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
         prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
         out += prec_preamble #  + out # Prepend that...
 
-    print("tu.items: "+str(tu.items))
+    # print("tu.items: "+str(tu.items))
 
     for item in tu.items:
         # old explicit struct definition form (if you still use it)

@@ -594,3 +594,385 @@ oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ cd corpus/
 - Roundtrip layout stuff properly too?
 - Add special mutations for the different extensions???
 - Add more special mutations in general??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here: ```def build_header_from_directive(src: str) -> bytes:
+    """
+    HEADER: <shader_type> <spec> <output>
+    Example:
+      HEADER: frag 3 6
+    """
+    lines = src.splitlines()
+    if not lines or not lines[0].startswith("HEADER:"):
+        raise ValueError("Missing HEADER directive")
+
+    _, rest = lines[0].split("HEADER:", 1)
+    parts = rest.strip().split()
+    if len(parts) != 3:
+        raise ValueError("Invalid HEADER format")
+
+    stype_s, spec_s, out_s = parts
+
+    shader_type = {
+        "frag": GL_FRAGMENT_SHADER,
+        "vert": GL_VERTEX_SHADER,
+    }.get(stype_s)
+
+    if shader_type is None:
+        raise ValueError("Unknown shader type")
+
+    spec = int(spec_s)
+    output = int(out_s)
+
+    header = bytearray(HEADER_SIZE)
+    struct.pack_into("<III", header, 0, shader_type, spec, output)
+    return bytes(header)``` what integer should be the spec?  Oh, wait it is supposed to be a vertex shader, since this seems to work: ```HEADER: vert 3 6
+#version 300 es
+// Roundtrip a shader which has a function that returns an array...
+
+
+precision mediump float;
+
+float[5] f() {
+  return float[5](3.4, 4.2, 5.0, 5.2, 1.1);
+}
+
+void main() {
+  float[5] x = f();
+}``` and my suspicion is right. Here I modified the thing a bit: ````HEADER: vert 3 6
+#version 300 es
+
+precision mediump float;
+
+float[5] f() {
+  return float[5](3.4, 4.2, 5.0, 5.2, 1.1);
+}
+
+void main() {
+  f();
+}``` and the roundtripping thing looks this: ```oof@oof-h8-1440eo:~/shader_custom_mutator$ ./t_scalar_to_arr.sh 
+[seed] 314954227
+[roundtrip] ./tests_complex/function_returns_array.glsl (0/1)
+Got this source code back: #version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+
+Roundtrip failed:
+Warning: No Python module specified, using the default libfuzzer mutator (for now).
+INFO: found LLVMFuzzerCustomMutator (0x55d55a5a31c0). Disabling -len_control by default.
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1510375207
+INFO: Loaded 1 modules   (104911 inline 8-bit counters): 104911 [0x55d55b0181c0, 0x55d55b031b8f), 
+INFO: Loaded 1 PC tables (104911 PCs): 104911 [0x55d55b031b90,0x55d55b1cb880), 
+./newest_angle: Running 1 inputs 1 time(s) each.
+Running: /tmp/tmpwsi9zmqs.bin
+Passing this as source code: 
+#version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+FAILURE
+ERROR: 0:8: 'f' : no matching overloaded function found
+Passing this as source code: 
+#version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+FAILURE
+ERROR: 0:8: 'f' : no matching overloaded function found
+Executed /tmp/tmpwsi9zmqs.bin in 3 ms
+***
+*** NOTE: fuzzing was not performed, you have only
+***       executed the target code on a fixed set of inputs.
+***
+Roundtrip test failed. Stats:
+Total: 1
+Failed: 1
+Ignored: 0
+[seed] 154075475
+special_havoc
+special_havoc
+fn: FunctionDef(return_type=TypeName(name='float', precision=None, qualifiers=[]), name='f', params=[], body=BlockStmt(stmts=[ReturnStmt(expr=FloatLiteral(value=1.0))]))
+Mutated source code when hit the thing: precision mediump float;
+precision mediump int;
+
+float f()
+{
+  return float[2](1.0);
+}
+
+void main()
+{
+  float x = f();
+}
+
+
+Original code was this here: precision mediump float;
+precision mediump int;
+
+float f()
+{
+  return 1.0;
+}
+
+void main()
+{
+  float x = f();
+}
+
+
+oof@oof-h8-1440eo:~/shader_custom_mutator$ ``` and the source code looks like this here: ````
+def roundtrip_test(path: str, ignore_invalid: int = 0):
+    files = collect_files(path)
+
+    fail = 0
+    tot = 0
+    ignored = 0
+
+    for i, fn in enumerate(files):
+        print(f"[roundtrip] {fn} ({i}/{len(files)})")
+        if i and i % PRINT_COUNT == 0:
+            print("Roundtrip test failed. Stats:")
+            print("Total: "+str(i))
+            print("Failed: "+str(fail))
+            print("Ignored: "+str(ignored))
+        data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
+        # print("passing this here: "+str(data))
+        ok, msg = check_file_bytes(data)
+        if not ok:
+            ignored += 1
+            print("Invalid shader...")
+            print("msg: "+str(msg))
+            continue
+            '''
+            if not ignore_invalid:
+                raise RuntimeError(f"Initial shader invalid:\n{msg}")
+            else:
+                continue
+            '''
+        tot += 1
+        src = strip_header_and_null(data).decode("utf-8")
+        # print("Passing this source code: "+str(src))
+        try:
+            tu = shader_parser.parse_to_tree(src)
+            out = shader_unparser.unparse_tu(tu)
+        except Exception as e:
+            if ignore_invalid:
+                continue
+            else:
+                raise e
+        print("Got this source code back: "+str(out))
+
+        rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
+        
+        '''
+        shader_type = 0x8B31  # GL_VERTEX_SHADER
+        shader_spec = 2       # SH_GLES3_SPEC
+        output_format = 15    # SH_SPIRV_VULKAN_OUTPUT
+
+        header_list = list(struct.pack('<III', shader_type, shader_spec, output_format))
+        header_list.extend([0] * (128 - len(header_list)))
+        header_list[12] |= 0x01 # objectCode = true
+        header = bytes(header_list)
+
+        rebuilt = header + out.encode("utf-8") + b"\x00" # Reconstruct the shit...
+        '''
+
+        # save_file("./crashing.bin", rebuilt)
+
+        ok2, msg2 = check_file_bytes(rebuilt)
+
+        if not ok2:
+            # raise RuntimeError(f"Roundtrip failed:\n{msg2}")
+            fail += 1
+            print(f"Roundtrip failed:\n{msg2}")
+            # print(f"Roundtrip failed!")
+    if not fail:
+        print("✔ Roundtrip tests passed")
+    else:
+        print("Roundtrip test failed. Stats:")
+        print("Total: "+str(len(files)))
+        print("Failed: "+str(fail))
+        print("Ignored: "+str(ignored))``` and this part here: ```oof@oof-h8-1440eo:~/shader_custom_mutator$ ./t_scalar_to_arr.sh 
+[seed] 314954227
+[roundtrip] ./tests_complex/function_returns_array.glsl (0/1)
+Got this source code back: #version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+``` shows how the thing can not parse functions that return an array? Here: ```def unparse_tu(tu: TranslationUnit) -> str:
+    out = ""
+    # Process directives first
+    for d in getattr(tu, "directives", []):
+        if isinstance(d, PragmaDirective):
+            out += f"#pragma {d.pragma_string}"
+        elif isinstance(d, VersionDirective):
+            out += f"#version {d.version}\n"
+        elif isinstance(d, ExtensionDirective):
+            # print("d.name: "+str(d.name))
+            if ":" in d.name: # Check for potential errors here. This is a parsing artifact due to the way we process these...
+                d.name = d.name.replace(":", "")
+            out += f"#extension {d.name} : {d.behavior}\n"
+    if out:
+        out += "\n"
+
+        # Check for the mandatory precision statements. If these do not exist, then the shader gets rejected right out the gate...
+
+    if "precision mediump float" not in out and "highp" not in out: # Check for the high precision floats, if they do exist, then do not emit the mediump preamble thing...
+
+        prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
+        out += prec_preamble #  + out # Prepend that...
+
+    print("tu.items: "+str(tu.items))
+
+    for item in tu.items:
+        # old explicit struct definition form (if you still use it)
+        # print("item: "+str(item))``` the items are the thing: ````oof@oof-h8-1440eo:~/shader_custom_mutator$ ./t_scalar_to_arr.sh 
+[seed] 541933661
+[roundtrip] ./tests_complex/function_returns_array.glsl (0/1)
+tu.items: [FunctionDef(return_type=TypeName(name='void', precision=None, qualifiers=[]), name='main', params=[], body=BlockStmt(stmts=[ExprStmt(expr=CallExpr(callee=Identifier(name='f'), args=[]))]))]
+Got this source code back: #version 300 es
+
+``` so the stuff disappears during the parse step. In the initial parsing: ````
+    
+    def parse_translation_unit(self) -> TranslationUnit:
+        items: List[TopLevel] = []
+        while self.peek().kind != "EOF":
+            t = self.peek()
+
+            # if t.kind == "KW" and t.value == "struct":
+            if self._looks_like_struct_decl_stmt():
+                items.append(self.parse_struct_toplevel_decl())
+                continue
+
+            if t.value in ("uniform", "in", "out", "buffer") and self._looks_like_interface_block():
+                items.append(self.parse_interface_block())
+                continue
+
+            if self._looks_like_decl():
+                save = self.i
+                _ = self.parse_type_name()
+                _ = self.expect("ID")
+                if self.peek().kind == "(":
+                    self.i = save
+                    # print("Function definition...")
+                    items.append(self.parse_function_def_or_decl())
+                else:
+                    # print("Function definition...")
+                    self.i = save
+                    items.append(self.parse_global_decl())
+                continue
+            print("Ignoring this stuff here: "+str(self.peek().kind)+" , "+str(self.peek().value))
+            self.advance()
+
+        return TranslationUnit(items)```  and: ```s=104), Token(kind=')', value=')', pos=105), Token(kind=';', value=';', pos=106), Token(kind='}', value='}', pos=108), Token(kind='EOF', value='', pos=109)]
+Ignoring this stuff here: KW , precision
+Ignoring this stuff here: KW , mediump
+Ignoring this stuff here: KW , float
+Ignoring this stuff here: ; , ;
+Ignoring this stuff here: KW , float
+Ignoring this stuff here: [ , [
+Ignoring this stuff here: INT , 5
+Ignoring this stuff here: ] , ]
+Ignoring this stuff here: ID , f
+Ignoring this stuff here: ( , (
+Ignoring this stuff here: ) , )
+Ignoring this stuff here: { , {
+Ignoring this stuff here: KW , return
+Ignoring this stuff here: KW , float
+Ignoring this stuff here: [ , [
+Ignoring this stuff here: INT , 5
+Ignoring this stuff here: ] , ]
+Ignoring this stuff here: ( , (
+Ignoring this stuff here: FLOAT , 3.4
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 4.2
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 5.0
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 5.2
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 1.1
+Ignoring this stuff here: ) , )
+Ignoring this stuff here: ; , ;
+Ignoring this stuff here: } , }
+Got this source code back: #version 300 es
+```
