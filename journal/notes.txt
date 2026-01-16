@@ -1,0 +1,993 @@
+- You should check that qualifiers ("const" etc round trip on structs and other datatypes...)
+- Also add the extension includes when generating the builtin calls too...
+- Implement better generic type handling in the generation of inbuilt function calls... aka do something like the following:
+
+if base in GENERIC_EXPANSION:
+    if base not in generic_bindings:
+        generic_bindings[base] = rng.choice(GENERIC_EXPANSION[base])
+    concrete = generic_bindings[base]
+    args.append(gen_expr(TypeInfo(concrete), ...))
+
+because now it sees "genType" (see builtin_function_declarations.txt) and assumes it can create different types for each function call argument. They must still be the same type against one another, but what type they all are is arbitrary...
+
+- Make the mutator add qualifiers (such as "const" and "uniform" etc etc on the different things...)...
+
+
+
+
+oof@oof-h8-1440eo:~/shader_custom_mutator$ python3 test.py --roundtrip ./good/ > out.txt
+Traceback (most recent call last):
+  File "/home/oof/shader_custom_mutator/test.py", line 305, in main
+    roundtrip_test(args.path)
+  File "/home/oof/shader_custom_mutator/test.py", line 227, in roundtrip_test
+    raise RuntimeError(f"Roundtrip failed:\n{msg2}")
+RuntimeError: Roundtrip failed:
+Warning: No Python module specified, using the default libfuzzer mutator (for now).
+INFO: found LLVMFuzzerCustomMutator (0x56252363a1c0). Disabling -len_control by default.
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3223487156
+INFO: Loaded 1 modules   (104911 inline 8-bit counters): 104911 [0x5625240af1c0, 0x5625240c8b8f), 
+INFO: Loaded 1 PC tables (104911 PCs): 104911 [0x5625240c8b90,0x562524262880), 
+./newest_angle: Running 1 inputs 1 time(s) each.
+Running: /tmp/tmprfjttu9r.bin
+Passing this as source code: 
+#version 300 es
+#extension GL_EXT_conservative_depth: : enable
+
+precision mediump float;
+precision mediump int;
+
+out float gl_FragDepth;
+
+void main()
+{
+}
+
+FAILURE
+ERROR: 0:2: ':' : invalid extension behavior
+ERROR: 0:7: 'gl_' : reserved built-in name
+Passing this as source code: 
+#version 300 es
+#extension GL_EXT_conservative_depth: : enable
+
+precision mediump float;
+precision mediump int;
+
+out float gl_FragDepth;
+
+void main()
+{
+}
+
+FAILURE
+ERROR: 0:2: ':' : invalid extension behavior
+ERROR: 0:7: 'gl_' : reserved built-in name
+Executed /tmp/tmprfjttu9r.bin in 3 ms
+***
+*** NOTE: fuzzing was not performed, you have only
+***       executed the target code on a fixed set of inputs.
+***
+oof@oof-h8-1440eo:~/shader_custom_mutator$ 
+
+
+- When mutating function arguments, make those mutations global everywhere such that the calls to that function actually hold...
+
+
+[ RUN      ] GeometryShaderTest.LayeredFramebufferPreRenderDoubleClear2DArrayColor/ES3_1_Vulkan_EmulatedPrerotation270
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] GeometryShaderTest.LayeredFramebufferPreRenderDoubleClear2DArrayColor/ES3_1_Vulkan_EmulatedPrerotation270 (362 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_OpenGL
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_OpenGL (0 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000dd6a000 (type = Command Buffer(6))
+                            Object: 0xb24eb00000b24eb (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan (321 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader
+../../third_party/angle/src/tests/gl_tests/GeometryShaderTest.cpp:1487: Skipped
+Test skipped: !IsGLExtensionEnabled("GL_EXT_geometry_shader").
+
+[  SKIPPED ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader (236 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000fd86000 (type = Command Buffer(6))
+                            Object: 0xb253100000b2531 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (292 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/gl_tests/GeometryShaderTest.cpp:1487: Skipped
+Test skipped: !IsGLExtensionEnabled("GL_EXT_geometry_shader").
+
+[  SKIPPED ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (229 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation90
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000dd6a000 (type = Command Buffer(6))
+                            Object: 0xb257700000b2577 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation90 (294 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation180
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000fd86000 (type = Command Buffer(6))
+                            Object: 0xb25a500000b25a5 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation180 (290 ms)
+[ RUN      ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation270
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+WARN: vk_renderer.cpp:872 (DebugUtilsMessenger): [ Undefined-Value-Layer-Written ] vkCmdDraw(): Shader stage VK_SHADER_STAGE_GEOMETRY_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+                            Object: 0x2f000dd6a000 (type = Command Buffer(6))
+                            Object: 0xb25d300000b25d3 (type = Pipeline(19))
+
+[       OK ] GeometryShaderTest.GLLayerIneffectiveWithoutLayeredFramebuffer/ES3_1_Vulkan_EmulatedPrerotation270 (293 ms)
+[ RUN      ] GeometryShaderTest.LayeredFramebufferMidRenderClear3DColor/ES3_1_OpenGL
+tgsi_to_nir: unhandled TGSI property 0 = 4
+
+Signal 11 [Segmentation fault]:
+Segmentation fault (core dumped)
+oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[       OK ] TransformFeedbackTest.EndThenBindNewBufferAndRestart/ES3_Vulkan_NoSupportsTransformFeedbackExtension_NoSupportsSPIRV14 (78 ms)
+[ RUN      ] TransformFeedbackTest.DrawWithoutTransformFeedbackThenWith/ES3_OpenGL
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 1.40129846e-45
+  kAttribInitData[index] * 2
+    Which is: 2
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 1.00893489e-43
+  kAttribInitData[index] * 2
+    Which is: 4
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 3.32057244e-16
+  kAttribInitData[index] * 2
+    Which is: 6
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902: Failure
+Expected equality of these values:
+  xfbOutput[index]
+    Which is: 4.30198629e-42
+  kAttribInitData[index] * 2
+    Which is: 8
+Stack trace:
+#0 0x564a151fd31c (anonymous namespace)::TransformFeedbackTest_DrawWithoutTransformFeedbackThenWith_Test::TestBody() [../../third_party/angle/src/tests/gl_tests/TransformFeedbackTest.cpp:2902:9]
+
+nouveau: kernel rejected pushbuf: No such device
+nouveau: ch6: krec 0 pushes 1 bufs 3 relocs 0
+nouveau: ch6: buf 00000000 0000000c 00000004 00000004 00000000 0x7f2ba2613000 0xe00000 0x80000
+nouveau: ch6: buf 00000001 00000006 00000004 00000000 00000004 0x7f2bb9fcf000 0x215000 0x1000
+nouveau: ch6: buf 00000002 00000028 00000004 00000004 00000004 (nil) 0x251000 0x1000
+nouveau: ch6: psh 00000000 0000000708 000000071c
+nouveau:  0x200406c0
+nouveau:  0x00000000
+nouveau:  0x00215000
+nouveau:  0x000018ed
+nouveau:  0x1000f010
+angle_end2end_tests: ../nouveau/pushbuf.c:730: nouveau_pushbuf_data: Assertion `kref' failed.
+
+Signal 6 [Aborted]:
+No results file specified.
+Backtrace:
+angle::PrintStackBacktrace() at crash_handler_posix.cpp:500
+angle::Handler(int) at crash_handler_posix.cpp:661
+__restore_rt at libc_sigaction.c:?
+__pthread_kill_implementation at pthread_kill.c:44
+__GI_raise at raise.c:27
+__GI_abort at abort.c:81 (discriminator 21)
+_nl_load_domain at loadmsgcat.c:1177
+__GI___assert_fail at :?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_data at ??:?
+nouveau_pushbuf_space at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+nouveau_drm_screen_create at ??:?
+__driDriverGetExtensions_d3d12 at ??:?
+__driDriverGetExtensions_d3d12 at ??:?
+__driDriverGetExtensions_d3d12 at ??:?
+glAreTexturesResidentEXT at ??:?
+glIsTextureEXT at ??:?
+rx::DisplayGLX::terminate() at DisplayGLX.cpp:343
+egl::Display::terminate(egl::Thread*, egl::Display::TerminateReason) at Display.cpp:1318
+egl::Terminate(egl::Thread*, egl::Display*) at egl_stubs.cpp:?
+EGL_Terminate at entry_points_egl_autogen.cpp:810
+EGLWindow::destroyGL() at EGLWindow.cpp:678
+ANGLETestBase::ANGLETestTearDown() at ANGLETest.cpp:?
+testing::TestInfo::Run() at gtest.cc:2895
+testing::TestSuite::Run() at gtest.cc:3072
+testing::internal::UnitTestImpl::RunAllTests() at gtest.cc:6062
+testing::UnitTest::Run() at gtest.cc:5601
+angle::TestSuite::run() at gtest.h:2334
+main at angle_end2end_tests_main.cpp:80
+__libc_start_call_main at libc_start_call_main.h:58
+call_init at libc-start.c:128
+_start at ??:?
+
+
+
+Apply the compute shaders too. Currently the fuzzer only fuzzes vertex shaders and fragment shaders...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan (58 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader (54 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (58 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (54 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_OpenGL
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_OpenGL (35 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan (61 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader (56 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (67 ms)
+[ RUN      ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (68 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_OpenGL
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_OpenGL (36 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan (59 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader (55 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (61 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (55 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_OpenGL
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_OpenGL (34 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan (58 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader (55 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (60 ms)
+[ RUN      ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.BooleanArrayUniformStateQuery/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (55 ms)
+[ RUN      ] UniformTest.Sampler/ES2_OpenGL
+[       OK ] UniformTest.Sampler/ES2_OpenGL (35 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES2_Vulkan (65 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.Sampler/ES2_Vulkan_SwiftShader (67 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (66 ms)
+[ RUN      ] UniformTest.Sampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Sampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (70 ms)
+[ RUN      ] UniformTest.Sampler/ES3_OpenGL
+[       OK ] UniformTest.Sampler/ES3_OpenGL (43 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES3_Vulkan (71 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.Sampler/ES3_Vulkan_SwiftShader (68 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Sampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (69 ms)
+[ RUN      ] UniformTest.Sampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Sampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (76 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_OpenGL
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_OpenGL (36 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan (70 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader (72 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (68 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (73 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_OpenGL
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_OpenGL (36 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan (69 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader (73 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (72 ms)
+[ RUN      ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.SamplerUniformsAppearOnce/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (76 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_OpenGL
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_OpenGL (45 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan (89 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader (100 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (84 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (108 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_OpenGL
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_OpenGL (38 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan (86 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader (99 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (90 ms)
+[ RUN      ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UniformWithReservedOpenGLName/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (112 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_OpenGL
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_OpenGL (43 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan (199 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader (115 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (209 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (141 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_OpenGL
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_OpenGL (49 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan (202 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader (136 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (202 ms)
+[ RUN      ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.UnusedUniformsInSamplerArray/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (144 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniform/ES2_OpenGL (57 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniform/ES3_OpenGL (44 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_OpenGL (37 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_OpenGL
+[       OK ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_OpenGL (36 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (0 ms)
+[ RUN      ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+../../third_party/angle/src/tests/test_utils/ANGLETest.cpp:687: Skipped
+Test skipped on this config
+
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (0 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_OpenGL
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_OpenGL (36 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan (84 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader (99 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (83 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary (108 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_OpenGL
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_OpenGL (45 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan (90 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader (99 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+WARN: vulkan_icd.cpp:384 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv (89 ms)
+[ RUN      ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[       OK ] UniformTest.Vec4Vec2SizeAlignment/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary (113 ms)
+[----------] 130 tests from UniformTest (8290 ms total)
+
+[----------] Global test environment tear-down
+[==========] 130 tests from 1 test suite ran. (8533 ms total)
+[  PASSED  ] 114 tests.
+[  SKIPPED ] 16 tests, listed below:
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniform/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES2_Vulkan_SwiftShader_EnableParallelCompileAndLink_NoSupportsGraphicsPipelineLibrary
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv
+[  SKIPPED ] UniformTest.UnusedStructInlineUniformWithSampler/ES3_Vulkan_SwiftShader_EnableParallelCompileAndLink_VaryingsRequireMatchingPrecisionInSpirv_NoSupportsGraphicsPipelineLibrary
+oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/pdfium_cov$ cd corpus/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Add custom crossover shit... (Done!)
+- Actually make the custom mutator parse the after_preproc_tests stuff correctly maybe???
+- Roundtrip layout stuff properly too?
+- Add special mutations for the different extensions???
+- Add more special mutations in general??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here: ```def build_header_from_directive(src: str) -> bytes:
+    """
+    HEADER: <shader_type> <spec> <output>
+    Example:
+      HEADER: frag 3 6
+    """
+    lines = src.splitlines()
+    if not lines or not lines[0].startswith("HEADER:"):
+        raise ValueError("Missing HEADER directive")
+
+    _, rest = lines[0].split("HEADER:", 1)
+    parts = rest.strip().split()
+    if len(parts) != 3:
+        raise ValueError("Invalid HEADER format")
+
+    stype_s, spec_s, out_s = parts
+
+    shader_type = {
+        "frag": GL_FRAGMENT_SHADER,
+        "vert": GL_VERTEX_SHADER,
+    }.get(stype_s)
+
+    if shader_type is None:
+        raise ValueError("Unknown shader type")
+
+    spec = int(spec_s)
+    output = int(out_s)
+
+    header = bytearray(HEADER_SIZE)
+    struct.pack_into("<III", header, 0, shader_type, spec, output)
+    return bytes(header)``` what integer should be the spec?  Oh, wait it is supposed to be a vertex shader, since this seems to work: ```HEADER: vert 3 6
+#version 300 es
+// Roundtrip a shader which has a function that returns an array...
+
+
+precision mediump float;
+
+float[5] f() {
+  return float[5](3.4, 4.2, 5.0, 5.2, 1.1);
+}
+
+void main() {
+  float[5] x = f();
+}``` and my suspicion is right. Here I modified the thing a bit: ````HEADER: vert 3 6
+#version 300 es
+
+precision mediump float;
+
+float[5] f() {
+  return float[5](3.4, 4.2, 5.0, 5.2, 1.1);
+}
+
+void main() {
+  f();
+}``` and the roundtripping thing looks this: ```oof@oof-h8-1440eo:~/shader_custom_mutator$ ./t_scalar_to_arr.sh 
+[seed] 314954227
+[roundtrip] ./tests_complex/function_returns_array.glsl (0/1)
+Got this source code back: #version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+
+Roundtrip failed:
+Warning: No Python module specified, using the default libfuzzer mutator (for now).
+INFO: found LLVMFuzzerCustomMutator (0x55d55a5a31c0). Disabling -len_control by default.
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1510375207
+INFO: Loaded 1 modules   (104911 inline 8-bit counters): 104911 [0x55d55b0181c0, 0x55d55b031b8f), 
+INFO: Loaded 1 PC tables (104911 PCs): 104911 [0x55d55b031b90,0x55d55b1cb880), 
+./newest_angle: Running 1 inputs 1 time(s) each.
+Running: /tmp/tmpwsi9zmqs.bin
+Passing this as source code: 
+#version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+FAILURE
+ERROR: 0:8: 'f' : no matching overloaded function found
+Passing this as source code: 
+#version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+FAILURE
+ERROR: 0:8: 'f' : no matching overloaded function found
+Executed /tmp/tmpwsi9zmqs.bin in 3 ms
+***
+*** NOTE: fuzzing was not performed, you have only
+***       executed the target code on a fixed set of inputs.
+***
+Roundtrip test failed. Stats:
+Total: 1
+Failed: 1
+Ignored: 0
+[seed] 154075475
+special_havoc
+special_havoc
+fn: FunctionDef(return_type=TypeName(name='float', precision=None, qualifiers=[]), name='f', params=[], body=BlockStmt(stmts=[ReturnStmt(expr=FloatLiteral(value=1.0))]))
+Mutated source code when hit the thing: precision mediump float;
+precision mediump int;
+
+float f()
+{
+  return float[2](1.0);
+}
+
+void main()
+{
+  float x = f();
+}
+
+
+Original code was this here: precision mediump float;
+precision mediump int;
+
+float f()
+{
+  return 1.0;
+}
+
+void main()
+{
+  float x = f();
+}
+
+
+oof@oof-h8-1440eo:~/shader_custom_mutator$ ``` and the source code looks like this here: ````
+def roundtrip_test(path: str, ignore_invalid: int = 0):
+    files = collect_files(path)
+
+    fail = 0
+    tot = 0
+    ignored = 0
+
+    for i, fn in enumerate(files):
+        print(f"[roundtrip] {fn} ({i}/{len(files)})")
+        if i and i % PRINT_COUNT == 0:
+            print("Roundtrip test failed. Stats:")
+            print("Total: "+str(i))
+            print("Failed: "+str(fail))
+            print("Ignored: "+str(ignored))
+        data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
+        # print("passing this here: "+str(data))
+        ok, msg = check_file_bytes(data)
+        if not ok:
+            ignored += 1
+            print("Invalid shader...")
+            print("msg: "+str(msg))
+            continue
+            '''
+            if not ignore_invalid:
+                raise RuntimeError(f"Initial shader invalid:\n{msg}")
+            else:
+                continue
+            '''
+        tot += 1
+        src = strip_header_and_null(data).decode("utf-8")
+        # print("Passing this source code: "+str(src))
+        try:
+            tu = shader_parser.parse_to_tree(src)
+            out = shader_unparser.unparse_tu(tu)
+        except Exception as e:
+            if ignore_invalid:
+                continue
+            else:
+                raise e
+        print("Got this source code back: "+str(out))
+
+        rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
+        
+        '''
+        shader_type = 0x8B31  # GL_VERTEX_SHADER
+        shader_spec = 2       # SH_GLES3_SPEC
+        output_format = 15    # SH_SPIRV_VULKAN_OUTPUT
+
+        header_list = list(struct.pack('<III', shader_type, shader_spec, output_format))
+        header_list.extend([0] * (128 - len(header_list)))
+        header_list[12] |= 0x01 # objectCode = true
+        header = bytes(header_list)
+
+        rebuilt = header + out.encode("utf-8") + b"\x00" # Reconstruct the shit...
+        '''
+
+        # save_file("./crashing.bin", rebuilt)
+
+        ok2, msg2 = check_file_bytes(rebuilt)
+
+        if not ok2:
+            # raise RuntimeError(f"Roundtrip failed:\n{msg2}")
+            fail += 1
+            print(f"Roundtrip failed:\n{msg2}")
+            # print(f"Roundtrip failed!")
+    if not fail:
+        print("✔ Roundtrip tests passed")
+    else:
+        print("Roundtrip test failed. Stats:")
+        print("Total: "+str(len(files)))
+        print("Failed: "+str(fail))
+        print("Ignored: "+str(ignored))``` and this part here: ```oof@oof-h8-1440eo:~/shader_custom_mutator$ ./t_scalar_to_arr.sh 
+[seed] 314954227
+[roundtrip] ./tests_complex/function_returns_array.glsl (0/1)
+Got this source code back: #version 300 es
+
+precision mediump float;
+precision mediump int;
+
+void main()
+{
+  f();
+}
+
+``` shows how the thing can not parse functions that return an array? Here: ```def unparse_tu(tu: TranslationUnit) -> str:
+    out = ""
+    # Process directives first
+    for d in getattr(tu, "directives", []):
+        if isinstance(d, PragmaDirective):
+            out += f"#pragma {d.pragma_string}"
+        elif isinstance(d, VersionDirective):
+            out += f"#version {d.version}\n"
+        elif isinstance(d, ExtensionDirective):
+            # print("d.name: "+str(d.name))
+            if ":" in d.name: # Check for potential errors here. This is a parsing artifact due to the way we process these...
+                d.name = d.name.replace(":", "")
+            out += f"#extension {d.name} : {d.behavior}\n"
+    if out:
+        out += "\n"
+
+        # Check for the mandatory precision statements. If these do not exist, then the shader gets rejected right out the gate...
+
+    if "precision mediump float" not in out and "highp" not in out: # Check for the high precision floats, if they do exist, then do not emit the mediump preamble thing...
+
+        prec_preamble = '''precision mediump float;\nprecision mediump int;\n\n'''
+        out += prec_preamble #  + out # Prepend that...
+
+    print("tu.items: "+str(tu.items))
+
+    for item in tu.items:
+        # old explicit struct definition form (if you still use it)
+        # print("item: "+str(item))``` the items are the thing: ````oof@oof-h8-1440eo:~/shader_custom_mutator$ ./t_scalar_to_arr.sh 
+[seed] 541933661
+[roundtrip] ./tests_complex/function_returns_array.glsl (0/1)
+tu.items: [FunctionDef(return_type=TypeName(name='void', precision=None, qualifiers=[]), name='main', params=[], body=BlockStmt(stmts=[ExprStmt(expr=CallExpr(callee=Identifier(name='f'), args=[]))]))]
+Got this source code back: #version 300 es
+
+``` so the stuff disappears during the parse step. In the initial parsing: ````
+    
+    def parse_translation_unit(self) -> TranslationUnit:
+        items: List[TopLevel] = []
+        while self.peek().kind != "EOF":
+            t = self.peek()
+
+            # if t.kind == "KW" and t.value == "struct":
+            if self._looks_like_struct_decl_stmt():
+                items.append(self.parse_struct_toplevel_decl())
+                continue
+
+            if t.value in ("uniform", "in", "out", "buffer") and self._looks_like_interface_block():
+                items.append(self.parse_interface_block())
+                continue
+
+            if self._looks_like_decl():
+                save = self.i
+                _ = self.parse_type_name()
+                _ = self.expect("ID")
+                if self.peek().kind == "(":
+                    self.i = save
+                    # print("Function definition...")
+                    items.append(self.parse_function_def_or_decl())
+                else:
+                    # print("Function definition...")
+                    self.i = save
+                    items.append(self.parse_global_decl())
+                continue
+            print("Ignoring this stuff here: "+str(self.peek().kind)+" , "+str(self.peek().value))
+            self.advance()
+
+        return TranslationUnit(items)```  and: ```s=104), Token(kind=')', value=')', pos=105), Token(kind=';', value=';', pos=106), Token(kind='}', value='}', pos=108), Token(kind='EOF', value='', pos=109)]
+Ignoring this stuff here: KW , precision
+Ignoring this stuff here: KW , mediump
+Ignoring this stuff here: KW , float
+Ignoring this stuff here: ; , ;
+Ignoring this stuff here: KW , float
+Ignoring this stuff here: [ , [
+Ignoring this stuff here: INT , 5
+Ignoring this stuff here: ] , ]
+Ignoring this stuff here: ID , f
+Ignoring this stuff here: ( , (
+Ignoring this stuff here: ) , )
+Ignoring this stuff here: { , {
+Ignoring this stuff here: KW , return
+Ignoring this stuff here: KW , float
+Ignoring this stuff here: [ , [
+Ignoring this stuff here: INT , 5
+Ignoring this stuff here: ] , ]
+Ignoring this stuff here: ( , (
+Ignoring this stuff here: FLOAT , 3.4
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 4.2
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 5.0
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 5.2
+Ignoring this stuff here: , , ,
+Ignoring this stuff here: FLOAT , 1.1
+Ignoring this stuff here: ) , )
+Ignoring this stuff here: ; , ;
+Ignoring this stuff here: } , }
+Got this source code back: #version 300 es
+```
+
+
+
+
+
+
+
+
+
+
+- Improve the roundtrip testing shit...
+- Implement an automatic testing for coverage etc etc maybe to measure the mutator efficiency better???
+- Make the custom mutator actually use the function array return type mutation shit...
+
+

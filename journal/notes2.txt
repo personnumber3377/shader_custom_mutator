@@ -1,0 +1,338 @@
+This is a very solid mutator already — you’re well past “random AST soup” and firmly in targeted semantic fuzzing. The crash you quoted (InputAttachmentUsageTraverser OOB) is a great guidepost: it tells you exactly what kinds of invariants ANGLE is getting wrong.
+
+I’ll structure this into four parts:
+
+What actually went wrong in that ANGLE bug (pattern extraction)
+
+Concrete, targeted mutation strategies you should add
+
+How to improve your crossover beyond “splice statements”
+
+How to expand language coverage without exploding invalid cases
+
+1️⃣ What that ANGLE bug is really about
+
+The minimal trigger was essentially:
+
+#extension GL_EXT_shader_framebuffer_fetch : enable
+inout float var0[242];
+
+
+And the failure happened here:
+
+InputAttachmentUsageTraverser::setInputAttachmentIndex
+vector[] index out of bounds
+
+
+That tells us:
+
+Implicit invariants ANGLE assumed (but didn’t enforce)
+
+inout framebuffer-fetch variables
+
+array size used as index or attachment number
+
+array length >> number of actual attachments
+
+traversal logic likely assumed small bounded counts
+
+no robust clamp / resize before vector[index]
+
+Key takeaway:
+
+This is a cross-field invariant violation bug, not a syntax bug.
+
+Your mutator needs to:
+
+Create large but valid arrays
+
+Attach them to special qualifiers / extensions
+
+Make the size observable to later passes
+
+You’re already 60% there.
+
+2️⃣ High-value specialized mutations to add (very concrete)
+
+Below are mutations that are directly inspired by real ANGLE bugs and your current infrastructure.
+
+🔥 A. Qualifier × Array Size Correlation Mutations (VERY IMPORTANT)
+
+You already mutate qualifiers and array sizes, but not in a correlated way.
+
+Add a single mutation that enforces:
+
+“If variable has inout or uniform, force array size to be extreme”
+
+Example mutation
+def havoc_qualifier_array_blowup(items, rng, env):
+    items = deepclone(items)
+
+    for item in items:
+        if not isinstance(item, GlobalDecl):
+            continue
+
+        for d in item.decls:
+            if not d.array_dims:
+                continue
+
+            if "inout" in (d.qualifiers or []) or "uniform" in (d.qualifiers or []):
+                # Force pathological sizes
+                if coin(rng, 0.7):
+                    d.array_dims = [IntLiteral(rng.choice([
+                        128, 242, 256, 512, 1024, rng.randrange(2000)
+                    ]))]
+    return items
+
+
+Why this matters:
+
+ANGLE often sizes vectors based on qualifier semantics
+
+This reproduces exactly the framebuffer-fetch crash class
+
+🔥 B. Extension-Conditioned Mutations
+
+ANGLE logic is full of:
+
+if (compileOptions & SH_EXT_XYZ)
+
+
+Add mutations that conditionally introduce constructs only if extension is enabled.
+
+Example
+def ensure_extension_then_mutate(tu, ext_name, mutation):
+show
+
+
+Concretely:
+
+If GL_EXT_shader_framebuffer_fetch present:
+
+Inject inout globals
+
+Force array indexing
+
+If not present:
+
+Add it + add the construct
+
+This increases semantic reach, not syntax noise.
+
+🔥 C. Traversal-Stress Mutations (deep nesting)
+
+Many ANGLE crashes happen in tree traversals.
+
+Add a mutation that only does this:
+
+struct A { struct B { struct C { float x[512]; } c; } b; } a;
+
+
+You already support nested structs — just bias it harder occasionally:
+
+if coin(rng, 0.05):
+    gen_struct_definition(..., depth=3)
+
+
+Then access:
+
+a.b.c.x[511]
+
+
+This stresses:
+
+recursion depth
+
+index propagation
+
+visitor stacks
+
+🔥 D. “Legal but Unexpected” Indexing
+
+ANGLE often assumes:
+
+indices are literals
+
+indices are small
+
+indices are compile-time folded
+
+You already mutate indices — extend it with dependent expressions:
+
+int i = 241;
+var0[i + 1];
+
+
+Add a mutation that:
+
+replaces literal index with a variable
+
+variable initialized from array size or constant
+
+This breaks assumptions like:
+
+if (index < vector.size())
+
+
+when index is inferred incorrectly.
+
+🔥 E. Special Function Return Array Mutation (you already did this — GOOD)
+
+Your function_scalar_to_array havoc is excellent.
+
+One improvement:
+
+Sometimes do not rewrite all call sites
+
+Leave one call unindexed
+
+This triggers:
+
+implicit array-to-scalar decay paths
+
+error recovery code paths
+
+3️⃣ Your crossover is good — here’s how to make it much better
+
+Current behavior:
+
+“Insert 1–5 random statements from main2 into main1”
+
+This is syntactically valid, but semantically shallow.
+
+What you want instead: Structure-aware crossover
+✅ A. Cross over globals + main together
+
+If you splice main statements that reference:
+
+uniform sampler2D s;
+
+
+but don’t bring s, you lose semantics.
+
+Fix: detect identifiers used in spliced statements, then pull their declarations.
+
+Pseudo-logic:
+
+used = collect_identifiers(spliced_stmts)
+decls = [g for g in g2 if declares_any(g, used)]
+
+
+This alone will massively improve deep coverage.
+
+✅ B. Cross over by feature clusters
+
+Instead of random statements, choose clusters:
+
+framebuffer-fetch related decls + statements
+
+image ops + image declarations
+
+structs + member accesses
+
+You already have type info — use it.
+
+✅ C. Semantic splice instead of textual splice
+
+Better strategy:
+
+Pick one function from tu2
+
+Inline it (or its body) into main of tu1
+
+Rename symbols to avoid collision
+
+This stresses:
+
+symbol tables
+
+scope resolution
+
+rewriting passes
+
+4️⃣ Expanding language coverage (without killing validity)
+
+You correctly observed:
+
+“The mutator only generates a subset of ANGLE’s language”
+
+This is normal — don’t brute-force expand.
+
+Do this instead:
+1. Add single-feature expansions
+
+One per week is fine:
+
+layout qualifiers
+
+interface blocks
+
+built-in arrays like gl_FragData[]
+
+precision qualifiers on structs (ANGLE hates these)
+
+2. Bias toward post-parser constructs
+
+Anything that survives parsing but breaks later is gold.
+
+Examples:
+
+valid but weird qualifiers
+
+extreme sizes
+
+legal extension combos
+
+5️⃣ Practical roadmap (what to do next)
+
+Here’s a very realistic 2–3 week plan to find another real bug:
+
+Week 1
+
+Implement:
+
+qualifier×array blowup
+
+extension-conditioned mutations
+
+Add coverage measurement for:
+
+EmulateFramebufferFetch.cpp
+
+RewriteStructSamplers.cpp
+
+Week 2
+
+Improve crossover with:
+
+dependency-aware global import
+
+function inlining crossover
+
+Add deep nested struct generator
+
+Week 3
+
+Add:
+
+dependent indexing
+
+partial array-return rewrites
+
+Start minimizing crashes
+
+Your stated goal:
+
+“Find a singular vulnerability in the ANGLE compiler in ~3 months”
+
+That is completely realistic with this setup.
+
+If you want next, I can:
+
+sketch exact code for one of the new havoc strategies
+
+help design a coverage oracle for “semantic difference without crash”
+
+help classify ANGLE passes by bug likelihood
+
+Just tell me which direction you want to push next.
