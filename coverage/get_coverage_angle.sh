@@ -79,6 +79,10 @@ llvm-cov show  /home/oof/chromiumstuff/source/src/out/pdfium_cov/angle_translato
   -output-dir=/home/oof/chromiumstuff/source/src/out/pdfium_cov/coverage_html \
   -Xdemangler=c++filt
 
+# Open the file...
+
+/usr/bin/google-chrome /home/oof/chromiumstuff/source/src/out/pdfium_cov/coverage_html/index.html
+
 # Change directory back...
 cd /home/oof/shader_custom_mutator/coverage || true
 
