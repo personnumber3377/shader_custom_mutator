@@ -1,0 +1,6 @@
+I deleted all files above 10k from the corpus in hope to speedup fuzzing. I also transferred the special havoc mode to another file called "special_havoc.py" because the shader_mutator.py file got a bit too cluttered. I have this todolist for the custom mutator here: 
+- Speedup fuzzing by improving the python code and also delete some stuff from the translator code itself for example comment out the ast validation...
+- Add very special mutations...
+- Add an automatic coverage testing... (for evaluating changes to the custom mutator)
+- Improve python custom mutator efficiency...   the deletion of the files above 10k resulted in a roughly 3x in speed. Next I want to make a coverage gathering thing. Also I want to support wglsl output code, since the compiler now skips that entirely. I also want to add a benchmark testing for the python code itself.
+
