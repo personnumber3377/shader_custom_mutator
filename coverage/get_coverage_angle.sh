@@ -20,15 +20,16 @@ mkdir -p /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/ || t
 
 # cp testing_corpus/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
-cp testing_corpus/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
+# Copy the simple file thing...
+cp one_file_bin/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
 # Now run the fuzzer
 
 #  -dict=angle_translator_fuzzer.dict
 # -seed=1 is so that the output is deterministic...
-# -runs=10000 so that it always runs 10k times...
+# -runs=100000 so that it always runs 100k times...
 
-ASAN_OPTIONS=external_symbolizer_path=/usr/bin/llvm-symbolizer:alloc_dealloc_mismatch=0:allocator_may_return_null=1:halt_on_error=1:abort_on_error=1 SLOT_INDEX=1 FUZZ_ONLY_CUSTOM=1 LIBFUZZER_PYTHON_MODULE=mutator PYTHONPATH=/home/oof/chromiumstuff/source/src/out/canvasfuzz/ /home/oof/chromiumstuff/source/src/out/canvasfuzz/angle_translator_fuzzer -seed=1 -fork=1 -runs=10000 -ignore_crashes=1 -max_len=10000 -only_ascii=0 -timeout=1 -cross_over=0 -rss_limit_mb=2048 /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
+ASAN_OPTIONS=external_symbolizer_path=/usr/bin/llvm-symbolizer:alloc_dealloc_mismatch=0:allocator_may_return_null=1:halt_on_error=1:abort_on_error=1 SLOT_INDEX=1 FUZZ_ONLY_CUSTOM=1 LIBFUZZER_PYTHON_MODULE=mutator PYTHONPATH=/home/oof/chromiumstuff/source/src/out/canvasfuzz/ /home/oof/chromiumstuff/source/src/out/canvasfuzz/angle_translator_fuzzer -seed=1 -fork=1 -runs=100090 -ignore_crashes=1 -max_len=10000 -only_ascii=0 -timeout=1 -cross_over=0 -rss_limit_mb=2048 /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
 # Now make the coverage directory...
 
