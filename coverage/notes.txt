@@ -1,0 +1,7 @@
+
+The testing_corpus directory has been randomly sampled from /home/oof/angle_shader_corpus/min/
+
+using this command here:
+
+shuf -zn100 -e * | xargs -0 cp -vt /home/oof/shader_custom_mutator/coverage/testing_corpus
+
