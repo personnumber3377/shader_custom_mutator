@@ -18,8 +18,32 @@ mkdir -p /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/ || t
 
 # Copy the initial corpus to the thing...
 
-ASAN_OPTIONS=external_symbolizer_path=/usr/bin/llvm-symbolizer:alloc_dealloc_mismatch=0:allocator_may_return_null=1:halt_on_error=1:abort_on_error=1 SLOT_INDEX=1 FUZZ_ONLY_CUSTOM=1 LIBFUZZER_PYTHON_MODULE=mutator PYTHONPATH=/home/oof/chromiumstuff/source/src/out/canvasfuzz/ /home/oof/chromiumstuff/source/src/out/canvasfuzz/angle_translator_fuzzer -fork=1 -ignore_crashes=1 -dict=angle_translator_fuzzer.dict -max_len=10000 -only_ascii=0 -timeout=1 -cross_over=0 -rss_limit_mb=2048 /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
+cp testing_corpus/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
+# Now run the fuzzer
+
+#  -dict=angle_translator_fuzzer.dict
+# -seed=1 is so that the output is deterministic...
+# -runs=10000 so that it always runs 10k times...
+
+ASAN_OPTIONS=external_symbolizer_path=/usr/bin/llvm-symbolizer:alloc_dealloc_mismatch=0:allocator_may_return_null=1:halt_on_error=1:abort_on_error=1 SLOT_INDEX=1 FUZZ_ONLY_CUSTOM=1 LIBFUZZER_PYTHON_MODULE=mutator PYTHONPATH=/home/oof/chromiumstuff/source/src/out/canvasfuzz/ /home/oof/chromiumstuff/source/src/out/canvasfuzz/angle_translator_fuzzer -seed=1 -fork=1 -runs=10000 -ignore_crashes=1 -max_len=10000 -only_ascii=0 -timeout=1 -cross_over=0 -rss_limit_mb=2048 /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
+
+# Now make the coverage directory...
+
+# Delete old...
+rm -r /home/oof/chromiumstuff/source/src/out/pdfium_cov/generated_files/ || true
+# Make new...
+mkdir -p /home/oof/chromiumstuff/source/src/out/pdfium_cov/generated_files/ || true
+
+# Now copy the corpus files...
+
+cp /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/* /home/oof/chromiumstuff/source/src/out/pdfium_cov/generated_files/
+
+
+
+
+
+# Now start generating the actual coverage...
 
 rm /home/oof/chromiumstuff/source/src/out/pdfium_cov/profraw/* || true # Delete the old stuff???
 

@@ -892,7 +892,7 @@ class Parser:
                     items.append(self.parse_global_decl())
 
                 continue
-            print("Ignoring this stuff here: "+str(self.peek().kind)+" , "+str(self.peek().value))
+            # print("Ignoring this stuff here: "+str(self.peek().kind)+" , "+str(self.peek().value))
             self.advance()
 
         return TranslationUnit(items)
