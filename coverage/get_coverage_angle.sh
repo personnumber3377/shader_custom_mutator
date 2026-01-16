@@ -18,6 +18,8 @@ mkdir -p /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/ || t
 
 # Copy the initial corpus to the thing...
 
+# cp testing_corpus/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
+
 cp testing_corpus/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
 # Now run the fuzzer
