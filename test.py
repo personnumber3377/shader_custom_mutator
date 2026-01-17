@@ -113,6 +113,15 @@ def save_file(fn: str, data: bytes):
     fh.write(data)
     fh.close()
 
+def expected_out_path(fn: str) -> str:
+    return fn + ".expected_out"
+
+def load_expected_out(fn: str) -> str | None:
+    p = expected_out_path(fn)
+    if not os.path.isfile(p):
+        return None
+    return open(p, "r", encoding="utf-8").read()
+
 def build_header_from_directive(src: str) -> bytes:
     """
     HEADER: <shader_type> <spec> <output>
@@ -264,6 +273,40 @@ def chase_assert_with_custom_mutator(
     print("❌ No assert found")
     return None
 
+# Generate expected outputs from the files...
+def generate_expected_outputs(path: str, force: bool = False):
+    files = collect_files(path)
+
+    if not force:
+        print("⚠️  This will CREATE or OVERWRITE .expected_out files.")
+        print("⚠️  This can invalidate your roundtrip test corpus.")
+        resp = input("Type 'YES' to continue: ")
+        if resp.strip() != "YES":
+            print("Aborted.")
+            return
+
+    for fn in files:
+        data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
+        ok, _ = check_file_bytes(data)
+        if not ok:
+            print(f"[skip] invalid shader: {fn}")
+            continue
+
+        src = strip_header_and_null(data).decode("utf-8", errors="ignore")
+
+        try:
+            tu = shader_parser.parse_to_tree(src)
+            out = shader_unparser.unparse_tu(tu)
+        except Exception as e:
+            print(f"[skip] parse failed: {fn}")
+            continue
+
+        out_path = expected_out_path(fn)
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(out)
+
+        print(f"[expected] {out_path}")
+
 VERBOSE = 0
 
 def mutation_benchmark(path: str, iters: int, seed: int):
@@ -310,72 +353,71 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
     fail = 0
     tot = 0
     ignored = 0
+    mismatch = 0
 
     for i, fn in enumerate(files):
         print(f"[roundtrip] {fn} ({i}/{len(files)})")
+
         if i and i % PRINT_COUNT == 0:
-            print("Roundtrip test failed. Stats:")
-            print("Total: "+str(i))
-            print("Failed: "+str(fail))
-            print("Ignored: "+str(ignored))
+            print("Roundtrip stats:")
+            print("Total:   ", tot)
+            print("Failed:  ", fail)
+            print("Ignored: ", ignored)
+            print("Mismatch:", mismatch)
+
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
-        # print("passing this here: "+str(data))
+
         ok, msg = check_file_bytes(data)
         if not ok:
             ignored += 1
-            print("Invalid shader...")
-            print("msg: "+str(msg))
+            print("Invalid shader (original)")
+            print("msg:", msg)
             continue
-            '''
-            if not ignore_invalid:
-                raise RuntimeError(f"Initial shader invalid:\n{msg}")
-            else:
-                continue
-            '''
+
         tot += 1
-        src = strip_header_and_null(data).decode("utf-8")
-        # print("Passing this source code: "+str(src))
+
+        src = strip_header_and_null(data).decode("utf-8", errors="ignore")
+
         try:
             tu = shader_parser.parse_to_tree(src)
             out = shader_unparser.unparse_tu(tu)
         except Exception as e:
             if ignore_invalid:
+                ignored += 1
                 continue
-            else:
-                raise e
-        print("Got this source code back: "+str(out))
+            raise
+
+        # -----------------------------
+        # Expected output comparison
+        # -----------------------------
+        expected = load_expected_out(fn)
+        if expected is not None:
+            if out != expected:
+                mismatch += 1
+                fail += 1
+                print("❌ EXPECTED OUTPUT MISMATCH")
+                print("--- expected ---")
+                print(expected[:500])
+                print("--- got ---")
+                print(out[:500])
+                continue
 
         rebuilt = data[:HEADER_SIZE] + out.encode("utf-8") + b"\x00"
-        
-        '''
-        shader_type = 0x8B31  # GL_VERTEX_SHADER
-        shader_spec = 2       # SH_GLES3_SPEC
-        output_format = 15    # SH_SPIRV_VULKAN_OUTPUT
-
-        header_list = list(struct.pack('<III', shader_type, shader_spec, output_format))
-        header_list.extend([0] * (128 - len(header_list)))
-        header_list[12] |= 0x01 # objectCode = true
-        header = bytes(header_list)
-
-        rebuilt = header + out.encode("utf-8") + b"\x00" # Reconstruct the shit...
-        '''
-
-        # save_file("./crashing.bin", rebuilt)
 
         ok2, msg2 = check_file_bytes(rebuilt)
-
         if not ok2:
-            # raise RuntimeError(f"Roundtrip failed:\n{msg2}")
             fail += 1
-            print(f"Roundtrip failed:\n{msg2}")
-            # print(f"Roundtrip failed!")
-    if not fail:
+            print("❌ Roundtrip ANGLE failure:")
+            print(msg2)
+
+    print("\n=== ROUNDTRIP SUMMARY ===")
+    print("Total tested: ", tot)
+    print("Failures:     ", fail)
+    print("Ignored:      ", ignored)
+    print("Mismatches:   ", mismatch)
+
+    if fail == 0:
         print("✔ Roundtrip tests passed")
-    else:
-        print("Roundtrip test failed. Stats:")
-        print("Total: "+str(len(files)))
-        print("Failed: "+str(fail))
-        print("Ignored: "+str(ignored))
 
 def add_default_header_to_directory(
     directory: str,
@@ -439,6 +481,7 @@ def main():
     ap.add_argument("--roundtrip", action="store_true")
     ap.add_argument("--check-corpus", action="store_true")
     ap.add_argument("--chase-assert", action="store_true")
+    ap.add_argument("--gen-expected-out", action="store_true", help="Generate .expected_out files (DANGEROUS)")
     ap.add_argument("--iters", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--ignore-invalid", type=int, default=0)
@@ -464,6 +507,8 @@ def main():
             # exit(0)
         elif args.roundtrip:
             roundtrip_test(args.path, ignore_invalid=args.ignore_invalid)
+        elif args.gen_expected_out:
+            generate_expected_outputs(args.path)
         elif args.check_corpus:
             corpus_check(args.path)
         elif args.add_default_header:

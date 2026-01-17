@@ -1,0 +1,17 @@
+#version 300 es
+
+precision mediump float;
+precision mediump int;
+
+uniform something {
+  int a;
+  int b;
+} uSomething;
+
+uniform int y;
+
+void main()
+{
+  int x = ((uSomething.a + uSomething.b) + y);
+}
+
