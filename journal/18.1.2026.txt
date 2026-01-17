@@ -3,3 +3,5 @@
 - Add support for better qualifier mutations... (see file:///home/oof/chromiumstuff/source/src/out/pdfium_cov/third_party/angle/src/compiler/translator/QualifierTypes.cpp.html)
 
 
+- Try to rerun the angle_unittests and angle_end2end_tests binaries for the corpus since it dropped to 2k files from 7k files???
+
