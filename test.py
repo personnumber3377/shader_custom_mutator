@@ -211,7 +211,7 @@ def collect_files(path: str) -> List[str]:
     return [
         os.path.join(path, f)
         for f in os.listdir(path)
-        if os.path.isfile(os.path.join(path, f))
+        if os.path.isfile(os.path.join(path, f)) and not f.endswith(".expected_out") # Filter out the expected output files...
     ]
 
 # -----------------------------
