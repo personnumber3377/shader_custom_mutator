@@ -1,10 +1,10 @@
-HEADER: frag 2 15
+HEADER: vert 3 6
 #version 300 es
 precision highp float;
 out vec4 outColor;
 
 // This exercises the more complex parsing where we also take into account the equal sign...
-layout(local_size_x=1, local_size_y=1, local_size_z=1) in;
+layout(location = 0) inout highp vec4 color0;
 
 layout(std140, column_major) uniform Ubo
 {
