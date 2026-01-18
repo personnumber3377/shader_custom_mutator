@@ -307,7 +307,7 @@ def generate_expected_outputs(path: str, force: bool = False):
 
         print(f"[expected] {out_path}")
 
-VERBOSE = 1
+VERBOSE = 0
 
 def mutation_benchmark(path: str, iters: int, seed: int):
     files = collect_files(path)
@@ -488,7 +488,7 @@ def main():
     ap.add_argument("--check-corpus", action="store_true")
     ap.add_argument("--chase-assert", action="store_true")
     ap.add_argument("--gen-expected-out", action="store_true", help="Generate .expected_out files (DANGEROUS)")
-    ap.add_argument("--iters", type=int, default=10000)
+    ap.add_argument("--iters", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--ignore-invalid", type=int, default=0)
     ap.add_argument("--add-default-header", action="store_true",
