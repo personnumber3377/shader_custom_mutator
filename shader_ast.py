@@ -106,7 +106,10 @@ class Declarator:
 '''
 
 class DeclaratorLayout:
-    def __init__(self, name)
+    def __init__(self, name, value): # If value is None, then this qualifier thing doesn't need a value for example "std140" if value is not None, then for example "location=0" is emitted, these objects are then joined with a comma to become layout(std140, location=0) etc...
+        self.name = name
+        self.value = value
+
 
 class Declarator:
     def __init__(self, name, base_type, array_size, init, qualifiers=None):
@@ -244,7 +247,7 @@ class GlobalDecl(TopLevel):
 # This is a special case, since this is a toplevel expression that doesn't end in a newline...
 @dataclass
 class LayoutQualifier(TopLevel):
-    declarators: List[Declarator]
+    declarators: List[DeclaratorLayout]
 
 # This is the "struct specifier + declarators" case:
 @dataclass
