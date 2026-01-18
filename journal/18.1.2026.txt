@@ -233,3 +233,11 @@ Quit anyway? (y or n) y
 oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/canvasfuzz$ 
 
 
+
+
+
+- Add graphics stress testing to the custom mutator??? (see TextureFunctionHLSL.cpp)
+- Add a way to infer interesting patterns without having to explicitly write a mutator for said thing?
+
+
+
