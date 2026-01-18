@@ -8,6 +8,12 @@ import os
 from typing import Optional
 
 # -----------------------------
+# Header mutation
+# -----------------------------
+
+from header_mutator import * # For mutate_header_precise
+
+# -----------------------------
 # Shader toolchain
 # -----------------------------
 
@@ -70,24 +76,6 @@ def mutate_bytes_generic(b: bytes, rng: random.Random) -> bytes:
     # flip byte
     pos = rng.randrange(len(b))
     return b[:pos] + bytes([b[pos] ^ (1 << rng.randrange(8))]) + b[pos + 1:]
-
-
-# -----------------------------
-# Header mutation
-# -----------------------------
-
-def mutate_header(header: bytes, rng: random.Random) -> bytes:
-    h = bytearray(header)
-
-    n = rng.randrange(1, MAX_HEADER_MUT + 1)
-    for _ in range(n):
-        if not h:
-            break
-        i = rng.randrange(len(h))
-        h[i] ^= (1 << rng.randrange(8))
-
-    return bytes(h)
-
 
 # -----------------------------
 # Structural shader mutation
@@ -154,6 +142,8 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
 
         # mutate header lightly
         # header = mutate_header(header, rng) # TODO: This almost always produces invalid headers. Disabled for now.
+        if rng.random() < 0.10: # 10% chance of mutating the header...
+            header = mutate_header_precise(header, rng)
 
         # structural mutation
         mutated_body = mutate_shader_structural(body, max_size - HEADER_SIZE, rng)
