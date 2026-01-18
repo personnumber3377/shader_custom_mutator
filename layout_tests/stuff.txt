@@ -1,0 +1,28 @@
+HEADER: frag 3 6
+#version 300 es
+in vec2 position;
+out float v;
+struct S {
+  highp ivec3 a;
+  mediump ivec2 b[4];
+};
+layout(std140) uniform blockName0 {
+  S s0;
+  lowp vec2 v0;
+  S s1[2];
+  highp uint u0;
+};
+layout(std140) uniform blockName1 {
+  float f1;
+  bool b1;
+} instanceName1;
+layout(shared) uniform blockName2 {
+  float f2;
+};
+layout(packed) uniform blockName3 {
+  float f3;
+};
+void main() {
+  v = instanceName1.f1;
+  gl_Position = vec4(position, 0, 1);
+}
