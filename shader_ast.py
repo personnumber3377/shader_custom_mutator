@@ -106,7 +106,7 @@ class Declarator:
 '''
 
 class DeclaratorLayout:
-    def __init__(self, name, value): # If value is None, then this qualifier thing doesn't need a value for example "std140" if value is not None, then for example "location=0" is emitted, these objects are then joined with a comma to become layout(std140, location=0) etc...
+    def __init__(self, name, value = None): # If value is None, then this qualifier thing doesn't need a value for example "std140" if value is not None, then for example "location=0" is emitted, these objects are then joined with a comma to become layout(std140, location=0) etc...
         self.name = name
         self.value = value
 

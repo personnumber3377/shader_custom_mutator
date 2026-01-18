@@ -423,6 +423,22 @@ def unparse_tu(tu: TranslationUnit) -> str:
             out += "\n"
             continue
 
+        # Layout object?
+
+        if isinstance(item, LayoutQualifier):
+            the_string = "layout("
+            print("item.declarators: "+str(item.declarators))
+            for o in item.declarators:
+                s = str(o.name)
+                if o.value != None:
+                    s += "="+str(o.value)
+                s += ", " # Add the comma...
+                the_string += s
+            the_string = the_string[:-2] # Cut off the excess ", "
+            the_string += ") " # close
+            out += the_string
+            # Now actually do NOT append the newline since layouts must be on the same line I think...
+            continue
         # unknown => ignore safely
         out += "\n"
 

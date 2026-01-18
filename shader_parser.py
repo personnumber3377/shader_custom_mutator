@@ -842,17 +842,55 @@ class Parser:
         self.expect(";")
         return GlobalDecl(decls)
 
+    '''
+    class DeclaratorLayout:
+    def __init__(self, name, value = None): # If value is None, then this qualifier thing doesn't need a value for example "std140" if value is not None, then for example "location=0" is emitted, these objects are then joined with a comma to become layout(std140, location=0) etc...
+        self.name = name
+        self.value = value
+
+    # This is a special case, since this is a toplevel expression that doesn't end in a newline...
+    @dataclass
+    class LayoutQualifier(TopLevel):
+        declarators: List[DeclaratorLayout]
+    '''
+
     def parse_layout(self):
         # Now try to parse the layout...
-        self.expect("layout") # Get the layout, then do the stuff...
+        self.expect("KW", "layout") # Get the layout, then do the stuff...
         self.expect("(") # opening paranthesis
+        decls = [] # Initialize declarator list...
         while self.peek().kind == "ID":
             # Check if name or name=value thing...
             name = self.advance().value
             # Now check for the equal sign...
             if self.peek().value == "=":
                 self.advance() # Eat the equal sign...
-                
+                value = self.advance().value
+                obj = DeclaratorLayout(name, value=value)
+                decls.append(obj)
+                # Now check for the comma or paranthesis
+                if self.peek().value == ",":
+                    self.advance()
+                    continue
+                elif self.peek().value == ")": # Close???
+                    # We are done so just break out of the thing...
+                    self.advance()
+                    break
+            elif self.peek().value == ",": # Layouts that do not require a value... (for example "std140" and others...)
+                # Just consume the comma and generate the DeclaratorLayout object...
+                obj = DeclaratorLayout(name)
+                decls.append(obj)
+                self.advance() # Eat the comma such that we are on the next (potential) qualifier
+            elif self.peek().value == ")": # End of the thing???
+                obj = DeclaratorLayout(name)
+                decls.append(obj)
+                self.advance()
+                break
+        # Show where we breaked...
+        print("self.peek(): "+str(self.peek().kind)+", "+str(self.peek().value))
+        # Now we assume that all the qualifiers are in the list "decls" . Create the actual layout object...
+        layout_object = LayoutQualifier(decls)
+        return layout_object
 
     def parse_translation_unit(self) -> TranslationUnit:
         items: List[TopLevel] = []
