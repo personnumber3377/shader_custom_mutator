@@ -1678,7 +1678,8 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     High-level mutator: collects env then mutates items.
     Returns a NEW TranslationUnit.
     """
-    tu2 = deepclone(tu)
+    # tu2 = deepclone(tu)
+    tu2 = tu # Use the reference...
     env = build_env(tu2)
 
     # Mutate each item; keep env updated as we go.
@@ -1688,7 +1689,9 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
 
     # Instead of mutating each expression, just mutate a randomly chosen one...
 
-    new_items = copy.deepcopy(tu2.items) # Copy...
+    #new_items = copy.deepcopy(tu2.items) # Copy...
+
+    new_items = tu2.items # Just use the reference. Do not copy them...
 
     # Check for the special havoc mode.
 
