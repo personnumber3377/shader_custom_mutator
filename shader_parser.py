@@ -902,6 +902,7 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
     return p.parse_translation_unit()
 '''
 
+
 def parse_directive(line: str):
     parts = line.split()
     if parts[0] == "#version":
