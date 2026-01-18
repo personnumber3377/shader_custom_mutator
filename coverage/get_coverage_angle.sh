@@ -21,7 +21,7 @@ mkdir -p /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/ || t
 # cp testing_corpus/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
 # Copy the simple file thing...
-cp one_file_bin/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
+cp /home/oof/minned/* /home/oof/chromiumstuff/source/src/out/canvasfuzz/generated_files/
 
 # Now run the fuzzer
 
