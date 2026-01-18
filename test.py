@@ -584,6 +584,8 @@ def main():
         elif args.chase_assert:
             chase_assert_with_custom_mutator(args.path)
             # exit(0)
+        elif args.profile_mutator:
+            profile_mutator(args.path, args.iters, seed)
         elif args.roundtrip:
             roundtrip_test(args.path, ignore_invalid=args.ignore_invalid)
         elif args.gen_expected_out:
