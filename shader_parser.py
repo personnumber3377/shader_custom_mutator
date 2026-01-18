@@ -292,6 +292,7 @@ class Parser:
 
     def parse_struct_member(self) -> list[StructField]:
         # NEW: skip optional layout qualifiers
+        # TODO: Support layouts inside struct members???
         while self.peek().kind == "KW" and self.peek().value == "layout":
             self.parse_layout_qualifier()
 
@@ -841,12 +842,31 @@ class Parser:
         self.expect(";")
         return GlobalDecl(decls)
 
+    def parse_layout(self):
+        # Now try to parse the layout...
+        self.expect("layout") # Get the layout, then do the stuff...
+        self.expect("(") # opening paranthesis
+        while self.peek().kind == "ID":
+            # Check if name or name=value thing...
+            name = self.advance().value
+            # Now check for the equal sign...
+            if self.peek().value == "=":
+                self.advance() # Eat the equal sign...
+                
+
     def parse_translation_unit(self) -> TranslationUnit:
         items: List[TopLevel] = []
         while self.peek().kind != "EOF":
             t = self.peek()
-
+            print("t.value: "+str(t.value))
+            print("t.kind: "+str(t.kind))
             # if t.kind == "KW" and t.value == "struct":
+
+            # Try to parse layouts first...
+            if t.value == "layout" and t.kind == "KW": # layout?
+                items.append(self.parse_layout())
+                continue
+
             if self._looks_like_struct_decl_stmt():
                 items.append(self.parse_struct_toplevel_decl())
                 continue
