@@ -307,7 +307,7 @@ def generate_expected_outputs(path: str, force: bool = False):
 
         print(f"[expected] {out_path}")
 
-VERBOSE = 0
+VERBOSE = 1
 
 def mutation_benchmark(path: str, iters: int, seed: int):
     files = collect_files(path)
@@ -331,6 +331,7 @@ def mutation_benchmark(path: str, iters: int, seed: int):
             if VERBOSE:
                 print("Encountered this exception here: "+str(e))
                 print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
+                exit(1)
             total += 1
             continue
         total += 1

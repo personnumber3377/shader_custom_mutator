@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import replace
 from typing import Dict, List, Optional, Tuple, Union
 import copy
+# from copy import deepcopy
 import random
 
 from shader_ast import *
@@ -1127,7 +1128,7 @@ def mutate_int_value(v: int, rng: random.Random) -> int:
     return rng.choice(choices)
 
 def mutate_declarator(d, rng: random.Random):
-    d = deepcopy(d)
+    d = copy.deepcopy(d)
 
     # Rename qualifier
     if rng.random() < 0.25:
@@ -1162,11 +1163,11 @@ def mutate_layout_qualifier(layout: LayoutQualifier, rng: random.Random) -> Layo
         if rng.random() < 0.8:
             new_layout.declarators.append(mutate_declarator(d, rng))
         else:
-            new_layout.declarators.append(deepcopy(d))
+            new_layout.declarators.append(copy.deepcopy(d))
 
     # Randomly duplicate an entry (ANGLE checks this!)
     if new_layout.declarators and rng.random() < 0.2:
-        new_layout.declarators.append(deepcopy(rng.choice(new_layout.declarators)))
+        new_layout.declarators.append(copy.deepcopy(rng.choice(new_layout.declarators)))
 
     # Randomly add a new declarator
     if rng.random() < 0.35:
@@ -1492,12 +1493,14 @@ def mutate_struct_fields(fields: List[StructField], rng: random.Random, scope: S
 
 def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
+    dlog("item: "+str(item))
+
     # StructDef
     if isinstance(item, StructDef):
         dlog("mutating struct definition")
         # if DEBUG:
         #     exit(1)
-        dexit()
+        # dexit()
         # mutate fields
         dummy_scope = Scope(None)
         new_fields = mutate_struct_fields(item.fields, rng, dummy_scope, env)
@@ -1518,37 +1521,6 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
         it = deepclone(item)
         dummy_scope = Scope(None)
         it.struct_type.members = mutate_struct_fields(it.struct_type.members, rng, dummy_scope, env)
-
-        # 🔥 NEW: mutate struct storage qualifiers
-        '''
-        if coin(rng, 0.35):
-            # dlog("Example"*1000)
-            dlog("stuff...")
-            dlog("it: "+str(it))
-            it.struct_type = StructType(
-                name=it.struct_type.name,
-                members=it.struct_type.members,
-            )
-            dlog("it.struct_type.type_name: "+str(it.struct_type.type_name))
-            old_qualifiers = copy.deepcopy(it.struct_type.type_name.qualifiers)
-            dlog("old_qualifiers: "+str(old_qualifiers))
-
-            it.struct_type.type_name = mutate_qualifiers(
-                TypeName(it.struct_type.name),
-                rng,
-                storage_pool=["uniform", "buffer", "const", None],
-            )
-            
-            # dlog("it.struct_type.type_name: "+str(it.struct_type.type_name))
-
-            dlog("Here is the thing it.struct_type.type_name.qualifiers: "+str(it.struct_type.type_name.qualifiers))
-
-            # Check for uniform...
-            if "uniform" in it.struct_type.type_name.qualifiers and "uniform" not in old_qualifiers: # We added "uniform" ???
-                # Stop the thing...
-                global stop
-                stop = True
-        '''
 
 
         # 🔥 THIS IS THE IMPORTANT PART 🔥
@@ -1653,8 +1625,8 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
     if isinstance(item, LayoutQualifier):
 
         global stop
-        stop = True
-        it = mutate_layout_qualifier(item)
+        # stop = True
+        it = mutate_layout_qualifier(item, rng)
         # break here...
         # global stop
         stop = True
@@ -1786,9 +1758,9 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
 
     # Now try to unparse that shit...
     # exit(1)
-    if DEBUG:
-        # return tu2 # Short circuit here...
-        debug_source(tu, tu2)
+    # if DEBUG:
+    # return tu2 # Short circuit here...
+    debug_source(tu, tu2)
     
 
     return tu2
