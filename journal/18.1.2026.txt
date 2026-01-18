@@ -5,3 +5,231 @@
 
 - Try to rerun the angle_unittests and angle_end2end_tests binaries for the corpus since it dropped to 2k files from 7k files???
 
+
+
+
+
+
+
+
+
+
+oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/canvasfuzz$ gdb --args ./angle_translator_fuzzer ./angle_corp/
+GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+--Type <RET> for more, q to quit, c to continue without paging--
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+--Type <RET> for more, q to quit, c to continue without paging--
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+--Type <RET> for more, q to quit, c to continue without paging--
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+--Type <RET> for more, q to quit, c to continue without paging--
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+--Type <RET> for more, q to quit, c to continue without paging--
+Reading symbols from ./angle_translator_fuzzer...
+(gdb) break ValidateAST
+Breakpoint 1 at 0xbd8f51: ValidateAST. (2 locations)
+(gdb) r
+Starting program: /home/oof/chromiumstuff/source/src/out/canvasfuzz/angle_translator_fuzzer ./angle_corp/
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Warning: No Python module specified, using the default libfuzzer mutator (for now).
+INFO: found LLVMFuzzerCustomMutator (0x555555f4e350). Disabling -len_control by default.
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3894970726
+INFO: Loaded 1 modules   (107908 inline 8-bit counters): 107908 [0x555556a13060, 0x555556a2d5e4), 
+INFO: Loaded 1 PC tables (107908 PCs): 107908 [0x555556a2d5e8,0x555556bd2e28), 
+[New Thread 0x7bfff2ccd640 (LWP 40924)]
+INFO:    19978 files found in ./angle_corp/
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 1048576 bytes
+INFO: seed corpus: files: 19978 min: 143b max: 1693116b total: 54037135b rss: 84Mb
+#21011	INITED cov: 14700 ft: 40190 corp: 879/1809Kb exec/s: 1167 rss: 640Mb
+#21085	NEW    cov: 14701 ft: 40192 corp: 880/1809Kb lim: 1048576 exec/s: 1171 rss: 640Mb L: 828/349614 MS: 3 CustomCrossOver-ChangeBit-Custom-
+#21250	NEW    cov: 14701 ft: 40193 corp: 881/1810Kb lim: 1048576 exec/s: 1180 rss: 640Mb L: 664/349614 MS: 2 ChangeBinInt-Custom-
+	NEW_FUNC[1/1]: [Detaching after fork from child process 40935]
+0x555555ef30c0 in absl::container_internal::ClearBackingArray(absl::container_internal::CommonFields&, absl::container_internal::PolicyFunctions const&, void*, bool, bool) third_party/abseil-cpp/absl/container/internal/raw_hash_set.cc:651
+#21412	NEW    cov: 14720 ft: 40248 corp: 882/1810Kb lim: 1048576 exec/s: 1189 rss: 640Mb L: 188/349614 MS: 1 CustomCrossOver-
+#22390	RELOAD cov: 14720 ft: 40251 corp: 883/1811Kb lim: 1048576 exec/s: 1178 rss: 640Mb
+#22396	NEW    cov: 14720 ft: 40255 corp: 884/1812Kb lim: 1048576 exec/s: 1178 rss: 640Mb L: 1025/349614 MS: 2 ShuffleBytes-Custom-
+#22795	NEW    cov: 14720 ft: 40256 corp: 885/1812Kb lim: 1048576 exec/s: 1085 rss: 640Mb L: 170/349614 MS: 1 CustomCrossOver-
+#23473	NEW    cov: 14721 ft: 40257 corp: 886/1812Kb lim: 1048576 exec/s: 978 rss: 640Mb L: 493/349614 MS: 4 CustomCrossOver-CustomCrossOver-CustomCrossOver-CustomCrossOver-
+	NEW_FUNC[1/8]: 0x55555618bc90 in sh::InitializeUninitializedLocals(sh::TCompiler*, sh::TIntermBlock*, int, bool, sh::TSymbolTable*) third_party/angle/src/compiler/translator/tree_ops/InitializeVariables.cpp:441
+	NEW_FUNC[2/8]: 0x55555618d3f0 in sh::(anonymous namespace)::InitializeLocalsTraverser::visitFunctionPrototype(sh::TIntermFunctionPrototype*) third_party/angle/src/compiler/translator/tree_ops/InitializeVariables.cpp:350
+#23687	NEW    cov: 14766 ft: 40304 corp: 887/1812Kb lim: 1048576 exec/s: 947 rss: 640Mb L: 341/349614 MS: 2 ChangeBinInt-Custom-
+#24110	NEW    cov: 14767 ft: 40305 corp: 888/1837Kb lim: 1048576 exec/s: 964 rss: 640Mb L: 24652/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/9]: 0x555555fda590 in sh::TCompiler::useAllMembersInUnusedStandardAndSharedBlocks(sh::TIntermBlock*) third_party/angle/src/compiler/translator/Compiler.cpp:1845
+	NEW_FUNC[2/9]: 0x555555fdfcf0 in std::__Cr::vector<sh::InterfaceBlock, std::__Cr::allocator<sh::InterfaceBlock>>::__destroy_vector::operator()() third_party/libc++/src/include/__vector/vector.h:246
+#24199	NEW    cov: 14792 ft: 40336 corp: 889/1837Kb lim: 1048576 exec/s: 930 rss: 640Mb L: 582/349614 MS: 2 ChangeBinInt-Custom-
+	NEW_FUNC[1/1]: 0x555555ff12c0 in sh::BuiltInFunctionEmulator::BuiltInFunctionEmulationMarker::visitUnary(sh::Visit, sh::TIntermUnary*) third_party/angle/src/compiler/translator/BuiltInFunctionEmulator.cpp:27
+#24229	NEW    cov: 14794 ft: 40339 corp: 890/1838Kb lim: 1048576 exec/s: 931 rss: 640Mb L: 639/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/2]: 0x555555fefb00 in sh::BuiltInFunctionEmulator::setFunctionCalled(sh::TFunction const*) third_party/angle/src/compiler/translator/BuiltInFunctionEmulator.cpp:109
+	NEW_FUNC[2/2]: 0x555555fefdc0 in sh::BuiltInFunctionEmulator::setFunctionCalled(int) third_party/angle/src/compiler/translator/BuiltInFunctionEmulator.cpp:115
+#24242	NEW    cov: 14801 ft: 40347 corp: 891/1838Kb lim: 1048576 exec/s: 932 rss: 640Mb L: 396/349614 MS: 1 CustomCrossOver-
+#24288	NEW    cov: 14801 ft: 40350 corp: 892/1838Kb lim: 1048576 exec/s: 934 rss: 640Mb L: 288/349614 MS: 1 CustomCrossOver-
+#24289	NEW    cov: 14801 ft: 40352 corp: 893/1839Kb lim: 1048576 exec/s: 934 rss: 640Mb L: 1025/349614 MS: 1 CustomCrossOver-
+#24371	NEW    cov: 14801 ft: 40354 corp: 894/1840Kb lim: 1048576 exec/s: 937 rss: 640Mb L: 270/349614 MS: 2 ShuffleBytes-Custom-
+#24389	NEW    cov: 14802 ft: 40366 corp: 895/1864Kb lim: 1048576 exec/s: 938 rss: 640Mb L: 24651/349614 MS: 1 CustomCrossOver-
+#24423	NEW    cov: 14802 ft: 40368 corp: 896/1864Kb lim: 1048576 exec/s: 939 rss: 640Mb L: 466/349614 MS: 1 CustomCrossOver-
+#24441	NEW    cov: 14803 ft: 40371 corp: 897/1866Kb lim: 1048576 exec/s: 940 rss: 640Mb L: 1469/349614 MS: 2 ChangeASCIIInt-Custom-
+#24536	NEW    cov: 14803 ft: 40372 corp: 898/1890Kb lim: 1048576 exec/s: 943 rss: 640Mb L: 24650/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#24870	NEW    cov: 14803 ft: 40374 corp: 899/1936Kb lim: 1048576 exec/s: 921 rss: 640Mb L: 47102/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#25040	NEW    cov: 14803 ft: 40377 corp: 900/1937Kb lim: 1048576 exec/s: 834 rss: 640Mb L: 1236/349614 MS: 2 ShuffleBytes-Custom-
+#25248	NEW    cov: 14803 ft: 40381 corp: 901/1939Kb lim: 1048576 exec/s: 841 rss: 640Mb L: 1707/349614 MS: 1 CustomCrossOver-
+#25323	NEW    cov: 14803 ft: 40384 corp: 902/1939Kb lim: 1048576 exec/s: 816 rss: 640Mb L: 575/349614 MS: 1 CustomCrossOver-
+#25464	NEW    cov: 14803 ft: 40385 corp: 903/1940Kb lim: 1048576 exec/s: 821 rss: 640Mb L: 355/349614 MS: 1 CustomCrossOver-
+#25542	NEW    cov: 14804 ft: 40386 corp: 904/1949Kb lim: 1048576 exec/s: 798 rss: 640Mb L: 9789/349614 MS: 1 CustomCrossOver-
+#25655	NEW    cov: 14806 ft: 40391 corp: 905/1949Kb lim: 1048576 exec/s: 801 rss: 640Mb L: 274/349614 MS: 3 ChangeASCIIInt-Custom-CustomCrossOver-
+#25706	NEW    cov: 14806 ft: 40397 corp: 906/1959Kb lim: 1048576 exec/s: 803 rss: 640Mb L: 9791/349614 MS: 1 CustomCrossOver-
+#25930	NEW    cov: 14806 ft: 40399 corp: 907/1983Kb lim: 1048576 exec/s: 810 rss: 640Mb L: 24648/349614 MS: 1 CustomCrossOver-
+#26041	NEW    cov: 14807 ft: 40401 corp: 908/2007Kb lim: 1048576 exec/s: 789 rss: 640Mb L: 24649/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#26104	NEW    cov: 14807 ft: 40402 corp: 909/2031Kb lim: 1048576 exec/s: 791 rss: 640Mb L: 24650/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/3]: 0x55555623ec50 in sh::PreTransformTextureCubeGradDerivatives(sh::TCompiler*, sh::TIntermBlock*, sh::TSymbolTable*, int) third_party/angle/src/compiler/translator/tree_ops/PreTransformTextureCubeGradDerivatives.cpp:225
+	NEW_FUNC[2/3]: 0x55555623f0c0 in sh::(anonymous namespace)::PreTransformTextureCubeGradTraverser::visitFunctionDefinition(sh::Visit, sh::TIntermFunctionDefinition*) third_party/angle/src/compiler/translator/tree_ops/PreTransformTextureCubeGradDerivatives.cpp:164
+#26461	NEW    cov: 14815 ft: 40410 corp: 910/2032Kb lim: 1048576 exec/s: 801 rss: 640Mb L: 481/349614 MS: 2 CMP-Custom- DE: "\005\000\000\000\000\000\000\000"-
+#26702	NEW    cov: 14817 ft: 40417 corp: 911/2032Kb lim: 1048576 exec/s: 785 rss: 640Mb L: 509/349614 MS: 1 CustomCrossOver-
+#26835	NEW    cov: 14817 ft: 40427 corp: 912/2042Kb lim: 1048576 exec/s: 789 rss: 640Mb L: 9789/349614 MS: 1 CustomCrossOver-
+#26903	NEW    cov: 14817 ft: 40428 corp: 913/2042Kb lim: 1048576 exec/s: 768 rss: 640Mb L: 230/349614 MS: 2 ChangeBit-Custom-
+#26967	NEW    cov: 14817 ft: 40429 corp: 914/2043Kb lim: 1048576 exec/s: 770 rss: 640Mb L: 1120/349614 MS: 4 CustomCrossOver-CMP-Custom-CustomCrossOver- DE: "\000\000\000\000\000\000\000\000"-
+#26987	NEW    cov: 14819 ft: 40434 corp: 915/2043Kb lim: 1048576 exec/s: 771 rss: 640Mb L: 390/349614 MS: 3 CustomCrossOver-CopyPart-Custom-
+#27058	NEW    cov: 14819 ft: 40436 corp: 916/2044Kb lim: 1048576 exec/s: 773 rss: 640Mb L: 422/349614 MS: 1 CustomCrossOver-
+#27149	NEW    cov: 14819 ft: 40438 corp: 917/2044Kb lim: 1048576 exec/s: 775 rss: 640Mb L: 735/349614 MS: 1 CustomCrossOver-
+#27179	NEW    cov: 14819 ft: 40440 corp: 918/2045Kb lim: 1048576 exec/s: 776 rss: 640Mb L: 240/349614 MS: 1 CustomCrossOver-
+#27268	NEW    cov: 14819 ft: 40478 corp: 919/2085Kb lim: 1048576 exec/s: 779 rss: 640Mb L: 41166/349614 MS: 3 CustomCrossOver-EraseBytes-Custom-
+#27346	NEW    cov: 14820 ft: 40498 corp: 920/2085Kb lim: 1048576 exec/s: 759 rss: 640Mb L: 188/349614 MS: 2 ChangeBit-Custom-
+#27353	NEW    cov: 14820 ft: 40499 corp: 921/2085Kb lim: 1048576 exec/s: 759 rss: 640Mb L: 357/349614 MS: 2 CMP-Custom- DE: "\243\001"-
+#27438	NEW    cov: 14822 ft: 40502 corp: 922/2086Kb lim: 1048576 exec/s: 762 rss: 640Mb L: 420/349614 MS: 4 ChangeASCIIInt-Custom-ChangeByte-Custom-
+#27876	NEW    cov: 14822 ft: 40503 corp: 923/2132Kb lim: 1048576 exec/s: 753 rss: 640Mb L: 47102/349614 MS: 1 CustomCrossOver-
+#27955	NEW    cov: 14823 ft: 40508 corp: 924/2133Kb lim: 1048576 exec/s: 735 rss: 640Mb L: 1470/349614 MS: 1 CustomCrossOver-
+#28286	NEW    cov: 14824 ft: 40517 corp: 925/2133Kb lim: 1048576 exec/s: 744 rss: 640Mb L: 188/349614 MS: 1 CustomCrossOver-
+#28498	NEW    cov: 14824 ft: 40526 corp: 926/2134Kb lim: 1048576 exec/s: 749 rss: 640Mb L: 487/349614 MS: 1 CustomCrossOver-
+#28625	NEW    cov: 14824 ft: 40527 corp: 927/2158Kb lim: 1048576 exec/s: 733 rss: 640Mb L: 24649/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#28632	NEW    cov: 14824 ft: 40530 corp: 928/2168Kb lim: 1048576 exec/s: 734 rss: 640Mb L: 9789/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/3]: 0x555555fef440 in sh::BuiltInFunctionEmulator::outputEmulatedFunctions(sh::TInfoSinkBase&) const third_party/angle/src/compiler/translator/BuiltInFunctionEmulator.cpp:78
+	NEW_FUNC[2/3]: 0x555555ff0bf0 in sh::BuiltInFunctionEmulator::WriteEmulatedFunctionName(sh::TInfoSinkBase&, char const*) third_party/angle/src/compiler/translator/BuiltInFunctionEmulator.cpp:160
+#28769	NEW    cov: 14845 ft: 40556 corp: 929/2168Kb lim: 1048576 exec/s: 737 rss: 640Mb L: 407/349614 MS: 2 InsertByte-Custom-
+#28792	NEW    cov: 14846 ft: 40557 corp: 930/2168Kb lim: 1048576 exec/s: 738 rss: 640Mb L: 524/349614 MS: 1 CustomCrossOver-
+#28816	NEW    cov: 14846 ft: 40559 corp: 931/2178Kb lim: 1048576 exec/s: 738 rss: 640Mb L: 9791/349614 MS: 2 ChangeASCIIInt-Custom-
+	NEW_FUNC[1/1]: 0x55555623a5e0 in sh::InitBuiltInAbsFunctionEmulatorForGLSLWorkarounds(sh::BuiltInFunctionEmulator*, unsigned int) third_party/angle/src/compiler/translator/glsl/BuiltInFunctionEmulatorGLSL.cpp:19
+#29071	NEW    cov: 14849 ft: 40573 corp: 932/2178Kb lim: 1048576 exec/s: 726 rss: 640Mb L: 208/349614 MS: 2 ShuffleBytes-Custom-
+#29119	NEW    cov: 14850 ft: 40574 corp: 933/2179Kb lim: 1048576 exec/s: 727 rss: 640Mb L: 493/349614 MS: 3 CustomCrossOver-ChangeByte-Custom-
+#29328	NEW    cov: 14850 ft: 40575 corp: 934/2203Kb lim: 1048576 exec/s: 733 rss: 640Mb L: 24650/349614 MS: 1 CustomCrossOver-
+#29601	NEW    cov: 14850 ft: 40576 corp: 935/2203Kb lim: 1048576 exec/s: 704 rss: 640Mb L: 473/349614 MS: 2 ShuffleBytes-Custom-
+#29892	NEW    cov: 14853 ft: 40580 corp: 936/2203Kb lim: 1048576 exec/s: 711 rss: 640Mb L: 203/349614 MS: 2 CMP-Custom- DE: "\000\004"-
+	NEW_FUNC[1/2]: 0x5555562474a0 in sh::RewriteRepeatedAssignToSwizzled(sh::TCompiler*, sh::TIntermBlock*) third_party/angle/src/compiler/translator/tree_ops/glsl/RewriteRepeatedAssignToSwizzled.cpp:93
+	NEW_FUNC[2/2]: 0x5555562476e0 in sh::(anonymous namespace)::RewriteAssignToSwizzledTraverser::visitBinary(sh::Visit, sh::TIntermBinary*) third_party/angle/src/compiler/translator/tree_ops/glsl/RewriteRepeatedAssignToSwizzled.cpp:71
+#30067	NEW    cov: 14859 ft: 40586 corp: 937/2205Kb lim: 1048576 exec/s: 699 rss: 640Mb L: 1199/349614 MS: 3 CustomCrossOver-ChangeByte-Custom-
+#30174	NEW    cov: 14859 ft: 40588 corp: 938/2206Kb lim: 1048576 exec/s: 685 rss: 640Mb L: 1864/349614 MS: 1 CustomCrossOver-
+#30268	NEW    cov: 14859 ft: 40592 corp: 939/2208Kb lim: 1048576 exec/s: 687 rss: 640Mb L: 1469/349614 MS: 1 CustomCrossOver-
+#30347	NEW    cov: 14859 ft: 40595 corp: 940/2209Kb lim: 1048576 exec/s: 689 rss: 640Mb L: 1469/349614 MS: 2 ShuffleBytes-Custom-
+#30553	NEW    cov: 14859 ft: 40596 corp: 941/2254Kb lim: 1048576 exec/s: 678 rss: 640Mb L: 46078/349614 MS: 4 CustomCrossOver-CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#30649	NEW    cov: 14862 ft: 40600 corp: 942/2255Kb lim: 1048576 exec/s: 681 rss: 640Mb L: 366/349614 MS: 1 CustomCrossOver-
+#30675	NEW    cov: 14862 ft: 40602 corp: 943/2264Kb lim: 1048576 exec/s: 681 rss: 640Mb L: 9790/349614 MS: 1 CustomCrossOver-
+#30988	NEW    cov: 14866 ft: 40606 corp: 944/2264Kb lim: 1048576 exec/s: 673 rss: 640Mb L: 268/349614 MS: 2 InsertByte-Custom-
+#31088	NEW    cov: 14869 ft: 40618 corp: 945/2265Kb lim: 1048576 exec/s: 675 rss: 640Mb L: 285/349614 MS: 2 PersAutoDict-Custom- DE: "\000\004"-
+#31216	NEW    cov: 14869 ft: 40619 corp: 946/2274Kb lim: 1048576 exec/s: 678 rss: 640Mb L: 9791/349614 MS: 3 CustomCrossOver-CMP-Custom- DE: "\377\377\377\377"-
+#31346	NEW    cov: 14869 ft: 40620 corp: 947/2298Kb lim: 1048576 exec/s: 681 rss: 640Mb L: 24648/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#31372	NEW    cov: 14870 ft: 40623 corp: 948/2299Kb lim: 1048576 exec/s: 682 rss: 640Mb L: 438/349614 MS: 2 PersAutoDict-Custom- DE: "\000\004"-
+#31598	NEW    cov: 14870 ft: 40624 corp: 949/2308Kb lim: 1048576 exec/s: 686 rss: 640Mb L: 9791/349614 MS: 1 CustomCrossOver-
+#31693	NEW    cov: 14870 ft: 40625 corp: 950/2309Kb lim: 1048576 exec/s: 674 rss: 640Mb L: 225/349614 MS: 4 ChangeBinInt-Custom-ShuffleBytes-Custom-
+#31755	NEW    cov: 14870 ft: 40626 corp: 951/2333Kb lim: 1048576 exec/s: 675 rss: 640Mb L: 24649/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#31848	NEW    cov: 14870 ft: 40627 corp: 952/2334Kb lim: 1048576 exec/s: 677 rss: 640Mb L: 1225/349614 MS: 1 CustomCrossOver-
+#31857	NEW    cov: 14870 ft: 40628 corp: 953/2343Kb lim: 1048576 exec/s: 677 rss: 640Mb L: 9791/349614 MS: 3 ShuffleBytes-Custom-CustomCrossOver-
+#32085	NEW    cov: 14870 ft: 40629 corp: 954/2344Kb lim: 1048576 exec/s: 668 rss: 640Mb L: 619/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/1]: 0x55555617f5b0 in sh::ClampFragDepth(sh::TCompiler*, sh::TIntermBlock*, sh::TSymbolTable*) third_party/angle/src/compiler/translator/tree_ops/ClampFragDepth.cpp:24
+#32174	NEW    cov: 14873 ft: 40632 corp: 955/2344Kb lim: 1048576 exec/s: 670 rss: 640Mb L: 231/349614 MS: 4 CustomCrossOver-CustomCrossOver-ChangeBit-Custom-
+#32225	NEW    cov: 14873 ft: 40642 corp: 956/2344Kb lim: 1048576 exec/s: 671 rss: 640Mb L: 188/349614 MS: 1 CustomCrossOver-
+#32368	NEW    cov: 14874 ft: 40643 corp: 957/2345Kb lim: 1048576 exec/s: 674 rss: 640Mb L: 242/349614 MS: 2 ChangeBit-Custom-
+#32422	NEW    cov: 14874 ft: 40645 corp: 958/2354Kb lim: 1048576 exec/s: 661 rss: 640Mb L: 9790/349614 MS: 5 ChangeASCIIInt-Custom-CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#32620	NEW    cov: 14874 ft: 40646 corp: 959/2378Kb lim: 1048576 exec/s: 665 rss: 640Mb L: 24649/349614 MS: 6 EraseBytes-Custom-ChangeByte-Custom-ChangeBit-Custom-
+#32959	NEW    cov: 14874 ft: 40650 corp: 960/2402Kb lim: 1048576 exec/s: 672 rss: 640Mb L: 24649/349614 MS: 5 CustomCrossOver-CustomCrossOver-CustomCrossOver-InsertByte-Custom-
+#32986	NEW    cov: 14874 ft: 40655 corp: 961/2403Kb lim: 1048576 exec/s: 673 rss: 640Mb L: 347/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\000\004"-
+#32999	NEW    cov: 14874 ft: 40657 corp: 962/2404Kb lim: 1048576 exec/s: 673 rss: 640Mb L: 1470/349614 MS: 1 CustomCrossOver-
+#33373	NEW    cov: 14874 ft: 40659 corp: 963/2404Kb lim: 1048576 exec/s: 654 rss: 640Mb L: 188/349614 MS: 5 CustomCrossOver-CustomCrossOver-ChangeBinInt-Custom-CustomCrossOver-
+#33538	NEW    cov: 14874 ft: 40664 corp: 964/2405Kb lim: 1048576 exec/s: 657 rss: 640Mb L: 188/349614 MS: 1 CustomCrossOver-
+#33656	NEW    cov: 14874 ft: 40665 corp: 965/2429Kb lim: 1048576 exec/s: 647 rss: 640Mb L: 24650/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/1]: 0x5555560dfc70 in unsigned long std::__Cr::__hash_table<sh::TSymbolUniqueId, std::__Cr::hash<sh::TSymbolUniqueId>, std::__Cr::equal_to<sh::TSymbolUniqueId>, pool_allocator<sh::TSymbolUniqueId>>::__erase_unique<sh::TSymbolUniqueId>(sh::TSymbolUniqueId const&) third_party/libc++/src/include/__hash_table:1927
+#33889	NEW    cov: 14880 ft: 40673 corp: 966/2429Kb lim: 1048576 exec/s: 651 rss: 640Mb L: 248/349614 MS: 2 CopyPart-Custom-
+#34278	NEW    cov: 14880 ft: 40674 corp: 967/2438Kb lim: 1048576 exec/s: 646 rss: 640Mb L: 9790/349614 MS: 2 InsertByte-Custom-
+#34332	NEW    cov: 14880 ft: 40678 corp: 968/2439Kb lim: 1048576 exec/s: 647 rss: 640Mb L: 281/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\000\004"-
+#34362	NEW    cov: 14880 ft: 40681 corp: 969/2439Kb lim: 1048576 exec/s: 648 rss: 640Mb L: 188/349614 MS: 2 ChangeByte-Custom-
+#34591	NEW    cov: 14880 ft: 40683 corp: 970/2485Kb lim: 1048576 exec/s: 640 rss: 640Mb L: 47102/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#34844	NEW    cov: 14880 ft: 40684 corp: 971/2520Kb lim: 1048576 exec/s: 622 rss: 640Mb L: 35994/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#34982	NEW    cov: 14880 ft: 40685 corp: 972/2521Kb lim: 1048576 exec/s: 624 rss: 640Mb L: 808/349614 MS: 1 CustomCrossOver-
+	NEW_FUNC[1/1]: 0x5555560807d0 in sh::(anonymous namespace)::CalculateVariableSize(sh::TType const*, bool) third_party/angle/src/compiler/translator/ParseContext.cpp:388
+#35046	NEW    cov: 14889 ft: 40694 corp: 973/2521Kb lim: 1048576 exec/s: 625 rss: 640Mb L: 322/349614 MS: 2 CrossOver-Custom-
+#35126	NEW    cov: 14889 ft: 40695 corp: 974/2567Kb lim: 1048576 exec/s: 627 rss: 640Mb L: 47102/349614 MS: 1 CustomCrossOver-
+#35234	NEW    cov: 14889 ft: 40698 corp: 975/2577Kb lim: 1048576 exec/s: 629 rss: 640Mb L: 9789/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\000\004"-
+#35355	NEW    cov: 14889 ft: 40699 corp: 976/2577Kb lim: 1048576 exec/s: 620 rss: 640Mb L: 331/349614 MS: 8 CustomCrossOver-CustomCrossOver-ShuffleBytes-Custom-ChangeBit-Custom-PersAutoDict-Custom- DE: "\000\004"-
+#35374	NEW    cov: 14889 ft: 40700 corp: 977/2578Kb lim: 1048576 exec/s: 620 rss: 640Mb L: 1225/349614 MS: 1 CustomCrossOver-
+#35641	NEW    cov: 14889 ft: 40701 corp: 978/2588Kb lim: 1048576 exec/s: 625 rss: 640Mb L: 9790/349614 MS: 1 CustomCrossOver-
+#36129	NEW    cov: 14893 ft: 40711 corp: 979/2612Kb lim: 1048576 exec/s: 612 rss: 640Mb L: 24735/349614 MS: 2 InsertRepeatedBytes-Custom-
+#36226	NEW    cov: 14893 ft: 40712 corp: 980/2613Kb lim: 1048576 exec/s: 614 rss: 640Mb L: 694/349614 MS: 4 CustomCrossOver-CustomCrossOver-EraseBytes-Custom-
+	NEW_FUNC[1/4]: 0x5555561bbed0 in sh::RescopeGlobalVariables(sh::TCompiler&, sh::TIntermBlock&) third_party/angle/src/compiler/translator/tree_ops/RescopeGlobalVariables.cpp:162
+	NEW_FUNC[2/4]: 0x5555561bd110 in sh::(anonymous namespace)::Rescoper::visitSymbol(sh::TIntermSymbol*) third_party/angle/src/compiler/translator/tree_ops/RescopeGlobalVariables.cpp:84
+#36257	NEW    cov: 14907 ft: 40726 corp: 981/2613Kb lim: 1048576 exec/s: 614 rss: 640Mb L: 245/349614 MS: 5 CustomCrossOver-CrossOver-Custom-ChangeBit-Custom-
+#37135	NEW    cov: 14907 ft: 40727 corp: 982/2613Kb lim: 1048576 exec/s: 608 rss: 640Mb L: 225/349614 MS: 2 PersAutoDict-Custom- DE: "\000\004"-
+#37465	NEW    cov: 14907 ft: 40733 corp: 983/2614Kb lim: 1048576 exec/s: 594 rss: 640Mb L: 503/349614 MS: 3 CustomCrossOver-CrossOver-Custom-
+#37473	NEW    cov: 14908 ft: 40734 corp: 984/2614Kb lim: 1048576 exec/s: 594 rss: 640Mb L: 366/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+	NEW_FUNC[1/4]: 0x55555600a720 in sh::TDiagnostics::print(angle::pp::Diagnostics::ID, angle::pp::SourceLocation const&, std::__Cr::basic_string<char, std::__Cr::char_traits<char>, std::__Cr::allocator<char>> const&) third_party/angle/src/compiler/translator/Diagnostics.cpp:95
+	NEW_FUNC[2/4]: 0x555556435070 in angle::pp::Diagnostics::report(angle::pp::Diagnostics::ID, angle::pp::SourceLocation const&, std::__Cr::basic_string<char, std::__Cr::char_traits<char>, std::__Cr::allocator<char>> const&) third_party/angle/src/compiler/preprocessor/DiagnosticsBase.cpp:20
+#37480	NEW    cov: 14922 ft: 40750 corp: 985/2614Kb lim: 1048576 exec/s: 594 rss: 640Mb L: 224/349614 MS: 2 ChangeByte-Custom-
+#37613	NEW    cov: 14922 ft: 40756 corp: 986/2616Kb lim: 1048576 exec/s: 569 rss: 640Mb L: 2002/349614 MS: 1 CustomCrossOver-
+#37704	NEW    cov: 14923 ft: 40758 corp: 987/2661Kb lim: 1048576 exec/s: 562 rss: 640Mb L: 46078/349614 MS: 1 CustomCrossOver-
+#37769	NEW    cov: 14923 ft: 40759 corp: 988/2661Kb lim: 1048576 exec/s: 563 rss: 640Mb L: 321/349614 MS: 3 CustomCrossOver-ChangeBit-Custom-
+#38302	NEW    cov: 14925 ft: 40768 corp: 989/2671Kb lim: 1048576 exec/s: 563 rss: 640Mb L: 9791/349614 MS: 6 CustomCrossOver-ShuffleBytes-Custom-CustomCrossOver-ShuffleBytes-Custom-
+#38748	NEW    cov: 14925 ft: 40769 corp: 990/2671Kb lim: 1048576 exec/s: 553 rss: 640Mb L: 171/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\000\004"-
+#38801	NEW    cov: 14925 ft: 40773 corp: 991/2672Kb lim: 1048576 exec/s: 554 rss: 640Mb L: 575/349614 MS: 2 ChangeBit-Custom-
+#38908	NEW    cov: 14925 ft: 40776 corp: 992/2673Kb lim: 1048576 exec/s: 548 rss: 640Mb L: 1470/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#39299	NEW    cov: 14925 ft: 40777 corp: 993/2718Kb lim: 1048576 exec/s: 545 rss: 640Mb L: 46125/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#39341	NEW    cov: 14925 ft: 40778 corp: 994/2719Kb lim: 1048576 exec/s: 546 rss: 640Mb L: 403/349614 MS: 2 CMP-Custom- DE: "\002\000\000\000"-
+#39695	NEW    cov: 14928 ft: 40785 corp: 995/2719Kb lim: 1048576 exec/s: 536 rss: 640Mb L: 270/349614 MS: 5 CustomCrossOver-ChangeBit-Custom-ChangeByte-Custom-
+#39759	NEW    cov: 14928 ft: 40787 corp: 996/2719Kb lim: 1048576 exec/s: 537 rss: 640Mb L: 342/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\002\000\000\000"-
+#40112	NEW    cov: 14928 ft: 40788 corp: 997/2719Kb lim: 1048576 exec/s: 542 rss: 640Mb L: 188/349614 MS: 3 CustomCrossOver-ChangeBinInt-Custom-
+#40428	NEW    cov: 14928 ft: 40790 corp: 998/2720Kb lim: 1048576 exec/s: 539 rss: 640Mb L: 188/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#40654	NEW    cov: 14928 ft: 40793 corp: 999/2721Kb lim: 1048576 exec/s: 534 rss: 640Mb L: 1469/349614 MS: 1 CustomCrossOver-
+#40658	NEW    cov: 14928 ft: 40796 corp: 1000/2722Kb lim: 1048576 exec/s: 534 rss: 640Mb L: 1273/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\002\000\000\000"-
+#40885	NEW    cov: 14928 ft: 40798 corp: 1001/2723Kb lim: 1048576 exec/s: 530 rss: 640Mb L: 528/349614 MS: 2 PersAutoDict-Custom- DE: "\000\004"-
+#40988	NEW    cov: 14928 ft: 40799 corp: 1002/2723Kb lim: 1048576 exec/s: 532 rss: 640Mb L: 188/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#41258	NEW    cov: 14928 ft: 40801 corp: 1003/2724Kb lim: 1048576 exec/s: 535 rss: 640Mb L: 1469/349614 MS: 1 CustomCrossOver-
+#41259	NEW    cov: 14928 ft: 40802 corp: 1004/2726Kb lim: 1048576 exec/s: 535 rss: 640Mb L: 1469/349614 MS: 1 CustomCrossOver-
+#41276	NEW    cov: 14928 ft: 40805 corp: 1005/2726Kb lim: 1048576 exec/s: 536 rss: 640Mb L: 188/349614 MS: 2 ChangeBit-Custom-
+#42240	NEW    cov: 14928 ft: 40807 corp: 1006/2736Kb lim: 1048576 exec/s: 528 rss: 640Mb L: 9791/349614 MS: 4 ShuffleBytes-Custom-CustomCrossOver-CustomCrossOver-
+#42298	NEW    cov: 14928 ft: 40808 corp: 1007/2760Kb lim: 1048576 exec/s: 528 rss: 640Mb L: 24650/349614 MS: 2 ChangeByte-Custom-
+#42565	NEW    cov: 14928 ft: 40809 corp: 1008/2760Kb lim: 1048576 exec/s: 525 rss: 640Mb L: 575/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#42748	NEW    cov: 14928 ft: 40814 corp: 1009/2760Kb lim: 1048576 exec/s: 521 rss: 640Mb L: 188/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#42749	NEW    cov: 14928 ft: 40815 corp: 1010/2761Kb lim: 1048576 exec/s: 521 rss: 640Mb L: 1159/349614 MS: 2 ChangeBit-Custom-
+#42815	NEW    cov: 14928 ft: 40816 corp: 1011/2797Kb lim: 1048576 exec/s: 522 rss: 640Mb L: 35994/349614 MS: 3 CustomCrossOver-CustomCrossOver-CustomCrossOver-
+#43105	NEW    cov: 14928 ft: 40817 corp: 1012/2797Kb lim: 1048576 exec/s: 519 rss: 640Mb L: 639/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\002\000\000\000"-
+#43141	NEW    cov: 14928 ft: 40818 corp: 1013/2821Kb lim: 1048576 exec/s: 519 rss: 640Mb L: 24652/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+#43274	NEW    cov: 14928 ft: 40827 corp: 1014/2825Kb lim: 1048576 exec/s: 521 rss: 640Mb L: 4007/349614 MS: 1 CustomCrossOver-
+#43288	NEW    cov: 14928 ft: 40828 corp: 1015/2827Kb lim: 1048576 exec/s: 521 rss: 640Mb L: 1719/349614 MS: 2 ChangeASCIIInt-Custom-
+#43419	NEW    cov: 14928 ft: 40829 corp: 1016/2827Kb lim: 1048576 exec/s: 523 rss: 640Mb L: 353/349614 MS: 1 CustomCrossOver-
+#43477	NEW    cov: 14928 ft: 40830 corp: 1017/2851Kb lim: 1048576 exec/s: 523 rss: 640Mb L: 24648/349614 MS: 4 CustomCrossOver-CustomCrossOver-ShuffleBytes-Custom-
+#43922	NEW    cov: 14928 ft: 40831 corp: 1018/2896Kb lim: 1048576 exec/s: 516 rss: 640Mb L: 46078/349614 MS: 1 CustomCrossOver-
+#44235	NEW    cov: 14928 ft: 40832 corp: 1019/2906Kb lim: 1048576 exec/s: 508 rss: 640Mb L: 9790/349614 MS: 1 CustomCrossOver-
+#44507	NEW    cov: 14928 ft: 40833 corp: 1020/2906Kb lim: 1048576 exec/s: 500 rss: 640Mb L: 254/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\000\004"-
+#44519	NEW    cov: 14928 ft: 40834 corp: 1021/2908Kb lim: 1048576 exec/s: 500 rss: 640Mb L: 1469/349614 MS: 1 CustomCrossOver-
+#44576	NEW    cov: 14930 ft: 40836 corp: 1022/2932Kb lim: 1048576 exec/s: 500 rss: 640Mb L: 24650/349614 MS: 3 CustomCrossOver-ChangeBinInt-Custom-
+#44694	NEW    cov: 14930 ft: 40838 corp: 1023/2933Kb lim: 1048576 exec/s: 496 rss: 640Mb L: 1236/349614 MS: 3 CustomCrossOver-PersAutoDict-Custom- DE: "\000\004"-
+#44697	NEW    cov: 14930 ft: 40839 corp: 1024/2933Kb lim: 1048576 exec/s: 496 rss: 640Mb L: 188/349614 MS: 2 CustomCrossOver-CustomCrossOver-
+^C
+Thread 1 "angle_translato" received signal SIGINT, Interrupt.
+0x0000555555d6072c in __asan::QuarantineCallback::Recycle(__asan::AsanChunk*) const ()
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 40921] will be killed.
+
+Quit anyway? (y or n) y
+oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/canvasfuzz$ 
+
+
