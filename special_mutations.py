@@ -206,7 +206,7 @@ def _havoc_function_scalar_to_array(items, rng, env):
 
 def special_havoc(items, rng, env):
     # Check for the thing here...
-    # print("special_havoc")
+    print("special_havoc")
     strats = ["struct_qualifier_all", "function_scalar_to_array"]
     strat = rng.choice(strats)
     if strat == "struct_qualifier_all": # Replace the qualifiers of here with the certain thing.
