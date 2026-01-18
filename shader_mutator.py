@@ -1654,7 +1654,7 @@ from special_mutations import *
 # Public entrypoint
 # ----------------------------
 
-DEBUG_STOP = True
+DEBUG_STOP = False
 
 def debug_source(tu, tu2): # Debug the stuff here...
     # exit(0)
