@@ -105,6 +105,9 @@ class Declarator:
     storage: Optional[str] = None   # 👈 ADD THIS
 '''
 
+class DeclaratorLayout:
+    def __init__(self, name)
+
 class Declarator:
     def __init__(self, name, base_type, array_size, init, qualifiers=None):
         self.name = name
@@ -237,6 +240,11 @@ class FunctionDef(TopLevel):
 @dataclass
 class GlobalDecl(TopLevel):
     decls: List[VarDecl]
+
+# This is a special case, since this is a toplevel expression that doesn't end in a newline...
+@dataclass
+class LayoutQualifier(TopLevel):
+    declarators: List[Declarator]
 
 # This is the "struct specifier + declarators" case:
 @dataclass
