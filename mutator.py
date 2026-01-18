@@ -177,7 +177,7 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
 # -----------------------------
 
 def custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None) -> bytearray:
-    print("Called...")
+    # print("Called...")
     try:
         return fuzz(buf, add_buf, max_size)
     except Exception as e:
