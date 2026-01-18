@@ -1,1 +1,1 @@
-python3 test.py --profile-mutator /home/oof/angle_shader_corpus/unittests_and_end2end_tests/
+python3 test.py --profile-mutator /home/oof/newestmin/
