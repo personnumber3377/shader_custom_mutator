@@ -128,7 +128,7 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
 
     try:
         if len(buf) <= HEADER_SIZE:
-            exit(1)
+            # exit(1)
             return bytearray(mutate_bytes_generic(bytes(buf), rng)) # buf
             # raise ValueError("buffer too small")
 
