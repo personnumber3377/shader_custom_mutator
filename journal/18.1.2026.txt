@@ -241,3 +241,26 @@ oof@oof-h8-1440eo:~/chromiumstuff/source/src/out/canvasfuzz$
 
 
 
+
+- ../../third_party/angle/src/compiler/translator/ValidateVaryingLocations.cpp	  28.57% (4/14)	  21.84% (45/206)	   8.80% (39/443)	  21.19% (25/118)
+
+- ../../third_party/angle/src/compiler/translator/blocklayout.cpp	  31.82% (21/66)	  25.58% (144/563)	  13.53% (61/451)	  14.29% (22/154)
+
+- ../../third_party/angle/src/compiler/translator/tree_ops/RewritePixelLocalStorage.cpp	   0.00% (0/36)	   0.00% (0/567)	   0.00% (0/1371)	   0.00% (0/294)
+
+- ../../third_party/angle/src/compiler/translator/tree_ops/hlsl/ExpandIntegerPowExpressions.cpp	   0.00% (0/5)	   0.00% (0/80)	   0.00% (0/116)	   0.00% (0/34)
+../../third_party/angle/src/compiler/translator/tree_ops/hlsl/RecordUniformBlocksWithLargeArrayMember.cpp	   0.00% (0/12)	   0.00% (0/279)	   0.00% (0/177)	   0.00% (0/156)
+
+../../third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateAdvancedBlendEquations.cpp	   0.00% (0/18)	   0.00% (0/636)	   0.00% (0/282)	   0.00% (0/109)
+../../third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateDithering.cpp	   0.00% (0/6)	   0.00% (0/235)	   0.00% (0/123)	   0.00% (0/44)
+
+../../third_party/angle/src/compiler/translator/tree_ops/spirv/RewriteR32fImages.cpp	   0.00% (0/10)	   0.00% (0/190)	   0.00% (0/519)	   0.00% (0/107)
+
+../../third_party/angle/src/compiler/translator/tree_util/FindPreciseNodes.cpp	   0.00% (0/34)	   0.00% (0/388)	   0.00% (0/730)	   0.00% (0/222)
+
+../../third_party/angle/src/compiler/translator/tree_util/RewriteSampleMaskVariable.cpp	   0.00% (0/5)	   0.00% (0/108)	   0.00% (0/122)	   0.00% (0/38)
+
+
+
+
+
