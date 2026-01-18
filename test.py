@@ -22,6 +22,9 @@ import shader_mutator
 import shader_unparser
 import mutator
 
+import cProfile
+import pstats
+
 from test_helpers import (
     HEADER_SIZE,
     PRINT_LIMIT,
@@ -348,6 +351,75 @@ def mutation_benchmark(path: str, iters: int, seed: int):
     print(f"Valid mutations: {success}")
     print(f"Success rate:    {success/total:.2%}")
 
+def profile_mutator(path: str, iters: int, seed: int):
+    """
+    Profile the Python custom mutator by running it repeatedly.
+    - If `path` is a directory: pick random files
+    - If `path` is a file: always mutate that file
+    """
+
+    print("[*] Profiling mutator")
+    print("[*] Iterations:", iters)
+
+    random.seed(seed)
+    mutator.init(seed)
+
+    # -----------------------------
+    # Load corpus
+    # -----------------------------
+    if os.path.isfile(path):
+        files = [path]
+        print("[*] Using single file:", path)
+    else:
+        files = collect_files(path)
+        print("[*] Corpus size:", len(files))
+
+    if not files:
+        print("❌ No input files found")
+        return
+
+    # Preload buffers to avoid disk I/O during profiling
+    buffers = []
+    for fn in files:
+        try:
+            data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
+            buffers.append(bytearray(data))
+        except Exception:
+            continue
+
+    if not buffers:
+        print("❌ No valid buffers loaded")
+        return
+
+    print("[*] Buffers loaded:", len(buffers))
+
+    # -----------------------------
+    # Hot loop (what we profile)
+    # -----------------------------
+    def run():
+        for _ in range(iters):
+            buf = random.choice(buffers)
+            try:
+                mutator.fuzz(buf, None, 10000)
+            except Exception:
+                pass
+
+    # -----------------------------
+    # Run profiler
+    # -----------------------------
+    prof = cProfile.Profile()
+    prof.enable()
+    run()
+    prof.disable()
+
+    out_file = "mutator.prof"
+    prof.dump_stats(out_file)
+
+    print(f"✔ Profile written to {out_file}")
+    print("👉 Inspect with:")
+    print("   python3 -m pstats mutator.prof")
+    print("   snakeviz mutator.prof")
+
 def roundtrip_test(path: str, ignore_invalid: int = 0):
     files = collect_files(path)
 
@@ -488,6 +560,7 @@ def main():
     ap.add_argument("--check-corpus", action="store_true")
     ap.add_argument("--chase-assert", action="store_true")
     ap.add_argument("--gen-expected-out", action="store_true", help="Generate .expected_out files (DANGEROUS)")
+    ap.add_argument("--profile-mutator", action="store_true", help="Profile Python mutator performance (cProfile)")
     ap.add_argument("--iters", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--ignore-invalid", type=int, default=0)

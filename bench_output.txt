@@ -1,866 +1,910 @@
-[seed] 746406838
-Encountered this exception here: gen_atom: cannot build TypeInfo(sampler2DArrayShadow, dims=0)
-Original source code: #version 300 es
-
-precision mediump float;
-precision mediump int;
-
-struct FuzzStruct73228 {
-  ivec3 f_9116;
-  mat4 f_7948;
-};
-
-uniform B {
-  uint e;
-};
-
-mediump float f()
-{
-  return - +(2.0 * 1.0);
-  vec4(+ 1.0);
-  vec4(2.0,((+ 2.0 * f())/ 1.0), 0.5, 2.0);
-  ivec2(1.0);
-  ivec2((7 - 9),(3 % 8));
-  FuzzStruct73228(ivec3(7, + 2, 9),(false ? mat4(0.0, f(),(- 1.0 * 1.0), f(), +(true ?(false ? 2.0 : 0.0): + 0.0),(f()-((false && true)? 2.0 :(true ? 0.5 : 1.0))), - 0.5, 1.0, f(), 0.0,(false ? - 1.0 : -(0.0 / 0.0)), - 2.0, 0.0, 2.0,((+ 0.5 - 1.0)+ 0.0), 2.0): mat4((true ? f():(- 1.0 - 0.0)), f(),(! ! false ? 2.0 :((true || false)? 0.5 : f())), - f(),(false ? - 1.0 : 0.5),(((0.0 + 0.0)-(1.0 * 2.0))*(false ? - 1.0 : 2.0)), f(),(((true ? - 1.0 : 1.0)-(false ? - 1.0 : - 1.0))+(- 0.0 + - 1.0)), 2.0, 1.0, 2.0, 0.5, f(), 0.5, -((false ? false : true)? - 1.0 :(2.0 / 0.0)),(- 2.0 - +(1.0 / 0.5)))));
-}
-
-void main()
-{
-  ((0.0 * 1.0)/ + 0.0);
-  (true ? + f():(true ? - f(): f()));
-  FuzzStruct73228 s_2870;
-  FuzzStruct73228(ivec3(1, 7, + 0), mat4(0.0, 1.0, f(),(2.0 /(false ? + 1.0 :(1.0 + 2.0))), f(),((2.0 * 0.5)*(+ 2.0 * 1.0)), - 1.0,(true ? + 0.0 :(true ? f(): - 0.0)),(((true ? true : false)? ! true :(false ? true : true))? f(): + f()),(! ! false ? - 1.0 :(f()+ f())), 2.0, f(), 1.0, 1.0, 1.0, f()));
-  vec4(f(), 0.5, f(), - 1.0);
-  FuzzStruct73228(ivec3(0, 7, 4), mat4(- f(), - 0.0, f(), 0.0, 0.0, 1.0, - 1.0, + 2.0, 1.0,(f()/ f()), f(),(f()- +(false ? 2.0 : 0.5)), - 1.0,(((true || true)? f(): f())+((true ? true : true)? f(): - 2.0)), 2.0, 2.0));
-}
-
-
-         189736 function calls (176974 primitive calls) in 0.196 seconds
+[seed] 998533438
+special_havoc
+[10] success rate = 20.00%
+[20] success rate = 40.00%
+special_havoc
+special_havoc
+[30] success rate = 36.67%
+special_havoc
+special_havoc
+[40] success rate = 35.00%
+special_havoc
+special_havoc
+[50] success rate = 34.00%
+         2638876 function calls (2278017 primitive calls) in 10.605 seconds
 
    Ordered by: internal time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        8    0.069    0.009    0.069    0.009 {method 'poll' of 'select.poll' objects}
-     9746    0.015    0.000    0.024    0.000 posixpath.py:71(join)
-     5017    0.014    0.000    0.014    0.000 {built-in method posix.stat}
-   8283/4    0.013    0.000    0.030    0.008 copy.py:128(deepcopy)
-        1    0.008    0.008    0.051    0.051 test.py:211(<listcomp>)
-    136/1    0.007    0.000    0.197    0.197 {built-in method builtins.exec}
-  1363/12    0.004    0.000    0.030    0.003 copy.py:259(_reconstruct)
-     4861    0.004    0.000    0.018    0.000 genericpath.py:27(isfile)
-  1363/12    0.003    0.000    0.030    0.003 copy.py:227(_deepcopy_dict)
-    10091    0.003    0.000    0.003    0.000 {method 'startswith' of 'str' objects}
-     9751    0.003    0.000    0.004    0.000 posixpath.py:41(_get_sep)
-    14699    0.003    0.000    0.003    0.000 {method 'endswith' of 'str' objects}
-    15676    0.002    0.000    0.002    0.000 {built-in method builtins.isinstance}
+      898    8.342    0.009    8.342    0.009 {method 'poll' of 'select.poll' objects}
+245734/237    0.648    0.000    1.524    0.006 copy.py:128(deepcopy)
+40839/619    0.214    0.000    1.513    0.002 copy.py:259(_reconstruct)
+40808/618    0.141    0.000    1.500    0.002 copy.py:227(_deepcopy_dict)
+       59    0.135    0.002    0.184    0.003 shader_lexer.py:45(lex)
+   533262    0.089    0.000    0.089    0.000 {method 'get' of 'dict' objects}
+    90663    0.079    0.000    0.111    0.000 copy.py:243(_keep_alive)
+   432179    0.077    0.000    0.077    0.000 {built-in method builtins.id}
+    40839    0.041    0.000    0.042    0.000 {method '__reduce_ex__' of 'object' objects}
+    81678    0.037    0.000    0.154    0.000 copy.py:264(<genexpr>)
+      111    0.037    0.000    0.037    0.000 {built-in method _posixsubprocess.fork_exec}
+    40839    0.035    0.000    0.049    0.000 copyreg.py:100(__newobj__)
+ 8109/688    0.033    0.000    0.105    0.000 shader_parser.py:91(parse_expr)
+       90    0.030    0.000    0.030    0.000 {method 'read' of '_io.BufferedReader' objects}
+   129903    0.028    0.000    0.029    0.000 {built-in method builtins.isinstance}
+   155061    0.026    0.000    0.026    0.000 copy.py:182(_deepcopy_atomic)
+8109/5081    0.026    0.000    0.065    0.000 shader_parser.py:193(parse_prefix)
+    85894    0.024    0.000    0.024    0.000 {built-in method builtins.getattr}
+   131005    0.024    0.000    0.024    0.000 {method 'append' of 'list' objects}
+    41331    0.019    0.000    0.019    0.000 {method 'update' of 'dict' objects}
+ 9016/387    0.019    0.000    1.506    0.004 copy.py:201(_deepcopy_list)
+     9856    0.016    0.000    0.025    0.000 posixpath.py:71(join)
+     5017    0.015    0.000    0.015    0.000 {built-in method posix.stat}
+      111    0.015    0.000    8.409    0.076 subprocess.py:1968(_communicate)
+    41116    0.015    0.000    0.015    0.000 {built-in method __new__ of type object at 0x55bc182439a0}
+      898    0.014    0.000    8.359    0.009 selectors.py:403(select)
+    22045    0.013    0.000    0.013    0.000 shader_parser.py:26(advance)
+    40599    0.012    0.000    0.012    0.000 shader_parser.py:23(peek)
+      407    0.012    0.000    0.030    0.000 {built-in method io.open}
+    29785    0.011    0.000    0.011    0.000 {method 'group' of 're.Match' objects}
+      112    0.011    0.000    0.011    0.000 {built-in method posix.unlink}
+    41328    0.010    0.000    0.010    0.000 {method 'items' of 'dict' objects}
+ 5555/541    0.010    0.000    0.018    0.000 shader_unparser.py:37(unparse_expr)
+  4810/51    0.010    0.000    0.024    0.000 dataclasses.py:232(wrapper)
+    41518    0.010    0.000    0.010    0.000 {built-in method builtins.hasattr}
+        1    0.009    0.009   10.617   10.617 test.py:312(mutation_benchmark)
+    40869    0.009    0.000    0.009    0.000 {built-in method builtins.issubclass}
+        1    0.008    0.008    0.052    0.052 test.py:211(<listcomp>)
+     6062    0.008    0.000    0.013    0.000 shader_parser.py:46(expect)
+        3    0.007    0.002    0.007    0.002 {built-in method time.sleep}
+      112    0.007    0.000    0.007    0.000 {built-in method posix.open}
+    136/1    0.007    0.000   10.652   10.652 {built-in method builtins.exec}
+     1118    0.007    0.000    0.007    0.000 {built-in method posix.read}
+ 1912/452    0.007    0.000    0.085    0.000 shader_parser.py:245(parse_call)
+    29370    0.006    0.000    0.006    0.000 {method 'start' of 're.Match' objects}
+      111    0.006    0.000    0.068    0.001 subprocess.py:758(__init__)
+      138    0.006    0.000    0.006    0.000 {method '__exit__' of '_io._IOBase' objects}
+    21224    0.006    0.000    0.006    0.000 {method 'end' of 're.Match' objects}
+     5651    0.006    0.000    0.009    0.000 shader_parser.py:31(match)
+    17805    0.006    0.000    0.006    0.000 {method 'startswith' of 'str' objects}
+      111    0.005    0.000    8.547    0.077 test.py:49(check_file_bytes)
+     1139    0.005    0.000    0.006    0.000 shader_parser.py:571(_looks_like_decl)
+      865    0.005    0.000    0.009    0.000 shader_parser.py:266(parse_type_name)
+       59    0.005    0.000    1.973    0.033 mutator.py:116(fuzz)
+       59    0.005    0.000    1.582    0.027 shader_mutator.py:1676(mutate_translation_unit)
+      142    0.004    0.000    0.866    0.006 shader_mutator.py:55(deepclone)
+       59    0.004    0.000    0.350    0.006 shader_parser.py:922(parse_to_tree)
+      442    0.004    0.000    0.004    0.000 {method 'close' of '_io.TextIOWrapper' objects}
+  678/454    0.004    0.000    0.091    0.000 shader_parser.py:436(parse_stmt)
+       59    0.004    0.000    0.157    0.003 shader_parser.py:832(parse_translation_unit)
+      111    0.004    0.000    0.053    0.000 subprocess.py:1703(_execute_child)
+      114    0.004    0.000    0.004    0.000 {built-in method posix.waitpid}
+  758/221    0.004    0.000    0.024    0.000 shader_unparser.py:163(unparse_stmt)
+     4861    0.004    0.000    0.019    0.000 genericpath.py:27(isfile)
+     1294    0.004    0.000    0.004    0.000 shader_parser.py:64(_looks_like_struct_decl_stmt)
+    15895    0.003    0.000    0.003    0.000 {method 'endswith' of 'str' objects}
+       59    0.003    0.000    1.963    0.033 mutator.py:84(mutate_shader_structural)
+      333    0.003    0.000    0.003    0.000 {built-in method posix.pipe}
+    10191    0.003    0.000    0.004    0.000 posixpath.py:41(_get_sep)
+12147/12030    0.003    0.000    0.003    0.000 {built-in method builtins.len}
+   323/28    0.002    0.000    0.013    0.000 shader_mutator.py:547(gen_expr)
         1    0.002    0.002    0.002    0.002 {built-in method posix.listdir}
+       48    0.002    0.000    0.028    0.001 shader_unparser.py:303(unparse_tu)
+   150/90    0.002    0.000    0.093    0.001 shader_parser.py:561(parse_block)
+      801    0.002    0.000    0.003    0.000 random.py:239(_randbelow_with_getrandbits)
        27    0.002    0.000    0.002    0.000 {built-in method marshal.loads}
-    18796    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
-        1    0.002    0.002    0.003    0.003 shader_lexer.py:45(lex)
-     2937    0.002    0.000    0.002    0.000 copy.py:243(_keep_alive)
-    14452    0.002    0.000    0.002    0.000 {built-in method builtins.id}
+      111    0.002    0.000    0.018    0.000 tempfile.py:382(_mkstemp_inner)
+      111    0.002    0.000    8.490    0.076 subprocess.py:461(run)
+2633/2317    0.002    0.000    0.012    0.000 {method 'join' of 'str' objects}
+      445    0.002    0.000    0.002    0.000 {built-in method posix.close}
+      897    0.002    0.000    0.002    0.000 subprocess.py:1192(_check_timeout)
+      220    0.002    0.000    0.005    0.000 selectors.py:366(unregister)
+      111    0.002    0.000    0.005    0.000 tempfile.py:628(__getattr__)
+     1007    0.002    0.000    0.002    0.000 selectors.py:276(_key_from_fd)
+       59    0.002    0.000    0.004    0.000 shader_mutator.py:371(build_env)
+      111    0.002    0.000    0.005    0.000 subprocess.py:1227(_close_pipe_fds)
+      222    0.002    0.000    0.003    0.000 posixpath.py:150(dirname)
+      122    0.002    0.000    0.002    0.000 {method 'close' of '_io.BufferedWriter' objects}
+       52    0.002    0.000    0.355    0.007 shader_mutator.py:1494(mutate_toplevel)
+ 1928/640    0.002    0.000    0.002    0.000 shader_unparser.py:32(flatten_commas)
+      353    0.002    0.000    0.060    0.000 shader_parser.py:321(parse_var_decl)
+      148    0.001    0.000    0.003    0.000 functools.py:35(update_wrapper)
   130/128    0.001    0.000    0.002    0.000 {built-in method builtins.__build_class__}
+      111    0.001    0.000    0.026    0.000 tempfile.py:677(NamedTemporaryFile)
+      331    0.001    0.000    0.014    0.000 subprocess.py:1927(_wait)
+      442    0.001    0.000    0.002    0.000 selectors.py:21(_fileobj_to_fd)
+      111    0.001    0.000    8.418    0.076 subprocess.py:1110(communicate)
+    10720    0.001    0.000    0.001    0.000 {built-in method posix.fspath}
+      112    0.001    0.000    0.002    0.000 posixpath.py:335(normpath)
+    72/30    0.001    0.000    0.111    0.004 shader_mutator.py:1319(mutate_stmt)
+     1008    0.001    0.000    0.002    0.000 selectors.py:67(__len__)
+      411    0.001    0.000    0.002    0.000 shader_unparser.py:76(unparse_type)
+      179    0.001    0.000    0.002    0.000 shader_mutator.py:408(candidates_by_type)
+     1122    0.001    0.000    0.001    0.000 subprocess.py:1184(_remaining_time)
        36    0.001    0.000    0.016    0.000 dataclasses.py:881(_process_class)
-     9840    0.001    0.000    0.001    0.000 {built-in method posix.fspath}
-       28    0.001    0.000    0.001    0.000 {method 'read' of '_io.BufferedReader' objects}
-     3862    0.001    0.000    0.001    0.000 {built-in method builtins.getattr}
-     1363    0.001    0.000    0.001    0.000 {method '__reduce_ex__' of 'object' objects}
+     4945    0.001    0.000    0.001    0.000 {method 'add' of 'set' objects}
+      222    0.001    0.000    0.002    0.000 contextlib.py:496(callback)
+     4810    0.001    0.000    0.001    0.000 {method 'discard' of 'set' objects}
+   173/34    0.001    0.000    0.003    0.000 shader_mutator.py:961(mutate_expr)
+      112    0.001    0.000    0.002    0.000 random.py:519(<listcomp>)
+      851    0.001    0.000    0.001    0.000 shader_mutator.py:263(__init__)
+      601    0.001    0.000    0.003    0.000 random.py:375(choice)
+      226    0.001    0.000    0.041    0.000 shader_parser.py:773(parse_global_decl)
+      222    0.001    0.000    0.002    0.000 selectors.py:235(register)
+     1920    0.001    0.000    0.001    0.000 {method 'strip' of 'str' objects}
+     2461    0.001    0.000    0.001    0.000 {built-in method time.monotonic}
+       91    0.001    0.000    0.096    0.001 shader_parser.py:664(parse_function_def_or_decl)
+      243    0.001    0.000    0.005    0.000 shader_parser.py:256(parse_index)
+      111    0.001    0.000    0.002    0.000 contextlib.py:533(__exit__)
+1933/1023    0.001    0.000    0.010    0.000 shader_unparser.py:66(<genexpr>)
+      112    0.001    0.000    0.003    0.000 random.py:506(choices)
+      222    0.001    0.000    0.003    0.000 selectors.py:352(register)
+     3621    0.001    0.000    0.001    0.000 {method 'rstrip' of 'str' objects}
+      901    0.001    0.000    0.001    0.000 shader_mutator.py:59(coin)
+      330    0.001    0.000    0.007    0.000 subprocess.py:1204(wait)
+     1161    0.001    0.000    0.001    0.000 {built-in method builtins.repr}
+       64    0.001    0.000    0.001    0.000 {function Random.seed at 0x7fa1c012a8c0}
     77/14    0.001    0.000    0.002    0.000 sre_parse.py:494(_parse)
-     2726    0.001    0.000    0.003    0.000 copy.py:264(<genexpr>)
+      112    0.001    0.000    0.004    0.000 tempfile.py:292(__next__)
+      411    0.001    0.000    0.001    0.000 shader_mutator.py:279(typename_to_typeinfo)
+     4889    0.001    0.000    0.001    0.000 {built-in method _thread.get_ident}
+      491    0.001    0.000    0.001    0.000 {method 'replace' of 'str' objects}
+      197    0.001    0.000    0.002    0.000 random.py:292(randrange)
+      222    0.001    0.000    0.001    0.000 codecs.py:309(__init__)
+      222    0.001    0.000    0.001    0.000 {built-in method _abc._abc_instancecheck}
      4861    0.001    0.000    0.001    0.000 {built-in method _stat.S_ISREG}
-     1363    0.001    0.000    0.001    0.000 copyreg.py:100(__newobj__)
+      259    0.001    0.000    0.002    0.000 shader_mutator.py:289(vardecl_to_typeinfo)
+      127    0.001    0.000    0.025    0.000 shader_parser.py:357(parse_decl_stmt)
+      282    0.001    0.000    0.001    0.000 {method 'decode' of 'bytes' objects}
+      240    0.001    0.000    0.001    0.000 shader_mutator.py:86(is_composite)
+     1881    0.001    0.000    0.001    0.000 {method 'random' of '_random.Random' objects}
+      220    0.001    0.000    0.003    0.000 selectors.py:248(unregister)
     72/36    0.001    0.000    0.003    0.000 inspect.py:2375(_signature_from_callable)
-   309/11    0.001    0.000    0.002    0.000 shader_parser.py:91(parse_expr)
+      111    0.001    0.000    0.003    0.000 subprocess.py:1604(_get_handles)
+      172    0.001    0.000    0.004    0.000 shader_mutator.py:602(gen_leaf)
        76    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1536(find_spec)
-     5721    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
-     5346    0.001    0.000    0.001    0.000 copy.py:182(_deepcopy_atomic)
+      455    0.001    0.000    0.001    0.000 {method 'fileno' of '_io.TextIOWrapper' objects}
+      220    0.001    0.000    0.002    0.000 subprocess.py:1030(_translate_newlines)
+      111    0.001    0.000    0.002    0.000 tempfile.py:224(_infer_return_type)
+      898    0.001    0.000    0.001    0.000 {built-in method math.ceil}
+      111    0.001    0.000    0.001    0.000 selectors.py:269(close)
+       71    0.001    0.000    0.002    0.000 shader_parser.py:293(parse_struct_member)
+        6    0.001    0.000    0.001    0.000 shader_mutator.py:675(gen_builtin_call)
+      111    0.001    0.000    0.001    0.000 selectors.py:348(__init__)
+       64    0.001    0.000    0.001    0.000 random.py:128(seed)
+      111    0.001    0.000    0.007    0.000 tempfile.py:655(__exit__)
       108    0.001    0.000    0.008    0.000 dataclasses.py:412(_create_fn)
-     1420    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x55b6189c59a0}
-   309/70    0.000    0.000    0.001    0.000 shader_parser.py:193(parse_prefix)
+      220    0.001    0.000    0.001    0.000 {method 'join' of 'bytes' objects}
+      221    0.001    0.000    0.001    0.000 tempfile.py:594(close)
+     1013    0.001    0.000    0.001    0.000 {built-in method builtins.setattr}
+      111    0.001    0.000    0.003    0.000 tempfile.py:253(_sanitize_params)
+      111    0.001    0.000    0.001    0.000 subprocess.py:1037(__exit__)
+       59    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
+      343    0.000    0.000    0.001    0.000 shader_unparser.py:92(unparse_array_suffix)
+      874    0.000    0.000    0.000    0.000 shader_ast.py:17(__post_init__)
+      442    0.000    0.000    0.003    0.000 selectors.py:216(_fileobj_lookup)
+      147    0.000    0.000    0.000    0.000 functools.py:65(wraps)
+     1008    0.000    0.000    0.000    0.000 selectors.py:273(get_map)
+      112    0.000    0.000    0.003    0.000 posixpath.py:374(abspath)
         1    0.000    0.000    0.001    0.001 shader_mutator.py:1(<module>)
-      207    0.000    0.000    0.001    0.000 dataclasses.py:663(_is_type)
-     1489    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+      112    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
      97/6    0.000    0.000    0.001    0.000 sre_compile.py:87(_compile)
        36    0.000    0.000    0.001    0.000 inspect.py:2280(_signature_from_function)
-     1907    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
-       27    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+      207    0.000    0.000    0.001    0.000 dataclasses.py:663(_is_type)
+     1350    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
+     1037    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      111    0.000    0.000    0.001    0.000 tempfile.py:622(__init__)
+      111    0.000    0.000    0.001    0.000 tempfile.py:452(gettempdir)
+      112    0.000    0.000    0.001    0.000 tempfile.py:281(rng)
+      112    0.000    0.000    0.001    0.000 posixpath.py:60(isabs)
        69    0.000    0.000    0.001    0.000 dataclasses.py:722(_get_field)
-      938    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 {built-in method _posixsubprocess.fork_exec}
-    219/1    0.000    0.000    0.001    0.001 dataclasses.py:232(wrapper)
+      219    0.000    0.000    0.001    0.000 shader_mutator.py:349(all_vars)
+       27    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+      222    0.000    0.000    0.000    0.000 contextlib.py:514(_push_exit_callback)
+      118    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+      111    0.000    0.000    0.000    0.000 subprocess.py:246(_cleanup)
+      114    0.000    0.000    0.004    0.000 subprocess.py:1914(_try_wait)
+    40/24    0.000    0.000    0.006    0.000 shader_mutator.py:668(gen_ternary)
+      111    0.000    0.000    0.000    0.000 tempfile.py:649(__enter__)
+       59    0.000    0.000    0.000    0.000 {method 'finditer' of 're.Pattern' objects}
+      111    0.000    0.000    0.018    0.000 tempfile.py:709(opener)
+      172    0.000    0.000    0.000    0.000 shader_mutator.py:423(<listcomp>)
+      111    0.000    0.000    0.000    0.000 contextlib.py:452(__init__)
+      222    0.000    0.000    0.001    0.000 abc.py:117(__instancecheck__)
+      122    0.000    0.000    0.000    0.000 {method 'write' of '_io.BufferedWriter' objects}
+      111    0.000    0.000    0.000    0.000 os.py:805(fsencode)
         3    0.000    0.000    0.001    0.000 enum.py:180(__new__)
+      111    0.000    0.000    0.000    0.000 subprocess.py:1867(_handle_exitstatus)
+      110    0.000    0.000    0.000    0.000 subprocess.py:436(__init__)
         2    0.000    0.000    0.000    0.000 {built-in method _imp.create_dynamic}
-      399    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:128(<listcomp>)
-      399    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:126(_path_join)
+      112    0.000    0.000    0.004    0.000 {built-in method builtins.next}
+       23    0.000    0.000    0.003    0.000 shader_parser.py:341(parse_struct_specifier)
+      896    0.000    0.000    0.000    0.000 {built-in method math.floor}
+      111    0.000    0.000    0.000    0.000 {method 'rfind' of 'bytes' objects}
       509    0.000    0.000    0.000    0.000 sre_parse.py:234(__next)
-       72    0.000    0.000    0.000    0.000 inspect.py:2920(__init__)
+      166    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+      399    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:128(<listcomp>)
+      112    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
+      110    0.000    0.000    0.000    0.000 subprocess.py:1065(__del__)
+       40    0.000    0.000    0.001    0.000 shader_mutator.py:759(gen_member_access)
+      111    0.000    0.000    0.001    0.000 tempfile.py:660(close)
+      399    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:126(_path_join)
+      111    0.000    0.000    0.000    0.000 os.py:817(fsdecode)
+      222    0.000    0.000    0.000    0.000 contextlib.py:446(_create_cb_wrapper)
+      835    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+      110    0.000    0.000    0.000    0.000 tempfile.py:604(__del__)
        39    0.000    0.000    0.003    0.000 <frozen importlib._bootstrap>:921(_find_spec)
+       72    0.000    0.000    0.000    0.000 inspect.py:2920(__init__)
+      111    0.000    0.000    0.000    0.000 selectors.py:210(__init__)
+      801    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+      220    0.000    0.000    0.000    0.000 {method 'unregister' of 'select.poll' objects}
+      191    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+    25/18    0.000    0.000    0.011    0.001 shader_mutator.py:907(gen_vector)
+    44/37    0.000    0.000    0.005    0.000 shader_mutator.py:722(gen_call)
+       23    0.000    0.000    0.061    0.003 shader_mutator.py:1252(mutate_vardecl)
+      250    0.000    0.000    0.000    0.000 shader_mutator.py:267(is_array)
+      222    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
       222    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
-     1542    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
-     1393    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
-      700    0.000    0.000    0.000    0.000 shader_parser.py:26(advance)
-   107/16    0.000    0.000    0.000    0.000 sre_parse.py:175(getwidth)
+       41    0.000    0.000    0.000    0.000 shader_parser.py:906(parse_directive)
        30    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1399(_get_spec)
-    211/7    0.000    0.000    0.030    0.004 copy.py:201(_deepcopy_list)
+   107/16    0.000    0.000    0.000    0.000 sre_parse.py:175(getwidth)
+      221    0.000    0.000    0.000    0.000 subprocess.py:1879(_internal_poll)
+       25    0.000    0.000    0.001    0.000 shader_unparser.py:134(_unparse_struct_body)
+      289    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+      222    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
+    29/16    0.000    0.000    0.007    0.000 shader_mutator.py:648(gen_binary)
+      166    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
        36    0.000    0.000    0.003    0.000 dataclasses.py:527(_init_fn)
       521    0.000    0.000    0.000    0.000 sre_parse.py:165(__getitem__)
-      463    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+    34/27    0.000    0.000    0.002    0.000 shader_mutator.py:662(gen_unary)
        27    0.000    0.000    0.004    0.000 <frozen importlib._bootstrap_external>:950(get_code)
        39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:179(_get_module_lock)
-     1167    0.000    0.000    0.000    0.000 shader_parser.py:23(peek)
        36    0.000    0.000    0.001    0.000 inspect.py:3206(__str__)
       105    0.000    0.000    0.000    0.000 inspect.py:2637(__init__)
+      306    0.000    0.000    0.000    0.000 shader_unparser.py:11(_is_dim_list)
+       89    0.000    0.000    0.001    0.000 shader_mutator.py:49(<lambda>)
+       23    0.000    0.000    0.003    0.000 shader_parser.py:627(parse_struct_toplevel_decl)
        54    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:380(cache_from_source)
-     74/2    0.000    0.000    0.001    0.001 shader_mutator.py:547(gen_expr)
-     1393    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
-1543/1426    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-       38    0.000    0.000    0.000    0.000 functools.py:35(update_wrapper)
-    39/10    0.000    0.000    0.033    0.003 <frozen importlib._bootstrap>:1022(_find_and_load)
+       84    0.000    0.000    0.000    0.000 shader_parser.py:723(_looks_like_interface_block)
+      111    0.000    0.000    0.000    0.000 tempfile.py:636(func_wrapper)
+      222    0.000    0.000    0.000    0.000 contextlib.py:448(_exit_wrapper)
+      111    0.000    0.000    0.000    0.000 tempfile.py:579(__init__)
+       38    0.000    0.000    0.000    0.000 copyreg.py:109(_slotnames)
+      222    0.000    0.000    0.000    0.000 {method 'register' of 'select.poll' objects}
+       20    0.000    0.000    0.009    0.000 <string>:2(__repr__)
+       59    0.000    0.000    0.000    0.000 shader_mutator.py:310(__init__)
+      111    0.000    0.000    0.000    0.000 subprocess.py:1178(poll)
+      111    0.000    0.000    0.000    0.000 {built-in method sys.exc_info}
       144    0.000    0.000    0.000    0.000 dataclasses.py:824(_set_new_attribute)
+      192    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+      111    0.000    0.000    0.000    0.000 {method 'rstrip' of 'bytes' objects}
+       62    0.000    0.000    0.002    0.000 random.py:119(__init__)
+      111    0.000    0.000    0.001    0.000 selectors.py:203(__exit__)
+    39/10    0.000    0.000    0.033    0.003 <frozen importlib._bootstrap>:1022(_find_and_load)
+    14/10    0.000    0.000    0.009    0.001 shader_mutator.py:920(<listcomp>)
+      144    0.000    0.000    0.000    0.000 {method 'extend' of 'bytearray' objects}
        38    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:492(_init_module_attrs)
-      441    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:244(_verbose_message)
-    38/10    0.000    0.000    0.032    0.003 <frozen importlib._bootstrap>:664(_load_unlocked)
-        5    0.000    0.000    0.000    0.000 {built-in method io.open}
+    38/10    0.000    0.000    0.031    0.003 <frozen importlib._bootstrap>:664(_load_unlocked)
+    41/28    0.000    0.000    0.000    0.000 shader_mutator.py:117(infer_expr_type)
+       96    0.000    0.000    0.000    0.000 shader_mutator.py:334(__init__)
+      210    0.000    0.000    0.000    0.000 shader_mutator.py:83(is_struct_like)
       144    0.000    0.000    0.000    0.000 dataclasses.py:817(_set_qualname)
-        8    0.000    0.000    0.069    0.009 selectors.py:403(select)
-       36    0.000    0.000    0.000    0.000 inspect.py:1959(_signature_bound_method)
-     19/6    0.000    0.000    0.002    0.000 sre_parse.py:436(_parse_sub)
-      189    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+      441    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:244(_verbose_message)
        46    0.000    0.000    0.000    0.000 enum.py:89(__setitem__)
-      105    0.000    0.000    0.000    0.000 inspect.py:1349(formatannotation)
-        1    0.000    0.000    0.069    0.069 subprocess.py:1968(_communicate)
+     19/6    0.000    0.000    0.002    0.000 sre_parse.py:436(_parse_sub)
+      111    0.000    0.000    0.000    0.000 {method '__enter__' of '_io._IOBase' objects}
+       36    0.000    0.000    0.000    0.000 inspect.py:1959(_signature_bound_method)
        72    0.000    0.000    0.000    0.000 inspect.py:612(unwrap)
-        9    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
-       28    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
-        2    0.000    0.000    0.000    0.000 {built-in method builtins.eval}
-       36    0.000    0.000    0.003    0.000 dataclasses.py:587(_repr_fn)
+      189    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
       351    0.000    0.000    0.000    0.000 sre_parse.py:255(get)
+      105    0.000    0.000    0.000    0.000 inspect.py:1349(formatannotation)
+       53    0.000    0.000    0.000    0.000 shader_mutator.py:50(<lambda>)
+    33/16    0.000    0.000    0.011    0.001 shader_mutator.py:925(gen_constructor_expr)
+      222    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+      227    0.000    0.000    0.000    0.000 shader_mutator.py:77(is_vector_name)
+      253    0.000    0.000    0.000    0.000 {built-in method _operator.index}
+       59    0.000    0.000    0.000    0.000 shader_parser.py:948(<listcomp>)
+      111    0.000    0.000    0.000    0.000 tempfile.py:440(_gettempdir)
+      111    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+       36    0.000    0.000    0.003    0.000 dataclasses.py:587(_repr_fn)
+        9    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
        21    0.000    0.000    0.000    0.000 sre_compile.py:292(_optimize_charset)
-       54    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:132(_path_split)
-      978    0.000    0.000    0.000    0.000 {method 'start' of 're.Match' objects}
-      178    0.000    0.000    0.000    0.000 shader_parser.py:46(expect)
       124    0.000    0.000    0.001    0.000 enum.py:359(__call__)
-        1    0.000    0.000    0.162    0.162 test.py:312(mutation_benchmark)
-      119    0.000    0.000    0.000    0.000 random.py:239(_randbelow_with_getrandbits)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.eval}
        69    0.000    0.000    0.000    0.000 inspect.py:2721(__str__)
        36    0.000    0.000    0.000    0.000 dataclasses.py:227(_recursive_repr)
-      949    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+      111    0.000    0.000    0.000    0.000 {built-in method select.poll}
        13    0.000    0.000    0.001    0.000 argparse.py:1411(add_argument)
-       27    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1070(get_data)
-        2    0.000    0.000    0.000    0.000 {built-in method posix.unlink}
-        2    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedWriter' objects}
+      111    0.000    0.000    0.000    0.000 tempfile.py:368(_get_candidate_names)
+       54    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:132(_path_split)
         2    0.000    0.000    0.000    0.000 __init__.py:328(namedtuple)
-        1    0.000    0.000    0.016    0.016 shader_ast.py:1(<module>)
-      326    0.000    0.000    0.000    0.000 dataclasses.py:424(<genexpr>)
-      695    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
-        2    0.000    0.000    0.000    0.000 shader_mutator.py:675(gen_builtin_call)
+        8    0.000    0.000    0.001    0.000 shader_mutator.py:1222(mutate_typename)
        61    0.000    0.000    0.000    0.000 enum.py:470(__setattr__)
+      111    0.000    0.000    0.000    0.000 selectors.py:64(__init__)
+      111    0.000    0.000    0.000    0.000 {built-in method posix.WIFSTOPPED}
        39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:100(acquire)
-       13    0.000    0.000    0.000    0.000 shutil.py:1385(get_terminal_size)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:721(spec_from_file_location)
-       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:125(release)
-       39    0.000    0.000    0.000    0.000 __init__.py:82(find_spec)
-       31    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
-       36    0.000    0.000    0.000    0.000 dataclasses.py:391(_fields_in_init_order)
-       36    0.000    0.000    0.000    0.000 inspect.py:66(get_annotations)
-       49    0.000    0.000    0.000    0.000 sre_parse.py:356(_escape)
-       38    0.000    0.000    0.000    0.000 shader_mutator.py:408(candidates_by_type)
-       32    0.000    0.000    0.003    0.000 re.py:288(_compile)
-        1    0.000    0.000    0.000    0.000 builtin_data.py:1(<module>)
-       13    0.000    0.000    0.001    0.000 argparse.py:170(__init__)
-    39/10    0.000    0.000    0.033    0.003 <frozen importlib._bootstrap>:987(_find_and_load_unlocked)
+    13/11    0.000    0.000    0.000    0.000 shader_mutator.py:493(gen_atom)
        72    0.000    0.000    0.000    0.000 dataclasses.py:400(_tuple_str)
-       27    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:670(_compile_bytecode)
-        2    0.000    0.000    0.000    0.000 {built-in method posix.open}
-      132    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:140(_path_stat)
-       95    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1356(_path_importer_cache)
-        3    0.000    0.000    0.000    0.000 enum.py:222(<setcomp>)
+       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:721(spec_from_file_location)
+       59    0.000    0.000    0.000    0.000 shader_parser.py:19(__init__)
+       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:125(release)
+        1    0.000    0.000    0.016    0.016 shader_ast.py:1(<module>)
+       39    0.000    0.000    0.000    0.000 __init__.py:82(find_spec)
+      222    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+      326    0.000    0.000    0.000    0.000 dataclasses.py:424(<genexpr>)
+       36    0.000    0.000    0.000    0.000 inspect.py:66(get_annotations)
+       31    0.000    0.000    0.000    0.000 {built-in method posix.getcwd}
+      211    0.000    0.000    0.000    0.000 shader_mutator.py:80(is_matrix_name)
+       27    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1070(get_data)
+      111    0.000    0.000    0.000    0.000 subprocess.py:2070(_save_input)
+       49    0.000    0.000    0.000    0.000 sre_parse.py:356(_escape)
+       20    0.000    0.000    0.000    0.000 shader_mutator.py:294(structfield_to_typeinfo)
+      296    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+       90    0.000    0.000    0.000    0.000 shader_mutator.py:398(<listcomp>)
+       47    0.000    0.000    0.000    0.000 shader_mutator.py:341(lookup)
+       13    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       36    0.000    0.000    0.000    0.000 dataclasses.py:391(_fields_in_init_order)
+       32    0.000    0.000    0.003    0.000 re.py:288(_compile)
+    44/37    0.000    0.000    0.005    0.000 shader_mutator.py:595(<lambda>)
+      171    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        5    0.000    0.000    0.000    0.000 header_mutator.py:59(mutate_header_precise)
+    39/10    0.000    0.000    0.032    0.003 <frozen importlib._bootstrap>:987(_find_and_load_unlocked)
        69    0.000    0.000    0.000    0.000 dataclasses.py:448(_field_init)
-       69    0.000    0.000    0.000    0.000 dataclasses.py:367(field)
-    49/11    0.000    0.000    0.002    0.000 shader_parser.py:245(parse_call)
-      108    0.000    0.000    0.000    0.000 inspect.py:1867(_signature_get_user_defined_method)
+       13    0.000    0.000    0.000    0.000 shutil.py:1385(get_terminal_size)
+    24/19    0.000    0.000    0.001    0.000 shader_mutator.py:165(mutate_expr_typed)
+       11    0.000    0.000    0.003    0.000 mutator.py:36(save_crashing)
+       13    0.000    0.000    0.000    0.000 argparse.py:170(__init__)
     27/10    0.000    0.000    0.031    0.003 <frozen importlib._bootstrap_external>:877(exec_module)
-       53    0.000    0.000    0.000    0.000 shader_mutator.py:86(is_composite)
-       81    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_unpack_uint32)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:585(_classify_pyc)
-       38    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:564(module_from_spec)
-      269    0.000    0.000    0.000    0.000 {built-in method builtins.min}
-       69    0.000    0.000    0.000    0.000 dataclasses.py:286(__init__)
-      108    0.000    0.000    0.000    0.000 random.py:375(choice)
-        1    0.000    0.000    0.001    0.001 random.py:1(<module>)
-        1    0.000    0.000    0.032    0.032 shader_mutator.py:1676(mutate_translation_unit)
-      124    0.000    0.000    0.000    0.000 {built-in method builtins.max}
-      138    0.000    0.000    0.000    0.000 dataclasses.py:645(_is_classvar)
+       27    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:670(_compile_bytecode)
+       25    0.000    0.000    0.000    0.000 shader_unparser.py:14(_flatten_members)
       170    0.000    0.000    0.000    0.000 sre_parse.py:250(match)
+        1    0.000    0.000    0.000    0.000 builtin_data.py:1(<module>)
+        6    0.000    0.000    0.000    0.000 shader_parser.py:736(parse_interface_block)
+        3    0.000    0.000    0.000    0.000 enum.py:222(<setcomp>)
+       95    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1356(_path_importer_cache)
+       52    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+      222    0.000    0.000    0.000    0.000 {method 'pop' of 'collections.deque' objects}
+      273    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+      116    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+       40    0.000    0.000    0.001    0.000 shader_mutator.py:598(<lambda>)
+       81    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_unpack_uint32)
+      108    0.000    0.000    0.000    0.000 inspect.py:1867(_signature_get_user_defined_method)
+      132    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:140(_path_stat)
+       38    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:564(module_from_spec)
+        1    0.000    0.000    0.001    0.001 random.py:1(<module>)
         1    0.000    0.000    0.000    0.000 threading.py:827(__init__)
-        3    0.000    0.000    0.000    0.000 gettext.py:542(find)
-      109    0.000    0.000    0.000    0.000 sre_parse.py:112(__init__)
-        6    0.000    0.000    0.000    0.000 {function Random.seed at 0x7f7c3d91e8c0}
-      138    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:897(__exit__)
-      188    0.000    0.000    0.000    0.000 sre_parse.py:161(__len__)
-      141    0.000    0.000    0.000    0.000 sre_parse.py:173(append)
-       36    0.000    0.000    0.000    0.000 inspect.py:1985(_signature_is_builtin)
-       10    0.000    0.000    0.000    0.000 {built-in method posix.read}
-      141    0.000    0.000    0.000    0.000 inspect.py:2969(<genexpr>)
-       38    0.000    0.000    0.000    0.000 shader_mutator.py:602(gen_leaf)
-        1    0.000    0.000    0.002    0.002 shutil.py:1(<module>)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:585(_classify_pyc)
+       59    0.000    0.000    0.000    0.000 <string>:2(__init__)
+      111    0.000    0.000    0.000    0.000 subprocess.py:1034(__enter__)
+      138    0.000    0.000    0.000    0.000 dataclasses.py:645(_is_classvar)
         9    0.000    0.000    0.000    0.000 {built-in method _imp.create_builtin}
-       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:198(cb)
+      124    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       69    0.000    0.000    0.000    0.000 dataclasses.py:286(__init__)
+      109    0.000    0.000    0.000    0.000 sre_parse.py:112(__init__)
+       60    0.000    0.000    0.000    0.000 shader_mutator.py:29(dlog)
+       20    0.000    0.000    0.060    0.003 shader_mutator.py:1585(<listcomp>)
+       40    0.000    0.000    0.000    0.000 shader_mutator.py:760(<listcomp>)
+    34/27    0.000    0.000    0.002    0.000 shader_mutator.py:584(<lambda>)
+      188    0.000    0.000    0.000    0.000 sre_parse.py:161(__len__)
+       69    0.000    0.000    0.000    0.000 dataclasses.py:367(field)
+       53    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
         3    0.000    0.000    0.000    0.000 enum.py:553(<listcomp>)
+      141    0.000    0.000    0.000    0.000 sre_parse.py:173(append)
+      141    0.000    0.000    0.000    0.000 inspect.py:2969(<genexpr>)
+        3    0.000    0.000    0.000    0.000 gettext.py:542(find)
        36    0.000    0.000    0.003    0.000 dataclasses.py:623(_cmp_fn)
+      138    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:897(__exit__)
+       36    0.000    0.000    0.000    0.000 inspect.py:1985(_signature_is_builtin)
+        1    0.000    0.000    0.002    0.002 shutil.py:1(<module>)
+      111    0.000    0.000    0.000    0.000 {built-in method posix.waitstatus_to_exitcode}
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+    40/24    0.000    0.000    0.006    0.000 shader_mutator.py:592(<lambda>)
+       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:198(cb)
        36    0.000    0.000    0.003    0.000 inspect.py:2998(from_callable)
-       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:71(__init__)
+        5    0.000    0.000    0.001    0.000 shader_mutator.py:915(<listcomp>)
+       11    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
+      138    0.000    0.000    0.000    0.000 dataclasses.py:653(_is_initvar)
+      7/3    0.000    0.000    0.003    0.001 shader_mutator.py:739(<listcomp>)
        32    0.000    0.000    0.000    0.000 os.py:675(__getitem__)
       138    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:893(__enter__)
-        2    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
-       36    0.000    0.000    0.016    0.000 dataclasses.py:1174(wrap)
-       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:391(cached)
-      138    0.000    0.000    0.000    0.000 dataclasses.py:653(_is_initvar)
-       82    0.000    0.000    0.000    0.000 shader_parser.py:31(match)
-        1    0.000    0.000    0.020    0.020 shader_parser.py:1(<module>)
-      216    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
-       11    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
        13    0.000    0.000    0.000    0.000 {built-in method posix.get_terminal_size}
-       12    0.000    0.000    0.000    0.000 argparse.py:1552(_get_optional_kwargs)
-       36    0.000    0.000    0.000    0.000 inspect.py:3014(replace)
-      121    0.000    0.000    0.000    0.000 enum.py:678(__new__)
-        1    0.000    0.000    0.005    0.005 shader_parser.py:922(parse_to_tree)
-       21    0.000    0.000    0.000    0.000 shader_parser.py:571(_looks_like_decl)
-      207    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
-      108    0.000    0.000    0.000    0.000 inspect.py:277(isfunction)
-        1    0.000    0.000    0.197    0.197 test.py:1(<module>)
-        1    0.000    0.000    0.070    0.070 test.py:49(check_file_bytes)
+        7    0.000    0.000    0.000    0.000 special_mutations.py:207(special_havoc)
+       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:71(__init__)
        64    0.000    0.000    0.000    0.000 dataclasses.py:409(<listcomp>)
-       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:169(__enter__)
-        2    0.000    0.000    0.016    0.008 shader_mutator.py:55(deepclone)
-       69    0.000    0.000    0.000    0.000 dataclasses.py:508(_init_param)
-      154    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+       33    0.000    0.000    0.000    0.000 shader_ast.py:271(__init__)
+       36    0.000    0.000    0.000    0.000 inspect.py:3014(replace)
        76    0.000    0.000    0.000    0.000 signal.py:9(<lambda>)
-        1    0.000    0.000    0.000    0.000 mutator.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 threading.py:1(<module>)
+       48    0.000    0.000    0.000    0.000 shader_mutator.py:1659(debug_source)
+      121    0.000    0.000    0.000    0.000 enum.py:678(__new__)
        46    0.000    0.000    0.000    0.000 enum.py:44(_is_private)
-    49/10    0.000    0.000    0.030    0.003 <frozen importlib._bootstrap>:233(_call_with_frames_removed)
-      108    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:134(<genexpr>)
-      298    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       17    0.000    0.000    0.000    0.000 shader_mutator.py:47(<lambda>)
+    49/10    0.000    0.000    0.029    0.003 <frozen importlib._bootstrap>:233(_call_with_frames_removed)
+       19    0.000    0.000    0.001    0.000 shader_unparser.py:153(unparse_struct_specifier)
+      207    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:391(cached)
+        1    0.000    0.000   10.652   10.652 test.py:1(<module>)
+      279    0.000    0.000    0.000    0.000 inspect.py:2699(kind)
+        4    0.000    0.000    0.000    0.000 shader_mutator.py:94(gen_struct_vardecl)
+       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:169(__enter__)
        29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:510(_get_cached)
         3    0.000    0.000    0.001    0.000 enum.py:483(_create_)
-        1    0.000    0.000    0.001    0.001 subprocess.py:758(__init__)
-        2    0.000    0.000    0.000    0.000 tempfile.py:281(rng)
-      279    0.000    0.000    0.000    0.000 inspect.py:2699(kind)
-       21    0.000    0.000    0.000    0.000 copyreg.py:109(_slotnames)
-        6    0.000    0.000    0.000    0.000 gettext.py:211(_expand_lang)
-       21    0.000    0.000    0.000    0.000 sre_compile.py:265(_compile_charset)
-      113    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
-       36    0.000    0.000    0.000    0.000 dataclasses.py:547(<dictcomp>)
-       37    0.000    0.000    0.000    0.000 functools.py:65(wraps)
-       12    0.000    0.000    0.002    0.000 shader_parser.py:436(parse_stmt)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1531(_get_spec)
-        1    0.000    0.000    0.037    0.037 mutator.py:84(mutate_shader_structural)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:618(_validate_timestamp_pyc)
-       39    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
-        1    0.000    0.000    0.001    0.001 signal.py:1(<module>)
-       13    0.000    0.000    0.000    0.000 argparse.py:610(_format_args)
-        1    0.000    0.000    0.003    0.003 subprocess.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 threading.py:1(<module>)
+       12    0.000    0.000    0.000    0.000 argparse.py:1552(_get_optional_kwargs)
+        4    0.000    0.000    0.000    0.000 shader_parser.py:375(parse_case_stmt)
+    17/16    0.000    0.000    0.001    0.000 shader_mutator.py:1060(<listcomp>)
+      108    0.000    0.000    0.000    0.000 inspect.py:277(isfunction)
+      108    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:134(<genexpr>)
+       69    0.000    0.000    0.000    0.000 dataclasses.py:508(_init_param)
+        1    0.000    0.000    0.000    0.000 mutator.py:1(<module>)
        36    0.000    0.000    0.003    0.000 inspect.py:3252(signature)
-       36    0.000    0.000    0.016    0.000 dataclasses.py:1156(dataclass)
-       55    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+      111    0.000    0.000    0.000    0.000 selectors.py:200(__enter__)
+       36    0.000    0.000    0.016    0.000 dataclasses.py:1174(wrap)
+      111    0.000    0.000    0.000    0.000 contextlib.py:530(__enter__)
+       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1531(_get_spec)
+    29/16    0.000    0.000    0.007    0.000 shader_mutator.py:588(<lambda>)
+       30    0.000    0.000    0.001    0.000 shader_mutator.py:580(<lambda>)
        39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:357(__init__)
-      242    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
-      216    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+       36    0.000    0.000    0.000    0.000 dataclasses.py:547(<dictcomp>)
+        1    0.000    0.000    0.001    0.001 signal.py:1(<module>)
+        6    0.000    0.000    0.000    0.000 gettext.py:211(_expand_lang)
       138    0.000    0.000    0.000    0.000 dataclasses.py:659(_is_kw_only)
+       13    0.000    0.000    0.000    0.000 argparse.py:610(_format_args)
+        5    0.000    0.000    0.000    0.000 {built-in method _struct.pack_into}
+       36    0.000    0.000    0.016    0.000 dataclasses.py:1156(dataclass)
+       39    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+        1    0.000    0.000    0.003    0.003 subprocess.py:1(<module>)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:618(_validate_timestamp_pyc)
+        1    0.000    0.000    0.020    0.020 shader_parser.py:1(<module>)
         6    0.000    0.000    0.003    0.001 sre_compile.py:783(compile)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1703(_execute_child)
-       36    0.000    0.000    0.000    0.000 dataclasses.py:1014(<listcomp>)
+       21    0.000    0.000    0.000    0.000 sre_compile.py:265(_compile_charset)
        30    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
-     10/5    0.000    0.000    0.001    0.000 shader_mutator.py:668(gen_ternary)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:542(_check_name_wrapper)
+      216    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+       68    0.000    0.000    0.000    0.000 sre_parse.py:287(tell)
+       36    0.000    0.000    0.000    0.000 dataclasses.py:1014(<listcomp>)
        72    0.000    0.000    0.000    0.000 inspect.py:632(_is_wrapper)
-        1    0.000    0.000    0.002    0.002 shader_parser.py:832(parse_translation_unit)
+      216    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:542(_check_name_wrapper)
        46    0.000    0.000    0.000    0.000 enum.py:22(_is_dunder)
         1    0.000    0.000    0.004    0.004 shader_lexer.py:1(<module>)
-        6    0.000    0.000    0.000    0.000 random.py:128(seed)
-       13    0.000    0.000    0.000    0.000 argparse.py:839(__init__)
-       36    0.000    0.000    0.000    0.000 dataclasses.py:572(<listcomp>)
-       49    0.000    0.000    0.000    0.000 shader_mutator.py:349(all_vars)
-       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:746(find_spec)
-       13    0.000    0.000    0.000    0.000 argparse.py:1472(_add_action)
-        6    0.000    0.000    0.000    0.000 sre_compile.py:560(_compile_info)
-       68    0.000    0.000    0.000    0.000 sre_parse.py:287(tell)
-      219    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
-      2/1    0.000    0.000    0.005    0.005 shader_mutator.py:1319(mutate_stmt)
-        5    0.000    0.000    0.000    0.000 {method 'close' of '_io.TextIOWrapper' objects}
-       36    0.000    0.000    0.000    0.000 inspect.py:1997(_signature_is_functionlike)
-       24    0.000    0.000    0.000    0.000 shader_parser.py:64(_looks_like_struct_decl_stmt)
-      171    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
-        3    0.000    0.000    0.000    0.000 argparse.py:1329(__init__)
-        1    0.000    0.000    0.010    0.010 shader_mutator.py:1494(mutate_toplevel)
        36    0.000    0.000    0.000    0.000 dataclasses.py:1040(<listcomp>)
        36    0.000    0.000    0.000    0.000 dataclasses.py:591(<listcomp>)
-       69    0.000    0.000    0.000    0.000 dataclasses.py:436(_field_assign)
-        1    0.000    0.000    0.038    0.038 mutator.py:116(fuzz)
-      105    0.000    0.000    0.000    0.000 dataclasses.py:395(<genexpr>)
+        3    0.000    0.000    0.001    0.000 shader_parser.py:165(parse_declarator_list)
+       39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:746(find_spec)
+       36    0.000    0.000    0.000    0.000 dataclasses.py:572(<listcomp>)
+        2    0.000    0.000    0.000    0.000 shader_parser.py:412(parse_switch_block)
+       13    0.000    0.000    0.000    0.000 argparse.py:1472(_add_action)
+        4    0.000    0.000    0.000    0.000 special_mutations.py:70(_havoc_apply_struct_decl_qualifiers_all)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:901(<listcomp>)
+        3    0.000    0.000    0.000    0.000 argparse.py:1329(__init__)
       174    0.000    0.000    0.000    0.000 inspect.py:2687(name)
-       32    0.000    0.000    0.000    0.000 os.py:755(encode)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1089(path_stats)
+        6    0.000    0.000    0.000    0.000 sre_compile.py:560(_compile_info)
+        5    0.000    0.000    0.000    0.000 shader_mutator.py:857(gen_random_struct_field)
        46    0.000    0.000    0.000    0.000 enum.py:33(_is_sunder)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1040(__init__)
-       24    0.000    0.000    0.000    0.000 genericpath.py:16(exists)
-       39    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
-      8/7    0.000    0.000    0.000    0.000 shader_mutator.py:648(gen_binary)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:150(_path_is_mode_type)
-        1    0.000    0.000    0.000    0.000 argparse.py:1890(_parse_known_args)
-      105    0.000    0.000    0.000    0.000 dataclasses.py:1098(<genexpr>)
-       38    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:404(parent)
-        1    0.000    0.000    0.003    0.003 tempfile.py:1(<module>)
-       44    0.000    0.000    0.000    0.000 re.py:269(escape)
-       72    0.000    0.000    0.000    0.000 inspect.py:191(isclass)
+        7    0.000    0.000    0.000    0.000 shader_unparser.py:218(_uinit)
+      171    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+       36    0.000    0.000    0.000    0.000 inspect.py:1997(_signature_is_functionlike)
         9    0.000    0.000    0.000    0.000 enum.py:590(_find_data_type)
-       36    0.000    0.000    0.000    0.000 dataclasses.py:345(__init__)
+       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:150(_path_is_mode_type)
+      105    0.000    0.000    0.000    0.000 dataclasses.py:395(<genexpr>)
        39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:173(__exit__)
-       40    0.000    0.000    0.000    0.000 enum.py:12(_is_descriptor)
-     10/8    0.000    0.000    0.000    0.000 shader_mutator.py:662(gen_unary)
-        1    0.000    0.000    0.164    0.164 test.py:483(main)
+        1    0.000    0.000   10.619   10.619 test.py:483(main)
+       38    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:404(parent)
+       69    0.000    0.000    0.000    0.000 dataclasses.py:436(_field_assign)
+       39    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+       24    0.000    0.000    0.000    0.000 genericpath.py:16(exists)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1089(path_stats)
         6    0.000    0.000    0.002    0.000 sre_parse.py:944(parse)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
-      199    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
-        1    0.000    0.000    0.000    0.000 argparse.py:1(<module>)
-      147    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+      105    0.000    0.000    0.000    0.000 dataclasses.py:1098(<genexpr>)
+       32    0.000    0.000    0.000    0.000 os.py:755(encode)
        11    0.000    0.000    0.000    0.000 abc.py:105(__new__)
+        1    0.000    0.000    0.003    0.003 tempfile.py:1(<module>)
+        5    0.000    0.000    0.000    0.000 shader_mutator.py:817(gen_random_typename)
+        1    0.000    0.000    0.000    0.000 argparse.py:1890(_parse_known_args)
+        1    0.000    0.000    0.000    0.000 argparse.py:1(<module>)
+       44    0.000    0.000    0.000    0.000 re.py:269(escape)
+       40    0.000    0.000    0.000    0.000 enum.py:12(_is_descriptor)
+       36    0.000    0.000    0.000    0.000 dataclasses.py:345(__init__)
         8    0.000    0.000    0.000    0.000 sre_parse.py:268(getuntil)
-        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:421(spec_from_loader)
-        8    0.000    0.000    0.000    0.000 shader_parser.py:266(parse_type_name)
+       13    0.000    0.000    0.000    0.000 argparse.py:1661(_add_action)
         1    0.000    0.000    0.000    0.000 selectors.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 contextlib.py:533(__exit__)
-       82    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
-       53    0.000    0.000    0.000    0.000 shader_mutator.py:267(is_array)
-        7    0.000    0.000    0.000    0.000 shader_mutator.py:722(gen_call)
+        3    0.000    0.000    0.000    0.000 special_mutations.py:192(_havoc_function_scalar_to_array)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:421(spec_from_loader)
         3    0.000    0.000    0.001    0.000 enum.py:536(_convert_)
-        1    0.000    0.000    0.000    0.000 {built-in method posix.write}
+        5    0.000    0.000    0.000    0.000 shader_mutator.py:808(weighted_choice)
+        1    0.000    0.000    0.000    0.000 shader_unparser.py:1(<module>)
+       72    0.000    0.000    0.000    0.000 inspect.py:191(isclass)
+        3    0.000    0.000    0.000    0.000 shader_mutator.py:918(<listcomp>)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
+       36    0.000    0.000    0.000    0.000 dataclasses.py:1049(<listcomp>)
+        7    0.000    0.000    0.000    0.000 shader_mutator.py:362(_flatten_members)
+        5    0.000    0.000    0.000    0.000 {built-in method _struct.unpack_from}
+        1    0.000    0.000    0.000    0.000 tempfile.py:322(_get_default_tempdir)
        39    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:165(__init__)
       122    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
-       27    0.000    0.000    0.000    0.000 argparse.py:1386(_registry_get)
-       11    0.000    0.000    0.000    0.000 random.py:292(randrange)
-       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isfile)
-       36    0.000    0.000    0.000    0.000 dataclasses.py:1049(<listcomp>)
-        1    0.000    0.000    0.000    0.000 {built-in method posix.waitpid}
-       34    0.000    0.000    0.000    0.000 shader_mutator.py:263(__init__)
-       80    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
-       72    0.000    0.000    0.000    0.000 {method 'values' of 'mappingproxy' objects}
-        1    0.000    0.000    0.070    0.070 subprocess.py:461(run)
-       13    0.000    0.000    0.000    0.000 argparse.py:1661(_add_action)
-        1    0.000    0.000    0.000    0.000 lzma.py:1(<module>)
        37    0.000    0.000    0.000    0.000 argparse.py:1382(register)
-       11    0.000    0.000    0.000    0.000 shader_mutator.py:759(gen_member_access)
-       56    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
-       63    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
        25    0.000    0.000    0.000    0.000 sre_compile.py:447(_simple)
-       77    0.000    0.000    0.000    0.000 signal.py:16(<lambda>)
-        2    0.000    0.000    0.002    0.001 shader_parser.py:561(parse_block)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1227(_close_pipe_fds)
-        1    0.000    0.000    0.001    0.001 shader_mutator.py:903(<listcomp>)
-        1    0.000    0.000    0.000    0.000 tempfile.py:322(_get_default_tempdir)
-       71    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
-        1    0.000    0.000    0.000    0.000 special_mutations.py:1(<module>)
-        2    0.000    0.000    0.000    0.000 selectors.py:366(unregister)
-      119    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
-       81    0.000    0.000    0.000    0.000 {built-in method from_bytes}
-        5    0.000    0.000    0.000    0.000 {built-in method posix.close}
-        1    0.000    0.000    0.000    0.000 shader_unparser.py:1(<module>)
+       13    0.000    0.000    0.000    0.000 argparse.py:839(__init__)
        10    0.000    0.000    0.000    0.000 sre_parse.py:85(opengroup)
+        2    0.000    0.000    0.000    0.000 shader_mutator.py:888(gen_matrix)
+        1    0.000    0.000    0.000    0.000 lzma.py:1(<module>)
+       72    0.000    0.000    0.000    0.000 {method 'values' of 'mappingproxy' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.write}
+       29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isfile)
+       63    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:874(gen_struct_definition)
+       80    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 special_mutations.py:1(<module>)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1040(__init__)
         1    0.000    0.000    0.000    0.000 const.py:1(<module>)
+        6    0.000    0.000    0.000    0.000 shader_mutator.py:1195(mutate_array_dims)
+       12    0.000    0.000    0.000    0.000 shader_mutator.py:438(array_len_from_typeinfo)
+       44    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
         1    0.000    0.000    0.000    0.000 test_helpers.py:1(<module>)
-       18    0.000    0.000    0.000    0.000 shader_mutator.py:49(<lambda>)
+        2    0.000    0.000    0.000    0.000 shader_parser.py:392(parse_default_stmt)
+       81    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+       10    0.000    0.000    0.000    0.000 shader_mutator.py:65(has_side_effect)
         1    0.000    0.000    0.001    0.001 argparse.py:1713(__init__)
-       36    0.000    0.000    0.000    0.000 abc.py:146(update_abstractmethods)
-        9    0.000    0.000    0.000    0.000 enum.py:579(_get_mixins_)
-       36    0.000    0.000    0.000    0.000 shader_lexer.py:11(<genexpr>)
        24    0.000    0.000    0.000    0.000 types.py:176(__get__)
-        8    0.000    0.000    0.000    0.000 subprocess.py:1192(_check_timeout)
-        3    0.000    0.000    0.000    0.000 {built-in method posix.pipe}
+       72    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        9    0.000    0.000    0.000    0.000 enum.py:579(_get_mixins_)
+       36    0.000    0.000    0.000    0.000 abc.py:146(update_abstractmethods)
+        6    0.000    0.000    0.000    0.000 enum.py:986(__and__)
+        6    0.000    0.000    0.000    0.000 shader_ast.py:261(__init__)
+        8    0.000    0.000    0.000    0.000 shader_ast.py:275(__init__)
        13    0.000    0.000    0.001    0.000 argparse.py:2565(_get_formatter)
        29    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:180(_path_isabs)
-       51    0.000    0.000    0.000    0.000 shader_mutator.py:83(is_struct_like)
-       72    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
-        1    0.000    0.000    0.001    0.001 bz2.py:1(<module>)
-        3    0.000    0.000    0.000    0.000 shader_parser.py:293(parse_struct_member)
-        3    0.000    0.000    0.000    0.000 enum.py:626(_find_new_)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:371(build_env)
-       30    0.000    0.000    0.003    0.000 re.py:249(compile)
-        4    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
         4    0.000    0.000    0.000    0.000 sre_compile.py:437(<listcomp>)
-      121    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+       30    0.000    0.000    0.003    0.000 re.py:249(compile)
        36    0.000    0.000    0.000    0.000 dataclasses.py:1043(<listcomp>)
+      121    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        1    0.000    0.000    0.001    0.001 bz2.py:1(<module>)
+        4    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
+       76    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:71(_relax_case)
+       36    0.000    0.000    0.000    0.000 shader_lexer.py:11(<genexpr>)
+        3    0.000    0.000    0.000    0.000 enum.py:626(_find_new_)
+       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:826(find_spec)
         1    0.000    0.000    0.000    0.000 subprocess.py:702(Popen)
-       44    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
-       36    0.000    0.000    0.000    0.000 inspect.py:209(ismethoddescriptor)
-        1    0.000    0.000    0.000    0.000 argparse.py:1851(parse_known_args)
         3    0.000    0.000    0.000    0.000 gettext.py:598(translation)
        12    0.000    0.000    0.000    0.000 sre_parse.py:433(_uniq)
-       76    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:71(_relax_case)
-        9    0.000    0.000    0.000    0.000 selectors.py:276(_key_from_fd)
-       36    0.000    0.000    0.000    0.000 inspect.py:404(isbuiltin)
-        6    0.000    0.000    0.000    0.000 enum.py:986(__and__)
-       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:826(find_spec)
-       13    0.000    0.000    0.000    0.000 argparse.py:1586(_pop_action_class)
-       36    0.000    0.000    0.000    0.000 dataclasses.py:396(<genexpr>)
+        1    0.000    0.000    0.000    0.000 argparse.py:1851(parse_known_args)
         1    0.000    0.000    0.000    0.000 enum.py:1026(_decompose)
-       72    0.000    0.000    0.000    0.000 {built-in method sys.getrecursionlimit}
-        2    0.000    0.000    0.000    0.000 random.py:519(<listcomp>)
-       13    0.000    0.000    0.000    0.000 shader_mutator.py:50(<lambda>)
-        4    0.000    0.000    0.000    0.000 sre_compile.py:435(_mk_bitmap)
-       72    0.000    0.000    0.000    0.000 inspect.py:3006(parameters)
-        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:770(create_module)
-       51    0.000    0.000    0.000    0.000 {method 'items' of 'mappingproxy' objects}
-       30    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
-       51    0.000    0.000    0.000    0.000 shader_mutator.py:77(is_vector_name)
-        2    0.000    0.000    0.000    0.000 posixpath.py:150(dirname)
-        6    0.000    0.000    0.001    0.000 sre_compile.py:622(_code)
-       13    0.000    0.000    0.000    0.000 argparse.py:1824(_add_action)
-        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:254(_requires_builtin_wrapper)
-       17    0.000    0.000    0.000    0.000 {method 'fileno' of '_io.TextIOWrapper' objects}
-        1    0.000    0.000    0.000    0.000 tempfile.py:816(SpooledTemporaryFile)
-        1    0.000    0.000    0.000    0.000 traceback.py:1(<module>)
-        2    0.000    0.000    0.000    0.000 posixpath.py:335(normpath)
-        1    0.000    0.000    0.000    0.000 test_helpers.py:53(strip_header_and_null)
+       36    0.000    0.000    0.000    0.000 inspect.py:209(ismethoddescriptor)
+       11    0.000    0.000    0.000    0.000 random.py:366(randint)
+       27    0.000    0.000    0.000    0.000 argparse.py:1386(_registry_get)
       6/5    0.000    0.000    0.000    0.000 sre_compile.py:485(_get_literal_prefix)
-       72    0.000    0.000    0.000    0.000 inspect.py:3010(return_annotation)
-       20    0.000    0.000    0.000    0.000 shader_mutator.py:59(coin)
-        8    0.000    0.000    0.000    0.000 argparse.py:983(__init__)
-       33    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
-      3/1    0.000    0.000    0.000    0.000 shader_mutator.py:961(mutate_expr)
-        9    0.000    0.000    0.000    0.000 selectors.py:67(__len__)
-        2    0.000    0.000    0.000    0.000 contextlib.py:496(callback)
-       32    0.000    0.000    0.000    0.000 sre_parse.py:82(groups)
-       13    0.000    0.000    0.000    0.000 argparse.py:215(__init__)
-       35    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 fnmatch.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 tempfile.py:382(_mkstemp_inner)
-        2    0.000    0.000    0.000    0.000 argparse.py:1639(__init__)
-        6    0.000    0.000    0.000    0.000 sre_parse.py:225(__init__)
+       13    0.000    0.000    0.000    0.000 argparse.py:1586(_pop_action_class)
+       72    0.000    0.000    0.000    0.000 {built-in method sys.getrecursionlimit}
+       36    0.000    0.000    0.000    0.000 dataclasses.py:396(<genexpr>)
+        6    0.000    0.000    0.000    0.000 shader_mutator.py:62(choose)
+       36    0.000    0.000    0.000    0.000 inspect.py:404(isbuiltin)
         1    0.000    0.000    0.000    0.000 threading.py:816(Thread)
-       13    0.000    0.000    0.000    0.000 argparse.py:603(format)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:435(_mk_bitmap)
+       51    0.000    0.000    0.000    0.000 {method 'items' of 'mappingproxy' objects}
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:770(create_module)
+       30    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+       72    0.000    0.000    0.000    0.000 inspect.py:3006(parameters)
+        1    0.000    0.000    0.000    0.000 random.py:380(shuffle)
+        6    0.000    0.000    0.001    0.000 sre_compile.py:622(_code)
+       14    0.000    0.000    0.000    0.000 shader_mutator.py:338(define)
+        1    0.000    0.000    0.000    0.000 tempfile.py:816(SpooledTemporaryFile)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:254(_requires_builtin_wrapper)
+        3    0.000    0.000    0.000    0.000 shader_unparser.py:288(_unparse_declarator)
        78    0.000    0.000    0.000    0.000 signal.py:21(<lambda>)
-        2    0.000    0.000    0.000    0.000 argparse.py:2443(_get_values)
-        1    0.000    0.000    0.000    0.000 argparse.py:685(RawDescriptionHelpFormatter)
-        6    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+       32    0.000    0.000    0.000    0.000 sre_parse.py:82(groups)
+        1    0.000    0.000    0.000    0.000 traceback.py:1(<module>)
        69    0.000    0.000    0.000    0.000 inspect.py:2691(default)
-        1    0.000    0.000    0.000    0.000 __future__.py:1(<module>)
-        3    0.000    0.000    0.000    0.000 enum.py:165(__prepare__)
-        1    0.000    0.000    0.000    0.000 struct.py:1(<module>)
+       77    0.000    0.000    0.000    0.000 signal.py:16(<lambda>)
+       13    0.000    0.000    0.000    0.000 argparse.py:215(__init__)
+       72    0.000    0.000    0.000    0.000 inspect.py:3010(return_annotation)
+        6    0.000    0.000    0.000    0.000 sre_parse.py:225(__init__)
+       12    0.000    0.000    0.000    0.000 {built-in method fromkeys}
+        2    0.000    0.000    0.000    0.000 argparse.py:2443(_get_values)
+        2    0.000    0.000    0.000    0.000 argparse.py:1639(__init__)
+        8    0.000    0.000    0.000    0.000 argparse.py:983(__init__)
        26    0.000    0.000    0.000    0.000 sre_parse.py:169(__setitem__)
-        1    0.000    0.000    0.000    0.000 tempfile.py:628(__getattr__)
-        1    0.000    0.000    0.000    0.000 tempfile.py:440(_gettempdir)
-        2    0.000    0.000    0.000    0.000 random.py:506(choices)
-       13    0.000    0.000    0.000    0.000 argparse.py:1599(_check_conflict)
-       37    0.000    0.000    0.000    0.000 {method 'random' of '_random.Random' objects}
-        1    0.000    0.000    0.069    0.069 subprocess.py:1110(communicate)
+        3    0.000    0.000    0.000    0.000 enum.py:165(__prepare__)
+        1    0.000    0.000    0.000    0.000 subprocess.py:648(_use_posix_spawn)
+       13    0.000    0.000    0.000    0.000 argparse.py:603(format)
+        1    0.000    0.000    0.000    0.000 fnmatch.py:1(<module>)
+       16    0.000    0.000    0.000    0.000 shader_unparser.py:351(<listcomp>)
+        6    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
         6    0.000    0.000    0.000    0.000 locale.py:396(normalize)
-        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       13    0.000    0.000    0.000    0.000 argparse.py:1824(_add_action)
+        1    0.000    0.000    0.000    0.000 __future__.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 struct.py:1(<module>)
+        5    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+       13    0.000    0.000    0.000    0.000 argparse.py:1599(_check_conflict)
         2    0.000    0.000    0.000    0.000 selectors.py:584(_can_use)
+        3    0.000    0.000    0.000    0.000 shader_ast.py:115(__init__)
        13    0.000    0.000    0.000    0.000 argparse.py:594(_metavar_formatter)
+        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
         8    0.000    0.000    0.000    0.000 argparse.py:960(__init__)
-       10    0.000    0.000    0.000    0.000 subprocess.py:1184(_remaining_time)
         1    0.000    0.000    0.000    0.000 random.py:103(Random)
-        2    0.000    0.000    0.002    0.001 shader_parser.py:664(parse_function_def_or_decl)
-        1    0.000    0.000    0.000    0.000 tempfile.py:677(NamedTemporaryFile)
-       12    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
-       76    0.000    0.000    0.000    0.000 {method 'isupper' of 'str' objects}
-        2    0.000    0.000    0.000    0.000 selectors.py:235(register)
-        4    0.000    0.000    0.000    0.000 selectors.py:21(_fileobj_to_fd)
         1    0.000    0.000    0.000    0.000 shader_parser.py:18(Parser)
        27    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
-        1    0.000    0.000    0.053    0.053 test.py:208(collect_files)
-        3    0.000    0.000    0.000    0.000 subprocess.py:1927(_wait)
-        1    0.000    0.000    0.000    0.000 subprocess.py:648(_use_posix_spawn)
-        2    0.000    0.000    0.000    0.000 contextlib.py:514(_push_exit_callback)
-      3/1    0.000    0.000    0.001    0.001 shader_mutator.py:925(gen_constructor_expr)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:341(parse_struct_specifier)
-       38    0.000    0.000    0.000    0.000 shader_mutator.py:423(<listcomp>)
-       40    0.000    0.000    0.000    0.000 enum.py:559(<lambda>)
-        1    0.000    0.000    0.000    0.000 bisect.py:1(<module>)
-       12    0.000    0.000    0.000    0.000 {built-in method fromkeys}
-        1    0.000    0.000    0.000    0.000 argparse.py:2191(_match_arguments_partial)
-        7    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
-        2    0.000    0.000    0.000    0.000 selectors.py:352(register)
-        2    0.000    0.000    0.000    0.000 tempfile.py:292(__next__)
-       51    0.000    0.000    0.000    0.000 shader_mutator.py:80(is_matrix_name)
        38    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:412(has_location)
-        3    0.000    0.000    0.000    0.000 {built-in method builtins.print}
-        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:778(exec_module)
-        6    0.000    0.000    0.000    0.000 _collections_abc.py:821(get)
-        4    0.000    0.000    0.000    0.000 selectors.py:216(_fileobj_lookup)
-       12    0.000    0.000    0.000    0.000 sre_compile.py:81(_combine_flags)
-        1    0.000    0.000    0.000    0.000 bz2.py:26(BZ2File)
+        1    0.000    0.000    0.000    0.000 bisect.py:1(<module>)
+       76    0.000    0.000    0.000    0.000 {method 'isupper' of 'str' objects}
+        1    0.000    0.000    0.054    0.054 test.py:208(collect_files)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:247(find_struct_def_index)
+       40    0.000    0.000    0.000    0.000 enum.py:559(<lambda>)
+        1    0.000    0.000    0.000    0.000 argparse.py:2191(_match_arguments_partial)
         2    0.000    0.000    0.000    0.000 argparse.py:1937(take_action)
+        5    0.000    0.000    0.000    0.000 random.py:546(uniform)
         3    0.000    0.000    0.000    0.000 enum.py:198(<dictcomp>)
         1    0.000    0.000    0.000    0.000 tempfile.py:295(_candidate_tempdir_list)
-       39    0.000    0.000    0.000    0.000 __init__.py:89(<lambda>)
-        1    0.000    0.000    0.000    0.000 subprocess.py:425(CompletedProcess)
-        1    0.000    0.000    0.000    0.000 threading.py:1386(__init__)
-        1    0.000    0.000    0.000    0.000 argparse.py:163(HelpFormatter)
-       10    0.000    0.000    0.000    0.000 sre_parse.py:97(closegroup)
-        6    0.000    0.000    0.000    0.000 sre_parse.py:928(fix_flags)
-        1    0.000    0.000    0.000    0.000 threading.py:986(_set_tstate_lock)
-        4    0.000    0.000    0.000    0.000 argparse.py:925(__init__)
-       11    0.000    0.000    0.000    0.000 shader_mutator.py:598(<lambda>)
+        6    0.000    0.000    0.000    0.000 _collections_abc.py:821(get)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:778(exec_module)
+       20    0.000    0.000    0.000    0.000 shader_mutator.py:809(<genexpr>)
+       12    0.000    0.000    0.000    0.000 sre_compile.py:81(_combine_flags)
        47    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
-        2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
-       12    0.000    0.000    0.000    0.000 sre_compile.py:619(isstring)
-        4    0.000    0.000    0.000    0.000 sre_compile.py:516(_get_charset_prefix)
-       22    0.000    0.000    0.000    0.000 {built-in method time.monotonic}
-        1    0.000    0.000    0.000    0.000 threading.py:236(__init__)
-       24    0.000    0.000    0.000    0.000 enum.py:801(value)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:907(gen_vector)
-        1    0.000    0.000    0.000    0.000 argparse.py:1691(ArgumentParser)
-        6    0.000    0.000    0.000    0.000 shader_mutator.py:47(<lambda>)
-        1    0.000    0.000    0.000    0.000 _compression.py:1(<module>)
-        1    0.000    0.000    0.000    0.000 selectors.py:269(close)
-        1    0.000    0.000    0.000    0.000 tempfile.py:368(_get_candidate_names)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:493(gen_atom)
-        1    0.000    0.000    0.000    0.000 {method 'splitlines' of 'str' objects}
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:915(<listcomp>)
-        1    0.000    0.000    0.000    0.000 selectors.py:348(__init__)
-        3    0.000    0.000    0.000    0.000 enum.py:569(_check_for_existing_members)
+       16    0.000    0.000    0.000    0.000 shader_unparser.py:352(<listcomp>)
+        6    0.000    0.000    0.000    0.000 sre_parse.py:928(fix_flags)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:913(<listcomp>)
+       39    0.000    0.000    0.000    0.000 __init__.py:89(<lambda>)
+        1    0.000    0.000    0.000    0.000 bz2.py:26(BZ2File)
+        4    0.000    0.000    0.000    0.000 argparse.py:925(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:1386(__init__)
+        4    0.000    0.000    0.000    0.000 shader_ast.py:200(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:986(_set_tstate_lock)
+        1    0.000    0.000    0.000    0.000 argparse.py:163(HelpFormatter)
        36    0.000    0.000    0.000    0.000 dataclasses.py:839(_hash_set_none)
-        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1174(create_module)
-        4    0.000    0.000    0.000    0.000 random.py:119(__init__)
-        1    0.000    0.000    0.000    0.000 tempfile.py:960(TemporaryDirectory)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:950(MutCtx)
-        2    0.000    0.000    0.000    0.000 _collections_abc.py:78(_check_methods)
-        1    0.000    0.000    0.000    0.000 _weakrefset.py:37(__init__)
-        8    0.000    0.000    0.000    0.000 {built-in method math.ceil}
+        4    0.000    0.000    0.000    0.000 sre_compile.py:516(_get_charset_prefix)
+        1    0.000    0.000    0.000    0.000 argparse.py:1691(ArgumentParser)
+       10    0.000    0.000    0.000    0.000 sre_parse.py:97(closegroup)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:903(<listcomp>)
+        1    0.000    0.000    0.000    0.000 threading.py:236(__init__)
+        1    0.000    0.000    0.000    0.000 _compression.py:1(<module>)
         6    0.000    0.000    0.000    0.000 sre_parse.py:76(__init__)
-        4    0.000    0.000    0.000    0.000 shader_mutator.py:279(typename_to_typeinfo)
-        3    0.000    0.000    0.000    0.000 enum.py:82(__init__)
-     10/5    0.000    0.000    0.001    0.000 shader_mutator.py:592(<lambda>)
-        2    0.000    0.000    0.000    0.000 argparse.py:1462(add_argument_group)
-        3    0.000    0.000    0.000    0.000 gettext.py:679(dgettext)
-        2    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
-       19    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
-     10/8    0.000    0.000    0.000    0.000 shader_mutator.py:584(<lambda>)
-        1    0.000    0.000    0.001    0.001 <string>:2(__repr__)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:736(parse_interface_block)
-        6    0.000    0.000    0.000    0.000 signal.py:49(decorator)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1604(_get_handles)
-        7    0.000    0.000    0.000    0.000 shader_mutator.py:595(<lambda>)
-        1    0.000    0.000    0.000    0.000 traceback.py:243(FrameSummary)
-        5    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1065(get_filename)
-        3    0.000    0.000    0.000    0.000 subprocess.py:1204(wait)
-        1    0.000    0.000    0.000    0.000 argparse.py:2039(consume_positionals)
-       10    0.000    0.000    0.000    0.000 __future__.py:83(__init__)
-        1    0.000    0.000    0.000    0.000 header_mutator.py:1(<module>)
-        2    0.000    0.000    0.000    0.000 enum.py:980(__or__)
-        1    0.000    0.000    0.000    0.000 {built-in method math.exp}
-        1    0.000    0.000    0.000    0.000 tempfile.py:649(__enter__)
-        1    0.000    0.000    0.000    0.000 contextlib.py:452(__init__)
-        1    0.000    0.000    0.000    0.000 argparse.py:1327(_ActionsContainer)
-        2    0.000    0.000    0.000    0.000 shader_mutator.py:294(structfield_to_typeinfo)
-      8/7    0.000    0.000    0.000    0.000 shader_mutator.py:588(<lambda>)
-        1    0.000    0.000    0.000    0.000 enum.py:947(_create_pseudo_member_)
-       12    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
-        3    0.000    0.000    0.000    0.000 argparse.py:1590(_get_handler)
-       10    0.000    0.000    0.000    0.000 enum.py:446(<genexpr>)
-        1    0.000    0.000    0.000    0.000 argparse.py:1958(consume_optional)
-        2    0.000    0.000    0.000    0.000 re.py:187(match)
-        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1182(exec_module)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:333(Scope)
-        2    0.000    0.000    0.000    0.000 posixpath.py:374(abspath)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:627(parse_struct_toplevel_decl)
-       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:874(create_module)
-        1    0.000    0.000    0.000    0.000 mutator.py:36(save_crashing)
-       23    0.000    0.000    0.000    0.000 {built-in method _operator.index}
-        1    0.000    0.000    0.000    0.000 selectors.py:61(_SelectorMapping)
-       18    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
-        2    0.000    0.000    0.000    0.000 tempfile.py:594(close)
-        2    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
-        1    0.000    0.000    0.000    0.000 threading.py:103(_RLock)
-        2    0.000    0.000    0.000    0.000 {built-in method builtins.next}
-        1    0.000    0.000    0.000    0.000 lzma.py:38(LZMAFile)
-        1    0.000    0.000    0.000    0.000 selectors.py:81(BaseSelector)
-        1    0.000    0.000    0.000    0.000 selectors.py:342(_PollLikeSelector)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1867(_handle_exitstatus)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1174(create_module)
+       16    0.000    0.000    0.000    0.000 shader_unparser.py:353(<listcomp>)
+        1    0.000    0.000    0.000    0.000 tempfile.py:960(TemporaryDirectory)
         2    0.000    0.000    0.000    0.000 argparse.py:2310(_get_nargs_pattern)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:906(parse_directive)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1914(_try_wait)
-        9    0.000    0.000    0.000    0.000 selectors.py:273(get_map)
-       14    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
-        2    0.000    0.000    0.000    0.000 selectors.py:248(unregister)
-        1    0.000    0.000    0.000    0.000 tempfile.py:224(_infer_return_type)
+       12    0.000    0.000    0.000    0.000 sre_compile.py:619(isstring)
+        3    0.000    0.000    0.000    0.000 enum.py:569(_check_for_existing_members)
+        1    0.000    0.000    0.000    0.000 selectors.py:342(_PollLikeSelector)
+        3    0.000    0.000    0.000    0.000 enum.py:82(__init__)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:1461(mutate_struct_fields)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1065(get_filename)
+        1    0.000    0.000    0.000    0.000 threading.py:103(_RLock)
+       24    0.000    0.000    0.000    0.000 enum.py:801(value)
+        1    0.000    0.000    0.000    0.000 {built-in method math.exp}
+        2    0.000    0.000    0.000    0.000 argparse.py:1462(add_argument_group)
+        1    0.000    0.000    0.000    0.000 traceback.py:243(FrameSummary)
+        1    0.000    0.000    0.000    0.000 argparse.py:2039(consume_positionals)
+        2    0.000    0.000    0.000    0.000 _collections_abc.py:78(_check_methods)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:950(MutCtx)
+        3    0.000    0.000    0.000    0.000 gettext.py:679(dgettext)
+        6    0.000    0.000    0.000    0.000 signal.py:49(decorator)
+        1    0.000    0.000    0.000    0.000 subprocess.py:425(CompletedProcess)
+       10    0.000    0.000    0.000    0.000 __future__.py:83(__init__)
+        2    0.000    0.000    0.000    0.000 enum.py:980(__or__)
+        1    0.000    0.000    0.000    0.000 header_mutator.py:1(<module>)
+        2    0.000    0.000    0.000    0.000 shader_mutator.py:275(__repr__)
+       10    0.000    0.000    0.000    0.000 enum.py:446(<genexpr>)
+        1    0.000    0.000    0.000    0.000 enum.py:947(_create_pseudo_member_)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:536(<listcomp>)
+        3    0.000    0.000    0.000    0.000 argparse.py:1590(_get_handler)
+        1    0.000    0.000    0.000    0.000 argparse.py:1958(consume_optional)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:874(create_module)
+        1    0.000    0.000    0.000    0.000 argparse.py:1327(_ActionsContainer)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1182(exec_module)
+        1    0.000    0.000    0.000    0.000 selectors.py:81(BaseSelector)
+       12    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 lzma.py:38(LZMAFile)
+       18    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
         9    0.000    0.000    0.000    0.000 enum.py:245(<genexpr>)
-        1    0.000    0.000    0.000    0.000 tempfile.py:622(__init__)
-        1    0.000    0.000    0.000    0.000 _sitebuiltins.py:19(__call__)
+        1    0.000    0.000    0.000    0.000 selectors.py:61(_SelectorMapping)
+        2    0.000    0.000    0.000    0.000 shader_mutator.py:111(abort)
+        1    0.000    0.000    0.000    0.000 subprocess.py:2119(kill)
+        3    0.000    0.000    0.000    0.000 enum.py:423(__getattr__)
        10    0.000    0.000    0.000    0.000 shader_lexer.py:12(<genexpr>)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:357(parse_decl_stmt)
-        2    0.000    0.000    0.000    0.000 abc.py:117(__instancecheck__)
-       10    0.000    0.000    0.000    0.000 sre_compile.py:477(_get_iscased)
-        1    0.000    0.000    0.000    0.000 tempfile.py:253(_sanitize_params)
-       11    0.000    0.000    0.000    0.000 shader_mutator.py:760(<listcomp>)
         1    0.000    0.000    0.000    0.000 {method 'close' of 'select.epoll' objects}
         1    0.000    0.000    0.000    0.000 threading.py:622(Barrier)
-        3    0.000    0.000    0.000    0.000 enum.py:423(__getattr__)
-        1    0.000    0.000    0.000    0.000 selectors.py:210(__init__)
-        2    0.000    0.000    0.000    0.000 subprocess.py:1030(_translate_newlines)
-        1    0.000    0.000    0.000    0.000 threading.py:534(Event)
-        1    0.000    0.000    0.001    0.001 shader_mutator.py:888(gen_matrix)
-        3    0.000    0.000    0.000    0.000 os.py:759(decode)
-        9    0.000    0.000    0.000    0.000 __init__.py:402(<genexpr>)
-        1    0.000    0.000    0.000    0.000 random.py:219(__init_subclass__)
-        1    0.000    0.000    0.000    0.000 posixpath.py:140(basename)
-        1    0.000    0.000    0.000    0.000 argparse.py:2169(_match_argument)
-        1    0.000    0.000    0.000    0.000 traceback.py:335(StackSummary)
-        2    0.000    0.000    0.000    0.000 {method 'join' of 'bytes' objects}
-        1    0.000    0.000    0.000    0.000 tempfile.py:655(__exit__)
-        1    0.000    0.000    0.000    0.000 traceback.py:457(TracebackException)
-        1    0.000    0.000    0.000    0.000 threading.py:800(_maintain_shutdown_locks)
-        3    0.000    0.000    0.000    0.000 shader_mutator.py:334(__init__)
-        9    0.000    0.000    0.000    0.000 argparse.py:632(<listcomp>)
-        1    0.000    0.000    0.000    0.000 {method 'finditer' of 're.Pattern' objects}
-        1    0.000    0.000    0.000    0.000 _compression.py:33(DecompressReader)
-        1    0.000    0.000    0.000    0.000 tempfile.py:452(gettempdir)
-        1    0.000    0.000    0.000    0.000 functools.py:518(decorating_function)
-        2    0.000    0.000    0.000    0.000 contextlib.py:446(_create_cb_wrapper)
-        1    0.000    0.000    0.000    0.000 threading.py:568(set)
-        5    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
-        2    0.000    0.000    0.000    0.000 {built-in method posix.getpid}
-        1    0.000    0.000    0.000    0.000 shader_parser.py:321(parse_var_decl)
-        5    0.000    0.000    0.000    0.000 shader_mutator.py:580(<lambda>)
-        2    0.000    0.000    0.000    0.000 os.py:1080(__subclasshook__)
-        2    0.000    0.000    0.000    0.000 posixpath.py:60(isabs)
-        8    0.000    0.000    0.000    0.000 shader_ast.py:17(__post_init__)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1037(__exit__)
-        1    0.000    0.000    0.000    0.000 sre_compile.py:456(_generate_overlap_table)
-        2    0.000    0.000    0.000    0.000 {built-in method posix.register_at_fork}
-        1    0.000    0.000    0.000    0.000 subprocess.py:436(__init__)
-        3    0.000    0.000    0.000    0.000 {built-in method builtins.any}
-        9    0.000    0.000    0.000    0.000 {built-in method sys.intern}
-        3    0.000    0.000    0.000    0.000 os.py:772(getenv)
-        1    0.000    0.000    0.000    0.000 argparse.py:1536(_get_positional_kwargs)
-        1    0.000    0.000    0.000    0.000 argparse.py:1105(__init__)
-        1    0.000    0.000    0.000    0.000 threading.py:224(Condition)
-        2    0.000    0.000    0.000    0.000 {method 'write' of '_io.BufferedWriter' objects}
-        1    0.000    0.000    0.000    0.000 tempfile.py:709(opener)
-        1    0.000    0.000    0.000    0.000 selectors.py:291(SelectSelector)
-        1    0.000    0.000    0.000    0.000 tempfile.py:636(func_wrapper)
-        1    0.000    0.000    0.000    0.000 subprocess.py:104(CalledProcessError)
-        1    0.000    0.000    0.000    0.000 subprocess.py:246(_cleanup)
-        3    0.000    0.000    0.000    0.000 gettext.py:756(gettext)
-        1    0.000    0.000    0.000    0.000 argparse.py:998(_StoreFalseAction)
-        2    0.000    0.000    0.000    0.000 abc.py:121(__subclasscheck__)
-        3    0.000    0.000    0.000    0.000 enum.py:451(__members__)
-        3    0.000    0.000    0.000    0.000 {built-in method builtins.vars}
-        1    0.000    0.000    0.000    0.000 argparse.py:1148(_SubParsersAction)
-        4    0.000    0.000    0.000    0.000 {method 'translate' of 'bytearray' objects}
-        1    0.000    0.000    0.000    0.000 shader_ast.py:261(__init__)
-        1    0.000    0.000    0.000    0.000 selectors.py:207(_BaseSelectorImpl)
-        1    0.000    0.000    0.000    0.000 subprocess.py:141(TimeoutExpired)
-       16    0.000    0.000    0.000    0.000 {built-in method math.floor}
-        2    0.000    0.000    0.000    0.000 argparse.py:2207(_parse_optional)
-        1    0.000    0.000    0.000    0.000 {built-in method sys.exc_info}
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:310(__init__)
-        2    0.000    0.000    0.000    0.000 {method 'unregister' of 'select.poll' objects}
-        1    0.000    0.000    0.000    0.000 _weakrefset.py:86(add)
-        2    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
-        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:795(is_package)
-        1    0.000    0.000    0.000    0.000 threading.py:545(__init__)
-        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1053(_handle_fromlist)
-        1    0.000    0.000    0.000    0.000 random.py:813(SystemRandom)
-        9    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
-        1    0.000    0.000    0.000    0.000 enum.py:937(_missing_)
-        1    0.000    0.000    0.000    0.000 tempfile.py:571(_TemporaryFileCloser)
-        1    0.000    0.000    0.000    0.000 threading.py:1301(_make_invoke_excepthook)
-        1    0.000    0.000    0.000    0.000 argparse.py:2499(_get_value)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1178(poll)
-        1    0.000    0.000    0.000    0.000 selectors.py:443(EpollSelector)
-        1    0.000    0.000    0.000    0.000 {built-in method _thread.get_native_id}
-        6    0.000    0.000    0.000    0.000 signal.py:48(_wraps)
-        1    0.000    0.000    0.000    0.000 {method 'rfind' of 'bytes' objects}
-        1    0.000    0.000    0.000    0.000 tempfile.py:271(_RandomNameSequence)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:723(_looks_like_interface_block)
-        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1163(__init__)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:362(_flatten_members)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1065(__del__)
-        2    0.000    0.000    0.000    0.000 contextlib.py:448(_exit_wrapper)
-        1    0.000    0.000    0.000    0.000 threading.py:983(_set_native_id)
-        1    0.000    0.000    0.000    0.000 tempfile.py:660(close)
-        1    0.000    0.000    0.000    0.000 {built-in method posix.confstr}
-        1    0.000    0.000    0.000    0.000 os.py:805(fsencode)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:7(TypeName)
-        1    0.000    0.000    0.000    0.000 selectors.py:203(__exit__)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:948(<listcomp>)
-        9    0.000    0.000    0.000    0.000 {method 'pop' of 'set' objects}
-        2    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
-        1    0.000    0.000    0.000    0.000 mutator.py:103(init)
-        1    0.000    0.000    0.000    0.000 argparse.py:1837(<listcomp>)
-        1    0.000    0.000    0.000    0.000 selectors.py:64(__init__)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:1060(<listcomp>)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:275(__repr__)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:257(TypeInfo)
-        1    0.000    0.000    0.000    0.000 {method 'rstrip' of 'bytes' objects}
-        1    0.000    0.000    0.000    0.000 enum.py:442(__iter__)
-        1    0.000    0.000    0.000    0.000 threading.py:264(__enter__)
-        1    0.000    0.000    0.000    0.000 selectors.py:434(PollSelector)
-        1    0.000    0.000    0.000    0.000 tempfile.py:614(_TemporaryFileWrapper)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:19(__init__)
-        4    0.000    0.000    0.000    0.000 sre_parse.py:163(__delitem__)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:341(lookup)
-        1    0.000    0.000    0.000    0.000 tempfile.py:579(__init__)
-        1    0.000    0.000    0.000    0.000 functools.py:479(lru_cache)
-        2    0.000    0.000    0.000    0.000 {built-in method math.log}
-        1    0.000    0.000    0.000    0.000 threading.py:90(RLock)
-        1    0.000    0.000    0.000    0.000 threading.py:410(Semaphore)
-        2    0.000    0.000    0.000    0.000 {method 'register' of 'select.poll' objects}
-        3    0.000    0.000    0.000    0.000 {method 'mro' of 'type' objects}
-        1    0.000    0.000    0.000    0.000 argparse.py:116(_AttributeHolder)
-        1    0.000    0.000    0.000    0.000 _compression.py:9(BaseStream)
-        1    0.000    0.000    0.000    0.000 argparse.py:788(Action)
-        1    0.000    0.000    0.000    0.000 argparse.py:882(BooleanOptionalAction)
-        1    0.000    0.000    0.000    0.000 __future__.py:81(_Feature)
-        1    0.000    0.000    0.000    0.000 threading.py:389(notify_all)
-        1    0.000    0.000    0.000    0.000 tempfile.py:604(__del__)
-        1    0.000    0.000    0.000    0.000 os.py:817(fsdecode)
-        4    0.000    0.000    0.000    0.000 abc.py:7(abstractmethod)
-        1    0.000    0.000    0.000    0.000 threading.py:1405(_DummyThread)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:111(abort)
-        2    0.000    0.000    0.000    0.000 subprocess.py:1879(_internal_poll)
-        2    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
-        6    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 argparse.py:1637(_ArgumentGroup)
-        4    0.000    0.000    0.000    0.000 shader_mutator.py:739(<listcomp>)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:223(FunctionParam)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:170(ForStmt)
-        1    0.000    0.000    0.000    0.000 argparse.py:1844(parse_args)
-        3    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
-        1    0.000    0.000    0.000    0.000 argparse.py:1252(FileType)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:154(IfStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:146(DeclStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:236(FunctionDef)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:243(GlobalDecl)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:230(FunctionDecl)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:48(BinaryExpr)
-        1    0.000    0.000    0.000    0.000 argparse.py:1836(_get_positional_actions)
-        1    0.000    0.000    0.000    0.000 shader_lexer.py:38(Token)
-        1    0.000    0.000    0.000    0.000 argparse.py:2201(<listcomp>)
-        1    0.000    0.000    0.000    0.000 threading.py:359(notify)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:42(UnaryExpr)
-        1    0.000    0.000    0.000    0.000 threading.py:1354(Timer)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:78(StructField)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:126(VarDecl)
-        1    0.000    0.000    0.000    0.000 argparse.py:923(_StoreAction)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:260(InterfaceBlock)
-        1    0.000    0.000    0.000    0.000 argparse.py:1671(_MutuallyExclusiveGroup)
-        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
-        1    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
-        1    0.000    0.000    0.000    0.000 shader_ast.py:253(Declaration)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:54(TernaryExpr)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:60(CallExpr)
-        1    0.000    0.000    0.000    0.000 argparse.py:1053(_AppendConstAction)
-        1    0.000    0.000    0.000    0.000 sre_parse.py:296(_class_escape)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:65(IndexExpr)
-        1    0.000    0.000    0.000    0.000 argparse.py:1103(_HelpAction)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:218(StructDef)
-        2    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
-        1    0.000    0.000    0.000    0.000 shader_ast.py:84(StructType)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:142(ExprStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:165(DoWhileStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:160(WhileStmt)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:438(array_len_from_typeinfo)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:70(MemberExpr)
-        1    0.000    0.000    0.000    0.000 argparse.py:2197(<listcomp>)
-        1    0.000    0.000    0.000    0.000 argparse.py:1122(_VersionAction)
+        2    0.000    0.000    0.000    0.000 shader_ast.py:194(__init__)
         1    0.000    0.000    0.000    0.000 argparse.py:954(__call__)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:177(ReturnStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:271(__init__)
-        1    0.000    0.000    0.000    0.000 <string>:2(__init__)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:213(StructDecl)
-        1    0.000    0.000    0.000    0.000 argparse.py:958(_StoreConstAction)
-        1    0.000    0.000    0.000    0.000 threading.py:493(BoundedSemaphore)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:150(BlockStmt)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:309(Env)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:248(LayoutQualifier)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:38(BoolLiteral)
-        1    0.000    0.000    0.000    0.000 subprocess.py:2070(_save_input)
-        1    0.000    0.000    0.000    0.000 argparse.py:1080(_CountAction)
-        1    0.000    0.000    0.000    0.000 argparse.py:1015(_AppendAction)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:26(Identifier)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:108(DeclaratorLayout)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:114(Declarator)
-        1    0.000    0.000    0.000    0.000 argparse.py:977(__call__)
-        1    0.000    0.000    0.000    0.000 argparse.py:1307(Namespace)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:274(ExtensionDirective)
-        1    0.000    0.000    0.000    0.000 {method '__enter__' of '_io._IOBase' objects}
-        1    0.000    0.000    0.000    0.000 shader_ast.py:30(IntLiteral)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:34(FloatLiteral)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:193(SwitchStmt)
-        1    0.000    0.000    0.000    0.000 dataclasses.py:564(<genexpr>)
-        1    0.000    0.000    0.000    0.000 argparse.py:981(_StoreTrueAction)
-        1    0.000    0.000    0.000    0.000 traceback.py:87(_Sentinel)
-        1    0.000    0.000    0.000    0.000 {built-in method _thread._set_sentinel}
-        3    0.000    0.000    0.000    0.000 enum.py:1049(<lambda>)
-        1    0.000    0.000    0.000    0.000 argparse.py:213(_Section)
-        1    0.000    0.000    0.000    0.000 {method 'groups' of 're.Match' objects}
-        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
-        1    0.000    0.000    0.000    0.000 threading.py:279(_is_owned)
-        1    0.000    0.000    0.000    0.000 {method 'difference_update' of 'set' objects}
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:29(dlog)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:284(TranslationUnit)
-        1    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 argparse.py:1314(__init__)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:211(TopLevel)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:270(VersionDirective)
-        1    0.000    0.000    0.000    0.000 argparse.py:1150(_ChoicesPseudoAction)
-        1    0.000    0.000    0.000    0.000 threading.py:267(__exit__)
-        2    0.000    0.000    0.000    0.000 {built-in method sys.audit}
-        1    0.000    0.000    0.000    0.000 {built-in method select.poll}
-        1    0.000    0.000    0.000    0.000 argparse.py:724(MetavarTypeHelpFormatter)
-        2    0.000    0.000    0.000    0.000 {method 'pop' of 'collections.deque' objects}
-        1    0.000    0.000    0.000    0.000 threading.py:979(_set_ident)
+        1    0.000    0.000    0.000    0.000 _weakrefset.py:37(__init__)
+        9    0.000    0.000    0.000    0.000 __init__.py:402(<genexpr>)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:333(Scope)
+        1    0.000    0.000    0.000    0.000 threading.py:534(Event)
+       10    0.000    0.000    0.000    0.000 sre_compile.py:477(_get_iscased)
+        1    0.000    0.000    0.000    0.000 traceback.py:335(StackSummary)
+        1    0.000    0.000    0.000    0.000 _compression.py:33(DecompressReader)
+        1    0.000    0.000    0.000    0.000 random.py:219(__init_subclass__)
+        2    0.000    0.000    0.000    0.000 shader_ast.py:206(__init__)
+        9    0.000    0.000    0.000    0.000 argparse.py:632(<listcomp>)
+        1    0.000    0.000    0.000    0.000 traceback.py:457(TracebackException)
+        1    0.000    0.000    0.000    0.000 argparse.py:2169(_match_argument)
+        1    0.000    0.000    0.000    0.000 threading.py:800(_maintain_shutdown_locks)
+        1    0.000    0.000    0.000    0.000 posixpath.py:140(basename)
+        4    0.000    0.000    0.000    0.000 shader_unparser.py:276(<genexpr>)
+        1    0.000    0.000    0.000    0.000 functools.py:518(decorating_function)
+        2    0.000    0.000    0.000    0.000 os.py:1080(__subclasshook__)
+        9    0.000    0.000    0.000    0.000 {built-in method sys.intern}
+        3    0.000    0.000    0.000    0.000 {method 'copy' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 threading.py:568(set)
+        3    0.000    0.000    0.000    0.000 os.py:759(decode)
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        5    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        2    0.000    0.000    0.000    0.000 shader_unparser.py:361(<genexpr>)
+        2    0.000    0.000    0.000    0.000 re.py:187(match)
+        1    0.000    0.000    0.000    0.000 subprocess.py:104(CalledProcessError)
+        1    0.000    0.000    0.000    0.000 threading.py:224(Condition)
+        1    0.000    0.000    0.000    0.000 sre_compile.py:456(_generate_overlap_table)
+        3    0.000    0.000    0.000    0.000 os.py:772(getenv)
+        1    0.000    0.000    0.000    0.000 subprocess.py:2082(send_signal)
+        4    0.000    0.000    0.000    0.000 shader_mutator.py:270(elem)
+        1    0.000    0.000    0.000    0.000 selectors.py:291(SelectSelector)
+        3    0.000    0.000    0.000    0.000 enum.py:451(__members__)
+        2    0.000    0.000    0.000    0.000 {built-in method posix.register_at_fork}
+        1    0.000    0.000    0.000    0.000 argparse.py:1536(_get_positional_kwargs)
+        3    0.000    0.000    0.000    0.000 gettext.py:756(gettext)
+        1    0.000    0.000    0.000    0.000 argparse.py:1105(__init__)
+        1    0.000    0.000    0.000    0.000 selectors.py:207(_BaseSelectorImpl)
+        1    0.000    0.000    0.000    0.000 argparse.py:998(_StoreFalseAction)
+        1    0.000    0.000    0.000    0.000 threading.py:1301(_make_invoke_excepthook)
+        2    0.000    0.000    0.000    0.000 abc.py:121(__subclasscheck__)
+        1    0.000    0.000    0.000    0.000 argparse.py:1148(_SubParsersAction)
+        2    0.000    0.000    0.000    0.000 argparse.py:2207(_parse_optional)
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.vars}
+        1    0.000    0.000    0.000    0.000 subprocess.py:141(TimeoutExpired)
+        9    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        4    0.000    0.000    0.000    0.000 {method 'translate' of 'bytearray' objects}
+        1    0.000    0.000    0.000    0.000 selectors.py:443(EpollSelector)
+        1    0.000    0.000    0.000    0.000 threading.py:545(__init__)
+        1    0.000    0.000    0.000    0.000 tempfile.py:271(_RandomNameSequence)
+        6    0.000    0.000    0.000    0.000 signal.py:48(_wraps)
+        1    0.000    0.000    0.000    0.000 tempfile.py:571(_TemporaryFileCloser)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.get_native_id}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1053(_handle_fromlist)
+        1    0.000    0.000    0.000    0.000 _weakrefset.py:86(add)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:7(TypeName)
+        1    0.000    0.000    0.000    0.000 enum.py:937(_missing_)
+        1    0.000    0.000    0.000    0.000 random.py:813(SystemRandom)
+        9    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:795(is_package)
+        1    0.000    0.000    0.000    0.000 {built-in method posix.confstr}
+        1    0.000    0.000    0.000    0.000 threading.py:983(_set_native_id)
+        1    0.000    0.000    0.000    0.000 threading.py:264(__enter__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1163(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:2499(_get_value)
+        1    0.000    0.000    0.000    0.000 __future__.py:81(_Feature)
+        3    0.000    0.000    0.000    0.000 {method 'mro' of 'type' objects}
+        1    0.000    0.000    0.000    0.000 mutator.py:103(init)
+        1    0.000    0.000    0.000    0.000 selectors.py:434(PollSelector)
+        4    0.000    0.000    0.000    0.000 abc.py:7(abstractmethod)
+        1    0.000    0.000    0.000    0.000 _compression.py:9(BaseStream)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:163(__delitem__)
+        1    0.000    0.000    0.000    0.000 functools.py:479(lru_cache)
+        9    0.000    0.000    0.000    0.000 {method 'pop' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 tempfile.py:614(_TemporaryFileWrapper)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:257(TypeInfo)
+        1    0.000    0.000    0.000    0.000 argparse.py:1837(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 enum.py:442(__iter__)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:170(ForStmt)
+        6    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 threading.py:410(Semaphore)
+        1    0.000    0.000    0.000    0.000 argparse.py:1637(_ArgumentGroup)
+        1    0.000    0.000    0.000    0.000 argparse.py:116(_AttributeHolder)
+        1    0.000    0.000    0.000    0.000 argparse.py:882(BooleanOptionalAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:788(Action)
+        2    0.000    0.000    0.000    0.000 {built-in method math.log}
+        1    0.000    0.000    0.000    0.000 threading.py:389(notify_all)
+        1    0.000    0.000    0.000    0.000 threading.py:90(RLock)
+        1    0.000    0.000    0.000    0.000 threading.py:1354(Timer)
+        1    0.000    0.000    0.000    0.000 shader_lexer.py:38(Token)
+        1    0.000    0.000    0.000    0.000 threading.py:1405(_DummyThread)
+        1    0.000    0.000    0.000    0.000 argparse.py:1252(FileType)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:142(ExprStmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:236(FunctionDef)
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 shader_ast.py:65(IndexExpr)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:154(IfStmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:78(StructField)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:160(WhileStmt)
+        1    0.000    0.000    0.000    0.000 argparse.py:1103(_HelpAction)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:230(FunctionDecl)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:34(FloatLiteral)
+        1    0.000    0.000    0.000    0.000 argparse.py:1844(parse_args)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:223(FunctionParam)
+        1    0.000    0.000    0.000    0.000 threading.py:359(notify)
+        1    0.000    0.000    0.000    0.000 traceback.py:87(_Sentinel)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:126(VarDecl)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:42(UnaryExpr)
+        1    0.000    0.000    0.000    0.000 argparse.py:1836(_get_positional_actions)
+        1    0.000    0.000    0.000    0.000 argparse.py:2197(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        1    0.000    0.000    0.000    0.000 shader_ast.py:54(TernaryExpr)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:70(MemberExpr)
+        1    0.000    0.000    0.000    0.000 argparse.py:1671(_MutuallyExclusiveGroup)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:48(BinaryExpr)
+        1    0.000    0.000    0.000    0.000 argparse.py:1307(Namespace)
+        1    0.000    0.000    0.000    0.000 argparse.py:1122(_VersionAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:1053(_AppendConstAction)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:84(StructType)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:60(CallExpr)
+        1    0.000    0.000    0.000    0.000 argparse.py:923(_StoreAction)
+        1    0.000    0.000    0.000    0.000 sre_parse.py:296(_class_escape)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:253(Declaration)
+        1    0.000    0.000    0.000    0.000 argparse.py:2201(<listcomp>)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:165(DoWhileStmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:218(StructDef)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:30(IntLiteral)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:248(LayoutQualifier)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:150(BlockStmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:26(Identifier)
         1    0.000    0.000    0.000    0.000 shader_ast.py:199(CaseStmt)
-        1    0.000    0.000    0.000    0.000 shader_parser.py:11(ParseError)
-        1    0.000    0.000    0.000    0.000 argparse.py:2068(<listcomp>)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:187(DiscardStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:181(BreakStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:137(Stmt)
-        1    0.000    0.000    0.000    0.000 argparse.py:759(ArgumentError)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:205(DefaultStmt)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:184(ContinueStmt)
-        1    0.000    0.000    0.000    0.000 threading.py:1384(_MainThread)
+        1    0.000    0.000    0.000    0.000 threading.py:493(BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 argparse.py:958(_StoreConstAction)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:146(DeclStmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:108(DeclaratorLayout)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:243(GlobalDecl)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:177(ReturnStmt)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:309(Env)
+        1    0.000    0.000    0.000    0.000 argparse.py:1015(_AppendAction)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:193(SwitchStmt)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread._set_sentinel}
+        1    0.000    0.000    0.000    0.000 shader_ast.py:38(BoolLiteral)
+        1    0.000    0.000    0.000    0.000 {method 'difference_update' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:114(Declarator)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:213(StructDecl)
+        1    0.000    0.000    0.000    0.000 argparse.py:977(__call__)
+        1    0.000    0.000    0.000    0.000 argparse.py:981(_StoreTrueAction)
+        1    0.000    0.000    0.000    0.000 dataclasses.py:564(<genexpr>)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:260(InterfaceBlock)
+        1    0.000    0.000    0.000    0.000 argparse.py:1080(_CountAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:213(_Section)
+        1    0.000    0.000    0.000    0.000 argparse.py:1150(_ChoicesPseudoAction)
         1    0.000    0.000    0.000    0.000 shader_ast.py:279(PragmaDirective)
-        1    0.000    0.000    0.000    0.000 shutil.py:59(Error)
-        1    0.000    0.000    0.000    0.000 argparse.py:696(RawTextHelpFormatter)
-        1    0.000    0.000    0.000    0.000 shader_ast.py:24(Expr)
-        1    0.000    0.000    0.000    0.000 shader_mutator.py:543(ExprKind)
-        1    0.000    0.000    0.000    0.000 argparse.py:707(ArgumentDefaultsHelpFormatter)
-        1    0.000    0.000    0.000    0.000 subprocess.py:1034(__enter__)
-        1    0.000    0.000    0.000    0.000 argparse.py:1241(_ExtendAction)
-        1    0.000    0.000    0.000    0.000 subprocess.py:101(SubprocessError)
-        1    0.000    0.000    0.000    0.000 {built-in method posix.WIFSTOPPED}
-        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
-        1    0.000    0.000    0.000    0.000 shader_ast.py:139(EmptyStmt)
-        1    0.000    0.000    0.000    0.000 selectors.py:200(__enter__)
-        2    0.000    0.000    0.000    0.000 shader_mutator.py:398(<listcomp>)
-        1    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
-        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
-        1    0.000    0.000    0.000    0.000 contextlib.py:530(__enter__)
-        1    0.000    0.000    0.000    0.000 threading.py:1183(daemon)
-        1    0.000    0.000    0.000    0.000 {built-in method sys.setrecursionlimit}
-        1    0.000    0.000    0.000    0.000 <string>:1(__create_fn__)
-        1    0.000    0.000    0.000    0.000 argparse.py:779(ArgumentTypeError)
-        1    0.000    0.000    0.000    0.000 shutil.py:62(SameFileError)
-        1    0.000    0.000    0.000    0.000 shutil.py:65(SpecialFileError)
-        1    0.000    0.000    0.000    0.000 threading.py:776(BrokenBarrierError)
-        1    0.000    0.000    0.000    0.000 argparse.py:2525(_check_value)
-        1    0.000    0.000    0.000    0.000 shutil.py:69(ExecError)
-        1    0.000    0.000    0.000    0.000 argparse.py:2492(<listcomp>)
-        1    0.000    0.000    0.000    0.000 shutil.py:72(ReadError)
+        1    0.000    0.000    0.000    0.000 argparse.py:759(ArgumentError)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:284(TranslationUnit)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:205(DefaultStmt)
+        3    0.000    0.000    0.000    0.000 enum.py:1049(<lambda>)
+        1    0.000    0.000    0.000    0.000 threading.py:267(__exit__)
         1    0.000    0.000    0.000    0.000 threading.py:810(<listcomp>)
-        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
-        1    0.000    0.000    0.000    0.000 shutil.py:75(RegistryError)
-        1    0.000    0.000    0.000    0.000 shutil.py:79(_GiveupOnFastCopy)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:270(VersionDirective)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:274(ExtensionDirective)
+        1    0.000    0.000    0.000    0.000 argparse.py:724(MetavarTypeHelpFormatter)
+        1    0.000    0.000    0.000    0.000 argparse.py:2068(<listcomp>)
+        1    0.000    0.000    0.000    0.000 threading.py:1384(_MainThread)
+        1    0.000    0.000    0.000    0.000 argparse.py:685(RawDescriptionHelpFormatter)
+        1    0.000    0.000    0.000    0.000 threading.py:279(_is_owned)
+        1    0.000    0.000    0.000    0.000 shader_parser.py:11(ParseError)
+        1    0.000    0.000    0.000    0.000 shader_mutator.py:543(ExprKind)
+        1    0.000    0.000    0.000    0.000 threading.py:979(_set_ident)
+        1    0.000    0.000    0.000    0.000 argparse.py:696(RawTextHelpFormatter)
+        1    0.000    0.000    0.000    0.000 {method 'groups' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 shader_ast.py:24(Expr)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:184(ContinueStmt)
+        1    0.000    0.000    0.000    0.000 argparse.py:707(ArgumentDefaultsHelpFormatter)
+        1    0.000    0.000    0.000    0.000 argparse.py:2525(_check_value)
+        1    0.000    0.000    0.000    0.000 subprocess.py:101(SubprocessError)
+        1    0.000    0.000    0.000    0.000 argparse.py:1314(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:1241(_ExtendAction)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:137(Stmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:181(BreakStmt)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:187(DiscardStmt)
+        1    0.000    0.000    0.000    0.000 threading.py:1183(daemon)
+        1    0.000    0.000    0.000    0.000 shutil.py:59(Error)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:139(EmptyStmt)
+        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
         1    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:779(ArgumentTypeError)
+        1    0.000    0.000    0.000    0.000 argparse.py:2492(<listcomp>)
+        1    0.000    0.000    0.000    0.000 shutil.py:62(SameFileError)
+        1    0.000    0.000    0.000    0.000 threading.py:776(BrokenBarrierError)
+        1    0.000    0.000    0.000    0.000 shutil.py:65(SpecialFileError)
+        1    0.000    0.000    0.000    0.000 shutil.py:69(ExecError)
+        1    0.000    0.000    0.000    0.000 shader_ast.py:211(TopLevel)
+        1    0.000    0.000    0.000    0.000 shutil.py:72(ReadError)
+        1    0.000    0.000    0.000    0.000 shutil.py:79(_GiveupOnFastCopy)
+        1    0.000    0.000    0.000    0.000 <string>:1(__create_fn__)
+        1    0.000    0.000    0.000    0.000 shutil.py:75(RegistryError)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 {built-in method sys.setrecursionlimit}
         1    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
         1    0.000    0.000    0.000    0.000 argparse.py:1753(identity)
-        1    0.000    0.000    0.000    0.000 {built-in method posix.waitstatus_to_exitcode}
 
 
