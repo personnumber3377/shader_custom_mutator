@@ -85,7 +85,7 @@ def unparse_type(t: TypeName) -> str:
     # unparse_array_suffix(getattr(p, "array_dims", None)
     if getattr(t, "array_dims", None):
         arr += unparse_array_suffix(t.array_dims) # Unparse that shit...
-    print("ar: "+str(arr))
+    # print("ar: "+str(arr))
     return " ".join(parts) + arr
 
 
@@ -391,7 +391,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
             continue
 
         if isinstance(item, FunctionDef):
-            print("function definition item: "+str(item))
+            # print("function definition item: "+str(item))
             params = []
             for p in item.params:
                 ps = f"{unparse_type(p.type_name)} {p.name}"
@@ -406,7 +406,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
             continue
 
         if isinstance(item, FunctionDecl):
-            print("function declaration item: "+str(item))
+            # print("function declaration item: "+str(item))
             params = []
             for p in item.params:
                 ps = f"{unparse_type(p.type_name)} {p.name}"
@@ -427,7 +427,7 @@ def unparse_tu(tu: TranslationUnit) -> str:
 
         if isinstance(item, LayoutQualifier):
             the_string = "layout("
-            print("item.declarators: "+str(item.declarators))
+            # print("item.declarators: "+str(item.declarators))
             for o in item.declarators:
                 s = str(o.name)
                 if o.value != None:

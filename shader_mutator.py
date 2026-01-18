@@ -7,6 +7,9 @@ import copy
 import random
 
 from shader_ast import *
+# Import the constants from const.py ...
+from const import * 
+
 
 # For the builtin functions etc...
 from builtin_data import BUILTIN_FUNCTIONS
@@ -38,63 +41,7 @@ def dexit(msg: str = None): # Exit with error code 1 if in debugging mode...
 # Utilities
 # ----------------------------
 
-SPECIAL_TYPES = {
-    "sampler2D",
-    "samplerCube",
-    "samplerExternalOES",
-    "gsampler2D",
-    "image2D",
-    "atomic_uint",
-    "IMAGE_PARAMS",
-}
-
-GENERIC_EXPANSION = {
-    "genType": ["float", "vec2", "vec3", "vec4"],
-    "genIType": ["int", "ivec2", "ivec3", "ivec4"],
-    "genUType": ["uint", "uvec2", "uvec3", "uvec4"],
-    "genBType": ["bool", "bvec2", "bvec3", "bvec4"],
-}
-
-BUILTIN_NUMERIC_TYPES = {
-    "bool", "int", "uint", "float", "double",
-    "vec2", "vec3", "vec4",
-    "ivec2", "ivec3", "ivec4",
-    # "uvec2", "uvec3", "uvec4",
-    "bvec2", "bvec3", "bvec4",
-    "mat2", "mat3", "mat4",
-}
-
-STORAGE_QUALIFIERS = [
-    "const", "uniform", "in", "out", "inout",
-    "attribute", "varying", "buffer", None
-]
-
-PRECISION_QUALIFIERS = [
-    "lowp", "mediump", "highp", None
-]
-
-PARAM_QUALIFIERS = ["in", "out", "inout"]
-
-MAX_EXPR_DEPTH = 3
-
-MATRIX_TYPES = ["mat2", "mat3", "mat4"]
-
-VEC_TYPE_FLATTENED = {
-    "vec2","vec3","vec4",
-    "ivec2","ivec3","ivec4",
-    "uvec2","uvec3","uvec4",
-    "bvec2","bvec3","bvec4",
-}
-
-VECTOR_TYPES = {
-    "bool":  ["bvec2", "bvec3", "bvec4"],
-    "int":   ["ivec2", "ivec3", "ivec4"],
-    # "uint":  ["uvec2", "uvec3", "uvec4"],
-    "float": ["vec2", "vec3", "vec4"],
-}
-
-SCALAR_TYPES = ["bool", "int", "uint", "float"]
-
+# Can not be put into const.py since needs the IntLiteral etc stuff.
 NUMERIC_LITERALS = {
     "int":   lambda r: IntLiteral(r.randrange(0, 10)), # "int":   lambda r: IntLiteral(r.randrange(-10, 10)),
     "uint":  lambda r: IntLiteral(r.randrange(0, 10)),
@@ -102,68 +49,7 @@ NUMERIC_LITERALS = {
     "bool":  lambda r: BoolLiteral(r.choice([True, False])),
 }
 
-BINOPS = [
-    # arithmetic
-    ("+",  "float", "float", "float"),
-    ("-",  "float", "float", "float"),
-    ("*",  "float", "float", "float"),
-    ("/",  "float", "float", "float"),
 
-    ("+",  "vec3",  "vec3",  "vec3"),
-    ("-",  "vec3",  "vec3",  "vec3"),
-
-    # comparisons
-    ("<",  "float", "float", "bool"),
-    (">",  "float", "float", "bool"),
-
-    # logical
-    ("&&", "bool",  "bool",  "bool"),
-    ("||", "bool",  "bool",  "bool"),
-    ("^^", "bool",  "bool",  "bool"), # This wasn't previously here, but was added later...
-]
-
-UNOPS = [
-    ("!",  "bool",  "bool"),
-    ("-",  "float", "float"),
-    ("-",  "vec3",  "vec3"),
-]
-
-# These are types that can not be "generated", so ban these.
-OPAQUE_TYPES = {
-    "sampler2D", "sampler3D", "samplerCube",
-    "sampler2DArray",
-    "image2D", "image3D",
-    "atomic_uint",
-    "void",
-}
-
-# These are purely for the image operations...
-
-IMAGE_TYPE_TO_COORD = {
-    "image2D": "ivec2",
-    "iimage2D": "ivec2",
-    "uimage2D": "ivec2",
-
-    "image3D": "ivec3",
-    "iimage3D": "ivec3",
-    "uimage3D": "ivec3",
-
-    "imageCube": "ivec3",
-    "iimageCube": "ivec3",
-    "uimageCube": "ivec3",
-
-    "image2DArray": "ivec3",
-    "iimage2DArray": "ivec3",
-    "uimage2DArray": "ivec3",
-
-    "imageCubeArray": "ivec3",
-    "iimageCubeArray": "ivec3",
-    "uimageCubeArray": "ivec3",
-
-    "imageBuffer": "int",
-    "iimageBuffer": "int",
-    "uimageBuffer": "int",
-}
 
 def deepclone(x):
     # dataclasses + simple classes: copy.deepcopy is fine
@@ -1223,6 +1109,85 @@ def mutate_expr(e: Expr, rng: random.Random, scope: Scope, env: Env) -> Expr:
 
 
 # ----------------------------
+# Mutations: layouts
+# ----------------------------
+
+def mutate_int_value(v: int, rng: random.Random) -> int:
+    choices = [
+        0,
+        1,
+        -1,
+        v + 1,
+        v - 1,
+        v * 2,
+        rng.randint(-10, 10),
+        rng.randint(0, 1024),
+        rng.randint(0, 1 << 16),
+    ]
+    return rng.choice(choices)
+
+def mutate_declarator(d, rng: random.Random):
+    d = deepcopy(d)
+
+    # Rename qualifier
+    if rng.random() < 0.25:
+        if d.value is None:
+            d.name = rng.choice(LAYOUT_NO_VALUE + LAYOUT_WITH_VALUE)
+        else:
+            d.name = rng.choice(LAYOUT_WITH_VALUE)
+
+    # Mutate value
+    if d.value is not None:
+        # Numeric?
+        try:
+            iv = int(d.value)
+            if rng.random() < 0.7:
+                d.value = mutate_int_value(iv, rng)
+        except Exception:
+            # Turn garbage into integer
+            if rng.random() < 0.5:
+                d.value = rng.randint(-5, 100)
+    else:
+        # Maybe add a value illegally
+        if rng.random() < 0.15:
+            d.value = rng.randint(-2, 16)
+
+    return d
+
+def mutate_layout_qualifier(layout: LayoutQualifier, rng: random.Random) -> LayoutQualifier:
+    new_layout = LayoutQualifier(declarators=[])
+
+    # Mutate existing declarators
+    for d in layout.declarators:
+        if rng.random() < 0.8:
+            new_layout.declarators.append(mutate_declarator(d, rng))
+        else:
+            new_layout.declarators.append(deepcopy(d))
+
+    # Randomly duplicate an entry (ANGLE checks this!)
+    if new_layout.declarators and rng.random() < 0.2:
+        new_layout.declarators.append(deepcopy(rng.choice(new_layout.declarators)))
+
+    # Randomly add a new declarator
+    if rng.random() < 0.35:
+        if rng.random() < 0.6:
+            name = rng.choice(LAYOUT_NO_VALUE)
+            new_layout.declarators.append(
+                DeclaratorLayout(name=name, value=None)
+            )
+        else:
+            name = rng.choice(LAYOUT_WITH_VALUE)
+            new_layout.declarators.append(
+                DeclaratorLayout(name=name, value=rng.randint(-4, 64))
+            )
+
+    # Randomly remove one
+    if len(new_layout.declarators) > 1 and rng.random() < 0.15:
+        del new_layout.declarators[rng.randrange(len(new_layout.declarators))]
+
+    return new_layout
+
+# ----------------------------
 # Mutations: declarations
 # ----------------------------
 
@@ -1661,9 +1626,6 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
                 p.qualifier = rng.choice(PARAM_QUALIFIERS)
         '''
 
-
-
-
         it = deepclone(item)
 
         # build function scope with params
@@ -1684,6 +1646,18 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
                 # stop = True
                 p.type_name = mutate_typename(p.type_name, rng)
 
+        return it
+
+    # TODO: Make this layout mutations better maybe???
+
+    if isinstance(item, LayoutQualifier):
+
+        global stop
+        stop = True
+        it = mutate_layout_qualifier(item)
+        # break here...
+        # global stop
+        stop = True
         return it
 
     # Declaration (your old mixed top-level type)
@@ -1708,7 +1682,7 @@ from special_mutations import *
 # Public entrypoint
 # ----------------------------
 
-DEBUG_STOP = False
+DEBUG_STOP = True
 
 def debug_source(tu, tu2): # Debug the stuff here...
     # exit(0)

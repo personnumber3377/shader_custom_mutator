@@ -409,6 +409,11 @@ def roundtrip_test(path: str, ignore_invalid: int = 0):
             fail += 1
             print("❌ Roundtrip ANGLE failure:")
             print(msg2)
+            print("--- original ---")
+            print(src[:500])
+            print("--- got ---")
+            print(out[:500])
+            assert False
 
     print("\n=== ROUNDTRIP SUMMARY ===")
     print("Total tested: ", tot)

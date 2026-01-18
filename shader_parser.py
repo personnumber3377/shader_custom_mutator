@@ -624,69 +624,6 @@ class Parser:
     # Top-level parsing
     # -----------------------
 
-    '''
-    def parse_struct_toplevel_decl(self):
-        # token is KW struct
-        struct_type = self.parse_struct_specifier()
-
-        declarators = []
-        # After `}` may come `;` or declarators
-        # if self.peek().kind == "ID":
-        #     declarators = self.parse_declarator_list(struct_type)
-
-        if not self.peek().kind == ";":
-            declarators = self.parse_declarator_list(struct_type)
-
-        self.expect(";")
-        return StructDecl(struct_type, declarators)
-    '''
-
-    '''
-    def parse_struct_toplevel_decl(self):
-        # ---- NEW: parse qualifiers first ----
-        qualifiers = []
-        while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
-            qualifiers.append(self.advance().value)
-
-        # Now we MUST see 'struct'
-        struct_type = self.parse_struct_specifier()
-
-        # Attach qualifiers to the struct type
-        if qualifiers:
-            struct_type.qualifiers = qualifiers
-
-        declarators = []
-
-        # After `}` may come `;` or declarators
-        if self.peek().kind != ";":
-            declarators = self.parse_declarator_list(struct_type)
-
-        self.expect(";")
-        return StructDecl(struct_type, declarators)
-    '''
-
-    '''
-    def parse_struct_toplevel_decl(self):
-        qualifiers = []
-        while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
-            print("self.peek().kind: "+str(self.peek().kind))
-            print("self.peek().kind: "+str(self.peek().value))
-            qualifiers.append(self.advance().value)
-
-        struct_type = self.parse_struct_specifier()
-
-        declarators = []
-        if self.peek().kind != ";":
-            declarators = self.parse_declarator_list(struct_type)
-
-            # 👇 APPLY STORAGE TO DECLARATORS, NOT STRUCT
-            for d in declarators:
-                d.storage = qualifiers[0] if qualifiers else None
-
-        self.expect(";")
-        return StructDecl(struct_type, declarators)
-    '''
-
     def parse_struct_toplevel_decl(self):
         qualifiers = []
         while self.peek().kind == "KW" and self.peek().value in QUALIFIERS:
@@ -887,7 +824,7 @@ class Parser:
                 self.advance()
                 break
         # Show where we breaked...
-        print("self.peek(): "+str(self.peek().kind)+", "+str(self.peek().value))
+        # print("self.peek(): "+str(self.peek().kind)+", "+str(self.peek().value))
         # Now we assume that all the qualifiers are in the list "decls" . Create the actual layout object...
         layout_object = LayoutQualifier(decls)
         return layout_object
@@ -896,8 +833,8 @@ class Parser:
         items: List[TopLevel] = []
         while self.peek().kind != "EOF":
             t = self.peek()
-            print("t.value: "+str(t.value))
-            print("t.kind: "+str(t.kind))
+            # print("t.value: "+str(t.value))
+            # print("t.kind: "+str(t.kind))
             # if t.kind == "KW" and t.value == "struct":
 
             # Try to parse layouts first...
@@ -1003,7 +940,7 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
 
     tokens = lex("\n".join(body_lines))
     p = Parser(tokens)
-    print("tokens: "+str(tokens))
+    # print("tokens: "+str(tokens))
     tu = p.parse_translation_unit()
 
     # tu.directives = directives
