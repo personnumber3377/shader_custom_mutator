@@ -399,11 +399,17 @@ def profile_mutator(path: str, iters: int, seed: int):
     def run():
         for _ in range(iters):
             buf = random.choice(buffers)
+            mutator.custom_mutator(buf, None, 10000) # Run the thing...
+            '''
             try:
-                mutator.fuzz(buf, None, 10000)
+                # mutator.fuzz(buf, None, 10000)
+                # Actually use the custom_mutator here...
+                # custom_mutator(buf: bytearray, add_buf, max_size: int, callback=None)
+                mutator.custom_mutator(buf, None, 10000) # Run the thing...
             except Exception:
                 pass
-
+            '''
+            
     # -----------------------------
     # Run profiler
     # -----------------------------
