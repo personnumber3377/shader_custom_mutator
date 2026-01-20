@@ -103,7 +103,8 @@ def fuzz(buf: bytearray, add_buf, max_size: int) -> bytearray:
         mutated_body = mutate_shader_structural(bytes(buf), max_size, rng)
         return mutated_body
 
-    except Exception:
+    except Exception as e:
+        print(e)
         if not ENABLE_FALLBACK:
             save_crashing(bytes(buf))
             raise
@@ -140,7 +141,7 @@ def custom_crossover(data1: bytes, data2: bytes, max_size: int, seed: int):
             tu2 = shader_parser.parse_to_tree(s2)
         except Exception:
             cut = random.randrange(min(len(data1), len(data2)))
-            return (data1[:cut] + data2[cut:])[:max_size]
+            return bytearray((data1[:cut] + data2[cut:])[:max_size])
 
         def split_items(tu):
             globals_, funcs, main = [], [], None
@@ -157,7 +158,7 @@ def custom_crossover(data1: bytes, data2: bytes, max_size: int, seed: int):
         g2, f2, m2 = split_items(tu2)
 
         if not m1 or not m2:
-            return data1[:max_size]
+            return bytearray(data1[:max_size])
 
         stmts = list(m1.body.stmts)
         splice = random.sample(
@@ -183,11 +184,11 @@ def custom_crossover(data1: bytes, data2: bytes, max_size: int, seed: int):
 
         out_src = shader_unparser.unparse_tu(tu1)
         out = out_src.encode("utf-8", errors="ignore")
-
+        out = bytearray(out)
         return out[:max_size]
 
     except Exception:
-        return data1[:max_size]
+        return bytearray(data1[:max_size])
 
 # -----------------------------
 # CLI testing helper
