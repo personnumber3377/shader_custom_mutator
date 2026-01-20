@@ -1,0 +1,9 @@
+
+#!/bin/sh
+
+export DISPLAY=":99"
+export ANGLE_DEFAULT_PLATFORM=gl
+
+ASAN_OPTIONS=external_symbolizer_path=/usr/bin/llvm-symbolizer:alloc_dealloc_mismatch=0:allocator_may_return_null=1:halt_on_error=1:abort_on_error=1 SLOT_INDEX=1 FUZZ_ONLY_CUSTOM=1 LIBFUZZER_PYTHON_MODULE=mutator_full_compiler PYTHONPATH=. ./angle_shader_fuzzer -fork=1 -ignore_crashes=1 -dict=angle_translator_fuzzer.dict -max_len=10000 -only_ascii=0 -timeout=1 -cross_over=1 -rss_limit_mb=2048 -custom_only=1 full_compiler_stuff/
+
+
