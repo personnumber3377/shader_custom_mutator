@@ -1,0 +1,12 @@
+
+# Notes
+
+Ok, so instead of trying to simply fuzz the translator, I want to fuzz the entire pipeline thing...
+
+I want to transform the translater utility to simple glsl -> webgsl converter instead... therefore we can use this as the middle layer in our fuzzing where the custom mutator looks up the original file, then mutates that and then gives the same output back maybe??? idk...
+
+
+
+
+
+
