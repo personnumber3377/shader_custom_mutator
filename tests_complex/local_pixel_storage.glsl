@@ -1,4 +1,4 @@
-HEADER: frag 4 10
+HEADER: frag 3 6
 #version 310 es
 #extension GL_ANGLE_shader_pixel_local_storage : require
 
