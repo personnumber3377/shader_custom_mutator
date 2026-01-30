@@ -11,6 +11,7 @@ from shader_ast import *
 # Import the constants from const.py ...
 from const import * 
 
+from utils import * # For deepclone
 
 # For the builtin functions etc...
 from builtin_data import BUILTIN_FUNCTIONS
@@ -52,9 +53,7 @@ NUMERIC_LITERALS = {
 
 
 
-def deepclone(x):
-    # dataclasses + simple classes: copy.deepcopy is fine
-    return copy.deepcopy(x)
+
 
 def coin(rng: random.Random, p: float) -> bool:
     return rng.random() < p
@@ -1696,8 +1695,14 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     # Check for the special havoc mode.
 
     if coin(rng, 0.10): # 10 percent chance of special havoc mode...
-        mutated_items = special_havoc(new_items, rng, env)
+        mutated_items, stop2 = special_havoc(new_items, rng, env)
         tu2.items = mutated_items
+        global DEBUG_STOP
+        global stop
+        if stop2:
+            DEBUG_STOP = 1
+            
+            stop = stop2
         debug_source(tu, tu2) # Debug that stuff...
         return tu2 # Return the mutated structure...
 

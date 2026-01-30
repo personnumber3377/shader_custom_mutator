@@ -4,10 +4,13 @@ from __future__ import annotations
 
 from dataclasses import replace
 from typing import Dict, List, Optional, Tuple, Union
-import copy
+# import copy
+# from copy import deepclone
 import random
 
 from shader_ast import *
+
+from utils import *
 
 # For the builtin functions etc...
 from builtin_data import BUILTIN_FUNCTIONS
@@ -204,14 +207,56 @@ def _havoc_function_scalar_to_array(items, rng, env):
 
     return items
 
+def _havoc_force_framebuffer_fetch(items, rng, env):
+    items = deepclone(items)
+
+    # 1. Ensure fragment shader context
+    # (You already are fuzzing fragment shaders; no-op if so)
+
+    # 2. Inject extension pragma if missing
+    if not any(isinstance(i, ExtensionDirective) and
+               "framebuffer_fetch" in i.name
+               for i in items):
+        items.insert(0, ExtensionDirective(
+            "GL_ARM_shader_framebuffer_fetch", "enable"
+        ))
+
+    # 3. Inject a reference into main()
+    for item in items:
+        if isinstance(item, FunctionDef) and item.name == "main":
+            choice = rng.choice([
+                "gl_LastFragColorARM",
+                "gl_LastFragDepthARM",
+                "gl_LastFragStencilARM",
+            ])
+            item.body.stmts.insert(
+                0,
+                ExprStmt(Identifier(choice))
+            )
+            break
+
+    return items
+
 def special_havoc(items, rng, env):
     # Check for the thing here...
     print("special_havoc")
-    strats = ["struct_qualifier_all", "function_scalar_to_array"]
+    strats = ["struct_qualifier_all", "function_scalar_to_array", "framebuffer_fetch_mutation"]
     strat = rng.choice(strats)
     if strat == "struct_qualifier_all": # Replace the qualifiers of here with the certain thing.
-        return _havoc_apply_struct_decl_qualifiers_all(items, rng, env)
+        return _havoc_apply_struct_decl_qualifiers_all(items, rng, env), False
     elif strat == "function_scalar_to_array":
-        return _havoc_function_scalar_to_array(items, rng, env)
+        return _havoc_function_scalar_to_array(items, rng, env), False
+    elif strat == "framebuffer_fetch_mutation":
+        print("framebuffer_fetch_mutation...")
+        try:
+            res = _havoc_force_framebuffer_fetch(items, rng, env), True
+        except Exception as e:
+            print(e)
+            exit(1)
+        return res # _havoc_force_framebuffer_fetch(items, rng, env), True
+
+    # Should not reach this part here...
+    assert False
 
     return items
+
