@@ -1,3 +1,4 @@
+ 
 #!/usr/bin/env python3
 import os
 import re
@@ -116,6 +117,7 @@ def main():
     banlist = load_set(BANLIST)
 
     while True:
+        time.sleep(10)
         for fn in sorted(os.listdir(".")):
             if not fn.startswith("crash-"):
                 continue
