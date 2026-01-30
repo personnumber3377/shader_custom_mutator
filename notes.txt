@@ -991,3 +991,38 @@ Got this source code back: #version 300 es
 - Make the custom mutator actually use the function array return type mutation shit...
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Add some stuff which implements the Pixel Local Storage stuff for example this:
+
+#version 310 es
+#extension GL_ANGLE_shader_pixel_local_storage : require
+
+layout(binding = 0, rgba8) uniform pixelLocalANGLE pls0;
+
+void main()
+{
+    vec4 v = pixelLocalLoadANGLE(pls0);
+    pixelLocalStoreANGLE(pls0, v);
+}
+
+
+
+
+
+
+
+- Make a "no assert" fuzzer which may catch the actually exploitable stuff maybe...
