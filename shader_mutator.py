@@ -1623,12 +1623,12 @@ def mutate_toplevel(item: TopLevel, rng: random.Random, env: Env) -> TopLevel:
 
     if isinstance(item, LayoutQualifier):
 
-        global stop
+        # global stop
         # stop = True
         it = mutate_layout_qualifier(item, rng)
         # break here...
         # global stop
-        stop = True
+        # stop = True
         return it
 
     # Declaration (your old mixed top-level type)
@@ -1697,6 +1697,7 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     if coin(rng, 0.10): # 10 percent chance of special havoc mode...
         mutated_items, stop2 = special_havoc(new_items, rng, env)
         tu2.items = mutated_items
+        '''
         global DEBUG_STOP
         global stop
         if stop2:
@@ -1704,6 +1705,9 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
             
             stop = stop2
         debug_source(tu, tu2) # Debug that stuff...
+        '''
+
+        
         return tu2 # Return the mutated structure...
 
 
