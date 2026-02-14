@@ -1026,3 +1026,470 @@ void main()
 
 
 - Make a "no assert" fuzzer which may catch the actually exploitable stuff maybe...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here are the more recent bad errors which are caused by the shit:
+
+
+
+MSk7IH0A
+oof@oof-h8-1440eo:~/dawn/out/fuzzing$ ./fuzz_angle_stuff.sh 2> fuzz_output.txt
+invalid literal for int() with base 10: 'c'
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: struct S{int f;};struct S2{S h;} o() { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: struct S{int f;};struct S2{S h;} o() { return S2(S(1)); } void main(){ S2 s2 = o(); }
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+special_havoc
+framebuffer_fetch_mutation...
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+framebuffer_fetch_mutation...
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: struct S{int f;};struct S2{S h;} o() { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+special_havoc
+framebuffer_fetch_mutation...
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+special_havoc
+name 'typename_to_typeinfo' is not defined
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+special_havoc
+name 'typename_to_typeinfo' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+list index out of range
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+special_havoc
+framebuffer_fetch_mutation...
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: uniform vec4 u_color;
+            vec4 function0()  {
+              return u_color;
+            }
+  
+Got failure here: uniform vec4 u_color;
+            vec4 function0()  {
+              return u_color;
+            }
+  
+Expected ID  at 164, got KW:uniform
+Got failure here: uniform vec4 u_color;
+            vec4 function0()  {
+              return u_color;
+            }
+  
+Got failure here: uniform vec4 u_color;
+            vec4 function0()  {
+              return u_color;
+            }
+  
+Expected ID  at 164, got KW:uniform
+special_havoc
+name 'typename_to_typeinfo' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Unexpected token in expression at 165: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 162, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 162, got (:(
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 162, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 162, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+Unexpected token in expression at 165: #:#
+Got failure here: main(){}
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { rt f0, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9
+Got failure here: () { rt f0, float f1, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9
+Expected ;  at 161, got (:(
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+special_havoc
+name 'typename_to_typeinfo' is not defined
+invalid literal for int() with base 10: 'c'
+special_havoc
+name 'typename_to_typeinfo' is not defined
+invalid literal for int() with base 10: 'c'
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+special_havoc
+framebuffer_fetch_mutation...
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 167: #:#
+Unexpected token in expression at 167: #:#
+Got failure here: precision mediump float;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected ,  at 128, got KW:precision
+Got failure here: precision mediump float;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected ,  at 128, got KW:precision
+Got failure here: precision mediump float;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected ,  at 128, got KW:precision
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Unexpected token in expression at 165: #:#
+gen_atom: cannot build TypeInfo(invariant, dims=0)
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+special_havoc
+name 'typename_to_typeinfo' is not defined
+invalid literal for int() with base 10: 'c'
+Got failure here: ;
+#endif
+}
+Expected )  at 201, got ;:;
+Got failure here: ;
+#endif
+}
+Got failure here: precision mediump float;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected ;  at 128, got KW:precision
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: ); } void main(){ S2 s2 = o(); }
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: in sampler2D){2;} void main(){}
+Expected {  at 140, got KW:in
+Got failure here: in sampler2D){2;} void main(){}
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+invalid literal for int() with base 10: 'c'
+gen_atom: cannot build TypeInfo(sampler2DArrayShadow, dims=0)
+invalid literal for int() with base 10: 'c'
+Got failure here: ;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected ,  at 151, got ;:;
+Got failure here: ;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected ,  at 151, got ;:;
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+gen_atom: cannot build TypeInfo(sampler2DArrayShadow, dims=0)
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+special_havoc
+name 'typename_to_typeinfo' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+^Coof@oof-h8-1440eo:~/dawn/out/fuzzing$ ./fuzz_angle_stuff.sh 2> fuzz_output.txt
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+special_havoc
+framebuffer_fetch_mutation...
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+name 'PRECISION_QUALIFIERS' is not defined
+special_havoc
+framebuffer_fetch_mutation...
+Got error here: precision mediump float;
+void main() {
+#if 1
+    gl_FragColor = vec4(0.0);
+#endif
+}
+Expected type name at 128, got KW:precision
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: uniform vec4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+  
+Expected ;  at 164, got KW:uniform
+Got failure here: uniform vec4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+  
+Expected ;  at 164, got KW:uniform
+Got failure here: uniform vec4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+  
+Expected ;  at 164, got KW:uniform
+Got failure here: uniform vec4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+  
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main()f() { return .0; }
+        void main() { f(), e; }
+Got failure here: () { return S2(S(1)); } void main()f() { return .0; }
+        void main() { f(), e; }
+Expected ;  at 160, got (:(
+Got failure here: () { return S2(S(1)); } void main()f() { return .0; }
+        void main() { f(), e; }
+Unexpected token in expression at 165: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: struct S{int f;};struct S2{S h;} o() { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 162, got (:(
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+special_havoc
+framebuffer_fetch_mutation...
+Unexpected token in expression at 165: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+special_havoc
+name 'typename_to_typeinfo' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 161, got (:(
+gen_atom: cannot build TypeInfo(invariant, dims=0)
+gen_atom: cannot build TypeInfo(invariant, dims=0)
+Unexpected token in expression at 166: #:#
+special_havoc
+framebuffer_fetch_mutation...
+gen_atom: cannot build TypeInfo(sampler2DShadow, dims=0)
+special_havoc
+name 'typename_to_typeinfo' is not defined
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 160, got (:(
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return Sc4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+Expected ;  at 161, got (:(
+Got failure here: () { return Sc4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+Expected ;  at 161, got (:(
+Got failure here: () { return Sc4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+Expected ;  at 161, got (:(
+Got failure here: () { return Sc4 u_color;
+            void main()
+            {
+               gl_FragColor = u_color
+invalid literal for int() with base 10: 'c'
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Unexpected token in expression at 166: #:#
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: (S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: {S h;} o() { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Expected ;  at 153, got {:{
+Got failure here: {S h;} o() { return S2(S(1)); } void main(){ S2 s2 = o(); }
+Got failure here: () { return S2(S(1)); } void main(){ S2 s2 = o(); }
+
+
+
+
