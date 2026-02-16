@@ -13,12 +13,24 @@ class ParseError(Exception):
 
 DEBUG = True
 
+SAVE_FAILURES = True
+
 current_input = None
 
+def save_failure(shader_source, name, error_message):
+    fh = open(str(name)+"_"+str(random.randrange(1000000)), "w")
+    fh.write(shader_source)
+    fh.write("\n\n\n\n")
+    fh.write(error_message)
+    fh.close()
+    return
+
 class Parser:
-    def __init__(self, tokens: List[Token]):
+    def __init__(self, tokens: List[Token], original_input=None):
         self.toks = tokens
         self.i = 0
+        if original_input != None:
+            self.original_input = original_input
 
     def peek(self) -> Token:
         return self.toks[self.i]
@@ -53,6 +65,8 @@ class Parser:
                 return self.advance()
         if DEBUG:
             print("Got failure here: "+str(current_input[t.pos:t.pos+100]))
+            if SAVE_FAILURES:
+                save_failure(self.original_input, "failure", f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
         raise ParseError(f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
 
     # -----------------------
@@ -288,6 +302,8 @@ class Parser:
             return TypeName(name=name, precision=precision, qualifiers=qualifiers)
         if DEBUG:
             print("Got error here: "+str(current_input[t.pos:t.pos+100])) # Print for debugging the thing...
+            if SAVE_FAILURES:
+                save_failure(self.original_input, "error", f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
         raise ParseError(f"Expected type name at {t.pos}, got {t.kind}:{t.value}")
 
     def parse_struct_member(self) -> list[StructField]:
@@ -940,7 +956,7 @@ def parse_to_tree(shader_source: str) -> TranslationUnit:
             body_lines.append(line)
 
     tokens = lex("\n".join(body_lines))
-    p = Parser(tokens)
+    p = Parser(tokens, original_input=shader_source)
     # print("tokens: "+str(tokens))
     tu = p.parse_translation_unit()
 
