@@ -1,0 +1,332 @@
+#version 300 es
+precision highp float;
+
+#define kMaxTexUnits 4u
+#define kMaxLights   8u
+#define kTexUnits 1u
+
+#define enable_lighting true
+#define enc2[4](vec2(-0.5, 0.0), vec2(1.0, 2.0), vec2(0.5, -1.0), vec2(0.5, 2.0));
+
+ivec3 uInt[4] = ivec3[4](ivec3(-1.0, -1.0, 1.0), ivec3(1.0, -0.5, -1.0), ivec3(2.0, 0.5, -1.0), ivec3(0.5, 0.5, 1.0));
+
+uvec4 uUint[4] = uvec4[4](uvec4(0.5, 2.0, 1.0, 1.0), uvec4(0.0, 1.0, -1.0, -0.5), uvec4(-1.0, 0.5, 0.0, 0.0), uvec4(-0.5, 1.0, 1.0, -0.5));
+
+struct FuzzStruct58454 {
+  vec2 f_1856x;
+  ivec2 f_7958;
+  uint f_610;
+};
+
+struct S {
+  float a;
+};
+
+struct FuzzStruct57510 {
+  uint f_9194x;
+};
+
+out vec4 color;
+
+struct FuzzStruct93976 {
+  ivec4 f_92570;
+  bool f_81;
+  uint f_9136;
+};
+
+struct FuzzStruct23952 {
+  bool f_1431;
+  bvec2 f_4417;
+  mat2 f_9304;
+  bool f_5895;
+  bool f_6678[4];
+  vec3 f_1449;
+};
+
+struct FuzzStruct74353 {
+  uint f_266;
+};
+
+struct FuzzStruct86532 {
+  ivec3 f_430[4];
+  float f_3612;
+  bvec3 f_9520[4];
+  bvec2 f_6637[8];
+  mat3 f_9792;
+  bvec3 f_5693[1];
+};
+
+struct FuzzStruct51816 {
+  uint f_974;
+};
+
+struct FuzzStruct77332 {
+  bool f_5281;
+  ivec2 f_3773;
+};
+
+struct FuzzStruct85823 {
+  int f_5181;
+  float f_7795;
+  bvec3 f_1020;
+  int f_97050;
+};
+
+struct FuzzStruct78918 {
+  ivec3 f_793;
+  mat4 f_5803;
+  bool f_1443;
+  mat4 f_8391;
+};
+
+struct FuzzStruct3002 {
+  uint f_3980y[2];
+  vec3 f_4784x;
+};
+
+struct FuzzStruct13184 {
+  bvec4 f_9813[2];
+};
+
+struct FuzzStruct32908 {
+  mat3 f_7719;
+};
+
+struct FuzzStruct60781 {
+  float f_4914[3];
+  bool f_8802;
+};
+
+struct FuzzStruct5729 {
+  vec2 f_8921[3];
+  int f_4308;
+};
+
+struct FuzzStruct41992 {
+  uint f_5942;
+  float f_879;
+  ivec4 f_8203;
+  ivec4 f_5816;
+  mat3 f_8062;
+  int f_4391[4];
+};
+
+struct FuzzStruct68731 {
+  vec2 f_6047;
+  uint f_5042[3];
+  mat4 f_2789;
+  bvec3 f_8670;
+  mat4 f_5172[3];
+};
+
+struct FuzzStruct9485 {
+  ivec4 f_43180;
+  mat3 f_7880;
+  uint f_3914;
+  int f_21080[8];
+  uint f_5056;
+};
+
+struct FuzzStruct60771 {
+  bool f_96341[1];
+};
+
+struct FuzzStruct655 {
+  mat4 f_1020;
+  mat3 f_7469x;
+  bool f_518;
+};
+
+struct FuzzStruct67252 {
+  vec3 f_4996[2];
+  mat4 f_7033;
+};
+
+struct FuzzStruct64827 {
+  vec2 f_1858;
+  mat4 f_3656;
+  float f_5210[4];
+  ivec3 f_6578[3];
+};
+
+struct FuzzStruct4163 {
+  ivec4 f_3014[8];
+  uint f_7865;
+  uint f_475;
+  uint f_7304;
+  vec4 f_7690[2];
+  ivec2 f_8547;
+};
+
+struct FuzzStruct80344 {
+  int f_2796[4];
+  vec2 f_2300;
+  uint f_2765y[8];
+  mat4 f_4162[4];
+  bvec3 f_3925;
+};
+
+int i = 4;
+
+in highp vec4 position;
+
+out mediump float v_vtxOut;
+
+struct structType {
+  mediump vec4 m0;
+  mediump vec4 m1;
+};
+
+uniform structType u_var[3];
+
+mediump vec4 a_vec = vec4(1.0);
+
+struct FuzzStruct50800 {
+  bool f_6990;
+  mat4 f_3929;
+  mat3 f_7870;
+  mat2 f_8327;
+};
+
+uniform b {
+  float f1[3];
+};
+
+uniform bool keep_flop_positive;
+
+float flop = 2.0;
+
+float f(mediump float None, vec2 o1, S o2[2], float o3[3])
+{
+  FuzzStruct93976 s_1579;
+  lowp float uninitialized_local = 0.0;
+  o2[0].a = -1.0;
+  o3[1] = 0.5;
+  return uninitialized_local;
+}
+
+mediump float compare_float(mediump float a, inout mediump float b)
+{
+  return ((abs((a / a)) < 0.05) ? 2.0 : 0.0);
+}
+
+mediump float compare_vec4(mediump vec4 a, mediump vec4 b)
+{
+  return (((compare_float(a.x, b.x) * compare_float(a.y, b.y)) * compare_float(a.z, b.z)) * compare_float(a.w, b.w));
+}
+
+vec4 lotsOfVec4Parameters(vec4 a0, vec4 a1, vec4 a2, vec4 a3, vec4 a4, vec4 a5, vec4 a6, vec4 a7, vec4 a8, vec4 a9, vec4 a10, vec4 a11, vec4 a12, vec4 a13, vec4 a14, vec4 a15, vec4 a16, vec4 a17, vec4 a18, vec4 a19, vec4 a20, vec4 a21, vec4 a22, vec4 a23, vec4 a24, vec4 a25, vec4 a26, vec4 a27, vec4 a28, vec4 a29, vec4 a30, vec4 a31, vec4 a32, vec4 a33, vec4 a34, vec4 a35, vec4 a36, vec4 a37, vec4 a38, vec4 a39, vec4 a40, vec4 a41, vec4 a42, vec4 a43, vec4 a44, vec4 a45, vec4 a46, vec4 a47, vec4 a48, vec4 a49, vec4 a50, vec4 a51, vec4 a52, vec4 a53, vec4 a54, vec4 a55, vec4 a56, vec4 a57, vec4 a58, vec4 a59, vec4 a60, vec4 a61, vec4 a62, vec4 a63, vec4 a64, vec4 a65, vec4 a66, vec4 a67, vec4 a68, vec4 a69, vec4 a70, vec4 a71, vec4 a72, vec4 a73, vec4 a74, vec4 a75, vec4 a76, vec4 a77, vec4 a78, vec4 a79, vec4 a80, vec4 a81, vec4 a82, vec4 a83, vec4 a84, vec4 a85, vec4 a86, vec4 a87, vec4 a88, vec4 a89, vec4 a90, vec4 a91, vec4 a92, vec4 a93, vec4 a94, vec4 a95, vec4 a96, vec4 a97, vec4 a98, vec4 a99, vec4 a100, vec4 a101, vec4 a102, vec4 a103, vec4 a104, vec4 a105, vec4 a106, vec4 a107, vec4 a108, vec4 a109, vec4 a110, vec4 a111, vec4 a112, vec4 a113, vec4 a114, vec4 a115, vec4 a116, vec4 a117, vec4 a118, vec4 a119, vec4 a120, vec4 a121, vec4 a122, vec4 a123, vec4 a124, vec4 a125, vec4 a126, vec4 a127, vec4 a128, vec4 a129, vec4 a130, vec4 a131, vec4 a132, vec4 a133, vec4 a134, vec4 a135, vec4 a136, vec4 a137, vec4 a138, vec4 a139, vec4 a140, vec4 a141, vec4 a142, vec4 a143, vec4 a144, vec4 a145, vec4 a146, vec4 a147, vec4 a148, vec4 a149, vec4 a150, vec4 a151, vec4 a152, vec4 a153, vec4 a154, vec4 a155, vec4 a156, vec4 a157, vec4 a158, vec4 a159, vec4 a160, vec4 a161, vec4 a162, vec4 a163, vec4 a164, vec4 a165, vec4 a166, vec4 a167, vec4 a168, vec4 a169, vec4 a170, vec4 a171, vec4 a172, vec4 a173, vec4 a174, vec4 a175, vec4 a176, vec4 a177, vec4 a178, vec4 a179, vec4 a180, vec4 a181, vec4 a182, vec4 a183, vec4 a184, vec4 a185, vec4 a186, vec4 a187, vec4 a188, vec4 a189, vec4 a190, vec4 a191, vec4 a192, vec4 a193, vec4 a194, vec4 a195, vec4 a196, vec4 a197, vec4 a198, vec4 a199, vec4 a200, vec4 a201, vec4 a202, vec4 a203, vec4 a204, vec4 a205, vec4 a206, vec4 a207, vec4 a208, vec4 a209, vec4 a210, vec4 a211, vec4 a212, vec4 a213, vec4 a214, vec4 a215, vec4 a216, vec4 a217, vec4 a218, vec4 a219, vec4 a220, vec4 a221, vec4 a222, vec4 a223, vec4 a224, vec4 a225, vec4 a226, vec4 a227, vec4 a228, vec4 a229, vec4 a230, vec4 a231, vec4 a232, vec4 a233, vec4 a234, vec4 a235, vec4 a236, vec4 a237, vec4 a238, vec4 a239, vec4 a240, vec4 a241, vec4 a242, vec4 a243, vec4 a244, vec4 a245, vec4 a246, vec4 a247, vec4 a248, vec4 a249, vec4 a250, vec4 a251, vec4 a252, vec4 a253, vec4 aLast)
+{
+  vec4 sum = vec4(0.0, 0.0, 0.0, 0.0);
+  (sum += a0);
+  (sum += a1);
+  (sum += a2);
+  (sum += a3);
+  (sum += a4);
+  (sum += a5);
+  (sum += a6);
+  (sum += a7);
+  (sum += a8);
+  (sum += a9);
+  (sum += a10);
+  (sum += a11);
+  (sum += a12);
+  (sum += a13);
+  (sum += a14);
+  (sum += a15);
+  (sum += a16);
+  (sum += a17);
+  (sum += a18);
+  (sum += a19);
+  (sum += a20);
+  (sum += a21);
+  (sum += a22);
+  (sum += a23);
+  (sum += a24);
+  (sum += a25);
+  (sum += a26);
+  (sum += a27);
+  (sum += a28);
+  (sum += a29);
+  (sum += a30);
+  (sum += a31);
+  (sum += a32);
+  (sum += a33);
+  (sum += a34);
+  (sum += a217);
+  (sum += a218);
+  (sum += a219);
+  (sum += a220);
+  (sum += a221);
+  (sum += a222);
+  (sum += a223);
+  (sum += a224);
+  (sum += a225);
+  (sum += a226);
+  (sum += a227);
+  (sum += a228);
+  (sum += a229);
+  (sum += a230);
+  (sum += a231);
+  (sum += a232);
+  (sum += a233);
+  (sum += a234);
+  (sum += a235);
+  (sum += a236);
+  (sum += a237);
+  (sum += a238);
+  (sum += a239);
+  (sum += a240);
+  (sum += a241);
+  (sum += a242);
+  (sum += a243);
+  (sum += a244);
+  (sum += a245);
+  (sum += a246);
+  (sum += a247);
+  (sum += a248);
+  (sum += a249);
+  (sum += a250);
+  (sum += a251);
+  (sum += a252);
+  (sum += a253);
+  (sum += aLast);
+  return sum;
+}
+
+void main()
+{
+  flop = -1.0 , ((flop *= -1.0) , keep_flop_positive ? 0.0 : (flop *= -1.0));
+  if (((true && true) ^^ true))
+  {
+    if ((true ? true : false))
+    {
+      if (false)
+      {
+        if ((!!(!false && !false) ^^ true))
+        {
+          ivec2(7);
+        }
+        else
+        {
+          0.5;
+        }
+      }
+    }
+  }
+  if (false)
+  {
+    a_vec = vec4(1.0);
+  }
+  else
+  {
+    gl_Position = vec4(0.0);
+  }
+  gl_Position = lotsOfVec4Parameters(a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec, a_vec);
+}
+
+
+
+
+
+Expected ;  at 45, got INT:4u

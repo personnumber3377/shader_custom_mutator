@@ -1,0 +1,20 @@
+precision mediump float;
+struct NestedUniforms {
+    float x;
+};
+struct Uniforms {
+    float b;
+    NestedUniforms nested;
+    float c;
+    NestedUniforms[2] arr;
+    float d;
+};
+uniform Uniforms unis;
+void main() {
+    gl_FragColor = vec4(unis.nested.x, unis.b, unis.c, 1.0);
+    gl_FragColor += vec4(unis.arr[0].x, unis.arr[1].x, unis.d, 1.0);
+}
+
+
+
+Expected ID  at 154, got [:[

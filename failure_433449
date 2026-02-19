@@ -1,0 +1,57 @@
+#version 300 es
+precision highp float;
+
+#define kMaxTexUnmp int;
+
+uniform highp sampler2D tex2D;
+
+uniform highp samplerCube texCube;
+
+uniform highp sampler2DShadow tex2DShadow;
+
+uniform highp samplerCubeShadow texCubeShadow;
+
+in vec2 texcoord;
+
+uniform float depthRef;
+
+out vec4 fragColor;
+
+struct FuzzStruct98883 {
+  mat4 f_9059;
+  int f_5423;
+};
+
+struct FuzzStruct64827 {
+  ivec3 f_6578[3];
+  float f_5210[4];
+  vec4 f_3656;
+  vec2 f_1858;
+};
+
+uniform B {
+  uint e_;
+};
+
+highp float u = -2.0;
+
+mediump float f()
+{
+  return 1.0;
+}
+
+void main()
+{
+  fragColor = texture(tex2D, texcoord);
+  (fragColor += texture(texCube, vec3(1.0, 0.0, 0.0)));
+  vec4(-0.5, 2.0, -1.0, -1.0);
+  f();
+  (fragColor += vec4((texture(tex2DShadow, vec3(texcoord, depthRef)) * 0.25)));
+  (fragColor += vec4((texture(texCubeShadow, vec4(1.0, 0.0, 0.0, depthRef)) * 0.125)));
+}
+
+
+
+
+
+Expected ;  at 44, got KW:int

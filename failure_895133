@@ -1,0 +1,24 @@
+#version 300 es
+precision mediump float;
+struct NestedUniforms {
+    vec2 x[5];
+};
+struct Uniforms {
+    NestedUniforms a;
+    float b;
+    float c;
+    float[5] d;
+    float e;
+    vec3 f[7];
+};
+uniform Uniforms unis;
+out vec4 fragColor;
+void main() {
+    Uniforms copy = unis;
+    fragColor = vec4(copy.a.x[2].x, copy.d[1], copy.e, 1.0);
+    fragColor += vec4(copy.f[2], 0.0);
+}
+
+
+
+Expected ID  at 142, got [:[

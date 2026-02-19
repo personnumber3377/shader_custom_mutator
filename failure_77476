@@ -1,0 +1,63 @@
+#version 300 es
+precision highp float;
+
+#define kMaxTexUnits 4u
+#define kMaxLights   8u
+#define kTexUnits 1u
+
+#define enable_lighting true
+#define enable_color_material false
+#define enabl : 0.0)) + (1.0 - (2.0 * 1.0))), 0.0, 0.0);
+
+bool u = false;
+
+mediump float f()
+{
+  return -1.0;
+  ivec2((true ? -1 : (2 + (4 + 3))));
+  (true ? +1.0 : 1.0);
+}
+
+void main()
+{
+  ivec2(((7 / (true ? 2 : 6)) * +0));
+  vec4(0.5, -(+1.0 * 0.0), f(), (2.0 / ((1.0 + 1.0) + f())));
+  vec4(f(), 0.0, (((true ? true : true) ? false : true) ? (2.0 + +1.0) : (-1.0 * -0.5)), (2.0 - 2.0));
+  ivec2(5, +9);
+  if (((u || (u || (false || (u ? true : u)))) && true))
+  {
+    -8;
+  }
+  else
+  {
+    0.5;
+  }
+  vec4((false ? ((true ? true : true) ? f() : -1.0) : 2.0), 2.0, (0.5 - f()), -(2.0 * f()));
+  float r = 0.0;
+  float b = 0.0;
+  switch (30)
+  {
+    default:
+      b = 0.5;
+    case 4:
+      (b += 0.5);
+      break;
+  }
+  float g = +(true ? -1.0 : 0.5);
+  switch ((+(9 * 2) / 9))
+  {
+    case 0:
+      vec4(1.0, +(+-1.0 - (false ? 0.0 : 0.5)), ((false ? false : true) ? 1.0 : 0.5), 1.0);
+      break;
+    default:
+      break;
+  }
+  vec4(f(), f(), (true ? -(1.0 * 2.0) : 0.5), 1.0);
+  ((true && false) ? f() : (-0.0 - -1.0));
+}
+
+
+
+
+
+Expected ;  at 45, got INT:4u

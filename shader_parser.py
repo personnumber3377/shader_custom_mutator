@@ -5,8 +5,9 @@ from typing import List, Optional, Union
 from shader_lexer import Token, lex
 from shader_ast import *
 from const import *
-
 from collections.abc import Iterable
+
+import random
 
 class ParseError(Exception):
     pass
@@ -66,7 +67,11 @@ class Parser:
         if DEBUG:
             print("Got failure here: "+str(current_input[t.pos:t.pos+100]))
             if SAVE_FAILURES:
-                save_failure(self.original_input, "failure", f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
+                try:
+                    save_failure(self.original_input, "failure", f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
+                except Exception as e:
+                    print("!"*100)
+                    print(e)
         raise ParseError(f"Expected {kind} {value or ''} at {t.pos}, got {t.kind}:{t.value}")
 
     # -----------------------

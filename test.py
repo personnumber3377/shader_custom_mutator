@@ -49,6 +49,11 @@ ASSERT_TIMEOUT = 5.0 # 2.0
 # PRINT_COUNT = 
 INPUT_FILE = "./input.bin"
 
+FULL_CHECKER_PATH = "./dawn_angle_fuzzer"
+FULL_CHECKER_DIR = os.path.dirname(os.path.abspath(FULL_CHECKER_PATH))
+FULL_TIMEOUT = 10.0
+
+
 def check_file_bytes(data: bytes) -> tuple[bool, str]:
     with tempfile.NamedTemporaryFile(mode="wb", suffix=".bin", delete=False) as f:
         fname = f.name
@@ -73,6 +78,45 @@ def check_file_bytes(data: bytes) -> tuple[bool, str]:
     stderr = proc.stderr or ""
     ok = "SUCCESS" in stderr
     return ok, stderr.strip()
+
+# Full pipeline parsing...
+
+def check_full_pipeline_bytes(data: bytes) -> tuple[bool, str]:
+    with tempfile.NamedTemporaryFile(mode="wb", suffix=".glsl", delete=False) as f:
+        fname = f.name
+        f.write(data)
+
+    try:
+        proc = subprocess.run(
+            [os.path.basename(FULL_CHECKER_PATH), fname],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=FULL_TIMEOUT,
+            cwd=FULL_CHECKER_DIR,
+            text=True,
+        )
+    except subprocess.TimeoutExpired:
+        return False, "TIMEOUT"
+    finally:
+        try:
+            os.unlink(fname)
+        except Exception:
+            pass
+
+    output = (proc.stdout or "") + "\n" + (proc.stderr or "")
+
+    # Check for standalone VALID line
+    valid = False
+    for line in output.splitlines():
+        if line.strip() == "VALID":
+            valid = True
+            break
+
+    if proc.returncode != 0:
+        return False, f"NONZERO_EXIT ({proc.returncode})"
+
+    return valid, output.strip()
+
 
 # -----------------------------
 # HEADER parsing (text shaders)
@@ -315,41 +359,58 @@ VERBOSE = 0
 def mutation_benchmark(path: str, iters: int, seed: int):
     files = collect_files(path)
     random.seed(seed)
-    # mutator.init(seed)
 
     total = 0
-    success = 0
+    angle_success = 0
+    full_success = 0
 
     for i in range(iters):
         fn = random.choice(files)
         data = load_text_shader(fn) if fn.endswith(".glsl") else open(fn, "rb").read()
 
-        ok, _ = check_file_bytes(data)
-        if not ok:
+        ok_angle_orig, _ = check_file_bytes(data)
+        if not ok_angle_orig:
             continue
+
         try:
             mutated = mutator.fuzz(bytearray(data), None, 1_000_000)
-            ok2, err = check_file_bytes(mutated)
-        except Exception as e: # TODO: The mutator may fail for example with "ValueError: invalid literal for int() with base 10: 'c'" ... Please fix this!
+        except Exception as e:
             if VERBOSE:
-                print("Encountered this exception here: "+str(e))
-                print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
-                exit(1)
+                print("Mutator exception:", e)
             total += 1
             continue
+
         total += 1
-        success += int(ok2)
-        if err and VERBOSE:
-            print("Mutation resulted in this error: "+str(err))
-            print("Mutated soource code: "+str(strip_header_and_null(mutated).decode("utf-8")))
-            print("Original source code: "+str(strip_header_and_null(data).decode("utf-8")))
+
+        # -------------------------
+        # ANGLE CHECK
+        # -------------------------
+        ok_angle, angle_err = check_file_bytes(mutated)
+        if ok_angle:
+            angle_success += 1
+
+        # -------------------------
+        # FULL PIPELINE CHECK
+        # -------------------------
+        ok_full, full_err = check_full_pipeline_bytes(mutated)
+        if ok_full:
+            full_success += 1
+
+        if VERBOSE and not ok_full:
+            print("Full pipeline rejection:")
+            print(full_err)
+
         if total and total % 10 == 0:
-            print(f"[{total}] success rate = {success/total:.2%}")
+            print(f"[{total}]")
+            print(f"  ANGLE success rate = {angle_success/total:.2%}")
+            print(f"  FULL  success rate = {full_success/total:.2%}")
 
     print("\n=== RESULT ===")
     print(f"Total mutations: {total}")
-    print(f"Valid mutations: {success}")
-    print(f"Success rate:    {success/total:.2%}")
+    print(f"ANGLE valid:     {angle_success}")
+    print(f"ANGLE rate:      {angle_success/total:.2%}")
+    print(f"FULL valid:      {full_success}")
+    print(f"FULL rate:       {full_success/total:.2%}")
 
 def profile_mutator(path: str, iters: int, seed: int):
     """

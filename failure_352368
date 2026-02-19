@@ -1,0 +1,20 @@
+#version 300 es
+precision mediump float;
+struct Uniforms {
+    mat2 a;
+    mat2[2] aArr;
+    mat2[3] aArr2;
+};
+uniform Uniforms unis;
+out vec4 fragColor;
+void main() {
+  mat2 aIndexed = unis.aArr[1] + unis.a + unis.aArr2[1];
+
+  vec2 aMult = vec2(1.0, 1.0);
+
+  fragColor = vec4(aIndexed * aMult, 0.0, 1.0);
+}
+
+
+
+Expected ID  at 63, got [:[
