@@ -14,7 +14,8 @@ class ParseError(Exception):
 
 DEBUG = True
 
-SAVE_FAILURES = True
+# False for now...
+SAVE_FAILURES = False
 
 current_input = None
 

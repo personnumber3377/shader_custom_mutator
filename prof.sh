@@ -1,1 +1,1 @@
-python3 test.py --profile-mutator /home/oof/newestmin/
+python3 test.py --profile-mutator /home/oof/dawn/out/fuzzing/test_corpus/

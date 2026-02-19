@@ -1673,6 +1673,12 @@ def debug_source(tu, tu2): # Debug the stuff here...
             exit(0)
 
 def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> TranslationUnit:
+    
+    # Call the mutation...
+
+    if coin(rng, 0.1) : # Debugging for the full rewrite stuff...
+        return mutate_translation_unit_full(tu, rng)
+
     """
     High-level mutator: collects env then mutates items.
     Returns a NEW TranslationUnit.
@@ -1776,3 +1782,62 @@ def mutate_translation_unit(tu: TranslationUnit, rng: random.Random) -> Translat
     
 
     return tu2
+
+
+
+
+
+
+
+
+
+def mutate_translation_unit_full(tu: TranslationUnit, rng: random.Random) -> TranslationUnit:
+    """
+    Aggressive mutator: mutates ALL top-level items.
+    Still uses env tracking.
+    Returns a NEW TranslationUnit.
+    """
+
+    tu2 = deepclone(tu)
+    env = build_env(tu2)
+
+    new_items: List[TopLevel] = []
+
+    for item in tu2.items:
+        mutated = mutate_toplevel(item, rng, env)
+        new_items.append(mutated)
+
+    # Structural additions
+
+    # Add new struct definitions more often
+    if coin(rng, 0.15):
+        gen_struct_definition(new_items, rng, env)
+
+    # Add new global struct instance
+    if coin(rng, 0.20) and env.struct_defs:
+        sname = rng.choice(list(env.struct_defs.keys()))
+        vname = f"g_{rng.randrange(10000)}"
+        init = gen_constructor_expr(TypeInfo(sname), Scope(None), env, rng)
+
+        decl = GlobalDecl([
+            VarDecl(
+                TypeName(sname),
+                vname,
+                init=init,
+                array_dims=[]
+            )
+        ])
+
+        new_items.insert(rng.randrange(len(new_items)+1), decl)
+        env.globals[vname] = TypeInfo(sname)
+
+    # Top-level reorder more aggressively
+    if len(new_items) > 2 and coin(rng, 0.20):
+        rng.shuffle(new_items)
+
+    tu2.items = new_items
+    return tu2
+
+
+
+

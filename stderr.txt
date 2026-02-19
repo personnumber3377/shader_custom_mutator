@@ -1,0 +1,344 @@
+oof@oof-h8-1440eo:~/shader_custom_mutator$ ./bench.sh 
+[seed] 1012061277
+[10]
+  ANGLE success rate = 40.00%
+  FULL  success rate = 40.00%
+Got failure here: [2] arr;
+    float d;
+};
+uniform Uniforms unis;
+void main() {
+    gl_FragColor = vec4(unis.nested.x,
+[20]
+  ANGLE success rate = 40.00%
+  FULL  success rate = 40.00%
+special_havoc
+framebuffer_fetch_mutation...
+[30]
+  ANGLE success rate = 36.67%
+  FULL  success rate = 36.67%
+Got failure here: 4x2 c;
+
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+[40]
+  ANGLE success rate = 37.50%
+  FULL  success rate = 37.50%
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+[50]
+  ANGLE success rate = 36.00%
+  FULL  success rate = 36.00%
+Got failure here: [2] arr;
+    float d;
+};
+uniform Uniforms unis;
+void main() {
+    gl_FragColor = vec4(unis.nested.x,
+special_havoc
+framebuffer_fetch_mutation...
+[60]
+  ANGLE success rate = 33.33%
+  FULL  success rate = 31.67%
+special_havoc
+Got failure here: oat c;
+    float[5] d;
+    float e;
+    vec3 f[7];
+};
+uniform Uniforms unis;
+out vec4 fragColor;
+voi
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+Got failure here: 630.0))), vec4(1e-06))) && all(lessThan(abs((v[1] - (vec4(-450.0, 405.0, 45.0, -90.0) / 630.0))), ve
+special_havoc
+framebuffer_fetch_mutation...
+Got failure here: ne kMaxTexUnits 4uler2D;
+precision mediump sampler2DShadow;
+uniform float dRef;
+uniform sampler2D te
+Got failure here: 4x2 c;
+
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+special_havoc
+[110]
+  ANGLE success rate = 30.00%
+  FULL  success rate = 29.09%
+special_havoc
+Got failure here: [2] arr;
+    float d;
+};
+uniform Uniforms unis;
+void main() {
+    gl_FragColor = vec4(unis.nested.x,
+[120]
+  ANGLE success rate = 30.00%
+  FULL  success rate = 29.17%
+[130]
+  ANGLE success rate = 30.77%
+  FULL  success rate = 30.00%
+special_havoc
+[150]
+  ANGLE success rate = 32.67%
+  FULL  success rate = 32.00%
+Got failure here: 4x2 c;
+
+    mat2[2] aArr;
+    mat3x2[2] bArr;vec4 f_7503;
+  bvec4 f_2404;
+};
+
+struct S {
+  float a;
+
+special_havoc
+[170]
+  ANGLE success rate = 33.53%
+  FULL  success rate = 32.94%
+Got failure here: oat c;
+    float[5] d;
+    float e;
+    vec3 f[7];
+};
+uniform Uniforms unis;
+out vec4 fragColor;
+voi
+Got failure here: 0.
+
+#define r(a)    mat2( cos( a + vec4(0,-1.5708,1.5708,0) ) )
+vec2 c;
+#define f(U,a)  ( c = (U) * 
+special_havoc
+[190]
+  ANGLE success rate = 33.16%
+  FULL  success rate = 32.63%
+special_havoc
+framebuffer_fetch_mutation...
+[200]
+  ANGLE success rate = 34.00%
+  FULL  success rate = 33.50%
+Got failure here: [2] arr;
+    float d;
+};
+uniform Uniforms unis;
+void main() {
+    gl_FragColor = vec4(unis.nested.x,
+special_havoc
+special_havoc
+special_havoc
+framebuffer_fetch_mutation...
+[210]
+  ANGLE success rate = 33.81%
+  FULL  success rate = 33.33%
+special_havoc
+special_havoc
+special_havoc
+[240]
+  ANGLE success rate = 33.75%
+  FULL  success rate = 33.33%
+Got failure here: oat c;
+    float[5] d;
+    float e;
+    vec3 f[7];
+};
+uniform Uniforms unis;
+out vec4 fragColor;
+voi
+Got failure here: 4x2 c;
+
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+[250]
+  ANGLE success rate = 34.00%
+  FULL  success rate = 33.60%
+special_havoc
+framebuffer_fetch_mutation...
+[260]
+  ANGLE success rate = 35.00%
+  FULL  success rate = 34.62%
+special_havoc
+framebuffer_fetch_mutation...
+[270]
+  ANGLE success rate = 34.44%
+  FULL  success rate = 34.07%
+special_havoc
+[280]
+  ANGLE success rate = 33.93%
+  FULL  success rate = 33.57%
+[290]
+  ANGLE success rate = 34.14%
+  FULL  success rate = 33.79%
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+[300]
+  ANGLE success rate = 33.67%
+  FULL  success rate = 33.33%
+special_havoc
+[310]
+  ANGLE success rate = 34.52%
+  FULL  success rate = 34.19%
+special_havoc
+framebuffer_fetch_mutation...
+[320]
+  ANGLE success rate = 34.69%
+  FULL  success rate = 34.38%
+special_havoc
+Got failure here: forms {
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+[330]
+  ANGLE success rate = 34.55%
+  FULL  success rate = 34.24%
+special_havoc
+special_havoc
+[350]
+  ANGLE success rate = 34.00%
+  FULL  success rate = 33.71%
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+[360]
+  ANGLE success rate = 33.33%
+  FULL  success rate = 33.06%
+[370]
+  ANGLE success rate = 33.51%
+  FULL  success rate = 33.24%
+special_havoc
+[380]
+  ANGLE success rate = 33.16%
+  FULL  success rate = 32.89%
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+Got failure here: [5] d;
+    float e;
+    vec3 f[7];
+};
+uniform Uniforms unis;
+void main() {
+    gl_FragColor = vec4(u
+Got failure here: ne kMaxTexUnits 4uler2D;
+precision mediump sampler2DShadow;
+uniform float dRef;
+uniform sampler2D te
+Got failure here: 4x2 c;
+
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+special_havoc
+[400]
+  ANGLE success rate = 32.75%
+  FULL  success rate = 32.50%
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+framebuffer_fetch_mutation...
+[420]
+  ANGLE success rate = 33.57%
+  FULL  success rate = 33.33%
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+special_havoc
+framebuffer_fetch_mutation...
+[440]
+  ANGLE success rate = 32.95%
+  FULL  success rate = 32.73%
+special_havoc
+[450]
+  ANGLE success rate = 32.89%
+  FULL  success rate = 32.67%
+special_havoc
+special_havoc
+framebuffer_fetch_mutation...
+special_havoc
+special_havoc
+Got failure here: 4x2 c;
+
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+[480]
+  ANGLE success rate = 32.71%
+  FULL  success rate = 32.29%
+[490]
+  ANGLE success rate = 33.27%
+  FULL  success rate = 32.65%
+Got failure here: e-06)) + (noValue2 * 1e-06));
+}
+
+
+special_havoc
+[500]
+  ANGLE success rate = 33.00%
+  FULL  success rate = 32.40%
+[510]
+  ANGLE success rate = 32.94%
+  FULL  success rate = 32.35%
+special_havoc
+framebuffer_fetch_mutation...
+[520]
+  ANGLE success rate = 32.69%
+  FULL  success rate = 32.12%
+Got failure here: , 0.0, 0.0);
+  m[(u_zero + 1)][(u_zero + 1)] = float((u_zero + 1));
+  float f = m[1][1];
+  float b =
+Got failure here: forms {
+    mat2[2] aArr;
+    mat3x2[2] bArr;
+    mat4x2[2] cArr;
+};
+uniform Uniforms unis;
+out vec4
+^CTraceback (most recent call last):
+  File "/home/oof/shader_custom_mutator/test.py", line 689, in <module>
+    main()
+  File "/home/oof/shader_custom_mutator/test.py", line 656, in main
+    mutation_benchmark(args.path, args.iters, seed)
+  File "/home/oof/shader_custom_mutator/test.py", line 401, in mutation_benchmark
+    ok_full, full_err = check_full_pipeline_bytes(mutated)
+  File "/home/oof/shader_custom_mutator/test.py", line 92, in check_full_pipeline_bytes
+    proc = subprocess.run(
+  File "/usr/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 2021, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+

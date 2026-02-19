@@ -49,7 +49,7 @@ ASSERT_TIMEOUT = 5.0 # 2.0
 # PRINT_COUNT = 
 INPUT_FILE = "./input.bin"
 
-FULL_CHECKER_PATH = "./dawn_angle_fuzzer"
+FULL_CHECKER_PATH = "/home/oof/dawn/out/fuzzing/dawn_angle_fuzzer" # "./dawn_angle_fuzzer"
 FULL_CHECKER_DIR = os.path.dirname(os.path.abspath(FULL_CHECKER_PATH))
 FULL_TIMEOUT = 10.0
 
@@ -86,9 +86,11 @@ def check_full_pipeline_bytes(data: bytes) -> tuple[bool, str]:
         fname = f.name
         f.write(data)
 
+    # print("Using this checker directory here: "+str(FULL_CHECKER_DIR))
+
     try:
         proc = subprocess.run(
-            [os.path.basename(FULL_CHECKER_PATH), fname],
+            ["./"+os.path.basename(FULL_CHECKER_PATH), fname],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=FULL_TIMEOUT,
@@ -104,6 +106,10 @@ def check_full_pipeline_bytes(data: bytes) -> tuple[bool, str]:
             pass
 
     output = (proc.stdout or "") + "\n" + (proc.stderr or "")
+    
+    # print("output: "+str("".join(line if "VALID" in line else "" for line in output.splitlines())))
+    
+    # print("output: "+str(output))
 
     # Check for standalone VALID line
     valid = False
